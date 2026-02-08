@@ -72,11 +72,27 @@ function App() {
     setIsMicOn(!isMicOn);
   };
 
-  const toggleCam = () => {
-    if (stream) {
-      stream.getVideoTracks().forEach(track => track.enabled = !track.enabled);
+  const toggleCam = async () => {
+    if (!isCamOn) {
+      // Turn camera ON
+      try {
+        const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+        setStream(mediaStream);
+        if (videoRef.current) videoRef.current.srcObject = mediaStream;
+        setIsCamOn(true);
+      } catch (err) {
+        console.error("Camera access denied", err);
+      }
+    } else {
+      // Turn camera OFF
+      if (stream) {
+        stream.getVideoTracks().forEach(track => {
+          track.stop();
+        });
+        if (videoRef.current) videoRef.current.srcObject = null;
+      }
+      setIsCamOn(false);
     }
-    setIsCamOn(!isCamOn);
   };
 
   // Ensure voices are loaded
@@ -130,19 +146,9 @@ function App() {
     window.speechSynthesis.speak(utterance);
   };
 
-  const startCamera = async () => {
-    try {
-      const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
-      setStream(mediaStream);
-      if (videoRef.current) videoRef.current.srcObject = mediaStream;
-    } catch (err) {
-      console.error("Camera access denied", err);
-    }
-  };
-
   useEffect(() => {
     if (step === 'meeting') {
-      startCamera();
+      // Don't auto-start camera - user must enable it manually
       if (isMicOn) recognitionRef.current?.start();
     }
     return () => {

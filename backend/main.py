@@ -103,40 +103,19 @@ async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(databa
     if not session:
         raise HTTPException(status_code=404, detail="Interview not found")
 
-    # 2. Extract last question from transcript
-    last_question = next((m["content"] for m in reversed(session.transcript) if m["role"] == "assistant"), None)
-
-    # 3. Evaluate using Gemini
-    evaluation_raw = await gemini_service.evaluate_answer(
-        question=last_question,
-        answer=data.answer,
-        role=session.role_category,
-        company=session.target_company
-    )
-
-    # Clean the JSON from Gemini (remove markdown backticks if present)
-    clean_json = evaluation_raw.replace('```json', '').replace('```', '').strip()
-    try:
-        eval_data = json.loads(clean_json)
-    except:
-        # Fallback if AI fails to return clean JSON
-        eval_data = {"score": 5, "feedback": evaluation_raw, "can_proceed": False}
-
-    # 4. Update Stats
+    # 2. Update transcript with user's answer
     session.transcript.append({"role": "user", "content": data.answer})
     session.questions_count += 1
-    current_score = eval_data.get("score", 0)
-    session.score = current_score # Latest performance
     
-    # 5. Handle Gating (Realistic Round Logic)
-    # Don't terminate immediately unless it's a catastrophic failure (score < 3)
-    # Otherwise, ask at least 3 questions before deciding.
-    MIN_QUESTIONS_PER_ROUND = 3
-    is_catastrophic = current_score < 3
-    should_continue = not is_catastrophic and session.questions_count < MIN_QUESTIONS_PER_ROUND
+    # 3. Define interview parameters
+    MIN_QUESTIONS = 5  # Minimum questions before evaluation
+    MAX_QUESTIONS = 10  # Maximum questions in one round
     
-    # If we haven't reached min questions OR they are doing well, continue
-    if should_continue or (current_score >= 7 and session.questions_count < 10): # Limit to max 10
+    # 4. Determine if we should continue or evaluate
+    should_continue = session.questions_count < MIN_QUESTIONS
+    
+    if should_continue or session.questions_count < MAX_QUESTIONS:
+        # Continue asking questions - NO EVALUATION YET
         current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         next_question = await gemini_service.generate_interview_question(
             role=session.role_category,
@@ -151,20 +130,43 @@ async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(databa
             interviewer_name=session.interviewer_name
         )
         session.transcript.append({"role": "assistant", "content": next_question})
-        terminated = False
+        db.commit()
+        
+        return {
+            "evaluation": None,  # No evaluation until minimum questions reached
+            "next_question": next_question,
+            "terminated": False,
+            "questions_asked": session.questions_count
+        }
     else:
-        # Final decision point
-        next_question = None
-        terminated = True
-    
-    db.commit()
+        # NOW evaluate after asking sufficient questions
+        # Extract last question from transcript
+        last_question = next((m["content"] for m in reversed(session.transcript) if m["role"] == "assistant"), None)
+        
+        # Evaluate using Gemini
+        evaluation_raw = await gemini_service.evaluate_answer(
+            question=last_question,
+            answer=data.answer,
+            role=session.role_category,
+            company=session.target_company
+        )
 
-    return {
-        "evaluation": eval_data,
-        "next_question": next_question,
-        "terminated": terminated,
-        "questions_asked": session.questions_count
-    }
+        # Clean the JSON from Gemini
+        clean_json = evaluation_raw.replace('```json', '').replace('```', '').strip()
+        try:
+            eval_data = json.loads(clean_json)
+        except:
+            eval_data = {"score": 5, "feedback": evaluation_raw, "can_proceed": False}
+
+        session.score = eval_data.get("score", 0)
+        db.commit()
+
+        return {
+            "evaluation": eval_data,
+            "next_question": None,
+            "terminated": True,
+            "questions_asked": session.questions_count
+        }
 @app.post("/interviews/start", response_model=schemas.InterviewResponse)
 async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(database.get_db)):
     # 1. Generate the very first question using Gemini
