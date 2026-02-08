@@ -1,156 +1,390 @@
+/* Meeting Container - Premium Full-Screen */
 .meeting-container {
+    position: relative;
+    width: 100vw;
     height: 100vh;
-    background: #202124;
+    background: #050510;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    position: relative;
-    overflow: hidden;
 }
 
+/* Animated Background for Meeting */
+.meeting-container::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.12), transparent),
+        radial-gradient(ellipse 60% 80% at 0% 50%, rgba(139, 92, 246, 0.06), transparent),
+        radial-gradient(ellipse 60% 80% at 100% 50%, rgba(59, 130, 246, 0.06), transparent);
+    animation: mesh-movement 20s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Status Overlay - Premium */
+.status-overlay {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(20px);
+    padding: 12px 20px;
+    border-radius: 12px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 100;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.4);
+}
+
+.live-dot {
+    width: 10px;
+    height: 10px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: pulse-live 2s ease-in-out infinite;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.6);
+}
+
+@keyframes pulse-live {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* Meeting Main Area */
 .meeting-main {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 100px 40px 120px;
     position: relative;
+    z-index: 10;
 }
 
+/* Interviewer View - Premium Glassmorphism */
 .interviewer-view {
     width: 100%;
-    max-width: 1000px;
-    aspect-ratio: 16/9;
-    background: #3c4043;
-    border-radius: 12px;
+    max-width: 1400px;
+    height: 70vh;
+    max-height: 700px;
+    border-radius: 32px;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(60px) saturate(200%);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+        0 40px 100px -20px rgba(0, 0, 0, 0.6),
+        0 0 100px -20px rgba(99, 102, 241, 0.15);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-.avatar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-}
-
-.eye-pair {
-    display: flex;
-    gap: 50px;
-}
-
-.eye {
-    width: 50px;
-    height: 50px;
-    background: white;
-    border-radius: 50%;
     position: relative;
     overflow: hidden;
 }
 
+.interviewer-view::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(99, 102, 241, 0.4) 20%,
+            rgba(139, 92, 246, 0.4) 50%,
+            rgba(99, 102, 241, 0.4) 80%,
+            transparent);
+    animation: border-shimmer 3s linear infinite;
+}
+
+/* Avatar Container - Premium */
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px;
+    text-align: center;
+}
+
+/* Eye Pair - Enhanced */
+.eye-pair {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 20px;
+}
+
+.eye {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    position: relative;
+    box-shadow:
+        0 8px 24px -8px rgba(0, 0, 0, 0.3),
+        0 0 0 4px rgba(99, 102, 241, 0.1) inset;
+    animation: eye-blink 4s ease-in-out infinite;
+}
+
+@keyframes eye-blink {
+
+    0%,
+    96%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    98% {
+        transform: scaleY(0.1);
+    }
+}
+
 .pupil {
-    width: 25px;
-    height: 25px;
-    background: black;
+    width: 32px;
+    height: 32px;
+    background: radial-gradient(circle at 30% 30%, #1e293b, #0f172a);
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: all 0.1s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
+/* Mouth - Enhanced */
 .mouth {
     width: 120px;
-    height: 40px;
-    border: 6px solid white;
-    border-top: 0;
-    border-radius: 0 0 100px 100px;
-    transition: all 0.2s ease;
+    height: 60px;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    border-top: none;
+    border-radius: 0 0 120px 120px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .mouth.speaking {
-    animation: speak-move 0.3s infinite;
+    animation: mouth-talk 0.3s ease-in-out infinite;
 }
 
-@keyframes speak-move {
-    0% {
-        height: 30px;
-        width: 110px;
+@keyframes mouth-talk {
+
+    0%,
+    100% {
+        height: 60px;
+        border-radius: 0 0 120px 120px;
     }
 
     50% {
-        height: 50px;
-        width: 130px;
-    }
-
-    100% {
-        height: 30px;
-        width: 110px;
+        height: 40px;
+        border-radius: 0 0 80px 80px;
     }
 }
 
+.avatar-container p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Candidate View - Premium Picture-in-Picture */
 .candidate-view {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 24px;
+    right: 24px;
     width: 280px;
-    aspect-ratio: 16/9;
-    background: #000;
-    border-radius: 12px;
+    height: 180px;
+    border-radius: 20px;
     overflow: hidden;
-    border: 4px solid #3c4043;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    box-shadow:
+        0 12px 32px -8px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.candidate-view:hover {
+    transform: scale(1.05);
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow:
+        0 16px 40px -10px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
 }
 
 .candidate-view video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scaleX(-1);
 }
 
+.cam-off-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Meeting Toolbar - Premium Glassmorphism */
 .meeting-toolbar {
-    height: 80px;
-    background: #202124;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 40px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(40px) saturate(180%);
+    border-top: 1px solid rgba(99, 102, 241, 0.2);
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 0 40px;
+    gap: 16px;
+    z-index: 100;
+    box-shadow: 0 -10px 40px -10px rgba(0, 0, 0, 0.4);
 }
 
+.meeting-toolbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(99, 102, 241, 0.3) 20%,
+            rgba(139, 92, 246, 0.3) 50%,
+            rgba(99, 102, 241, 0.3) 80%,
+            transparent);
+}
+
+/* Tool Buttons - Premium */
 .tool-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #3c4043;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
 }
 
 .tool-btn:hover {
-    background: #4a4e52;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(99, 102, 241, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -6px rgba(99, 102, 241, 0.3);
+}
+
+.tool-btn:hover::before {
+    width: 100px;
+    height: 100px;
+}
+
+.tool-btn:active {
+    transform: translateY(0);
 }
 
 .tool-btn.off {
-    background: #ea4335;
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.4);
+}
+
+.tool-btn.off:hover {
+    background: rgba(239, 68, 68, 0.25);
+    border-color: rgba(239, 68, 68, 0.6);
 }
 
 .tool-btn.primary {
-    background: #8ab4f8;
-    color: #202124;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-color: rgba(99, 102, 241, 0.5);
     width: auto;
-    padding: 0 24px;
-    border-radius: 24px;
-    font-weight: 600;
+    padding: 0 32px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px -8px rgba(99, 102, 241, 0.4);
+}
+
+.tool-btn.primary:hover {
+    box-shadow: 0 12px 32px -10px rgba(99, 102, 241, 0.6);
+    transform: translateY(-3px);
+}
+
+.tool-spacer {
+    flex: 1;
+}
+
+/* Voice Input Preview - Premium */
+.voice-input-preview {
+    flex: 1;
+    max-width: 500px;
+    padding: 16px 24px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1.5px solid rgba(99, 102, 241, 0.2);
+    border-radius: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.2);
 }
 
 .status-overlay {
