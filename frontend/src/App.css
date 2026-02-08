@@ -15,17 +15,16 @@ html {
 
 /* Setup Container - Fixed Viewport */
 .setup-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  overflow: hidden;
+  padding: 40px 20px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: linear-gradient(135deg, #0a0b14 0%, #1a1b2e 100%);
 }
 
