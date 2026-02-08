@@ -16,7 +16,7 @@ app = FastAPI(
 # Set up CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -73,7 +73,7 @@ async def upload_resume(
         sub_role=sub_role,
         difficulty_level=difficulty_level,
         target_company=target_company,
-        is_panel=is_panel,
+        is_panel=int(is_panel),
         job_description=job_description,
         resume_text=resume_text,
         resume_analysis=analysis_obj,
@@ -162,7 +162,7 @@ async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(d
         sub_role=data.sub_role,
         difficulty_level=data.difficulty_level,
         target_company=data.target_company,
-        is_panel=data.is_panel,
+        is_panel=int(data.is_panel),
         job_description=data.job_description,
         transcript=[{"role": "assistant", "content": first_question}]
     )
