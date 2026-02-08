@@ -1,4 +1,5 @@
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 import os
 from dotenv import load_dotenv
 
@@ -6,8 +7,8 @@ load_dotenv()
 
 class GeminiService:
     def __init__(self):
-        genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-        self.model = genai.GenerativeModel('gemini-2.0-flash')
+        self.client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+        self.model_name = "gemini-2.0-flash"
 
     async def analyze_resume(self, resume_text: str, jd: str = None):
         """Premium Feature: Analyzes resume against a JD and provides ATS score + Gap Analysis."""
@@ -33,8 +34,10 @@ class GeminiService:
             "tips": []
         }}
         """
-        response = self.model.generate_content(prompt)
-        # Note: In production we'd parse this JSON properly
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt
+        )
         return response.text
 
     async def generate_interview_question(self, role: str, sub_role: str, difficulty: int, company: str = None, round_name: str = "Technical", is_panel: bool = False, jd: str = None, resume_text: str = None, chat_history: list = []):
@@ -67,14 +70,25 @@ class GeminiService:
         - NO SUGARCOATING. Be direct.
         """
 
-        # Prepare chat history for Gemini
-        # (Converting our DB JSON format to Gemini format)
-        contents = [{"role": "user" if i % 2 == 0 else "model", "parts": [m]} for i, m in enumerate(chat_history)]
+        # Prepare messages for the new SDK
+        # The new SDK uses a different history format
+        contents = []
+        for i, msg in enumerate(chat_history):
+            role_type = "user" if i % 2 == 1 else "model" # In chat_history, 0 is assistant (model)
+            # Wait, our transcript usually has assistant first.
+            # In our main.py: session.transcript.append({"role": "assistant", "content": first_question})
+            # So history[0] is assistant.
+            contents.append(types.Content(role=role_type, parts=[types.Part(text=msg)]))
+
+        user_prompt = f"System Instruction: {system_prompt}\n\nPlease ask the first or next question for the {sub_role} interview."
         
-        # Add the system prompt/instruction
-        # Starting the chat
-        chat = self.model.start_chat(history=contents)
-        response = chat.send_message(f"Assistant: Please ask the first or next question for the {sub_role} interview.")
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=user_prompt,
+            config=types.GenerateContentConfig(
+                system_instruction=system_prompt
+            )
+        )
         
         return response.text
 
@@ -90,6 +104,15 @@ class GeminiService:
         2. VIBE ANALYSIS: Analyze tone, confidence, and 'um/uh' hesitation conceptually from text.
         3. ASSERTIVENESS: Did they sound like a leader or a subordinate?
         
+        RATING CRITERIA (1-10):
+        10: Mind-blowing, unique, and technically perfect.
+        7-8: Solid, industry standard.
+        5-6: Needs significant work, too generic.
+        <4: Reject.
+        
+        FEEDBACK STYLE:
+        - NO SUGARCOATING. Be direct. If the answer was bad, say why clearly.
+        
         Return JSON:
         {{
             "score": float,
@@ -102,7 +125,10 @@ class GeminiService:
             "can_proceed": boolean
         }}
         """
-        response = self.model.generate_content(prompt)
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt
+        )
         return response.text
 
     async def generate_learning_roadmap(self, role: str, sub_role: str, failed_topics: list):
@@ -124,7 +150,10 @@ class GeminiService:
             "resources": []
         }}
         """
-        response = self.model.generate_content(prompt)
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt
+        )
         return response.text
 
 gemini_service = GeminiService()
