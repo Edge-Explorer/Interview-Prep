@@ -1,37 +1,74 @@
+/* Global Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Setup Container - Fixed Viewport */
 .setup-container {
-  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
-  position: relative;
+  padding: 0;
   overflow: hidden;
-  background: #0a0b10;
+  background: linear-gradient(135deg, #0a0b14 0%, #1a1b2e 100%);
 }
 
-/* Cinematic Live Background Effect */
+/* Animated Background Particles */
 .setup-container::before {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 70% 70%, rgba(165, 180, 252, 0.1) 0%, transparent 40%);
-  animation: mesh-flow 25s infinite linear;
-  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+  animation: particle-drift 20s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 
-@keyframes mesh-flow {
+@keyframes particle-drift {
   0% {
-    transform: rotate(0deg);
+    transform: translate(0, 0) scale(1);
   }
 
   100% {
-    transform: rotate(360deg);
+    transform: translate(30px, -30px) scale(1.1);
   }
+}
+
+/* Subtle Grid Pattern */
+.setup-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  opacity: 0.3;
 }
 
 .chat-container,
@@ -39,74 +76,88 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
+/* Brand Header */
 .brand-header {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+  animation: fade-in-down 0.8s ease-out;
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .brand-header h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin: 0;
-  letter-spacing: -2px;
-  font-weight: 800;
+  letter-spacing: -3px;
+  font-weight: 900;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #6366f1 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 15px rgba(165, 180, 252, 0.3));
+  filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.4));
+  position: relative;
 }
 
 .brand-header p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 4px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 6px;
   text-transform: uppercase;
-  font-weight: 300;
-  margin-top: 5px;
+  font-weight: 400;
+  margin-top: 12px;
 }
 
 .gradient-text {
-  font-size: 3.5rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background: linear-gradient(135deg, #a78bfa, #ec4899);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* Setup Box - Main Configuration Panel */
 .setup-box {
   position: relative;
-  z-index: 1;
-  padding: 60px;
-  width: 100%;
-  max-width: 900px;
-  border-radius: 32px;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7);
-  animation: setup-breathing 8s ease-in-out infinite;
+  z-index: 10;
+  padding: 50px 60px;
+  width: 90%;
+  max-width: 1100px;
+  border-radius: 24px;
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow:
+    0 20px 60px -10px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  animation: fade-in-up 0.8s ease-out 0.2s both;
 }
 
-@keyframes setup-breathing {
-
-  0%,
-  100% {
-    transform: translateY(0);
-    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7);
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
 
-  50% {
-    transform: translateY(-10px);
-    box-shadow: 0 50px 120px -20px rgba(99, 102, 241, 0.1);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -134,31 +185,37 @@
   margin-bottom: 12px;
 }
 
-select {
+.input-group {
+  flex: 1;
+}
+
+.input-group input,
+.input-group select {
   width: 100%;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--glass-border);
-  border-radius: 8px;
-  color: white;
-  margin-top: 8px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(99, 102, 241, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.95rem;
   outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 select option {
-  background: #1a1a1a;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.input-group label {
-  font-weight: 600;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+  background: #1a1b2e;
+  color: #fff;
 }
 
 .difficulty-pills {

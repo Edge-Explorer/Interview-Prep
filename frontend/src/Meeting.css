@@ -204,3 +204,16 @@
 .transcript-panel.open {
     transform: translateX(0);
 }
+
+.interviewer-card {
+    transition: all 0.3s ease;
+}
+
+.interviewer-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.interviewer-card.selected {
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+}
