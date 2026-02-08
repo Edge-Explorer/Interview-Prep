@@ -62,13 +62,18 @@ class GeminiService:
         
         {f"STRICT INSTRUCTIONS: Follow {company}'s specific culture and values." if company else ""}
         
-        { "PRESSURE MODE: Ask a follow-up optimization question and challenge the candidate's last answer." if len(chat_history) > 4 else "" }
+        PROTOCOL:
+        - Turn 0 (Start): GREET the candidate warmly but professionally. Introduce yourself (and the panel if applicable). Then, ask the candidate for a brief introduction of themselves.
+        - Turn 1 (After Intro): Simple acknowledgment of their background, maybe a quick follow-up on a specific interest/project from their intro or resume.
+        - Turn 2+: Start the core technical/behavioral interview.
+        
+        { "PRESSURE MODE: Ask a follow-up optimization question and challenge the candidate's last answer." if len(chat_history) > 6 else "" }
 
         YOUR GOAL:
         - Ask ONE question at a time.
-        - BE CREATIVE & NON-STANDARD. No generic questions. 
-        - NO SUGARCOATING. Be direct.
-        - Tie questions to projects in resume if provided: {resume_text[:200] if resume_text else "None"}
+        - BE CREATIVE & NON-STANDARD in core questions. 
+        - NO SUGARCOATING performance later, but start with protocol.
+        - Tie questions to projects in resume if provided: {resume_text[:300] if resume_text else "None"}
         """
 
         # Convert simple transcript list back to Gemini content objects
