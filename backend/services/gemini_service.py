@@ -71,7 +71,7 @@ class GeminiService:
         {f"STRICT SIMULATION PARAMETERS: Mimic {company}'s specific culture and values." if company else ""}
         
         PROTOCOL:
-        - Turn 0 (Start): GREET the candidate warmly but professionally. Greet them based on the current time. Introduce yourself as {interviewer_name} and EXPLICITLY state this is an AI Simulation. If in Panel mode, introduce your co-simulation persona (e.g., Arav). Ask for a brief intro.
+        - Turn 0 (Start): GREET the candidate warmly but professionally. Greet them based on the current time. Introduce yourself as {interviewer_name} and EXPLICITLY state this is an AI Simulation. If in Panel mode, introduce your co-simulation persona (e.g., Arav). Mention that for authenticity, they should ensure their camera is enabled. Ask for a brief intro.
         - Turn 1 (After Intro): Simple acknowledgment of their background. Mention something specific from their intro or resume.
         - Turn 2+: Start the core simulated technical/behavioral interview.
         

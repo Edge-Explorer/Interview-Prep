@@ -225,9 +225,9 @@
     box-shadow:
         0 12px 32px -8px rgba(0, 0, 0, 0.5),
         0 0 0 1px rgba(255, 255, 255, 0.05) inset;
-    background: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(20px);
+    background: #000;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 50;
 }
 
 .candidate-view:hover {
@@ -252,15 +252,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(25px);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 1px;
-    z-index: 1;
+    z-index: 10;
 }
 
 /* Meeting Toolbar - Compact & Professional */
@@ -269,16 +270,16 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 16px 32px;
-    background: rgba(10, 15, 30, 0.85);
-    backdrop-filter: blur(40px) saturate(180%);
-    border-top: 1px solid rgba(99, 102, 241, 0.15);
+    padding: 12px 32px;
+    background: rgba(10, 15, 30, 0.9);
+    backdrop-filter: blur(50px) saturate(190%);
+    border-top: 1px solid rgba(99, 102, 241, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    z-index: 100;
-    box-shadow: 0 -8px 32px -8px rgba(0, 0, 0, 0.5);
+    gap: 16px;
+    z-index: 1000;
+    box-shadow: 0 -12px 40px -10px rgba(0, 0, 0, 0.7);
 }
 
 .meeting-toolbar::before {
@@ -298,15 +299,15 @@
 
 /* Tool Buttons - Refined & Compact */
 .tool-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -355,69 +356,72 @@
     box-shadow: 0 4px 12px -4px rgba(239, 68, 68, 0.3);
 }
 
-/* Primary Action Button - Professional */
+/* Primary Action Button - Industry Standard */
 .tool-btn.primary {
-    background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
-    border: 1px solid rgba(99, 102, 241, 0.4);
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    background-size: 200% auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     width: auto;
-    min-width: 180px;
-    padding: 0 28px;
+    min-width: 200px;
     height: 48px;
+    padding: 0 32px;
     border-radius: 12px;
-    font-weight: 600;
-    font-size: 0.875rem;
-    letter-spacing: 0.3px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
     color: #ffffff;
+    text-transform: uppercase;
     box-shadow:
-        0 4px 16px -4px rgba(99, 102, 241, 0.35),
+        0 4px 12px -2px rgba(99, 102, 241, 0.4),
         0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-    position: relative;
-    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    animation: button-shimmer 4s infinite linear;
 }
 
-.tool-btn.primary::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-    transition: left 0.5s ease;
+@keyframes button-shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
 }
 
-.tool-btn.primary:hover {
+.tool-btn.primary:hover:not(:disabled) {
     transform: translateY(-2px);
+    background-position: right center;
     box-shadow:
-        0 8px 20px -6px rgba(99, 102, 241, 0.5),
-        0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+        0 8px 24px -4px rgba(99, 102, 241, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+        0 0 40px -10px rgba(99, 102, 241, 0.3);
 }
 
-.tool-btn.primary:hover::after {
-    left: 100%;
+.tool-btn.primary:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
 }
 
-.tool-btn.primary:active {
-    transform: translateY(-1px);
-}
-
-/* End Button - Destructive Action */
+/* End Button - Refined Secondary */
 .tool-btn.off.end-btn {
-    background: rgba(239, 68, 68, 0.1);
-    border-color: rgba(239, 68, 68, 0.25);
-    color: rgba(239, 68, 68, 1);
+    background: transparent;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: rgba(239, 68, 68, 0.8);
     width: auto;
-    min-width: 90px;
-    padding: 0 20px;
+    min-width: 80px;
+    height: 40px;
+    padding: 0 16px;
     font-weight: 600;
-    font-size: 0.875rem;
-    letter-spacing: 0.3px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
 }
 
 .tool-btn.off.end-btn:hover {
-    background: rgba(239, 68, 68, 0.15);
+    background: rgba(239, 68, 68, 0.05);
     border-color: rgba(239, 68, 68, 0.4);
-    box-shadow: 0 4px 12px -4px rgba(239, 68, 68, 0.4);
+    color: rgba(239, 68, 68, 1);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.1);
 }
 
 .tool-spacer {
@@ -442,58 +446,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.status-overlay {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 8px 16px;
-    border-radius: 8px;
-    color: white;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.live-dot {
-    width: 10px;
-    height: 10px;
-    background: #ea4335;
-    border-radius: 50%;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-}
-
-.transcript-panel {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 80px;
-    width: 350px;
-    background: white;
-    color: black;
-    padding: 20px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 100;
-}
-
-.transcript-panel.open {
-    transform: translateX(0);
 }
 
 .interviewer-card {

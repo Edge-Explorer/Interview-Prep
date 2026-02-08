@@ -366,9 +366,9 @@ function App() {
           <button className={`tool-btn ${!isCamOn ? 'off' : ''}`} onClick={toggleCam}>
             {isCamOn ? '📹' : '📸'}
           </button>
-          <div className="tool-spacer" style={{ flex: 1 }}></div>
+          <div className="tool-spacer"></div>
 
-          <div className="voice-input-preview" style={{ color: 'white', fontSize: '0.8rem', opacity: 0.7 }}>
+          <div className="voice-input-preview">
             {userInput || "AI is listening to your answer..."}
           </div>
 
@@ -377,7 +377,7 @@ function App() {
           </button>
 
           <button className="tool-btn off end-btn" onClick={() => window.location.reload()}>
-            END
+            LEAVE
           </button>
         </div>
       </div>
