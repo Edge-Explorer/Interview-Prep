@@ -78,38 +78,54 @@ function App() {
     setIsCamOn(!isCamOn);
   };
 
+  // Ensure voices are loaded
+  useEffect(() => {
+    const handleVoicesChanged = () => {
+      window.speechSynthesis.getVoices();
+    };
+    window.speechSynthesis.onvoiceschanged = handleVoicesChanged;
+    return () => {
+      window.speechSynthesis.onvoiceschanged = null;
+    };
+  }, []);
+
   const speak = (text) => {
+    if (!text) return;
     window.speechSynthesis.cancel();
+
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.onstart = () => setIsSpeaking(true);
     utterance.onend = () => setIsSpeaking(false);
 
-    const voices = window.speechSynthesis.getVoices();
-    const isFemale = sessionData.interviewer_name === "Veda";
+    // Crucial: Re-fetch voices inside the function to ensure freshness
+    const allVoices = window.speechSynthesis.getVoices();
+    const interviewerIsVeda = sessionData.interviewer_name === "Veda";
 
-    // Improved gender detection
-    let voice = voices.find(v => {
-      const name = v.name.toLowerCase();
-      if (isFemale) {
-        return (
-          name.includes('female') ||
-          name.includes('samantha') ||
-          name.includes('zira') ||
-          name.includes('vicki') ||
-          name.includes('victoria') ||
-          name.includes('google uk english female') ||
-          name.includes('google us english') && v.lang.includes('en-US') // Fallback common high quality
-        );
-      }
-      return (
-        name.includes('male') ||
-        name.includes('david') ||
-        name.includes('mark') ||
-        name.includes('google uk english male')
-      );
-    });
+    console.log("SPEAKING AS:", sessionData.interviewer_name, "AVAILABLE VOICES:", allVoices.length);
 
-    utterance.voice = voice || voices[0];
+    let selectedVoice = null;
+
+    if (interviewerIsVeda) {
+      // Veda: Look for female keywords
+      selectedVoice = allVoices.find(v => {
+        const n = v.name.toLowerCase();
+        return n.includes('female') || n.includes('samantha') || n.includes('zira') || n.includes('vicki') || n.includes('google uk english female');
+      });
+      // Fallback: Many systems have female voices at index 1 or 2
+      if (!selectedVoice && allVoices.length > 1) selectedVoice = allVoices[1];
+    } else {
+      // Adinath: Look for male keywords
+      selectedVoice = allVoices.find(v => {
+        const n = v.name.toLowerCase();
+        return n.includes('male') || n.includes('david') || n.includes('mark') || n.includes('google uk english male');
+      });
+      // Fallback: Default male voice
+      if (!selectedVoice) selectedVoice = allVoices[0];
+    }
+
+    utterance.voice = selectedVoice || allVoices[0];
+    utterance.rate = 1.0;
+    utterance.pitch = interviewerIsVeda ? 1.1 : 0.9; // Subtle pitch shift for extra distinction
     window.speechSynthesis.speak(utterance);
   };
 
@@ -208,7 +224,7 @@ function App() {
     ];
 
     return (
-      <div className="setup-container">
+      <div className="setup-container animated-setup-bg">
         <header className="brand-header">
           <h1 className="gradient-text">InterviewAI</h1>
           <p>The Premium Simulation Room</p>
@@ -297,6 +313,10 @@ function App() {
           <button className="primary-btn" onClick={startInterview} disabled={loading}>
             {loading ? "INITIALIZING SIMULATION..." : "ENTER MEETING ROOM"}
           </button>
+
+          <p className="legal-disclaimer" style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)', marginTop: '20px', textAlign: 'center' }}>
+            Disclaimer: This is an AI-powered simulation Room. Adinath and Veda are virtual personas designed for practice only and are NOT real employees or representatives of any company.
+          </p>
         </div>
       </div>
     );
