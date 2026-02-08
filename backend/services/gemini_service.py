@@ -37,29 +37,34 @@ class GeminiService:
         # Note: In production we'd parse this JSON properly
         return response.text
 
-    async def generate_interview_question(self, role: str, sub_role: str, difficulty: int, company: str = None, round_name: str = "Technical", jd: str = None, resume_text: str = None, chat_history: list = []):
-        """Generates a contextual interview question based on role, difficulty, company, round, resume, and history."""
+    async def generate_interview_question(self, role: str, sub_role: str, difficulty: int, company: str = None, round_name: str = "Technical", is_panel: bool = False, jd: str = None, resume_text: str = None, chat_history: list = []):
+        """Generates a contextual interview question with optional Panel and Pressure simulation."""
         
         difficulty_map = {1: "Junior", 2: "Mid-level", 3: "Senior/Lead"}
         level = difficulty_map.get(difficulty, "Junior")
 
+        # Point 1: Panel Interview Logic
+        panel_instruction = """
+        ACT AS A PANEL: You represent multiple interviewers. 
+        - Interviewer A (Project Lead): Strict, focuses on implementation.
+        - Interviewer B (System Architect): Skeptical, asks 'What if?' and about scalability.
+        Alternate between these two personas. Mention who is asking in the text (e.g., '[Lead]: ...').
+        """ if is_panel else ""
+
         system_prompt = f"""
         You are an expert professional interviewer at {company if company else "a top-tier firm"}.
-        You are currently conducting the {round_name} round for the position of {sub_role} ({role} category) at a {level} level.
+        You're conducting the {round_name} round for {sub_role} ({role} category) at a {level} level.
         
-        {f"STRICT INSTRUCTIONS: Follow {company}'s specific interview style, culture, and core values (e.g., Amazon's Leadership Principles, Google's Googliness/GCA)." if company else ""}
+        {panel_instruction}
         
-        CONTEXT:
-        {f"Job Description: {jd}" if jd else ""}
-        {f"Candidate Resume: {resume_text}" if resume_text else ""}
+        {f"STRICT INSTRUCTIONS: Follow {company}'s specific culture and values." if company else ""}
         
+        { "PRESSURE MODE: Ask a follow-up optimization question. Limit the candidate's thinking time conceptually." if len(chat_history) > 4 else "" }
+
         YOUR GOAL:
         - Ask ONE question at a time.
-        - BE CREATIVE: Do not ask common, overused questions. Create realistic but fresh scenarios that test deep understanding.
-        - Focus heavily on {round_name} topics.
-        - If a resume is provided, tie questions to their actual projects when relevant.
-        - Maintain the persona of a {company if company else "standard"} interviewer: be professional, probing, and strict.
-        - NO SUGARCOATING: If the candidate is struggling, probe deeper into their weakness.
+        - BE CREATIVE & NON-STANDARD. No generic questions. 
+        - NO SUGARCOATING. Be direct.
         """
 
         # Prepare chat history for Gemini
@@ -74,37 +79,51 @@ class GeminiService:
         return response.text
 
     async def evaluate_answer(self, question: str, answer: str, role: str, company: str = None):
-        """Evaluates a single answer with total honesty and zero sugarcoating."""
+        """Evaluates with Point 2: Behavioral Vibe & Tone Analysis included."""
         prompt = f"""
-        Interviewer Persona: Senior Lead at {company if company else "a Top Tech Firm"}
-        Role: {role}
+        Role: {role} at {company if company else "Tech Firm"}
         Question: {question}
         User Answer: {answer}
         
         TASK:
-        Evaluate this answer with extreme honesty. If it's a "standard" or "memorized" answer, penalize it. 
-        We want to see deep thinking, not just definitions.
+        1. Evaluate technical accuracy.
+        2. VIBE ANALYSIS: Analyze tone, confidence, and 'um/uh' hesitation conceptually from text.
+        3. ASSERTIVENESS: Did they sound like a leader or a subordinate?
         
-        RATING CRITERIA (1-10):
-        10: Mind-blowing, unique, and technically perfect.
-        7-8: Solid, industry standard.
-        5-6: Needs significant work, too generic.
-        <4: Reject.
-        
-        FEEDBACK STYLE:
-        - NO SUGARCOATING. Be direct. If the answer was bad, say why clearly.
-        - Do not say "Good job" unless it was truly exceptional.
-        
-        Return the result in JSON format:
+        Return JSON:
         {{
             "score": float,
-            "feedback": "string (honest & direct)",
-            "strengths": [],
-            "weaknesses": [],
-            "can_proceed": boolean (True only if score >= 7)
+            "feedback": "string",
+            "vibe_analysis": {{
+                "confidence_score": 0-10,
+                "hesitation_level": "High/Med/Low",
+                "assertiveness": "string feedback"
+            }},
+            "can_proceed": boolean
         }}
         """
+        response = self.model.generate_content(prompt)
+        return response.text
+
+    async def generate_learning_roadmap(self, role: str, sub_role: str, failed_topics: list):
+        """Point 3: Generates a 7-Day Curriculum after a failed round."""
+        prompt = f"""
+        The candidate failed their {sub_role} interview in these topics: {failed_topics}.
+        Generate a strict 7-Day Learning Roadmap.
         
+        Day 1-2: Fundamentals of failed concepts.
+        Day 3-4: Advanced implementation and trade-offs.
+        Day 5: Real-world scenario practicing.
+        Day 6: Mock simulation prep.
+        Day 7: Final review.
+        
+        Return JSON:
+        {{
+            "focus_areas": [],
+            "curriculum": {{"Day 1": "..."}},
+            "resources": []
+        }}
+        """
         response = self.model.generate_content(prompt)
         return response.text
 

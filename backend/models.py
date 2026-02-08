@@ -21,10 +21,12 @@ class InterviewSession(Base):
     target_company = Column(String, nullable=True) # e.g., "Google", "Amazon"
     interview_round = Column(String, default="Technical") # e.g., "HR", "System Design"
     current_round_number = Column(Integer, default=1)
+    is_panel = Column(Integer, default=0) # 0: 1-on-1, 1: Multi-Interviewer Panel
     job_description = Column(Text, nullable=True)
     resume_text = Column(Text, nullable=True) # Extracted text from uploaded resume
     ats_score = Column(Float, nullable=True) # Premium feature
     resume_analysis = Column(JSON, nullable=True) # Detailed strengths/weaknesses
+    tone_analysis = Column(JSON, nullable=True) # Confidence, hesitations, assertiveness
     transcript = Column(JSON, default=[]) # Stores the chat history
     score = Column(Float, nullable=True)
     feedback = Column(Text, nullable=True)
@@ -37,4 +39,14 @@ class Payment(Base):
     amount = Column(Float)
     upi_transaction_id = Column(String, unique=True)
     status = Column(String) # SUCCESS, PENDING, FAILED
+    created_at = Column(DateTime, default=datetime.datetime.utcnow)
+
+class LearningRoadmap(Base):
+    __tablename__ = "learning_roadmaps"
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    interview_id = Column(Integer, ForeignKey("interviews.id"))
+    focus_areas = Column(JSON) # List of topics to improve
+    curriculum = Column(JSON) # 7-Day Day-by-day plan
+    resources = Column(JSON) # Suggested links/references
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
