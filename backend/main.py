@@ -6,6 +6,7 @@ from services.gemini_service import gemini_service
 import pypdf
 import io
 import json
+from datetime import datetime
 
 app = FastAPI(
     title="Interview Prep AI Platform",
@@ -35,6 +36,7 @@ async def upload_resume(
     target_company: str = Form(None),
     is_panel: bool = Form(False),
     job_description: str = Form(None),
+    interviewer_name: str = Form("Adinath"),
     db: Session = Depends(database.get_db)
 ):
     # 1. Extract text from PDF
@@ -59,7 +61,8 @@ async def upload_resume(
         is_panel=is_panel,
         jd=job_description,
         resume_text=resume_text,
-        current_time=current_time_str
+        current_time=current_time_str,
+        interviewer_name=interviewer_name
     )
 
     # 4. Save to DB
@@ -76,6 +79,7 @@ async def upload_resume(
         difficulty_level=difficulty_level,
         target_company=target_company,
         is_panel=int(is_panel),
+        interviewer_name=interviewer_name,
         job_description=job_description,
         resume_text=resume_text,
         resume_analysis=analysis_obj,
@@ -143,7 +147,8 @@ async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(databa
             jd=session.job_description,
             resume_text=session.resume_text,
             chat_history=[m["content"] for m in session.transcript],
-            current_time=current_time_str
+            current_time=current_time_str,
+            interviewer_name=session.interviewer_name
         )
         session.transcript.append({"role": "assistant", "content": next_question})
         terminated = False
@@ -171,7 +176,8 @@ async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(d
         company=data.target_company,
         is_panel=data.is_panel,
         jd=data.job_description,
-        current_time=current_time_str
+        current_time=current_time_str,
+        interviewer_name=data.interviewer_name
     )
 
     # 2. Save session to DB (Guest session for now)
@@ -182,6 +188,7 @@ async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(d
         difficulty_level=data.difficulty_level,
         target_company=data.target_company,
         is_panel=int(data.is_panel),
+        interviewer_name=data.interviewer_name,
         job_description=data.job_description,
         transcript=[{"role": "assistant", "content": first_question}]
     )

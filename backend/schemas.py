@@ -9,6 +9,7 @@ class InterviewCreate(BaseModel):
     job_description: Optional[str] = None
     target_company: Optional[str] = None
     is_panel: bool = False
+    interviewer_name: str = "Adinath"
 
 class InterviewResponse(BaseModel):
     id: int

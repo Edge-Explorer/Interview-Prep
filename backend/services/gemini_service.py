@@ -40,22 +40,23 @@ class GeminiService:
         )
         return response.text
 
-    async def generate_interview_question(self, role: str, sub_role: str, difficulty: int, company: str = None, round_name: str = "Technical", is_panel: bool = False, jd: str = None, resume_text: str = None, chat_history: list = [], current_time: str = None):
+    async def generate_interview_question(self, role: str, sub_role: str, difficulty: int, company: str = None, round_name: str = "Technical", is_panel: bool = False, jd: str = None, resume_text: str = None, chat_history: list = [], current_time: str = None, interviewer_name: str = "Adinath"):
         """Generates a contextual interview question with optional Panel and Pressure simulation."""
         
         difficulty_map = {1: "Junior", 2: "Mid-level", 3: "Senior/Lead"}
         level = difficulty_map.get(difficulty, "Junior")
 
         # Point 1: Panel Interview Logic
-        panel_instruction = """
+        panel_instruction = f"""
         ACT AS A PANEL: You represent multiple interviewers. 
-        - Interviewer A (Project Lead): Strict, focuses on implementation.
-        - Interviewer B (System Architect): Skeptical, asks 'What if?' and about scalability.
-        Alternate between these two personas. Mention who is asking in the text (e.g., '[Lead]: ...').
+        - Interviewer A ({interviewer_name}): Lead Recruiter, focused on background.
+        - Interviewer B (Arav): Technical Architect, focused on efficiency.
+        Alternate between these two personas. Mention who is asking in the text (e.g., '[{interviewer_name}]: ...').
         """ if is_panel else ""
 
         system_prompt = f"""
-        You are MARCUS, a Senior Technical Recruiter and Lead Interviewer at {company if company else "a top-tier firm"}.
+        You are {interviewer_name.upper()}, a Senior Recruiter and Lead Interviewer at {company if company else "a top-tier firm"}.
+        The name {interviewer_name} signifies eternal knowledge and primal wisdom.
         Current Date/Time for context: {current_time if current_time else "Unknown"}
         
         You're conducting the {round_name} round for {sub_role} ({role} category) at a {level} level.
@@ -65,7 +66,7 @@ class GeminiService:
         {f"STRICT INSTRUCTIONS: Follow {company}'s specific culture and values." if company else ""}
         
         PROTOCOL:
-        - Turn 0 (Start): GREET the candidate warmly but professionally. Greet them specifically based on the current time (Good Morning / Good Afternoon / Good Evening). Introduce yourself as Marcus. If in Panel mode, introduce your co-interviewer (e.g., Sarah). Ask the candidate for a brief introduction. 
+        - Turn 0 (Start): GREET the candidate warmly but professionally. Greet them specifically based on the current time (Good Morning / Good Afternoon / Good Evening). Introduce yourself as {interviewer_name}. If in Panel mode, introduce your co-interviewer (e.g., Arav). Ask the candidate for a brief introduction. 
         - Turn 1 (After Intro): Simple acknowledgment of their background. Mention something specific from their intro or resume.
         - Turn 2+: Start the core technical/behavioral interview.
         

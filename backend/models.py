@@ -24,6 +24,7 @@ class InterviewSession(Base):
     current_round_number = Column(Integer, default=1)
     questions_count = Column(Integer, default=0)
     is_panel = Column(Integer, default=0) # 0: 1-on-1, 1: Multi-Interviewer Panel
+    interviewer_name = Column(String, default="Adinath")
     job_description = Column(Text, nullable=True)
     resume_text = Column(Text, nullable=True) # Extracted text from uploaded resume
     ats_score = Column(Float, nullable=True) # Premium feature
