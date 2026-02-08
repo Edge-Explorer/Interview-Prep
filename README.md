@@ -192,26 +192,42 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 
 ### ☁️ **Phase 6: Deployment & Infrastructure** (PENDING 🔴)
 
-#### Backend Deployment (100% FREE)
-- [ ] **Railway.app** or **Render.com** for FastAPI (Free tier)
-- [ ] **Neon.tech** or **Supabase** PostgreSQL (Free tier)
+#### Backend Deployment (AWS)
+- [ ] **AWS EC2** - FastAPI backend hosting
+- [ ] **AWS Elastic IP** - Static IP for backend
+- [ ] **AWS Security Groups** - Firewall configuration
+- [ ] **Nginx** - Reverse proxy setup
+- [ ] **Gunicorn** - WSGI server for FastAPI
 - [ ] Environment variable management
-- [ ] SSL/TLS certificates (included free)
-- [ ] Custom domain (optional, free with Vercel)
+- [ ] SSL/TLS certificates (Let's Encrypt - Free)
+- [ ] Auto-restart on failure (systemd)
 
-#### Frontend Deployment (100% FREE)
+#### Database Migration
+- [ ] **Current**: PostgreSQL (pgAdmin4 - Local development)
+- [ ] **Production**: Supabase PostgreSQL (Free tier - 500MB)
+- [ ] Database migration from local to Supabase
+- [ ] Connection pooling setup
+- [ ] Backup strategy (Supabase auto-backup)
+- [ ] Environment-based DB switching
+
+#### Frontend Deployment
 - [ ] **Vercel** deployment (Free tier)
-- [ ] Environment variable setup
+- [ ] GitHub integration for auto-deploy
+- [ ] Environment variable setup (API URL)
 - [ ] Custom domain (free .vercel.app subdomain)
 - [ ] CDN configuration (included)
 - [ ] Performance optimization
+- [ ] Analytics setup (Vercel Analytics - Free)
 
-#### DevOps (100% FREE)
-- [ ] CI/CD pipeline (GitHub Actions - Free)
-- [ ] Automated testing
-- [ ] Database backup strategy (Supabase auto-backup)
-- [ ] Monitoring (Vercel Analytics - Free tier)
-- [ ] Error tracking (Sentry Free tier or LogRocket)
+#### DevOps Pipeline
+- [ ] **GitHub** - Source control & version management
+- [ ] **GitHub Actions** - CI/CD pipeline (Free)
+- [ ] Automated testing on PR
+- [ ] Auto-deploy to Vercel on main branch push
+- [ ] Backend deployment automation
+- [ ] Database migration scripts
+- [ ] Monitoring (AWS CloudWatch Free tier)
+- [ ] Error tracking (Sentry Free tier)
 
 ### 🚀 **Phase 7: Advanced Features** (FUTURE 🔵)
 
@@ -356,12 +372,13 @@ Frontend will run on `http://localhost:5173`
 - **Vanilla CSS** - Custom styling with glassmorphism
 - **Web Speech API** - Voice recognition
 
-### Planned Infrastructure (100% FREE)
-- **Railway.app / Render.com** - Backend hosting (Free tier)
-- **Neon.tech / Supabase** - PostgreSQL database (Free tier)
+### Planned Infrastructure
+- **GitHub** - Source control & CI/CD (Free)
 - **Vercel** - Frontend deployment (Free tier)
+- **AWS EC2** - Backend hosting (Free tier 12 months, then ~₹500/month)
+- **Supabase** - PostgreSQL database (Free tier - 500MB)
 - **UPI QR Code** - Direct payment (Zero fees)
-- **GitHub Actions** - CI/CD (Free for public repos)
+- **Let's Encrypt** - SSL certificates (Free)
 
 ---
 
@@ -541,8 +558,11 @@ Create a `.env` file in the `backend` directory:
 # Required (ONLY PAID SERVICE)
 GEMINI_API_KEY=your_gemini_api_key_here
 
-# Database (FREE - Neon.tech or Supabase)
-DATABASE_URL=postgresql://user:password@host/interviewai
+# Database - Development (Local PostgreSQL)
+DATABASE_URL=postgresql://user:password@localhost:5432/interviewai
+
+# Database - Production (Supabase - will switch during deployment)
+# DATABASE_URL=postgresql://postgres:[password]@db.[project-ref].supabase.co:5432/postgres
 
 # Optional (for future features)
 SECRET_KEY=your_secret_key_for_jwt
@@ -553,13 +573,33 @@ UPI_ID=yourname@paytm
 UPI_NAME=Your Name
 ```
 
+**Note**: Currently using local PostgreSQL (pgAdmin4). Will migrate to Supabase during deployment phase.
+
 ### 💰 Cost Breakdown
-- **Gemini API**: ~₹0.10 per interview (only cost)
-- **Backend Hosting**: ₹0 (Railway/Render free tier)
-- **Database**: ₹0 (Neon/Supabase free tier)
-- **Frontend**: ₹0 (Vercel free tier)
-- **Payment Gateway**: ₹0 (Direct UPI, no fees)
-- **Total Monthly Cost**: ~₹50-100 for Gemini API only
+
+#### Development Phase (Current)
+- **Gemini API**: ~₹0.10 per interview
+- **Backend**: ₹0 (Local development)
+- **Database**: ₹0 (PostgreSQL via pgAdmin4)
+- **Frontend**: ₹0 (Local development)
+- **Total**: ~₹50-100/month for Gemini API
+
+#### Production Phase (After Deployment)
+- **Gemini API**: ~₹0.10 per interview (~₹100-500/month)
+- **AWS EC2**: ₹0 (Free tier 12 months), then ~₹500/month (t2.micro)
+- **Supabase DB**: ₹0 (Free tier - 500MB, 2GB bandwidth)
+- **Vercel**: ₹0 (Free tier)
+- **SSL Certificates**: ₹0 (Let's Encrypt)
+- **GitHub**: ₹0 (Free for public repos)
+- **Payment Processing**: ₹0 (Direct UPI)
+- **Total Year 1**: ~₹100-500/month (Gemini only)
+- **Total Year 2+**: ~₹600-1000/month (Gemini + AWS)
+
+#### Revenue Model (After Payment Integration)
+- **Free Tier**: ₹0 (1 interview/2 weeks)
+- **Pro Tier**: ₹199/month (Unlimited interviews)
+- **Elite Tier**: ₹499/month (All features)
+- **Break-even**: ~3-5 Pro users or 2 Elite users per month
 
 ---
 
