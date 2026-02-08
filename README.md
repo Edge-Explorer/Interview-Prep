@@ -3,6 +3,7 @@
 <div align="center">
 
 ![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)
+![Status](https://img.shields.io/badge/status-In%20Development-yellow.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
 ![React](https://img.shields.io/badge/react-18.3+-61DAFB.svg)
@@ -10,7 +11,7 @@
 
 **The Ultimate AI-Powered Interview Preparation Platform**
 
-[Features](#-features) • [Demo](#-demo) • [Installation](#-installation) • [Tech Stack](#-tech-stack) • [API Docs](#-api-documentation)
+[Features](#-features) • [Progress](#-development-progress) • [Roadmap](#-roadmap) • [Installation](#-installation) • [Tech Stack](#-tech-stack)
 
 </div>
 
@@ -27,48 +28,244 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 
 ---
 
-## ✨ Premium Features
+## ✅ Development Progress
+
+### � **Phase 1: Core Foundation** (COMPLETED ✅)
+
+#### Backend Infrastructure
+- [x] FastAPI application setup with CORS
+- [x] PostgreSQL database integration
+- [x] SQLAlchemy ORM models
+- [x] Alembic migration system
+- [x] Gemini 2.0 Flash API integration
+- [x] PDF resume parsing (PyPDF)
+- [x] Session management system
+- [x] RESTful API endpoints
+
+#### Frontend Foundation
+- [x] React + Vite setup
+- [x] Component architecture
+- [x] State management with hooks
+- [x] Axios API integration
+- [x] Web Speech API integration
+- [x] Camera/microphone controls
+
+#### AI Interview System
+- [x] Multi-persona AI interviewers (Adinath & Veda)
+- [x] Context-aware question generation
+- [x] Company-specific simulations
+- [x] Difficulty levels (Junior, Mid, Senior)
+- [x] Panel interview mode
+- [x] Resume-based personalization
+- [x] Minimum 5 questions before evaluation
+- [x] Comprehensive evaluation system
+
+#### Premium UI/UX
+- [x] Industry-level glassmorphism design
+- [x] Animated mesh gradients
+- [x] Floating particle effects
+- [x] 3D card transforms
+- [x] Professional meeting interface
+- [x] Compact toolbar design
+- [x] Premium button hierarchy
+- [x] Shimmer effects and micro-interactions
+- [x] Responsive design
+- [x] Camera blur fix and state management
+
+---
+
+## 🚧 Roadmap - What's Next
+
+### 🔥 **Phase 2: Multi-Round Interview System** (PENDING 🔴)
+
+#### Round 1: Technical/Screening Round
+- [x] Basic implementation (CURRENT)
+- [ ] Round-specific evaluation criteria
+- [ ] Technical depth assessment
+- [ ] Coding problem integration (optional)
+
+#### Round 2: Behavioral/HR Round
+- [ ] Behavioral question bank
+- [ ] STAR method evaluation
+- [ ] Cultural fit assessment
+- [ ] Salary negotiation simulation
+- [ ] Work-life balance discussions
+
+#### Round 3: System Design Round (Technical Roles)
+- [ ] System design problem generation
+- [ ] Scalability discussion prompts
+- [ ] Trade-off analysis evaluation
+- [ ] Architecture diagram support (future)
+
+#### Round 4: Managerial Round
+- [ ] Leadership scenario questions
+- [ ] Conflict resolution scenarios
+- [ ] Team management assessment
+- [ ] Strategic thinking evaluation
+
+#### Round 5: Final/Director Round
+- [ ] Vision and long-term goals
+- [ ] Company culture alignment
+- [ ] Executive presence evaluation
+- [ ] Offer negotiation simulation
+
+#### Non-Technical Interview Rounds
+- [ ] **Healthcare & Medical**: Clinical scenarios, patient interaction
+- [ ] **Business & Management**: Case studies, market analysis
+- [ ] **Finance & Accounting**: Financial modeling, risk assessment
+- [ ] **Creative & Design**: Portfolio review, design thinking
+- [ ] **Sales & Marketing**: Pitch simulation, objection handling
+- [ ] **Education & Training**: Teaching methodology, curriculum design
+- [ ] **Legal**: Case analysis, ethical scenarios
+- [ ] **Hospitality & Tourism**: Customer service scenarios
+
+### � **Phase 3: Advanced Analytics & Scoring** (PENDING 🔴)
+
+#### ATS & Resume Analysis
+- [x] Basic resume parsing
+- [x] Resume analysis endpoint
+- [ ] **ATS Score Display** in UI
+- [ ] **Gap Analysis Visualization**
+- [ ] **Resume Improvement Suggestions** UI
+- [ ] **Keyword Matching** against JD
+- [ ] **Resume Rewriting Assistant**
+
+#### Performance Analytics
+- [ ] Multi-round score aggregation
+- [ ] Performance trends over time
+- [ ] Strengths/weaknesses dashboard
+- [ ] Comparison with industry benchmarks
+- [ ] Detailed transcript analysis
+- [ ] Voice tone analysis (pitch, pace, clarity)
+- [ ] Confidence score tracking
+
+#### Behavioral Analysis
+- [x] Basic vibe analysis in evaluation
+- [ ] **Hesitation pattern detection**
+- [ ] **Filler word counting** (um, uh, like)
+- [ ] **Speaking pace analysis**
+- [ ] **Assertiveness scoring**
+- [ ] **Body language feedback** (if camera enabled)
+
+### 🎓 **Phase 4: Learning & Growth** (PENDING 🔴)
+
+#### Post-Interview Learning
+- [ ] **7-Day Learning Roadmap** generation
+- [ ] **Failed Topics Identification**
+- [ ] **Resource Recommendations** (courses, articles, videos)
+- [ ] **Practice Problem Sets**
+- [ ] **Retry Interview** after learning period
+
+#### Skill Development
+- [ ] Personalized study plans
+- [ ] Progress tracking
+- [ ] Skill gap analysis
+- [ ] Mock interview scheduling
+- [ ] Peer comparison (anonymized)
+
+### 🔐 **Phase 5: User Management & Authentication** (PENDING 🔴)
+
+#### User System
+- [ ] User registration/login
+- [ ] JWT authentication
+- [ ] User profiles
+- [ ] Interview history
+- [ ] Progress tracking
+- [ ] Subscription management
+
+#### Pricing Tiers
+- [ ] **Free Tier**: 1 interview/2 weeks, basic feedback
+- [ ] **Pro Tier** (₹199): Unlimited interviews, JD-tailored questions
+- [ ] **Elite Tier** (₹499): Panel mode, 7-day roadmap, vibe analysis
+- [ ] Payment gateway integration (Razorpay/Stripe)
+
+### ☁️ **Phase 6: Deployment & Infrastructure** (PENDING 🔴)
+
+#### Backend Deployment
+- [ ] **AWS EC2** setup for FastAPI
+- [ ] **AWS RDS** PostgreSQL instance
+- [ ] **AWS S3** for resume storage (optional)
+- [ ] **AWS CloudWatch** for monitoring
+- [ ] Environment variable management
+- [ ] SSL/TLS certificates
+- [ ] Domain configuration
+
+#### Frontend Deployment
+- [ ] **Vercel** deployment
+- [ ] Environment variable setup
+- [ ] Custom domain
+- [ ] CDN configuration
+- [ ] Performance optimization
+
+#### DevOps
+- [ ] CI/CD pipeline (GitHub Actions)
+- [ ] Automated testing
+- [ ] Database backup strategy
+- [ ] Monitoring and alerting
+- [ ] Error tracking (Sentry)
+
+### 🚀 **Phase 7: Advanced Features** (FUTURE 🔵)
+
+#### AI Enhancements
+- [ ] Voice cloning for more realistic interviewers
+- [ ] Video avatar generation
+- [ ] Real-time facial expression analysis
+- [ ] Multi-language support
+- [ ] Industry-specific jargon training
+
+#### Collaboration Features
+- [ ] Peer mock interviews
+- [ ] Mentor review system
+- [ ] Group interview simulations
+- [ ] Interview recording playback
+- [ ] Shareable interview reports
+
+#### Integration & API
+- [ ] LinkedIn integration
+- [ ] Calendar integration (Google/Outlook)
+- [ ] Slack notifications
+- [ ] Email reports
+- [ ] Public API for third-party integrations
+
+---
+
+## ✨ Current Features (v1.0.1)
 
 ### 🎤 **Live Interview Simulation**
-- **Real-time voice recognition** for natural conversation flow
-- **Dynamic AI responses** that adapt to your answers
-- **Industry-standard UI** with professional glassmorphism design
-- **Live video feed** with camera controls for authenticity
-- **Minimum 5 questions** before evaluation for comprehensive assessment
+- ✅ Real-time voice recognition for natural conversation
+- ✅ Dynamic AI responses adapting to your answers
+- ✅ Industry-standard UI with professional glassmorphism
+- ✅ Live video feed with camera controls
+- ✅ Minimum 5 questions before evaluation
 
 ### 🧠 **Intelligent Interview System**
-- **Multi-persona AI interviewers** with distinct personalities
-- **Company-specific simulations** (Google, Amazon, Microsoft, etc.)
-- **Adaptive difficulty levels** (Junior, Mid-level, Senior/Lead)
-- **Panel interview mode** with multiple AI interviewers
-- **Context-aware questioning** based on your resume and job description
+- ✅ Multi-persona AI interviewers (Adinath & Veda)
+- ✅ Company-specific simulations (Google, Amazon, etc.)
+- ✅ Adaptive difficulty levels (Junior, Mid-level, Senior)
+- ✅ Panel interview mode with multiple AI personas
+- ✅ Context-aware questioning based on resume and JD
 
-### 📄 **Premium Resume Analysis**
-- **ATS Score calculation** (0-100)
-- **Gap analysis** comparing your resume to job descriptions
-- **Strengths & weaknesses identification**
-- **Actionable improvement tips**
-- **Privacy-first**: In-memory PDF processing, no storage
+### 📄 **Resume Analysis** (Backend Ready)
+- ✅ ATS Score calculation (0-100)
+- ✅ Gap analysis vs job descriptions
+- ✅ Strengths & weaknesses identification
+- ✅ Actionable improvement tips
+- ⚠️ UI display pending
 
-### 📊 **Honest Evaluation System**
-- **No sugarcoating** - Direct, professional feedback
-- **Behavioral vibe analysis** - Confidence, hesitation, assertiveness scoring
-- **Multi-dimensional scoring** across technical accuracy and soft skills
-- **Comprehensive feedback** after minimum 5 questions
-- **Performance tracking** across multiple sessions
+### 📊 **Evaluation System**
+- ✅ No sugarcoating - Direct, professional feedback
+- ✅ Behavioral vibe analysis (confidence, hesitation, assertiveness)
+- ✅ Multi-dimensional scoring
+- ✅ Comprehensive feedback after 5+ questions
 
-### 🎨 **Industry-Level UI/UX**
-- **Premium glassmorphism design** matching top SaaS products
-- **Animated mesh gradients** and particle effects
-- **Sophisticated micro-interactions** and hover effects
-- **Responsive design** for all screen sizes
-- **Professional meeting interface** inspired by Zoom/Google Meet
-
-### 🔒 **Security & Privacy**
-- **Camera disabled by default** - User controls when to enable
-- **No data storage** of video/audio streams
-- **Secure API key management** via environment variables
-- **Session-based authentication** ready for implementation
+### 🎨 **Premium UI/UX**
+- ✅ Glassmorphism effects with advanced blur
+- ✅ Animated mesh gradients
+- ✅ 3D card transforms with magnetic hover
+- ✅ Shimmering borders and gradient animations
+- ✅ Professional meeting interface (Zoom/Meet inspired)
+- ✅ Compact 64px toolbar
+- ✅ Shimmer effects on primary buttons
 
 ---
 
@@ -133,37 +330,6 @@ Frontend will run on `http://localhost:5173`
 
 ---
 
-## 🎯 Usage Guide
-
-### Starting an Interview
-
-1. **Navigate to the setup screen**
-2. **Choose your interviewer** (Adinath or Veda)
-3. **Select your role category** (Engineering & Tech, Healthcare, Business, etc.)
-4. **Pick a sub-role** (Full Stack Developer, Data Scientist, etc.)
-5. **Set difficulty level** (Junior, Mid-level, Senior)
-6. **Optional**: Upload your resume (PDF) for personalized questions
-7. **Optional**: Add target company and job description
-8. **Click "ENTER MEETING ROOM"**
-
-### During the Interview
-
-- **Microphone**: Auto-enabled for voice input
-- **Camera**: Disabled by default - enable when AI requests for authenticity
-- **Voice Recognition**: Speak naturally, AI transcribes in real-time
-- **Submit Response**: Click when you've finished your answer
-- **Leave**: Exit the interview at any time
-
-### After the Interview
-
-- View your **comprehensive evaluation**
-- See your **score out of 10**
-- Read **detailed feedback** on your performance
-- Get **behavioral analysis** of your communication style
-- Review the **complete transcript**
-
----
-
 ## 🛠️ Tech Stack
 
 ### Backend
@@ -181,10 +347,11 @@ Frontend will run on `http://localhost:5173`
 - **Vanilla CSS** - Custom styling with glassmorphism
 - **Web Speech API** - Voice recognition
 
-### AI & ML
-- **Gemini 2.0 Flash** - Multi-modal AI model
-- **Context-aware prompting** - Dynamic system instructions
-- **Structured JSON outputs** - Reliable evaluation format
+### Planned Infrastructure
+- **AWS EC2** - Backend hosting
+- **AWS RDS** - PostgreSQL database
+- **Vercel** - Frontend deployment
+- **Razorpay/Stripe** - Payment processing
 
 ---
 
@@ -214,7 +381,7 @@ interview-prep/
 
 ---
 
-## � API Documentation
+## 🔌 API Documentation
 
 ### Base URL
 ```
@@ -222,6 +389,17 @@ http://127.0.0.1:8000
 ```
 
 ### Endpoints
+
+#### `GET /health`
+Health check endpoint
+
+**Response:**
+```json
+{
+  "status": "ok",
+  "version": "1.0.1"
+}
+```
 
 #### `POST /interviews/start`
 Start a new interview session
@@ -242,7 +420,7 @@ Start a new interview session
 ```json
 {
   "id": 1,
-  "first_question": "Good evening! I am Adinath..."
+  "first_question": "Good evening! I am Adinath, simulating a Technical interview..."
 }
 ```
 
@@ -264,54 +442,84 @@ Start interview with resume analysis
   "first_question": "...",
   "resume_analysis": {
     "ats_score": 85,
-    "strengths": [...],
-    "weaknesses": [...],
-    "tips": [...]
+    "strengths": ["Strong technical background", "..."],
+    "weaknesses": ["Missing cloud certifications", "..."],
+    "tips": ["Add more quantifiable achievements", "..."]
   }
 }
 ```
 
 #### `POST /interviews/submit-answer`
-Submit an answer and get next question
+Submit an answer and get next question or evaluation
 
 **Request Body:**
 ```json
 {
   "interview_id": 1,
-  "answer": "I have 3 years of experience..."
+  "answer": "I have 3 years of experience in full-stack development..."
 }
 ```
 
-**Response:**
+**Response (Questions 1-4):**
 ```json
 {
   "evaluation": null,
-  "next_question": "That's interesting. Can you tell me...",
+  "next_question": "That's interesting. Can you elaborate on...",
   "terminated": false,
   "questions_asked": 2
 }
 ```
 
+**Response (After 5+ questions):**
+```json
+{
+  "evaluation": {
+    "score": 7.5,
+    "feedback": "Strong technical knowledge but needs more confidence...",
+    "vibe_analysis": {
+      "confidence_score": 7,
+      "hesitation_level": "Medium",
+      "assertiveness": "Could be more decisive in answers"
+    },
+    "can_proceed": true
+  },
+  "next_question": null,
+  "terminated": true,
+  "questions_asked": 5
+}
+```
+
 ---
 
-## 🎨 UI Features
+## 🎯 Usage Guide
 
-### Premium Design Elements
-- **Animated mesh gradients** for dynamic backgrounds
-- **Glassmorphism effects** with advanced blur and saturation
-- **Floating particle systems** for immersive experience
-- **3D card transforms** with magnetic hover effects
-- **Shimmering borders** and gradient animations
-- **Professional typography** with custom font weights
-- **Micro-interactions** on all interactive elements
+### Starting an Interview
 
-### Meeting Interface
-- **Compact toolbar** (64px height) for maximum screen space
-- **Premium button hierarchy** with clear visual distinction
-- **Shimmer effects** on primary actions
-- **Professional camera controls** with blur overlay when off
-- **Live status indicator** with pulsing animation
-- **Voice preview** with real-time transcription display
+1. **Navigate to the setup screen**
+2. **Choose your interviewer** (Adinath or Veda)
+3. **Select your role category** (12 categories available)
+4. **Pick a sub-role** (specific to your category)
+5. **Set difficulty level** (1=Junior, 2=Mid, 3=Senior)
+6. **Optional**: Upload resume (PDF) for personalized questions
+7. **Optional**: Add target company and job description
+8. **Optional**: Enable panel mode for multi-interviewer experience
+9. **Click "ENTER MEETING ROOM"**
+
+### During the Interview
+
+- **Microphone**: Auto-enabled for voice input
+- **Camera**: Disabled by default - AI will ask you to enable it
+- **Voice Recognition**: Speak naturally, AI transcribes in real-time
+- **Submit Response**: Click when you've finished your answer
+- **Leave**: Exit the interview at any time
+
+### After the Interview (5+ questions)
+
+- View your **comprehensive evaluation**
+- See your **score out of 10**
+- Read **detailed feedback** on your performance
+- Get **behavioral analysis** of your communication style
+- Review the **complete transcript** (future feature)
 
 ---
 
@@ -326,40 +534,28 @@ GEMINI_API_KEY=your_gemini_api_key_here
 # Database
 DATABASE_URL=postgresql://user:password@localhost:5432/interviewai
 
-# Optional
+# Optional (for future features)
 SECRET_KEY=your_secret_key_for_jwt
 DEBUG=True
+RAZORPAY_KEY_ID=your_razorpay_key
+RAZORPAY_KEY_SECRET=your_razorpay_secret
 ```
 
 ---
 
-## 🚦 Development
+## � Current Limitations & Known Issues
 
-### Running Tests
-```bash
-# Backend tests
-cd backend
-pytest
+### Limitations
+- ⚠️ Single round only (Technical/Screening)
+- ⚠️ No user authentication system
+- ⚠️ No interview history tracking
+- ⚠️ Resume analysis not displayed in UI
+- ⚠️ No deployment (local only)
+- ⚠️ No payment integration
+- ⚠️ No learning roadmap generation
 
-# Frontend tests
-cd frontend
-npm test
-```
-
-### Building for Production
-
-#### Backend
-```bash
-cd backend
-pip install gunicorn
-gunicorn main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker
-```
-
-#### Frontend
-```bash
-cd frontend
-npm run build
-```
+### Known Issues
+- None currently reported ✅
 
 ---
 
@@ -399,6 +595,10 @@ For questions or support, please open an issue on GitHub.
 <div align="center">
 
 **Built with ❤️ for those who want to be more than just 'prepared'**
+
+### 🚀 Journey Status: Phase 1 Complete - Massive Challenges Ahead!
+
+*We've cleared the first hurdle. More logic, more code, more challenges await.* 💪
 
 ⭐ Star this repo if you found it helpful!
 
