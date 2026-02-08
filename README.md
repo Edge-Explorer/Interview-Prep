@@ -173,36 +173,45 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 - [ ] Progress tracking
 - [ ] Subscription management
 
-#### Pricing Tiers
+#### Pricing Tiers & Payment
 - [ ] **Free Tier**: 1 interview/2 weeks, basic feedback
 - [ ] **Pro Tier** (₹199): Unlimited interviews, JD-tailored questions
 - [ ] **Elite Tier** (₹499): Panel mode, 7-day roadmap, vibe analysis
-- [ ] Payment gateway integration (Razorpay/Stripe)
+- [ ] **UPI QR Code Payment** - Direct UPI payment (no gateway fees)
+- [ ] Payment verification system
+- [ ] Manual subscription activation after payment screenshot
+
+#### UPI Payment Flow (Zero Cost)
+1. User selects Pro/Elite tier
+2. System displays **UPI QR Code** with amount
+3. User pays via any UPI app (Google Pay, PhonePe, Paytm)
+4. User uploads **payment screenshot**
+5. Admin verifies payment (manual/automated OCR)
+6. Subscription activated instantly
+7. **No payment gateway fees** - 100% of payment received
 
 ### ☁️ **Phase 6: Deployment & Infrastructure** (PENDING 🔴)
 
-#### Backend Deployment
-- [ ] **AWS EC2** setup for FastAPI
-- [ ] **AWS RDS** PostgreSQL instance
-- [ ] **AWS S3** for resume storage (optional)
-- [ ] **AWS CloudWatch** for monitoring
+#### Backend Deployment (100% FREE)
+- [ ] **Railway.app** or **Render.com** for FastAPI (Free tier)
+- [ ] **Neon.tech** or **Supabase** PostgreSQL (Free tier)
 - [ ] Environment variable management
-- [ ] SSL/TLS certificates
-- [ ] Domain configuration
+- [ ] SSL/TLS certificates (included free)
+- [ ] Custom domain (optional, free with Vercel)
 
-#### Frontend Deployment
-- [ ] **Vercel** deployment
+#### Frontend Deployment (100% FREE)
+- [ ] **Vercel** deployment (Free tier)
 - [ ] Environment variable setup
-- [ ] Custom domain
-- [ ] CDN configuration
+- [ ] Custom domain (free .vercel.app subdomain)
+- [ ] CDN configuration (included)
 - [ ] Performance optimization
 
-#### DevOps
-- [ ] CI/CD pipeline (GitHub Actions)
+#### DevOps (100% FREE)
+- [ ] CI/CD pipeline (GitHub Actions - Free)
 - [ ] Automated testing
-- [ ] Database backup strategy
-- [ ] Monitoring and alerting
-- [ ] Error tracking (Sentry)
+- [ ] Database backup strategy (Supabase auto-backup)
+- [ ] Monitoring (Vercel Analytics - Free tier)
+- [ ] Error tracking (Sentry Free tier or LogRocket)
 
 ### 🚀 **Phase 7: Advanced Features** (FUTURE 🔵)
 
@@ -347,11 +356,12 @@ Frontend will run on `http://localhost:5173`
 - **Vanilla CSS** - Custom styling with glassmorphism
 - **Web Speech API** - Voice recognition
 
-### Planned Infrastructure
-- **AWS EC2** - Backend hosting
-- **AWS RDS** - PostgreSQL database
-- **Vercel** - Frontend deployment
-- **Razorpay/Stripe** - Payment processing
+### Planned Infrastructure (100% FREE)
+- **Railway.app / Render.com** - Backend hosting (Free tier)
+- **Neon.tech / Supabase** - PostgreSQL database (Free tier)
+- **Vercel** - Frontend deployment (Free tier)
+- **UPI QR Code** - Direct payment (Zero fees)
+- **GitHub Actions** - CI/CD (Free for public repos)
 
 ---
 
@@ -528,18 +538,28 @@ Submit an answer and get next question or evaluation
 Create a `.env` file in the `backend` directory:
 
 ```env
-# Required
+# Required (ONLY PAID SERVICE)
 GEMINI_API_KEY=your_gemini_api_key_here
 
-# Database
-DATABASE_URL=postgresql://user:password@localhost:5432/interviewai
+# Database (FREE - Neon.tech or Supabase)
+DATABASE_URL=postgresql://user:password@host/interviewai
 
 # Optional (for future features)
 SECRET_KEY=your_secret_key_for_jwt
 DEBUG=True
-RAZORPAY_KEY_ID=your_razorpay_key
-RAZORPAY_KEY_SECRET=your_razorpay_secret
+
+# UPI Payment (FREE - Your UPI ID)
+UPI_ID=yourname@paytm
+UPI_NAME=Your Name
 ```
+
+### 💰 Cost Breakdown
+- **Gemini API**: ~₹0.10 per interview (only cost)
+- **Backend Hosting**: ₹0 (Railway/Render free tier)
+- **Database**: ₹0 (Neon/Supabase free tier)
+- **Frontend**: ₹0 (Vercel free tier)
+- **Payment Gateway**: ₹0 (Direct UPI, no fees)
+- **Total Monthly Cost**: ~₹50-100 for Gemini API only
 
 ---
 
