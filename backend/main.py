@@ -28,6 +28,8 @@ async def upload_resume(
     role_category: str = Form(...),
     sub_role: str = Form(...),
     difficulty_level: int = Form(1),
+    target_company: str = Form(None),
+    is_panel: bool = Form(False),
     job_description: str = Form(None),
     db: Session = Depends(database.get_db)
 ):
@@ -48,19 +50,29 @@ async def upload_resume(
         role=role_category,
         sub_role=sub_role,
         difficulty=difficulty_level,
+        company=target_company,
+        is_panel=is_panel,
         jd=job_description,
         resume_text=resume_text
     )
 
     # 4. Save to DB
+    clean_analysis = analysis_raw.replace('```json', '').replace('```', '').strip()
+    try:
+        analysis_obj = json.loads(clean_analysis)
+    except:
+        analysis_obj = analysis_raw
+
     new_session = models.InterviewSession(
-        user_id=1, 
+        user_id=None, # Guest session
         role_category=role_category,
         sub_role=sub_role,
         difficulty_level=difficulty_level,
+        target_company=target_company,
+        is_panel=is_panel,
         job_description=job_description,
         resume_text=resume_text,
-        resume_analysis=analysis_raw, # Storing raw for now
+        resume_analysis=analysis_obj,
         transcript=[{"role": "assistant", "content": first_question}]
     )
     
@@ -137,9 +149,9 @@ async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(d
         jd=data.job_description
     )
 
-    # 2. Save session to DB (User ID hardcoded to 1 for now until Auth is added)
+    # 2. Save session to DB (Guest session for now)
     new_session = models.InterviewSession(
-        user_id=1, 
+        user_id=None, 
         role_category=data.role_category,
         sub_role=data.sub_role,
         difficulty_level=data.difficulty_level,

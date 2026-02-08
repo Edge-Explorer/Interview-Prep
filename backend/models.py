@@ -15,7 +15,7 @@ class User(Base):
 class InterviewSession(Base):
     __tablename__ = "interviews"
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"))
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=True)
     role_category = Column(String) # e.g., "SDE", "Data Science", "HR"
     sub_role = Column(String, nullable=True) # e.g., "ML Engineer", "SDE2"
     difficulty_level = Column(Integer, default=1) # 1: Junior, 2: Mid, 3: Senior
