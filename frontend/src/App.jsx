@@ -41,6 +41,7 @@ function App() {
         formData.append('sub_role', sessionData.sub_role);
         formData.append('difficulty_level', sessionData.difficulty_level);
         formData.append('target_company', sessionData.target_company);
+        formData.append('is_panel', sessionData.is_panel);
         formData.append('job_description', sessionData.job_description);
 
         res = await axios.post(`${API_BASE}/interviews/upload-resume`, formData);
@@ -55,7 +56,8 @@ function App() {
       setMessages([{ role: 'assistant', content: res.data.first_question }]);
       setStep('chat');
     } catch (err) {
-      alert("Error starting interview. Is the backend running?");
+      console.error(err);
+      alert(`Error starting interview: ${err.response?.data?.detail || err.message || "Unknown error"}`);
     }
     setLoading(false);
   };

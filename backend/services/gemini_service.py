@@ -62,29 +62,29 @@ class GeminiService:
         
         {f"STRICT INSTRUCTIONS: Follow {company}'s specific culture and values." if company else ""}
         
-        { "PRESSURE MODE: Ask a follow-up optimization question. Limit the candidate's thinking time conceptually." if len(chat_history) > 4 else "" }
+        { "PRESSURE MODE: Ask a follow-up optimization question and challenge the candidate's last answer." if len(chat_history) > 4 else "" }
 
         YOUR GOAL:
         - Ask ONE question at a time.
         - BE CREATIVE & NON-STANDARD. No generic questions. 
         - NO SUGARCOATING. Be direct.
+        - Tie questions to projects in resume if provided: {resume_text[:200] if resume_text else "None"}
         """
 
-        # Prepare messages for the new SDK
-        # The new SDK uses a different history format
+        # Convert simple transcript list back to Gemini content objects
         contents = []
         for i, msg in enumerate(chat_history):
-            role_type = "user" if i % 2 == 1 else "model" # In chat_history, 0 is assistant (model)
-            # Wait, our transcript usually has assistant first.
-            # In our main.py: session.transcript.append({"role": "assistant", "content": first_question})
-            # So history[0] is assistant.
+            # i=0: assistant(model), i=1: user, i=2: assistant(model), etc.
+            role_type = "model" if i % 2 == 0 else "user"
             contents.append(types.Content(role=role_type, parts=[types.Part(text=msg)]))
 
-        user_prompt = f"System Instruction: {system_prompt}\n\nPlease ask the first or next question for the {sub_role} interview."
+        # Add the instruction for the next turn
+        instruction = "Please ask the first question." if not contents else "Please ask the next follow-up question based on the conversation."
+        contents.append(types.Content(role="user", parts=[types.Part(text=instruction)]))
         
         response = self.client.models.generate_content(
             model=self.model_name,
-            contents=user_prompt,
+            contents=contents,
             config=types.GenerateContentConfig(
                 system_instruction=system_prompt
             )

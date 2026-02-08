@@ -22,6 +22,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/health")
+async def health():
+    return {"status": "ok", "version": "1.0.1"}
+
 @app.post("/interviews/upload-resume")
 async def upload_resume(
     file: UploadFile = File(...),
@@ -146,6 +150,8 @@ async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(d
         role=data.role_category,
         sub_role=data.sub_role,
         difficulty=data.difficulty_level,
+        company=data.target_company,
+        is_panel=data.is_panel,
         jd=data.job_description
     )
 
@@ -155,6 +161,8 @@ async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(d
         role_category=data.role_category,
         sub_role=data.sub_role,
         difficulty_level=data.difficulty_level,
+        target_company=data.target_company,
+        is_panel=data.is_panel,
         job_description=data.job_description,
         transcript=[{"role": "assistant", "content": first_question}]
     )

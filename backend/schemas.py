@@ -7,6 +7,8 @@ class InterviewCreate(BaseModel):
     sub_role: str
     difficulty_level: int = 1
     job_description: Optional[str] = None
+    target_company: Optional[str] = None
+    is_panel: bool = False
 
 class InterviewResponse(BaseModel):
     id: int
@@ -25,4 +27,6 @@ class AnswerSubmit(BaseModel):
 class EvaluationResponse(BaseModel):
     score: float
     feedback: str
+    vibe_analysis: Optional[dict] = None
     next_question: Optional[str] = None
+    can_proceed: bool = True
