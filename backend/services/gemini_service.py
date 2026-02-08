@@ -55,9 +55,11 @@ class GeminiService:
         
         YOUR GOAL:
         - Ask ONE question at a time.
-        - Focus heavily on {round_name} topics (e.g., if it's 'System Design', ask about architecture/scalability).
+        - BE CREATIVE: Do not ask common, overused questions. Create realistic but fresh scenarios that test deep understanding.
+        - Focus heavily on {round_name} topics.
         - If a resume is provided, tie questions to their actual projects when relevant.
-        - Maintain the persona of a {company if company else "standard"} interviewer: be professional and probing.
+        - Maintain the persona of a {company if company else "standard"} interviewer: be professional, probing, and strict.
+        - NO SUGARCOATING: If the candidate is struggling, probe deeper into their weakness.
         """
 
         # Prepare chat history for Gemini
@@ -71,19 +73,36 @@ class GeminiService:
         
         return response.text
 
-    async def evaluate_answer(self, question: str, answer: str, role: str):
-        """Evaluates a single answer and provides feedback + score."""
+    async def evaluate_answer(self, question: str, answer: str, role: str, company: str = None):
+        """Evaluates a single answer with total honesty and zero sugarcoating."""
         prompt = f"""
+        Interviewer Persona: Senior Lead at {company if company else "a Top Tech Firm"}
         Role: {role}
         Question: {question}
         User Answer: {answer}
         
-        Evaluate this answer on a scale of 1-10. 
-        Provide:
-        1. Score (JSON format: "score": 8)
-        2. Strengths: What did they do well?
-        3. Weaknesses: What was missing?
-        4. Modern Tip: One pro-tip to make this answer stand out (mentoring).
+        TASK:
+        Evaluate this answer with extreme honesty. If it's a "standard" or "memorized" answer, penalize it. 
+        We want to see deep thinking, not just definitions.
+        
+        RATING CRITERIA (1-10):
+        10: Mind-blowing, unique, and technically perfect.
+        7-8: Solid, industry standard.
+        5-6: Needs significant work, too generic.
+        <4: Reject.
+        
+        FEEDBACK STYLE:
+        - NO SUGARCOATING. Be direct. If the answer was bad, say why clearly.
+        - Do not say "Good job" unless it was truly exceptional.
+        
+        Return the result in JSON format:
+        {{
+            "score": float,
+            "feedback": "string (honest & direct)",
+            "strengths": [],
+            "weaknesses": [],
+            "can_proceed": boolean (True only if score >= 7)
+        }}
         """
         
         response = self.model.generate_content(prompt)

@@ -74,7 +74,59 @@ async def upload_resume(
         "resume_analysis": analysis_raw
     }
 
-@app.post("/interviews/start", response_model=schemas.InterviewResponse)
+@app.post("/interviews/submit-answer")
+async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(database.get_db)):
+    # 1. Fetch current session
+    session = db.query(models.InterviewSession).filter(models.InterviewSession.id == data.interview_id).first()
+    if not session:
+        raise HTTPException(status_code=404, detail="Interview not found")
+
+    # 2. Extract last question from transcript
+    last_question = next((m["content"] for m in reversed(session.transcript) if m["role"] == "assistant"), None)
+
+    # 3. Evaluate using Gemini
+    evaluation_raw = await gemini_service.evaluate_answer(
+        question=last_question,
+        answer=data.answer,
+        role=session.role_category,
+        company=session.target_company
+    )
+
+    # Clean the JSON from Gemini (remove markdown backticks if present)
+    clean_json = evaluation_raw.replace('```json', '').replace('```', '').strip()
+    try:
+        eval_data = json.loads(clean_json)
+    except:
+        # Fallback if AI fails to return clean JSON
+        eval_data = {"score": 5, "feedback": evaluation_raw, "can_proceed": False}
+
+    # 4. Update Transcript
+    session.transcript.append({"role": "user", "content": data.answer})
+    session.score = eval_data.get("score", 0)
+    
+    # 5. Handle Gating (Next Round Logic)
+    next_question = None
+    if eval_data.get("can_proceed"):
+        # Auto-promote to next round or ask next question
+        next_question = await gemini_service.generate_interview_question(
+            role=session.role_category,
+            sub_role=session.sub_role, # We might need to adjust this in models
+            difficulty=session.difficulty_level,
+            company=session.target_company,
+            round_name=session.interview_round,
+            jd=session.job_description,
+            resume_text=session.resume_text,
+            chat_history=[m["content"] for m in session.transcript]
+        )
+        session.transcript.append({"role": "assistant", "content": next_question})
+    
+    db.commit()
+
+    return {
+        "evaluation": eval_data,
+        "next_question": next_question,
+        "terminated": not eval_data.get("can_proceed")
+    }
 async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(database.get_db)):
     # 1. Generate the very first question using Gemini
     first_question = await gemini_service.generate_interview_question(
