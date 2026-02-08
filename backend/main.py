@@ -127,6 +127,7 @@ async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(databa
         "next_question": next_question,
         "terminated": not eval_data.get("can_proceed")
     }
+@app.post("/interviews/start", response_model=schemas.InterviewResponse)
 async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(database.get_db)):
     # 1. Generate the very first question using Gemini
     first_question = await gemini_service.generate_interview_question(
