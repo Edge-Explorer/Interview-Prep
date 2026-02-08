@@ -17,8 +17,10 @@ class InterviewSession(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
     role_category = Column(String) # e.g., "SDE", "Data Science", "HR"
-    sub_role = Column(String) # e.g., "ML Engineer", "SDE2"
     difficulty_level = Column(Integer, default=1) # 1: Junior, 2: Mid, 3: Senior
+    target_company = Column(String, nullable=True) # e.g., "Google", "Amazon"
+    interview_round = Column(String, default="Technical") # e.g., "HR", "System Design"
+    current_round_number = Column(Integer, default=1)
     job_description = Column(Text, nullable=True)
     resume_text = Column(Text, nullable=True) # Extracted text from uploaded resume
     ats_score = Column(Float, nullable=True) # Premium feature

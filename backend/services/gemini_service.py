@@ -37,27 +37,27 @@ class GeminiService:
         # Note: In production we'd parse this JSON properly
         return response.text
 
-    async def generate_interview_question(self, role: str, sub_role: str, difficulty: int, jd: str = None, resume_text: str = None, chat_history: list = []):
-        """Generates a contextual interview question based on role, difficulty, resume, and history."""
+    async def generate_interview_question(self, role: str, sub_role: str, difficulty: int, company: str = None, round_name: str = "Technical", jd: str = None, resume_text: str = None, chat_history: list = []):
+        """Generates a contextual interview question based on role, difficulty, company, round, resume, and history."""
         
         difficulty_map = {1: "Junior", 2: "Mid-level", 3: "Senior/Lead"}
         level = difficulty_map.get(difficulty, "Junior")
 
         system_prompt = f"""
-        You are an expert professional interviewer for the position of {sub_role} ({role} category).
-        The candidate is applying for a {level} role.
+        You are an expert professional interviewer at {company if company else "a top-tier firm"}.
+        You are currently conducting the {round_name} round for the position of {sub_role} ({role} category) at a {level} level.
+        
+        {f"STRICT INSTRUCTIONS: Follow {company}'s specific interview style, culture, and core values (e.g., Amazon's Leadership Principles, Google's Googliness/GCA)." if company else ""}
         
         CONTEXT:
-        {f"Job Description: {jd}" if jd else "General industry standard for this role."}
+        {f"Job Description: {jd}" if jd else ""}
         {f"Candidate Resume: {resume_text}" if resume_text else ""}
         
         YOUR GOAL:
         - Ask ONE question at a time.
-        - If a resume is provided, start by cross-referencing their experience with the job requirements.
-        - Ask about specific projects or skills mentioned in their resume to verify authenticity.
-        - If there is chat history, listen to the candidate's last answer and ask a relevant follow-up.
-        - For {level} roles, ensure the depth of the question matches the expectations.
-        - If the user asks about a role you don't recognize, use your internal knowledge to adapt based on their resume/JD.
+        - Focus heavily on {round_name} topics (e.g., if it's 'System Design', ask about architecture/scalability).
+        - If a resume is provided, tie questions to their actual projects when relevant.
+        - Maintain the persona of a {company if company else "standard"} interviewer: be professional and probing.
         """
 
         # Prepare chat history for Gemini
