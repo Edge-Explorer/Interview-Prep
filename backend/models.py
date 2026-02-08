@@ -22,6 +22,7 @@ class InterviewSession(Base):
     target_company = Column(String, nullable=True) # e.g., "Google", "Amazon"
     interview_round = Column(String, default="Technical") # e.g., "HR", "System Design"
     current_round_number = Column(Integer, default=1)
+    questions_count = Column(Integer, default=0)
     is_panel = Column(Integer, default=0) # 0: 1-on-1, 1: Multi-Interviewer Panel
     job_description = Column(Text, nullable=True)
     resume_text = Column(Text, nullable=True) # Extracted text from uploaded resume

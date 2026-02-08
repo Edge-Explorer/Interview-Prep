@@ -116,17 +116,24 @@ async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(databa
         # Fallback if AI fails to return clean JSON
         eval_data = {"score": 5, "feedback": evaluation_raw, "can_proceed": False}
 
-    # 4. Update Transcript
+    # 4. Update Stats
     session.transcript.append({"role": "user", "content": data.answer})
-    session.score = eval_data.get("score", 0)
+    session.questions_count += 1
+    current_score = eval_data.get("score", 0)
+    session.score = current_score # Latest performance
     
-    # 5. Handle Gating (Next Round Logic)
-    next_question = None
-    if eval_data.get("can_proceed"):
-        # Auto-promote to next round or ask next question
+    # 5. Handle Gating (Realistic Round Logic)
+    # Don't terminate immediately unless it's a catastrophic failure (score < 3)
+    # Otherwise, ask at least 3 questions before deciding.
+    MIN_QUESTIONS_PER_ROUND = 3
+    is_catastrophic = current_score < 3
+    should_continue = not is_catastrophic and session.questions_count < MIN_QUESTIONS_PER_ROUND
+    
+    # If we haven't reached min questions OR they are doing well, continue
+    if should_continue or (current_score >= 7 and session.questions_count < 10): # Limit to max 10
         next_question = await gemini_service.generate_interview_question(
             role=session.role_category,
-            sub_role=session.sub_role, # We might need to adjust this in models
+            sub_role=session.sub_role,
             difficulty=session.difficulty_level,
             company=session.target_company,
             round_name=session.interview_round,
@@ -135,13 +142,19 @@ async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(databa
             chat_history=[m["content"] for m in session.transcript]
         )
         session.transcript.append({"role": "assistant", "content": next_question})
+        terminated = False
+    else:
+        # Final decision point
+        next_question = None
+        terminated = True
     
     db.commit()
 
     return {
         "evaluation": eval_data,
         "next_question": next_question,
-        "terminated": not eval_data.get("can_proceed")
+        "terminated": terminated,
+        "questions_asked": session.questions_count
     }
 @app.post("/interviews/start", response_model=schemas.InterviewResponse)
 async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(database.get_db)):
