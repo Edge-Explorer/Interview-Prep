@@ -50,6 +50,7 @@ async def upload_resume(
     analysis_raw = await gemini_service.analyze_resume(resume_text, job_description)
     
     # 3. Generate first question using Resume Context
+    current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     first_question = await gemini_service.generate_interview_question(
         role=role_category,
         sub_role=sub_role,
@@ -57,7 +58,8 @@ async def upload_resume(
         company=target_company,
         is_panel=is_panel,
         jd=job_description,
-        resume_text=resume_text
+        resume_text=resume_text,
+        current_time=current_time_str
     )
 
     # 4. Save to DB
@@ -131,6 +133,7 @@ async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(databa
     
     # If we haven't reached min questions OR they are doing well, continue
     if should_continue or (current_score >= 7 and session.questions_count < 10): # Limit to max 10
+        current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         next_question = await gemini_service.generate_interview_question(
             role=session.role_category,
             sub_role=session.sub_role,
@@ -139,7 +142,8 @@ async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(databa
             round_name=session.interview_round,
             jd=session.job_description,
             resume_text=session.resume_text,
-            chat_history=[m["content"] for m in session.transcript]
+            chat_history=[m["content"] for m in session.transcript],
+            current_time=current_time_str
         )
         session.transcript.append({"role": "assistant", "content": next_question})
         terminated = False
@@ -159,13 +163,15 @@ async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(databa
 @app.post("/interviews/start", response_model=schemas.InterviewResponse)
 async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(database.get_db)):
     # 1. Generate the very first question using Gemini
+    current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     first_question = await gemini_service.generate_interview_question(
         role=data.role_category,
         sub_role=data.sub_role,
         difficulty=data.difficulty_level,
         company=data.target_company,
         is_panel=data.is_panel,
-        jd=data.job_description
+        jd=data.job_description,
+        current_time=current_time_str
     )
 
     # 2. Save session to DB (Guest session for now)

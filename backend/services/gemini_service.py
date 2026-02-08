@@ -40,7 +40,7 @@ class GeminiService:
         )
         return response.text
 
-    async def generate_interview_question(self, role: str, sub_role: str, difficulty: int, company: str = None, round_name: str = "Technical", is_panel: bool = False, jd: str = None, resume_text: str = None, chat_history: list = []):
+    async def generate_interview_question(self, role: str, sub_role: str, difficulty: int, company: str = None, round_name: str = "Technical", is_panel: bool = False, jd: str = None, resume_text: str = None, chat_history: list = [], current_time: str = None):
         """Generates a contextual interview question with optional Panel and Pressure simulation."""
         
         difficulty_map = {1: "Junior", 2: "Mid-level", 3: "Senior/Lead"}
@@ -55,7 +55,9 @@ class GeminiService:
         """ if is_panel else ""
 
         system_prompt = f"""
-        You are an expert professional interviewer at {company if company else "a top-tier firm"}.
+        You are MARCUS, a Senior Technical Recruiter and Lead Interviewer at {company if company else "a top-tier firm"}.
+        Current Date/Time for context: {current_time if current_time else "Unknown"}
+        
         You're conducting the {round_name} round for {sub_role} ({role} category) at a {level} level.
         
         {panel_instruction}
@@ -63,8 +65,8 @@ class GeminiService:
         {f"STRICT INSTRUCTIONS: Follow {company}'s specific culture and values." if company else ""}
         
         PROTOCOL:
-        - Turn 0 (Start): GREET the candidate warmly but professionally. Introduce yourself (and the panel if applicable). Then, ask the candidate for a brief introduction of themselves.
-        - Turn 1 (After Intro): Simple acknowledgment of their background, maybe a quick follow-up on a specific interest/project from their intro or resume.
+        - Turn 0 (Start): GREET the candidate warmly but professionally. Greet them specifically based on the current time (Good Morning / Good Afternoon / Good Evening). Introduce yourself as Marcus. If in Panel mode, introduce your co-interviewer (e.g., Sarah). Ask the candidate for a brief introduction. 
+        - Turn 1 (After Intro): Simple acknowledgment of their background. Mention something specific from their intro or resume.
         - Turn 2+: Start the core technical/behavioral interview.
         
         { "PRESSURE MODE: Ask a follow-up optimization question and challenge the candidate's last answer." if len(chat_history) > 6 else "" }
