@@ -26,7 +26,7 @@ function App() {
   const [isListening, setIsListening] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isMicOn, setIsMicOn] = useState(true);
-  const [isCamOn, setIsCamOn] = useState(true);
+  const [isCamOn, setIsCamOn] = useState(false);
   const [stream, setStream] = useState(null);
   const videoRef = useRef(null);
   const recognitionRef = useRef(null);
@@ -376,8 +376,8 @@ function App() {
             {loading ? "EVALUATING..." : "SUBMIT RESPONSE"}
           </button>
 
-          <button className="tool-btn off" onClick={() => window.location.reload()}>
-            🛑 END
+          <button className="tool-btn off end-btn" onClick={() => window.location.reload()}>
+            END
           </button>
         </div>
       </div>
