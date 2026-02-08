@@ -20,6 +20,9 @@ class InterviewSession(Base):
     sub_role = Column(String) # e.g., "ML Engineer", "SDE2"
     difficulty_level = Column(Integer, default=1) # 1: Junior, 2: Mid, 3: Senior
     job_description = Column(Text, nullable=True)
+    resume_text = Column(Text, nullable=True) # Extracted text from uploaded resume
+    ats_score = Column(Float, nullable=True) # Premium feature
+    resume_analysis = Column(JSON, nullable=True) # Detailed strengths/weaknesses
     transcript = Column(JSON, default=[]) # Stores the chat history
     score = Column(Float, nullable=True)
     feedback = Column(Text, nullable=True)

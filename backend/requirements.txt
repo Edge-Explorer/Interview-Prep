@@ -10,3 +10,5 @@ pydantic-settings
 python-multipart
 jose[cryptography]
 passlib[bcrypt]
+pypdf
+python-multipart
