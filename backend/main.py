@@ -8,9 +8,6 @@ import io
 import json
 from datetime import datetime
 import auth_utils
-from fastapi.security import OAuth2PasswordBearer
-
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 app = FastAPI(
     title="Interview Prep AI Platform",
@@ -86,7 +83,8 @@ async def upload_resume(
     is_panel: bool = Form(False),
     job_description: str = Form(None),
     interviewer_name: str = Form("Adinath"),
-    db: Session = Depends(database.get_db)
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(auth_utils.get_current_user)
 ):
     # 1. Extract text from PDF
     try:
@@ -122,7 +120,7 @@ async def upload_resume(
         analysis_obj = analysis_raw
 
     new_session = models.InterviewSession(
-        user_id=None, # Guest session
+        user_id=current_user.id, 
         role_category=role_category,
         sub_role=sub_role,
         difficulty_level=difficulty_level,
@@ -146,13 +144,20 @@ async def upload_resume(
     }
 
 @app.post("/interviews/submit-answer")
-async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(database.get_db)):
+async def submit_answer(
+    data: schemas.AnswerSubmit, 
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(auth_utils.get_current_user)
+):
     from round_config import ROUND_DEFINITIONS, get_next_round, should_proceed_to_next_round
     
     # 1. Fetch current session
-    session = db.query(models.InterviewSession).filter(models.InterviewSession.id == data.interview_id).first()
+    session = db.query(models.InterviewSession).filter(
+        models.InterviewSession.id == data.interview_id,
+        models.InterviewSession.user_id == current_user.id
+    ).first()
     if not session:
-        raise HTTPException(status_code=404, detail="Interview not found")
+        raise HTTPException(status_code=404, detail="Interview not found or unauthorized")
 
     # 2. Update transcript with user's answer
     session.transcript.append({"role": "user", "content": data.answer})
@@ -301,7 +306,11 @@ async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(databa
                 "overall_message": f"Interview terminated. You did not pass the {session.interview_round} round."
             }
 @app.post("/interviews/start", response_model=schemas.InterviewResponse)
-async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(database.get_db)):
+async def start_interview(
+    data: schemas.InterviewCreate, 
+    db: Session = Depends(database.get_db),
+    current_user: models.User = Depends(auth_utils.get_current_user)
+):
     # 1. Generate the very first question using Gemini
     current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     first_question = await gemini_service.generate_interview_question(
@@ -315,9 +324,9 @@ async def start_interview(data: schemas.InterviewCreate, db: Session = Depends(d
         interviewer_name=data.interviewer_name
     )
 
-    # 2. Save session to DB (Guest session for now)
+    # 2. Save session to DB
     new_session = models.InterviewSession(
-        user_id=None, 
+        user_id=current_user.id, 
         role_category=data.role_category,
         sub_role=data.sub_role,
         difficulty_level=data.difficulty_level,

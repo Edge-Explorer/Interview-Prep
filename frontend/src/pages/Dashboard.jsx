@@ -41,6 +41,13 @@ function Dashboard() {
     const [transitionData, setTransitionData] = useState({ prevRound: "", nextRound: "", score: 0 });
 
     const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const token = localStorage.getItem('token');
+
+    useEffect(() => {
+        if (!token) {
+            navigate('/login');
+        }
+    }, [token, navigate]);
 
     // Initialize Speech Recognition once
     useEffect(() => {
@@ -155,11 +162,15 @@ function Dashboard() {
                 formData.append('is_panel', sessionData.is_panel);
                 formData.append('job_description', sessionData.job_description);
                 formData.append('interviewer_name', sessionData.interviewer_name);
-                res = await axios.post(`${API_BASE}/interviews/upload-resume`, formData);
+                res = await axios.post(`${API_BASE}/interviews/upload-resume`, formData, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
             } else {
                 res = await axios.post(`${API_BASE}/interviews/start`, {
                     ...sessionData,
                     difficulty_level: parseInt(sessionData.difficulty_level)
+                }, {
+                    headers: { 'Authorization': `Bearer ${token}` }
                 });
             }
             setInterviewId(res.data.id);
@@ -184,6 +195,8 @@ function Dashboard() {
             const res = await axios.post(`${API_BASE}/interviews/submit-answer`, {
                 interview_id: interviewId,
                 answer: currentInput
+            }, {
+                headers: { 'Authorization': `Bearer ${token}` }
             });
 
             if (res.data.current_round) {
