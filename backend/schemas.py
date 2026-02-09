@@ -31,3 +31,27 @@ class EvaluationResponse(BaseModel):
     vibe_analysis: Optional[dict] = None
     next_question: Optional[str] = None
     can_proceed: bool = True
+
+class UserCreate(BaseModel):
+    email: str
+    password: str
+    full_name: str
+
+class UserLogin(BaseModel):
+    email: str
+    password: str
+
+class UserResponse(BaseModel):
+    id: int
+    email: str
+    full_name: str
+    is_premium: int
+    created_at: datetime
+    
+    class Config:
+        from_attributes = True
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+    user: UserResponse
