@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Brain, Cpu, Shield, Zap, ArrowRight, MessageSquare, Award, BarChart3 } from 'lucide-react';
+import { Brain, Shield, Zap, ArrowRight, MessageSquare, Award } from 'lucide-react';
 
 const LandingPage = () => {
     const navigate = useNavigate();
@@ -29,24 +29,18 @@ const LandingPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <div className="badge">NEW: Gemini 2.0 Flash Integration</div>
-                    <h1>Master Your Next <br /> <span className="gradient-text">Big Opportunity</span></h1>
+                    <div className="badge">Built for Your First Big Break</div>
+                    <h1>Crack Your First <br /> <span className="gradient-text">Dream Job</span></h1>
                     <p>
-                        Experience the world's most realistic AI interview simulator.
-                        Multi-round simulations, real-time vibe analysis, and professional feedback
-                        tailored to your dream role.
+                        Build the confidence you need to ace your campus placements and entry-level interviews.
+                        Practice with an AI that understands your journey—from academic projects to your first professional role.
                     </p>
                     <div className="hero-cta">
                         <button className="primary-btn-large" onClick={() => navigate('/signup')}>
-                            Start Free Simulation <ArrowRight size={20} />
+                            Start Practice Session <ArrowRight size={20} />
                         </button>
                         <div className="user-proof">
-                            <div className="user-avatars">
-                                <img src="https://i.pravatar.cc/150?u=1" alt="user" />
-                                <img src="https://i.pravatar.cc/150?u=2" alt="user" />
-                                <img src="https://i.pravatar.cc/150?u=3" alt="user" />
-                            </div>
-                            <span>Joined by 10,000+ candidates</span>
+                            <span>Helping freshers build confidence daily.</span>
                         </div>
                     </div>
                 </motion.div>
@@ -60,15 +54,15 @@ const LandingPage = () => {
                     <div className="visual-card glass">
                         <div className="card-header">
                             <div className="pulse-dot"></div>
-                            <span>Live Simulation: System Design Round</span>
+                            <span>Live Practice: Junior Developer Round</span>
                         </div>
                         <div className="card-body">
-                            <div className="ai-message">"How would you handle a sudden 10x spike in traffic?"</div>
-                            <div className="user-response">"I would implement horizontal scaling and..."</div>
+                            <div className="ai-message">"Can you explain the difference between a list and a tuple in simple terms?"</div>
+                            <div className="user-response">"Sure! A list is mutable, which means I can change its elements, while a tuple is..."</div>
                         </div>
                         <div className="card-footer">
-                            <div className="stat"><span>Confidence:</span> 92%</div>
-                            <div className="stat"><span>Technical Depth:</span> Excellent</div>
+                            <div className="stat"><span>Confidence Score:</span> 88%</div>
+                            <div className="stat"><span>Clarity:</span> Great!</div>
                         </div>
                     </div>
                     <div className="glow-sphere"></div>
@@ -77,27 +71,27 @@ const LandingPage = () => {
 
             {/* Features Section */}
             <section id="features" className="features">
-                <h2>Built for <span className="gradient-text">High-Stakes</span> Success</h2>
+                <h2>Your Path to <span className="gradient-text">Landing</span> That Job</h2>
                 <div className="feature-grid">
                     <FeatureCard
-                        icon={<Cpu />}
-                        title="Reasoning Engine"
-                        desc="Powered by Gemini 2.0 for deep technical follow-ups and realistic conversational flow."
+                        icon={<Brain />}
+                        title="Student-Smart AI"
+                        desc="AI that knows exactly what freshers are asked—from basic DSA to core technical fundamentals."
                     />
                     <FeatureCard
                         icon={<Zap />}
-                        title="Multi-Round Flow"
-                        desc="Technical, Behavioral, System Design, and Managerial rounds. Just like a real onsite."
+                        title="Placement Readiness"
+                        desc="Simulate the pressure of a real campus interview. Build the poise and clarity you need."
                     />
                     <FeatureCard
-                        icon={<BarChart3 />}
-                        title="Vibe Analysis"
-                        desc="AI analyzes your tone, confidence, and facial expressions in real-time."
+                        icon={<Award />}
+                        title="Confidence Booster"
+                        desc="Get real-time analysis of your speech and tone. Overcome the fear of speaking."
                     />
                     <FeatureCard
-                        icon={<Shield />}
-                        title="ATS Insights"
-                        desc="Upload your resume and get direct feedback on how it aligns with your target role."
+                        icon={<MessageSquare />}
+                        title="Honest Feedback"
+                        desc="No sugar-coating. Get the real feedback you need to fix your communication and logic gaps."
                     />
                 </div>
             </section>

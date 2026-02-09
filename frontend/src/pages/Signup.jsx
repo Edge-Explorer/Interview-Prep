@@ -39,8 +39,8 @@ const Signup = () => {
                         <Brain size={32} color="#6366f1" />
                         <span>InterviewAI</span>
                     </Link>
-                    <h1>Create Account</h1>
-                    <p>Start your elite preparation journey today</p>
+                    <h1>Get Started</h1>
+                    <p>Prepare for your first big breakthrough</p>
                 </div>
 
                 <form onSubmit={handleSignup} className="auth-form">

@@ -37,7 +37,7 @@ const Login = () => {
                         <span>InterviewAI</span>
                     </Link>
                     <h1>Welcome Back</h1>
-                    <p>Login to continue your preparation</p>
+                    <p>Pick up where you left off</p>
                 </div>
 
                 <form onSubmit={handleLogin} className="auth-form">

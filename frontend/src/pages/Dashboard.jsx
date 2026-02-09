@@ -237,8 +237,8 @@ function Dashboard() {
     if (step === 'setup') {
         const roleCategories = ["Engineering & Tech", "Healthcare & Medical", "Business & Management", "Finance & Accounting", "Creative & Design", "Sales & Marketing", "Education & Training", "Legal", "Construction & Trades", "Hospitality & Tourism", "Social Services", "Science & Research"];
         const interviewers = [
-            { name: "Adinath", gender: "Male", v: "male", desc: "The Primal Sage. Strict, direct, and explores the depth of your foundations." },
-            { name: "Veda", gender: "Female", v: "female", desc: "The Eternal Wisdom. Insightful, observant, and tests your clarity and vision." }
+            { name: "Adinath", gender: "Male", v: "male", desc: "Senior Mentor. Focuses on your technical fundamentals and core logic." },
+            { name: "Veda", gender: "Female", v: "female", desc: "HR Specialist. Tests your communication skills and behavioral readiness." }
         ];
 
         return (
@@ -248,7 +248,7 @@ function Dashboard() {
                         Logged in as: <b>{user.full_name || "Guest"}</b>
                     </div>
                     <h1 className="gradient-text">InterviewAI</h1>
-                    <p>Welcome back to your Simulation Room</p>
+                    <p>Welcome back! Let's get you ready for your big day.</p>
                 </header>
 
                 <div className="glass-card setup-box">
@@ -295,14 +295,14 @@ function Dashboard() {
                     </div>
                     <div className="checkbox-group" style={{ margin: '10px 0' }}>
                         <input type="checkbox" id="panel" checked={sessionData.is_panel} onChange={e => setSessionData({ ...sessionData, is_panel: e.target.checked })} />
-                        <label htmlFor="panel">Enable Multi-Interviewer Panel (Elite Tier)</label>
+                        <label htmlFor="panel">Practice with a Panel (Mock Interview Mode)</label>
                     </div>
                     <div className="input-group">
                         <label>Upload Resume (PDF - Contextual AI Improvement)</label>
                         <input type="file" accept=".pdf" onChange={e => setResumeFile(e.target.files[0])} />
                     </div>
                     <button className="primary-btn" onClick={startInterview} disabled={loading}>
-                        {loading ? "INITIALIZING SIMULATION..." : "ENTER MEETING ROOM"}
+                        {loading ? "PREPARING INTERVIEW..." : "START PRACTICE SESSION"}
                     </button>
                     <button className="secondary-btn" onClick={() => { localStorage.clear(); window.location.href = '/'; }} style={{ marginTop: '10px', background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.5)', width: '100%', padding: '12px' }}>LOGOUT</button>
                 </div>
