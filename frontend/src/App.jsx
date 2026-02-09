@@ -37,6 +37,8 @@ function App() {
   const [roundsCompleted, setRoundsCompleted] = useState([]);
   const [roundScores, setRoundScores] = useState({});
   const [questionCount, setQuestionCount] = useState(0);
+  const [showTransition, setShowTransition] = useState(false);
+  const [transitionData, setTransitionData] = useState({ prevRound: "", nextRound: "", score: 0 });
 
   // Initialize Speech Recognition once
   useEffect(() => {
@@ -229,33 +231,30 @@ function App() {
 
         if (res.data.round_passed) {
           if (res.data.interview_completed) {
-            // All rounds completed!
             setEvaluation(res.data.evaluation);
             setStep('result');
           } else {
-            // Progressed to next round
-            setCurrentRound(res.data.next_round);
-            setCurrentRoundNumber(res.data.next_round_number);
+            const lastRound = res.data.rounds_completed[res.data.rounds_completed.length - 1];
+            setTransitionData({
+              prevRound: lastRound,
+              nextRound: res.data.next_round,
+              score: res.data.round_scores[lastRound]
+            });
+            setShowTransition(true);
 
-            // Show round transition message
-            const lastCompletedRound = res.data.rounds_completed[res.data.rounds_completed.length - 1];
-            const roundScore = res.data.round_scores[lastCompletedRound];
-            const transitionMsg = `🎉 Congratulations! You passed the ${lastCompletedRound} round with a score of ${roundScore}/10. Moving to ${res.data.next_round} round...`;
-            setMessages(prev => [...prev, { role: 'system', content: transitionMsg }]);
-
-            // Add first question of next round
             setTimeout(() => {
+              setShowTransition(false);
+              setCurrentRound(res.data.next_round);
+              setCurrentRoundNumber(res.data.next_round_number);
               setMessages(prev => [...prev, { role: 'assistant', content: res.data.next_question }]);
               setQuestionCount(1);
-            }, 2000);
+            }, 4000);
           }
         } else {
-          // Failed the round
           setEvaluation(res.data.evaluation);
           setStep('result');
         }
       } else {
-        // Continue in current round
         setEvaluation(res.data.evaluation);
         if (res.data.terminated) {
           setStep('result');
@@ -443,6 +442,24 @@ function App() {
             LEAVE
           </button>
         </div>
+
+        {showTransition && (
+          <div className="round-transition-overlay">
+            <div className="transition-content">
+              <div className="round-badge">ROUND {currentRoundNumber + 1} STARTING</div>
+              <h2>Great job in the {transitionData.prevRound} round!</h2>
+              <div className="next-round-name">{transitionData.nextRound}</div>
+
+              <div className="loader-bar-container">
+                <div className="loader-bar"></div>
+              </div>
+
+              <p className="transition-disclaimer">
+                <b>Disclaimer:</b> Final candidate evaluation, detailed feedback, and ATS resume analysis will be generated <b>after all rounds</b> are successfully completed.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
