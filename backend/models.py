@@ -20,9 +20,12 @@ class InterviewSession(Base):
     sub_role = Column(String, nullable=True) # e.g., "ML Engineer", "SDE2"
     difficulty_level = Column(Integer, default=1) # 1: Junior, 2: Mid, 3: Senior
     target_company = Column(String, nullable=True) # e.g., "Google", "Amazon"
-    interview_round = Column(String, default="Technical") # e.g., "HR", "System Design"
-    current_round_number = Column(Integer, default=1)
-    questions_count = Column(Integer, default=0)
+    interview_round = Column(String, default="Technical") # Current round name
+    current_round_number = Column(Integer, default=1) # 1, 2, 3, 4, 5
+    rounds_completed = Column(JSON, default=[]) # ["Technical", "Behavioral"]
+    round_scores = Column(JSON, default={}) # {"Technical": 7.5, "Behavioral": 8.0}
+    overall_status = Column(String, default="in_progress") # in_progress, completed, failed
+    questions_count = Column(Integer, default=0) # Questions in current round
     is_panel = Column(Integer, default=0) # 0: 1-on-1, 1: Multi-Interviewer Panel
     interviewer_name = Column(String, default="Adinath")
     job_description = Column(Text, nullable=True)
@@ -31,7 +34,7 @@ class InterviewSession(Base):
     resume_analysis = Column(JSON, nullable=True) # Detailed strengths/weaknesses
     tone_analysis = Column(JSON, nullable=True) # Confidence, hesitations, assertiveness
     transcript = Column(JSON, default=[]) # Stores the chat history
-    score = Column(Float, nullable=True)
+    score = Column(Float, nullable=True) # Current round score
     feedback = Column(Text, nullable=True)
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
 

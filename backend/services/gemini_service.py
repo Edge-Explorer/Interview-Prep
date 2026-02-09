@@ -41,12 +41,53 @@ class GeminiService:
         return response.text
 
     async def generate_interview_question(self, role: str, sub_role: str, difficulty: int, company: str = None, round_name: str = "Technical", is_panel: bool = False, jd: str = None, resume_text: str = None, chat_history: list = [], current_time: str = None, interviewer_name: str = "Adinath"):
-        """Generates a contextual interview question with optional Panel and Pressure simulation."""
+        """Generates a contextual interview question for different rounds."""
         
         difficulty_map = {1: "Junior", 2: "Mid-level", 3: "Senior/Lead"}
         level = difficulty_map.get(difficulty, "Junior")
 
-        # Point 1: Panel Interview Logic
+        # Round-specific instructions
+        round_instructions = {
+            "Technical": """
+            FOCUS: Technical problem-solving, coding concepts, algorithms, data structures.
+            - Ask about specific technologies mentioned in resume
+            - Test depth of understanding
+            - Challenge with edge cases
+            - Ask about trade-offs and optimization
+            """,
+            "Behavioral": """
+            FOCUS: STAR method (Situation, Task, Action, Result), soft skills, cultural fit.
+            - Ask about past experiences and conflicts
+            - Test leadership and teamwork
+            - Explore decision-making under pressure
+            - Assess communication and empathy
+            - Examples: "Tell me about a time when...", "How did you handle...", "Describe a situation where..."
+            - Look for specific examples, not generic answers
+            """,
+            "System Design": """
+            FOCUS: Architecture, scalability, distributed systems, trade-offs.
+            - Design a system (e.g., URL shortener, messaging app, social media feed)
+            - Discuss load balancing, caching, database design
+            - Explore CAP theorem, consistency vs availability
+            - Ask about monitoring, logging, failure handling
+            """,
+            "Managerial": """
+            FOCUS: Leadership, team management, conflict resolution, strategic thinking.
+            - Ask about managing difficult team members
+            - Explore prioritization and resource allocation
+            - Test stakeholder management
+            - Assess mentoring and coaching abilities
+            """,
+            "Final": """
+            FOCUS: Vision, long-term goals, culture alignment, executive presence.
+            - Ask about career aspirations
+            - Explore company culture fit
+            - Test strategic thinking and business acumen
+            - Assess passion and motivation
+            """
+        }
+
+        # Panel Interview Logic
         panel_instruction = f"""
         ACT AS A PANEL: You represent multiple interviewers. 
         - Interviewer A ({interviewer_name}): Lead Recruiter, focused on background.
@@ -62,7 +103,7 @@ class GeminiService:
         CRITICAL IDENTITY INSTRUCTIONS:
         - NEVER claim to be an actual employee of {company if company else "any firm"}.
         - ALWAYS frame yourself as a simulation. Example: "I am {interviewer_name}, simulating a {round_name} interview round based on {company if company else "industry"} standards."
-        - Avoid phrases like "I work at Google" or "I am a recruiter at Amazon." Use "I represent the simulation for..." or "I am your AI interviewer for this {company if company else ""} practice session."
+        - Avoid phrases like "I work at Google" or "I am a recruiter at Amazon."
         
         You're simulating the {round_name} round for {sub_role} ({role} category) at a {level} level.
         
@@ -70,10 +111,13 @@ class GeminiService:
         
         {f"STRICT SIMULATION PARAMETERS: Mimic {company}'s specific culture and values." if company else ""}
         
+        ROUND-SPECIFIC FOCUS:
+        {round_instructions.get(round_name, round_instructions["Technical"])}
+        
         PROTOCOL:
-        - Turn 0 (Start): GREET the candidate warmly but professionally. Greet them based on the current time. Introduce yourself as {interviewer_name} and EXPLICITLY state this is an AI Simulation. If in Panel mode, introduce your co-simulation persona (e.g., Arav). Mention that for authenticity, they should ensure their camera is enabled. Ask for a brief intro.
-        - Turn 1 (After Intro): Simple acknowledgment of their background. Mention something specific from their intro or resume.
-        - Turn 2+: Start the core simulated technical/behavioral interview.
+        - Turn 0 (Start): GREET the candidate warmly but professionally. Introduce yourself as {interviewer_name} and state this is an AI Simulation for the {round_name} round. Ask for a brief intro.
+        - Turn 1 (After Intro): Acknowledge their background. Mention something specific from their intro or resume.
+        - Turn 2+: Start the core {round_name} interview questions.
         
         { "PRESSURE MODE: Ask a follow-up optimization question and challenge the candidate's last answer." if len(chat_history) > 6 else "" }
 
@@ -82,17 +126,17 @@ class GeminiService:
         - BE CREATIVE & NON-STANDARD in core questions. 
         - NO SUGARCOATING performance later, but maintain simulation boundaries.
         - Tie questions to projects in resume if provided: {resume_text[:300] if resume_text else "None"}
+        - For {round_name} round, focus on {round_name.lower()}-specific competencies.
         """
 
         # Convert simple transcript list back to Gemini content objects
         contents = []
         for i, msg in enumerate(chat_history):
-            # i=0: assistant(model), i=1: user, i=2: assistant(model), etc.
             role_type = "model" if i % 2 == 0 else "user"
             contents.append(types.Content(role=role_type, parts=[types.Part(text=msg)]))
 
         # Add the instruction for the next turn
-        instruction = "Please ask the first question." if not contents else "Please ask the next follow-up question based on the conversation."
+        instruction = f"Please ask the first {round_name} question." if not contents else f"Please ask the next {round_name} follow-up question based on the conversation."
         contents.append(types.Content(role="user", parts=[types.Part(text=instruction)]))
         
         response = self.client.models.generate_content(
@@ -105,20 +149,31 @@ class GeminiService:
         
         return response.text
 
-    async def evaluate_answer(self, question: str, answer: str, role: str, company: str = None):
-        """Evaluates with Point 2: Behavioral Vibe & Tone Analysis included."""
+    async def evaluate_answer(self, question: str, answer: str, role: str, round_name: str = "Technical", company: str = None):
+        """Evaluates answer with round-specific criteria and behavioral analysis."""
+        
+        # Round-specific evaluation criteria
+        eval_criteria = {
+            "Technical": "Technical accuracy, problem-solving approach, code quality, optimization",
+            "Behavioral": "STAR method usage, specific examples, emotional intelligence, self-awareness",
+            "System Design": "Scalability thinking, trade-off analysis, system components, failure handling",
+            "Managerial": "Leadership qualities, conflict resolution, strategic thinking, team management",
+            "Final": "Vision alignment, cultural fit, long-term thinking, executive presence"
+        }
+        
         prompt = f"""
+        Round: {round_name}
         Role: {role} at {company if company else "Tech Firm"}
         Question: {question}
         User Answer: {answer}
         
         TASK:
-        1. Evaluate technical accuracy.
-        2. VIBE ANALYSIS: Analyze tone, confidence, and 'um/uh' hesitation conceptually from text.
+        1. Evaluate based on {round_name} criteria: {eval_criteria.get(round_name, eval_criteria["Technical"])}
+        2. VIBE ANALYSIS: Analyze tone, confidence, and hesitation from text.
         3. ASSERTIVENESS: Did they sound like a leader or a subordinate?
         
         RATING CRITERIA (1-10):
-        10: Mind-blowing, unique, and technically perfect.
+        10: Mind-blowing, unique, and perfect.
         7-8: Solid, industry standard.
         5-6: Needs significant work, too generic.
         <4: Reject.
@@ -145,7 +200,7 @@ class GeminiService:
         return response.text
 
     async def generate_learning_roadmap(self, role: str, sub_role: str, failed_topics: list):
-        """Point 3: Generates a 7-Day Curriculum after a failed round."""
+        """Generates a 7-Day Curriculum after a failed round."""
         prompt = f"""
         The candidate failed their {sub_role} interview in these topics: {failed_topics}.
         Generate a strict 7-Day Learning Roadmap.
