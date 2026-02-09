@@ -31,6 +31,12 @@ function App() {
   const videoRef = useRef(null);
   const recognitionRef = useRef(null);
 
+  // Multi-round tracking
+  const [currentRound, setCurrentRound] = useState("Technical");
+  const [currentRoundNumber, setCurrentRoundNumber] = useState(1);
+  const [roundsCompleted, setRoundsCompleted] = useState([]);
+  const [roundScores, setRoundScores] = useState({});
+
   // Initialize Speech Recognition once
   useEffect(() => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -205,11 +211,52 @@ function App() {
         interview_id: interviewId,
         answer: currentInput
       });
-      setEvaluation(res.data.evaluation);
-      if (res.data.terminated) {
-        setStep('result');
+
+      // Update round tracking
+      if (res.data.current_round) {
+        setCurrentRound(res.data.current_round);
+        setCurrentRoundNumber(res.data.current_round_number);
+      }
+
+      // Handle round completion
+      if (res.data.round_completed) {
+        setRoundsCompleted(res.data.rounds_completed || []);
+        setRoundScores(res.data.round_scores || {});
+
+        if (res.data.round_passed) {
+          if (res.data.interview_completed) {
+            // All rounds completed!
+            setEvaluation(res.data.evaluation);
+            setStep('result');
+          } else {
+            // Progressed to next round
+            setCurrentRound(res.data.next_round);
+            setCurrentRoundNumber(res.data.next_round_number);
+
+            // Show round transition message
+            const lastCompletedRound = res.data.rounds_completed[res.data.rounds_completed.length - 1];
+            const roundScore = res.data.round_scores[lastCompletedRound];
+            const transitionMsg = `🎉 Congratulations! You passed the ${lastCompletedRound} round with a score of ${roundScore}/10. Moving to ${res.data.next_round} round...`;
+            setMessages(prev => [...prev, { role: 'system', content: transitionMsg }]);
+
+            // Add first question of next round
+            setTimeout(() => {
+              setMessages(prev => [...prev, { role: 'assistant', content: res.data.next_question }]);
+            }, 2000);
+          }
+        } else {
+          // Failed the round
+          setEvaluation(res.data.evaluation);
+          setStep('result');
+        }
       } else {
-        setMessages(prev => [...prev, { role: 'assistant', content: res.data.next_question }]);
+        // Continue in current round
+        setEvaluation(res.data.evaluation);
+        if (res.data.terminated) {
+          setStep('result');
+        } else {
+          setMessages(prev => [...prev, { role: 'assistant', content: res.data.next_question }]);
+        }
       }
     } catch (err) {
       alert("Submission failed.");
