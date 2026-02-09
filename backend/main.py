@@ -115,9 +115,7 @@ async def submit_answer(data: schemas.AnswerSubmit, db: Session = Depends(databa
     MAX_QUESTIONS = current_round_config["max_questions"]
     
     # 4. Determine if we should continue or evaluate current round
-    should_continue = session.questions_count < MIN_QUESTIONS
-    
-    if should_continue or session.questions_count < MAX_QUESTIONS:
+    if session.questions_count < MIN_QUESTIONS:
         # Continue asking questions in current round - NO EVALUATION YET
         current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         next_question = await gemini_service.generate_interview_question(

@@ -36,6 +36,7 @@ function App() {
   const [currentRoundNumber, setCurrentRoundNumber] = useState(1);
   const [roundsCompleted, setRoundsCompleted] = useState([]);
   const [roundScores, setRoundScores] = useState({});
+  const [questionCount, setQuestionCount] = useState(0);
 
   // Initialize Speech Recognition once
   useEffect(() => {
@@ -159,8 +160,9 @@ function App() {
     }
     return () => {
       stream?.getTracks().forEach(t => t.stop());
+      window.speechSynthesis.cancel();
     };
-  }, [step]);
+  }, [step, stream]);
 
   useEffect(() => {
     if (messages.length > 0 && messages[messages.length - 1].role === 'assistant') {
@@ -191,6 +193,7 @@ function App() {
       }
       setInterviewId(res.data.id);
       setMessages([{ role: 'assistant', content: res.data.first_question }]);
+      setQuestionCount(1);
       setStep('meeting');
     } catch (err) {
       alert(`Error: ${err.message}`);
@@ -216,6 +219,7 @@ function App() {
       if (res.data.current_round) {
         setCurrentRound(res.data.current_round);
         setCurrentRoundNumber(res.data.current_round_number);
+        setQuestionCount(res.data.questions_asked || 0);
       }
 
       // Handle round completion
@@ -242,6 +246,7 @@ function App() {
             // Add first question of next round
             setTimeout(() => {
               setMessages(prev => [...prev, { role: 'assistant', content: res.data.next_question }]);
+              setQuestionCount(1);
             }, 2000);
           }
         } else {
@@ -256,6 +261,7 @@ function App() {
           setStep('result');
         } else {
           setMessages(prev => [...prev, { role: 'assistant', content: res.data.next_question }]);
+          setQuestionCount(res.data.questions_asked + 1);
         }
       }
     } catch (err) {
@@ -425,11 +431,15 @@ function App() {
             {userInput || "AI is listening to your answer..."}
           </div>
 
+          <div className="round-progress" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', fontWeight: 'bold', margin: '0 10px' }}>
+            Q: {questionCount}/5
+          </div>
+
           <button className="tool-btn primary" onClick={submitAnswer} disabled={loading}>
             {loading ? "EVALUATING..." : "SUBMIT RESPONSE"}
           </button>
 
-          <button className="tool-btn off end-btn" onClick={() => window.location.reload()}>
+          <button className="tool-btn off end-btn" onClick={() => { window.speechSynthesis.cancel(); window.location.reload(); }}>
             LEAVE
           </button>
         </div>
