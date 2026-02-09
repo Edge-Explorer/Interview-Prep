@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import '../Meeting.css';
 import '../InterviewerCards.css';
@@ -7,6 +8,7 @@ import '../InterviewerCards.css';
 const API_BASE = "http://127.0.0.1:8000";
 
 function Dashboard() {
+    const navigate = useNavigate();
     const [step, setStep] = useState('setup'); // setup, meeting, result
     const [loading, setLoading] = useState(false);
     const [interviewId, setInterviewId] = useState(null);
