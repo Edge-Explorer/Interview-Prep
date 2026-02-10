@@ -1271,6 +1271,72 @@ select option {
   }
 }
 
+/* Resume Preview styles */
+.resume-preview-box {
+  width: 180px;
+  height: 240px;
+  background: #1e1e2d;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+.resume-embed-preview {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+  filter: grayscale(0.5) contrast(1.1);
+}
+
+.scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, transparent, #6366f1, transparent);
+  box-shadow: 0 0 15px #6366f1;
+  z-index: 10;
+  animation: scan-move 2.5s ease-in-out infinite;
+}
+
+@keyframes scan-move {
+  0% {
+    top: 5%;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 95%;
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 @keyframes slideUp {
   from {
     opacity: 0;

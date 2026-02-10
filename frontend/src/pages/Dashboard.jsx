@@ -12,6 +12,7 @@ function Dashboard() {
     const [step, setStep] = useState('setup'); // setup, meeting, result
     const [loading, setLoading] = useState(false);
     const [preparingStep, setPreparingStep] = useState(0);
+    const [resumePreview, setResumePreview] = useState(null);
 
     const [interviewId, setInterviewId] = useState(null);
     const [messages, setMessages] = useState([]);
@@ -159,8 +160,9 @@ function Dashboard() {
         }
         return () => {
             stream?.getTracks().forEach(t => t.stop());
+            if (resumePreview) URL.revokeObjectURL(resumePreview);
         };
-    }, [step, stream]);
+    }, [step, stream, resumePreview]);
 
     useEffect(() => {
         if (step === 'meeting' && messages.length > 0 && messages[messages.length - 1].role === 'assistant') {
@@ -383,7 +385,13 @@ function Dashboard() {
                         </div>
                         <div className="input-group">
                             <label>Upload Resume (PDF - Contextual AI Improvement) <span style={{ color: '#ef4444', fontSize: '0.7rem' }}>*REQUIRED</span></label>
-                            <input type="file" accept=".pdf" onChange={e => setResumeFile(e.target.files[0])} />
+                            <input type="file" accept=".pdf" onChange={e => {
+                                const file = e.target.files[0];
+                                setResumeFile(file);
+                                if (file) {
+                                    setResumePreview(URL.createObjectURL(file));
+                                }
+                            }} />
                         </div>
                         <button className="primary-btn" onClick={startInterview} disabled={loading}>
                             {loading ? "PREPARING INTERVIEW..." : "START PRACTICE SESSION"}
@@ -465,9 +473,16 @@ function Dashboard() {
             <div className="preparing-container">
                 <div className="analysis-card glass-card">
                     <div className="analysis-left">
-                        <div className="analysis-icon-container">
-                            {preparingStep === 4 ? "✨" : "🔍"}
-                        </div>
+                        {resumePreview ? (
+                            <div className="resume-preview-box">
+                                <embed src={`${resumePreview}#toolbar=0&navpanes=0&scrollbar=0`} type="application/pdf" className="resume-embed-preview" />
+                                <div className="scanner-line"></div>
+                            </div>
+                        ) : (
+                            <div className="analysis-icon-container">
+                                {preparingStep === 4 ? "✨" : "🔍"}
+                            </div>
+                        )}
                         <h2>{preparingStep === 4 ? "Ready!" : "Analyzing..."}</h2>
                         <p>Our AI is tailoring questions based on your specific projects and skills.</p>
                     </div>
