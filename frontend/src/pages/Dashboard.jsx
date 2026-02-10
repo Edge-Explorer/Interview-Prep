@@ -169,6 +169,11 @@ function Dashboard() {
     }, [messages, step]);
 
     const startInterview = async () => {
+        if (!resumeFile) {
+            alert("Please upload your resume (PDF) to start a contextual AI interview. This helps our AI tailor questions specifically to your background!");
+            return;
+        }
+
         setLoading(true);
         setStep('preparing');
         setPreparingStep(1);
@@ -376,7 +381,7 @@ function Dashboard() {
                             <label htmlFor="panel">Practice with a Panel (Mock Interview Mode)</label>
                         </div>
                         <div className="input-group">
-                            <label>Upload Resume (PDF - Contextual AI Improvement)</label>
+                            <label>Upload Resume (PDF - Contextual AI Improvement) <span style={{ color: '#ef4444', fontSize: '0.7rem' }}>*REQUIRED</span></label>
                             <input type="file" accept=".pdf" onChange={e => setResumeFile(e.target.files[0])} />
                         </div>
                         <button className="primary-btn" onClick={startInterview} disabled={loading}>
