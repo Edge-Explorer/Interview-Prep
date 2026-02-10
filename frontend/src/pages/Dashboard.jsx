@@ -41,6 +41,8 @@ function Dashboard() {
     const [questionCount, setQuestionCount] = useState(0);
     const [showTransition, setShowTransition] = useState(false);
     const [transitionData, setTransitionData] = useState({ prevRound: "", nextRound: "", score: 0 });
+    const [showPricing, setShowPricing] = useState(false);
+
 
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
@@ -264,7 +266,7 @@ function Dashboard() {
                         <div className="nav-tag">BETA</div>
                     </div>
                     <div className="nav-right">
-                        <div className="user-profile-badge">
+                        <div className="user-profile-badge" onClick={() => setShowPricing(true)}>
                             <div className="user-avatar">
                                 {user.full_name ? user.full_name.charAt(0).toUpperCase() : "G"}
                             </div>
@@ -361,6 +363,58 @@ function Dashboard() {
                         </p>
                     </footer>
                 </main>
+
+                {showPricing && (
+                    <div className="modal-overlay" onClick={() => setShowPricing(false)}>
+                        <div className="pricing-modal glass-card" onClick={e => e.stopPropagation()}>
+                            <button className="close-modal" onClick={() => setShowPricing(false)}>&times;</button>
+                            <div className="pricing-header">
+                                <h2>Upgrade Your Preparation</h2>
+                                <p>Unlock premium AI personas, unlimited rounds, and advanced behavioral analytics.</p>
+                            </div>
+                            <div className="pricing-grid">
+                                <div className="pricing-card glass-card">
+                                    <div className="plan-badge">CURRENT</div>
+                                    <h3>Basic</h3>
+                                    <div className="price">₹0<span>/mo</span></div>
+                                    <ul>
+                                        <li>✅ 1 Interview/2 Weeks</li>
+                                        <li>✅ Standard Technical Round</li>
+                                        <li>✅ Basic AI Feedback</li>
+                                        <li>❌ No Resume Analysis</li>
+                                    </ul>
+                                    <button className="plan-btn disabled">YOUR PLAN</button>
+                                </div>
+                                <div className="pricing-card glass-card pro">
+                                    <div className="plan-badge featured">POPULAR</div>
+                                    <h3>Pro</h3>
+                                    <div className="price">₹199<span>/mo</span></div>
+                                    <ul>
+                                        <li>✅ Unlimited Interviews</li>
+                                        <li>✅ All Technical Rounds</li>
+                                        <li>✅ Resume-Tailored Questions</li>
+                                        <li>✅ Star-Method Evaluation</li>
+                                    </ul>
+                                    <button className="plan-btn primary">UPGRADE NOW</button>
+                                </div>
+                                <div className="pricing-card glass-card elite">
+                                    <h3>Elite</h3>
+                                    <div className="price">₹499<span>/mo</span></div>
+                                    <ul>
+                                        <li>✅ Multi-Round Masterclass</li>
+                                        <li>✅ 7-Day Custom Roadmap</li>
+                                        <li>✅ Vibe & Speech Analytics</li>
+                                        <li>✅ Panel Interview Mode</li>
+                                    </ul>
+                                    <button className="plan-btn secondary">GET ELITE</button>
+                                </div>
+                            </div>
+                            <div className="payment-notice">
+                                <p>✨ Zero Gateway Fees! Pay directly via UPI for instant activation.</p>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         );
     }
