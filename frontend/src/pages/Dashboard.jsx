@@ -47,6 +47,7 @@ function Dashboard() {
     const [transitionData, setTransitionData] = useState({ prevRound: "", nextRound: "", score: 0 });
     const [showPricing, setShowPricing] = useState(false);
     const [stats, setStats] = useState({ total_interviews: 0, avg_score: 0.0 });
+    const [availableVoices, setAvailableVoices] = useState([]);
 
 
 
@@ -72,6 +73,15 @@ function Dashboard() {
         }
     }, [token, navigate, step]);
 
+    useEffect(() => {
+        const loadVoices = () => {
+            const v = window.speechSynthesis.getVoices();
+            setAvailableVoices(v);
+        };
+        loadVoices();
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+    }, []);
+
     // Initialize Speech Recognition once
     useEffect(() => {
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -83,7 +93,10 @@ function Dashboard() {
 
             recognition.onstart = () => setIsListening(true);
             recognition.onend = () => {
-                if (step === 'meeting' && isMicOn) recognition.start(); // Auto-restart in meeting
+                // Only auto-restart if mic is on AND AI is NOT speaking
+                if (step === 'meeting' && isMicOn && !isSpeakingRef.current) {
+                    try { recognition.start(); } catch (e) { }
+                }
             };
 
             recognition.onresult = (event) => {
@@ -138,29 +151,33 @@ function Dashboard() {
         utterance.onstart = () => {
             setIsSpeaking(true);
             isSpeakingRef.current = true;
-            setUserInput(""); // Clear any previous transcript when AI starts speaking
+            setUserInput(""); // Hard reset input when AI starts
+            recognitionRef.current?.stop(); // Stop listening
         };
         utterance.onend = () => {
             setIsSpeaking(false);
             isSpeakingRef.current = false;
+            // Restart listening only after AI is done
+            if (isMicOn && step === 'meeting') {
+                try { recognitionRef.current?.start(); } catch (e) { }
+            }
         };
-        const allVoices = window.speechSynthesis.getVoices();
         const interviewerIsVeda = sessionData.interviewer_name === "Veda";
         let selectedVoice = null;
+
         if (interviewerIsVeda) {
-            selectedVoice = allVoices.find(v => {
+            selectedVoice = availableVoices.find(v => {
                 const n = v.name.toLowerCase();
-                return n.includes('female') || n.includes('samantha') || n.includes('zira') || n.includes('vicki') || n.includes('google uk english female');
+                return n.includes('female') || n.includes('samantha') || n.includes('zira') || n.includes('vicki') || n.includes('sally') || n.includes('amy') || n.includes('vicky');
             });
-            if (!selectedVoice && allVoices.length > 1) selectedVoice = allVoices[1];
         } else {
-            selectedVoice = allVoices.find(v => {
+            selectedVoice = availableVoices.find(v => {
                 const n = v.name.toLowerCase();
-                return n.includes('male') || n.includes('david') || n.includes('mark') || n.includes('google uk english male');
+                return n.includes('male') || n.includes('david') || n.includes('mark') || n.includes('daniel') || n.includes('james') || n.includes('alex');
             });
-            if (!selectedVoice) selectedVoice = allVoices[0];
         }
-        utterance.voice = selectedVoice || allVoices[0];
+
+        utterance.voice = selectedVoice || (availableVoices.length > 0 ? availableVoices[0] : null);
         utterance.rate = 1.0;
         utterance.pitch = interviewerIsVeda ? 1.1 : 0.9;
         window.speechSynthesis.speak(utterance);
@@ -550,7 +567,7 @@ function Dashboard() {
                     <div className="tool-spacer"></div>
                     <div className="voice-input-preview">{userInput || "AI is listening to your answer..."}</div>
                     <div className="round-progress" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', fontWeight: 'bold', margin: '0 10px' }}>Q: {questionCount}/5</div>
-                    <button className="tool-btn primary" onClick={submitAnswer} disabled={loading}>{loading ? "EVALUATING..." : "SUBMIT RESPONSE"}</button>
+                    <button className="tool-btn primary" onClick={submitAnswer} disabled={loading || isSpeaking}>{loading ? "EVALUATING..." : isSpeaking ? "AI SPEAKING..." : "SUBMIT RESPONSE"}</button>
                     <button className="tool-btn off end-btn" onClick={() => { window.speechSynthesis.cancel(); window.location.reload(); }}>LEAVE</button>
                 </div>
                 {showTransition && (
