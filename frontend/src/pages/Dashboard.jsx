@@ -568,13 +568,38 @@ function Dashboard() {
                     </div>
                 </div>
                 <div className="meeting-toolbar">
-                    <button className={`tool-btn ${!isMicOn ? 'off' : ''}`} onClick={toggleMic}>{isMicOn ? '🎤' : '🎙️'}</button>
-                    <button className={`tool-btn ${!isCamOn ? 'off' : ''}`} onClick={toggleCam}>{isCamOn ? '📹' : '📸'}</button>
-                    <div className="tool-spacer"></div>
-                    <div className="voice-input-preview">{userInput || "AI is listening to your answer..."}</div>
-                    <div className="round-progress" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', fontWeight: 'bold', margin: '0 10px' }}>Q: {questionCount}/5</div>
-                    <button className="tool-btn primary" onClick={submitAnswer} disabled={loading || isSpeaking}>{loading ? "EVALUATING..." : isSpeaking ? "AI SPEAKING..." : "SUBMIT RESPONSE"}</button>
-                    <button className="tool-btn off end-btn" onClick={() => { window.speechSynthesis.cancel(); window.location.reload(); }}>LEAVE</button>
+                    <div className="toolbar-left">
+                        <div className="meeting-info">
+                            <span className="time-badge">{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                            <span className="divider">|</span>
+                            <span className="session-title">Interview: {sessionData.target_company || "Contextual"} Round</span>
+                        </div>
+                    </div>
+
+                    <div className="toolbar-center">
+                        <button className={`tool-btn ${!isMicOn ? 'off' : ''}`} onClick={toggleMic} title={isMicOn ? "Mute" : "Unmute"}>
+                            {isMicOn ? '🎤' : '🎙️'}
+                        </button>
+                        <button className={`tool-btn ${!isCamOn ? 'off' : ''}`} onClick={toggleCam} title={isCamOn ? "Turn off camera" : "Turn on camera"}>
+                            {isCamOn ? '📹' : '📸'}
+                        </button>
+                        <div className="voice-input-preview">
+                            <span className="mic-wave"></span>
+                            {userInput || "AI is listening to your response..."}
+                        </div>
+                        <button className="tool-btn primary" onClick={submitAnswer} disabled={loading || isSpeaking}>
+                            {loading ? "EVALUATING..." : isSpeaking ? "AI SPEAKING..." : "SUBMIT RESPONSE"}
+                        </button>
+                    </div>
+
+                    <div className="toolbar-right">
+                        <div className="round-progress-capsule">
+                            Round {currentRoundNumber} • Q {questionCount}/5
+                        </div>
+                        <button className="tool-btn off end-btn" onClick={() => { window.speechSynthesis.cancel(); window.location.reload(); }}>
+                            LEAVE CALL
+                        </button>
+                    </div>
                 </div>
                 {showTransition && (
                     <div className="round-transition-overlay">

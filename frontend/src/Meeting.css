@@ -201,20 +201,6 @@
     box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
 }
 
-@keyframes bounce-talk {
-    from {
-        height: 10px;
-        width: 60px;
-        border-radius: 10px;
-    }
-
-    to {
-        height: 40px;
-        width: 80px;
-        border-radius: 40px;
-    }
-}
-
 /* Message Bubble - Like Captions */
 .message-bubble {
     margin-top: 50px;
@@ -240,14 +226,16 @@
 /* Candidate PIP (Picture-in-Picture) */
 .candidate-view {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 100px;
+    /* Stay above toolbar */
+    right: 40px;
     width: 320px;
     height: 200px;
     border-radius: 24px;
     overflow: hidden;
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    background: #000;
     z-index: 100;
 }
 
@@ -255,6 +243,22 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scaleX(-1);
+}
+
+.cam-off-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #202124;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5f6368;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .candidate-name {
@@ -269,7 +273,44 @@
     color: white;
 }
 
-/* Toolbar - Exact Google Meet Style */
+@keyframes bounce-talk {
+    from {
+        height: 10px;
+        width: 60px;
+        border-radius: 10px;
+    }
+
+    to {
+        height: 40px;
+        width: 80px;
+        border-radius: 40px;
+    }
+}
+
+/* Hairstyle Refinements */
+.adinath-avatar .hair::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    background: #000;
+    border-radius: 50% 50% 0 0;
+}
+
+.veda-avatar .hair::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: 150px;
+    background: inherit;
+    border-radius: 0 0 50px 50px;
+}
+
+/* Toolbar Layout - Exact Google Meet */
 .meeting-toolbar {
     height: 80px;
     background: #111;
@@ -278,11 +319,66 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.toolbar-left,
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 250px;
+}
+
+.toolbar-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.meeting-info {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-badge {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.divider {
+    color: #5f6368;
+}
+
+.session-title {
+    color: #e8eaed;
+    opacity: 0.8;
+}
+
+.round-progress-capsule {
+    background: #1a73e8;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
 }
 
 .tool-btn {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     border: 1px solid #444;
     background: #202124;
@@ -293,10 +389,12 @@
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s;
+    outline: none;
 }
 
 .tool-btn:hover {
     background: #3c4043;
+    border-color: #5f6368;
 }
 
 .tool-btn.off {
@@ -306,30 +404,47 @@
 
 .tool-btn.primary {
     width: auto;
-    border-radius: 12px;
-    font-size: 0.9rem;
+    border-radius: 24px;
+    font-size: 0.8rem;
     padding: 0 24px;
     background: #6366f1;
     border: none;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .end-btn {
     background: #ea4335;
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     padding: 0 20px;
     border-radius: 25px;
     height: 44px;
+    font-weight: 600;
 }
 
 .voice-input-preview {
     background: #202124;
     border: 1px solid #3c4043;
     padding: 10px 24px;
-    border-radius: 12px;
+    border-radius: 24px;
     color: #8ab4f8;
     font-weight: 500;
-    min-width: 300px;
+    min-width: 350px;
+    text-align: center;
+    font-size: 0.85rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.mic-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #8ab4f8;
+    transition: width 0.3s ease;
 }
 
 @keyframes slideUp {
