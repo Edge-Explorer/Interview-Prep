@@ -35,6 +35,7 @@ function Dashboard() {
     const [stream, setStream] = useState(null);
     const videoRef = useRef(null);
     const recognitionRef = useRef(null);
+    const isSpeakingRef = useRef(false);
 
     // Multi-round tracking
     const [currentRound, setCurrentRound] = useState("Technical");
@@ -86,6 +87,8 @@ function Dashboard() {
             };
 
             recognition.onresult = (event) => {
+                if (isSpeakingRef.current) return; // Prevent picking up AI voice
+
                 const transcript = Array.from(event.results)
                     .map(result => result[0])
                     .map(result => result.transcript)
@@ -132,8 +135,15 @@ function Dashboard() {
         const cleanedText = content.replace(/^\[.*?\]:\s*/, '');
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(cleanedText);
-        utterance.onstart = () => setIsSpeaking(true);
-        utterance.onend = () => setIsSpeaking(false);
+        utterance.onstart = () => {
+            setIsSpeaking(true);
+            isSpeakingRef.current = true;
+            setUserInput(""); // Clear any previous transcript when AI starts speaking
+        };
+        utterance.onend = () => {
+            setIsSpeaking(false);
+            isSpeakingRef.current = false;
+        };
         const allVoices = window.speechSynthesis.getVoices();
         const interviewerIsVeda = sessionData.interviewer_name === "Veda";
         let selectedVoice = null;
@@ -229,9 +239,11 @@ function Dashboard() {
     };
 
     const submitAnswer = async () => {
-        if (!userInput.trim()) {
-            const gentlereminder = "I'm sorry, I didn't catch your response. Could you please share your thoughts or answer the question so I can accurately evaluate your performance?";
+        const words = userInput.trim().split(/\s+/);
+        if (!userInput.trim() || words.length < 3) {
+            const gentlereminder = "I'm sorry, I didn't catch that. Could you please provide a more detailed answer? I need at least a few words to properly evaluate your technical skills!";
             setMessages(prev => [...prev, { role: 'assistant', content: gentlereminder }]);
+            setUserInput(""); // Reset for a clean start
             return;
         }
         const currentInput = userInput;
