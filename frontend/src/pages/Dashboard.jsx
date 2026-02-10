@@ -546,18 +546,24 @@ function Dashboard() {
                     <span>LIVE INTERVIEW: {sessionData.target_company || "General Technical"} Round</span>
                 </div>
                 <div className="meeting-main">
-                    <div className="interviewer-view glass-card">
-                        <div className="avatar-container">
-                            <div className="eye-pair">
-                                <div className="eye"><div className="pupil" style={{ transform: isListening ? `translate(${(Math.random() - 0.5) * 10}px, ${(Math.random() - 0.5) * 10}px)` : 'translate(-50%, -50%)' }}></div></div>
-                                <div className="eye"><div className="pupil" style={{ transform: isListening ? `translate(${(Math.random() - 0.5) * 10}px, ${(Math.random() - 0.5) * 10}px)` : 'translate(-50%, -50%)' }}></div></div>
+                    <div className="interviewer-view">
+                        <div className={`avatar-container ${sessionData.interviewer_name.toLowerCase()}-avatar`}>
+                            <div className="hair"></div>
+                            <div className="face-base">
+                                <div className="eye-pair">
+                                    <div className="eye"><div className="pupil" style={{ transform: isListening ? `translate(${(Math.random() - 0.5) * 15}px, ${(Math.random() - 0.5) * 15}px)` : 'translate(-50%, -50%)' }}></div></div>
+                                    <div className="eye"><div className="pupil" style={{ transform: isListening ? `translate(${(Math.random() - 0.5) * 15}px, ${(Math.random() - 0.5) * 15}px)` : 'translate(-50%, -50%)' }}></div></div>
+                                </div>
+                                <div className={`mouth ${isSpeaking ? 'speaking' : ''}`}></div>
                             </div>
-                            <div className={`mouth ${isSpeaking ? 'speaking' : ''}`}></div>
-                            <p style={{ marginTop: '20px', color: 'rgba(255,255,255,0.6)', maxWidth: '80%', textAlign: 'center' }}>{messages[messages.length - 1].content}</p>
+                            <div className="message-bubble">
+                                <p>{messages[messages.length - 1].content}</p>
+                            </div>
                         </div>
-                        <div className="candidate-view">
+                        <div className="candidate-view glass-card">
                             <video ref={videoRef} autoPlay playsInline muted />
-                            {!isCamOn && <div className="cam-off-overlay">Camera Off</div>}
+                            {!isCamOn && <div className="cam-off-overlay"><span>CAMERA OFF</span></div>}
+                            <div className="candidate-name">YOU</div>
                         </div>
                     </div>
                 </div>
