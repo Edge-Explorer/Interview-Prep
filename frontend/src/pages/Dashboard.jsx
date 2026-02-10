@@ -126,10 +126,12 @@ function Dashboard() {
         }
     };
 
-    const speak = (text) => {
-        if (!text) return;
+    const speak = (content) => {
+        if (!content) return;
+        // Strip [Interviewer Name]: prefix so it's not spoken
+        const cleanedText = content.replace(/^\[.*?\]:\s*/, '');
         window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
+        const utterance = new SpeechSynthesisUtterance(cleanedText);
         utterance.onstart = () => setIsSpeaking(true);
         utterance.onend = () => setIsSpeaking(false);
         const allVoices = window.speechSynthesis.getVoices();
@@ -227,7 +229,11 @@ function Dashboard() {
     };
 
     const submitAnswer = async () => {
-        if (!userInput.trim()) return;
+        if (!userInput.trim()) {
+            const gentlereminder = "I'm sorry, I didn't catch your response. Could you please share your thoughts or answer the question so I can accurately evaluate your performance?";
+            setMessages(prev => [...prev, { role: 'assistant', content: gentlereminder }]);
+            return;
+        }
         const currentInput = userInput;
         setUserInput("");
         setMessages(prev => [...prev, { role: 'user', content: currentInput }]);
