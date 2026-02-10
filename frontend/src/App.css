@@ -1286,16 +1286,15 @@ select option {
 }
 
 .resume-embed-preview {
-  width: 110%;
-  /* Slightly oversized to hide browser edges */
-  height: 110%;
+  width: 120%;
+  height: 160%;
+  /* Push bottom artifacts out of view */
   border: none;
   background: white;
-  margin-left: -5%;
-  /* Center the oversized iframe */
+  margin-left: -10%;
   margin-top: -5%;
   pointer-events: none;
-  filter: grayscale(0.2);
+  filter: grayscale(0.1) contrast(1.05);
 }
 
 .resume-glass-overlay {
@@ -1304,10 +1303,15 @@ select option {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(99, 102, 241, 0.05);
-  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      transparent 80%,
+      #0f172a 100%
+      /* Hard mask for bottom artifacts */
+    );
   z-index: 12;
   pointer-events: all;
+  border-radius: 12px;
 }
 
 .resume-info-badge {
