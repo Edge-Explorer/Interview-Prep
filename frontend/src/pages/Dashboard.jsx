@@ -169,15 +169,21 @@ function Dashboard() {
             selectedVoice = availableVoices.find(v => {
                 const n = v.name.toLowerCase();
                 return n.includes('female') || n.includes('samantha') || n.includes('zira') || n.includes('vicki') || n.includes('sally') || n.includes('amy') || n.includes('vicky');
-            });
+            }) || availableVoices[1];
         } else {
             selectedVoice = availableVoices.find(v => {
                 const n = v.name.toLowerCase();
                 return n.includes('male') || n.includes('david') || n.includes('mark') || n.includes('daniel') || n.includes('james') || n.includes('alex');
-            });
+            }) || availableVoices[0];
         }
 
-        utterance.voice = selectedVoice || (availableVoices.length > 0 ? availableVoices[0] : null);
+        // If voices aren't ready yet, try to load them again
+        if (availableVoices.length === 0) {
+            const voices = window.speechSynthesis.getVoices();
+            if (voices.length > 0) setAvailableVoices(voices);
+        }
+
+        utterance.voice = selectedVoice || null;
         utterance.rate = 1.0;
         utterance.pitch = interviewerIsVeda ? 1.1 : 0.9;
         window.speechSynthesis.speak(utterance);
@@ -261,6 +267,15 @@ function Dashboard() {
             const gentlereminder = "I'm sorry, I didn't catch that. Could you please provide a more detailed answer? I need at least a few words to properly evaluate your technical skills!";
             setMessages(prev => [...prev, { role: 'assistant', content: gentlereminder }]);
             setUserInput(""); // Reset for a clean start
+            // FORCE RESTART Recognition to clear internal result buffer
+            if (recognitionRef.current) {
+                recognitionRef.current.stop();
+                setTimeout(() => {
+                    if (isMicOn && !isSpeakingRef.current) {
+                        try { recognitionRef.current.start(); } catch (e) { }
+                    }
+                }, 100);
+            }
             return;
         }
         const currentInput = userInput;
