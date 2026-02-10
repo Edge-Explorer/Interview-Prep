@@ -17,8 +17,8 @@ function Dashboard() {
     const [messages, setMessages] = useState([]);
     const [userInput, setUserInput] = useState("");
     const [sessionData, setSessionData] = useState({
-        role_category: "Engineering & Tech",
-        sub_role: "Full Stack Developer",
+        role_category: "",
+        sub_role: "",
         difficulty_level: 1,
         target_company: "",
         job_description: "",
@@ -354,6 +354,7 @@ function Dashboard() {
                             <div className="input-group">
                                 <label>Role Category</label>
                                 <select value={sessionData.role_category} onChange={e => setSessionData({ ...sessionData, role_category: e.target.value })}>
+                                    <option value="" disabled>Select Category</option>
                                     {roleCategories.map(r => <option key={r} value={r}>{r}</option>)}
                                 </select>
                             </div>
