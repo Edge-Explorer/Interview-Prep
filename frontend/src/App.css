@@ -1286,15 +1286,17 @@ select option {
 }
 
 .resume-embed-preview {
-  width: 120%;
-  height: 160%;
-  /* Push bottom artifacts out of view */
+  width: 150%;
+  height: 150%;
   border: none;
   background: white;
-  margin-left: -10%;
-  margin-top: -5%;
+  margin: 0;
   pointer-events: none;
-  filter: grayscale(0.1) contrast(1.05);
+  filter: grayscale(0.1) contrast(1.1);
+  transform: scale(1.4);
+  transform-origin: top left;
+  margin-top: -15px;
+  margin-left: -15px;
 }
 
 .resume-glass-overlay {
@@ -1305,9 +1307,9 @@ select option {
   height: 100%;
   background: linear-gradient(to bottom,
       transparent 0%,
-      transparent 80%,
+      transparent 60%,
       #0f172a 100%
-      /* Hard mask for bottom artifacts */
+      /* Heavy mask for bottom and center artifacts */
     );
   z-index: 12;
   pointer-events: all;

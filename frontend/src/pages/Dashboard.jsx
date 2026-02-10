@@ -439,7 +439,8 @@ function Dashboard() {
                                 const file = e.target.files[0];
                                 setResumeFile(file);
                                 if (file) {
-                                    setResumePreview(URL.createObjectURL(file));
+                                    const url = URL.createObjectURL(file);
+                                    setResumePreview(`${url}#view=FitH&page=1&toolbar=0&navpanes=0&scrollbar=0&pagemode=none&t=${Date.now()}`);
                                 }
                             }} />
                         </div>
