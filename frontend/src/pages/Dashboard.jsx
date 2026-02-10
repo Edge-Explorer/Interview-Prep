@@ -259,8 +259,16 @@ function Dashboard() {
         return (
             <div className="setup-container animated-setup-bg">
                 <header className="brand-header">
-                    <div className="user-info-badge" style={{ position: 'absolute', top: '-40px', right: '0', fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>
-                        Logged in as: <b>{user.full_name || "Guest"}</b>
+                    <div className="user-profile-badge">
+                        <div className="user-avatar">
+                            {user.full_name ? user.full_name.charAt(0).toUpperCase() : "G"}
+                        </div>
+                        <div className="user-details">
+                            <span className="user-name">{user.full_name || "Guest User"}</span>
+                            <span className="user-status">
+                                {user.is_premium ? "PRO MEMBER" : "FREE PLAN"}
+                            </span>
+                        </div>
                     </div>
                     <h1 className="gradient-text">InterviewAI</h1>
                     <p>Welcome back! Let's get you ready for your big day.</p>
