@@ -475,7 +475,8 @@ function Dashboard() {
                     <div className="analysis-left">
                         {resumePreview ? (
                             <div className="resume-preview-box">
-                                <embed src={`${resumePreview}#toolbar=0&navpanes=0&scrollbar=0`} type="application/pdf" className="resume-embed-preview" />
+                                <div className="resume-info-badge">{resumeFile?.name}</div>
+                                <iframe src={`${resumePreview}#view=FitH&toolbar=0&navpanes=0&scrollbar=0`} className="resume-embed-preview" title="Resume Scan" />
                                 <div className="scanner-line"></div>
                             </div>
                         ) : (
