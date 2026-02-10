@@ -159,15 +159,14 @@ function Dashboard() {
         }
         return () => {
             stream?.getTracks().forEach(t => t.stop());
-            window.speechSynthesis.cancel();
         };
     }, [step, stream]);
 
     useEffect(() => {
-        if (messages.length > 0 && messages[messages.length - 1].role === 'assistant') {
+        if (step === 'meeting' && messages.length > 0 && messages[messages.length - 1].role === 'assistant') {
             speak(messages[messages.length - 1].content);
         }
-    }, [messages]);
+    }, [messages, step]);
 
     const startInterview = async () => {
         setLoading(true);
