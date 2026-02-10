@@ -257,84 +257,110 @@ function Dashboard() {
         ];
 
         return (
-            <div className="setup-container animated-setup-bg">
-                <header className="brand-header">
-                    <div className="user-profile-badge">
-                        <div className="user-avatar">
-                            {user.full_name ? user.full_name.charAt(0).toUpperCase() : "G"}
-                        </div>
-                        <div className="user-details">
-                            <span className="user-name">{user.full_name || "Guest User"}</span>
-                            <span className="user-status">
-                                {user.is_premium ? "PRO MEMBER" : "FREE PLAN"}
-                            </span>
+            <div className="dashboard-layout">
+                <nav className="top-nav">
+                    <div className="nav-left">
+                        <div className="nav-logo">InterviewAI</div>
+                        <div className="nav-tag">BETA</div>
+                    </div>
+                    <div className="nav-right">
+                        <div className="user-profile-badge">
+                            <div className="user-avatar">
+                                {user.full_name ? user.full_name.charAt(0).toUpperCase() : "G"}
+                            </div>
+                            <div className="user-details">
+                                <span className="user-name">{user.full_name || "Guest User"}</span>
+                                <span className="user-status">FREE PLAN</span>
+                            </div>
                         </div>
                     </div>
-                    <h1 className="gradient-text">InterviewAI</h1>
-                    <p>Welcome back! Let's get you ready for your big day.</p>
-                </header>
+                </nav>
 
-                <div className="glass-card setup-box">
-                    <h2>Round Configuration</h2>
-                    <div className="interviewer-selector" style={{ marginBottom: '25px' }}>
-                        <label style={{ marginBottom: '10px', display: 'block' }}>Choose Your Interviewer</label>
-                        <div className="interviewer-grid" style={{ display: 'flex', gap: '15px' }}>
-                            {interviewers.map(int => (
-                                <div key={int.name} className={`interviewer-card glass-card ${sessionData.interviewer_name === int.name ? 'selected' : ''}`} onClick={() => setSessionData({ ...sessionData, interviewer_name: int.name })} style={{ flex: 1, padding: '15px', cursor: 'pointer', border: sessionData.interviewer_name === int.name ? '2px solid var(--primary)' : '1px solid var(--glass-border)', background: sessionData.interviewer_name === int.name ? 'rgba(99, 102, 241, 0.1)' : 'transparent' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                                        <span style={{ fontSize: '1.2rem' }}>{int.gender === "Male" ? "👨‍💼" : "👩‍💼"}</span>
-                                        <strong style={{ fontSize: '1.1rem' }}>{int.name}</strong>
+                <main className="dashboard-content">
+                    <header className="dashboard-header">
+                        <div className="welcome-banner">
+                            <h1>Welcome Back, {user.full_name?.split(' ')[0] || "Candidate"}! 👋</h1>
+                            <p>Ready to ace your next big interview? Let's configure your practice session.</p>
+                        </div>
+
+                        <div className="quick-stats">
+                            <div className="stat-card glass-card">
+                                <span className="stat-label">STREAK</span>
+                                <span className="stat-value">🔥 1 Day</span>
+                            </div>
+                            <div className="stat-card glass-card">
+                                <span className="stat-label">AVG SCORE</span>
+                                <span className="stat-value">⭐ 0.0</span>
+                            </div>
+                            <div className="stat-card glass-card">
+                                <span className="stat-label">INTERVIEWS</span>
+                                <span className="stat-value">📊 0</span>
+                            </div>
+                        </div>
+                    </header>
+
+                    <div className="glass-card setup-box">
+                        <h2>Round Configuration</h2>
+                        <div className="interviewer-selector" style={{ marginBottom: '25px' }}>
+                            <label style={{ marginBottom: '10px', display: 'block' }}>Choose Your Interviewer</label>
+                            <div className="interviewer-grid" style={{ display: 'flex', gap: '15px' }}>
+                                {interviewers.map(int => (
+                                    <div key={int.name} className={`interviewer-card glass-card ${sessionData.interviewer_name === int.name ? 'selected' : ''}`} onClick={() => setSessionData({ ...sessionData, interviewer_name: int.name })} style={{ flex: 1, padding: '15px', cursor: 'pointer', border: sessionData.interviewer_name === int.name ? '2px solid var(--primary)' : '1px solid var(--glass-border)', background: sessionData.interviewer_name === int.name ? 'rgba(99, 102, 241, 0.1)' : 'transparent' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                                            <span style={{ fontSize: '1.2rem' }}>{int.gender === "Male" ? "👨‍💼" : "👩‍💼"}</span>
+                                            <strong style={{ fontSize: '1.1rem' }}>{int.name}</strong>
+                                        </div>
+                                        <p style={{ fontSize: '0.8rem', opacity: 0.7, margin: 0 }}>{int.desc}</p>
                                     </div>
-                                    <p style={{ fontSize: '0.8rem', opacity: 0.7, margin: 0 }}>{int.desc}</p>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div className="input-row">
+                        <div className="input-row">
+                            <div className="input-group">
+                                <label>Role Category</label>
+                                <select value={sessionData.role_category} onChange={e => setSessionData({ ...sessionData, role_category: e.target.value })}>
+                                    {roleCategories.map(r => <option key={r} value={r}>{r}</option>)}
+                                </select>
+                            </div>
+                            <div className="input-group">
+                                <label>Specific Sub-Role</label>
+                                <input type="text" placeholder="e.g. Senior Backend Dev" value={sessionData.sub_role} onChange={e => setSessionData({ ...sessionData, sub_role: e.target.value })} />
+                            </div>
+                        </div>
+                        <div className="input-row">
+                            <div className="input-group">
+                                <label>Target Company</label>
+                                <input type="text" placeholder="e.g. Google" value={sessionData.target_company} onChange={e => setSessionData({ ...sessionData, target_company: e.target.value })} />
+                            </div>
+                            <div className="input-group">
+                                <label>Difficulty</label>
+                                <select value={sessionData.difficulty_level} onChange={e => setSessionData({ ...sessionData, difficulty_level: parseInt(e.target.value) })}>
+                                    <option value={1}>Junior (Level 1)</option>
+                                    <option value={2}>Mid (Level 2)</option>
+                                    <option value={3}>Senior (Level 3)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="checkbox-group" style={{ margin: '10px 0' }}>
+                            <input type="checkbox" id="panel" checked={sessionData.is_panel} onChange={e => setSessionData({ ...sessionData, is_panel: e.target.checked })} />
+                            <label htmlFor="panel">Practice with a Panel (Mock Interview Mode)</label>
+                        </div>
                         <div className="input-group">
-                            <label>Role Category</label>
-                            <select value={sessionData.role_category} onChange={e => setSessionData({ ...sessionData, role_category: e.target.value })}>
-                                {roleCategories.map(r => <option key={r} value={r}>{r}</option>)}
-                            </select>
+                            <label>Upload Resume (PDF - Contextual AI Improvement)</label>
+                            <input type="file" accept=".pdf" onChange={e => setResumeFile(e.target.files[0])} />
                         </div>
-                        <div className="input-group">
-                            <label>Specific Sub-Role</label>
-                            <input type="text" placeholder="e.g. Senior Backend Dev" value={sessionData.sub_role} onChange={e => setSessionData({ ...sessionData, sub_role: e.target.value })} />
-                        </div>
+                        <button className="primary-btn" onClick={startInterview} disabled={loading}>
+                            {loading ? "PREPARING INTERVIEW..." : "START PRACTICE SESSION"}
+                        </button>
+                        <button className="secondary-btn" onClick={() => { localStorage.clear(); window.location.href = '/'; }} style={{ marginTop: '10px', background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.5)', width: '100%', padding: '12px' }}>LOGOUT</button>
                     </div>
-                    <div className="input-row">
-                        <div className="input-group">
-                            <label>Target Company</label>
-                            <input type="text" placeholder="e.g. Google" value={sessionData.target_company} onChange={e => setSessionData({ ...sessionData, target_company: e.target.value })} />
-                        </div>
-                        <div className="input-group">
-                            <label>Difficulty</label>
-                            <select value={sessionData.difficulty_level} onChange={e => setSessionData({ ...sessionData, difficulty_level: parseInt(e.target.value) })}>
-                                <option value={1}>Junior (Level 1)</option>
-                                <option value={2}>Mid (Level 2)</option>
-                                <option value={3}>Senior (Level 3)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className="checkbox-group" style={{ margin: '10px 0' }}>
-                        <input type="checkbox" id="panel" checked={sessionData.is_panel} onChange={e => setSessionData({ ...sessionData, is_panel: e.target.checked })} />
-                        <label htmlFor="panel">Practice with a Panel (Mock Interview Mode)</label>
-                    </div>
-                    <div className="input-group">
-                        <label>Upload Resume (PDF - Contextual AI Improvement)</label>
-                        <input type="file" accept=".pdf" onChange={e => setResumeFile(e.target.files[0])} />
-                    </div>
-                    <button className="primary-btn" onClick={startInterview} disabled={loading}>
-                        {loading ? "PREPARING INTERVIEW..." : "START PRACTICE SESSION"}
-                    </button>
-                    <button className="secondary-btn" onClick={() => { localStorage.clear(); window.location.href = '/'; }} style={{ marginTop: '10px', background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.5)', width: '100%', padding: '12px' }}>LOGOUT</button>
-                </div>
 
-                <footer className="disclaimer-footer">
-                    <p>
-                        <b>Disclaimer:</b> InterviewAI is an independent simulation platform. The AI personas, scenarios, and company-specific interview mocks are intended for practice purposes only. This platform and its AI interviewers (Adinath, Veda, etc.) are not affiliated with, endorsed by, or associated with any actual company, its employees, or its recruitment teams. Simulations are based on publicly available industry standards and do not guarantee actual interview outcomes.
-                    </p>
-                </footer>
+                    <footer className="disclaimer-footer">
+                        <p>
+                            <b>Disclaimer:</b> InterviewAI is an independent simulation platform. The AI personas, scenarios, and company-specific interview mocks are intended for practice purposes only. This platform and its AI interviewers (Adinath, Veda, etc.) are not affiliated with, endorsed by, or associated with any actual company, its employees, or its recruitment teams. Simulations are based on publicly available industry standards and do not guarantee actual interview outcomes.
+                        </p>
+                    </footer>
+                </main>
             </div>
         );
     }
