@@ -11,6 +11,8 @@ function Dashboard() {
     const navigate = useNavigate();
     const [step, setStep] = useState('setup'); // setup, meeting, result
     const [loading, setLoading] = useState(false);
+    const [preparingStep, setPreparingStep] = useState(0);
+
     const [interviewId, setInterviewId] = useState(null);
     const [messages, setMessages] = useState([]);
     const [userInput, setUserInput] = useState("");
@@ -169,6 +171,14 @@ function Dashboard() {
 
     const startInterview = async () => {
         setLoading(true);
+        setStep('preparing');
+        setPreparingStep(1);
+
+        // Step 1: Parsing Resume (if exists) or Just initializing
+        const interval = setInterval(() => {
+            setPreparingStep(prev => prev < 4 ? prev + 1 : prev);
+        }, 2000);
+
         try {
             let res;
             if (resumeFile) {
@@ -195,11 +205,19 @@ function Dashboard() {
             setInterviewId(res.data.id);
             setMessages([{ role: 'assistant', content: res.data.first_question }]);
             setQuestionCount(1);
-            setStep('meeting');
+
+            clearInterval(interval);
+            setPreparingStep(4);
+            setTimeout(() => {
+                setStep('meeting');
+                setLoading(false);
+            }, 1000);
         } catch (err) {
+            clearInterval(interval);
             alert(`Error: ${err.message}`);
+            setStep('setup');
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     const submitAnswer = async () => {
@@ -429,6 +447,40 @@ function Dashboard() {
             </div>
         );
     }
+
+    if (step === 'preparing') {
+        const analysisSteps = [
+            { id: 1, text: resumeFile ? "Parsing your professional resume" : "Initializing platform context" },
+            { id: 2, text: "Analyzing your experience & background" },
+            { id: 3, text: "Extracting core skills & focus areas" },
+            { id: 4, text: "Generating contextual interview questions" }
+        ];
+
+        return (
+            <div className="preparing-container">
+                <div className="analysis-card glass-card">
+                    <div className="analysis-left">
+                        <div className="analysis-icon-container">
+                            {preparingStep === 4 ? "✨" : "🔍"}
+                        </div>
+                        <h2>{preparingStep === 4 ? "Ready!" : "Analyzing..."}</h2>
+                        <p>Our AI is tailoring questions based on your specific projects and skills.</p>
+                    </div>
+                    <div className="analysis-right">
+                        {analysisSteps.map(s => (
+                            <div key={s.id} className={`analysis-step ${preparingStep >= s.id ? 'active' : ''} ${preparingStep > s.id ? 'completed' : ''}`}>
+                                <div className="step-check">
+                                    {preparingStep > s.id ? "✓" : s.id}
+                                </div>
+                                <span className="step-text">{s.text}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
 
     if (step === 'meeting') {
         return (
