@@ -321,6 +321,12 @@ function Dashboard() {
                     </button>
                     <button className="secondary-btn" onClick={() => { localStorage.clear(); window.location.href = '/'; }} style={{ marginTop: '10px', background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.5)', width: '100%', padding: '12px' }}>LOGOUT</button>
                 </div>
+
+                <footer className="disclaimer-footer">
+                    <p>
+                        <b>Disclaimer:</b> InterviewAI is an independent simulation platform. The AI personas, scenarios, and company-specific interview mocks are intended for practice purposes only. This platform and its AI interviewers (Adinath, Veda, etc.) are not affiliated with, endorsed by, or associated with any actual company, its employees, or its recruitment teams. Simulations are based on publicly available industry standards and do not guarantee actual interview outcomes.
+                    </p>
+                </footer>
             </div>
         );
     }
