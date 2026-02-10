@@ -42,6 +42,8 @@ function Dashboard() {
     const [showTransition, setShowTransition] = useState(false);
     const [transitionData, setTransitionData] = useState({ prevRound: "", nextRound: "", score: 0 });
     const [showPricing, setShowPricing] = useState(false);
+    const [stats, setStats] = useState({ total_interviews: 0, avg_score: 0.0 });
+
 
 
     const user = JSON.parse(localStorage.getItem('user') || '{}');
@@ -50,8 +52,21 @@ function Dashboard() {
     useEffect(() => {
         if (!token) {
             navigate('/login');
+        } else if (step === 'setup') {
+            // Fetch real user stats
+            const fetchStats = async () => {
+                try {
+                    const res = await axios.get(`${API_BASE}/users/stats`, {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    setStats(res.data);
+                } catch (err) {
+                    console.error("Error fetching stats:", err);
+                }
+            };
+            fetchStats();
         }
-    }, [token, navigate]);
+    }, [token, navigate, step]);
 
     // Initialize Speech Recognition once
     useEffect(() => {
@@ -287,16 +302,12 @@ function Dashboard() {
 
                         <div className="quick-stats">
                             <div className="stat-card glass-card">
-                                <span className="stat-label">STREAK</span>
-                                <span className="stat-value">🔥 1 Day</span>
-                            </div>
-                            <div className="stat-card glass-card">
                                 <span className="stat-label">AVG SCORE</span>
-                                <span className="stat-value">⭐ 0.0</span>
+                                <span className="stat-value">⭐ {stats.avg_score}</span>
                             </div>
                             <div className="stat-card glass-card">
                                 <span className="stat-label">INTERVIEWS</span>
-                                <span className="stat-value">📊 0</span>
+                                <span className="stat-value">📊 {stats.total_interviews}</span>
                             </div>
                         </div>
                     </header>

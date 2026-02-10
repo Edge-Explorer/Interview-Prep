@@ -71,6 +71,21 @@ async def login(login_data: schemas.UserLogin, db: Session = Depends(database.ge
         "user": db_user
     }
 
+@app.get("/users/stats")
+async def get_user_stats(db: Session = Depends(database.get_db), current_user: models.User = Depends(auth_utils.get_current_user)):
+    interviews = db.query(models.InterviewSession).filter(models.InterviewSession.user_id == current_user.id).all()
+    
+    total_interviews = len(interviews)
+    
+    # Calculate average score from all sessions
+    scores = [i.score for i in interviews if i.score is not None]
+    avg_score = sum(scores) / len(scores) if scores else 0.0
+    
+    return {
+        "total_interviews": total_interviews,
+        "avg_score": round(avg_score, 1)
+    }
+
 # --- INTERVIEW ENDPOINTS ---
 
 @app.post("/interviews/upload-resume")
