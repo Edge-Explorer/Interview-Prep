@@ -1285,27 +1285,33 @@ select option {
   animation: float 3s ease-in-out infinite;
 }
 
-.resume-canvas-preview {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border: none;
-  background: white;
-  filter: grayscale(0.1) contrast(1.1);
-}
-
-.resume-glass-overlay {
+.resume-iframe-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(99, 102, 241, 0.03);
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.1);
-  z-index: 12;
-  pointer-events: all;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
   border-radius: 12px;
 }
+
+.resume-embed-preview {
+  position: absolute;
+  top: -60px;
+  /* Hide top browser bar */
+  left: -10px;
+  /* Hide side edges */
+  width: calc(100% + 20px);
+  height: calc(100% + 120px);
+  /* Extra height to push bottom UI out */
+  border: none;
+  background: white;
+  pointer-events: none;
+  transform: scale(1.05);
+  transform-origin: center center;
+}
+
 
 .resume-info-badge {
   position: absolute;

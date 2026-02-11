@@ -1,13 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import * as pdfjsLib from 'pdfjs-dist';
 import '../App.css';
 import '../Meeting.css';
 import '../InterviewerCards.css';
-
-// Configure PDF.js worker
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
 
 const API_BASE = "http://127.0.0.1:8000";
 
@@ -17,7 +13,6 @@ function Dashboard() {
     const [loading, setLoading] = useState(false);
     const [preparingStep, setPreparingStep] = useState(0);
     const [resumePreview, setResumePreview] = useState(null);
-    const pdfCanvasRef = useRef(null);
 
     const [interviewId, setInterviewId] = useState(null);
     const [messages, setMessages] = useState([]);
@@ -210,43 +205,6 @@ function Dashboard() {
         }
     }, [messages, step]);
 
-    // Render PDF to canvas when file is uploaded
-    useEffect(() => {
-        if (resumeFile && pdfCanvasRef.current && step === 'preparing') {
-            const renderPDF = async () => {
-                try {
-                    const fileReader = new FileReader();
-                    fileReader.onload = async function () {
-                        try {
-                            const typedarray = new Uint8Array(this.result);
-                            const loadingTask = pdfjsLib.getDocument({ data: typedarray });
-                            const pdf = await loadingTask.promise;
-                            const page = await pdf.getPage(1);
-                            const scale = 1.2;
-                            const viewport = page.getViewport({ scale });
-                            const canvas = pdfCanvasRef.current;
-                            if (canvas) {
-                                const context = canvas.getContext('2d');
-                                canvas.height = viewport.height;
-                                canvas.width = viewport.width;
-                                const renderContext = {
-                                    canvasContext: context,
-                                    viewport: viewport
-                                };
-                                await page.render(renderContext).promise;
-                            }
-                        } catch (error) {
-                            console.error('PDF rendering error:', error);
-                        }
-                    };
-                    fileReader.readAsArrayBuffer(resumeFile);
-                } catch (error) {
-                    console.error('PDF loading error:', error);
-                }
-            };
-            renderPDF();
-        }
-    }, [resumeFile, step]);
 
     const startInterview = async () => {
         if (!resumeFile) {
@@ -568,9 +526,14 @@ function Dashboard() {
                     <div className="analysis-left">
                         {resumePreview ? (
                             <div className="resume-preview-box">
-                                <div className="resume-glass-overlay"></div>
                                 <div className="resume-info-badge">{resumeFile?.name}</div>
-                                <canvas ref={pdfCanvasRef} className="resume-canvas-preview" />
+                                <div className="resume-iframe-wrapper">
+                                    <iframe
+                                        src={resumePreview}
+                                        className="resume-embed-preview"
+                                        title="Resume Scan"
+                                    />
+                                </div>
                                 <div className="scanner-line"></div>
                             </div>
                         ) : (
