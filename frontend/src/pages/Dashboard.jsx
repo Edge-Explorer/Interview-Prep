@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import * as pdfjsLib from 'pdfjs-dist';
 import '../App.css';
 import '../Meeting.css';
 import '../InterviewerCards.css';
+
+// Configure PDF.js worker
+pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
 
 const API_BASE = "http://127.0.0.1:8000";
 
@@ -13,6 +17,7 @@ function Dashboard() {
     const [loading, setLoading] = useState(false);
     const [preparingStep, setPreparingStep] = useState(0);
     const [resumePreview, setResumePreview] = useState(null);
+    const pdfCanvasRef = useRef(null);
 
     const [interviewId, setInterviewId] = useState(null);
     const [messages, setMessages] = useState([]);
@@ -439,8 +444,24 @@ function Dashboard() {
                                 const file = e.target.files[0];
                                 setResumeFile(file);
                                 if (file) {
-                                    const url = URL.createObjectURL(file);
-                                    setResumePreview(`${url}#view=FitH&page=1&toolbar=0&navpanes=0&scrollbar=0&pagemode=none&t=${Date.now()}`);
+                                    setResumeFile(file);
+                                    // Render PDF to canvas
+                                    const fileReader = new FileReader();
+                                    fileReader.onload = async function () {
+                                        const typedarray = new Uint8Array(this.result);
+                                        const pdf = await pdfjsLib.getDocument(typedarray).promise;
+                                        const page = await pdf.getPage(1);
+                                        const viewport = page.getViewport({ scale: 1.5 });
+                                        const canvas = pdfCanvasRef.current;
+                                        if (canvas) {
+                                            const context = canvas.getContext('2d');
+                                            canvas.height = viewport.height;
+                                            canvas.width = viewport.width;
+                                            await page.render({ canvasContext: context, viewport: viewport }).promise;
+                                            setResumePreview(true);
+                                        }
+                                    };
+                                    fileReader.readAsArrayBuffer(file);
                                 }
                             }} />
                         </div>
@@ -528,7 +549,7 @@ function Dashboard() {
                             <div className="resume-preview-box">
                                 <div className="resume-glass-overlay"></div>
                                 <div className="resume-info-badge">{resumeFile?.name}</div>
-                                <iframe src={`${resumePreview}#view=FitH&toolbar=0&navpanes=0&scrollbar=0&pagemode=none`} className="resume-embed-preview" title="Resume Scan" />
+                                <canvas ref={pdfCanvasRef} className="resume-canvas-preview" />
                                 <div className="scanner-line"></div>
                             </div>
                         ) : (
