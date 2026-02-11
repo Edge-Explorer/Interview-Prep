@@ -1,0 +1,53 @@
+{
+    "COMPANY_NAME_HERE": {
+        "name": "Full Company Name",
+        "industry": "Industry/Sector (e.g., Technology/E-commerce)",
+        "size": "Small (<1000) | Medium (1000-10000) | Large (>10000)",
+        "interview_style": "technical-heavy | culture-fit-heavy | balanced | case-study-focused | etc.",
+        "difficulty_level": "Medium | High | Very High",
+        "cultural_values": [
+            "Value 1 (e.g., Customer obsession)",
+            "Value 2 (e.g., Innovation)",
+            "Value 3 (e.g., Integrity)",
+            "Add 3-5 core values"
+        ],
+        "interview_rounds": {
+            "Technical": {
+                "focus": "What this round focuses on (e.g., Algorithms, system design)",
+                "common_topics": [
+                    "Topic 1 (e.g., Dynamic programming)",
+                    "Topic 2 (e.g., Graph algorithms)",
+                    "Topic 3",
+                    "Topic 4"
+                ],
+                "style": "How they conduct the interview (e.g., Whiteboard coding, collaborative)",
+                "tips": "Key tips for candidates (e.g., Always discuss time/space complexity)"
+            },
+            "Behavioral": {
+                "focus": "What they're looking for (e.g., Leadership, teamwork)",
+                "common_questions": [
+                    "Example question 1",
+                    "Example question 2",
+                    "Example question 3"
+                ],
+                "style": "Interview style (e.g., STAR method expected, conversational)"
+            },
+            "System Design": {
+                "focus": "System design focus (e.g., Scalability, distributed systems)",
+                "common_topics": [
+                    "Design X",
+                    "Design Y",
+                    "Design Z"
+                ],
+                "style": "Approach (e.g., Focus on trade-offs, open-ended)"
+            }
+        },
+        "red_flags": [
+            "Red flag 1 (e.g., Not asking clarifying questions)",
+            "Red flag 2 (e.g., Poor communication)",
+            "Red flag 3"
+        ],
+        "average_process_duration": "X-Y weeks (e.g., 4-6 weeks)",
+        "interview_count": "X-Y rounds (e.g., 4-5 rounds)"
+    }
+}
