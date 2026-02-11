@@ -5,12 +5,15 @@ Loads and provides company-specific interview intelligence from curated database
 
 import json
 import os
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, Tuple
+from difflib import SequenceMatcher
 
 class CompanyIntelligenceService:
     def __init__(self):
         self.company_data = {}
+        self.company_aliases = {}  # Common name variations
         self.load_company_profiles()
+        self._build_aliases()
     
     def load_company_profiles(self):
         """Load company profiles from JSON database"""
@@ -29,12 +32,88 @@ class CompanyIntelligenceService:
             print(f"⚠️ Error loading company profiles: {e}")
             self.company_data = {}
     
+    def _build_aliases(self):
+        """Build common company name aliases for better matching"""
+        self.company_aliases = {
+            # Common variations
+            "fb": "Meta",
+            "facebook": "Meta",
+            "meta platforms": "Meta",
+            "google deepmind": "Google DeepMind",
+            "deep mind": "Google DeepMind",
+            "openai": "OpenAI",
+            "open ai": "OpenAI",
+            "anthropic ai": "Anthropic",
+            "claude": "Anthropic",
+            "stability": "Stability AI",
+            "stable diffusion": "Stability AI",
+            "huggingface": "Hugging Face",
+            "hugging face": "Hugging Face",
+            "hf": "Hugging Face",
+            "character ai": "Character.AI",
+            "characterai": "Character.AI",
+            "perplexity": "Perplexity AI",
+            "scale": "Scale AI",
+            "scaleai": "Scale AI",
+            "jpmorgan": "JPMorgan Chase",
+            "jp morgan": "JPMorgan Chase",
+            "goldman": "Goldman Sachs",
+            "morgan stanley": "Morgan Stanley",
+            "ms": "Morgan Stanley",
+            "gs": "Goldman Sachs",
+            "mckinsey": "McKinsey & Company",
+            "bcg": "Boston Consulting Group",
+            "bain": "Bain & Company",
+            "pwc": "PwC (PricewaterhouseCoopers)",
+            "pricewaterhousecoopers": "PwC (PricewaterhouseCoopers)",
+            "kpmg": "KPMG",
+            "ey": "Deloitte",  # Placeholder, add EY if needed
+            "tata consultancy": "TCS",
+            "tata consultancy services": "TCS",
+            "wipro technologies": "Wipro",
+            "infosys technologies": "Infosys",
+            "hashicorp": "HashiCorp",
+            "grafana": "Grafana Labs",
+            "grafana labs": "Grafana Labs",
+        }
+    
+    def _normalize_company_name(self, name: str) -> str:
+        """Normalize company name for matching"""
+        if not name:
+            return ""
+        
+        # Remove common suffixes and normalize
+        normalized = name.lower().strip()
+        
+        # Remove common company suffixes
+        suffixes = [" inc", " inc.", " corp", " corp.", " ltd", " ltd.", 
+                   " llc", " llc.", " company", " co.", " co"]
+        for suffix in suffixes:
+            if normalized.endswith(suffix):
+                normalized = normalized[:-len(suffix)].strip()
+        
+        # Remove special characters but keep spaces
+        normalized = ''.join(c if c.isalnum() or c.isspace() else ' ' for c in normalized)
+        normalized = ' '.join(normalized.split())  # Remove extra spaces
+        
+        return normalized
+    
+    def _fuzzy_match_score(self, str1: str, str2: str) -> float:
+        """Calculate fuzzy match score between two strings (0.0 to 1.0)"""
+        return SequenceMatcher(None, str1.lower(), str2.lower()).ratio()
+    
     def get_company_profile(self, company_name: str) -> Optional[Dict[str, Any]]:
         """
-        Get company profile by name (case-insensitive)
+        Get company profile by name with fuzzy matching
+        
+        Handles:
+        - Case variations: "google", "GOOGLE", "Google"
+        - Typos: "gogle", "googel" 
+        - Spacing: "open ai", "openai"
+        - Common aliases: "fb" -> "Meta", "claude" -> "Anthropic"
         
         Args:
-            company_name: Name of the company (e.g., "Google", "google", "GOOGLE")
+            company_name: Name of the company
         
         Returns:
             Company profile dict or None if not found
@@ -42,20 +121,50 @@ class CompanyIntelligenceService:
         if not company_name:
             return None
         
-        # Try exact match first
+        # Normalize input
+        normalized_input = self._normalize_company_name(company_name)
+        
+        # 1. Try exact match first (fastest)
         if company_name in self.company_data:
             return self.company_data[company_name]
         
-        # Try case-insensitive match
+        # 2. Try alias lookup
+        if normalized_input in self.company_aliases:
+            canonical_name = self.company_aliases[normalized_input]
+            if canonical_name in self.company_data:
+                return self.company_data[canonical_name]
+        
+        # 3. Try case-insensitive exact match
         company_name_lower = company_name.lower()
         for key, value in self.company_data.items():
             if key.lower() == company_name_lower:
                 return value
         
-        # Try partial match (e.g., "Facebook" matches "Meta (Facebook)")
+        # 4. Try normalized exact match
         for key, value in self.company_data.items():
-            if company_name_lower in key.lower() or key.lower() in company_name_lower:
+            if self._normalize_company_name(key) == normalized_input:
                 return value
+        
+        # 5. Try partial match (e.g., "Facebook" in "Meta")
+        for key, value in self.company_data.items():
+            key_lower = key.lower()
+            if normalized_input in key_lower or key_lower in normalized_input:
+                return value
+        
+        # 6. Fuzzy match (for typos) - find best match above threshold
+        best_match = None
+        best_score = 0.0
+        threshold = 0.75  # 75% similarity required
+        
+        for key in self.company_data.keys():
+            score = self._fuzzy_match_score(normalized_input, self._normalize_company_name(key))
+            if score > best_score and score >= threshold:
+                best_score = score
+                best_match = key
+        
+        if best_match:
+            print(f"🔍 Fuzzy matched '{company_name}' to '{best_match}' (score: {best_score:.2f})")
+            return self.company_data[best_match]
         
         return None
     
