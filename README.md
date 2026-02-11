@@ -54,8 +54,12 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 - [x] Multi-persona AI interviewers (Adinath & Veda)
 - [x] Context-aware question generation
 - [x] **Company Intelligence System (NEW)**
-  - [x] Tier 1: Curated database for **30 companies**
-  - [x] FAANG, Indian Tech (Flipkart, Zomato, Swiggy, Razorpay, CRED, Paytm, TCS, Infosys, Wipro), Finance (Goldman Sachs, JPMorgan), Consulting (McKinsey, BCG, Deloitte), and more
+  - [x] Tier 1: Curated database for **45 companies**
+  - [x] FAANG (Google, Amazon, Microsoft, Meta, Apple, Netflix), FAANG-tier (Nvidia, Oracle, IBM)
+  - [x] Indian Tech (Flipkart, Zomato, Swiggy, Razorpay, CRED, Paytm, TCS, Infosys, Wipro, Ola, PhonePe, Meesho)
+  - [x] Finance (Goldman Sachs, JPMorgan, Robinhood, Coinbase)
+  - [x] Consulting (McKinsey, BCG, Deloitte, Bain, Accenture)
+  - [x] Startups (Stripe, Airbnb, Snowflake, Databricks, Notion, Figma, Vercel, and more)
   - [x] Company-specific interview styles and cultural values
   - [x] Round-specific focus areas and common topics
   - [x] Tier 3: AI fallback for unknown companies
@@ -272,12 +276,12 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 ### 🧠 **Intelligent Interview System**
 - ✅ Multi-persona AI interviewers (Adinath & Veda)
 - ✅ **Company Intelligence System**
-  - ✅ Curated database for **30 companies** across tech, consulting, finance, and Indian companies
-  - ✅ FAANG (Google, Amazon, Microsoft, Meta, Apple, Netflix)
-  - ✅ Indian Tech (Flipkart, Zomato, Swiggy, Razorpay, CRED, Paytm, TCS, Infosys, Wipro)
-  - ✅ Finance (Goldman Sachs, JPMorgan Chase)
-  - ✅ Consulting (McKinsey, BCG, Deloitte)
-  - ✅ High-Growth Tech (Uber, Airbnb, Stripe, Salesforce, Adobe, Atlassian, Shopify, Twilio, Snowflake, Databricks)
+  - ✅ Curated database for **45 companies** across tech, consulting, finance, and Indian companies
+  - ✅ FAANG (Google, Amazon, Microsoft, Meta, Apple, Netflix), FAANG-tier (Nvidia, Oracle, IBM)
+  - ✅ Indian Tech (Flipkart, Zomato, Swiggy, Razorpay, CRED, Paytm, TCS, Infosys, Wipro, Ola, PhonePe, Meesho)
+  - ✅ Finance (Goldman Sachs, JPMorgan, Robinhood, Coinbase)
+  - ✅ Consulting (McKinsey, BCG, Deloitte, Bain, Accenture)
+  - ✅ Startups & High-Growth (Uber, Airbnb, Stripe, Salesforce, Adobe, Atlassian, Shopify, Twilio, Snowflake, Databricks, Notion, Figma, Vercel)
   - ✅ Company-specific interview styles, cultural values, and question patterns
   - ✅ Intelligent fallback for companies not in database
 - ✅ Company-specific simulations (Google, Amazon, etc.)
