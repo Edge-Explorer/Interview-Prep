@@ -210,6 +210,44 @@ function Dashboard() {
         }
     }, [messages, step]);
 
+    // Render PDF to canvas when file is uploaded
+    useEffect(() => {
+        if (resumeFile && pdfCanvasRef.current && step === 'preparing') {
+            const renderPDF = async () => {
+                try {
+                    const fileReader = new FileReader();
+                    fileReader.onload = async function () {
+                        try {
+                            const typedarray = new Uint8Array(this.result);
+                            const loadingTask = pdfjsLib.getDocument({ data: typedarray });
+                            const pdf = await loadingTask.promise;
+                            const page = await pdf.getPage(1);
+                            const scale = 1.2;
+                            const viewport = page.getViewport({ scale });
+                            const canvas = pdfCanvasRef.current;
+                            if (canvas) {
+                                const context = canvas.getContext('2d');
+                                canvas.height = viewport.height;
+                                canvas.width = viewport.width;
+                                const renderContext = {
+                                    canvasContext: context,
+                                    viewport: viewport
+                                };
+                                await page.render(renderContext).promise;
+                            }
+                        } catch (error) {
+                            console.error('PDF rendering error:', error);
+                        }
+                    };
+                    fileReader.readAsArrayBuffer(resumeFile);
+                } catch (error) {
+                    console.error('PDF loading error:', error);
+                }
+            };
+            renderPDF();
+        }
+    }, [resumeFile, step]);
+
     const startInterview = async () => {
         if (!resumeFile) {
             alert("Please upload your resume (PDF) to start a contextual AI interview. This helps our AI tailor questions specifically to your background!");
@@ -442,26 +480,9 @@ function Dashboard() {
                             <label>Upload Resume (PDF - Contextual AI Improvement) <span style={{ color: '#ef4444', fontSize: '0.7rem' }}>*REQUIRED</span></label>
                             <input type="file" accept=".pdf" onChange={e => {
                                 const file = e.target.files[0];
-                                setResumeFile(file);
                                 if (file) {
                                     setResumeFile(file);
-                                    // Render PDF to canvas
-                                    const fileReader = new FileReader();
-                                    fileReader.onload = async function () {
-                                        const typedarray = new Uint8Array(this.result);
-                                        const pdf = await pdfjsLib.getDocument(typedarray).promise;
-                                        const page = await pdf.getPage(1);
-                                        const viewport = page.getViewport({ scale: 1.5 });
-                                        const canvas = pdfCanvasRef.current;
-                                        if (canvas) {
-                                            const context = canvas.getContext('2d');
-                                            canvas.height = viewport.height;
-                                            canvas.width = viewport.width;
-                                            await page.render({ canvasContext: context, viewport: viewport }).promise;
-                                            setResumePreview(true);
-                                        }
-                                    };
-                                    fileReader.readAsArrayBuffer(file);
+                                    setResumePreview(URL.createObjectURL(file));
                                 }
                             }} />
                         </div>
