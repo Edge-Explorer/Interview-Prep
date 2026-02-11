@@ -1,0 +1,593 @@
+{
+    "meta": {
+        "version": "1.0.0",
+        "last_updated": "2026-02-11",
+        "total_companies": 50,
+        "description": "Curated company interview intelligence database"
+    },
+    "companies": {
+        "Google": {
+            "name": "Google",
+            "industry": "Technology",
+            "size": "Large (>10000)",
+            "interview_style": "technical-heavy",
+            "difficulty_level": "Very High",
+            "cultural_values": [
+                "Innovation and creativity",
+                "Data-driven decision making",
+                "Googleyness (collaboration, humility, conscientiousness)",
+                "User-first mentality",
+                "Intellectual curiosity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Algorithms, data structures, system design fundamentals",
+                    "common_topics": [
+                        "LeetCode Medium/Hard",
+                        "Graph algorithms",
+                        "Dynamic programming",
+                        "Complexity analysis"
+                    ],
+                    "style": "Whiteboard coding, focus on optimal solutions",
+                    "tips": "Always discuss time/space complexity. Think out loud. Ask clarifying questions."
+                },
+                "Behavioral": {
+                    "focus": "Googleyness and leadership principles",
+                    "common_questions": [
+                        "Tell me about a time you disagreed with a teammate",
+                        "How do you handle ambiguity?",
+                        "Describe a project you're most proud of"
+                    ],
+                    "style": "STAR method expected, focus on impact and collaboration"
+                },
+                "System Design": {
+                    "focus": "Scalability, distributed systems, trade-offs",
+                    "common_topics": [
+                        "Design YouTube",
+                        "Design Google Search",
+                        "Design Gmail"
+                    ],
+                    "style": "Open-ended, focus on scalability and reliability"
+                }
+            },
+            "red_flags": [
+                "Not asking clarifying questions",
+                "Jumping to code without planning",
+                "Ignoring edge cases",
+                "Poor communication"
+            ],
+            "average_process_duration": "6-8 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Amazon": {
+            "name": "Amazon",
+            "industry": "Technology/E-commerce",
+            "size": "Large (>10000)",
+            "interview_style": "leadership-principles-heavy",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Customer Obsession",
+                "Ownership",
+                "Invent and Simplify",
+                "Bias for Action",
+                "Frugality",
+                "Learn and Be Curious",
+                "Hire and Develop the Best",
+                "Insist on Highest Standards"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Practical coding, OOP, algorithms",
+                    "common_topics": [
+                        "Array manipulation",
+                        "String problems",
+                        "Tree traversal",
+                        "Amazon-specific scenarios"
+                    ],
+                    "style": "Focus on working code, not just optimal solutions",
+                    "tips": "Relate answers to Amazon's scale. Discuss trade-offs."
+                },
+                "Behavioral": {
+                    "focus": "14 Leadership Principles",
+                    "common_questions": [
+                        "Tell me about a time you failed",
+                        "Describe a situation where you had to make a tough decision with limited data",
+                        "Give an example of when you went above and beyond"
+                    ],
+                    "style": "Every answer must map to a Leadership Principle. Use STAR method."
+                },
+                "System Design": {
+                    "focus": "E-commerce scale, reliability, cost optimization",
+                    "common_topics": [
+                        "Design Amazon.com product page",
+                        "Design recommendation system",
+                        "Design order fulfillment"
+                    ],
+                    "style": "Focus on availability over consistency, cost-effectiveness"
+                }
+            },
+            "red_flags": [
+                "Not mentioning Leadership Principles",
+                "Vague answers without metrics",
+                "Blaming others for failures",
+                "Overengineering solutions"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "5-6 rounds (including Bar Raiser)"
+        },
+        "Microsoft": {
+            "name": "Microsoft",
+            "industry": "Technology",
+            "size": "Large (>10000)",
+            "interview_style": "balanced",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Growth mindset",
+                "Customer focus",
+                "Diversity and inclusion",
+                "One Microsoft (collaboration)",
+                "Making a difference"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Problem-solving, coding, design patterns",
+                    "common_topics": [
+                        "OOP design",
+                        "Recursion",
+                        "Linked lists",
+                        "Microsoft product scenarios"
+                    ],
+                    "style": "Collaborative, focus on thought process",
+                    "tips": "Show growth mindset. Discuss how you learn from mistakes."
+                },
+                "Behavioral": {
+                    "focus": "Growth mindset, teamwork, adaptability",
+                    "common_questions": [
+                        "How do you handle feedback?",
+                        "Tell me about a time you learned something new quickly",
+                        "Describe a challenging team situation"
+                    ],
+                    "style": "Conversational, focus on learning and growth"
+                },
+                "System Design": {
+                    "focus": "Enterprise software, cloud architecture",
+                    "common_topics": [
+                        "Design Office 365 feature",
+                        "Design Azure service",
+                        "Design Teams chat"
+                    ],
+                    "style": "Focus on reliability, security, and user experience"
+                }
+            },
+            "red_flags": [
+                "Fixed mindset language ('I can't', 'I'm not good at')",
+                "Not showing collaboration",
+                "Ignoring accessibility/inclusivity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Meta": {
+            "name": "Meta (Facebook)",
+            "industry": "Technology/Social Media",
+            "size": "Large (>10000)",
+            "interview_style": "technical-heavy",
+            "difficulty_level": "Very High",
+            "cultural_values": [
+                "Move fast",
+                "Be bold",
+                "Focus on impact",
+                "Be open",
+                "Build social value"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Algorithms, data structures, coding speed",
+                    "common_topics": [
+                        "Graph algorithms",
+                        "Dynamic programming",
+                        "Hash tables",
+                        "String manipulation"
+                    ],
+                    "style": "Fast-paced, multiple problems in one session",
+                    "tips": "Code quickly but correctly. Optimize early. Discuss real-world applications."
+                },
+                "Behavioral": {
+                    "focus": "Impact, ownership, cross-functional collaboration",
+                    "common_questions": [
+                        "Tell me about your most impactful project",
+                        "How do you prioritize when everything is urgent?",
+                        "Describe a time you influenced without authority"
+                    ],
+                    "style": "Focus on metrics and measurable impact"
+                },
+                "System Design": {
+                    "focus": "Social network scale, real-time systems, newsfeed algorithms",
+                    "common_topics": [
+                        "Design Facebook Newsfeed",
+                        "Design Instagram Stories",
+                        "Design Messenger"
+                    ],
+                    "style": "Extreme scale (billions of users), real-time constraints"
+                }
+            },
+            "red_flags": [
+                "Slow coding",
+                "Not discussing impact/metrics",
+                "Avoiding bold decisions",
+                "Over-cautious approach"
+            ],
+            "average_process_duration": "5-7 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Apple": {
+            "name": "Apple",
+            "industry": "Technology/Hardware",
+            "size": "Large (>10000)",
+            "interview_style": "product-focused",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Simplicity",
+                "Excellence",
+                "Privacy and security",
+                "User experience obsession"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Low-level programming, performance optimization, product-specific",
+                    "common_topics": [
+                        "Memory management",
+                        "Concurrency",
+                        "iOS/macOS specifics",
+                        "Hardware-software integration"
+                    ],
+                    "style": "Deep technical dive, focus on efficiency",
+                    "tips": "Know Apple products deeply. Discuss performance and battery impact."
+                },
+                "Behavioral": {
+                    "focus": "Attention to detail, passion for products, collaboration",
+                    "common_questions": [
+                        "Why Apple?",
+                        "What's your favorite Apple product and why?",
+                        "How do you ensure quality in your work?"
+                    ],
+                    "style": "Expect product-specific questions. Show passion for design."
+                },
+                "System Design": {
+                    "focus": "User experience, privacy, performance",
+                    "common_topics": [
+                        "Design iMessage",
+                        "Design iCloud sync",
+                        "Design Siri feature"
+                    ],
+                    "style": "Focus on simplicity, privacy, and seamless UX"
+                }
+            },
+            "red_flags": [
+                "Not knowing Apple products",
+                "Ignoring privacy/security",
+                "Overcomplicating solutions",
+                "Poor attention to detail"
+            ],
+            "average_process_duration": "6-10 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Netflix": {
+            "name": "Netflix",
+            "industry": "Technology/Entertainment",
+            "size": "Large (5000-10000)",
+            "interview_style": "culture-fit-heavy",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Freedom and responsibility",
+                "Context, not control",
+                "Highly aligned, loosely coupled",
+                "Pay top of market",
+                "Candor and transparency"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Practical problem-solving, streaming technology, microservices",
+                    "common_topics": [
+                        "Video streaming",
+                        "Recommendation algorithms",
+                        "A/B testing",
+                        "Distributed systems"
+                    ],
+                    "style": "Real-world scenarios, focus on impact over perfection",
+                    "tips": "Show autonomy. Discuss how you make decisions independently."
+                },
+                "Behavioral": {
+                    "focus": "Culture fit (freedom & responsibility), candor, judgment",
+                    "common_questions": [
+                        "Tell me about a time you disagreed with your manager",
+                        "How do you handle ambiguity?",
+                        "Describe a decision you made without approval"
+                    ],
+                    "style": "Radical candor expected. No sugarcoating."
+                },
+                "System Design": {
+                    "focus": "Streaming at scale, personalization, global CDN",
+                    "common_topics": [
+                        "Design Netflix video player",
+                        "Design recommendation engine",
+                        "Design content delivery"
+                    ],
+                    "style": "Focus on user experience and global scale"
+                }
+            },
+            "red_flags": [
+                "Needing hand-holding",
+                "Avoiding difficult conversations",
+                "Not showing independent decision-making",
+                "Lack of candor"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Uber": {
+            "name": "Uber",
+            "industry": "Technology/Transportation",
+            "size": "Large (>10000)",
+            "interview_style": "practical-problem-solving",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Customer obsession",
+                "Make magic",
+                "Big bold bets",
+                "Move fast with excellence",
+                "Celebrate differences"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Real-time systems, geospatial algorithms, optimization",
+                    "common_topics": [
+                        "Routing algorithms",
+                        "Surge pricing",
+                        "Real-time matching",
+                        "Maps and location"
+                    ],
+                    "style": "Focus on practical, scalable solutions",
+                    "tips": "Discuss real-world constraints (network latency, GPS accuracy)."
+                },
+                "Behavioral": {
+                    "focus": "Bias for action, customer focus, resilience",
+                    "common_questions": [
+                        "Tell me about a time you moved fast and made a mistake",
+                        "How do you balance speed and quality?",
+                        "Describe a situation where you put the customer first"
+                    ],
+                    "style": "Action-oriented, focus on results"
+                },
+                "System Design": {
+                    "focus": "Real-time matching, geospatial systems, high availability",
+                    "common_topics": [
+                        "Design Uber ride matching",
+                        "Design surge pricing",
+                        "Design driver app"
+                    ],
+                    "style": "Focus on real-time constraints and fault tolerance"
+                }
+            },
+            "red_flags": [
+                "Analysis paralysis",
+                "Not discussing trade-offs",
+                "Ignoring edge cases (network failures, GPS errors)"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Airbnb": {
+            "name": "Airbnb",
+            "industry": "Technology/Hospitality",
+            "size": "Medium (5000-10000)",
+            "interview_style": "culture-heavy",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Champion the mission",
+                "Be a host",
+                "Embrace the adventure",
+                "Be a cereal entrepreneur",
+                "Simplify"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Full-stack development, product thinking, clean code",
+                    "common_topics": [
+                        "Frontend (React)",
+                        "Backend (Ruby/Java)",
+                        "Database design",
+                        "API design"
+                    ],
+                    "style": "Focus on product quality and user experience",
+                    "tips": "Show product sense. Discuss how features impact users."
+                },
+                "Behavioral": {
+                    "focus": "Core values, mission alignment, belonging",
+                    "common_questions": [
+                        "Why Airbnb?",
+                        "Tell me about a time you created a sense of belonging",
+                        "How do you handle feedback from users?"
+                    ],
+                    "style": "Deep culture fit assessment. Must align with mission."
+                },
+                "System Design": {
+                    "focus": "Marketplace dynamics, search and discovery, trust and safety",
+                    "common_topics": [
+                        "Design Airbnb search",
+                        "Design booking system",
+                        "Design review system"
+                    ],
+                    "style": "Focus on two-sided marketplace and user trust"
+                }
+            },
+            "red_flags": [
+                "Not showing passion for the mission",
+                "Ignoring user experience",
+                "Lack of empathy",
+                "Overengineering"
+            ],
+            "average_process_duration": "5-7 weeks",
+            "interview_count": "5-6 rounds (including values interview)"
+        },
+        "Stripe": {
+            "name": "Stripe",
+            "industry": "Fintech",
+            "size": "Medium (5000-10000)",
+            "interview_style": "technical-depth",
+            "difficulty_level": "Very High",
+            "cultural_values": [
+                "Move with urgency and focus",
+                "Think rigorously",
+                "Trust and amplify",
+                "Optimism",
+                "Global optimization"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "API design, distributed systems, financial accuracy",
+                    "common_topics": [
+                        "Payment processing",
+                        "Idempotency",
+                        "Distributed transactions",
+                        "API versioning"
+                    ],
+                    "style": "Rigorous, focus on correctness and edge cases",
+                    "tips": "Discuss financial accuracy. Money must never be lost or duplicated."
+                },
+                "Behavioral": {
+                    "focus": "Rigor, urgency, global thinking",
+                    "common_questions": [
+                        "Tell me about a time you debugged a complex issue",
+                        "How do you prioritize when everything is important?",
+                        "Describe a time you thought globally"
+                    ],
+                    "style": "Analytical, focus on systematic thinking"
+                },
+                "System Design": {
+                    "focus": "Payment systems, reliability, security, compliance",
+                    "common_topics": [
+                        "Design payment gateway",
+                        "Design fraud detection",
+                        "Design subscription billing"
+                    ],
+                    "style": "Zero tolerance for errors. Focus on idempotency and consistency."
+                }
+            },
+            "red_flags": [
+                "Ignoring edge cases in financial systems",
+                "Not discussing idempotency",
+                "Lack of rigor",
+                "Moving too fast without thinking"
+            ],
+            "average_process_duration": "5-7 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Salesforce": {
+            "name": "Salesforce",
+            "industry": "Technology/SaaS",
+            "size": "Large (>10000)",
+            "interview_style": "values-driven",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Trust",
+                "Customer success",
+                "Innovation",
+                "Equality",
+                "Sustainability"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Cloud architecture, CRM systems, Apex/Salesforce platform",
+                    "common_topics": [
+                        "Salesforce platform",
+                        "Multi-tenancy",
+                        "Cloud security",
+                        "Integration patterns"
+                    ],
+                    "style": "Focus on enterprise solutions and scalability",
+                    "tips": "Know Salesforce products. Discuss enterprise customer needs."
+                },
+                "Behavioral": {
+                    "focus": "Ohana culture, equality, customer success",
+                    "common_questions": [
+                        "How do you build trust with customers?",
+                        "Tell me about a time you championed equality",
+                        "Describe how you ensure customer success"
+                    ],
+                    "style": "Values-heavy. Must align with Ohana culture."
+                },
+                "System Design": {
+                    "focus": "Multi-tenant architecture, enterprise SaaS, security",
+                    "common_topics": [
+                        "Design CRM feature",
+                        "Design multi-tenant database",
+                        "Design integration platform"
+                    ],
+                    "style": "Focus on enterprise scale and security"
+                }
+            },
+            "red_flags": [
+                "Not understanding enterprise customers",
+                "Ignoring security/compliance",
+                "Lack of empathy",
+                "Not showing values alignment"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Adobe": {
+            "name": "Adobe",
+            "industry": "Technology/Creative Software",
+            "size": "Large (>10000)",
+            "interview_style": "creative-technical-balance",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Creativity",
+                "Innovation",
+                "Exceptional experiences",
+                "Genuine",
+                "Involved"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Graphics programming, algorithms, performance optimization",
+                    "common_topics": [
+                        "Image processing",
+                        "Rendering",
+                        "File formats",
+                        "Performance optimization"
+                    ],
+                    "style": "Balance between creativity and technical depth",
+                    "tips": "Show appreciation for design. Discuss creative applications."
+                },
+                "Behavioral": {
+                    "focus": "Creativity, collaboration, user experience",
+                    "common_questions": [
+                        "Tell me about a creative solution you developed",
+                        "How do you balance innovation with stability?",
+                        "Describe a time you improved user experience"
+                    ],
+                    "style": "Focus on creative problem-solving"
+                },
+                "System Design": {
+                    "focus": "Creative tools, cloud collaboration, file handling",
+                    "common_topics": [
+                        "Design Creative Cloud sync",
+                        "Design collaborative editing",
+                        "Design asset management"
+                    ],
+                    "style": "Focus on creative workflows and user experience"
+                }
+            },
+            "red_flags": [
+                "Not understanding creative workflows",
+                "Ignoring performance (creative apps are resource-intensive)",
+                "Lack of design sense"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        }
+    }
+}

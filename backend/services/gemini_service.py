@@ -2,6 +2,7 @@ from google import genai
 from google.genai import types
 import os
 from dotenv import load_dotenv
+from .company_intelligence import get_company_intelligence
 
 load_dotenv()
 
@@ -95,6 +96,23 @@ class GeminiService:
         Alternate between these two personas. Mention who is asking in the text (e.g., '[{interviewer_name}]: ...').
         """ if is_panel else ""
 
+        # Get company-specific intelligence
+        company_intel = get_company_intelligence()
+        company_context = ""
+        
+        if company:
+            if company_intel.is_company_in_database(company):
+                # Tier 1: Use curated company intelligence
+                company_context = f"\n{'='*60}\nCOMPANY INTELLIGENCE DATABASE (TIER 1 - CURATED)\n{'='*60}\n"
+                company_context += company_intel.get_interview_context(company, round_name)
+                company_context += f"\n{'='*60}\n"
+            else:
+                # Tier 3: AI Fallback for unknown companies
+                company_context = f"\n{'='*60}\nCOMPANY INTELLIGENCE (TIER 3 - AI FALLBACK)\n{'='*60}\n"
+                company_context += f"COMPANY: {company} (using general industry knowledge)\n"
+                company_context += f"NOTE: This company is not in our curated database. Use your general knowledge about {company} and industry standards.\n"
+                company_context += f"{'='*60}\n"
+
         system_prompt = f"""
         You are {interviewer_name.upper()}, a Simulation Assistant designed to mimic high-level professional interviewers.
         The name {interviewer_name} signifies eternal knowledge and primal wisdom.
@@ -109,7 +127,7 @@ class GeminiService:
         
         {panel_instruction}
         
-        {f"STRICT SIMULATION PARAMETERS: Mimic {company}'s specific culture and values." if company else ""}
+        {company_context}
         
         ROUND-SPECIFIC FOCUS:
         {round_instructions.get(round_name, round_instructions["Technical"])}
