@@ -53,6 +53,11 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 #### AI Interview System
 - [x] Multi-persona AI interviewers (Adinath & Veda)
 - [x] Context-aware question generation
+- [x] **Company Intelligence System (NEW)**
+  - [x] Tier 1: Curated database for 11+ top companies
+  - [x] Company-specific interview styles and cultural values
+  - [x] Round-specific focus areas and common topics
+  - [x] Tier 3: AI fallback for unknown companies
 - [x] Company-specific simulations
 - [x] Difficulty levels (Junior, Mid, Senior)
 - [x] Panel interview mode
@@ -265,6 +270,10 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 
 ### 🧠 **Intelligent Interview System**
 - ✅ Multi-persona AI interviewers (Adinath & Veda)
+- ✅ **Company Intelligence System**
+  - ✅ Curated database for 11+ top companies (Google, Amazon, Microsoft, Meta, Apple, Netflix, Uber, Airbnb, Stripe, Salesforce, Adobe)
+  - ✅ Company-specific interview styles, cultural values, and question patterns
+  - ✅ Intelligent fallback for companies not in database
 - ✅ Company-specific simulations (Google, Amazon, etc.)
 - ✅ Adaptive difficulty levels (Junior, Mid-level, Senior)
 - ✅ Panel interview mode with multiple AI personas
@@ -394,15 +403,23 @@ interview-prep/
 ├── backend/
 │   ├── alembic/              # Database migrations
 │   ├── services/
-│   │   └── gemini_service.py # AI service layer
+│   │   ├── gemini_service.py # AI service layer
+│   │   └── company_intelligence.py # Company intelligence service (NEW)
+│   ├── data/
+│   │   └── company_profiles.json # Curated company database (NEW)
 │   ├── models.py             # SQLAlchemy models
 │   ├── schemas.py            # Pydantic schemas
 │   ├── database.py           # Database configuration
+│   ├── round_config.py       # Multi-round configuration
 │   ├── main.py               # FastAPI application
+│   ├── test_company_intel.py # Company intelligence test script (NEW)
 │   └── requirements.txt      # Python dependencies
 ├── frontend/
 │   ├── src/
-│   │   ├── App.jsx           # Main application component
+│   │   ├── pages/
+│   │   │   ├── Dashboard.jsx # Main dashboard component
+│   │   │   ├── LandingPage.jsx # Landing page
+│   │   │   └── Login.jsx     # Login/Signup
 │   │   ├── App.css           # Setup screen styles
 │   │   ├── Meeting.css       # Interview screen styles
 │   │   └── InterviewerCards.css # Card component styles
