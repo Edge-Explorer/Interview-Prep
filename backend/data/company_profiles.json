@@ -1,8 +1,8 @@
 {
     "meta": {
-        "version": "1.0.0",
+        "version": "2.0.0",
         "last_updated": "2026-02-11",
-        "total_companies": 50,
+        "total_companies": 30,
         "description": "Curated company interview intelligence database"
     },
     "companies": {
@@ -588,6 +588,938 @@
             ],
             "average_process_duration": "4-6 weeks",
             "interview_count": "4-5 rounds"
+        },
+        "Atlassian": {
+            "name": "Atlassian",
+            "industry": "Technology/Collaboration Software",
+            "size": "Large (5000-10000)",
+            "interview_style": "team-collaboration-focused",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Open company, no bullshit",
+                "Build with heart and balance",
+                "Don't #@!% the customer",
+                "Play as a team",
+                "Be the change you seek"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Problem-solving, collaboration, system thinking",
+                    "common_topics": [
+                        "Distributed systems",
+                        "API design",
+                        "Scalability",
+                        "Team collaboration tools"
+                    ],
+                    "style": "Collaborative problem-solving, focus on teamwork",
+                    "tips": "Show how you work in teams. Discuss trade-offs openly."
+                },
+                "Behavioral": {
+                    "focus": "Values alignment, teamwork, customer empathy",
+                    "common_questions": [
+                        "Tell me about a time you disagreed with a team decision",
+                        "How do you handle customer feedback?",
+                        "Describe a time you went above and beyond for a teammate"
+                    ],
+                    "style": "Casual, authentic, focus on real experiences"
+                },
+                "System Design": {
+                    "focus": "Collaboration tools, distributed systems, scalability",
+                    "common_topics": [
+                        "Design Jira",
+                        "Design Confluence",
+                        "Design real-time collaboration"
+                    ],
+                    "style": "Focus on team workflows and collaboration"
+                }
+            },
+            "red_flags": [
+                "Not being authentic",
+                "Ignoring team dynamics",
+                "Customer-last mentality"
+            ],
+            "average_process_duration": "4-5 weeks",
+            "interview_count": "4 rounds"
+        },
+        "Flipkart": {
+            "name": "Flipkart",
+            "industry": "E-commerce/Technology",
+            "size": "Large (>10000)",
+            "interview_style": "scale-focused",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Customer first",
+                "Bias for action",
+                "Audacious goals",
+                "Integrity",
+                "Inclusion"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Scale, e-commerce systems, Indian market challenges",
+                    "common_topics": [
+                        "High-traffic systems",
+                        "Payment gateways",
+                        "Inventory management",
+                        "Recommendation engines"
+                    ],
+                    "style": "Focus on India-scale problems (millions of users, tier-2/3 cities)",
+                    "tips": "Discuss handling scale with limited infrastructure. Talk about localization."
+                },
+                "Behavioral": {
+                    "focus": "Hustle, customer obsession, adaptability",
+                    "common_questions": [
+                        "How do you handle ambiguity in a fast-growing company?",
+                        "Tell me about a time you had to pivot quickly",
+                        "Describe how you'd solve for tier-2 city customers"
+                    ],
+                    "style": "Fast-paced, startup mentality despite being large"
+                },
+                "System Design": {
+                    "focus": "E-commerce at India scale, payments, logistics",
+                    "common_topics": [
+                        "Design product catalog",
+                        "Design checkout system",
+                        "Design delivery tracking"
+                    ],
+                    "style": "Focus on India-specific challenges and scale"
+                }
+            },
+            "red_flags": [
+                "Not understanding Indian market",
+                "Slow decision-making",
+                "Ignoring localization"
+            ],
+            "average_process_duration": "3-4 weeks",
+            "interview_count": "3-4 rounds"
+        },
+        "Zomato": {
+            "name": "Zomato",
+            "industry": "Food Tech",
+            "size": "Medium (5000-10000)",
+            "interview_style": "product-thinking-heavy",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Customer obsession",
+                "Bias for action",
+                "Ownership",
+                "Transparency",
+                "Frugality"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Real-time systems, logistics, product thinking",
+                    "common_topics": [
+                        "Real-time tracking",
+                        "Matching algorithms",
+                        "Surge pricing",
+                        "Maps integration"
+                    ],
+                    "style": "Product-focused technical discussions",
+                    "tips": "Think about delivery logistics. Discuss real-world constraints."
+                },
+                "Behavioral": {
+                    "focus": "Hustle, customer empathy, resourcefulness",
+                    "common_questions": [
+                        "How would you improve Zomato's delivery time?",
+                        "Tell me about a time you solved a problem with limited resources",
+                        "How do you prioritize features?"
+                    ],
+                    "style": "Product case studies, focus on impact"
+                },
+                "System Design": {
+                    "focus": "Food delivery, real-time logistics, restaurant management",
+                    "common_topics": [
+                        "Design food delivery system",
+                        "Design restaurant onboarding",
+                        "Design surge pricing"
+                    ],
+                    "style": "Focus on logistics and real-time constraints"
+                }
+            },
+            "red_flags": [
+                "Not thinking about users",
+                "Overengineering simple problems",
+                "Lack of hustle"
+            ],
+            "average_process_duration": "2-3 weeks",
+            "interview_count": "3-4 rounds"
+        },
+        "Swiggy": {
+            "name": "Swiggy",
+            "industry": "Food Tech",
+            "size": "Medium (5000-10000)",
+            "interview_style": "execution-focused",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Customer obsession",
+                "Ownership",
+                "Excellence",
+                "Integrity",
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Logistics optimization, real-time systems, mobile-first",
+                    "common_topics": [
+                        "Routing algorithms",
+                        "Real-time tracking",
+                        "Payment systems",
+                        "Mobile performance"
+                    ],
+                    "style": "Practical problem-solving, focus on execution",
+                    "tips": "Discuss logistics challenges. Think mobile-first."
+                },
+                "Behavioral": {
+                    "focus": "Ownership, execution speed, customer focus",
+                    "common_questions": [
+                        "Tell me about a time you owned a project end-to-end",
+                        "How do you handle tight deadlines?",
+                        "Describe a customer problem you solved"
+                    ],
+                    "style": "Action-oriented, focus on results"
+                },
+                "System Design": {
+                    "focus": "Delivery logistics, real-time tracking, mobile apps",
+                    "common_topics": [
+                        "Design delivery routing",
+                        "Design order tracking",
+                        "Design payment system"
+                    ],
+                    "style": "Focus on execution and mobile-first design"
+                }
+            },
+            "red_flags": [
+                "Lack of ownership",
+                "Slow execution",
+                "Not customer-focused"
+            ],
+            "average_process_duration": "2-3 weeks",
+            "interview_count": "3-4 rounds"
+        },
+        "Razorpay": {
+            "name": "Razorpay",
+            "industry": "Fintech",
+            "size": "Medium (1000-5000)",
+            "interview_style": "technical-rigor",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Customer first",
+                "Ownership",
+                "Transparency",
+                "Bias for action",
+                "Frugality"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Payment systems, security, financial accuracy",
+                    "common_topics": [
+                        "Payment gateway design",
+                        "Security",
+                        "Idempotency",
+                        "Reconciliation"
+                    ],
+                    "style": "Deep technical dive, zero tolerance for errors",
+                    "tips": "Money must never be lost. Discuss security and compliance."
+                },
+                "Behavioral": {
+                    "focus": "Ownership, hustle, customer empathy",
+                    "common_questions": [
+                        "Tell me about a time you debugged a critical production issue",
+                        "How do you ensure reliability?",
+                        "Describe a time you went beyond your role"
+                    ],
+                    "style": "Startup hustle, high ownership expectation"
+                },
+                "System Design": {
+                    "focus": "Payment processing, security, compliance",
+                    "common_topics": [
+                        "Design payment gateway",
+                        "Design refund system",
+                        "Design fraud detection"
+                    ],
+                    "style": "Zero tolerance for errors, focus on security"
+                }
+            },
+            "red_flags": [
+                "Ignoring edge cases in payments",
+                "Lack of security awareness",
+                "Not detail-oriented"
+            ],
+            "average_process_duration": "3-4 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "CRED": {
+            "name": "CRED",
+            "industry": "Fintech",
+            "size": "Medium (1000-5000)",
+            "interview_style": "design-and-product-heavy",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Trustworthy",
+                "Progress over perfection",
+                "Customer delight",
+                "Transparency",
+                "Ownership"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Product thinking, design, user experience",
+                    "common_topics": [
+                        "Mobile-first design",
+                        "Gamification",
+                        "Rewards systems",
+                        "Financial products"
+                    ],
+                    "style": "Product-focused, emphasis on UX and design",
+                    "tips": "Show product sense. Discuss user delight and design."
+                },
+                "Behavioral": {
+                    "focus": "Product thinking, customer obsession, innovation",
+                    "common_questions": [
+                        "How would you improve CRED's rewards program?",
+                        "Tell me about a product you built from scratch",
+                        "How do you balance design and functionality?"
+                    ],
+                    "style": "Product case studies, focus on user experience"
+                },
+                "System Design": {
+                    "focus": "Rewards systems, gamification, mobile-first",
+                    "common_topics": [
+                        "Design rewards program",
+                        "Design credit score tracking",
+                        "Design gamification"
+                    ],
+                    "style": "Focus on user delight and mobile experience"
+                }
+            },
+            "red_flags": [
+                "Lack of product sense",
+                "Ignoring design",
+                "Not customer-focused"
+            ],
+            "average_process_duration": "3-4 weeks",
+            "interview_count": "4 rounds"
+        },
+        "Paytm": {
+            "name": "Paytm",
+            "industry": "Fintech/Payments",
+            "size": "Large (>10000)",
+            "interview_style": "scale-and-speed",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Customer first",
+                "Innovation",
+                "Integrity",
+                "Teamwork",
+                "Excellence"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Payment systems, scale, mobile-first",
+                    "common_topics": [
+                        "Payment processing",
+                        "Wallet systems",
+                        "QR codes",
+                        "UPI integration"
+                    ],
+                    "style": "Focus on India-scale and mobile-first solutions",
+                    "tips": "Discuss handling millions of transactions. Think mobile-first."
+                },
+                "Behavioral": {
+                    "focus": "Speed, innovation, customer focus",
+                    "common_questions": [
+                        "How do you handle rapid growth?",
+                        "Tell me about a time you innovated",
+                        "Describe a customer problem you solved at scale"
+                    ],
+                    "style": "Fast-paced, focus on execution"
+                },
+                "System Design": {
+                    "focus": "Payment systems, wallet, QR codes, UPI",
+                    "common_topics": [
+                        "Design wallet system",
+                        "Design QR payment",
+                        "Design UPI integration"
+                    ],
+                    "style": "Focus on India-scale and mobile payments"
+                }
+            },
+            "red_flags": [
+                "Slow decision-making",
+                "Not understanding payments",
+                "Lack of innovation"
+            ],
+            "average_process_duration": "3-4 weeks",
+            "interview_count": "3-4 rounds"
+        },
+        "TCS": {
+            "name": "Tata Consultancy Services (TCS)",
+            "industry": "IT Services/Consulting",
+            "size": "Large (>100000)",
+            "interview_style": "process-oriented",
+            "difficulty_level": "Medium",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Respect for individual",
+                "Leading change",
+                "Social responsibility"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Fundamentals, problem-solving, domain knowledge",
+                    "common_topics": [
+                        "Data structures",
+                        "Algorithms",
+                        "SDLC",
+                        "Client-specific technologies"
+                    ],
+                    "style": "Structured, focus on fundamentals and process",
+                    "tips": "Know basics well. Discuss SDLC and project management."
+                },
+                "Behavioral": {
+                    "focus": "Teamwork, client handling, adaptability",
+                    "common_questions": [
+                        "How do you handle difficult clients?",
+                        "Tell me about a time you worked in a team",
+                        "Describe your approach to learning new technologies"
+                    ],
+                    "style": "Professional, focus on client relationships"
+                }
+            },
+            "red_flags": [
+                "Weak fundamentals",
+                "Poor communication",
+                "Not team-oriented"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "2-3 rounds"
+        },
+        "Infosys": {
+            "name": "Infosys",
+            "industry": "IT Services/Consulting",
+            "size": "Large (>100000)",
+            "interview_style": "aptitude-and-technical",
+            "difficulty_level": "Medium",
+            "cultural_values": [
+                "C-LIFE (Client value, Leadership, Integrity, Fairness, Excellence)",
+                "Learn and evolve",
+                "Collaboration",
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Programming fundamentals, logical reasoning, aptitude",
+                    "common_topics": [
+                        "C/Java basics",
+                        "Data structures",
+                        "Puzzles",
+                        "Aptitude"
+                    ],
+                    "style": "Structured tests followed by technical interview",
+                    "tips": "Practice aptitude and coding basics. Be clear in communication."
+                },
+                "Behavioral": {
+                    "focus": "Learning agility, teamwork, professionalism",
+                    "common_questions": [
+                        "Why Infosys?",
+                        "How do you stay updated with technology?",
+                        "Tell me about a team project"
+                    ],
+                    "style": "Professional, focus on learning mindset"
+                }
+            },
+            "red_flags": [
+                "Poor aptitude scores",
+                "Weak coding basics",
+                "Lack of professionalism"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "2-3 rounds"
+        },
+        "Wipro": {
+            "name": "Wipro",
+            "industry": "IT Services/Consulting",
+            "size": "Large (>100000)",
+            "interview_style": "balanced",
+            "difficulty_level": "Medium",
+            "cultural_values": [
+                "Spirit of Wipro (Intensity, Act with sensitivity, Unyielding integrity)",
+                "Customer focus",
+                "Respect for individual",
+                "Teamwork"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Core programming, problem-solving, domain knowledge",
+                    "common_topics": [
+                        "Programming basics",
+                        "OOPS",
+                        "DBMS",
+                        "Networking"
+                    ],
+                    "style": "Fundamentals-focused, practical problem-solving",
+                    "tips": "Strong basics required. Discuss real-world applications."
+                },
+                "Behavioral": {
+                    "focus": "Values alignment, teamwork, adaptability",
+                    "common_questions": [
+                        "How do you handle pressure?",
+                        "Tell me about a challenging project",
+                        "Why Wipro?"
+                    ],
+                    "style": "Values-driven, professional"
+                }
+            },
+            "red_flags": [
+                "Weak fundamentals",
+                "Not team-oriented",
+                "Lack of integrity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "2-3 rounds"
+        },
+        "Goldman Sachs": {
+            "name": "Goldman Sachs",
+            "industry": "Finance/Investment Banking",
+            "size": "Large (>10000)",
+            "interview_style": "technical-and-business-acumen",
+            "difficulty_level": "Very High",
+            "cultural_values": [
+                "Client service",
+                "Integrity",
+                "Excellence",
+                "Teamwork",
+                "Meritocracy"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Algorithms, system design, financial systems",
+                    "common_topics": [
+                        "Low-latency systems",
+                        "Concurrency",
+                        "Financial modeling",
+                        "Risk management"
+                    ],
+                    "style": "Rigorous technical + business understanding",
+                    "tips": "Know finance basics. Discuss performance and reliability."
+                },
+                "Behavioral": {
+                    "focus": "Leadership, teamwork, business acumen",
+                    "common_questions": [
+                        "Why Goldman Sachs?",
+                        "Tell me about a time you showed leadership",
+                        "How do you handle market volatility?"
+                    ],
+                    "style": "Professional, focus on business impact"
+                },
+                "System Design": {
+                    "focus": "Trading systems, low-latency, financial accuracy",
+                    "common_topics": [
+                        "Design trading platform",
+                        "Design risk management system",
+                        "Design order matching"
+                    ],
+                    "style": "Focus on performance, accuracy, and compliance"
+                }
+            },
+            "red_flags": [
+                "Lack of finance knowledge",
+                "Poor business acumen",
+                "Not detail-oriented"
+            ],
+            "average_process_duration": "6-8 weeks",
+            "interview_count": "5-6 rounds (including Superday)"
+        },
+        "JPMorgan Chase": {
+            "name": "JPMorgan Chase",
+            "industry": "Finance/Banking",
+            "size": "Large (>100000)",
+            "interview_style": "technical-and-behavioral-balanced",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Exceptional client service",
+                "Operational excellence",
+                "Integrity",
+                "Great team",
+                "Commitment to community"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Software engineering, financial systems, databases",
+                    "common_topics": [
+                        "Java/Python",
+                        "SQL",
+                        "System design",
+                        "Trading systems"
+                    ],
+                    "style": "Practical coding + system design",
+                    "tips": "Know SQL well. Discuss financial system requirements."
+                },
+                "Behavioral": {
+                    "focus": "Teamwork, client focus, integrity",
+                    "common_questions": [
+                        "Why JPMorgan?",
+                        "Tell me about a time you worked under pressure",
+                        "How do you ensure quality?"
+                    ],
+                    "style": "Professional, values-focused"
+                },
+                "System Design": {
+                    "focus": "Banking systems, security, compliance",
+                    "common_topics": [
+                        "Design banking app",
+                        "Design fraud detection",
+                        "Design transaction processing"
+                    ],
+                    "style": "Focus on security, compliance, and reliability"
+                }
+            },
+            "red_flags": [
+                "Weak SQL skills",
+                "Lack of attention to detail",
+                "Poor teamwork"
+            ],
+            "average_process_duration": "5-7 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "McKinsey": {
+            "name": "McKinsey & Company",
+            "industry": "Management Consulting",
+            "size": "Large (>10000)",
+            "interview_style": "case-study-heavy",
+            "difficulty_level": "Very High",
+            "cultural_values": [
+                "Client impact",
+                "Inclusive meritocracy",
+                "Obligation to dissent",
+                "Long-term greedy",
+                "Professional standards"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Case interviews, problem-solving, business acumen",
+                    "common_topics": [
+                        "Market sizing",
+                        "Profitability",
+                        "Growth strategy",
+                        "Operations"
+                    ],
+                    "style": "Case-based, structured problem-solving",
+                    "tips": "Practice case frameworks. Think structured. Communicate clearly."
+                },
+                "Behavioral": {
+                    "focus": "Leadership, impact, teamwork",
+                    "common_questions": [
+                        "Tell me about a time you led a team",
+                        "Describe your biggest achievement",
+                        "How do you handle ambiguity?"
+                    ],
+                    "style": "PEI (Personal Experience Interview), STAR method"
+                }
+            },
+            "red_flags": [
+                "Unstructured thinking",
+                "Poor communication",
+                "Lack of business sense"
+            ],
+            "average_process_duration": "6-10 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "BCG": {
+            "name": "Boston Consulting Group (BCG)",
+            "industry": "Management Consulting",
+            "size": "Large (>10000)",
+            "interview_style": "case-study-focused",
+            "difficulty_level": "Very High",
+            "cultural_values": [
+                "Impact",
+                "Diversity",
+                "Collaboration",
+                "Entrepreneurship",
+                "Integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Case interviews, analytical thinking, creativity",
+                    "common_topics": [
+                        "Market entry",
+                        "Cost reduction",
+                        "M&A",
+                        "Digital transformation"
+                    ],
+                    "style": "Interactive cases, creative problem-solving",
+                    "tips": "Be hypothesis-driven. Show creativity. Collaborate with interviewer."
+                },
+                "Behavioral": {
+                    "focus": "Fit, teamwork, passion",
+                    "common_questions": [
+                        "Why consulting? Why BCG?",
+                        "Tell me about a time you solved a complex problem",
+                        "How do you work in teams?"
+                    ],
+                    "style": "Conversational, focus on fit and passion"
+                }
+            },
+            "red_flags": [
+                "Rigid thinking",
+                "Not collaborative",
+                "Lack of creativity"
+            ],
+            "average_process_duration": "6-8 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Deloitte": {
+            "name": "Deloitte",
+            "industry": "Consulting/Professional Services",
+            "size": "Large (>100000)",
+            "interview_style": "competency-based",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Lead the way",
+                "Serve with integrity",
+                "Take care of each other",
+                "Foster inclusion",
+                "Collaborate for impact"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Domain knowledge, problem-solving, case studies",
+                    "common_topics": [
+                        "Business analysis",
+                        "Process improvement",
+                        "Technology consulting",
+                        "Risk management"
+                    ],
+                    "style": "Competency-based, practical scenarios",
+                    "tips": "Show domain expertise. Discuss real-world applications."
+                },
+                "Behavioral": {
+                    "focus": "Leadership, teamwork, values",
+                    "common_questions": [
+                        "Tell me about a time you led a project",
+                        "How do you handle difficult stakeholders?",
+                        "Describe a time you showed integrity"
+                    ],
+                    "style": "STAR method, values-focused"
+                }
+            },
+            "red_flags": [
+                "Lack of leadership examples",
+                "Poor stakeholder management",
+                "Not values-aligned"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "3-4 rounds"
+        },
+        "Shopify": {
+            "name": "Shopify",
+            "industry": "E-commerce/Technology",
+            "size": "Large (5000-10000)",
+            "interview_style": "product-and-craft-focused",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Think big",
+                "Build for the long term",
+                "Get shit done",
+                "Merchant obsessed",
+                "Act with integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Full-stack development, e-commerce, craft",
+                    "common_topics": [
+                        "Ruby on Rails",
+                        "React",
+                        "GraphQL",
+                        "E-commerce systems"
+                    ],
+                    "style": "Craft-focused, emphasis on code quality",
+                    "tips": "Show attention to detail. Discuss merchant needs."
+                },
+                "Behavioral": {
+                    "focus": "Merchant obsession, ownership, craft",
+                    "common_questions": [
+                        "How would you improve Shopify for merchants?",
+                        "Tell me about a time you went deep on a problem",
+                        "Describe your approach to code quality"
+                    ],
+                    "style": "Product-focused, emphasis on craft"
+                },
+                "System Design": {
+                    "focus": "E-commerce platform, merchant tools, scalability",
+                    "common_topics": [
+                        "Design e-commerce platform",
+                        "Design checkout system",
+                        "Design merchant dashboard"
+                    ],
+                    "style": "Focus on merchant needs and craft"
+                }
+            },
+            "red_flags": [
+                "Not merchant-focused",
+                "Poor code quality",
+                "Lack of ownership"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Twilio": {
+            "name": "Twilio",
+            "industry": "Technology/Communications",
+            "size": "Medium (5000-10000)",
+            "interview_style": "developer-empathy-focused",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Draw the owl",
+                "No shenanigans",
+                "Wear the customer's shoes",
+                "Write it down",
+                "Be an owner"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "API design, developer experience, distributed systems",
+                    "common_topics": [
+                        "RESTful APIs",
+                        "WebRTC",
+                        "Messaging systems",
+                        "Developer tools"
+                    ],
+                    "style": "Developer-focused, emphasis on DX",
+                    "tips": "Think like a developer using APIs. Discuss developer experience."
+                },
+                "Behavioral": {
+                    "focus": "Customer empathy, ownership, transparency",
+                    "common_questions": [
+                        "How would you improve Twilio's API?",
+                        "Tell me about a time you owned a project",
+                        "Describe how you handle customer feedback"
+                    ],
+                    "style": "Transparent, focus on developer empathy"
+                },
+                "System Design": {
+                    "focus": "Communication APIs, messaging, voice/video",
+                    "common_topics": [
+                        "Design messaging API",
+                        "Design voice calling",
+                        "Design WebRTC system"
+                    ],
+                    "style": "Focus on developer experience and reliability"
+                }
+            },
+            "red_flags": [
+                "Not developer-focused",
+                "Poor API design sense",
+                "Lack of ownership"
+            ],
+            "average_process_duration": "4-5 weeks",
+            "interview_count": "4 rounds"
+        },
+        "Snowflake": {
+            "name": "Snowflake",
+            "industry": "Technology/Data Cloud",
+            "size": "Medium (5000-10000)",
+            "interview_style": "technical-depth",
+            "difficulty_level": "Very High",
+            "cultural_values": [
+                "Put customers first",
+                "Integrity always",
+                "Think big",
+                "Be excellent",
+                "Get it done"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Distributed systems, databases, cloud architecture",
+                    "common_topics": [
+                        "SQL",
+                        "Distributed databases",
+                        "Cloud computing",
+                        "Data warehousing"
+                    ],
+                    "style": "Deep technical dive, very rigorous",
+                    "tips": "Know databases deeply. Discuss distributed systems trade-offs."
+                },
+                "Behavioral": {
+                    "focus": "Customer focus, execution, excellence",
+                    "common_questions": [
+                        "Tell me about a technically challenging project",
+                        "How do you ensure data quality?",
+                        "Describe a time you went above and beyond"
+                    ],
+                    "style": "Technical depth + customer focus"
+                },
+                "System Design": {
+                    "focus": "Data warehousing, distributed databases, cloud",
+                    "common_topics": [
+                        "Design data warehouse",
+                        "Design query optimizer",
+                        "Design data sharing"
+                    ],
+                    "style": "Deep technical focus on databases and cloud"
+                }
+            },
+            "red_flags": [
+                "Weak database knowledge",
+                "Not customer-focused",
+                "Lack of rigor"
+            ],
+            "average_process_duration": "5-7 weeks",
+            "interview_count": "5-6 rounds"
+        },
+        "Databricks": {
+            "name": "Databricks",
+            "industry": "Technology/Data & AI",
+            "size": "Medium (5000-10000)",
+            "interview_style": "technical-and-impact-focused",
+            "difficulty_level": "Very High",
+            "cultural_values": [
+                "Customer obsessed",
+                "Own it",
+                "Champion diversity",
+                "Keep it simple",
+                "Move fast"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Big data, distributed systems, machine learning",
+                    "common_topics": [
+                        "Spark",
+                        "Distributed computing",
+                        "ML pipelines",
+                        "Data engineering"
+                    ],
+                    "style": "Deep technical + practical problem-solving",
+                    "tips": "Know Spark and distributed systems. Discuss data at scale."
+                },
+                "Behavioral": {
+                    "focus": "Impact, ownership, customer focus",
+                    "common_questions": [
+                        "Tell me about your most impactful project",
+                        "How do you handle ambiguity?",
+                        "Describe a time you simplified a complex problem"
+                    ],
+                    "style": "Impact-driven, focus on results"
+                },
+                "System Design": {
+                    "focus": "Big data processing, ML pipelines, distributed systems",
+                    "common_topics": [
+                        "Design data pipeline",
+                        "Design ML platform",
+                        "Design distributed processing"
+                    ],
+                    "style": "Focus on data at scale and ML systems"
+                }
+            },
+            "red_flags": [
+                "Weak distributed systems knowledge",
+                "Not impact-focused",
+                "Overcomplicating"
+            ],
+            "average_process_duration": "5-6 weeks",
+            "interview_count": "5 rounds"
         }
     }
 }

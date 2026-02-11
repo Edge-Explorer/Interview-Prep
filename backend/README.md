@@ -23,7 +23,8 @@ This directory contains the FastAPI-based backend for the InterviewAI platform. 
 
 1. **AI Interviewer**: Integrated with Google Gemini 2.0 Flash API to generate real-time, adaptive questions.
 2. **Company Intelligence System (NEW)**: 
-   - **Tier 1 (Curated)**: Rich, company-specific interview intelligence for 11+ top companies (Google, Amazon, Microsoft, Meta, Apple, Netflix, Uber, Airbnb, Stripe, Salesforce, Adobe)
+   - **Tier 1 (Curated)**: Rich, company-specific interview intelligence for **30 companies** across tech, consulting, finance, and Indian companies
+   - **Companies**: FAANG (Google, Amazon, Microsoft, Meta, Apple, Netflix), Indian Tech (Flipkart, Zomato, Swiggy, Razorpay, CRED, Paytm, TCS, Infosys, Wipro), Finance (Goldman Sachs, JPMorgan), Consulting (McKinsey, BCG, Deloitte), and more (Uber, Airbnb, Stripe, Salesforce, Adobe, Atlassian, Shopify, Twilio, Snowflake, Databricks)
    - **Tier 3 (AI Fallback)**: Uses Gemini's general knowledge for companies not in database
    - Includes cultural values, interview styles, common topics, and red flags
 3. **Contextual Analysis**: Processes PDF resumes to tailor interview topics to the user's specific background.
@@ -42,10 +43,25 @@ This directory contains the FastAPI-based backend for the InterviewAI platform. 
 
 ## 🏢 Company Intelligence Database
 
-The system includes curated interview intelligence for:
-- **FAANG**: Google, Amazon, Meta, Apple, Netflix
-- **Tech Giants**: Microsoft, Uber, Salesforce, Adobe
-- **High-Growth**: Stripe, Airbnb
+The system includes curated interview intelligence for **30 companies**:
+
+**FAANG & Tech Giants:**
+- Google, Amazon, Microsoft, Meta, Apple, Netflix
+- Uber, Salesforce, Adobe, Atlassian, Shopify, Twilio
+
+**Indian Tech Ecosystem:**
+- **E-commerce/Food Tech**: Flipkart, Zomato, Swiggy
+- **Fintech**: Razorpay, CRED, Paytm
+- **IT Services**: TCS, Infosys, Wipro
+
+**Finance:**
+- Goldman Sachs, JPMorgan Chase
+
+**Consulting:**
+- McKinsey & Company, Boston Consulting Group (BCG), Deloitte
+
+**High-Growth Tech:**
+- Stripe, Airbnb, Snowflake, Databricks
 
 Each company profile includes:
 - Interview style (technical-heavy, culture-fit-heavy, etc.)
