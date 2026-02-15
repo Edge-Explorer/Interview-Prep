@@ -1,8 +1,8 @@
 {
     "meta": {
-        "version": "8.6.0",
+        "version": "9.0.0",
         "last_updated": "2026-02-15",
-        "total_companies": 203,
+        "total_companies": 317,
         "description": "Curated company interview intelligence database"
     },
     "companies": {
@@ -8400,6 +8400,2970 @@
             ],
             "average_process_duration": "4-6 weeks",
             "interview_count": "4-5 rounds"
+        },
+        "DLA Piper": {
+            "name": "DLA Piper",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Kirkland & Ellis": {
+            "name": "Kirkland & Ellis",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Latham & Watkins": {
+            "name": "Latham & Watkins",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Baker McKenzie": {
+            "name": "Baker McKenzie",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Skadden": {
+            "name": "Skadden",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Clifford Chance": {
+            "name": "Clifford Chance",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Linklaters": {
+            "name": "Linklaters",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Hogan Lovells": {
+            "name": "Hogan Lovells",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "White & Case": {
+            "name": "White & Case",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Sidley Austin": {
+            "name": "Sidley Austin",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Jones Day": {
+            "name": "Jones Day",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Norton Rose Fulbright": {
+            "name": "Norton Rose Fulbright",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Morgan Lewis": {
+            "name": "Morgan Lewis",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Dentons": {
+            "name": "Dentons",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Reed Smith": {
+            "name": "Reed Smith",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Allen & Overy": {
+            "name": "Allen & Overy",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Freshfields Bruckhaus Deringer": {
+            "name": "Freshfields Bruckhaus Deringer",
+            "industry": "Legal Services/Law Firm",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Services/Law Firm expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Axiom": {
+            "name": "Axiom",
+            "industry": "Legal Tech/Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Tech/Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Clio": {
+            "name": "Clio",
+            "industry": "Legal Tech/SaaS",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Tech/SaaS expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Everlaw": {
+            "name": "Everlaw",
+            "industry": "Legal Tech/E-Discovery",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Tech/E-Discovery expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "NASA": {
+            "name": "NASA",
+            "industry": "Space/Science Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Space/Science Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "CERN": {
+            "name": "CERN",
+            "industry": "Science/Physics Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Physics Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "ISRO": {
+            "name": "ISRO",
+            "industry": "Space/Science Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Space/Science Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "ESA": {
+            "name": "ESA",
+            "industry": "Space/Science Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Space/Science Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "JPL (Jet Propulsion Laboratory)": {
+            "name": "JPL (Jet Propulsion Laboratory)",
+            "industry": "Space/Science Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Space/Science Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "IBM Research": {
+            "name": "IBM Research",
+            "industry": "Science/Deep Tech Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Deep Tech Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Microsoft Research": {
+            "name": "Microsoft Research",
+            "industry": "Science/AI Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/AI Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Bell Labs": {
+            "name": "Bell Labs",
+            "industry": "Science/Telecommunications Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Telecommunications Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Xerox PARC": {
+            "name": "Xerox PARC",
+            "industry": "Science/Computing Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Computing Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "MIT Media Lab": {
+            "name": "MIT Media Lab",
+            "industry": "Science/Interdisciplinary Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Interdisciplinary Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Broad Institute": {
+            "name": "Broad Institute",
+            "industry": "Science/Biomedical Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Biomedical Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Salk Institute": {
+            "name": "Salk Institute",
+            "industry": "Science/Biological Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Biological Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Scripps Research": {
+            "name": "Scripps Research",
+            "industry": "Science/Biomedical Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Biomedical Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Argonne National Laboratory": {
+            "name": "Argonne National Laboratory",
+            "industry": "Science/Energy Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Energy Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Oak Ridge National Laboratory": {
+            "name": "Oak Ridge National Laboratory",
+            "industry": "Science/Energy Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Energy Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Lawrence Livermore National Lab": {
+            "name": "Lawrence Livermore National Lab",
+            "industry": "Science/Nuclear Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Nuclear Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "SRI International": {
+            "name": "SRI International",
+            "industry": "Science/Non-profit Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Non-profit Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Battelle": {
+            "name": "Battelle",
+            "industry": "Science/Applied Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Applied Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "RAND Corporation": {
+            "name": "RAND Corporation",
+            "industry": "Science/Policy Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science/Policy Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Chegg": {
+            "name": "Chegg",
+            "industry": "Education/EdTech",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/EdTech expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Quizlet": {
+            "name": "Quizlet",
+            "industry": "Education/EdTech",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/EdTech expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Pearson": {
+            "name": "Pearson",
+            "industry": "Education/Publishing",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/Publishing expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "McGraw Hill": {
+            "name": "McGraw Hill",
+            "industry": "Education/Publishing",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/Publishing expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Houghton Mifflin Harcourt": {
+            "name": "Houghton Mifflin Harcourt",
+            "industry": "Education/Publishing",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/Publishing expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Rosetta Stone": {
+            "name": "Rosetta Stone",
+            "industry": "Education/Language Learning",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/Language Learning expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Babbel": {
+            "name": "Babbel",
+            "industry": "Education/Language Learning",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/Language Learning expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "MasterClass": {
+            "name": "MasterClass",
+            "industry": "Education/Streaming",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/Streaming expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Skillshare": {
+            "name": "Skillshare",
+            "industry": "Education/Marketplace",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/Marketplace expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Pluralsight": {
+            "name": "Pluralsight",
+            "industry": "Education/SaaS",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/SaaS expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Codecademy": {
+            "name": "Codecademy",
+            "industry": "Education/SaaS",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/SaaS expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Simplilearn": {
+            "name": "Simplilearn",
+            "industry": "Education/EdTech",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/EdTech expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Great Learning": {
+            "name": "Great Learning",
+            "industry": "Education/EdTech",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/EdTech expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "American Red Cross": {
+            "name": "American Red Cross",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Bill & Melinda Gates Foundation": {
+            "name": "Bill & Melinda Gates Foundation",
+            "industry": "Non-profit/Philanthropy",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Philanthropy expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "UNICEF": {
+            "name": "UNICEF",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "United Way": {
+            "name": "United Way",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Salvation Army": {
+            "name": "Salvation Army",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Goodwill Industries": {
+            "name": "Goodwill Industries",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "World Vision": {
+            "name": "World Vision",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "MSF (Doctors Without Borders)": {
+            "name": "MSF (Doctors Without Borders)",
+            "industry": "Non-profit/Healthcare Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Healthcare Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Habitat for Humanity": {
+            "name": "Habitat for Humanity",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Feeding America": {
+            "name": "Feeding America",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "American Cancer Society": {
+            "name": "American Cancer Society",
+            "industry": "Non-profit/Healthcare Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Healthcare Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "WWF (World Wildlife Fund)": {
+            "name": "WWF (World Wildlife Fund)",
+            "industry": "Non-profit/Environmental Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Environmental Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Greenpeace": {
+            "name": "Greenpeace",
+            "industry": "Non-profit/Environmental Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Environmental Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Amnesty International": {
+            "name": "Amnesty International",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Save the Children": {
+            "name": "Save the Children",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Plan International": {
+            "name": "Plan International",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Oxfam": {
+            "name": "Oxfam",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "CARE": {
+            "name": "CARE",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Catholic Charities": {
+            "name": "Catholic Charities",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "YMCA": {
+            "name": "YMCA",
+            "industry": "Non-profit/Social Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Pixar Animation Studios": {
+            "name": "Pixar Animation Studios",
+            "industry": "Creative/Animation",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Animation expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "DreamWorks Animation": {
+            "name": "DreamWorks Animation",
+            "industry": "Creative/Animation",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Animation expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Industrial Light & Magic (ILM)": {
+            "name": "Industrial Light & Magic (ILM)",
+            "industry": "Creative/VFX",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/VFX expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Electronic Arts (EA)": {
+            "name": "Electronic Arts (EA)",
+            "industry": "Creative/Gaming",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Gaming expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Capcom": {
+            "name": "Capcom",
+            "industry": "Creative/Gaming",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Gaming expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Square Enix": {
+            "name": "Square Enix",
+            "industry": "Creative/Gaming",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Gaming expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Bandai Namco": {
+            "name": "Bandai Namco",
+            "industry": "Creative/Gaming",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Gaming expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "InVision": {
+            "name": "InVision",
+            "industry": "Creative/Design SaaS",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Design SaaS expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Sketch": {
+            "name": "Sketch",
+            "industry": "Creative/Design SaaS",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Design SaaS expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Dribbble": {
+            "name": "Dribbble",
+            "industry": "Creative/Community",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Community expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Behance": {
+            "name": "Behance",
+            "industry": "Creative/Community",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Community expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Bain & Company": {
+            "name": "Bain & Company",
+            "industry": "Consulting/Business Management",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Consulting/Business Management expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Boston Consulting Group (BCG)": {
+            "name": "Boston Consulting Group (BCG)",
+            "industry": "Consulting/Business Management",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Consulting/Business Management expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Gartner": {
+            "name": "Gartner",
+            "industry": "Consulting/Market Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Consulting/Market Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Forrester": {
+            "name": "Forrester",
+            "industry": "Consulting/Market Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Consulting/Market Research expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Mercer": {
+            "name": "Mercer",
+            "industry": "Consulting/HR Management",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Consulting/HR Management expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Willis Towers Watson": {
+            "name": "Willis Towers Watson",
+            "industry": "Consulting/Risk Management",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Consulting/Risk Management expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Korn Ferry": {
+            "name": "Korn Ferry",
+            "industry": "Consulting/Executive Search",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Consulting/Executive Search expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Oliver Wyman": {
+            "name": "Oliver Wyman",
+            "industry": "Consulting/Strategy",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Consulting/Strategy expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Booz Allen Hamilton": {
+            "name": "Booz Allen Hamilton",
+            "industry": "Consulting/Tech Management",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Consulting/Tech Management expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "McKinsey & Company": {
+            "name": "McKinsey & Company",
+            "industry": "Consulting/Business Management",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Consulting/Business Management expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "WPP": {
+            "name": "WPP",
+            "industry": "Marketing/Advertising",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Omnicom Group": {
+            "name": "Omnicom Group",
+            "industry": "Marketing/Advertising",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Publicis Groupe": {
+            "name": "Publicis Groupe",
+            "industry": "Marketing/Advertising",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Interpublic Group (IPG)": {
+            "name": "Interpublic Group (IPG)",
+            "industry": "Marketing/Advertising",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Dentsu": {
+            "name": "Dentsu",
+            "industry": "Marketing/Advertising",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Ogilvy": {
+            "name": "Ogilvy",
+            "industry": "Marketing/Advertising",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Leo Burnett": {
+            "name": "Leo Burnett",
+            "industry": "Marketing/Advertising",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "McCann Worldgroup": {
+            "name": "McCann Worldgroup",
+            "industry": "Marketing/Advertising",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Johnson & Johnson": {
+            "name": "Johnson & Johnson",
+            "industry": "Healthcare/Pharma",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Healthcare/Pharma expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Roche": {
+            "name": "Roche",
+            "industry": "Healthcare/Diagnostics",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Healthcare/Diagnostics expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Novartis": {
+            "name": "Novartis",
+            "industry": "Healthcare/Pharma",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Healthcare/Pharma expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Merck": {
+            "name": "Merck",
+            "industry": "Healthcare/Pharma",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Healthcare/Pharma expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Bechtel": {
+            "name": "Bechtel",
+            "industry": "Construction/Engineering",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Engineering expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Turner Construction": {
+            "name": "Turner Construction",
+            "industry": "Construction",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "AECOM": {
+            "name": "AECOM",
+            "industry": "Construction/Infrastructure",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Infrastructure expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Maersk": {
+            "name": "Maersk",
+            "industry": "Logistics/Shipping",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Logistics/Shipping expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Marriott International": {
+            "name": "Marriott International",
+            "industry": "Hospitality/Hotels",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Hospitality/Hotels expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Hilton": {
+            "name": "Hilton",
+            "industry": "Hospitality/Hotels",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Hospitality/Hotels expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Hyatt": {
+            "name": "Hyatt",
+            "industry": "Hospitality/Hotels",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Hospitality/Hotels expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "InterContinental Hotels Group (IHG)": {
+            "name": "InterContinental Hotels Group (IHG)",
+            "industry": "Hospitality/Hotels",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Hospitality/Hotels expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "Mastercard": {
+            "name": "Mastercard",
+            "industry": "Finance/Payments",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Finance/Payments expertise"
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit and teamwork"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Lack of industry depth"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "4-6 rounds"
         }
     }
 }
