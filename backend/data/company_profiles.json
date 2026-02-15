@@ -1,8 +1,8 @@
 {
     "meta": {
-        "version": "8.2.0",
+        "version": "8.6.0",
         "last_updated": "2026-02-15",
-        "total_companies": 150,
+        "total_companies": 203,
         "description": "Curated company interview intelligence database"
     },
     "companies": {
@@ -593,55 +593,25 @@
         },
         "Atlassian": {
             "name": "Atlassian",
-            "industry": "Technology/Collaboration Software",
-            "size": "Large (5000-10000)",
-            "interview_style": "team-collaboration-focused",
-            "difficulty_level": "Medium-High",
+            "industry": "SaaS/Collaboration",
+            "size": "Large",
+            "difficulty_level": "High",
             "cultural_values": [
-                "Open company, no bullshit",
-                "Build with heart and balance",
                 "Don't #@!% the customer",
-                "Play as a team",
-                "Be the change you seek"
+                "Open company"
             ],
             "interview_rounds": {
                 "Technical": {
-                    "focus": "Problem-solving, collaboration, system thinking",
-                    "common_topics": [
-                        "Distributed systems",
-                        "API design",
-                        "Scalability",
-                        "Team collaboration tools"
-                    ],
-                    "style": "Collaborative problem-solving, focus on teamwork",
-                    "tips": "Show how you work in teams. Discuss trade-offs openly."
-                },
-                "Behavioral": {
-                    "focus": "Values alignment, teamwork, customer empathy",
-                    "common_questions": [
-                        "Tell me about a time you disagreed with a team decision",
-                        "How do you handle customer feedback?",
-                        "Describe a time you went above and beyond for a teammate"
-                    ],
-                    "style": "Casual, authentic, focus on real experiences"
-                },
-                "System Design": {
-                    "focus": "Collaboration tools, distributed systems, scalability",
-                    "common_topics": [
-                        "Design Jira",
-                        "Design Confluence",
-                        "Design real-time collaboration"
-                    ],
-                    "style": "Focus on team workflows and collaboration"
+                    "focus": "SaaS/Collaboration fundamentals"
                 }
             },
             "red_flags": [
-                "Not being authentic",
-                "Ignoring team dynamics",
-                "Customer-last mentality"
+                "Poor communication",
+                "Weak technical skills"
             ],
-            "average_process_duration": "4-5 weeks",
-            "interview_count": "4 rounds"
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
         },
         "Flipkart": {
             "name": "Flipkart",
@@ -2032,54 +2002,33 @@
         },
         "Figma": {
             "name": "Figma",
-            "industry": "Technology/Design Tools",
-            "size": "Medium (1000-5000)",
-            "interview_style": "design-and-technical-excellence",
+            "industry": "Creative/Design Tools",
+            "size": "Medium (1000-2000)",
+            "interview_style": "craftsmanship-heavy",
             "difficulty_level": "Very High",
             "cultural_values": [
-                "Make things better",
-                "Move with urgency",
-                "Communicate clearly",
-                "Craft with pride",
-                "Grow together"
+                "Obsess over craft",
+                "Collaborate broadly",
+                "Keep it simple"
             ],
             "interview_rounds": {
                 "Technical": {
-                    "focus": "Real-time collaboration, graphics, performance",
+                    "focus": "C++/WebAssembly, high-performance web, multiplayer state",
                     "common_topics": [
-                        "WebGL",
-                        "Real-time sync",
-                        "CRDT",
-                        "Performance optimization"
+                        "CRDTs",
+                        "WASM",
+                        "Graphics",
+                        "State management"
                     ],
-                    "style": "Deep technical + design sensibility",
-                    "tips": "Know graphics and real-time systems. Discuss performance. Show design appreciation."
-                },
-                "Behavioral": {
-                    "focus": "Craft, urgency, collaboration",
-                    "common_questions": [
-                        "How would you improve Figma?",
-                        "Tell me about a time you optimized performance",
-                        "Describe your approach to collaboration"
-                    ],
-                    "style": "Craft-focused, emphasis on quality and speed"
-                },
-                "System Design": {
-                    "focus": "Real-time collaboration, graphics rendering, design tools",
-                    "common_topics": [
-                        "Design collaborative canvas",
-                        "Design plugin system",
-                        "Design real-time sync"
-                    ],
-                    "style": "Focus on performance and user experience"
+                    "tips": "Discuss multiplayer collaboration and performance."
                 }
             },
             "red_flags": [
-                "Weak performance optimization",
-                "Lack of design sense",
-                "Not collaborative"
+                "Low technical bar",
+                "Not design-aware",
+                "Weak performance focus"
             ],
-            "average_process_duration": "5-7 weeks",
+            "average_process_duration": "5-8 weeks",
             "interview_count": "5-6 rounds"
         },
         "Vercel": {
@@ -2136,55 +2085,25 @@
         },
         "Intel": {
             "name": "Intel",
-            "industry": "Technology/Semiconductors",
-            "size": "Large (>100000)",
-            "interview_style": "hardware-and-systems-focused",
+            "industry": "Semiconductors",
+            "size": "Large",
             "difficulty_level": "High",
             "cultural_values": [
-                "Customer first",
-                "Fearless innovation",
-                "Results driven",
-                "One Intel",
-                "Inclusion"
+                "Quality",
+                "Discipline"
             ],
             "interview_rounds": {
                 "Technical": {
-                    "focus": "Computer architecture, hardware, low-level programming, C/C++",
-                    "common_topics": [
-                        "Computer architecture",
-                        "C/C++",
-                        "Embedded systems",
-                        "Hardware design"
-                    ],
-                    "style": "Deep technical, focus on fundamentals and hardware",
-                    "tips": "Know computer architecture deeply. Strong C/C++ required. Discuss hardware-software interaction."
-                },
-                "Behavioral": {
-                    "focus": "Innovation, teamwork, customer focus",
-                    "common_questions": [
-                        "Tell me about a time you innovated",
-                        "How do you approach hardware-software co-design?",
-                        "Describe a challenging technical problem"
-                    ],
-                    "style": "Professional, focus on technical depth"
-                },
-                "System Design": {
-                    "focus": "Hardware systems, chip design, performance",
-                    "common_topics": [
-                        "Design processor",
-                        "Design memory hierarchy",
-                        "Design embedded system"
-                    ],
-                    "style": "Focus on hardware and low-level optimization"
+                    "focus": "Semiconductors fundamentals"
                 }
             },
             "red_flags": [
-                "Weak C/C++",
-                "Not understanding hardware",
-                "Lack of fundamentals"
+                "Poor communication",
+                "Weak technical skills"
             ],
-            "average_process_duration": "5-7 weeks",
-            "interview_count": "4-5 rounds"
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
         },
         "Cisco": {
             "name": "Cisco",
@@ -2293,106 +2212,46 @@
         "Dream11": {
             "name": "Dream11",
             "industry": "Gaming/Fantasy Sports",
-            "size": "Medium (1000-5000)",
-            "interview_style": "scale-and-real-time",
+            "size": "Medium",
             "difficulty_level": "High",
             "cultural_values": [
-                "User first",
-                "Ownership",
-                "Innovation",
-                "Integrity",
-                "Speed"
+                "Sportsmanship",
+                "Data driven"
             ],
             "interview_rounds": {
                 "Technical": {
-                    "focus": "Real-time systems, gaming, high concurrency, mobile-first",
-                    "common_topics": [
-                        "Real-time scoring",
-                        "High concurrency",
-                        "Mobile optimization",
-                        "Gaming algorithms"
-                    ],
-                    "style": "Focus on scale and real-time performance",
-                    "tips": "Think about millions of concurrent users. Discuss real-time updates. Mobile-first."
-                },
-                "Behavioral": {
-                    "focus": "Ownership, speed, user focus",
-                    "common_questions": [
-                        "How would you handle IPL match day traffic?",
-                        "Tell me about a time you optimized for scale",
-                        "Describe your approach to real-time systems"
-                    ],
-                    "style": "Fast-paced, focus on execution and scale"
-                },
-                "System Design": {
-                    "focus": "Fantasy sports, real-time scoring, high traffic",
-                    "common_topics": [
-                        "Design fantasy sports platform",
-                        "Design real-time leaderboard",
-                        "Design contest system"
-                    ],
-                    "style": "Focus on real-time and India-scale traffic"
+                    "focus": "Gaming/Fantasy Sports fundamentals"
                 }
             },
             "red_flags": [
-                "Not understanding scale",
-                "Slow execution",
-                "Ignoring real-time constraints"
+                "Poor communication",
+                "Weak technical skills"
             ],
-            "average_process_duration": "3-4 weeks",
-            "interview_count": "3-4 rounds"
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
         },
         "Byju's": {
             "name": "Byju's",
             "industry": "EdTech",
-            "size": "Large (>10000)",
-            "interview_style": "product-and-mobile-focused",
-            "difficulty_level": "Medium-High",
+            "size": "Large",
+            "difficulty_level": "Medium",
             "cultural_values": [
-                "Student first",
-                "Innovation",
-                "Ownership",
-                "Excellence",
-                "Impact"
+                "Dream big",
+                "Learn everyday"
             ],
             "interview_rounds": {
                 "Technical": {
-                    "focus": "Mobile apps, video streaming, personalization, analytics",
-                    "common_topics": [
-                        "Mobile development",
-                        "Video streaming",
-                        "Recommendation systems",
-                        "Analytics"
-                    ],
-                    "style": "Product-focused, mobile-first",
-                    "tips": "Think about student experience. Discuss personalization. Mobile optimization."
-                },
-                "Behavioral": {
-                    "focus": "Student focus, innovation, impact",
-                    "common_questions": [
-                        "How would you improve student engagement?",
-                        "Tell me about a product you built for education",
-                        "Describe your approach to personalization"
-                    ],
-                    "style": "Product-focused, emphasis on student impact"
-                },
-                "System Design": {
-                    "focus": "EdTech platform, video streaming, personalization",
-                    "common_topics": [
-                        "Design learning platform",
-                        "Design video delivery",
-                        "Design adaptive learning"
-                    ],
-                    "style": "Focus on student experience and scale"
+                    "focus": "EdTech fundamentals"
                 }
             },
             "red_flags": [
-                "Not student-focused",
-                "Weak mobile skills",
-                "Lack of product sense"
+                "Poor communication",
+                "Weak technical skills"
             ],
-            "average_process_duration": "3-4 weeks",
-            "interview_count": "3-4 rounds"
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
         },
         "Udaan": {
             "name": "Udaan",
@@ -3872,57 +3731,24 @@
         },
         "CrowdStrike": {
             "name": "CrowdStrike",
-            "industry": "Cybersecurity/Endpoint Security",
-            "size": "Medium (5000-10000)",
-            "interview_style": "threat-intelligence-focused",
+            "industry": "Cybersecurity",
+            "size": "Large",
             "difficulty_level": "Very High",
             "cultural_values": [
-                "Customer first",
-                "Innovation",
-                "Integrity",
-                "Teamwork",
-                "Excellence"
+                "We stop breaches"
             ],
             "interview_rounds": {
                 "Technical": {
-                    "focus": "Endpoint security, threat intelligence, cloud-native, AI/ML",
-                    "common_topics": [
-                        "Endpoint detection",
-                        "Threat hunting",
-                        "Cloud security",
-                        "AI for security",
-                        "Incident response"
-                    ],
-                    "style": "Advanced security, threat intelligence focus",
-                    "tips": "Know endpoint security. Discuss threat intelligence. Cloud-native security. AI/ML for security."
-                },
-                "Behavioral": {
-                    "focus": "Customer focus, innovation, threat mindset",
-                    "common_questions": [
-                        "How do you approach threat detection?",
-                        "Tell me about analyzing a security breach",
-                        "Describe your incident response experience",
-                        "How do you think about adversaries?"
-                    ],
-                    "style": "Threat-focused, customer-centric"
-                },
-                "System Design": {
-                    "focus": "Endpoint security, threat detection, cloud-native",
-                    "common_topics": [
-                        "Design EDR system",
-                        "Design threat intelligence platform",
-                        "Design incident response"
-                    ],
-                    "style": "Focus on real-time threat detection and response"
+                    "focus": "Cybersecurity fundamentals"
                 }
             },
             "red_flags": [
-                "Weak security knowledge",
-                "Not threat-aware",
-                "Ignoring cloud security"
+                "Poor communication",
+                "Weak technical skills"
             ],
-            "average_process_duration": "6-8 weeks",
-            "interview_count": "5-6 rounds"
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
         },
         "DigitalOcean": {
             "name": "DigitalOcean",
@@ -7118,6 +6944,1462 @@
             ],
             "average_process_duration": "4-8 weeks",
             "interview_count": "4-6 rounds"
+        },
+        "Duolingo": {
+            "name": "Duolingo",
+            "industry": "Education/EdTech",
+            "size": "Medium (500-1000)",
+            "interview_style": "gamification-and-learning",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Learning is free",
+                "Gamification",
+                "Student first",
+                "Data-driven",
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Mobile development, AWS, backend scale, gamification logic",
+                    "common_topics": [
+                        "Java/Kotlin",
+                        "AWS",
+                        "Gamification algorithms",
+                        "Scalability"
+                    ],
+                    "tips": "Show passion for education. Discuss gamification. Strong mobile/backend skills."
+                },
+                "Behavioral": {
+                    "focus": "Mission alignment, learning, empathy",
+                    "common_questions": [
+                        "Why Duolingo?",
+                        "Favorite bird (Duo)?",
+                        "Tell me about a learning challenge",
+                        "How do you handle user retention?"
+                    ],
+                    "style": "Fun, mission-driven"
+                }
+            },
+            "red_flags": [
+                "Not interested in education",
+                "Weak mobile/scale knowledge",
+                "No product sense"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Coursera": {
+            "name": "Coursera",
+            "industry": "Education/EdTech",
+            "size": "Medium (1000-2000)",
+            "interview_style": "academic-and-practical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Learn without limits",
+                "Collaboration",
+                "Innovation",
+                "Integrity",
+                "Student success"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Scalable platforms, React, Scala, AWS",
+                    "common_topics": [
+                        "Distributed systems",
+                        "Frontend architecture",
+                        "Data engineering"
+                    ],
+                    "tips": "Know Coursera's mission. Discuss platform scale. Educational technology focus."
+                },
+                "Behavioral": {
+                    "focus": "Student success, collaboration, mission",
+                    "common_questions": [
+                        "Why Coursera?",
+                        "How do you improve student outcomes?",
+                        "Describe a difficult team project"
+                    ],
+                    "style": "Collaborative, thoughtful"
+                }
+            },
+            "red_flags": [
+                "No interest in mission",
+                "Weak technical depth",
+                "Poor communication"
+            ],
+            "average_process_duration": "5-7 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Khan Academy": {
+            "name": "Khan Academy",
+            "industry": "Education/Non-profit Tech",
+            "size": "Small (200-500)",
+            "interview_style": "mission-heavy-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "For anyone, anywhere, for free",
+                "Learning mindset",
+                "Kindness",
+                "Transparency"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Web performance, accessible design, educational tools",
+                    "common_topics": [
+                        "React",
+                        "Python",
+                        "Accessibility",
+                        "Performance"
+                    ],
+                    "tips": "Focus on accessibility and the mission of free education."
+                }
+            },
+            "red_flags": [
+                "Arrogance",
+                "Ignoring accessibility",
+                "Not mission-aligned"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4 rounds"
+        },
+        "Zillow": {
+            "name": "Zillow",
+            "industry": "Real Estate/PropTech",
+            "size": "Large (5000-8000)",
+            "interview_style": "data-and-discovery",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Collaboration",
+                "Ownership",
+                "Move fast"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Data engineering, search, recommendation systems",
+                    "common_topics": [
+                        "Spark",
+                        "Python",
+                        "Search algorithms",
+                        "Feature engineering"
+                    ],
+                    "tips": "Know Zestimate. Discuss data scale. Search and discovery focus."
+                }
+            },
+            "red_flags": [
+                "Weak data skills",
+                "Not customer-focused",
+                "Slow execution"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "FedEx Tech": {
+            "name": "FedEx Tech",
+            "industry": "Logistics/Supply Chain",
+            "size": "Large (10000+ in IT)",
+            "interview_style": "enterprise-scale-operations",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Safety",
+                "Service",
+                "Loyalty",
+                "Teamwork"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Supply chain optimization, Java, cloud migrations",
+                    "common_topics": [
+                        "Cloud architecture",
+                        "Inventory management",
+                        "API design"
+                    ]
+                }
+            },
+            "red_flags": [
+                "Ignoring safety/reliability",
+                "Weak enterprise knowledge"
+            ],
+            "average_process_duration": "5-7 weeks",
+            "interview_count": "4 rounds"
+        },
+        "SpaceX": {
+            "name": "SpaceX",
+            "industry": "Aerospace/Defense",
+            "size": "Large (10000+)",
+            "interview_style": "extreme-meritocracy",
+            "difficulty_level": "Very High",
+            "cultural_values": [
+                "Making life multi-planetary",
+                "Move fast",
+                "First principles",
+                "Hard work"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "First principles physics, embedded systems, C++, extreme reliability",
+                    "common_topics": [
+                        "C++",
+                        "Concurrency",
+                        "Physics-based logic",
+                        "Resource optimization"
+                    ],
+                    "tips": "Hardest interview. Know C++ deeply. First principles thinking required."
+                },
+                "Behavioral": {
+                    "focus": "Work ethic, mission obsession, resilience",
+                    "common_questions": [
+                        "How do you handle 80+ hour weeks?",
+                        "Tell me about a hardware/software failure",
+                        "Why Mars?"
+                    ],
+                    "style": "Direct, blunt, passion-check"
+                }
+            },
+            "red_flags": [
+                "Weak work ethic",
+                "Lacks passion for space",
+                "Needs work-life balance (hard truth)"
+            ],
+            "average_process_duration": "6-10 weeks",
+            "interview_count": "6-8 rounds"
+        },
+        "Blue Origin": {
+            "name": "Blue Origin",
+            "industry": "Aerospace",
+            "size": "Medium (5000-10000)",
+            "interview_style": "methodical-excellence",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Gradatim Ferociter (Step by step, ferociously)",
+                "Safety",
+                "Precision"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Guidance systems, engine control, Java/C++",
+                    "common_topics": [
+                        "Aerospace logic",
+                        "Embedded",
+                        "Safety-critical systems"
+                    ]
+                }
+            },
+            "red_flags": [
+                "Carelessness",
+                "Ignoring safety protocols",
+                "Weak engineering fundamentals"
+            ],
+            "average_process_duration": "6-8 weeks",
+            "interview_count": "5-6 rounds"
+        },
+        "Canva": {
+            "name": "Canva",
+            "industry": "Creative/SaaS",
+            "size": "Medium (2000-5000)",
+            "interview_style": "empowerment-and-design",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Be a force for good",
+                "Empower others",
+                "Simplify",
+                "Dream big"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Frontend excellence, performance, graphics rendering",
+                    "common_topics": [
+                        "React",
+                        "TypeScript",
+                        "Canvas/SVG",
+                        "Web Graphics"
+                    ],
+                    "tips": "Show design empathy. Focus on performance for complex UI."
+                }
+            },
+            "red_flags": [
+                "Poor UI sense",
+                "Slow execution",
+                "Lack of empathy"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Walmart Global Tech": {
+            "name": "Walmart Global Tech",
+            "industry": "Retail/E-commerce",
+            "size": "Large (20000+)",
+            "interview_style": "scale-and-efficiency",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Service to customers",
+                "Respect",
+                "Integrity",
+                "Excellence"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Massive supply chain, Java, Kubernetes, Kafka",
+                    "common_topics": [
+                        "Scalability",
+                        "Event-driven architecture",
+                        "Java"
+                    ]
+                }
+            },
+            "red_flags": [
+                "Ignoring scale",
+                "Not customer-focused"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4 rounds"
+        },
+        "Nike Tech": {
+            "name": "Nike Tech",
+            "industry": "Consumer/Sportswear",
+            "size": "Large (5000+ in IT)",
+            "interview_style": "brand-and-innovation",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Innovation",
+                "Inspiration",
+                "Sustainability",
+                "Community"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "E-commerce, mobile apps, personalized experiences",
+                    "common_topics": [
+                        "Node.js",
+                        "React Native",
+                        "Personalization algorithms"
+                    ]
+                }
+            },
+            "red_flags": [
+                "Lack of passion for brand",
+                "Weak product sense"
+            ],
+            "average_process_duration": "5-7 weeks",
+            "interview_count": "4 rounds"
+        },
+        "Zoom": {
+            "name": "Zoom",
+            "industry": "Communication/Video",
+            "size": "Medium (5000-8000)",
+            "interview_style": "happiness-focused-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Deliver happiness",
+                "Care",
+                "Trust",
+                "Security"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Video compression, WebRTC, low latency, global infrastructure",
+                    "common_topics": [
+                        "Networking",
+                        "C++",
+                        "WebRTC",
+                        "Video codecs"
+                    ],
+                    "tips": "Focus on reliability and low latency."
+                }
+            },
+            "red_flags": [
+                "Weak networking knowledge",
+                "Ignoring security",
+                "No empathy"
+            ],
+            "average_process_duration": "5-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Slack": {
+            "name": "Slack",
+            "industry": "Collaboration/Software",
+            "size": "Medium (2000-4000)",
+            "interview_style": "human-centric-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Empathy",
+                "Courtesy",
+                "Craftsmanship",
+                "Playfulness"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Messaging scale, accessibility, API design, PHP/Hack/Java",
+                    "common_topics": [
+                        "Distributed systems",
+                        "Frontend performance",
+                        "Accessibility"
+                    ],
+                    "tips": "Be courteous. Show craftsmanship in code."
+                }
+            },
+            "red_flags": [
+                "Rudeness",
+                "Poor communication",
+                "Weak accessibility focus"
+            ],
+            "average_process_duration": "5-7 weeks",
+            "interview_count": "4-6 rounds"
+        },
+        "LegalZoom": {
+            "name": "LegalZoom",
+            "industry": "Legal/SaaS",
+            "size": "Medium (1000-2000)",
+            "interview_style": "transformation-focused",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Democratize law",
+                "Customer first",
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Forms processing, document automation, security",
+                    "common_topics": [
+                        "Security",
+                        "Data pipelines",
+                        "Web apps"
+                    ]
+                }
+            },
+            "red_flags": [
+                "Ignoring data privacy",
+                "Weak security knowledge"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4 rounds"
+        },
+        "Ironclad": {
+            "name": "Ironclad",
+            "industry": "Legal/Contracts",
+            "size": "Medium (500-1000)",
+            "interview_style": "product-engineering-heavy",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Intentionality",
+                "Accountability",
+                "Community"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Contract automation, collaborative editing, complex workflows",
+                    "common_topics": [
+                        "State machines",
+                        "React",
+                        "Node.js"
+                    ]
+                }
+            },
+            "red_flags": [
+                "Messy reasoning",
+                "Weak workflow logic"
+            ],
+            "average_process_duration": "5-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "SoFi": {
+            "name": "SoFi",
+            "industry": "Fintech/Banking",
+            "size": "Medium (2000-5000)",
+            "interview_style": "member-focused",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Member obsession",
+                "Speed",
+                "Accountability"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Banking systems, lending platform, security",
+                    "common_topics": [
+                        "Financial consistency",
+                        "Java",
+                        "Microservices"
+                    ]
+                }
+            },
+            "red_flags": [
+                "Weak financial logic",
+                "Ignoring security"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4 rounds"
+        },
+        "Visa": {
+            "name": "Visa",
+            "industry": "Finance/Payments",
+            "size": "Large (20000+)",
+            "interview_style": "stability-and-compliance",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Trust",
+                "Safety",
+                "Innovation",
+                "Inclusion"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Massive transaction scale, security, mainframes to cloud",
+                    "common_topics": [
+                        "High availability",
+                        "Security",
+                        "Distributed transactions"
+                    ]
+                }
+            },
+            "red_flags": [
+                "Not safety-conscious",
+                "Weak concurrency knowledge"
+            ],
+            "average_process_duration": "6-8 weeks",
+            "interview_count": "5 rounds"
+        },
+        "Reliance Jio": {
+            "name": "Reliance Jio",
+            "industry": "Tech/Telecom",
+            "size": "Large (30000+)",
+            "interview_style": "scale-at-speed",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Innovation",
+                "Sustainability",
+                "Customer centricity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Large scale apps (Jio Cinema, MyJio), 5G systems, cloud",
+                    "common_topics": [
+                        "Scalability",
+                        "System architecture",
+                        "Mobile development"
+                    ]
+                }
+            },
+            "red_flags": [
+                "Slow thinking",
+                "Ignoring India's scale nuances"
+            ],
+            "average_process_duration": "4-8 weeks",
+            "interview_count": "3-5 rounds"
+        },
+        "Bharti Airtel": {
+            "name": "Bharti Airtel",
+            "industry": "Telecom/Tech",
+            "size": "Large (15000+)",
+            "interview_style": "operational-tech",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Customer first",
+                "Alive",
+                "Inclusive",
+                "Respectful"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Airtel Thanks app, digital payments, network software",
+                    "common_topics": [
+                        "Java Swings",
+                        "Spring Boot",
+                        "Native apps"
+                    ]
+                }
+            },
+            "red_flags": [
+                "Weak fundamentals",
+                "Poor problem solving"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "3-4 rounds"
+        },
+        "AMD": {
+            "name": "AMD",
+            "industry": "Semiconductors",
+            "size": "Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "High performance",
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Semiconductors fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Qualcomm": {
+            "name": "Qualcomm",
+            "industry": "Semiconductors/Mobile",
+            "size": "Large (40000+)",
+            "interview_style": "telecom-heavy",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Execution",
+                "Diversity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Wireless protocols, DSP, Embedded Systems",
+                    "common_topics": [
+                        "5G",
+                        "Embedded C",
+                        "Signal processing"
+                    ]
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "NVIDIA": {
+            "name": "NVIDIA",
+            "industry": "AI/Computing",
+            "size": "Large",
+            "difficulty_level": "Very High",
+            "cultural_values": [
+                "Speed of light",
+                "One Nvidia"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "AI/Computing fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Waymo": {
+            "name": "Waymo",
+            "industry": "Autonomous Driving",
+            "size": "Medium",
+            "difficulty_level": "Very High",
+            "cultural_values": [
+                "Safety",
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Robotics, SLAM, ML, Graphics"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Cruise": {
+            "name": "Cruise",
+            "industry": "Autonomous Driving",
+            "size": "Medium",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Move fast",
+                "Safety first"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Autonomous Driving fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Toyota Tech": {
+            "name": "Toyota Tech",
+            "industry": "Automotive/Software",
+            "size": "Large",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Kaizen",
+                "Respect"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Automotive/Software fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "ServiceNow": {
+            "name": "ServiceNow",
+            "industry": "Enterprise SaaS",
+            "size": "Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Wow creators",
+                "One team"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Enterprise SaaS fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Workday": {
+            "name": "Workday",
+            "industry": "Enterprise SaaS/HR",
+            "size": "Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Employees first",
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Enterprise SaaS/HR fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Unacademy": {
+            "name": "Unacademy",
+            "industry": "EdTech",
+            "size": "Medium",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Democratic education"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "EdTech fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Moderna": {
+            "name": "Moderna",
+            "industry": "Biotech/mRNA",
+            "size": "Medium",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Bold",
+                "Relentless"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Biotech/mRNA fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Pfizer": {
+            "name": "Pfizer",
+            "industry": "Pharmaceuticals",
+            "size": "Large",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Courage",
+                "Excellence"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Pharmaceuticals fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "eBay": {
+            "name": "eBay",
+            "industry": "E-commerce",
+            "size": "Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Empowerment",
+                "Opportunity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "E-commerce fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Rakuten": {
+            "name": "Rakuten",
+            "industry": "E-commerce/Tech",
+            "size": "Large",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Innovation",
+                "Entrepreneurship"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "E-commerce/Tech fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Grammarly": {
+            "name": "Grammarly",
+            "industry": "SaaS/AI",
+            "size": "Medium",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "EAGER values"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "SaaS/AI fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Signal": {
+            "name": "Signal",
+            "industry": "Communication/Privacy",
+            "size": "Small",
+            "difficulty_level": "Very High",
+            "cultural_values": [
+                "Privacy first"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Communication/Privacy fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Zepto": {
+            "name": "Zepto",
+            "industry": "Food Delivery/Quick Commerce",
+            "size": "Medium",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Speed",
+                "Operational excellence"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Food Delivery/Quick Commerce fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Blinkit": {
+            "name": "Blinkit",
+            "industry": "Food Delivery/Quick Commerce",
+            "size": "Medium",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Agility"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Food Delivery/Quick Commerce fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Nykaa": {
+            "name": "Nykaa",
+            "industry": "E-commerce/Beauty",
+            "size": "Large",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Customer delight",
+                "Entrepreneurship"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "E-commerce/Beauty fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Myntra": {
+            "name": "Myntra",
+            "industry": "E-commerce/Fashion",
+            "size": "Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Self-starter",
+                "Customer obsession"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "E-commerce/Fashion fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Ajio": {
+            "name": "Ajio",
+            "industry": "E-commerce/Fashion",
+            "size": "Large",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Innovation",
+                "Excellence"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "E-commerce/Fashion fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Pharmeasy": {
+            "name": "Pharmeasy",
+            "industry": "Healthcare/E-Pharmacy",
+            "size": "Medium-Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Patient first"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Healthcare/E-Pharmacy fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "HealthKart": {
+            "name": "HealthKart",
+            "industry": "Healthcare/E-commerce",
+            "size": "Medium",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Health first"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Healthcare/E-commerce fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Cult.fit": {
+            "name": "Cult.fit",
+            "industry": "Healthcare/Fitness",
+            "size": "Medium",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Better everyday"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Healthcare/Fitness fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "BookMyShow": {
+            "name": "BookMyShow",
+            "industry": "Media/Entertainment",
+            "size": "Medium-Large",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Entertainment first"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Media/Entertainment fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "MPL (Mobile Premier League)": {
+            "name": "MPL",
+            "industry": "Gaming/eSports",
+            "size": "Medium",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Competitive spirit"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Gaming/eSports fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Games24x7": {
+            "name": "Games24x7",
+            "industry": "Gaming/Skill Games",
+            "size": "Medium",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Scientific gaming"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Gaming/Skill Games fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Freshworks": {
+            "name": "Freshworks",
+            "industry": "SaaS/CRM",
+            "size": "Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Happy work",
+                "Customer success"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "SaaS/CRM fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Zoho": {
+            "name": "Zoho",
+            "industry": "SaaS/Business",
+            "size": "Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Conviction",
+                "Self-reliance"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "SaaS/Business fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "InMobi": {
+            "name": "InMobi",
+            "industry": "AdTech",
+            "size": "Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Learning"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "AdTech fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "PolicyBazaar": {
+            "name": "PolicyBazaar",
+            "industry": "Fintech/Insurance",
+            "size": "Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Trust",
+                "Transparency"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Fintech/Insurance fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "LendingKart": {
+            "name": "LendingKart",
+            "industry": "Fintech/Lending",
+            "size": "Medium",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Credit for all"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Fintech/Lending fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Bitdefender": {
+            "name": "Bitdefender",
+            "industry": "Cybersecurity",
+            "size": "Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Trust",
+                "Performance"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Cybersecurity fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Nord Security": {
+            "name": "Nord Security",
+            "industry": "Cybersecurity",
+            "size": "Medium-Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Privacy",
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Cybersecurity fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Kaspersky": {
+            "name": "Kaspersky",
+            "industry": "Cybersecurity",
+            "size": "Large",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Saving the world"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Cybersecurity fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "McAfee": {
+            "name": "McAfee",
+            "industry": "Cybersecurity",
+            "size": "Large",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Together is power"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Cybersecurity fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Norton": {
+            "name": "Norton",
+            "industry": "Cybersecurity",
+            "size": "Large",
+            "difficulty_level": "Medium-High",
+            "cultural_values": [
+                "Security first"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Cybersecurity fundamentals"
+                }
+            },
+            "red_flags": [
+                "Poor communication",
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds",
+            "interview_style": "standard-technical"
+        },
+        "Tableau": {
+            "name": "Tableau",
+            "industry": "Data Visualization",
+            "size": "Medium-Large",
+            "interview_style": "technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Data Visualization"
+                }
+            },
+            "red_flags": [
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Cloudera": {
+            "name": "Cloudera",
+            "industry": "Big Data",
+            "size": "Medium-Large",
+            "interview_style": "technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Big Data"
+                }
+            },
+            "red_flags": [
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "MuleSoft": {
+            "name": "MuleSoft",
+            "industry": "Integration/SaaS",
+            "size": "Medium-Large",
+            "interview_style": "technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Integration/SaaS"
+                }
+            },
+            "red_flags": [
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "PagerDuty": {
+            "name": "PagerDuty",
+            "industry": "DevOps/SaaS",
+            "size": "Medium-Large",
+            "interview_style": "technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "DevOps/SaaS"
+                }
+            },
+            "red_flags": [
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "New Relic": {
+            "name": "New Relic",
+            "industry": "Observability/SaaS",
+            "size": "Medium-Large",
+            "interview_style": "technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Observability/SaaS"
+                }
+            },
+            "red_flags": [
+                "Weak technical skills"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
         }
     }
 }

@@ -4,7 +4,7 @@ This folder contains the curated company interview intelligence database.
 
 ## 📁 Files
 
-- **`company_profiles.json`** - The main database (currently 30 companies)
+- **`company_profiles.json`** - The main database (currently 200+ companies)
 - **`company_template.json`** - Template for adding new companies
 
 ## 🆕 How to Add a New Company
@@ -50,25 +50,29 @@ Each company should have:
 }
 ```
 
-## 🏢 Current Companies (30)
+## 🏢 Current Companies (200+)
 
-### FAANG & Tech Giants (12)
-- Google, Amazon, Microsoft, Meta, Apple, Netflix
-- Uber, Salesforce, Adobe, Atlassian, Shopify, Twilio
+### FAANG & Tech Giants
+- Google, Amazon, Microsoft, Meta, Apple, Netflix, Nvidia, Adobe, Salesforce, Oracle, IBM, Tesla, LinkedIn.
 
-### Indian Tech (9)
-- **E-commerce/Food**: Flipkart, Zomato, Swiggy
-- **Fintech**: Razorpay, CRED, Paytm
-- **IT Services**: TCS, Infosys, Wipro
+### Indian Tech & Unicorns
+- **E-commerce/Delivery**: Flipkart, Zomato, Swiggy, Nykaa, Zepto, Blinkit, Meesho.
+- **Fintech**: Paytm, PhonePe, Razorpay, CRED, PolicyBazaar, Groww.
+- **Service/Consulting**: TCS, Infosys, Wipro, HCLTech, Accenture India, Cognizant India.
+- **SaaS/Core**: Freshworks, Zoho, Postman, InMobi, LTIMindtree.
 
-### Finance (2)
-- Goldman Sachs, JPMorgan Chase
+### Finance & Global Fintech
+- Goldman Sachs, JPMorgan, Morgan Stanley, Stripe, Robinhood, Coinbase, Visa, Mastercard, AMEX.
 
-### Consulting (3)
-- McKinsey & Company, BCG, Deloitte
+### Global High-Growth & SaaS
+- Dropbox, Slack, Zoom, Snowflake, Databricks, Notion, Figma, Canva, Shopify, Atlassian, Vercel, Supabase.
 
-### High-Growth Tech (4)
-- Stripe, Airbnb, Snowflake, Databricks
+### Emerging Domains
+- **AI/ML**: OpenAI, Anthropic, DeepMind, Midjourney, Scale AI, Runway.
+- **Aerospace**: SpaceX, Blue Origin, NASA (Tech).
+- **Auto/EV**: Rivian, Lucid Motors, Waymo, Cruise, Ford, Toyota Tech.
+- **Cybersecurity**: Okta, Zscaler, CrowdStrike, Palo Alto Networks, Fortinet, Bitdefender.
+- **EdTech**: Duolingo, Coursera, Udacity, Khan Academy, Udemy, Byju's, Unacademy.
 
 ## 🎯 Tips for Adding Companies
 

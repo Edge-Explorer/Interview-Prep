@@ -54,12 +54,13 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 - [x] Multi-persona AI interviewers (Adinath & Veda)
 - [x] Context-aware question generation
 - [x] **Company Intelligence System (NEW)**
-  - [x] Tier 1: Curated database for **45 companies**
-  - [x] FAANG (Google, Amazon, Microsoft, Meta, Apple, Netflix), FAANG-tier (Nvidia, Oracle, IBM)
-  - [x] Indian Tech (Flipkart, Zomato, Swiggy, Razorpay, CRED, Paytm, TCS, Infosys, Wipro, Ola, PhonePe, Meesho)
-  - [x] Finance (Goldman Sachs, JPMorgan, Robinhood, Coinbase)
-  - [x] Consulting (McKinsey, BCG, Deloitte, Bain, Accenture)
-  - [x] Startups (Stripe, Airbnb, Snowflake, Databricks, Notion, Figma, Vercel, and more)
+  - [x] Tier 1: Curated database for **200+ companies**
+  - [x] FAANG & Tech Giants (Google, Amazon, Microsoft, Meta, Apple, Netflix, Nvidia, Oracle, IBM, Tesla, LinkedIn, etc.)
+  - [x] AI Specialists (OpenAI, Anthropic, DeepMind, Hugging Face, Cohere, Perplexity, etc.)
+  - [x] Indian Tech & Unicorns (Flipkart, Zomato, Swiggy, Paytm, PhonePe, Jio, Airtel, Ola, Nykaa, Zepto, Zoho, Freshworks, etc.)
+  - [x] Finance & Fintech (Goldman Sachs, JPMorgan, Stripe, Robinhood, Coinbase, Razorpay, CRED, Visa, Mastercard)
+  - [x] Consulting & Services (McKinsey, BCG, Deloitte, Accenture, TCS, Infosys, Wipro, HCL)
+  - [x] Global Domains (Aerospace, EdTech, Real Estate, Auto, Cybersecurity, Healthcare)
   - [x] Company-specific interview styles and cultural values
   - [x] Round-specific focus areas and common topics
   - [x] Tier 3: AI fallback for unknown companies
