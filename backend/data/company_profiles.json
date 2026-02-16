@@ -1,8 +1,8 @@
 {
     "meta": {
-        "version": "9.0.0",
-        "last_updated": "2026-02-15",
-        "total_companies": 317,
+        "version": "9.2.0",
+        "last_updated": "2026-02-16",
+        "total_companies": 383,
         "description": "Curated company interview intelligence database"
     },
     "companies": {
@@ -11364,6 +11364,1722 @@
             ],
             "average_process_duration": "4-8 weeks",
             "interview_count": "4-6 rounds"
+        },
+        "Exterro": {
+            "name": "Exterro",
+            "industry": "Legal Tech/E-Discovery",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Tech/E-Discovery fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Lawgeex": {
+            "name": "Lawgeex",
+            "industry": "Legal Tech/Contract Automation",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Tech/Contract Automation fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "LegalSifter": {
+            "name": "LegalSifter",
+            "industry": "Legal Tech/AI Contract Review",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Tech/AI Contract Review fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Brightflag": {
+            "name": "Brightflag",
+            "industry": "Legal Tech/Spend Management",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Tech/Spend Management fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Luminance": {
+            "name": "Luminance",
+            "industry": "Legal Tech/AI Analysis",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Legal Tech/AI Analysis fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Charity Navigator": {
+            "name": "Charity Navigator",
+            "industry": "Non-profit/Social Services Information",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services Information fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Direct Relief": {
+            "name": "Direct Relief",
+            "industry": "Non-profit/Social Services Humanitarian",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services Humanitarian fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Mercy Corps": {
+            "name": "Mercy Corps",
+            "industry": "Non-profit/Social Services Development",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services Development fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "International Rescue Committee": {
+            "name": "International Rescue Committee",
+            "industry": "Non-profit/Social Services Rescue",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services Rescue fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Compassion International": {
+            "name": "Compassion International",
+            "industry": "Non-profit/Social Services Children",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Non-profit/Social Services Children fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "American Express": {
+            "name": "American Express",
+            "industry": "Finance/Credit Cards",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Finance/Credit Cards fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Discover Financial": {
+            "name": "Discover Financial",
+            "industry": "Finance/Banking",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Finance/Banking fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Capital One": {
+            "name": "Capital One",
+            "industry": "Finance/Banking Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Finance/Banking Services fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "BNY Mellon": {
+            "name": "BNY Mellon",
+            "industry": "Finance/Wealth Management",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Finance/Wealth Management fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "State Street": {
+            "name": "State Street",
+            "industry": "Finance/Custody Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Finance/Custody Services fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "SoundCloud": {
+            "name": "SoundCloud",
+            "industry": "Creative/Music Platform",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Music Platform fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Vimeo": {
+            "name": "Vimeo",
+            "industry": "Creative/Video Platform",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Video Platform fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Pexels": {
+            "name": "Pexels",
+            "industry": "Creative/Stock Photos",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Stock Photos fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Unsplash": {
+            "name": "Unsplash",
+            "industry": "Creative/Visual Assets",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Visual Assets fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Wix": {
+            "name": "Wix",
+            "industry": "Creative/Design Platform",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Design Platform fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Squarespace": {
+            "name": "Squarespace",
+            "industry": "Creative/Design Platform",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Creative/Design Platform fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Udacity": {
+            "name": "Udacity",
+            "industry": "Education/Online Learning",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/Online Learning fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Teachable": {
+            "name": "Teachable",
+            "industry": "Education/Course Platform",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/Course Platform fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Kajabi": {
+            "name": "Kajabi",
+            "industry": "Education/E-learning",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/E-learning fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Blackboard": {
+            "name": "Blackboard",
+            "industry": "Education/LMS",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/LMS fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Instructure (Canvas)": {
+            "name": "Instructure (Canvas)",
+            "industry": "Education/EdTech",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/EdTech fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "D2L (Brightspace)": {
+            "name": "D2L (Brightspace)",
+            "industry": "Education/LMS",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Education/LMS fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Max Planck Society": {
+            "name": "Max Planck Society",
+            "industry": "Science Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science Research fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "RIKEN": {
+            "name": "RIKEN",
+            "industry": "Science Research Institution",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science Research Institution fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "CSIRO": {
+            "name": "CSIRO",
+            "industry": "Science Research Agency",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science Research Agency fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Allen Institute": {
+            "name": "Allen Institute",
+            "industry": "Science Research/Brain Science",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science Research/Brain Science fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Cold Spring Harbor Laboratory": {
+            "name": "Cold Spring Harbor Laboratory",
+            "industry": "Science Research/Genetics",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science Research/Genetics fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Janelia Research Campus": {
+            "name": "Janelia Research Campus",
+            "industry": "Science Research/Biology",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science Research/Biology fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Caterpillar": {
+            "name": "Caterpillar",
+            "industry": "Construction/Machinery",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Machinery fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "John Deere": {
+            "name": "John Deere",
+            "industry": "Construction/Agricultural Engineering",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Agricultural Engineering fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Trimble": {
+            "name": "Trimble",
+            "industry": "Construction/Technology",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Technology fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Procore Technologies": {
+            "name": "Procore Technologies",
+            "industry": "Construction/Software",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Software fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Bentley Systems": {
+            "name": "Bentley Systems",
+            "industry": "Construction/Engineering Software",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Engineering Software fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Skanska": {
+            "name": "Skanska",
+            "industry": "Construction/Project Development",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Project Development fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Larsen & Toubro": {
+            "name": "Larsen & Toubro",
+            "industry": "Construction/Heavy Engineering",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Heavy Engineering fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Reliance Infrastructure": {
+            "name": "Reliance Infrastructure",
+            "industry": "Construction/Infrastructure",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Infrastructure fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Tata Projects": {
+            "name": "Tata Projects",
+            "industry": "Construction/Infrastructure",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Infrastructure fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "PCL Construction": {
+            "name": "PCL Construction",
+            "industry": "Construction Group",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction Group fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Publicis Sapient": {
+            "name": "Publicis Sapient",
+            "industry": "Marketing/Digital Transformation",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Digital Transformation fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Acxiom": {
+            "name": "Acxiom",
+            "industry": "Marketing/Data Services",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Data Services fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Epsilon": {
+            "name": "Epsilon",
+            "industry": "Marketing/Advertising",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Experian Marketing": {
+            "name": "Experian Marketing",
+            "industry": "Marketing/Data Analytics",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Data Analytics fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Nielsen": {
+            "name": "Nielsen",
+            "industry": "Marketing/Audience Measurement",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Audience Measurement fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "GfK": {
+            "name": "GfK",
+            "industry": "Marketing/Market Research",
+            "size": "Medium-Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Market Research fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Ipsos": {
+            "name": "Ipsos",
+            "industry": "Marketing/Public Opinion",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Public Opinion fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Kantar": {
+            "name": "Kantar",
+            "industry": "Marketing/Brand Consulting",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Brand Consulting fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "AppLovin": {
+            "name": "AppLovin",
+            "industry": "Marketing/Mobile AdTech",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Mobile AdTech fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "IronSource": {
+            "name": "IronSource",
+            "industry": "Marketing/App Business",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/App Business fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "AdRoll": {
+            "name": "AdRoll",
+            "industry": "Marketing/Retargeting",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Retargeting fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Criteo": {
+            "name": "Criteo",
+            "industry": "Marketing/AdTech",
+            "size": "Medium-Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity",
+                "Excellence",
+                "Collaboration"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/AdTech fundamentals"
+                },
+                "Behavioral": {
+                    "focus": "Culture and background"
+                }
+            },
+            "red_flags": [
+                "Poor attitude",
+                "Lack of curiosity"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Jacobs Solutions": {
+            "name": "Jacobs Solutions",
+            "industry": "Construction/Engineering Services",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Engineering Services expertise"
+                }
+            },
+            "red_flags": [
+                "Poor communication"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Kiewit": {
+            "name": "Kiewit",
+            "industry": "Construction/Engineering",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Engineering expertise"
+                }
+            },
+            "red_flags": [
+                "Poor communication"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Fluor Corporation": {
+            "name": "Fluor Corporation",
+            "industry": "Construction/Oil & Gas",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Oil & Gas expertise"
+                }
+            },
+            "red_flags": [
+                "Poor communication"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Vinci": {
+            "name": "Vinci",
+            "industry": "Construction/Concessions",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Construction/Concessions expertise"
+                }
+            },
+            "red_flags": [
+                "Poor communication"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Lawrence Berkeley National Laboratory": {
+            "name": "Lawrence Berkeley National Laboratory",
+            "industry": "Science Research",
+            "size": "Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science Research expertise"
+                }
+            },
+            "red_flags": [
+                "Poor communication"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Los Alamos National Laboratory": {
+            "name": "Los Alamos National Laboratory",
+            "industry": "Science Research",
+            "size": "Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science Research expertise"
+                }
+            },
+            "red_flags": [
+                "Poor communication"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Brookhaven National Laboratory": {
+            "name": "Brookhaven National Laboratory",
+            "industry": "Science Research",
+            "size": "Large",
+            "interview_style": "rigorous-technical",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Science Research expertise"
+                }
+            },
+            "red_flags": [
+                "Poor communication"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "McCann": {
+            "name": "McCann",
+            "industry": "Marketing/Advertising",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising expertise"
+                }
+            },
+            "red_flags": [
+                "Poor communication"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "BBDO": {
+            "name": "BBDO",
+            "industry": "Marketing/Advertising",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising expertise"
+                }
+            },
+            "red_flags": [
+                "Poor communication"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Havas": {
+            "name": "Havas",
+            "industry": "Marketing/Advertising",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising expertise"
+                }
+            },
+            "red_flags": [
+                "Poor communication"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
+        },
+        "Grey Group": {
+            "name": "Grey Group",
+            "industry": "Marketing/Advertising",
+            "size": "Large",
+            "interview_style": "professional-behavioral",
+            "difficulty_level": "High",
+            "cultural_values": [
+                "Innovation",
+                "Integrity"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Marketing/Advertising expertise"
+                }
+            },
+            "red_flags": [
+                "Poor communication"
+            ],
+            "average_process_duration": "4-6 weeks",
+            "interview_count": "4-5 rounds"
         }
     }
 }
