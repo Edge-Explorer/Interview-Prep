@@ -7,3 +7,13 @@ __pycache__/
 .idea/
 alembic/versions/*
 !alembic/versions/.gitkeep
+
+# AI Model & Training Data
+interview_ai_model/
+training_data.json
+*.zip
+wandb/
+outputs/
+checkpoint-*/
+other_list.txt
+stats_summary.txt
