@@ -1,5 +1,7 @@
 # Company Intelligence Database
 
+**Data Curated & Authored by: Karan Shelar**
+
 This folder contains the curated company interview intelligence database.
 
 ## 📁 Files

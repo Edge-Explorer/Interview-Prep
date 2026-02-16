@@ -1,5 +1,8 @@
-# 🎯 InterviewAI - Premium AI Interview Simulation Platform
+# 🎯 InterviewAI - Professional Interview Intelligence Platform
 
+**Created & Authored by: [Karan Shelar](https://github.com/Edge-Explorer)**
+
+---
 <div align="center">
 
 ![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)

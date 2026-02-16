@@ -1,5 +1,7 @@
 # Backend - InterviewAI Core
 
+**Architected & Authored by: [Karan Shelar](https://github.com/Edge-Explorer)**
+
 This directory contains the FastAPI-based backend for the InterviewAI platform. It handles authentication, interview session management, AI question generation via Gemini, company-specific interview intelligence, and result evaluation.
 
 ## 📂 File Structure & Responsibilities

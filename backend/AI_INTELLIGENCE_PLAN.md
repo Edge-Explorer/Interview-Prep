@@ -1,4 +1,6 @@
-# 🧠 InterviewAI Intelligence Roadmap & Agentic Workflow
+# Backend - InterviewAI Core
+
+**Architected & Authored by: [Karan Shelar](https://github.com/Edge-Explorer)**
 
 This document outlines the strategic plan for evolving InterviewAI from a static database into a self-learning, agentic intelligence system.
 
