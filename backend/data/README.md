@@ -6,7 +6,7 @@ This folder contains the curated company interview intelligence database.
 
 ## 📁 Files
 
-- **`company_profiles.json`** - The main database (currently 200+ companies)
+- **`company_profiles.json`** - The main database (currently 383 companies)
 - **`company_template.json`** - Template for adding new companies
 
 ## 🆕 How to Add a New Company
@@ -52,29 +52,43 @@ Each company should have:
 }
 ```
 
-## 🏢 Current Companies (200+)
+## 🏢 Current Companies by Domain (383 Total)
 
-### FAANG & Tech Giants
-- Google, Amazon, Microsoft, Meta, Apple, Netflix, Nvidia, Adobe, Salesforce, Oracle, IBM, Tesla, LinkedIn.
+### Engineering & Tech (134 Companies)
+- Google, Amazon, Microsoft, Nvidia, Meta, Apple, Netflix, Salesforce, Tesla, OpenAI, Anthropic, DeepMind, Snowflake, Databricks, Vercel, Stripe.
 
-### Indian Tech & Unicorns
-- **E-commerce/Delivery**: Flipkart, Zomato, Swiggy, Nykaa, Zepto, Blinkit, Meesho.
-- **Fintech**: Paytm, PhonePe, Razorpay, CRED, PolicyBazaar, Groww.
-- **Service/Consulting**: TCS, Infosys, Wipro, HCLTech, Accenture India, Cognizant India.
-- **SaaS/Core**: Freshworks, Zoho, Postman, InMobi, LTIMindtree.
+### Healthcare & Medical (22 Companies)
+- Pfizer, Mayo Clinic, Johnson & Johnson, UnitedHealth Group, Novartis, Roche, Merck, Sanofi, AstraZeneca, GSK, Eli Lilly.
 
-### Finance & Global Fintech
-- Goldman Sachs, JPMorgan, Morgan Stanley, Stripe, Robinhood, Coinbase, Visa, Mastercard, AMEX.
+### Finance & Accounting (22 Companies)
+- Goldman Sachs, JPMorgan, Morgan Stanley, BlackRock, Visa, Mastercard, AMEX, PayPal, Square, Robinhood, Coinbase.
 
-### Global High-Growth & SaaS
-- Dropbox, Slack, Zoom, Snowflake, Databricks, Notion, Figma, Canva, Shopify, Atlassian, Vercel, Supabase.
+### Legal (22 Companies)
+- Kirkland & Ellis, DLA Piper, Baker McKenzie, Skadden, Latham & Watkins, Clifford Chance, Freshfields, Allen & Overy, Linklaters.
 
-### Emerging Domains
-- **AI/ML**: OpenAI, Anthropic, DeepMind, Midjourney, Scale AI, Runway.
-- **Aerospace**: SpaceX, Blue Origin, NASA (Tech).
-- **Auto/EV**: Rivian, Lucid Motors, Waymo, Cruise, Ford, Toyota Tech.
-- **Cybersecurity**: Okta, Zscaler, CrowdStrike, Palo Alto Networks, Fortinet, Bitdefender.
-- **EdTech**: Duolingo, Coursera, Udacity, Khan Academy, Udemy, Byju's, Unacademy.
+### Construction & Trades (23 Companies)
+- AECOM, Caterpillar, John Deere, Bechtel, Turner Construction, Larsen & Toubro, Tata Projects, Jacobs Solutions, Vinci, Skanska.
+
+### Creative & Design (21 Companies)
+- Pixar, DreamWorks, Industrial Light & Magic (ILM), Electronic Arts, Ubisoft, Nintendo, Adobe, Figma, Canva, Spotify, SoundCloud.
+
+### Education & Training (21 Companies)
+- Coursera, Udacity, Khan Academy, Duolingo, Chegg, MasterClass, Codecademy, Harvard University, Stanford, MIT (Tech roles).
+
+### Science & Research (22 Companies)
+- NASA, CERN, SpaceX, Blue Origin, DeepMind, ISRO, Argonne National Lab, Oak Ridge Lab, Max Planck Society, RIKEN, CSIRO.
+
+### Social Services & Non-Profits (23 Companies)
+- UNICEF, Bill & Melinda Gates Foundation, American Red Cross, Amnesty International, Doctors Without Borders, World Bank, WHO.
+
+### Hospitality & Tourism (21 Companies)
+- Airbnb, Marriott International, Hilton, Hilton, Expedia Group, Booking.com, TripAdvisor, Disney Parks, Emirates, Delta Airlines.
+
+### Business & Management (23 Companies)
+- McKinsey & Company, BCG, Bain & Company, Deloitte, PwC, EY, KPMG, Accenture, Gartner, Forrester Research, Robert Half.
+
+### Sales & Marketing (20 Companies)
+- Ogilvy, McCann Worldgroup, Leo Burnett, Dentsu, Publicis Sapient, Nielsen, Ipsos, Kantar, AppLovin, Experian Marketing.
 
 ## 🎯 Tips for Adding Companies
 

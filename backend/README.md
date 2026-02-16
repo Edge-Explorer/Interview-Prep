@@ -17,17 +17,20 @@ This directory contains the FastAPI-based backend for the InterviewAI platform. 
 | **`services/`** | **External integrations and intelligence services** |
 | `services/gemini_service.py` | Google Gemini AI integration for question generation and evaluation. |
 | `services/company_intelligence.py` | **NEW**: Company-specific interview intelligence service with curated database. |
+| `services/intelligence_plan.py` | **PLAN**: Agentic multi-agent workflow using LangGraph (In Roadmap). |
+| **`interview_ai_model/`** | **NEW**: Fine-Tuned Llama-3 LoRA adapters (Excl. from Git). |
 | **`data/`** | **Static data and intelligence databases** |
-| `data/company_profiles.json` | **NEW**: Curated database of 11+ top companies with interview styles, cultural values, and round-specific intelligence. |
+| `data/company_profiles.json` | **MAJOR UPDATE**: Curated database of 383 unique companies across 12 domains. |
 | `test_company_intel.py` | Test script to verify Company Intelligence System functionality. |
 
 ## 🚀 Key Features
 
 1. **AI Interviewer**: Integrated with Google Gemini 2.0 Flash API to generate real-time, adaptive questions.
-2. **Company Intelligence System (NEW)**: 
-   - **Tier 1 (Curated)**: Rich, company-specific interview intelligence for **45 companies** across tech, consulting, finance, and Indian companies
-   - **Companies**: FAANG (Google, Amazon, Microsoft, Meta, Apple, Netflix), FAANG-tier (Nvidia, Oracle, IBM), Indian Tech (Flipkart, Zomato, Swiggy, Razorpay, CRED, Paytm, TCS, Infosys, Wipro, Ola, PhonePe, Meesho), Finance (Goldman Sachs, JPMorgan, Robinhood, Coinbase), Consulting (McKinsey, BCG, Deloitte, Bain, Accenture), and more (Uber, Airbnb, Stripe, Salesforce, Adobe, Atlassian, Shopify, Twilio, Snowflake, Databricks, Notion, Figma, Vercel)
-   - **Tier 3 (AI Fallback)**: Uses Gemini's general knowledge for companies not in database
+2. **Company Intelligence System (v2.0)**: 
+   - **Tier 1 (Curated)**: Expert intelligence for **383 companies** across 12 frontend categories.
+   - **Coverage**: Every major domain (Legal, Healthcare, Tech, etc.) has 20+ verified profiles.
+   - **Intelligence**: Fine-tuned Llama-3-8B reasoning for structural data consistency.
+   - **Tier 3 (AI Fallback)**: Multi-agent researcher workflow for unknown companies.
    - Includes cultural values, interview styles, common topics, and red flags
 3. **Contextual Analysis**: Processes PDF resumes to tailor interview topics to the user's specific background.
 4. **Multi-Round System**: Supports 5 interview rounds (Technical, Behavioral, System Design, Managerial, Final) with role-based applicability.
@@ -43,28 +46,22 @@ This directory contains the FastAPI-based backend for the InterviewAI platform. 
 - **PDF Parsing**: PyPDF
 - **Company Intelligence**: JSON-based curated database (100% free, no API calls)
 
-## 🏢 Company Intelligence Database
+## 🏢 Intelligence Database Coverage (383 Companies)
 
-The system includes curated interview intelligence for **45 companies**:
+The system features at least **20 companies** in every single category:
 
-**FAANG & Tech Giants:**
-- Google, Amazon, Microsoft, Meta, Apple, Netflix
-- Nvidia, Oracle, IBM
-- Uber, Salesforce, Adobe, Atlassian, Shopify, Twilio
-
-**Indian Tech Ecosystem:**
-- **E-commerce/Food Tech**: Flipkart, Zomato, Swiggy, Ola, Meesho
-- **Fintech**: Razorpay, CRED, Paytm, PhonePe
-- **IT Services**: TCS, Infosys, Wipro
-
-**Finance:**
-- Goldman Sachs, JPMorgan Chase, Robinhood, Coinbase
-
-**Consulting:**
-- McKinsey & Company, Boston Consulting Group (BCG), Deloitte, Bain, Accenture
-
-**High-Growth Tech & Startups:**
-- Stripe, Airbnb, Snowflake, Databricks, Notion, Figma, Vercel
+- 🔹 **Engineering & Tech**: 134 companies (FAANG, SaaS, AI, etc.)
+- 🔹 **Business & Management**: 23 companies (Staffing, HR, Business)
+- 🔹 **Construction & Trades**: 23 companies (Heavy Engineering, Infra)
+- 🔹 **Social Services**: 23 companies (Non-profits, Foundations)
+- 🔹 **Finance & Accounting**: 22 companies (Fintech, Banking, Trading)
+- 🔹 **Healthcare & Medical**: 22 companies (Biotech, Pharma, Health IT)
+- 🔹 **Legal**: 22 companies (Law firms, Legal Tech)
+- 🔹 **Science & Research**: 22 companies (Research Labs, Space)
+- 🔹 **Hospitality & Tourism**: 21 companies (Travel, Food, Booking)
+- 🔹 **Creative & Design**: 21 companies (Media, Animation, VFX)
+- 🔹 **Education & Training**: 21 companies (EdTech, Universities)
+- 🔹 **Sales & Marketing**: 20 companies (Advertising, Market Research)
 
 Each company profile includes:
 - Interview style (technical-heavy, culture-fit-heavy, etc.)

@@ -5,12 +5,13 @@
 ---
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)
-![Status](https://img.shields.io/badge/status-In%20Development-yellow.svg)
+![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)
+![Status](https://img.shields.io/badge/status-Advanced%20Intelligence-purple.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
 ![React](https://img.shields.io/badge/react-18.3+-61DAFB.svg)
 ![Gemini](https://img.shields.io/badge/Gemini-2.0%20Flash-orange.svg)
+![Llama3](https://img.shields.io/badge/Fine%20Tuned-Llama--3--8B-red.svg)
 
 **The Ultimate AI-Powered Interview Preparation Platform**
 
@@ -56,8 +57,9 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 #### AI Interview System
 - [x] Multi-persona AI interviewers (Adinath & Veda)
 - [x] Context-aware question generation
-- [x] **Company Intelligence System (NEW)**
-  - [x] Tier 1: Curated database for **200+ companies**
+- [x] **Company Intelligence System (Advanced)**
+  - [x] Tier 1: Curated database for **383 unique companies**
+  - [x] Every domain (12 total) features **20+ verified profiles**
   - [x] FAANG & Tech Giants (Google, Amazon, Microsoft, Meta, Apple, Netflix, Nvidia, Oracle, IBM, Tesla, LinkedIn, etc.)
   - [x] AI Specialists (OpenAI, Anthropic, DeepMind, Hugging Face, Cohere, Perplexity, etc.)
   - [x] Indian Tech & Unicorns (Flipkart, Zomato, Swiggy, Paytm, PhonePe, Jio, Airtel, Ola, Nykaa, Zepto, Zoho, Freshworks, etc.)
@@ -67,6 +69,12 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
   - [x] Company-specific interview styles and cultural values
   - [x] Round-specific focus areas and common topics
   - [x] Tier 3: AI fallback for unknown companies
+- [x] **Fine-Tuned Intelligence (Llama-3-8B)**
+  - [x] Custom LoRA adapters trained on 383-company dataset
+  - [x] Expert-level structural reasoning for interview mocks
+- [x] **Agentic Roadmap (LangGraph)**
+  - [x] Multi-agent Supervisor-Researcher-Architect-Critic workflow
+  - [x] Zero-hallucination data discovery path
 - [x] Company-specific simulations
 - [x] Difficulty levels (Junior, Mid, Senior)
 - [x] Panel interview mode
@@ -279,15 +287,22 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 
 ### 🧠 **Intelligent Interview System**
 - ✅ Multi-persona AI interviewers (Adinath & Veda)
-- ✅ **Company Intelligence System**
-  - ✅ Curated database for **45 companies** across tech, consulting, finance, and Indian companies
-  - ✅ FAANG (Google, Amazon, Microsoft, Meta, Apple, Netflix), FAANG-tier (Nvidia, Oracle, IBM)
-  - ✅ Indian Tech (Flipkart, Zomato, Swiggy, Razorpay, CRED, Paytm, TCS, Infosys, Wipro, Ola, PhonePe, Meesho)
-  - ✅ Finance (Goldman Sachs, JPMorgan, Robinhood, Coinbase)
-  - ✅ Consulting (McKinsey, BCG, Deloitte, Bain, Accenture)
-  - ✅ Startups & High-Growth (Uber, Airbnb, Stripe, Salesforce, Adobe, Atlassian, Shopify, Twilio, Snowflake, Databricks, Notion, Figma, Vercel)
-  - ✅ Company-specific interview styles, cultural values, and question patterns
-  - ✅ Intelligent fallback for companies not in database
+- ✅ **Company Intelligence System (v2.0)**
+  - ✅ Curated database for **383 companies** (20+ per major domain)
+  - ✅ **Engineering & Tech**: Google, Amazon, Microsoft, Nvidia, Tesla, OpenAI (134 total)
+  - ✅ **Healthcare & Medical**: Pfizer, Mayo Clinic, Johnson & Johnson, Pfizer (22 total)
+  - ✅ **Finance & Accounting**: Goldman Sachs, JPMorgan, Stripe, Coinbase (22 total)
+  - ✅ **Legal**: Kirkland & Ellis, DLA Piper, Latham & Watkins, Clio (22 total)
+  - ✅ **Construction & Trades**: AECOM, Caterpillar, Larsen & Toubro, Vinci (23 total)
+  - ✅ **Creative & Design**: Pixar, DreamWorks, Adobe, Vimeo, SoundCloud (21 total)
+  - ✅ **Education & Training**: Coursera, Udacity, Khan Academy, Duolingo (21 total)
+  - ✅ **Science & Research**: NASA, CERN, Max Planck, Bell Labs, ISRO (22 total)
+  - ✅ **Social Services**: UNICEF, Bill & Melinda Gates Foundation, Red Cross (23 total)
+  - ✅ **Hospitality & Tourism**: Airbnb, Marriott, Expedia, Hilton (21 total)
+  - ✅ **Business & Management**: McKinsey, BCG, Deloitte, Accenture (23 total)
+  - ✅ **Sales & Marketing**: Ogilvy, McCann, Leo Burnett, Dentsu (20 total)
+  - ✅ **Fine-Tuned Llama-3 Reasoning**: Custom model trained for site-specific JSON structure
+  - ✅ **Agentic Roadmap**: Multi-agent orchestration for zero-cost research
 - ✅ Company-specific simulations (Google, Amazon, etc.)
 - ✅ Adaptive difficulty levels (Junior, Mid-level, Senior)
 - ✅ Panel interview mode with multiple AI personas
