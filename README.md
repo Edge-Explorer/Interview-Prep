@@ -13,22 +13,52 @@
 ![Gemini](https://img.shields.io/badge/Gemini-2.0%20Flash-orange.svg)
 ![Llama3](https://img.shields.io/badge/Agentic-Llama--3--8B-red.svg)
 
-**The Ultimate AI-Powered Interview Preparation Platform**
+## 🌟 The Simulation Philosophy
 
-[Features](#-features) • [Progress](#-development-progress) • [Roadmap](#-roadmap) • [Installation](#-installation) • [Tech Stack](#-tech-stack)
+InterviewAI is not just a "mock interview" tool; it is an **Advanced Intelligent Simulation Entity**. While traditional platforms rely on static question banks, InterviewAI uses a **Dynamic Agentic Loop** to synthesize the reality of the 2025 job market.
 
-</div>
+### 🎭 The Persona Architecture
+We don't just ask questions; we simulate **Human Personalities**:
+*   **Adinath (The Primal Sage)**: Simulates the "Foundation First" interviewer. He is cold, direct, and explores the recursive depth of your technical architecture. He tests the "How" and the "Why."
+*   **Veda (The Eternal Wisdom)**: Simulates the "Clarity Specialist." She is observant, testing your vision, cultural alignment, and your ability to communicate complex ideas under pressure.
 
 ---
 
-## 🌟 Overview
+## 🚀 Technical Innovation: The "Agentic Edge"
 
-InterviewAI is a **state-of-the-art interview simulation platform** powered by **Google's Gemini 2.0 Flash**. It provides realistic, industry-level interview experiences with AI personas that simulate real technical interviewers from top companies like Google, Amazon, Microsoft, and more.
+What makes this project unique in the industry is its **Three-Tier Intelligence Architecture**, designed to solve the "Knowledge Gap" in AI:
 
-### 🎭 Meet Your AI Interviewers
+1.  **The Curated Core**: Local access to **383 expert-verified company profiles** across 12 domains for zero-latency, reliable data.
+2.  **The Agentic Discovery Loop (LangGraph)**: An autonomous multi-agent team that researches public companies in real-time if they aren't in our database.
+3.  **Stealth Mode & Synthetic Fallback**: A world-first feature that **Reverse-Engineers company DNA** from a Job Description. If a company is in "Stealth Mode" (non-public), the AI synthesizes a high-fidelity interview based on industry-standard benchmarking.
 
-- **Adinath** - *The Primal Sage*: Strict, direct, and explores the depth of your foundations
-- **Veda** - *The Eternal Wisdom*: Insightful, observant, and tests your clarity and vision
+---
+
+## 🏗️ System Architecture
+
+```mermaid
+graph TD
+    User((User)) -->|Uploads Resume/JD| UI[React Dashboard]
+    UI -->|Trigger| Backend[FastAPI Core]
+    
+    subgraph "The Intelligence Brain"
+        Backend --> Gatekeeper{Entry Gate}
+        Gatekeeper -->|Found| DB[Curated 383 DB]
+        Gatekeeper -->|Not Found| Agents[LangGraph Research Team]
+        
+        Agents --> Researcher[DuckDuckGo Researcher]
+        Researcher --> Architect[Llama-3 Profile Builder]
+        Architect --> Critic[Gemini Quality Validator]
+        
+        Critic -->|Approved| Memory[(discoveries.json)]
+        Memory --> Context[Simulation Context]
+        DB --> Context
+    end
+    
+    Context -->|Seed| Simulation[Gemini 2.0 Simulation]
+    Simulation -->|Voice/Video| User
+    Simulation -->|Feedback| Persistence[(Neon Cloud PostgreSQL)]
+```
 
 ---
 
@@ -379,7 +409,7 @@ pip install -r requirements.txt
 echo "GEMINI_API_KEY=your_api_key_here" > .env
 echo "DATABASE_URL=postgresql://neondb_owner:[pass]@[endpoint].neon.tech/neondb?sslmode=require" >> .env
 
-# Run database migrations
+# Run database migrations (Syncs with Neon Cloud)
 alembic upgrade head
 
 # Start the backend server
