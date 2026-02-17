@@ -8,7 +8,7 @@ This document tracks the core team and the implementation history of the **Inter
 
 | Name | Role | Focus |
 | :--- | :--- | :--- |
-| **Karan Shelar** | Lead Architect | AI Systems, LangGraph orchestration, Backend Core |
+| **Karan Shelar** | Lead Architect | AI Systems, LangGraph orchestration, Full-Stack Development |
 | **Abhiraj** | Collaborator | Full-Stack Development (Backend & Frontend), System Refinement |
 
 ---
