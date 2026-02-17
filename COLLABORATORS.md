@@ -23,6 +23,7 @@ This section is for tracking specific task completions and problem-solving histo
 - **Implemented** Neon Cloud PostgreSQL migration and production database sync.
 - **Implemented** Massive company intelligence database (383+ profiles).
 - **Implemented** Universal Gemini evaluation logic with company-context integration.
+- **Fixed** Logic bug in Agentic Discovery where naming conflicts (name vs company_name) prevented saving to `discoveries.json`.
 
 ### **Abhiraj**
 - *Starting contributions today (tracking development from this point forward).*

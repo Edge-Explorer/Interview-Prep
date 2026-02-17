@@ -294,12 +294,33 @@ class IntelligenceService:
                     with open(discoveries_path, 'r', encoding='utf-8') as f:
                         discoveries = json.load(f)
                 
-                # Check if already discovered
-                if not any(d.get('name') == profile.get('name') for d in discoveries):
-                    discoveries.append(profile)
+                # Normalize the entry to our standard discovery format
+                # We want: { "company_name": "...", "interview_intelligence_profile": { ... } }
+                name_to_use = profile.get('company_name') or profile.get('name') or company_name
+                
+                new_entry = {
+                    "company_name": name_to_use,
+                    "interview_intelligence_profile": profile
+                }
+
+                # Check if already discovered (case-insensitive)
+                is_duplicate = False
+                for d in discoveries:
+                    existing_name = d.get('company_name')
+                    if not existing_name and 'name' in d: # Fallback for old/direct profiles
+                        existing_name = d.get('name')
+                    
+                    if existing_name and existing_name.lower() == name_to_use.lower():
+                        is_duplicate = True
+                        break
+                
+                if not is_duplicate:
+                    discoveries.append(new_entry)
                     with open(discoveries_path, 'w', encoding='utf-8') as f:
                         json.dump(discoveries, f, indent=4)
-                    print(f"SUCCESS: New Discovery Saved: {profile.get('name')} added to discoveries.json")
+                    print(f"SUCCESS: New Discovery Saved: {name_to_use} added to discoveries.json")
+                else:
+                    print(f"INFO: {name_to_use} already exists in discovery memory.")
             except Exception as e:
                 print(f"WARNING: Failed to save discovery: {e}")
             

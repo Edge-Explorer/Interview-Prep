@@ -33,5 +33,54 @@
             ],
             "additional_notes": "The information available is limited. Further research is needed to understand the company's culture, specific technologies used, and interview process in detail.  The role and team you are interviewing for will influence what you should focus on."
         }
+    },
+    {
+        "company_name": "Groq",
+        "interview_intelligence_profile": {
+            "company": "Groq",
+            "profileTitle": "Groq Interview Intelligence Profile - Technical Roles",
+            "summary": "Groq's interview process for technical roles at this AI startup appears to be thorough and multi-staged, focusing on assessing both technical skills and cultural fit. Candidates should expect a series of panel-style interviews with team members across various levels, each targeted at specific areas of expertise. Demonstrating a deep understanding of Groq's technology and the AI landscape is crucial. The company emphasizes ownership, collaboration, and a customer-centric approach.",
+            "interviewProcess": {
+                "stages": [
+                    "Resume Submission",
+                    "Recruiter Initial Chat",
+                    "Panel Interviews (6-7 interviews)",
+                    "Possible additional steps (unspecified - based on role and performance)"
+                ],
+                "details": "The interview process involves a recruiter screen followed by multiple panel interviews, generally lasting around 30 minutes each. These interviews are designed to assess specific technical skills and experience relevant to the role. Be prepared to discuss your understanding of Groq's technology and how it applies to real-world customer needs. Demonstrating your ability to collaborate with diverse teams is also essential."
+            },
+            "commonThemes": [
+                "Technical proficiency related to AI and Groq's specific hardware/software.",
+                "Problem-solving skills and ability to think critically.",
+                "Collaboration and teamwork skills.",
+                "Understanding of the AI industry and competitive landscape.",
+                "Customer-centric mindset and ability to understand customer needs.",
+                "Cultural fit within a fast-paced, innovative startup environment."
+            ],
+            "preparationTips": [
+                "Thoroughly research Groq's technology, products, and recent developments.",
+                "Review common AI and machine learning concepts and algorithms.",
+                "Prepare examples of past projects that demonstrate relevant skills and experience.",
+                "Practice explaining complex technical concepts clearly and concisely.",
+                "Prepare questions to ask the interviewers to demonstrate your interest and engagement.",
+                "Be ready to discuss your approach to problem-solving and collaboration.",
+                "Show enthusiasm for Groq's mission and the opportunity to contribute to a cutting-edge AI startup."
+            ],
+            "potentialQuestions": [
+                "Based on Glassdoor data, anticipate technical questions related to the specific role. Review their 28 interview questions",
+                "Expect behavioral questions related to teamwork, problem-solving, and handling challenging situations.",
+                "Prepare to discuss your experience with relevant technologies and tools.",
+                "Be ready to answer questions about your understanding of the AI industry and Groq's place within it.",
+                "Consider questions about your motivations for joining Groq and your career goals.",
+                "Anticipate questions probing your knowledge of Groq's architecture and solutions"
+            ],
+            "references": [
+                "Glassdoor: Groq Interview Experience & Questions (Dec 11, 2025)",
+                "Blind: Groq Interview Discussions (Oct 16, 2024)",
+                "Groq Interview Guides & Hiring Process 2026 | 1 Role Guides",
+                "Glassdoor: Groq Q&A: What is the hiring process like at Groq?",
+                "Glassdoor: 28 Groq Interview Questions & Answers (Dec 11, 2025)"
+            ]
+        }
     }
 ]

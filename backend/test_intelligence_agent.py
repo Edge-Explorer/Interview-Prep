@@ -14,10 +14,15 @@ async def test_agent():
     google_intel = await service.get_intelligence("Google")
     print(f"DONE: Result: {google_intel.get('name')} - {google_intel.get('industry')}")
     
-    # Test case 2: Unknown company (should trigger agent)
-    company_name = "Antigravity Coding" 
-    print(f"\n--- Test 2: Unknown Company ({company_name}) ---")
-    new_intel = await service.get_intelligence(company_name)
+    # Use CLI argument if provided, else default to Antigravity
+    import sys
+    company_name = sys.argv[1] if len(sys.argv) > 1 else "Antigravity Coding"
+    
+    # Optional: Pass a JD to test "Stealth Mode"
+    jd = "Search for a tech role at an AI startup" 
+    
+    print(f"\n--- Test: Autonomous Discovery ({company_name}) ---")
+    new_intel = await service.get_intelligence(company_name, jd)
     print(f"DONE: Final Agentic Result: {new_intel}")
     
     if "error" not in new_intel:
