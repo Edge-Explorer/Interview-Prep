@@ -24,12 +24,12 @@ class CompanyIntelligenceService:
             with open(data_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 self.company_data = data.get('companies', {})
-                print(f"✅ Loaded {len(self.company_data)} company profiles")
+                print(f"INFO: Loaded {len(self.company_data)} company profiles")
         except FileNotFoundError:
-            print("⚠️ Company profiles database not found. Using AI fallback only.")
+            print("WARNING: Company profiles database not found. Using AI fallback only.")
             self.company_data = {}
         except Exception as e:
-            print(f"⚠️ Error loading company profiles: {e}")
+            print(f"ERROR: Error loading company profiles: {e}")
             self.company_data = {}
     
     def _build_aliases(self):
@@ -163,7 +163,7 @@ class CompanyIntelligenceService:
                 best_match = key
         
         if best_match:
-            print(f"🔍 Fuzzy matched '{company_name}' to '{best_match}' (score: {best_score:.2f})")
+            print(f"INFO: Fuzzy matched '{company_name}' to '{best_match}' (score: {best_score:.2f})")
             return self.company_data[best_match]
         
         return None

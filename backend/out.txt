@@ -1,0 +1,3 @@
+﻿START: Starting Intelligence Service...
+
+--- Test 1: Known Company (Google) ---

@@ -96,22 +96,32 @@ class GeminiService:
         Alternate between these two personas. Mention who is asking in the text (e.g., '[{interviewer_name}]: ...').
         """ if is_panel else ""
 
-        # Get company-specific intelligence
-        company_intel = get_company_intelligence()
-        company_context = ""
+        # Get agentic company intelligence
+        from .intelligence_service import get_intelligence_service
+        intel_service = get_intelligence_service()
         
         if company:
-            if company_intel.is_company_in_database(company):
-                # Tier 1: Use curated company intelligence
-                company_context = f"\n{'='*60}\nCOMPANY INTELLIGENCE DATABASE (TIER 1 - CURATED)\n{'='*60}\n"
-                company_context += company_intel.get_interview_context(company, round_name)
-                company_context += f"\n{'='*60}\n"
+            # This now checks the database AND triggers agents for unknown companies
+            profile = await intel_service.get_intelligence(company)
+            
+            if profile and not profile.get("error"):
+                # Tier 1 & 2: Curated or Agent-Generated intelligence
+                status = "CURATED" if get_company_intelligence().is_company_in_database(company) else "AGENTIC DISCOVERY"
+                company_context = f"\nINFO: COMPANY INTELLIGENCE ({status})\n"
+                
+                # Build rich context similar to company_intelligence.py logic
+                company_context += f"COMPANY: {profile.get('name', company)} ({profile.get('industry', 'N/A')})\n"
+                company_context += f"STYLE: {profile.get('interview_style', 'Standard')}\n"
+                company_context += f"VALUES: {', '.join(profile.get('cultural_values', []))}\n"
+                
+                round_info = profile.get('interview_rounds', {}).get(round_name, {})
+                if round_info:
+                    company_context += f"\n{round_name.upper()} ROUND FOCUS: {round_info.get('focus', 'N/A')}\n"
             else:
-                # Tier 3: AI Fallback for unknown companies
-                company_context = f"\n{'='*60}\nCOMPANY INTELLIGENCE (TIER 3 - AI FALLBACK)\n{'='*60}\n"
+                # Tier 3: AI Fallback
+                company_context = f"\nINFO: COMPANY INTELLIGENCE (TIER 3 - AI FALLBACK)\n"
                 company_context += f"COMPANY: {company} (using general industry knowledge)\n"
-                company_context += f"NOTE: This company is not in our curated database. Use your general knowledge about {company} and industry standards.\n"
-                company_context += f"{'='*60}\n"
+                company_context += f"NOTE: Agent discovery failed. Use general knowledge.\n"
 
         system_prompt = f"""
         You are {interviewer_name.upper()}, a Simulation Assistant designed to mimic high-level professional interviewers.

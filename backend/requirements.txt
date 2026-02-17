@@ -13,3 +13,14 @@ passlib[bcrypt]
 bcrypt==4.0.1
 pypdf
 python-multipart
+
+# AI & Agentic Workflow
+langchain
+langgraph
+langchain-community
+langchain-google-genai
+duckduckgo-search
+transformers
+peft
+accelerate
+torch
