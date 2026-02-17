@@ -30,7 +30,9 @@ except ImportError:
 class AgentState(TypedDict):
     company_name: str
     industry: Optional[str]
+    job_description: Optional[str]        # NEW: Context from user
     research_data: Optional[str]
+    is_synthetic: bool                    # NEW: Tracker for non-public info
     generated_profile: Optional[Dict[str, Any]]
     is_valid: bool
     iterations: int
@@ -86,7 +88,14 @@ class IntelligenceService:
             
             results = await asyncio.to_thread(do_search)
             search_results = "\n".join([f"{r['title']}: {r['body']}" for r in results])
-            state['research_data'] = search_results
+            
+            if not results:
+                print(f"WARNING: No public info found for {state['company_name']}. Switching to Synthetic Logic.")
+                state['is_synthetic'] = True
+                state['research_data'] = "No public information available. This might be a stealth startup or private company."
+            else:
+                state['is_synthetic'] = False
+                state['research_data'] = search_results
         except Exception as e:
             state['error'] = f"Research failed: {str(e)}"
             state['research_data'] = "No search results found."
@@ -97,8 +106,13 @@ class IntelligenceService:
         print(f"ARCHITECT: Structuring intelligence for {state['company_name']}...")
         
         instruction = f"Generate a professional interview intelligence profile for {state['company_name']}."
-        input_data = f"Research Data found: {state['research_data'][:2000]}" # Truncate search results to fit context
-        
+        input_data = f"Research Data found: {state['research_data'][:2000]}"
+        if state.get('job_description'):
+            input_data += f"\n\nContext from Job Description provided by user: {state['job_description']}"
+            
+        if state.get('is_synthetic'):
+             input_data += "\n\nNOTE: Since no public info was found, synthesize a high-fidelity profile based EXCLUSIVELY on industry standards for the role described in the JD. Do not hallucinate history."
+
         # Alpaca prompt template used during fine-tuning
         prompt = f"""Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
 
@@ -220,7 +234,7 @@ class IntelligenceService:
 
         return workflow.compile()
 
-    async def get_intelligence(self, company_name: str) -> Dict[str, Any]:
+    async def get_intelligence(self, company_name: str, job_description: str = None) -> Dict[str, Any]:
         """Entry point for the backend to get company intelligence"""
         # 1. First check the curated database
         intel_service = get_company_intelligence()
@@ -253,7 +267,9 @@ class IntelligenceService:
         initial_state: AgentState = {
             "company_name": company_name,
             "industry": None,
+            "job_description": job_description,
             "research_data": None,
+            "is_synthetic": False,
             "generated_profile": None,
             "is_valid": False,
             "iterations": 0,

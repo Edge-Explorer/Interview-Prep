@@ -8,6 +8,7 @@ import io
 import json
 from datetime import datetime
 import auth_utils
+from services.intelligence_service import get_intelligence_service
 
 app = FastAPI(
     title="Interview Prep AI Platform",
@@ -215,13 +216,26 @@ async def submit_answer(
         # Evaluate current round after sufficient questions
         last_question = next((m["content"] for m in reversed(session.transcript) if m["role"] == "assistant"), None)
         
+        # Get tailored intelligence (DATABASE -> AGENT -> FALLBACK)
+        try:
+            intel_service = get_intelligence_service()
+            # Pass job_description to help agents reverse-engineer stealth companies
+            company_intel = await intel_service.get_intelligence(
+                session.target_company, 
+                session.job_description
+            )
+        except Exception as e:
+            print(f"Error fetching company intelligence: {e}")
+            company_intel = None
+
         # Evaluate using Gemini with round-specific criteria
         evaluation_raw = await gemini_service.evaluate_answer(
             question=last_question,
             answer=data.answer,
             role=session.role_category,
             round_name=session.interview_round,
-            company=session.target_company
+            company=session.target_company,
+            company_intel=company_intel # Pass company intelligence to evaluation
         )
 
         # Clean the JSON from Gemini

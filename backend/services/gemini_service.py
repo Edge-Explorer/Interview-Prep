@@ -102,7 +102,8 @@ class GeminiService:
         
         if company:
             # This now checks the database AND triggers agents for unknown companies
-            profile = await intel_service.get_intelligence(company)
+            # Pass jd to help agents handle stealth companies
+            profile = await intel_service.get_intelligence(company, jd)
             
             if profile and not profile.get("error"):
                 # Tier 1 & 2: Curated or Agent-Generated intelligence
@@ -177,7 +178,7 @@ class GeminiService:
         
         return response.text
 
-    async def evaluate_answer(self, question: str, answer: str, role: str, round_name: str = "Technical", company: str = None):
+    async def evaluate_answer(self, question: str, answer: str, role: str, round_name: str = "Technical", company: str = None, company_intel: dict = None):
         """Evaluates answer with round-specific criteria and behavioral analysis."""
         
         # Round-specific evaluation criteria
@@ -194,6 +195,9 @@ class GeminiService:
         Role: {role} at {company if company else "Tech Firm"}
         Question: {question}
         User Answer: {answer}
+        
+        COMPANY CONTEXT:
+        {company_intel if company_intel else "Standard Industry Patterns"}
         
         TASK:
         1. Evaluate based on {round_name} criteria: {eval_criteria.get(round_name, eval_criteria["Technical"])}
