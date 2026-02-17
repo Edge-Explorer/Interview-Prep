@@ -13,7 +13,24 @@ This document tracks the core team and the implementation history of the **Inter
 
 ---
 
-## ✅ Implementation Log (Major Milestones)
+## 📝 Activity & Implementation Log
+
+This section is for tracking specific task completions and problem-solving history.
+
+### **Karan**
+- **Implemented** Agentic Discovery System using LangGraph (Researcher-Architect-Critic).
+- **Implemented** Stealth Mode logic with JD reverse-engineering for unknown companies.
+- **Implemented** Neon Cloud PostgreSQL migration and production database sync.
+- **Implemented** Massive company intelligence database (383+ profiles).
+- **Implemented** Universal Gemini evaluation logic with company-context integration.
+
+### **Abhiraj**
+- *(Pending)*: Track fixes, problem-solving, and new solutions here.
+- **Example**: Fixed CORS issue in production; solved token refresh bug; came up with new caching solution.
+
+---
+
+## ✅ Major Version Milestones
 
 | Feature / Update | Version | Status | Key Highlights |
 | :--- | :--- | :--- | :--- |
