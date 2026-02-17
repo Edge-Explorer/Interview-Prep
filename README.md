@@ -75,8 +75,9 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 - [x] **Agentic Discovery System (LangGraph)**
   - [x] Multi-agent Researcher-Architect-Critic workflow
   - [x] Real-time data gathering via DuckDuckGo
+  - [x] **Stealth Mode Support**: Reverse-engineers Job Descriptions (JD) for private/stealth companies
+  - [x] **Synthetic Fallback**: Industry-standard synthesis when no public info exists
   - [x] **Discovery Memory**: `discoveries.json` persistent learning layer
-  - [x] Zero-hallucination structured intelligence generation
 - [x] Company-specific simulations
 - [x] Difficulty levels (Junior, Mid, Senior)
 - [x] Panel interview mode
@@ -304,6 +305,8 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
   - ✅ **Business & Management**: McKinsey, BCG, Deloitte, Accenture (23 total)
   - ✅ **Sales & Marketing**: Ogilvy, McCann, Leo Burnett, Dentsu (20 total)
   - ✅ **Agentic Intelligence**: Multi-agent orchestration for real-time web research
+  - ✅ **Stealth Startup Support**: AI can "reverse-engineer" company DNA from any Job Description (JD)
+  - ✅ **Synthetic Logic**: Automatic industry-standard fallback if no web data is found
   - ✅ **Permanent Memory**: Dynamic profile saving to `discoveries.json`
 - ✅ Company-specific simulations (Google, Amazon, etc.)
 - ✅ Adaptive difficulty levels (Junior, Mid-level, Senior)
