@@ -5,13 +5,13 @@
 ---
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)
-![Status](https://img.shields.io/badge/status-Advanced%20Intelligence-purple.svg)
+![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)
+![Status](https://img.shields.io/badge/status-Agentic%20Intelligence-purple.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
 ![React](https://img.shields.io/badge/react-18.3+-61DAFB.svg)
 ![Gemini](https://img.shields.io/badge/Gemini-2.0%20Flash-orange.svg)
-![Llama3](https://img.shields.io/badge/Fine%20Tuned-Llama--3--8B-red.svg)
+![Llama3](https://img.shields.io/badge/Agentic-Llama--3--8B-red.svg)
 
 **The Ultimate AI-Powered Interview Preparation Platform**
 
@@ -38,9 +38,9 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 
 #### Backend Infrastructure
 - [x] FastAPI application setup with CORS
-- [x] PostgreSQL database integration
+- [x] PostgreSQL database integration (Neon Cloud)
 - [x] SQLAlchemy ORM models
-- [x] Alembic migration system
+- [x] Alembic migration system (Production Sync Ready)
 - [x] Gemini 2.0 Flash API integration
 - [x] PDF resume parsing (PyPDF)
 - [x] Session management system
@@ -72,9 +72,11 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
 - [x] **Fine-Tuned Intelligence (Llama-3-8B)**
   - [x] Custom LoRA adapters trained on 383-company dataset
   - [x] Expert-level structural reasoning for interview mocks
-- [x] **Agentic Roadmap (LangGraph)**
-  - [x] Multi-agent Supervisor-Researcher-Architect-Critic workflow
-  - [x] Zero-hallucination data discovery path
+- [x] **Agentic Discovery System (LangGraph)**
+  - [x] Multi-agent Researcher-Architect-Critic workflow
+  - [x] Real-time data gathering via DuckDuckGo
+  - [x] **Discovery Memory**: `discoveries.json` persistent learning layer
+  - [x] Zero-hallucination structured intelligence generation
 - [x] Company-specific simulations
 - [x] Difficulty levels (Junior, Mid, Senior)
 - [x] Panel interview mode
@@ -301,8 +303,8 @@ InterviewAI is a **state-of-the-art interview simulation platform** powered by *
   - ✅ **Hospitality & Tourism**: Airbnb, Marriott, Expedia, Hilton (21 total)
   - ✅ **Business & Management**: McKinsey, BCG, Deloitte, Accenture (23 total)
   - ✅ **Sales & Marketing**: Ogilvy, McCann, Leo Burnett, Dentsu (20 total)
-  - ✅ **Fine-Tuned Llama-3 Reasoning**: Custom model trained for site-specific JSON structure
-  - ✅ **Agentic Roadmap**: Multi-agent orchestration for zero-cost research
+  - ✅ **Agentic Intelligence**: Multi-agent orchestration for real-time web research
+  - ✅ **Permanent Memory**: Dynamic profile saving to `discoveries.json`
 - ✅ Company-specific simulations (Google, Amazon, etc.)
 - ✅ Adaptive difficulty levels (Junior, Mid-level, Senior)
 - ✅ Panel interview mode with multiple AI personas
@@ -372,7 +374,7 @@ pip install -r requirements.txt
 
 # Create .env file
 echo "GEMINI_API_KEY=your_api_key_here" > .env
-echo "DATABASE_URL=postgresql://user:password@localhost/interviewai" >> .env
+echo "DATABASE_URL=postgresql://neondb_owner:[pass]@[endpoint].neon.tech/neondb?sslmode=require" >> .env
 
 # Run database migrations
 alembic upgrade head
@@ -416,10 +418,9 @@ Frontend will run on `http://localhost:5173`
 - **Web Speech API** - Voice recognition
 
 ### Planned Infrastructure
-- **GitHub** - Source control & CI/CD (Free)
-- **Vercel** - Frontend deployment (Free tier)
-- **AWS EC2** - Backend hosting (Free tier 12 months, then ~₹500/month)
-- **Supabase** - PostgreSQL database (Free tier - 500MB)
+- **GitHub** - Source control & CI/CD
+- **Vercel** - Frontend deployment
+- **Neon** - Serverless PostgreSQL Database (Cloud)
 - **UPI QR Code** - Direct payment (Zero fees)
 - **Let's Encrypt** - SSL certificates (Free)
 

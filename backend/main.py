@@ -12,7 +12,7 @@ import auth_utils
 app = FastAPI(
     title="Interview Prep AI Platform",
     description="AI-powered interview preparation platform using Gemini 2.0 Flash",
-    version="1.0.1",
+    version="2.1.0",
 )
 
 # Set up CORS
@@ -26,7 +26,7 @@ app.add_middleware(
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "version": "1.0.1"}
+    return {"status": "ok", "version": "2.1.0"}
 
 # --- AUTH ENDPOINTS ---
 @app.post("/auth/signup", response_model=schemas.Token)

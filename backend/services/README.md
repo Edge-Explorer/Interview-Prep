@@ -23,4 +23,17 @@ The `GeminiService` class is the "brain" of InterviewAI. It manages all interact
 
 ### Security Note
 - Uses the `GEMINI_API_KEY` stored in the root `.env` file.
-- Prompt engineering is used to restrict the AI to professional interview behavior and prevent system leakage.
+- Prompt engineering is used to restrict the AI to professional interview behavior.
+
+## 🏢 Intelligence Services
+
+### 1. `company_intelligence.py`
+The "Quick Lookup" service. It manages the curated 383-company database. It uses fuzzy matching to find companies regardless of typos or naming variations (e.g., "FB" vs "Facebook").
+
+### 2. `intelligence_service.py` (The LangGraph Brain)
+The "Autonomous Discovery" service. Used when a company is not in the curated DB.
+- **Node-Based Architecture**:
+    - **Researcher**: Scrapes DuckDuckGo for live facts.
+    - **Architect**: Generates a structured profile (Llama-3/Gemini).
+    - **Critic**: Reflects and corrects the profile for quality.
+- **Permanent Memory**: Automatically saves approved profiles to `discoveries.json`.

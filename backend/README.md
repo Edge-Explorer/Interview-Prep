@@ -11,40 +11,39 @@ This directory contains the FastAPI-based backend for the InterviewAI platform. 
 | `main.py` | The main entry point. Sets up FastAPI, middleware (CORS), and all API endpoints (`/auth`, `/interviews`, `/users`). |
 | `models.py` | SQLAlchemy database models. Defines the schema for `User`, `InterviewSession`, `Payment`, and `LearningRoadmap`. |
 | `schemas.py` | Pydantic models for request/response validation. Ensures data integrity across the API. |
-| `database.py` | Database connection logic using SQLAlchemy and SQLite. |
+| `database.py` | Database connection logic using SQLAlchemy and Neon PostgreSQL. |
 | `auth_utils.py` | Security helpers: password hashing, JWT token generation, and user authentication dependency. |
-| `round_config.py` | Configuration for interview rounds (Technical, Behavioral, System Design, Managerial, Final) including specific focus areas and pass scores. |
+| `round_config.py` | Configuration for interview rounds (Technical, Behavioral, System Design, Managerial, Final). |
 | **`services/`** | **External integrations and intelligence services** |
 | `services/gemini_service.py` | Google Gemini AI integration for question generation and evaluation. |
-| `services/company_intelligence.py` | **NEW**: Company-specific interview intelligence service with curated database. |
-| `services/intelligence_plan.py` | **PLAN**: Agentic multi-agent workflow using LangGraph (In Roadmap). |
-| **`interview_ai_model/`** | **NEW**: Fine-Tuned Llama-3 LoRA adapters (Excl. from Git). |
+| `services/company_intelligence.py` | Company intelligence service with curated database lookup. |
+| `services/intelligence_service.py` | **ACTIVE**: Agentic multi-agent workflow using LangGraph for real-time research. |
+| **`interview_ai_model/`** | Fine-Tuned Llama-3 LoRA adapters (Excl. from Git). |
 | **`data/`** | **Static data and intelligence databases** |
-| `data/company_profiles.json` | **MAJOR UPDATE**: Curated database of 383 unique companies across 12 domains. |
-| `test_company_intel.py` | Test script to verify Company Intelligence System functionality. |
+| `data/company_profiles.json` | Curated database of 383 unique companies across 12 domains. |
+| `data/discoveries.json` | **NEW**: Memory layer for dynamically discovered company profiles. |
+| `test_intelligence_agent.py` | Test script to verify the LangGraph Agentic Brain functionality. |
 
 ## 🚀 Key Features
 
 1. **AI Interviewer**: Integrated with Google Gemini 2.0 Flash API to generate real-time, adaptive questions.
-2. **Company Intelligence System (v2.0)**: 
-   - **Tier 1 (Curated)**: Expert intelligence for **383 companies** across 12 frontend categories.
-   - **Coverage**: Every major domain (Legal, Healthcare, Tech, etc.) has 20+ verified profiles.
-   - **Intelligence**: Fine-tuned Llama-3-8B reasoning for structural data consistency.
-   - **Tier 3 (AI Fallback)**: Multi-agent researcher workflow for unknown companies.
-   - Includes cultural values, interview styles, common topics, and red flags
+2. **Company Intelligence System (v2.1)**: 
+   - **Tier 1 (Curated)**: Expert intelligence for **383 companies** (100% offline).
+   - **Tier 2 (Agentic Discovery)**: Live research via **DuckDuckGo** for any unknown company.
+   - **Tier 3 (Permanent Memory)**: Discovered companies are saved to `discoveries.json` for zero-latency future access.
+   - **The Brain**: Orchestrated by LangGraph (Researcher, Architect, Critic agents).
 3. **Contextual Analysis**: Processes PDF resumes to tailor interview topics to the user's specific background.
-4. **Multi-Round System**: Supports 5 interview rounds (Technical, Behavioral, System Design, Managerial, Final) with role-based applicability.
-5. **Session Management**: Tracks interview progress across multiple rounds with round-specific scoring.
-6. **Automated Evaluation**: AI-driven scoring system that provides "Honest Recruiter Feedback" and determines if a candidate can proceed to the next round.
+4. **Cloud-Ready Infrastructure**: Fully integrated with **Neon PostgreSQL** for serverless, cloud-side data storage.
+5. **Multi-Round System**: Supports 5 interview rounds (Technical, Behavioral, System Design, Managerial, Final).
 
 ## 🛠 Tech Stack
 
 - **Framework**: FastAPI (Python 3.11+)
-- **Database**: PostgreSQL (SQLAlchemy ORM)
-- **AI**: Google Gemini 2.0 Flash (Generative AI)
-- **Auth**: JWT (JSON Web Tokens) with SHA-256 + Bcrypt hashing
-- **PDF Parsing**: PyPDF
-- **Company Intelligence**: JSON-based curated database (100% free, no API calls)
+- **Database**: Neon PostgreSQL (SQLAlchemy ORM + Alembic)
+- **Agents**: LangGraph + LangChain
+- **Search**: duckduckgo-search (DDGS)
+- **AI**: Google Gemini 2.0 Flash & Fine-Tuned Llama-3-8B
+- **Auth**: JWT with SHA-256 + Bcrypt double-hashing
 
 ## 🏢 Intelligence Database Coverage (383 Companies)
 

@@ -13,9 +13,10 @@ This directory contains the React-based frontend application for InterviewAI. It
 
 ## 🚀 Key Frontend Features
 1. **Dynamic Interview Room**: Real-time camera integration with custom-styled AI personas.
-2. **Analysis Transition**: A high-end "Preparing/Analysis" screen with a live resume scanner animation.
-3. **Voice Synthesis**: Integration with Browser Speech API for AI voice interaction.
-4. **Professional Dashboard**: Statistics visualization and round configuration with custom-styled dropdowns.
+2. **Agentic Discovery Support**: UI supports typing any company name, triggering the backend's Multi-Agent Research Team for unknown firms.
+3. **Analysis Transition**: A high-end "Preparing/Analysis" screen with a live resume scanner animation.
+4. **Voice Synthesis**: Integration with Browser Speech API for AI voice interaction.
+5. **Professional Dashboard**: Statistics visualization and round configuration with custom-styled dropdowns.
 
 ## 🎨 Design System
 - **Theme**: Dark Mode (Deep Navy & Indigo).

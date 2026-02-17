@@ -7,11 +7,19 @@ This folder contains the curated company interview intelligence database.
 ## 📁 Files
 
 - **`company_profiles.json`** - The main database (currently 383 companies)
-- **`company_template.json`** - Template for adding new companies
+- **`discoveries.json`** - **NEW**: Dynamic storage for companies found by the Agentic Team
+- **`DISCOVERIES_README.md`** - Detailed explanation of the Multi-Agent Discovery workflow
+- **`company_template.json`** - Template for adding new companies manually
 
 ## 🆕 How to Add a New Company
 
-### Method 1: Using the Helper Script (Recommended)
+### Method 1: Agentic Discovery (Automatic)
+Simply start an interview in the app and type the company name. If not found in the curated DB, the **LangGraph Research Team** will:
+1. Search the web for live data.
+2. Architect a structured profile.
+3. Validate and save it to `discoveries.json`.
+
+### Method 2: Helper Script (Manual)
 
 1. Open `backend/add_company.py`
 2. Edit the `NEW_COMPANY` dictionary at the top
