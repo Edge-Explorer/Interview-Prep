@@ -12,6 +12,7 @@ from langgraph.graph import StateGraph, END
 from ddgs import DDGS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
+from rapidfuzz import process, fuzz
 
 # Service imports
 from .company_intelligence import get_company_intelligence
@@ -80,9 +81,13 @@ class IntelligenceService:
 
     async def researcher_node(self, state: AgentState) -> AgentState:
         """Search engine node to find facts about unknown companies"""
-        print(f"RESEARCH: Finding information on {state['company_name']}...")
+        print(f"STATUS: Stage 1/3 - Researching {state['company_name']}...")
+        print(f"RESEARCH: Scouring professional sources for {state['company_name']}...")
         try:
-            query = f"{state['company_name']} company overview industry products culture interview process"
+            # Refined query to reduce noise
+            query = f'"{state["company_name"]}" (engineering interview process OR company culture OR tech stack)'
+            print(f"DEBUG: Using filtered query: {query}")
+            
             def do_search():
                 with DDGS() as ddgs:
                     return [r for r in ddgs.text(query, max_results=5)]
@@ -99,6 +104,7 @@ class IntelligenceService:
                 state['is_synthetic'] = False
                 state['confidence_score'] = min(75, len(results) * 15)
                 state['research_data'] = search_results
+                print(f"RESEARCH: Successfully gathered intelligence blocks.")
         except Exception as e:
             state['error'] = f"Research failed: {str(e)}"
             state['research_data'] = "No search results found."
@@ -107,7 +113,8 @@ class IntelligenceService:
 
     async def architect_node(self, state: AgentState) -> AgentState:
         """Use the Fine-Tuned Brain (Llama-3) to generate the profile"""
-        print(f"ARCHITECT: Structuring intelligence for {state['company_name']}...")
+        print(f"STATUS: Stage 2/3 - Architecting DNA for {state['company_name']}...")
+        print(f"ARCHITECT: Synthesizing data into interview patterns...")
         
         instruction = f"Generate a professional interview intelligence profile for {state['company_name']}."
         input_data = f"Research Data found: {state['research_data'][:2000]}"
@@ -187,7 +194,8 @@ class IntelligenceService:
 
     async def critic_node(self, state: AgentState) -> AgentState:
         """Review the profile for quality and consistency"""
-        print("CRITIC: Validating company profile...")
+        print(f"STATUS: Stage 3/3 - Final Audit for {state['company_name']}...")
+        print("CRITIC: Validating company profile for accuracy...")
         
         profile = state.get('generated_profile')
         if not profile:
@@ -254,22 +262,27 @@ class IntelligenceService:
         profile = intel_service.get_company_profile(company_name)
         
         if profile:
-            print(f"FOUND: {company_name} in Curated Database!")
             return profile
 
-        # 2. Check the Agentic Discovery Memory (discoveries.json)
+        # 2. Check the Agentic Discovery Memory (discoveries.json) with FUZZY MATCHING
+        print("INFO: Checking Discovery Memory...")
         try:
             base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
             discoveries_path = os.path.join(base_dir, "data", "discoveries.json")
             if os.path.exists(discoveries_path):
                 with open(discoveries_path, 'r', encoding='utf-8') as f:
                     discoveries = json.load(f)
-                    # Check for a match (fuzzy match here would be even better)
-                    for d in discoveries:
-                        if d.get('company_name', '').lower() == company_name.lower():
-                            print(f"FOUND: {company_name} in Agentic Discovery Memory!")
-                            # Return the profile part (discovery.json has a slightly different wrapper)
-                            return d.get('interview_intelligence_profile', d)
+                    
+                    # Fuzzy match against discovery names
+                    discovery_names = [d.get('company_name', '') for d in discoveries]
+                    match = process.extractOne(company_name, discovery_names, scorer=fuzz.WRatio)
+                    
+                    if match and match[1] >= 85:  # 85% threshold
+                        matched_name = match[0]
+                        print(f"FOUND: Fuzzy matched '{company_name}' to '{matched_name}' (Score: {match[1]:.1f}) in Discovery Memory!")
+                        for d in discoveries:
+                            if d.get('company_name') == matched_name:
+                                return d.get('interview_intelligence_profile', d)
         except Exception as e:
             print(f"WARNING: Memory lookup failed: {e}")
 
