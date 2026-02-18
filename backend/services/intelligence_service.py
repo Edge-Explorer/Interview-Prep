@@ -33,6 +33,7 @@ class AgentState(TypedDict):
     job_description: Optional[str]        # NEW: Context from user
     research_data: Optional[str]
     is_synthetic: bool                    # NEW: Tracker for non-public info
+    confidence_score: int                 # NEW: 0-100 score of data reliability
     generated_profile: Optional[Dict[str, Any]]
     is_valid: bool
     iterations: int
@@ -92,13 +93,16 @@ class IntelligenceService:
             if not results:
                 print(f"WARNING: No public info found for {state['company_name']}. Switching to Synthetic Logic.")
                 state['is_synthetic'] = True
+                state['confidence_score'] = 20
                 state['research_data'] = "No public information available. This might be a stealth startup or private company."
             else:
                 state['is_synthetic'] = False
+                state['confidence_score'] = min(75, len(results) * 15)
                 state['research_data'] = search_results
         except Exception as e:
             state['error'] = f"Research failed: {str(e)}"
             state['research_data'] = "No search results found."
+            state['confidence_score'] = 0
         return state
 
     async def architect_node(self, state: AgentState) -> AgentState:
@@ -112,6 +116,8 @@ class IntelligenceService:
             
         if state.get('is_synthetic'):
              input_data += "\n\nNOTE: Since no public info was found, synthesize a high-fidelity profile based EXCLUSIVELY on industry standards for the role described in the JD. Do not hallucinate history."
+
+        input_data += "\n\nHALLUCINATION POLICY: If specific information (like CEO, recent news, or exact round names) is not in the research data, DO NOT MAKE IT UP. Instead, return 'Data not available in public records' for that field."
 
         # Alpaca prompt template used during fine-tuning
         prompt = f"""Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
@@ -188,24 +194,31 @@ class IntelligenceService:
             state['is_valid'] = False
             return state
 
-        # Use Gemini to critique the structural output
+        # Use Gemini to critique the structural output against the research data
         critique_prompt = f"""
         Review this generated company profile for {state['company_name']}.
-        Ensure it matches industry reality and our schema.
         
-        PROFILE:
+        CRITICAL TASK: Compare the profile against the RAW RESEARCH DATA below.
+        If the profile contains SPECIFIC facts (dates, names, news) that are NOT in the research data, it is a HALLUCINATION.
+        
+        RAW RESEARCH DATA:
+        {state['research_data'][:2000]}
+        
+        GENERATED PROFILE:
         {json.dumps(profile, indent=2)}
         
-        If it's good, return ONLY the word 'APPROVED'.
-        If it has errors, return a short list of corrections.
+        If it's grounded in the research and matches our schema, return ONLY the word 'APPROVED'.
+        If it has hallucinations or errors, return a short list of corrections.
         """
         response = await asyncio.to_thread(self.critic_llm.invoke, critique_prompt)
         
         if "APPROVED" in response.content:
             state['is_valid'] = True
+            state['confidence_score'] = min(100, state['confidence_score'] + 25)
         else:
             state['is_valid'] = False
             state['iterations'] += 1
+            state['confidence_score'] = max(0, state['confidence_score'] - 20)
             print(f"ERROR: Critic Feedback: {response.content}")
             
         return state
@@ -270,6 +283,7 @@ class IntelligenceService:
             "job_description": job_description,
             "research_data": None,
             "is_synthetic": False,
+            "confidence_score": 0,
             "generated_profile": None,
             "is_valid": False,
             "iterations": 0,
@@ -281,6 +295,9 @@ class IntelligenceService:
         
         if final_state.get('generated_profile'):
             profile = final_state['generated_profile']
+            # Inject score
+            profile['confidence_score'] = final_state.get('confidence_score', 0)
+            profile['is_synthetic'] = final_state.get('is_synthetic', False)
             # Save discovery to a file for human review later (Infinite Learning Loop)
             try:
                 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

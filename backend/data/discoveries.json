@@ -82,5 +82,47 @@
                 "Glassdoor: 28 Groq Interview Questions & Answers (Dec 11, 2025)"
             ]
         }
+    },
+    {
+        "company_name": "Some Random Tech Startup 123",
+        "interview_intelligence_profile": {
+            "company_name": "Some Random Tech Startup 123",
+            "industry": "AI Tech",
+            "key_areas_of_focus": [
+                "Cultural Fit",
+                "Motivation and Dedication to the Company",
+                "Understanding of Startup Culture vs. Corporate Culture",
+                "Alignment with Company Values and Mission",
+                "Understanding of the Company's Products, History, and Culture"
+            ],
+            "interview_themes": [
+                "Demonstrating an understanding of and enthusiasm for startup culture, particularly the aspects that differentiate it from established companies.",
+                "Articulating why you are specifically interested in working for Some Random Tech Startup 123.",
+                "Assessing your personal values and ensuring they align with the founders' vision and the company's mission.",
+                "Evaluating your comfort level with the inherent risks and rewards of working at a startup, including job security considerations.",
+                "Highlighting your understanding of the AI industry and the company's position within it."
+            ],
+            "potential_questions": [
+                "What do you find appealing about startup culture, and why does it appeal to you more than a traditional corporate environment?",
+                "Why are you interested in working for Some Random Tech Startup 123 specifically?",
+                "How do you see your values aligning with our company's mission and vision?",
+                "What are your thoughts on the challenges and rewards of working for a startup in the AI industry?",
+                "Describe a time you had to adapt quickly to a changing environment. How did you handle it?",
+                "Where do you see yourself in 5 years?",
+                "What are your salary expectations?"
+            ],
+            "tips_for_success": [
+                "Research the company thoroughly: Understand their products, services, mission, and recent activities (if available).",
+                "Prepare specific examples: Be ready to illustrate your skills and experiences with concrete examples that demonstrate your ability to thrive in a startup environment.",
+                "Show enthusiasm: Express genuine interest in the company and the opportunity.",
+                "Be prepared to discuss your understanding of AI and the startup landscape: Demonstrate your knowledge of the industry and your awareness of the company's competitive environment.",
+                "Be authentic: Let your personality shine through and demonstrate how you would be a good cultural fit."
+            ],
+            "ceo": "Data not available in public records",
+            "funding_stage": "Data not available in public records",
+            "recent_news": "Data not available in public records",
+            "confidence_score": 35,
+            "is_synthetic": false
+        }
     }
 ]
