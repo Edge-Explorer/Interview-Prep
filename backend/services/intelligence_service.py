@@ -345,10 +345,14 @@ class IntelligenceService:
                         break
                 
                 if not is_duplicate:
-                    discoveries.append(new_entry)
-                    with open(discoveries_path, 'w', encoding='utf-8') as f:
-                        json.dump(discoveries, f, indent=4)
-                    print(f"SUCCESS: New Discovery Saved: {name_to_use} added to discoveries.json")
+                    # SAFETY CHECK: Only save to global memory if it's NOT synthetic (verified web data)
+                    if not final_state.get('is_synthetic'):
+                        discoveries.append(new_entry)
+                        with open(discoveries_path, 'w', encoding='utf-8') as f:
+                            json.dump(discoveries, f, indent=4)
+                        print(f"SUCCESS: New Discovery Saved: {name_to_use} added to discoveries.json")
+                    else:
+                        print(f"INFO: {name_to_use} is a Synthetic (Stealth) profile. Not saving to global memory for data integrity.")
                 else:
                     print(f"INFO: {name_to_use} already exists in discovery memory.")
             except Exception as e:

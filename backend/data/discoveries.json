@@ -124,5 +124,24 @@
             "confidence_score": 35,
             "is_synthetic": false
         }
+    },
+    {
+        "company_name": "Idolize Business Solutions",
+        "interview_intelligence_profile": {
+            "company_name": "Idolize Business Solutions",
+            "industry": "AI and Automation (Hyper-automation solutions using modern digital technologies)",
+            "employee_count": "1,118+ (LinkedIn followers)",
+            "location": "Mumbai Suburban, Maharashtra (Registered office)",
+            "salary_and_benefits_rating": "3.5/5 (based on 25 AmbitionBox reviews)",
+            "work_culture_rating": "3.3/5 (based on 25 AmbitionBox reviews, indicating an average environment)",
+            "company_age": "6 years old",
+            "recent_news": "Data not available in public records",
+            "ceo": "Data not available in public records",
+            "funding_rounds": "Data not available in public records",
+            "potential_red_flags": "Prosecution Details of IDOLIZE BUSINESS SOLUTIONS (ZaubaCorp)",
+            "interview_insights": "Idolize is an AI and automation company focused on delivering high-impact hyper-automation solutions. They are a UiPath Authorized Business Partner. Recent roles include Data Quality Specialist Internships, suggesting a focus on data-related roles within their AI solutions. The AmbitionBox data suggests average salary and benefits and an average work culture. The ZaubaCorp data includes prosecution details that should be further investigated.",
+            "confidence_score": 100,
+            "is_synthetic": false
+        }
     }
 ]
