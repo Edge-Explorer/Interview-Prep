@@ -404,5 +404,45 @@
                 }
             ]
         }
+    },
+    {
+        "company_name": "Agama Law Associates",
+        "interview_intelligence_profile": {
+            "firm_name": "Agama Law Associates",
+            "firm_overview": "Agama Law Associates (ALA) is a boutique commercial law practice offering end-to-end solutions to businesses, corporates, and individuals.",
+            "culture": "Highly rated for company culture based on employee reviews. Employees cite positive experiences with promotions/appraisals and skill development.",
+            "salary_information": "Associate salaries range from \u20b94.2 Lakhs to \u20b910 Lakhs per year, based on 5 employee salaries. This range applies to employees with less than 1 year to 5 years of experience.",
+            "recent_news": "Agama Law Associates was present with Brandman Retail Ltd and Gretex Corporate Services Limited at the National Stock Exchange (NSE India) for Brandman Retail Ltd's listing.",
+            "key_people": "Data not available in public records",
+            "interview_tips": "Given the positive reviews regarding promotions/appraisals and skill development, be prepared to discuss your career goals and how this role aligns with your professional growth. Research Brandman Retail Ltd and Gretex Corporate Services Limited to demonstrate awareness of the firm's clients.",
+            "glassdoor_rating": "Data not available in public records",
+            "ceo": "Data not available in public records",
+            "location": "India",
+            "round": "Data not available in public records",
+            "confidence_score": 100,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Life at Agama Law Associates: Culture, Salary, Reviews ... - AmbitionBox",
+                    "url": "https://www.ambitionbox.com/overview/agama-law-associates-overview"
+                },
+                {
+                    "title": "Agama Law Associates - LinkedIn",
+                    "url": "https://www.linkedin.com/company/agama-law-associates"
+                },
+                {
+                    "title": "Agama Law Associates Associate Salaries by 5 Employees",
+                    "url": "https://www.ambitionbox.com/salaries/agama-law-associates-salaries/associate"
+                },
+                {
+                    "title": "Agama Law Associates",
+                    "url": "https://www.agamalaw.com/"
+                },
+                {
+                    "title": "Agama Law Associates - India - Firm Profile | Benchmark Litigation",
+                    "url": "https://benchmarklitigation.com/Firm/Agama-Law-Associates-India/Profile/140930"
+                }
+            ]
+        }
     }
 ]
