@@ -194,5 +194,32 @@
             "confidence_score": 35,
             "is_synthetic": false
         }
+    },
+    {
+        "company_name": "Gowling WLG",
+        "interview_intelligence_profile": {
+            "firm_name": "Gowling WLG",
+            "key_insights": [
+                "Gowling WLG is an international law firm.",
+                "The firm is investing in legal tech and valuing user experience.",
+                "Gowling WLG consistently publishes training details among top law firms.",
+                "Gowling WLG has a presence in the UK, specifically at 4 More London Riverside."
+            ],
+            "potential_interview_themes": [
+                "The firm's international presence and collaborative environment.",
+                "Gowling WLG's commitment to innovation and adoption of legal technology. Discuss your experience with similar technologies and your understanding of user-centered design principles.",
+                "The firm's transparency regarding training and development opportunities. Inquire about opportunities for continuous learning in the tech field.",
+                "Given your tech role search, explore how your skills and experience can contribute to their growing legal tech initiatives and improve user experience.",
+                "Dawn Raids (ThinkHouse) - this may indicate relevant experience in regulatory or compliance areas within law. If applicable, consider preparing example scenarios from previous roles."
+            ],
+            "relevant_news": [
+                "ThinkHouse - Dawn Raids | Gowling WLG: 8 Nov 2021",
+                "Australian law firms to boost legal tech investment, value user experience: 19 Oct 2025"
+            ],
+            "ceo": "Data not available in public records",
+            "recent_funding_round": "Data not available in public records",
+            "confidence_score": 100,
+            "is_synthetic": false
+        }
     }
 ]
