@@ -32,7 +32,7 @@ This section is for tracking specific task completions and problem-solving histo
 - **Fixed** Information Starvation Bug: Upgraded the Researcher/Auditor nodes to preserve and pass full search metadata (Title + Body). This slashed hallucinations and fixed the "Confidence 0" issue for rare companies.
 - **Implemented** Domain Guard (Role-Company Logic): Added a contextual cross-check to the Auditor and Architect nodes. The system now detects mismatches between the user's role (e.g., Software Engineer) and the company's actual industry (e.g., Creative Agency), and provides a logical explanation of the alignment instead of hallucinating.
 - **Improved** Validation Logic: Enforced strict Critic-based approval before any discovery is saved to `discoveries.json`, ensuring the memory stays pristine.
-- **Updated** Comprehensive Documentation: Refactored root, backend, and discovery READMEs to reflect the new 4-agent architecture and Mermaid diagrams.
+- **Updated** Comprehensive Documentation: Refactored root, backend, and discovery READMEs to reflect the new 4-agent architecture and Mermaid diagrams. Created `CHALLENGES.md` to document the project's complex technical solutions.
 - **Fixed** Critical Data Integrity loophole: Implemented "Global Vault" isolation for Stealth/Synthetic data.
 - **Fixed** Strict Identity Bug: Tightened fuzzy matcher threshold (95%) to prevent collisions.
 - **Fixed** Logic bug in Agentic Discovery where naming conflicts (name vs company_name) prevented saving to `discoveries.json`.

@@ -65,7 +65,7 @@ graph TD
 
 ## ✅ Development Progress
 
-### � **Phase 1: Core Foundation** (COMPLETED ✅)
+###  **Phase 1: Core Foundation** (COMPLETED ✅)
 
 #### Backend Infrastructure
 - [x] FastAPI application setup with CORS
@@ -703,6 +703,15 @@ UPI_NAME=Your Name
 
 ### Known Issues
 - None currently reported ✅
+
+---
+
+## 📚 Project Documentation
+
+Explore the deeper technical reasoning and project history:
+- [📜 Activity Log & Collaborators](./COLLABORATORS.md) - Track all major implementations and fixes.
+- [🧠 Technical Challenges & Solutions](./CHALLENGES.md) - Deep dive into how we solved complex Agentic problems.
+- [🗺️ Future Roadmap](./NEXT_STEPS.md) - See where the platform is headed next.
 
 ---
 
