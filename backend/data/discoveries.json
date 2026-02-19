@@ -221,5 +221,127 @@
             "confidence_score": 100,
             "is_synthetic": false
         }
+    },
+    {
+        "company_name": "Mphasis",
+        "interview_intelligence_profile": {
+            "company_name": "Mphasis",
+            "interview_process_overview": "The Mphasis interview process generally involves an aptitude test, technical interview, and HR interview. Some roles may include a group discussion. The process, from interview to offer, typically takes less than 2 weeks for 75% of candidates, though 17% have reported it taking 2-4 weeks. Mphasis actively recruits from colleges and universities.",
+            "interview_stages": [
+                {
+                    "stage_name": "Aptitude Test",
+                    "description": "An online aptitude test to evaluate logical reasoning, quantitative ability, and verbal skills.",
+                    "focus": [
+                        "Logical Reasoning",
+                        "Quantitative Ability",
+                        "Verbal Skills"
+                    ]
+                },
+                {
+                    "stage_name": "Technical Interview",
+                    "description": "Focuses on coding, problem-solving, and domain expertise. Interviewers may ask about the tech stack used in projects, focusing on how and why specific tools and frameworks were used.",
+                    "focus": [
+                        "Coding",
+                        "Problem-solving",
+                        "Domain Expertise",
+                        "Tech Stack Knowledge (tools & frameworks used in projects)"
+                    ]
+                },
+                {
+                    "stage_name": "Group Discussion (if applicable)",
+                    "description": "Tests communication and teamwork skills.",
+                    "focus": [
+                        "Communication Skills",
+                        "Teamwork Skills"
+                    ]
+                },
+                {
+                    "stage_name": "HR Interview",
+                    "description": "Evaluates cultural fit, attitude, and career goals.",
+                    "focus": [
+                        "Cultural Fit",
+                        "Attitude",
+                        "Career Goals"
+                    ]
+                }
+            ],
+            "culture_insights": "Mphasis promotes a culture of continual learning and provides a learning environment that combines Instructor-Led Training (ILTs), Virtual ILTs, and eLearning.",
+            "difficulty_rating": "Glassdoor users rated their interview experience at Mphasis as 71.7% positive with a difficulty rating that varies depending on the role.",
+            "additional_notes": "Mphasis aims to identify talent that aligns with the company's innovative culture and growth objectives. The specific questions and focus areas might vary based on the role applied for (e.g., tech role at an AI startup). The interview process may take less than 2 weeks.",
+            "ceo": "Data not available in public records",
+            "recent_news": "Data not available in public records",
+            "funding_rounds": "Data not available in public records",
+            "confidence_score": 100,
+            "is_synthetic": false
+        }
+    },
+    {
+        "company_name": "3i Infotech",
+        "interview_intelligence_profile": {
+            "companyName": "3i Infotech",
+            "likelyJobTitles": [
+                "Software Engineer",
+                "Software Developer",
+                "Associate"
+            ],
+            "interviewDifficulty": "Medium",
+            "overallInterviewExperience": "Average",
+            "averageHiringTime": "Approximately 11 days",
+            "interviewQuestionSources": [
+                "Glassdoor",
+                "Indeed.com"
+            ],
+            "companyOverview": "3i Infotech appears to be a technology company where candidates report an average interview experience of medium difficulty. The hiring process takes approximately 11 days on average. Interview questions and reviews are available on Glassdoor and Indeed.",
+            "ceoName": "Data not available in public records",
+            "recentNews": "Data not available in public records",
+            "fundingRounds": "Data not available in public records",
+            "confidence_score": 100,
+            "is_synthetic": false
+        }
+    },
+    {
+        "company_name": "Coforge",
+        "interview_intelligence_profile": {
+            "company_name": "Coforge",
+            "industry": "Digital IT Solutions & Technology Consulting Services",
+            "company_overview": "Coforge is a global digital services and solutions provider that enables its clients to transform at the intersection of domain expertise and emerging technologies. They focus on select industries and employ a product engineering-led approach.",
+            "culture": "Coforge aims to build trust, transformation, and long-term careers. They are recognized as a solid starting point for freshers, offering good training and learning opportunities. However, some reviews mention slow career progression and limited support for professional development, especially in North America.",
+            "growth_opportunity": "Coforge is recognized as a good starting point for freshers, offering good training and opportunities to learn. Career progression may be slow, and professional development support may be limited, particularly in North America.",
+            "leadership": "Data not available in public records",
+            "employee_sentiment": "Employee reviews suggest a good learning environment for freshers, but potential concerns regarding career progression and professional development support in North America should be considered.",
+            "interview_insights": "Focus on demonstrating a strong aptitude for learning and adaptability. Be prepared to discuss your long-term career goals and how you plan to proactively manage your professional development.",
+            "recent_news": "Coforge has emerged as the 7th largest Indian IT services firm and the Fastest of the 'Fastest Five' per HFS Research, with a revenue growth rate nearly 8x the industry average.",
+            "financial_performance": "Coforge has grown into a $1.45 billion global digital services and solutions provider.",
+            "glassdoor_rating": "Based on 7,644 reviews, it would be wise to research Glassdoor to get an idea of employee sentiment.",
+            "office_locations": "Chicago",
+            "key_people": "Data not available in public records",
+            "funding_rounds": "Data not available in public records",
+            "confidence_score": 100,
+            "is_synthetic": false
+        }
+    },
+    {
+        "company_name": "Godrej Infotech",
+        "interview_intelligence_profile": {
+            "company_name": "Godrej Infotech",
+            "industry": "Information Technology (IT)",
+            "interview_focus": "Technical roles, particularly Software Developer positions.",
+            "interview_difficulty": "Based on available data, interview experiences vary. Expect a mix of technical and behavioral questions.",
+            "interview_process_overview": "The interview process appears to involve multiple rounds, as evidenced by the numerous interview questions and reviews available. Specific stages are not detailed in the provided data.",
+            "potential_interview_questions": [
+                "Based on 100+ interview questions",
+                "Software Developer interview questions",
+                "Behavioral questions"
+            ],
+            "things_to_know": [
+                "Godrej Infotech is looking for innovative thinkers and IT experts.",
+                "The company offers a rewarding and challenging work environment."
+            ],
+            "ceo": "Data not available in public records",
+            "recent_news": "Data not available in public records",
+            "funding_rounds": "Data not available in public records",
+            "confidence_score": 100,
+            "is_synthetic": false
+        }
     }
 ]
