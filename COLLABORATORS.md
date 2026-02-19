@@ -26,7 +26,8 @@ This section is for tracking specific task completions and problem-solving histo
 - **Implemented** Zero-Hallucination Framework: Integrated Critic Grounding, Trust Score system (0-100), and "I Don't Know" Policy to prevent AI imagination.
 - **Implemented** Optimization Suite: Added `rapidfuzz` for better matching, refined DDGS queries for noise reduction, and a "Status Stream" for latency feedback.
 - **Validated** System performance against real-world firms (e.g., Idolize Business Solutions, Mistral AI).
-- **Implemented** Source Attribution: The AI now captures and links all research sources (URLs and Titles) in the final profile for increased transparency.
+- **Implemented** Source Attribution: The AI now captures and links all research sources in the final profile.
+- **Implemented** Temporal Dual-Search: Upgraded the Researcher to perform split searches (Established DNA + 2026 Freshness) using time-limited queries.
 - **Fixed** Critical Data Integrity loophole: Implemented "Global Vault" isolation ensuring Stealth/Synthetic data never poisons the shared memory.
 - **Fixed** Logic bug in Agentic Discovery where naming conflicts (name vs company_name) prevented saving to `discoveries.json`.
 

@@ -444,5 +444,62 @@
                 }
             ]
         }
+    },
+    {
+        "company_name": "Figure AI",
+        "interview_intelligence_profile": {
+            "company_name": "Figure AI",
+            "industry": "AI Robotics",
+            "focus": "Creating autonomous humanoid robots to address labor shortages and perform undesirable or unsafe tasks.",
+            "interview_difficulty": "Likely High (Based on application volume vs. hires)",
+            "application_volume": "Very High (176K resumes received)",
+            "acceptance_rate": "Very Low (Less than 500 hires from 176K applications)",
+            "interview_questions_themes": [
+                "Technical skills related to AI and robotics",
+                "Experience with manipulation tasks and error reduction",
+                "Understanding of transferring technology stacks from non-humanoid to humanoid robots",
+                "Questions specific to the role applied for (Tech Role at AI Startup)"
+            ],
+            "ceo_name": "Data not available in public records",
+            "recent_news": [
+                "Figure AI received 176K resumes and hired less than 500 people in the last 3 years."
+            ],
+            "recent_funding_rounds": "Data not available in public records",
+            "employee_sentiment": "Data not available in public records",
+            "source_quality": [
+                "Glassdoor",
+                "Levels.fyi",
+                "Reddit",
+                "Business..."
+            ],
+            "confidence_score": 100,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Figure AI Interview Experience & Questions (2026) | Glassdoor",
+                    "url": "https://www.glassdoor.com/Interview/Figure-AI-Interview-Questions-E9642582.htm"
+                },
+                {
+                    "title": "Figure AI Careers | Levels.fyi",
+                    "url": "https://www.levels.fyi/companies/figure-ai"
+                },
+                {
+                    "title": "r/robotics on Reddit: Pulling Your Questions for Figure AI",
+                    "url": "https://www.reddit.com/r/robotics/comments/1gja6vv/pulling_your_questions_for_figure_ai/"
+                },
+                {
+                    "title": "[RECENT] Figure AI Interview Questions (2025) | Glassdoor",
+                    "url": "https://www.glassdoor.com/Interview/Figure-AI-Interview-Questions-E9642582.htm"
+                },
+                {
+                    "title": "[RECENT] 14 Figure AI Interview Questions & Answers (2025) | Glassdoor",
+                    "url": "https://www.glassdoor.co.in/Interview/Figure-AI-Interview-Questions-E9642582.htm"
+                },
+                {
+                    "title": "[RECENT] Figure AI Saw 176K Resumes, Accepted Less Than 500, CEO Says - Business ...",
+                    "url": "https://www.businessinsider.com/figure-ai-robotics-startup-tech-job-market-competition-170k-resumes-2025-12?op=1"
+                }
+            ]
+        }
     }
 ]

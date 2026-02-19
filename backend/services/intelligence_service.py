@@ -81,20 +81,25 @@ class IntelligenceService:
             self.model = None
 
     async def researcher_node(self, state: AgentState) -> AgentState:
-        """Search engine node to find facts about unknown companies"""
+        """Dual-Search node: Captures established DNA + Recent 2026 trends"""
         print(f"STATUS: Stage 1/3 - Researching {state['company_name']}...")
-        print(f"RESEARCH: Scouring professional sources for {state['company_name']}...")
+        print(f"RESEARCH: Scouring professional sources with Temporal Priority...")
         try:
-            # Refined query to reduce noise
-            query = f'"{state["company_name"]}" (engineering interview process OR company culture OR tech stack)'
-            print(f"DEBUG: Using filtered query: {query}")
+            # Plan: Two queries to balance "Established History" with "2026 Freshness"
+            dna_query = f'"{state["company_name"]}" (interview process OR company culture OR tech stack)'
+            trends_query = f'"{state["company_name"]}" interview experience 2025 2026'
             
             def do_search():
                 with DDGS() as ddgs:
-                    return [r for r in ddgs.text(query, max_results=5)]
+                    # 1. Get broader DNA (no strict timelimit)
+                    dna_results = [r for r in ddgs.text(dna_query, max_results=3)]
+                    # 2. Get cutting-edge trends (strictly last year to catch 2025/2026)
+                    trend_results = [r for r in ddgs.text(trends_query, max_results=3, timelimit='y')]
+                    
+                    return dna_results + trend_results
             
             results = await asyncio.to_thread(do_search)
-            search_results = "\n".join([f"{r['title']}: {r['body']}" for r in results])
+            search_results = "\n".join([f"[{'RECENT' if i >= 3 else 'GENERAL'}] {r['title']}: {r['body']}" for i, r in enumerate(results)])
             
             if not results:
                 print(f"WARNING: No public info found for {state['company_name']}. Switching to Synthetic Logic.")
@@ -104,11 +109,11 @@ class IntelligenceService:
                 state['sources'] = []
             else:
                 state['is_synthetic'] = False
-                state['confidence_score'] = min(75, len(results) * 15)
+                state['confidence_score'] = min(85, len(results) * 15) # Boost base confidence for fresh data
                 state['research_data'] = search_results
-                # Capture sources
-                state['sources'] = [{"title": r['title'], "url": r['href']} for r in results]
-                print(f"RESEARCH: Successfully gathered intelligence blocks from {len(results)} sources.")
+                # Capture sources with temporal tagging
+                state['sources'] = [{"title": f"{'[RECENT] ' if i >= 3 else ''}{r['title']}", "url": r['href']} for i, r in enumerate(results)]
+                print(f"RESEARCH: Successfully gathered intelligence blocks (DNA + Recent Trends).")
         except Exception as e:
             state['error'] = f"Research failed: {str(e)}"
             state['research_data'] = "No search results found."
