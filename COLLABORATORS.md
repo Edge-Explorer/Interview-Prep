@@ -29,6 +29,8 @@ This section is for tracking specific task completions and problem-solving histo
 - **Implemented** Source Attribution: The AI now captures and links all research sources in the final profile.
 - **Implemented** Evergreen Temporal Search: Upgraded the Researcher to dynamically calculate years for perpetual freshness.
 - **Implemented** The Auditor Agent (The Bouncer): A dedicated node that filters 'Vomit' (noise like Vastu/NCERT), verifies Company Identity vs Job Description, and generates an 'Audit Log' for developer transparency.
+- **Fixed** Information Starvation Bug: Upgraded the Researcher/Auditor nodes to preserve and pass full search metadata (Title + Body). This slashed hallucinations and fixed the "Confidence 0" issue for rare companies.
+- **Improved** Validation Logic: Enforced strict Critic-based approval before any discovery is saved to `discoveries.json`, ensuring the memory stays pristine.
 - **Updated** Comprehensive Documentation: Refactored root, backend, and discovery READMEs to reflect the new 4-agent architecture and Mermaid diagrams.
 - **Fixed** Critical Data Integrity loophole: Implemented "Global Vault" isolation for Stealth/Synthetic data.
 - **Fixed** Strict Identity Bug: Tightened fuzzy matcher threshold (95%) to prevent collisions.

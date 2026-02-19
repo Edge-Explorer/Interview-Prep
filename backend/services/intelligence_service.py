@@ -118,8 +118,14 @@ class IntelligenceService:
                 state['is_synthetic'] = False
                 state['confidence_score'] = min(85, len(results) * 15) # Boost base confidence for fresh data
                 state['research_data'] = search_results
-                # Capture sources with temporal tagging
-                state['sources'] = [{"title": f"{'[RECENT] ' if i >= 3 else ''}{r['title']}", "url": r['href']} for i, r in enumerate(results)]
+                # Capture sources with temporal tagging AND content to avoid starvation
+                state['sources'] = [
+                    {
+                        "title": f"{'[RECENT] ' if i >= 3 else ''}{r['title']}", 
+                        "url": r['href'], 
+                        "content": r.get('body', '')[:500] # Pass first 500 chars of body
+                    } for i, r in enumerate(results)
+                ]
                 print(f"RESEARCH: Successfully gathered intelligence blocks (DNA + Recent Trends).")
         except Exception as e:
             state['error'] = f"Research failed: {str(e)}"
@@ -191,7 +197,8 @@ class IntelligenceService:
             state['sources'] = [] # Clear the trash sources
         else:
             state['sources'] = unique_sources
-            state['audited_data'] = f"AUDITED DATA (Trusted Sources Only):\n" + "\n".join([f"- {s['title']}" for s in unique_sources])
+            # FEED THE ARCHITECT: Pass both title and content snippet to prevent hallucination
+            state['audited_data'] = f"AUDITED DATA (Trusted Sources Only):\n" + "\n".join([f"- {s['title']}: {s.get('content', '')}" for s in unique_sources])
             state['confidence_score'] = min(90, len(unique_sources) * 20)
             print(f"AUDITOR: Successfully filtered {len(raw_results)} -> {len(unique_sources)} high-grade sources.")
 
@@ -435,8 +442,8 @@ class IntelligenceService:
                         break
                 
                 if not is_duplicate:
-                    # SAFETY CHECK: Only save to global memory if it's NOT synthetic (verified web data)
-                    if not final_state.get('is_synthetic'):
+                    # SAFETY CHECK: Only save to global memory if it's VALIDATED and NOT synthetic
+                    if final_state.get('is_valid') and not final_state.get('is_synthetic'):
                         discoveries.append(new_entry)
                         with open(discoveries_path, 'w', encoding='utf-8') as f:
                             json.dump(discoveries, f, indent=4)

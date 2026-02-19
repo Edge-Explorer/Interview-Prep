@@ -679,5 +679,252 @@
             "REJECTED: '[RECENT] ODSC AI 2026 - Deep & Machine Learning, LLMs, and NLP' failed relevance audit (Score: 0)",
             "REJECTED: '[RECENT] Mock Interview Hacks 2026: Essential Strategies' failed relevance audit (Score: 0)"
         ]
+    },
+    {
+        "company_name": "Mobileprogramming PVT LTD",
+        "interview_intelligence_profile": {
+            "company_name": "Mobileprogramming PVT LTD",
+            "industry": "Information Technology/Software Development (Inferred from job roles)",
+            "location": "India (Multiple locations including Mumbai & Kalyan)",
+            "company_size": "Data not available in public records",
+            "interview_insights": {
+                "common_roles": [
+                    "BI Engineer",
+                    "Network Engineer"
+                ],
+                "interview_difficulty": "Data not available in public records",
+                "interview_focus": "Likely focuses on technical skills relevant to mobile programming, BI, and networking. Expect questions related to experience and problem-solving.  Review \"Mobile Programming Interview Questions for Experienced Professionals\" on AmbitionBox.",
+                "candidate_profile": "Experienced professionals are being sought after, as evidenced by the AmbitionBox data. Specific candidate profile depends on the role applied for (BI Engineer, Network Engineer, etc.).  The provided data doesn't allow a specific candidate profile beyond experience.",
+                "red_flags": "Data not available in public records",
+                "tips_for_success": [
+                    "Prepare for technical questions related to mobile programming concepts and technologies.",
+                    "If applying for a BI Engineer role, brush up on Business Intelligence concepts and tools.",
+                    "If applying for a Network Engineer role, demonstrate a strong understanding of networking principles and technologies.",
+                    "Review common interview questions and answers for Mobile Programming roles on AmbitionBox."
+                ]
+            },
+            "recent_news": "No specific news about Mobileprogramming PVT LTD is available in the provided data. The data includes information about Neutrinos Software Services and PhonePe, but these are not relevant to Mobileprogramming PVT LTD.",
+            "funding_stage": "Data not available in public records",
+            "ceo": "Data not available in public records",
+            "other_relevant_companies": [
+                "Neutrinos Software Services PVT LTD (as a point of reference for campus interviews in India)",
+                "PhonePe (as a source of interview questions, although not directly related to Mobileprogramming PVT LTD)"
+            ],
+            "source_data": [
+                "Glassdoor (for job postings)",
+                "AmbitionBox (for interview questions)"
+            ],
+            "confidence_score": 95,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "38 India jobs - Work from home | Glassdoor",
+                    "url": "https://www.glassdoor.com/Job/india-tech-cloud-erp-software-pvt-ltd-jobs-SRCH_IL.0,5_IN115_KW6,37.htm"
+                },
+                {
+                    "title": "167 bi engineer Jobs in Kalyan, February 2026 | Glassdoor",
+                    "url": "https://www.glassdoor.com/Job/bi-engineer-jobs-SRCH_IC2851994_KO0,11.htm"
+                },
+                {
+                    "title": "1109 Network engineer jobs in Mumbai, India - Glassdoor",
+                    "url": "https://www.glassdoor.com/Job/mumbai-network-engineer-jobs-SRCH_IL.0,6_IM1070_KO7,23.htm"
+                },
+                {
+                    "title": "[RECENT] 80+ Mobile Programming Interview Questions for Experienced Professionals 2025 | AmbitionBox",
+                    "url": "https://www.ambitionbox.com/interviews/mobile-programming-interview-questions/experienced-candidates"
+                },
+                {
+                    "title": "[RECENT] ATTENTION 2026 BATCH STUDENTS APPEARED IN CAMPUS INTERVIEW CONDUCTED BY NUTRINOS SOFTWARE SERVICES PVT LTD \u2013 2026 Sir MVIT Placement Cell",
+                    "url": "https://2026sirmvitplacementcell.wordpress.com/2026/02/12/attention-2026-batch-students-appeared-in-campus-interview-conducted-by-nutrinos-software-services-pvt-ltd/"
+                },
+                {
+                    "title": "[RECENT] 1,100+ PhonePe Interview Questions & Answers 2026 | AmbitionBox",
+                    "url": "https://www.ambitionbox.com/interviews/phonepe-interview-questions"
+                }
+            ]
+        },
+        "audit_log": [
+            "ACCEPTED: '38 India jobs - Work from home | Glassdoor' (Score: 90)",
+            "ACCEPTED: '167 bi engineer Jobs in Kalyan, February 2026 | Glassdoor' (Score: 90)",
+            "ACCEPTED: '1109 Network engineer jobs in Mumbai, India - Glassdoor' (Score: 90)",
+            "ACCEPTED: '[RECENT] 80+ Mobile Programming Interview Questions for Experienced Professionals 2025 | AmbitionBox' (Score: 40)",
+            "ACCEPTED: '[RECENT] ATTENTION 2026 BATCH STUDENTS APPEARED IN CAMPUS INTERVIEW CONDUCTED BY NUTRINOS SOFTWARE SERVICES PVT LTD \u2013 2026 Sir MVIT Placement Cell' (Score: 50)",
+            "ACCEPTED: '[RECENT] 1,100+ PhonePe Interview Questions & Answers 2026 | AmbitionBox' (Score: 40)"
+        ]
+    },
+    {
+        "company_name": "WABRIC",
+        "interview_intelligence_profile": {
+            "company_name": "WABRIC (Assumed typo, likely intended to be Wabtec or VA Tech Wabag based on research data. Clarification needed.)",
+            "industry": "Unclear, potentially related to rail transport (Wabtec) or water treatment (VA Tech Wabag). Requires clarification based on corrected company name.",
+            "focus_area": "AI Startup (as specified in user's Job Description context)",
+            "interview_intelligence_profile": {
+                "common_interview_questions": [
+                    "Based on AmbitionBox data, expect general technical questions related to the specific tech role at the AI startup.",
+                    "Expect behavioral questions assessing problem-solving skills, teamwork, and adaptability.",
+                    "Given the 'Complete Prep Guide 2025' tag, anticipate questions designed to assess forward-thinking and learning agility."
+                ],
+                "technical_skills_emphasized": [
+                    "Specific skills will depend on the AI tech role. Review the job description for required languages, frameworks, and AI/ML techniques (e.g., Python, TensorFlow, PyTorch, NLP, Computer Vision).",
+                    "Prepare to discuss your experience with relevant cloud platforms (e.g., AWS, Azure, GCP) if the role involves cloud-based AI solutions.",
+                    "Focus on demonstrating practical application of AI concepts."
+                ],
+                "behavioral_traits_assessed": [
+                    "Problem-solving: Prepare examples of how you've tackled challenging technical problems.",
+                    "Teamwork: Be ready to discuss your experience collaborating with other engineers and stakeholders.",
+                    "Adaptability: Highlight your ability to learn new technologies and adjust to changing project requirements.",
+                    "Communication: Practice explaining complex technical concepts clearly and concisely."
+                ],
+                "company_culture_insights": "Data not available in public records",
+                "recent_news_and_developments": "Data not available in public records",
+                "ceo_name": "Data not available in public records",
+                "funding_rounds": "Data not available in public records",
+                "interview_process_details": [
+                    "Likely involves technical screening (possibly coding challenges or technical phone screen).",
+                    "Expect in-depth interviews with technical team members.",
+                    "Potentially a final interview with hiring manager or leadership."
+                ],
+                "tips_for_success": [
+                    "Thoroughly research AI startup's products/services and technology stack.",
+                    "Practice answering common interview questions using the STAR method.",
+                    "Prepare insightful questions to ask the interviewer, demonstrating your interest and engagement.",
+                    "Showcase your passion for AI and your eagerness to contribute to the company's success.",
+                    "Based on 'walk-in interview' data point, be prepared for potentially less structured interview format."
+                ],
+                "additional_notes": "The recent AmbitionBox data suggests the interview questions will likely focus on future-oriented skills, so ensure you demonstrate forward thinking.",
+                "competitors": "Data not available in public records"
+            },
+            "confidence_score": 20,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "[RECENT] 100+ Wabtec Interview Questions & Answers | Complete Prep Guide 2025 | AmbitionBox",
+                    "url": "https://www.ambitionbox.com/interviews/wabtec-interview-questions"
+                },
+                {
+                    "title": "[RECENT] 100+ VA Tech Wabag Interview Questions & Answers 2025 | AmbitionBox",
+                    "url": "https://www.ambitionbox.com/interviews/va-tech-wabag-interview-questions"
+                },
+                {
+                    "title": "[RECENT] Latest Walk-in Interviews for Freshers \u2013 June 2025 (0\u20134 Years)",
+                    "url": "https://freshershunt.in/latest-walk-in-interviews-for-freshers/"
+                }
+            ]
+        },
+        "audit_log": [
+            "REJECTED: 'Best practices for planning and creating domains in Microsoft ...' failed relevance audit (Score: 0)",
+            "REJECTED: 'OneLake catalog: The trusted catalog for organizations ...' failed relevance audit (Score: 0)",
+            "REJECTED: 'Microsoft Fabric Blog' failed relevance audit (Score: 0)",
+            "ACCEPTED: '[RECENT] 100+ Wabtec Interview Questions & Answers | Complete Prep Guide 2025 | AmbitionBox' (Score: 40)",
+            "ACCEPTED: '[RECENT] 100+ VA Tech Wabag Interview Questions & Answers 2025 | AmbitionBox' (Score: 90)",
+            "ACCEPTED: '[RECENT] Latest Walk-in Interviews for Freshers \u2013 June 2025 (0\u20134 Years)' (Score: 50)"
+        ]
+    },
+    {
+        "company_name": "WDI",
+        "interview_intelligence_profile": {
+            "company_name": "WDI",
+            "industry": "Tech (likely Web Development Education/Recruiting)",
+            "likely_role_sought": "Software Engineer/Developer (based on FullStack Web Development mention and AI startup context)",
+            "company_overview": "WDI appears to focus on hiring top tech talent and building dream teams, suggesting they are a recruiting or training organization that places individuals in tech roles. They may also offer FullStack Web Development training based on the General Assembly review reference.",
+            "ceo": "Data not available in public records",
+            "headquarters": "Data not available in public records",
+            "recent_news": "Data not available in public records",
+            "funding_stage": "Data not available in public records",
+            "competitors": "General Assembly (implied by mention of their FullStack Web Development program)",
+            "interview_insights": {
+                "culture": "Likely values talent, teamwork, and potentially continuous learning (if they are involved in training). Expect questions about your passion for technology and ability to contribute to a team.",
+                "technical_skills": "Expect questions related to FullStack Web Development if pursuing a developer role. Given the user's interest in an AI startup, prepare to discuss relevant technologies like Python, JavaScript, and frameworks related to AI/ML. Be ready to demonstrate coding skills and problem-solving abilities.",
+                "behavioral_questions": "Prepare examples of how you've collaborated on projects, overcome technical challenges, and demonstrated a commitment to learning.",
+                "questions_to_ask": [
+                    "What are the biggest challenges facing the team currently?",
+                    "What opportunities are there for professional development within the company?",
+                    "Can you describe the team's workflow and development process?"
+                ]
+            },
+            "additional_notes": "The connection between WDI and the AI startup is not explicitly clear from the provided data. It's possible WDI is a recruiting partner for AI startups or provides training that aligns with the skills needed in the AI industry. Further research is recommended to clarify their relationship.",
+            "confidence_score": 20,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Hire Top Tech Talent | Build Your Dream Team with WDI",
+                    "url": "https://www.wdipl.com/hire-talent"
+                },
+                {
+                    "title": "Review of General Assembly London's FullStack Web ...",
+                    "url": "https://reena-verma.medium.com/review-of-general-assembly-londons-fullstack-web-development-immersive-wdi-coding-bootcamp-8c01aae2106f"
+                },
+                {
+                    "title": "Explore Tech Career Opportunities Today",
+                    "url": "https://www.wdipl.com/company/careers"
+                }
+            ]
+        },
+        "audit_log": [
+            "ACCEPTED: 'Hire Top Tech Talent | Build Your Dream Team with WDI' (Score: 50)",
+            "ACCEPTED: 'Review of General Assembly London's FullStack Web ...' (Score: 50)",
+            "ACCEPTED: 'Explore Tech Career Opportunities Today' (Score: 50)",
+            "REJECTED: '[RECENT] WDI : EndorExpress' failed relevance audit (Score: 0)",
+            "REJECTED: '[RECENT] Interview : EndorExpress' failed relevance audit (Score: 0)",
+            "REJECTED: '[RECENT] Interview: WDI Alain Champault \u2013 La Signal\u00e9tique \u00e0' failed relevance audit (Score: 0)"
+        ]
+    },
+    {
+        "company_name": "Quicktime Production Pvt. Ltd.",
+        "interview_intelligence_profile": {
+            "company_profile": {
+                "company_name": "Quicktime Production Pvt. Ltd.",
+                "industry": "Data not available in public records",
+                "company_size": "Data not available in public records",
+                "headquarters": "Data not available in public records",
+                "about_us": "Get an inside look of QuickTime Production \u2014 culture, pay, reviews, interview questions, job openings, corporate offices, peer comparison and more on AmbitionBox.",
+                "ceo": "Data not available in public records",
+                "recent_news": "Data not available in public records",
+                "funding_stage": "Data not available in public records"
+            },
+            "interview_intelligence": {
+                "culture_insights": "AmbitionBox provides insights into QuickTime Production's culture. If the company provides lunch, you might also have a lunch session with an employee where you can find out more about the company culture.",
+                "interview_process": "AmbitionBox provides information on interview questions and the overall interview experience at QuickTime Production.",
+                "potential_questions": [
+                    "Questions related to your experience as a Software Engineer in an AI startup.",
+                    "Questions about your understanding of AI concepts and technologies.",
+                    "Behavioral questions to assess your fit with the company culture."
+                ],
+                "things_to_know": [
+                    "Research QuickTime Production's culture, pay, reviews, interview questions, job openings, and corporate offices using AmbitionBox.",
+                    "Be prepared to discuss your experience related to AI and software engineering.",
+                    "If offered, use the lunch session to learn more about the company culture."
+                ]
+            },
+            "job_specific_information": {
+                "role": "Software Engineer",
+                "focus": "AI Startup Tech Role",
+                "required_skills": "Data not available in public records",
+                "benefits": "Data not available in public records"
+            },
+            "disclaimer": "The information provided in this profile is based on the provided research data. Please conduct further research to verify the accuracy and completeness of the information.",
+            "confidence_score": 45,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Life at QuickTime Production: Culture, Salary, Reviews, Interviews & more",
+                    "url": "https://www.ambitionbox.com/overview/quicktime-production-overview",
+                    "content": "Get an inside look of QuickTime Production \u2014 culture, pay, reviews, interview questions, job openings, corporate offices, peer comparison and more on AmbitionBox"
+                },
+                {
+                    "title": "Software Engineer interviews: Everything you need to prepare | Tech Interview Handbook",
+                    "url": "https://www.techinterviewhandbook.org/software-engineering-interview-guide/",
+                    "content": "If the company provides lunch, you might also have a lunch session with an employee where you can find out more about the company culture ."
+                }
+            ]
+        },
+        "audit_log": [
+            "REJECTED: 'Top 20 Video Production Companies - 2026 Reviews - Goodfirms' failed relevance audit (Score: 0)",
+            "ACCEPTED: 'Life at QuickTime Production: Culture, Salary, Reviews, Interviews & more' (Score: 40)",
+            "ACCEPTED: 'Software Engineer interviews: Everything you need to prepare | Tech Interview Handbook' (Score: 50)",
+            "REJECTED: '[RECENT] Final Cut Pro' failed relevance audit (Score: 0)",
+            "REJECTED: '[RECENT] Skill: Television Production | O'Reilly' failed relevance audit (Score: 0)",
+            "REJECTED: '[RECENT] Applications Now Open: POLITICO Fellows 2025\u20132026 Looking to ...' failed relevance audit (Score: 0)"
+        ]
     }
 ]
