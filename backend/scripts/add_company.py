@@ -64,7 +64,7 @@ def add_company_to_database(company_data):
     
     # Load existing data
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    data_path = os.path.join(current_dir, 'data', 'company_profiles.json')
+    data_path = os.path.join(current_dir, '..', 'data', 'company_profiles.json')
     
     with open(data_path, 'r', encoding='utf-8') as f:
         data = json.load(f)

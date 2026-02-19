@@ -1,13 +1,13 @@
 from fastapi import FastAPI, Depends, HTTPException, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-import models, schemas, database
+from core import models, schemas, database
 from services.gemini_service import gemini_service
 import pypdf
 import io
 import json
 from datetime import datetime
-import auth_utils
+from auth import auth_utils
 from services.intelligence_service import get_intelligence_service
 
 app = FastAPI(

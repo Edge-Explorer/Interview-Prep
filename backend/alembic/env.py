@@ -8,8 +8,8 @@ from dotenv import load_dotenv
 # Import your own models and Base
 import sys
 sys.path.append(os.getcwd())
-from database import Base
-import models 
+from core.database import Base
+from core import models 
 
 load_dotenv()
 

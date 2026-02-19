@@ -1,5 +1,9 @@
 import asyncio
 import os
+import os
+import sys
+# Add backend to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from dotenv import load_dotenv
 from services.intelligence_service import get_intelligence_service
 

@@ -143,5 +143,56 @@
             "confidence_score": 100,
             "is_synthetic": false
         }
+    },
+    {
+        "company_name": "Nebula Synthesis Labs",
+        "interview_intelligence_profile": {
+            "company_profile": {
+                "company_name": "Nebula Synthesis Labs",
+                "industry": "AI Startup (assumed based on job description)",
+                "location": "Likely Dallas, TX area (based on Shreyas S.'s affiliation with UT Dallas)",
+                "company_overview": "Nebula Synthesis Labs appears to be an AI startup potentially involved in developing applications, possibly for educational purposes. Shreyas S., Head of Design, leads an open-source initiative at UT Dallas.",
+                "ceo": "Data not available in public records",
+                "recent_news": "Data not available in public records",
+                "funding_stage": "Data not available in public records"
+            },
+            "interview_intelligence": {
+                "potential_interview_focus": [
+                    "Software Engineering Fundamentals",
+                    "AI/ML Concepts (given the industry)",
+                    "Open-source Development Experience",
+                    "Leadership and Team Management (given Shreyas S.'s role)",
+                    "Problem-solving skills (related to application development)",
+                    "Design Principles (given Shreyas S.'s role)",
+                    "Mathematics (partial derivatives, differential equations - potentially relevant depending on the AI tasks)"
+                ],
+                "technical_skills": [
+                    "Programming (basics and potentially more advanced depending on the role)",
+                    "AI/ML Frameworks (if applicable)",
+                    "Software Design",
+                    "Component Development (based on Shreyas S.'s work)",
+                    "Mathematics (potentially including Calculus and Linear Algebra)"
+                ],
+                "behavioral_questions": [
+                    "Questions about leading and managing teams",
+                    "Questions about working on open-source projects",
+                    "Questions about problem-solving and critical thinking",
+                    "Questions about design processes and user experience",
+                    "Questions about adapting to new technologies (AI)"
+                ],
+                "general_advice": [
+                    "Be prepared to discuss your experience with open-source projects and any contributions you've made.",
+                    "Research AI trends and demonstrate your understanding of the field.",
+                    "Highlight your problem-solving abilities and ability to apply theoretical knowledge to real-world problems.",
+                    "Prepare examples of your design work and explain your design decisions.",
+                    "Brush up on fundamental programming concepts, data structures, and algorithms."
+                ],
+                "potential_interviewers": [
+                    "Shreyas S. (Head of Design)"
+                ]
+            },
+            "confidence_score": 35,
+            "is_synthetic": false
+        }
     }
 ]

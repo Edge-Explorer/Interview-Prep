@@ -8,21 +8,14 @@ This directory contains the FastAPI-based backend for the InterviewAI platform. 
 
 | File/Directory | Purpose |
 |----------------|---------|
-| `main.py` | The main entry point. Sets up FastAPI, middleware (CORS), and all API endpoints (`/auth`, `/interviews`, `/users`). |
-| `models.py` | SQLAlchemy database models. Defines the schema for `User`, `InterviewSession`, `Payment`, and `LearningRoadmap`. |
-| `schemas.py` | Pydantic models for request/response validation. Ensures data integrity across the API. |
-| `database.py` | Database connection logic using SQLAlchemy and Neon PostgreSQL. |
-| `auth_utils.py` | Security helpers: password hashing, JWT token generation, and user authentication dependency. |
-| `round_config.py` | Configuration for interview rounds (Technical, Behavioral, System Design, Managerial, Final). |
-| **`services/`** | **External integrations and intelligence services** |
-| `services/gemini_service.py` | Google Gemini AI integration for question generation and evaluation. |
-| `services/company_intelligence.py` | Company intelligence service with curated database lookup. |
-| `services/intelligence_service.py` | **ACTIVE**: Agentic multi-agent workflow using LangGraph for real-time research. |
+| `main.py` | The main entry point. Sets up FastAPI and all API endpoints. |
+| **`core/`** | **Foundational logic**: `database.py`, `models.py`, `schemas.py`, `round_config.py`. |
+| **`auth/`** | **Security**: Authentication utilities and token management. |
+| **`services/`** | **Intelligence**: Gemini, Agentic Researcher, and Curated Intelligence. |
+| **`tests/`** | **Verification**: All automated test cases and GPU diagnostics. |
+| **`scripts/`** | **Maintenance**: Utility scripts for DB management and data entry. |
+| **`data/`** | **Knowledge**: `company_profiles.json`, `discoveries.json`, and training data. |
 | **`interview_ai_model/`** | Fine-Tuned Llama-3 LoRA adapters (Excl. from Git). |
-| **`data/`** | **Static data and intelligence databases** |
-| `data/company_profiles.json` | Curated database of 383 unique companies across 12 domains. |
-| `data/discoveries.json` | **NEW**: Memory layer for dynamically discovered company profiles. |
-| `test_intelligence_agent.py` | Test script to verify the LangGraph Agentic Brain functionality. |
 
 ## 🚀 Key Features
 
@@ -72,13 +65,12 @@ Each company profile includes:
 
 ## 🧪 Testing
 
-Run the Company Intelligence test:
+Run the Agentic Intelligence test:
 ```bash
-python test_company_intel.py
+.\venv\Scripts\python tests\test_intelligence_agent.py "Google"
 ```
 
-This verifies:
-- Company profiles are loaded correctly
-- Case-insensitive matching works
-- Tier 1 (curated) vs Tier 3 (fallback) logic
-- Cultural values and interview context generation
+Run fuzzy matching benchmarks:
+```bash
+.\venv\Scripts\python tests\test_fuzzy_matching.py
+```
