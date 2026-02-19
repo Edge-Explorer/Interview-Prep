@@ -29,6 +29,7 @@ This section is for tracking specific task completions and problem-solving histo
 - **Implemented** Source Attribution: The AI now captures and links all research sources in the final profile.
 - **Implemented** Evergreen Temporal Search: Upgraded the Researcher to dynamically calculate current/previous years for split searches, ensuring the brain never goes "stale."
 - **Fixed** Critical Data Integrity loophole: Implemented "Global Vault" isolation ensuring Stealth/Synthetic data never poisons the shared memory.
+- **Fixed** Strict Identity Bug: Tightened fuzzy matcher threshold (85% -> 95%) to prevent "False Positive" collisions between distinct firms with similar suffixes (e.g., Shastra vs. Idolize).
 - **Fixed** Logic bug in Agentic Discovery where naming conflicts (name vs company_name) prevented saving to `discoveries.json`.
 
 ### **Abhiraj**

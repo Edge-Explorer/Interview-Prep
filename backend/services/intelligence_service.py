@@ -289,15 +289,18 @@ class IntelligenceService:
                     discoveries = json.load(f)
                     
                     # Fuzzy match against discovery names
+                    # INCREASED THRESHOLD: 95% ensures 'Shastra' and 'Idolize' (both ending in Solutions) don't collide
                     discovery_names = [d.get('company_name', '') for d in discoveries]
                     match = process.extractOne(company_name, discovery_names, scorer=fuzz.WRatio)
                     
-                    if match and match[1] >= 85:  # 85% threshold
+                    if match and match[1] >= 95:  # Strict 95% threshold to avoid "Solutions" collisions
                         matched_name = match[0]
-                        print(f"FOUND: Fuzzy matched '{company_name}' to '{matched_name}' (Score: {match[1]:.1f}) in Discovery Memory!")
+                        print(f"FOUND: High-confidence match '{company_name}' to '{matched_name}' (Score: {match[1]:.1f})")
                         for d in discoveries:
                             if d.get('company_name') == matched_name:
                                 return d.get('interview_intelligence_profile', d)
+                    else:
+                        print(f"INFO: No high-confidence match found (Top score: {match[1] if match else 0:.1f}). Proceeding with fresh discovery.")
         except Exception as e:
             print(f"WARNING: Memory lookup failed: {e}")
 
