@@ -85,9 +85,14 @@ class IntelligenceService:
         print(f"STATUS: Stage 1/3 - Researching {state['company_name']}...")
         print(f"RESEARCH: Scouring professional sources with Temporal Priority...")
         try:
-            # Plan: Two queries to balance "Established History" with "2026 Freshness"
+            # Dynamic year for "Evergreen Freshness"
+            from datetime import datetime
+            current_year = datetime.now().year
+            prev_year = current_year - 1
+            
+            # Plan: Two queries to balance "Established History" with "Fresh Trends"
             dna_query = f'"{state["company_name"]}" (interview process OR company culture OR tech stack)'
-            trends_query = f'"{state["company_name"]}" interview experience 2025 2026'
+            trends_query = f'"{state["company_name"]}" interview experience {prev_year} {current_year}'
             
             def do_search():
                 with DDGS() as ddgs:
