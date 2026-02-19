@@ -27,9 +27,10 @@ This section is for tracking specific task completions and problem-solving histo
 - **Implemented** Optimization Suite: Added `rapidfuzz` for better matching, refined DDGS queries for noise reduction, and a "Status Stream" for latency feedback.
 - **Validated** System performance against real-world firms (e.g., Idolize Business Solutions, Mistral AI).
 - **Implemented** Source Attribution: The AI now captures and links all research sources in the final profile.
-- **Implemented** Evergreen Temporal Search: Upgraded the Researcher to dynamically calculate current/previous years for split searches, ensuring the brain never goes "stale."
-- **Fixed** Critical Data Integrity loophole: Implemented "Global Vault" isolation ensuring Stealth/Synthetic data never poisons the shared memory.
-- **Fixed** Strict Identity Bug: Tightened fuzzy matcher threshold (85% -> 95%) to prevent "False Positive" collisions between distinct firms with similar suffixes (e.g., Shastra vs. Idolize).
+- **Implemented** Evergreen Temporal Search: Upgraded the Researcher to dynamically calculate years for perpetual freshness.
+- **Implemented** The Auditor Agent (The Bouncer): A dedicated node that filters 'Vomit' (noise like Vastu/NCERT), verifies Company Identity vs Job Description, and generates an 'Audit Log' for developer transparency.
+- **Fixed** Critical Data Integrity loophole: Implemented "Global Vault" isolation for Stealth/Synthetic data.
+- **Fixed** Strict Identity Bug: Tightened fuzzy matcher threshold (95%) to prevent collisions.
 - **Fixed** Logic bug in Agentic Discovery where naming conflicts (name vs company_name) prevented saving to `discoveries.json`.
 
 ### **Abhiraj**

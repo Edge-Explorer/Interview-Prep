@@ -38,7 +38,9 @@ class AgentState(TypedDict):
     generated_profile: Optional[Dict[str, Any]]
     is_valid: bool
     iterations: int
-    sources: List[Dict[str, str]]        # NEW: List of source URLs/Titles
+    sources: List[Dict[str, str]]        
+    audited_data: Optional[str]           # NEW: Cleaned data for the Architect
+    audit_log: List[str]                  # NEW: Developer notes on filtering
     error: Optional[str]
 
 class IntelligenceService:
@@ -126,13 +128,83 @@ class IntelligenceService:
             state['sources'] = []
         return state
 
+    async def auditor_node(self, state: AgentState) -> AgentState:
+        """The Bouncer: Filters out 'Vomit' and verifies Identity vs JD"""
+        print(f"STATUS: Stage 1.5 - Auditing Intelligence for {state['company_name']}...")
+        
+        raw_results = state.get('sources', [])
+        jd_context = (state.get('job_description') or "").lower()
+        company_name = state['company_name'].lower()
+        
+        # Identity Killers (Noise words that signal irrelevant results)
+        noise_keywords = ["vastu", "astrology", "ncert", "bihar board", "class 7", "class 8", "class 9", "religious", "bhajan", "playlist"]
+        
+        clean_sources = []
+        audit_trail = []
+        
+        # Step 1: Filter Junk
+        for source in raw_results:
+            title = source['title'].lower()
+            url = source['url'].lower()
+            
+            # Check for Noise
+            is_noise = any(noise in title or noise in url for noise in noise_keywords)
+            if is_noise:
+                audit_trail.append(f"REJECTED: '{source['title']}' identified as noise/irrelevant.")
+                continue
+                
+            # Step 2: Contextual Match (Identity Audit)
+            relevance_score = 0
+            if jd_context:
+                # Check for tech keywords in title/url if JD is tech-heavy
+                tech_indicators = ["python", "react", "java", "developer", "engineer", "data", "qa", "test", "sde", "coding", "software", "tech"]
+                if any(tech in jd_context for tech in tech_indicators):
+                    if any(tech in title or tech in url for tech in tech_indicators):
+                        relevance_score += 50
+            
+            # Domain Trust (Auto-boost for professional sites)
+            trust_domains = ["linkedin.com", "glassdoor.", "ambitionbox.com", "levels.fyi", "cutshort.io", "indeed.", "github.com", "ycombinator.com"]
+            if any(domain in url for domain in trust_domains):
+                relevance_score += 40
+                
+            # Keep if it has at least some relevance or is from a trusted domain
+            if relevance_score >= 30 or not jd_context:
+                clean_sources.append(source)
+                audit_trail.append(f"ACCEPTED: '{source['title']}' (Score: {relevance_score})")
+            else:
+                audit_trail.append(f"REJECTED: '{source['title']}' failed relevance audit (Score: {relevance_score})")
+
+        # Deduplicate
+        seen_urls = set()
+        unique_sources = []
+        for s in clean_sources:
+            if s['url'] not in seen_urls:
+                unique_sources.append(s)
+                seen_urls.add(s['url'])
+
+        # Step 3: Identity Verification (The Stealth-Mode Pivot)
+        if not unique_sources:
+            print(f"CRITICAL: Auditor found 0 relevant links out of {len(raw_results)}. Identity Mismatch suspected.")
+            state['is_synthetic'] = True
+            state['confidence_score'] = 15
+            state['audited_data'] = "No professionally relevant data found. The company might be a stealth startup or the name might collide with non-professional entities."
+            state['sources'] = [] # Clear the trash sources
+        else:
+            state['sources'] = unique_sources
+            state['audited_data'] = f"AUDITED DATA (Trusted Sources Only):\n" + "\n".join([f"- {s['title']}" for s in unique_sources])
+            state['confidence_score'] = min(90, len(unique_sources) * 20)
+            print(f"AUDITOR: Successfully filtered {len(raw_results)} -> {len(unique_sources)} high-grade sources.")
+
+        state['audit_log'] = audit_trail
+        return state
+
     async def architect_node(self, state: AgentState) -> AgentState:
         """Use the Fine-Tuned Brain (Llama-3) to generate the profile"""
         print(f"STATUS: Stage 2/3 - Architecting DNA for {state['company_name']}...")
         print(f"ARCHITECT: Synthesizing data into interview patterns...")
         
         instruction = f"Generate a professional interview intelligence profile for {state['company_name']}."
-        input_data = f"Research Data found: {state['research_data'][:2000]}"
+        input_data = f"Research Data (Audited): {state.get('audited_data', state['research_data'])[:2000]}"
         if state.get('job_description'):
             input_data += f"\n\nContext from Job Description provided by user: {state['job_description']}"
             
@@ -252,12 +324,14 @@ class IntelligenceService:
 
         # Add Nodes
         workflow.add_node("researcher", self.researcher_node)
+        workflow.add_node("auditor", self.auditor_node)
         workflow.add_node("architect", self.architect_node)
         workflow.add_node("critic", self.critic_node)
 
         # Define Edges
         workflow.set_entry_point("researcher")
-        workflow.add_edge("researcher", "architect")
+        workflow.add_edge("researcher", "auditor")
+        workflow.add_edge("auditor", "architect")
         workflow.add_edge("architect", "critic")
 
         # Conditional Edge: If not valid and under 2 iterations, go back to architect
@@ -319,6 +393,8 @@ class IntelligenceService:
             "is_valid": False,
             "iterations": 0,
             "sources": [],
+            "audited_data": None,
+            "audit_log": [],
             "error": None
         }
         
@@ -332,7 +408,12 @@ class IntelligenceService:
             profile['is_synthetic'] = final_state.get('is_synthetic', False)
             profile['sources'] = final_state.get('sources', [])
             
-            # Save discovery to a file for human review later (Infinite Learning Loop)
+            # Developer-Only Audit Logs (Not for end-users)
+            new_entry = {
+                "company_name": final_state.get('company_name') or company_name,
+                "interview_intelligence_profile": profile,
+                "audit_log": final_state.get('audit_log', [])
+            }
             try:
                 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
                 data_dir = os.path.join(base_dir, "data")
@@ -345,23 +426,11 @@ class IntelligenceService:
                     with open(discoveries_path, 'r', encoding='utf-8') as f:
                         discoveries = json.load(f)
                 
-                # Normalize the entry to our standard discovery format
-                # We want: { "company_name": "...", "interview_intelligence_profile": { ... } }
-                name_to_use = profile.get('company_name') or profile.get('name') or company_name
-                
-                new_entry = {
-                    "company_name": name_to_use,
-                    "interview_intelligence_profile": profile
-                }
-
                 # Check if already discovered (case-insensitive)
                 is_duplicate = False
                 for d in discoveries:
                     existing_name = d.get('company_name')
-                    if not existing_name and 'name' in d: # Fallback for old/direct profiles
-                        existing_name = d.get('name')
-                    
-                    if existing_name and existing_name.lower() == name_to_use.lower():
+                    if existing_name and existing_name.lower() == new_entry['company_name'].lower():
                         is_duplicate = True
                         break
                 
@@ -371,11 +440,11 @@ class IntelligenceService:
                         discoveries.append(new_entry)
                         with open(discoveries_path, 'w', encoding='utf-8') as f:
                             json.dump(discoveries, f, indent=4)
-                        print(f"SUCCESS: New Discovery Saved: {name_to_use} added to discoveries.json")
+                        print(f"SUCCESS: New Discovery Saved: {new_entry['company_name']} added to discoveries.json")
                     else:
-                        print(f"INFO: {name_to_use} is a Synthetic (Stealth) profile. Not saving to global memory for data integrity.")
+                        print(f"INFO: {new_entry['company_name']} is a Synthetic (Stealth) profile. Not saving to global memory for data integrity.")
                 else:
-                    print(f"INFO: {name_to_use} already exists in discovery memory.")
+                    print(f"INFO: {new_entry['company_name']} already exists in discovery memory.")
             except Exception as e:
                 print(f"WARNING: Failed to save discovery: {e}")
             

@@ -619,5 +619,65 @@
                 }
             ]
         }
+    },
+    {
+        "company_name": "Foundation AI",
+        "interview_intelligence_profile": {
+            "company_profile": {
+                "company_name": "Foundation AI",
+                "industry": "AI Startup",
+                "overall_rating": "3.5/5 (based on 40+ employees)",
+                "key_insights": [
+                    "Focuses on automating document-driven work.",
+                    "Offers career opportunities in the AI field.",
+                    "Employee reviews provide insights into the pros and cons of working at Foundation AI."
+                ],
+                "ceo": "Data not available in public records",
+                "funding_rounds": "Data not available in public records",
+                "recent_news": "Data not available in public records"
+            },
+            "interview_profile": {
+                "common_interview_questions": [
+                    "Based on '24 Foundation AI Interview Questions & Answers (2026)', expect technical and behavioral questions relevant to the AI and tech industry."
+                ],
+                "interview_process_insights": [
+                    "Review the Glassdoor page for insights into the interview process, potentially including multiple rounds or technical assessments."
+                ],
+                "things_to_know": [
+                    "Prepare to discuss your experience in AI and related technologies.",
+                    "Be ready to articulate how your skills can contribute to automating document-driven work.",
+                    "Research Foundation AI's products and services to demonstrate your interest."
+                ],
+                "red_flags": [
+                    "Carefully review the 'Pros and Cons of Working At Foundation AI' from employee reviews to identify potential red flags and prepare thoughtful questions to address them during the interview."
+                ]
+            },
+            "role_specific_preparation": {
+                "tech_role_focus": [
+                    "Given the focus on tech roles, expect questions about your coding skills, AI/ML knowledge, and experience with relevant tools and frameworks.",
+                    "Prepare to discuss past projects and contributions, highlighting your ability to solve complex problems and deliver impactful results."
+                ]
+            },
+            "confidence_score": 65,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "24 Foundation AI Interview Questions & Answers (2026)",
+                    "url": "https://www.glassdoor.co.in/Interview/Foundation-AI-Interview-Questions-E5522600.htm"
+                },
+                {
+                    "title": "Working at Foundation AI | Glassdoor Careers at Foundation AI Automate Document-Driven Work Foundation AI Reviews by 40+ Employees | Rated 3.5/5 ... Foundation AI Careers - Insights and Opportunities Foundation AI Reviews: Pros And Cons of Working At Foundation AI Careers at Foundation AI Automate Document-Driven Work Careers at Foundation AI Automate Document-Driven Work Careers at Foundation AI Automate Document-Driven Work 2 Foundation AI Data Verification Executive Interview ...",
+                    "url": "https://www.glassdoor.com/Overview/Working-at-Foundation-AI-EI_IE5522600.11,24.htm"
+                }
+            ]
+        },
+        "audit_log": [
+            "ACCEPTED: '24 Foundation AI Interview Questions & Answers (2026)' (Score: 40)",
+            "ACCEPTED: 'Working at Foundation AI | Glassdoor Careers at Foundation AI Automate Document-Driven Work Foundation AI Reviews by 40+ Employees | Rated 3.5/5 ... Foundation AI Careers - Insights and Opportunities Foundation AI Reviews: Pros And Cons of Working At Foundation AI Careers at Foundation AI Automate Document-Driven Work Careers at Foundation AI Automate Document-Driven Work Careers at Foundation AI Automate Document-Driven Work 2 Foundation AI Data Verification Executive Interview ...' (Score: 90)",
+            "REJECTED: 'Careers at Foundation AI Automate Document-Driven Work' failed relevance audit (Score: 0)",
+            "REJECTED: '[RECENT] AI Foundations for Business Certificate\u2120 | Curriculum | AMS' failed relevance audit (Score: 0)",
+            "REJECTED: '[RECENT] ODSC AI 2026 - Deep & Machine Learning, LLMs, and NLP' failed relevance audit (Score: 0)",
+            "REJECTED: '[RECENT] Mock Interview Hacks 2026: Essential Strategies' failed relevance audit (Score: 0)"
+        ]
     }
 ]
