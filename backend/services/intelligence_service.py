@@ -173,6 +173,18 @@ class IntelligenceService:
             if any(domain in url for domain in trust_domains):
                 relevance_score += 40
                 
+            # Step 2.5: Role-Company Domain Guard (Prevent 'Role Forcing')
+            domain_mismatch = False
+            if jd_context:
+                tech_role = any(tech in jd_context for tech in ["developer", "engineer", "software", "coding", "tech", "data"])
+                non_tech_company = any(noise in title or noise in url for noise in ["production", "creative", "marketing", "agency", "hospital", "legal", "law", "construction"])
+                
+                # If it's a tech role but a non-tech company, be very suspicious of generic tech interview links
+                if tech_role and non_tech_company:
+                    if "interview questions" in title and company_name not in title:
+                        relevance_score -= 30
+                        audit_trail.append(f"PENALIZED: '{source['title']}' identified as potentially generic tech noise for a non-tech firm.")
+
             # Keep if it has at least some relevance or is from a trusted domain
             if relevance_score >= 30 or not jd_context:
                 clean_sources.append(source)
@@ -219,6 +231,8 @@ class IntelligenceService:
              input_data += "\n\nNOTE: Since no public info was found, synthesize a high-fidelity profile based EXCLUSIVELY on industry standards for the role described in the JD. Do not hallucinate history."
 
         input_data += "\n\nHALLUCINATION POLICY: If specific information (like CEO, recent news, or exact round names) is not in the research data, DO NOT MAKE IT UP. Instead, return 'Data not available in public records' for that field."
+        
+        input_data += "\n\nROLE-COMPANY ALIGNMENT: The user is applying for the role mentioned in the JD. If the company domain (found in research) does not typically hire for this role in a high-volume capacity (e.g., Software Engineer at a Creative Agency), EXPLAIN how the role likely fits into their specific business (e.g. 'Developing web experiences for clients'). DO NOT invent a massive IT infrastructure if it is not in the research."
 
         # Alpaca prompt template used during fine-tuning
         prompt = f"""Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
@@ -311,6 +325,8 @@ class IntelligenceService:
         
         If it's grounded in the research and matches our schema, return ONLY the word 'APPROVED'.
         If it has hallucinations or errors, return a short list of corrections.
+        
+        PENALTY: If the profile claims the company has '5 rounds of technical coding' but the research data is about a 'Creative Agency' with no mention of coding tests, flag it as 'ROLE FORCING HALLUCINATION'.
         """
         response = await asyncio.to_thread(self.critic_llm.invoke, critique_prompt)
         

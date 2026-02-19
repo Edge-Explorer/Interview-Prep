@@ -30,6 +30,7 @@ This section is for tracking specific task completions and problem-solving histo
 - **Implemented** Evergreen Temporal Search: Upgraded the Researcher to dynamically calculate years for perpetual freshness.
 - **Implemented** The Auditor Agent (The Bouncer): A dedicated node that filters 'Vomit' (noise like Vastu/NCERT), verifies Company Identity vs Job Description, and generates an 'Audit Log' for developer transparency.
 - **Fixed** Information Starvation Bug: Upgraded the Researcher/Auditor nodes to preserve and pass full search metadata (Title + Body). This slashed hallucinations and fixed the "Confidence 0" issue for rare companies.
+- **Implemented** Domain Guard (Role-Company Logic): Added a contextual cross-check to the Auditor and Architect nodes. The system now detects mismatches between the user's role (e.g., Software Engineer) and the company's actual industry (e.g., Creative Agency), and provides a logical explanation of the alignment instead of hallucinating.
 - **Improved** Validation Logic: Enforced strict Critic-based approval before any discovery is saved to `discoveries.json`, ensuring the memory stays pristine.
 - **Updated** Comprehensive Documentation: Refactored root, backend, and discovery READMEs to reflect the new 4-agent architecture and Mermaid diagrams.
 - **Fixed** Critical Data Integrity loophole: Implemented "Global Vault" isolation for Stealth/Synthetic data.

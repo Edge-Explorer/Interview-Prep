@@ -877,32 +877,22 @@
                 "industry": "Data not available in public records",
                 "company_size": "Data not available in public records",
                 "headquarters": "Data not available in public records",
-                "about_us": "Get an inside look of QuickTime Production \u2014 culture, pay, reviews, interview questions, job openings, corporate offices, peer comparison and more on AmbitionBox.",
                 "ceo": "Data not available in public records",
                 "recent_news": "Data not available in public records",
-                "funding_stage": "Data not available in public records"
+                "funding_rounds": "Data not available in public records",
+                "business_model": "Data not available in public records",
+                "role_company_alignment": "Given that QuickTime Production is a production company (likely focused on media production), a Software Engineer role, particularly in the AI space, likely supports the development of AI-powered tools or solutions for their media production workflows. This could include AI-driven video editing, content analysis, or automated content creation processes. It's unlikely they have a massive internal IT infrastructure, but rather a specialized tech team focusing on applying AI to their specific production needs.",
+                "interview_insights": {
+                    "culture": "AmbitionBox provides insights into the culture at QuickTime Production. It's recommended to research this on AmbitionBox to understand employee perspectives on work environment, values, and management style.",
+                    "salary_and_benefits": "AmbitionBox provides data regarding salary information for QuickTime Production. You can research roles similar to yours to get an indication of salary ranges.",
+                    "interview_process": "AmbitionBox provides insights into past interview questions. Be prepared to discuss your technical skills and experience, as well as your problem-solving abilities.",
+                    "red_flags": "Data not available in public records",
+                    "questions_to_ask": "Data not available in public records. However, given the lunch session mentioned in the Tech Interview Handbook, this would be a good opportunity to ask about the company culture and the team's dynamic.",
+                    "technical_interview_preparation": "Utilize resources like the 'Tech Interview Handbook' to prepare for technical questions. Focus on data structures, algorithms, and system design, tailoring your preparation to the specific technologies relevant to AI and media production. Since the role is in AI, brush up on your knowledge of machine learning, deep learning, and related AI concepts."
+                },
+                "employee_reviews_summary": "AmbitionBox contains employee reviews for QuickTime Production. Analyze these reviews to gain a deeper understanding of employee satisfaction, work-life balance, and career growth opportunities.",
+                "competitors": "Data not available in public records"
             },
-            "interview_intelligence": {
-                "culture_insights": "AmbitionBox provides insights into QuickTime Production's culture. If the company provides lunch, you might also have a lunch session with an employee where you can find out more about the company culture.",
-                "interview_process": "AmbitionBox provides information on interview questions and the overall interview experience at QuickTime Production.",
-                "potential_questions": [
-                    "Questions related to your experience as a Software Engineer in an AI startup.",
-                    "Questions about your understanding of AI concepts and technologies.",
-                    "Behavioral questions to assess your fit with the company culture."
-                ],
-                "things_to_know": [
-                    "Research QuickTime Production's culture, pay, reviews, interview questions, job openings, and corporate offices using AmbitionBox.",
-                    "Be prepared to discuss your experience related to AI and software engineering.",
-                    "If offered, use the lunch session to learn more about the company culture."
-                ]
-            },
-            "job_specific_information": {
-                "role": "Software Engineer",
-                "focus": "AI Startup Tech Role",
-                "required_skills": "Data not available in public records",
-                "benefits": "Data not available in public records"
-            },
-            "disclaimer": "The information provided in this profile is based on the provided research data. Please conduct further research to verify the accuracy and completeness of the information.",
             "confidence_score": 45,
             "is_synthetic": false,
             "sources": [
@@ -922,9 +912,9 @@
             "REJECTED: 'Top 20 Video Production Companies - 2026 Reviews - Goodfirms' failed relevance audit (Score: 0)",
             "ACCEPTED: 'Life at QuickTime Production: Culture, Salary, Reviews, Interviews & more' (Score: 40)",
             "ACCEPTED: 'Software Engineer interviews: Everything you need to prepare | Tech Interview Handbook' (Score: 50)",
-            "REJECTED: '[RECENT] Final Cut Pro' failed relevance audit (Score: 0)",
-            "REJECTED: '[RECENT] Skill: Television Production | O'Reilly' failed relevance audit (Score: 0)",
-            "REJECTED: '[RECENT] Applications Now Open: POLITICO Fellows 2025\u20132026 Looking to ...' failed relevance audit (Score: 0)"
+            "REJECTED: '[RECENT] Quicktime Production - Dombivli Advertising Agency - Agency Spotter' failed relevance audit (Score: 0)",
+            "REJECTED: '[RECENT] Quicktime Production Pvt Ltd . - Services & Company Info' failed relevance audit (Score: 0)",
+            "REJECTED: '[RECENT] Top 17 Video Production Companies in Pune - Dec 2025 Rankings' failed relevance audit (Score: 0)"
         ]
     }
 ]
