@@ -29,6 +29,11 @@ async def test_agent():
     new_intel = await service.get_intelligence(company_name, jd)
     print(f"DONE: Final Agentic Result: {new_intel}")
     
+    if "sources" in new_intel and new_intel["sources"]:
+        print("\nSOURCES FOUND:")
+        for i, source in enumerate(new_intel["sources"], 1):
+            print(f"   {i}. {source['title']} -> {source['url']}")
+    
     if "error" not in new_intel:
         print(f"SUCCESS: Successfully discovered intelligence for {company_name}")
     else:
@@ -38,6 +43,6 @@ if __name__ == "__main__":
     import traceback
     try:
         asyncio.run(test_agent())
-    except Exception:
-        print("\nFATAL ERROR:")
+    except Exception as e:
+        print(f"\nFATAL ERROR: {str(e)}")
         traceback.print_exc()

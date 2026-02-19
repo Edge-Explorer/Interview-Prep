@@ -8,7 +8,7 @@ def test_search():
             results = [r for r in ddgs.text("Python programming", max_results=3)]
             print(f"Found {len(results)} results")
             for r in results:
-                print(f"Title: {r['title']}")
+                print(f"Result: {r}")
     except Exception as e:
         print(f"Search failed: {e}")
 

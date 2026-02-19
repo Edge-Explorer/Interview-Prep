@@ -343,5 +343,66 @@
             "confidence_score": 100,
             "is_synthetic": false
         }
+    },
+    {
+        "company_name": "Mistral AI",
+        "interview_intelligence_profile": {
+            "company_name": "Mistral AI",
+            "industry": "Artificial Intelligence (AI)",
+            "headquarters": "Paris, France",
+            "year_founded": 2023,
+            "valuation": "More than US$14 billion (as of 2025)",
+            "ceo": "Data not available in public records",
+            "key_products": [
+                "Large Language Models (LLMs)",
+                "Le Chat chatbot",
+                "Mistral 3 (including 14B, 8B, and 3B models)",
+                "Mistral Large 3 (sparse mixture-of-experts model)"
+            ],
+            "recent_news": [
+                "CMA CGM streamlines global maritime operations with Mistral AI.",
+                "Release of Mistral 3, a family of open-source multimodal models."
+            ],
+            "funding_rounds": "Data not available in public records",
+            "talent_insights": "Attracting scarce AI talent is a key focus for Mistral AI. The company is contributing to the European AI ecosystem.",
+            "open_source_focus": "Offers both open-source and proprietary AI models, with models like Mistral 3 released under the Apache 2.0 license.",
+            "interview_tips": [
+                "Demonstrate a strong understanding of Large Language Models (LLMs) and AI technology.",
+                "Highlight your experience with open-source projects and contributions.",
+                "Showcase your passion for contributing to the European AI ecosystem.",
+                "Prepare to discuss your experience with multimodal models and their applications.",
+                "Research Mistral AI's models and their capabilities (e.g., Mistral 3 and Le Chat)."
+            ],
+            "company_mission": "To develop frontier AI LLMs, assistants, agents, and services.",
+            "values": [
+                "Innovation in AI",
+                "Open Source Contribution",
+                "Advancing the European AI Ecosystem"
+            ],
+            "confidence_score": 100,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Mistral AI - Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Mistral_AI"
+                },
+                {
+                    "title": "Frontier AI LLMs, assistants, agents, services | Mistral AI",
+                    "url": "https://mistral.ai/"
+                },
+                {
+                    "title": "What is Mistral AI? Everything to know about the OpenAI ...",
+                    "url": "https://techcrunch.com/2025/09/09/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/"
+                },
+                {
+                    "title": "Mistral AI's CEO on Microsoft and Europe\u2019s AI Ecosystem | TIME",
+                    "url": "https://time.com/7007040/mistral-ai-ceo-arthur-mensch-interview/"
+                },
+                {
+                    "title": "Introducing Mistral 3 | Mistral AI",
+                    "url": "https://mistral.ai/news/mistral-3"
+                }
+            ]
+        }
     }
 ]

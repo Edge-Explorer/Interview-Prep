@@ -38,6 +38,7 @@ class AgentState(TypedDict):
     generated_profile: Optional[Dict[str, Any]]
     is_valid: bool
     iterations: int
+    sources: List[Dict[str, str]]        # NEW: List of source URLs/Titles
     error: Optional[str]
 
 class IntelligenceService:
@@ -100,15 +101,19 @@ class IntelligenceService:
                 state['is_synthetic'] = True
                 state['confidence_score'] = 20
                 state['research_data'] = "No public information available. This might be a stealth startup or private company."
+                state['sources'] = []
             else:
                 state['is_synthetic'] = False
                 state['confidence_score'] = min(75, len(results) * 15)
                 state['research_data'] = search_results
-                print(f"RESEARCH: Successfully gathered intelligence blocks.")
+                # Capture sources
+                state['sources'] = [{"title": r['title'], "url": r['href']} for r in results]
+                print(f"RESEARCH: Successfully gathered intelligence blocks from {len(results)} sources.")
         except Exception as e:
             state['error'] = f"Research failed: {str(e)}"
             state['research_data'] = "No search results found."
             state['confidence_score'] = 0
+            state['sources'] = []
         return state
 
     async def architect_node(self, state: AgentState) -> AgentState:
@@ -300,6 +305,7 @@ class IntelligenceService:
             "generated_profile": None,
             "is_valid": False,
             "iterations": 0,
+            "sources": [],
             "error": None
         }
         
@@ -308,9 +314,11 @@ class IntelligenceService:
         
         if final_state.get('generated_profile'):
             profile = final_state['generated_profile']
-            # Inject score
+            # Inject score and sources
             profile['confidence_score'] = final_state.get('confidence_score', 0)
             profile['is_synthetic'] = final_state.get('is_synthetic', False)
+            profile['sources'] = final_state.get('sources', [])
+            
             # Save discovery to a file for human review later (Infinite Learning Loop)
             try:
                 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
