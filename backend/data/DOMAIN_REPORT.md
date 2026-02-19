@@ -2,25 +2,25 @@
 
 ```text
 ==============================================
-🚀 INTERVIEWAI - 200+ COMPANIES DOMAIN REPORT 🚀
+*** INTERVIEWAI - LIVE DOMAIN REPORT ***
 ==============================================
-Last Updated: 2026-02-16
-Database Version: 9.2.0
+Last Updated: 2026-02-19
+Database Version: Agentic-Live
 ----------------------------------------------
-🔹 Engineering & Tech        : 134 companies
-🔹 Business & Management     :  23 companies
-🔹 Construction & Trades     :  23 companies
-🔹 Social Services           :  23 companies
-🔹 Finance & Accounting      :  22 companies
-🔹 Healthcare & Medical      :  22 companies
-🔹 Legal                     :  22 companies
-🔹 Science & Research        :  22 companies
-🔹 Hospitality & Tourism     :  21 companies
-🔹 Creative & Design         :  21 companies
-🔹 Education & Training      :  21 companies
-🔹 Sales & Marketing         :  20 companies
-🔹 Other/Uncategorized       :   9 companies
+> Engineering & Tech        : 128 companies
+> Social Services           :  29 companies
+> Business & Management     :  26 companies
+> Science & Research        :  26 companies
+> Healthcare & Medical      :  23 companies
+> Legal                     :  22 companies
+> Creative & Design         :  22 companies
+> Education & Training      :  22 companies
+> Sales & Marketing         :  22 companies
+> Finance & Accounting      :  21 companies
+> Construction & Trades     :  15 companies
+> Hospitality & Tourism     :   8 companies
+> Other/Uncategorized           :  39 companies
 ----------------------------------------------
-✨ TOTAL UNIQUE COMPANIES   : 383
+* TOTAL UNIQUE COMPANIES   : 403
 ==============================================
 ```
