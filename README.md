@@ -47,7 +47,8 @@ graph TD
         Gatekeeper -->|Not Found| Agents[LangGraph Research Team]
         
         Agents --> Researcher[DuckDuckGo Researcher]
-        Researcher --> Architect[Llama-3 Profile Builder]
+        Researcher --> Auditor[Auditor Agent - The Bouncer]
+        Auditor --> Architect[Llama-3 Profile Builder]
         Architect --> Critic[Gemini Quality Validator]
         
         Critic -->|Approved| Memory[(discoveries.json)]
@@ -103,11 +104,13 @@ graph TD
   - [x] Custom LoRA adapters trained on 383-company dataset
   - [x] Expert-level structural reasoning for interview mocks
 - [x] **Agentic Discovery System (LangGraph)**
-  - [x] Multi-agent Researcher-Architect-Critic workflow
-  - [x] Real-time data gathering via DuckDuckGo
+  - [x] Multi-agent Researcher-Auditor-Architect-Critic workflow
+  - [x] **The Auditor (The Bouncer)**: Filters out noise/irrelevant data and verifies identity against JD
+  - [x] **Source Attribution**: Real-time URL and Title tracking for all research points
+  - [x] **Temporal Dual-Search**: Evergreen logic that automatically prioritizes current-year trends
   - [x] **Stealth Mode Support**: Reverse-engineers Job Descriptions (JD) for private/stealth companies
-  - [x] **Synthetic Fallback**: Industry-standard synthesis when no public info exists
-  - [x] **Discovery Memory**: `discoveries.json` persistent learning layer
+  - [x] **Identity Guarding**: Strict 95% fuzzy matching to prevent name collisions
+  - [x] **Discovery Memory**: `discoveries.json` persistent learning layer with Developer Audit Logs
 - [x] Company-specific simulations
 - [x] Difficulty levels (Junior, Mid, Senior)
 - [x] Panel interview mode

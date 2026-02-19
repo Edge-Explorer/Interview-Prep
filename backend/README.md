@@ -20,12 +20,13 @@ This directory contains the FastAPI-based backend for the InterviewAI platform. 
 ## 🚀 Key Features
 
 1. **AI Interviewer**: Integrated with Google Gemini 2.0 Flash API to generate real-time, adaptive questions.
-2. **Company Intelligence System (v2.1)**: 
+2. **Company Intelligence System (v2.2)**: 
    - **Tier 1 (Curated)**: Expert intelligence for **383 companies** (100% offline).
-   - **Tier 2 (Agentic Discovery)**: Live research via **DuckDuckGo** for public firms.
+   - **Tier 2 (Agentic Discovery)**: Live research via **DuckDuckGo** with Evergreen 2026 freshness.
+   - **The Auditor (The Bouncer)**: Dedicated node that purges noise and verifies JD/Identity alignment.
    - **Tier 3 (Stealth Mode)**: AI reverse-engineers company culture from the user's **JD**.
-   - **Tier 4 (Synthetic Logic)**: Industry-standard fallback if 100% of data is missing.
-   - **The Brain**: Orchestrated by LangGraph with persistent discovery memory.
+   - **Tier 4 (Synthetic Logic)**: Industry-standard fallback with strict Identity Guarding (95% threshold).
+   - **The Brain**: Orchestrated by a 4-agent LangGraph team with persistent memory.
 3. **Contextual Analysis**: Processes PDF resumes to tailor interview topics to the user's specific background.
 4. **Cloud-Ready Infrastructure**: Fully integrated with **Neon PostgreSQL** for serverless, cloud-side data storage.
 5. **Multi-Round System**: Supports 5 interview rounds (Technical, Behavioral, System Design, Managerial, Final).
