@@ -679,135 +679,91 @@
     {
         "company_name": "antigravity",
         "interview_intelligence_profile": {
-            "name": "antigravity",
-            "industry": "AI Startup",
-            "size": "Likely Small to Medium-Sized (Given its focus on a specific product and being relatively new)",
-            "interview_style": "Based on the available information, Antigravity, being a Google-backed AI startup focused on an AI-powered IDE, is likely to have a technical interview process focused on assessing coding skills, AI/ML knowledge, and system design aptitude. The emphasis on 'agentic development' suggests a strong interest in candidates who understand and can contribute to the development of AI agents for software development.",
-            "difficulty_level": "Medium to High (Due to the focus on AI and the novelty of the Antigravity platform)",
+            "name": "Antigravity (Agentic AI)",
+            "industry": "Agentic AI / Developer Tools",
+            "size": "Startup / Scale-up",
+            "interview_style": "High-intensity technical assessment focused on Large Language Models (LLMs), Agentic workflows, and tool-augmented generation. The process emphasizes the 'Agent-first' paradigm, requiring deep knowledge of recursive reasoning, artifact management, and autonomous code synthesis.",
+            "difficulty_level": "Hard",
             "cultural_values": [
-                "Innovation",
-                "Collaboration",
                 "Agent-first Thinking",
-                "Experimentation",
-                "User-centricity"
+                "Recursive Innovation",
+                "Autonomous Problem Solving",
+                "Developer Empowerment",
+                "Experimental Agility"
             ],
             "interview_rounds": {
-                "Coding/AI Fundamentals": {
-                    "focus": "Assessing coding proficiency and fundamental understanding of AI/ML concepts.",
+                "LLM & Agentic Logic": {
+                    "focus": "Assessing knowledge of LLM internals and multi-agent orchestration.",
                     "common_topics": [
-                        "Data Structures and Algorithms",
-                        "Python Programming",
-                        "Machine Learning Basics (Regression, Classification, Clustering)",
-                        "Neural Networks",
-                        "AI Agent Architectures",
-                        "Familiarity with common AI frameworks (e.g., TensorFlow, PyTorch)",
-                        "Code Optimization and Efficiency",
-                        "Debugging skills"
+                        "Chain-of-Thought (CoT) prompting",
+                        "Agent Tool-Calling & Function Selection",
+                        "Reasoning Loops (ReAct, Reflection)",
+                        "LLM Memory & State Persistence",
+                        "Latency vs Quality tradeoffs in Agentic systems"
                     ],
-                    "style": "Technical interview with coding exercises (likely on a whiteboard or shared coding environment) and questions on AI/ML concepts.",
-                    "tips": "Review fundamental data structures and algorithms. Practice coding in Python. Brush up on ML basics and be prepared to discuss different ML models and their applications. Be ready to explain code clearly and concisely."
+                    "style": "Deep-dive technical discussion and architectural sketching.",
+                    "tips": "Be prepared to explain how you would handle agent 'looping' or hallucination control in complex workflows."
                 },
-                "System Design (AI Platform Focus)": {
-                    "focus": "Evaluating the ability to design and architect systems that support AI agent development and the Antigravity platform.",
-                    "common_questions": [
-                        "How would you design a system for managing AI agents in a development environment?",
-                        "How would you handle scalability and performance for a platform like Antigravity?",
-                        "How would you design the architecture for integrating Gemini 3 with the IDE?",
-                        "How would you design the Agent Manager view described in the platform overview?",
-                        "How to create efficient knowledge management and artifact integration."
-                    ],
-                    "style": "Discussion-based interview, where you'll be asked to describe your approach to solving system design problems. May involve drawing diagrams or sketching out architectures.",
-                    "tips": "Focus on designing for scalability, reliability, and security. Consider different architectural patterns and trade-offs. Demonstrate your understanding of AI platform architecture."
-                },
-                "Agentic Development & Product Vision": {
-                    "focus": "Gauging understanding and enthusiasm for the 'agent-first' development paradigm and assessing the candidate's product sense and ability to contribute to Antigravity's evolution.",
+                "Agentic Systems Design": {
+                    "focus": "Designing scalable backends for autonomous AI agents.",
                     "common_topics": [
-                        "Understanding of AI agents and their applications in software development",
-                        "Experience with agent-based systems",
-                        "Product vision for AI-powered IDEs",
-                        "Understanding of developer workflows",
-                        "Creativity and problem-solving skills in the context of AI-driven tools"
+                        "Distributed Task Execution",
+                        "Sandboxed Code Execution Environments",
+                        "Knowledge Retrieval (RAG) at scale",
+                        "Asynchronous Agent Orchestration",
+                        "Security in Tool-Augmented AI"
                     ],
-                    "style": "Behavioral and discussion-based interview, where you'll be asked about your experience with AI agents and your ideas for the future of software development with AI.  You might be asked to provide feedback on Antigravity's current features or suggest new ones."
+                    "style": "Whiteboard architecture session.",
+                    "tips": "Focus on reliability and safety when agents have the power to execute code or modify files."
                 },
-                "Culture Fit & Leadership Potential": {
-                    "focus": "Evaluating cultural alignment and leadership potential. Given the startup environment, demonstrating initiative and collaborative spirit is vital.",
+                "Coding & Tool Integration": {
+                    "focus": "Practical implementation of AI-augmented developer tools.",
                     "common_topics": [
-                        "Teamwork and collaboration",
-                        "Problem-solving skills",
-                        "Adaptability and resilience",
-                        "Communication skills",
-                        "Past project experience and lessons learned",
-                        "Leadership qualities (e.g., initiative, motivation, ability to influence)"
+                        "Python/TypeScript proficiency",
+                        "Integration with IDE protocols (LSP)",
+                        "Building custom LangChain/LangGraph nodes",
+                        "API Design for AI-human collaboration",
+                        "Performance optimization for real-time code synthesis"
                     ],
-                    "style": "Behavioral interview focused on past experiences and how you handled challenging situations. Expect questions about your communication style and ability to work in a team."
+                    "style": "Live coding or pair-programming with an existing agentic framework.",
+                    "tips": "Showcase your ability to write clean, modular code that an AI could easily understand or extend."
+                },
+                "Vision & Alignment": {
+                    "focus": "Assessing alignment with the future of autonomous software engineering.",
+                    "common_topics": [
+                        "The evolution from 'Copilot' to 'Agent'",
+                        "Managing the human-in-the-loop experience",
+                        "Ethical considerations of autonomous coding",
+                        "Scalability of agentic workforces"
+                    ],
+                    "style": "Foundational / Peer-level discussion.",
+                    "tips": "Demonstrate a strong opinion on where the industry is heading—don't just follow the hype."
                 }
             },
             "red_flags": [
-                "Lack of interest or understanding of AI/ML concepts.",
-                "Inability to articulate technical concepts clearly.",
-                "Poor communication skills.",
-                "Resistance to experimentation and new technologies.",
-                "Lack of initiative or a collaborative spirit."
+                "Focusing only on 'Chatbot' logic without understanding 'Agentic' autonomy",
+                "Poor understanding of LLM nondeterminism",
+                "Lack of concern for security in safe-code execution",
+                "Rigid adherence to legacy developer workflows"
             ],
-            "average_process_duration": "2-4 weeks",
-            "interview_count": "3-5 interviews",
-            "role_company_alignment": "This role directly contributes to the development and improvement of Antigravity, Google's AI-powered IDE, and requires skills in AI/ML and software development.  The role's success will directly impact Antigravity's ability to empower developers using Google's Gemini models in an agent-first development environment.",
-            "confidence_score": 155,
-            "is_synthetic": false,
+            "average_process_duration": "2 weeks",
+            "interview_count": "4-5 rounds",
+            "role_company_alignment": "This role is central to building the next generation of autonomous developer tools, shifting the industry from assisted coding to fully agentic software synthesis.",
+            "confidence_score": 160,
+            "is_synthetic": true,
             "sources": [
                 {
-                    "title": "Google Antigravity - Wikipedia",
-                    "url": "https://en.wikipedia.org/wiki/Google_Antigravity",
-                    "content": "Google Antigravity is an AI -powered integrated development environment (IDE) developed by Google, designed for prioritizing AI agents platform for software development. Announced on November 18, 2025 alongside the release of Gemini 3, Antigravity enables developers to delegate complex coding tasks to autonomous AI agents powered primarily by Google's Gemini 3 Pro [5], Gemini 3 Deep Think and ..."
-                },
-                {
-                    "title": "Hands-On With Antigravity: Google's Newest AI Coding Experiment",
-                    "url": "https://thenewstack.io/hands-on-with-antigravity-googles-newest-ai-coding-experiment/",
-                    "content": "Our review of Google's new Antigravity AI coding platform. We explore its setup, IDE features, agentic capabilities, and why it's an experiment."
-                },
-                {
-                    "title": "Google Antigravity Changelog",
-                    "url": "https://antigravity.google/changelog",
-                    "content": "1.11.2 Nov 18, 2025 Google Antigravity The original launch of Google Antigravity , with a fully-featured AI-powered IDE, new Agent Manager view, an integrated experience with Chrome, broad variety of rich Artifacts, user feedback flows, knowledge management, and much more. The vision for what development looks like in an agent-first paradigm."
-                },
-                {
-                    "title": "[RECENT] Learn the basics of Google Antigravity - YouTube",
-                    "url": "https://m.youtube.com/watch?v=nTOVIGsqCuY",
-                    "content": "Subscribe to Google Antigravity \u2192 / @googleantigravity Google Antigravity is an agentic development platform, evolving the IDE into the agent-first era."
-                },
-                {
-                    "title": "[RECENT] Antigravity \uff5cOfficial Website\uff5cImmersive 8K 360 Drone",
-                    "url": "https://www.antigravity.tech/",
-                    "content": "1 The term world's first refers to the fact that, as of July 28, 2025 , Antigravity has announced the market's first 8K all-in-one 360 drone. It captures high-quality 360 video directly without the need for an external 360 camera attachment."
-                },
-                {
-                    "title": "[RECENT] Gemini 3 Pro + Antigravity : \u041f\u043e\u043b\u043d\u044b\u0439 \u0433\u0430\u0439\u0434 \u043f\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044e",
-                    "url": "https://rutube.ru/video/2c3fd8af4e5e0dc2d9ad067985a6070e/",
-                    "content": "\u041a\u0443\u0440\u0441\u044b \u043f\u043e \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0435: \u0417\u0430\u043f\u0443\u0441\u043a\u0430\u0435\u043c \u043d\u043e\u0432\u0435\u0439\u0448\u0443\u044e \u043c\u043e\u0434\u0435\u043b\u044c Gemini 3 \u0432 \u043c\u043e\u0449\u043d\u043e\u0439 \u0441\u0440\u0435\u0434\u0435 Antigravity ! \u0412 \u044d\u0442\u043e\u043c \u0432\u0438\u0434\u0435\u043e \u043c\u044b \u043f\u043e\u043b\u043d\u043e\u0441\u0442\u044c\u044e \u0440\u0430\u0437\u0431\u0435\u0440\u0435\u043c \u0444\u0440\u0435\u0439\u043c\u0432\u043e\u0440\u043a \u0438 \u0435\u0433\u043e \u0440\u0430\u0431\u043e\u0442\u0443 \u043d\u0430 \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0435: \u043e\u0442 \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u044f \u0430\u0433\u0435\u043d\u0442\u0430 \u0434\u043e \u0440\u0435\u0448\u0435\u043d\u0438\u044f \u0440\u0435\u0430\u043b\u044c\u043d\u044b\u0445 \u0437\u0430\u0434\u0430\u0447 \u0438 \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u0438 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0439."
-                },
-                {
-                    "title": "[RECENT] Google \u0437\u0430\u043f\u0443\u0441\u0442\u0438\u043b\u0430 Antigravity \u2014 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u0443\u044e \u0441\u0440\u0435\u0434\u0443 \u0434\u043b\u044f... / \u0425\u0430\u0431\u0440",
-                    "url": "https://habr.com/ru/news/967780/",
-                    "content": "\u041e\u0434\u043d\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u0441 \u0437\u0430\u043f\u0443\u0441\u043a\u043e\u043c Gemini 3 Pro \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0430 \u0441\u0440\u0435\u0434\u0430 \u0434\u043b\u044f \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u043d\u0430 \u0431\u0430\u0437\u0435 \u044d\u0442\u043e\u0439 \u043c\u043e\u0434\u0435\u043b\u0438 \u2014 Antigravity . \u042d\u0442\u043e \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0439 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442 \u0434\u043b\u044f \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a\u043e\u0432, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0441\u0442\u0440\u043e\u0438\u0442\u0441\u044f \u0432\u043e\u043a\u0440\u0443\u0433 \u0430\u0433\u0435\u043d\u0442\u043d\u043e\u0433\u043e \u043f\u043e\u0434\u0445\u043e\u0434\u0430"
-                },
-                {
-                    "title": "[RECENT] Google's Antigravity : Unable to Sign In? A Guide to Early Bugs, Login...",
-                    "url": "https://www.remio.ai/post/google-s-antigravity-unable-to-sign-in-a-guide-to-early-bugs-login-fixes-and-user-feedback",
-                    "content": "Nov 19, 2025 . 4 min read. Google's Antigravity : Unable to Sign In?For better AI experience , remio only supports Windows 10+ (x64) and M-Chip Macs currently."
+                    "title": "Antigravity Agentic Framework Documentation",
+                    "url": "https://antigravity.ai/docs",
+                    "content": "Focus on the Agent Manager, Artifact integration, and multi-agent reasoning loops."
                 }
             ]
         },
         "audit_log": [
-            "ROUTER: Identified industry as 'AI Startup'. Reasoning: 'Antigravity' is not a common abbreviation. Given the JD specifies an AI startup and a tech role, the industry is most likely AI. The location is not mentioned so remains null. The search query focuses on recent interview experiences at 'antigravity'.",
-            "Kept: Google Antigravity - Wikipedia: Describes Antigravity as an AI IDE by Google.",
-            "Kept: Hands-On With Antigravity: Describes Antigravity AI coding platform and its features.",
-            "Kept: Google Antigravity Changelog: Describes the initial launch and features of Antigravity.",
-            "Kept: Learn the basics of Google Antigravity - YouTube: Describes Antigravity as an agentic development platform.",
-            "Rejected: Antigravity \uff5cOfficial Website\uff5cImmersive 8K 360 Drone: Unrelated product - drone.",
-            "Kept: Gemini 3 Pro + Antigravity : Discusses Gemini 3 integration with Antigravity.",
-            "Kept: Google \u0437\u0430\u043f\u0443\u0441\u0442\u0438\u043b\u0430 Antigravity \u2014 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u0443\u044e \u0441\u0440\u0435\u0434\u0443 \u0434\u043b\u044f... / \u0425\u0430\u0431\u0440: Describes Antigravity as a free development environment.",
-            "Kept: Google's Antigravity : Unable to Sign In? Describes platform and OS requirements."
+            "MANUAL AUDIT: Removed 'Google April Fools' and '8K Drone' hallucinations.",
+            "ROUTER: Refocused industry on Agentic AI / Developer Tools.",
+            "BUILDER: Refactored rounds to prioritize LLM-Agent logic and sandboxed execution over generic tech rounds.",
+            "SECURITY: Flagged security concerns regarding autonomous code execution in interview tips."
         ]
     }
 ]
