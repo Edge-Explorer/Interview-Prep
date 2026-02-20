@@ -58,8 +58,9 @@ class IntelligenceService:
         
         TASKS:
         1. Is this a common abbreviation (like AZ, HP, BT, MS)?
-        2. Based on the JD, what is the most likely company and industry?
+        2. Based on the JD, what is the most likely company, industry, and GEOGRAPHIC LOCATION?
         3. Generate a search query that targets CURRENT (2025-2026) interview experiences.
+        4. If the company is regional (e.g., specific to India, UK, etc.), INCLUDE the location in the query to avoid acronym collisions.
         
         CRITICAL: If NO Job Description is provided, ONLY search for the company name + 'interview questions/process'.
         DO NOT add terms like 'software engineer' or 'coding' unless the industry is strictly Tech or the JD asks for it.
@@ -69,6 +70,7 @@ class IntelligenceService:
             "is_ambiguous": boolean,
             "suggested_query": "specific search string",
             "detected_industry": "string or null",
+            "detected_location": "string or null",
             "reasoning": "short explanation"
         }}
         """
@@ -77,11 +79,12 @@ class IntelligenceService:
             response = await gemini_service.generate_json(prompt)
             state['search_query'] = response.get('suggested_query', f"{company_name} interview questions 2025")
             state['industry'] = response.get('detected_industry')
+            state['detected_location'] = response.get('detected_location')
             state['audit_log'].append(f"ROUTER: Identified industry as '{state['industry']}'. Reasoning: {response.get('reasoning')}")
-        except:
+        except Exception as e:
             # Fallback
             state['search_query'] = f"{company_name} interview process 2025"
-            state['audit_log'].append("ROUTER: Fallback query generated due to AI error.")
+            state['audit_log'].append(f"ROUTER: Fallback query generated due to AI error: {e}")
             
         return state
 
@@ -145,15 +148,17 @@ class IntelligenceService:
         {research_data}
         
         TASKS:
-        1. Identity Check: Do these results actually belong to '{company_name}'? (Watch for acronym collisions!)
+        1. Identity & Location Check: Do these results actually belong to '{company_name}' in the correct location? 
+           (CRITICAL: Reject 'Moffitt Cancer Center' if the target is 'MOC Cancer Care India'!)
         2. Relevance Audit: Score each source from 0-100 on how well it describes the interview process.
-        3. Noise Filter: Remove product ads or unrelated news.
+        3. Noise Filter: Remove product ads, unrelated news, or companies with just similar-looking names.
         
         Return a JSON with:
         {{
             "is_identity_verified": boolean,
+            "is_location_matched": boolean,
             "relevant_snippets": "cleaned string of useful data",
-            "audit_trail": ["list of what was kept/rejected"],
+            "audit_trail": ["list of what was kept/rejected with specific reasons like 'Wrong Location' or 'Acronym Collision'"],
             "confidence_boost": integer
         }}
         """
@@ -209,6 +214,12 @@ class IntelligenceService:
         - For Finance: Focus on Quantitative, Market Knowledge, and Culture.
         - For Tech: Focus on Coding, System Design, and leadership.
         
+        NEGATIVE EVIDENCE POLICY:
+        If the research data shows the company primarily hires for non-tech roles (Administrative, Clinical, Legal, etc.) and you found NO SPECIFIC evidence of tech hiring, you MUST:
+        1. State this clearly in 'interview_style'.
+        2. DO NOT include tech rounds unless the JD explicitly asks for it.
+        3. Replace Tech rounds with 'Industry Standard [Role Type] Assessment'.
+
         STRICT BIAS GUARD: 
         1. If NO Job Description is provided AND the Industry is non-Tech (Healthcare, Legal, etc.), DO NOT include 'Coding', 'LeetCode', or 'System Design (Software)' rounds unless the search data explicitly mentions them.
         2. Instead, use domain-appropriate rounds like 'Clinical Case Study', 'Regulatory Compliance', or 'Practical Skills Test'.
@@ -257,6 +268,7 @@ class IntelligenceService:
         1. Hallucination Check: Is it claiming tech rounds for a non-tech company?
         2. Industry Match: Does the interview style match '{industry}'?
         3. Grounding: Is this derived from the research data or a generic guess?
+        4. Cross-Continental Hallucination: Is it confused between companies with similar names in different countries? (e.g., USA vs India).
         
         FATAL REJECTION RULE: If the company is in a non-tech industry (Healthcare, Legal, etc.) and you see 'LeetCode', 'System Design (Distributed)', or 'Coding Test' in the rounds without specific evidence in the research, REJECT with 'ROLE FORCING DETECTED'.
         
