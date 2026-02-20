@@ -35,7 +35,11 @@ This section is for tracking specific task completions and problem-solving histo
 - **Updated** Comprehensive Documentation: Refactored root, backend, and discovery READMEs to reflect the new 4-agent architecture and Mermaid diagrams. Created `CHALLENGES.md` to document the project's complex technical solutions.
 - **Fixed** Critical Data Integrity loophole: Implemented "Global Vault" isolation for Stealth/Synthetic data.
 - **Fixed** Strict Identity Bug: Tightened fuzzy matcher threshold (95%) to prevent collisions.
-- **Fixed** Logic bug in Agentic Discovery where naming conflicts (name vs company_name) prevented saving to `discoveries.json`.
+- **Implemented** Dynamic Domain Intelligence (v2.2): Added logic to prevent 'Role Forcing' on non-tech companies (e.g., Clinical/Legal/Creative) during profile architecture.
+- **Implemented** Geographic Guardrails: Built a location-aware `router_node` to prevent cross-continental naming collisions (e.g., MOC India vs Moffitt USA).
+- **Implemented** Confidence Score System: Standardized confidence weighting (0-160) for clear Status/Reliability tracking.
+- **Fixed** Memory Integrity: Recovered and cleaned `discoveries.json` after accidental malformed JSON writing; added a 98% fuzzy threshold for discovery memory retrieval.
+- **Implemented** Audit Status: Added `ACCEPTED/REJECTED` status tracking in the Audit Log for every source link.
 
 ### **Abhiraj**
 - *Starting contributions today (tracking development from this point forward).*
@@ -46,6 +50,8 @@ This section is for tracking specific task completions and problem-solving histo
 
 | Feature / Update | Version | Status | Key Highlights |
 | :--- | :--- | :--- | :--- |
+| **Geographic Guardrails** | v2.2.1 | Done | Location-aware routing to stop name collisions. |
+| **Dynamic Domain Guard** | v2.2.1 | Done | Prevents forcing tech rounds on non-tech firms. |
 | **Agentic Intelligence Brain** | v2.1.0 | Done | Integrated LangGraph Researcher-Architect team. |
 | **Stealth Mode Logic** | v2.1.0 | Done | AI now reverse-engineers JD for private startups. |
 | **Neon Cloud Sync** | v2.1.0 | Done | Migrated DB to Serverless PostgreSQL (Neon). |
