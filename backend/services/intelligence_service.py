@@ -201,7 +201,11 @@ class IntelligenceService:
         
         HALLUCINATION POLICY: If specific information (like CEO, recent news, or exact round names) is not in the research data, DO NOT MAKE IT UP. Instead, return 'Data not available in public records' for that field.
         
-        ROLE-COMPANY ALIGNMENT: The user is applying for the role mentioned in the JD. If the company domain (found in research) does not typically hire for this role in a high-volume capacity (e.g., Software Engineer at a Creative Agency), EXPLAIN how the role likely fits into their specific business (e.g. 'Developing web experiences for clients'). DO NOT invent a massive IT infrastructure if it is not in the research.
+        INDUSTRY RESPECT: The company has been identified as being in the '{state.get('industry', 'Unknown')}' industry.
+        - If the company is a Hospital, Service firm, or Law firm, the 'Technical' round should focus on THAT industry's expertise (e.g., Clinical trials, Project management, Legal research).
+        - ONLY focus on AI/ML/Coding if the research data specifically mentions it or if the JD context requires it.
+
+        ROLE-COMPANY ALIGNMENT: The user is applying for the role mentioned in the JD. If the company domain (found in research) does not typically hire for this role in a high-volume capacity, EXPLAIN how the role likely fits into their specific business. DO NOT invent a massive IT infrastructure if it is not in the research.
 
         SCHEMA:
         {{
@@ -212,14 +216,14 @@ class IntelligenceService:
             "difficulty_level": "string",
             "cultural_values": ["list"],
             "interview_rounds": {{
-                "Technical": {{ "focus": "string", "common_topics": ["list"], "style": "string", "tips": "string" }},
+                "Technical": {{ "focus": "string (Focus on the ACTUAL industry detected)", "common_topics": ["list"], "style": "string", "tips": "string" }},
                 "Behavioral": {{ "focus": "string", "common_questions": ["list"], "style": "string" }},
-                "System Design": {{ "focus": "string", "common_topics": ["list"], "style": "string" }}
+                "System Design": {{ "focus": "string (If applicable for this industry, else 'Not standard')", "common_topics": ["list"], "style": "string" }}
             }},
             "red_flags": ["list"],
             "average_process_duration": "string",
             "interview_count": "string",
-            "role_company_alignment": "Briefly explain how the role fits this company's industry (REQUIRED if mismatch possible)"
+            "role_company_alignment": "Briefly explain how the role fits this company's industry (REQUIRED)"
         }}
         """
         
