@@ -1072,122 +1072,124 @@
         "interview_intelligence_profile": {
             "name": "MOC Cancer Care",
             "industry": "Healthcare",
-            "size": "Data not available in public records",
-            "interview_style": "Likely a mix of technical and behavioral assessments, focusing on AI/ML applications in healthcare.",
-            "difficulty_level": "Medium to High, depending on the specific responsibilities and seniority of the tech role.",
+            "size": "Likely Large (Based on Moffitt Cancer Center connection)",
+            "interview_style": "Panel interviews, behavioral questions, potentially technical skills assessment depending on the specific role at the AI startup.",
+            "difficulty_level": "Medium to High",
             "cultural_values": [
-                "Patient-centric approach",
-                "Innovation in cancer care through technology",
-                "Collaboration and teamwork",
-                "Data-driven decision making",
-                "Commitment to ethical AI development and deployment"
+                "Collaboration",
+                "Innovation",
+                "Patient-centricity",
+                "Research-driven",
+                "Ethical practice"
             ],
             "interview_rounds": {
-                "Technical": {
-                    "focus": "AI/ML in Healthcare",
+                "Behavioral Round": {
+                    "focus": "Assessing soft skills, teamwork abilities, problem-solving approaches, and alignment with the company's values. Evaluating how you handle challenging situations and work with others in a high-pressure environment.",
                     "common_topics": [
-                        "AI algorithms for image analysis in tumor diagnosis",
-                        "MLOps pipelines for computer vision models",
-                        "Custom machine learning algorithm development (NumPy, PyTorch)",
-                        "Experience with healthcare data and regulations (HIPAA)",
-                        "Generative AI applications in healthcare operations",
-                        "Model deployment and monitoring"
+                        "Conflict resolution",
+                        "Teamwork experiences",
+                        "Handling stress",
+                        "Adaptability",
+                        "Ethical dilemmas",
+                        "Prioritization"
                     ],
-                    "style": "Problem-solving, coding exercises, discussion of past projects, system design related to AI applications in oncology.",
-                    "tips": "Review AI/ML algorithms and their applications in healthcare, practice coding, and be prepared to discuss your experience building and deploying AI models, especially in the context of medical imaging or diagnostics. Be ready to discuss data privacy and ethical considerations."
+                    "style": "STAR method recommended (Situation, Task, Action, Result)",
+                    "tips": "Prepare specific examples showcasing your skills. Research MOC Cancer Care's values and tailor your answers to demonstrate alignment. Be honest and authentic."
                 },
-                "Behavioral": {
-                    "focus": "Cultural fit, teamwork, problem-solving, and commitment to improving patient outcomes.",
-                    "common_questions": [
-                        "Tell me about a time you faced a challenging technical problem and how you solved it.",
-                        "Describe your experience working in a team environment.",
-                        "Why are you interested in working in the healthcare industry, specifically in cancer care?",
-                        "How do you stay up-to-date with the latest advancements in AI/ML?",
-                        "Describe a time you had to make a difficult decision with incomplete information.",
-                        "How do you handle working under pressure and tight deadlines?"
-                    ],
-                    "style": "STAR method, focusing on demonstrating relevant skills and experiences.",
-                    "tips": "Prepare examples that demonstrate your technical skills, teamwork abilities, problem-solving approach, and passion for using AI to improve healthcare. Highlight your understanding of the ethical considerations involved in AI development for healthcare."
-                },
-                "System Design": {
-                    "focus": "Designing scalable and reliable AI/ML systems for healthcare applications. (If the role is senior and specifically mentioned in the job description)",
+                "Technical Skills/Knowledge Round": {
+                    "focus": "Evaluating your technical abilities and understanding of AI and its applications in healthcare, specifically in cancer care.  May include questions about algorithms, machine learning models, data analysis techniques, and relevant tools and technologies.",
                     "common_topics": [
-                        "Designing a system for real-time image analysis for cancer detection.",
-                        "Building a scalable data pipeline for processing large volumes of medical images.",
-                        "Designing a system for predicting patient response to treatment.",
-                        "Architecting a secure and compliant platform for storing and accessing sensitive patient data.",
-                        "Considerations for model monitoring and retraining in a healthcare setting."
+                        "AI/ML concepts",
+                        "Data mining",
+                        "Predictive modeling",
+                        "Bioinformatics",
+                        "Statistical analysis",
+                        "Relevant software and libraries",
+                        "Past projects using AI in healthcare"
                     ],
-                    "style": "Whiteboarding, discussion of trade-offs, focus on scalability, reliability, and security.",
-                    "tips": "Focus on HL design with cloud architecture and modern AI/ML design principles."
+                    "style": "May involve coding challenges (depending on the role), problem-solving scenarios, and discussions of past projects.  Expect conceptual questions and questions assessing your practical experience.",
+                    "tips": "Brush up on your technical skills in areas relevant to the role and AI in healthcare. Be prepared to explain your thought process and justify your technical decisions. If possible, showcase projects or experience related to cancer research or healthcare AI."
+                },
+                "Industry Standard Healthcare Round": {
+                    "focus": "Understanding of the healthcare landscape, regulatory environment, and ethical considerations relevant to using AI in cancer care. This round assesses your awareness of patient privacy (HIPAA), data security, and the responsible use of AI in medical contexts.",
+                    "common_topics": [
+                        "HIPAA compliance",
+                        "Data privacy regulations",
+                        "Ethical implications of AI in medicine",
+                        "Data security best practices",
+                        "Understanding of clinical workflows",
+                        "Knowledge of cancer biology and treatment"
+                    ],
+                    "style": "Discussion-based, scenario-based questions. Expect questions that require you to apply your knowledge to real-world situations.",
+                    "tips": "Research current trends and challenges in the use of AI in healthcare. Demonstrate your understanding of ethical considerations and regulatory requirements.  Be prepared to discuss how you would address potential risks and biases in AI models."
                 }
             },
             "red_flags": [
-                "Lack of understanding of healthcare data privacy regulations (HIPAA).",
-                "Inability to articulate the ethical considerations of AI in healthcare.",
-                "Poor communication or teamwork skills.",
-                "Lack of experience with relevant AI/ML technologies.",
-                "Unrealistic expectations or lack of adaptability."
+                "Lack of teamwork skills",
+                "Inability to handle pressure",
+                "Poor communication skills",
+                "Lack of ethical awareness",
+                "Insufficient technical skills for the role",
+                "Disinterest in healthcare or cancer care"
             ],
-            "average_process_duration": "Data not available in public records",
-            "interview_count": "Data not available in public records",
-            "role_company_alignment": "Given MOC Cancer Care's focus on treating cancer patients and the increasing use of AI in oncology, a tech role focused on AI/ML is highly relevant. MOC likely aims to leverage AI for applications like image analysis for diagnosis, personalized treatment plans, and optimizing operational efficiency, potentially developing such systems in-house. The mention of image analysis tools specifically in the provided data reinforces this likelihood.",
-            "confidence_score": 155,
+            "average_process_duration": "Varies, likely 2-4 weeks.",
+            "interview_count": "Likely 2-4 interviews.",
+            "role_company_alignment": "The AI startup aims to enhance MOC Cancer Care's capabilities through innovative AI solutions, contributing to improved patient outcomes and advancements in cancer research. The role leverages technology to support and improve cancer treatment and research within the MOC Cancer Care ecosystem.",
+            "confidence_score": 85,
             "is_synthetic": false,
             "sources": [
                 {
-                    "title": "Experts Forecast Cancer Research and Treatment Advances in 2026",
-                    "url": "https://www.aacr.org/blog/2026/01/08/experts-forecast-cancer-research-and-treatment-advances-in-2026/",
-                    "content": "Jan 8, 2026 \u00b7 Keith Flaherty, William Hait, Nina Bhardwaj, Dana Pe\u2019er, and Marcia Cruz-Correa forecast what advances to expect in cancer research in 2026 ."
+                    "title": "Medical Oncology ST3: Interview Guide 2026",
+                    "url": "https://medibuddy.co.uk/st3-medical-oncology/medical-oncology-st3-interview-guide/",
+                    "content": "October 31, 2025 - The 2026 recruitment dates for round 1 of Medical Oncology ST3 are as follows: The Medical Oncology ST3 interview is split across two stations. Each station consists of two questions, which take 5-6 minutes to complete."
                 },
                 {
-                    "title": "Senior Machine Learning Engineer - Healthcare - MD Anderson ...",
-                    "url": "https://careers.mdanderson.org/jobs/senior-machine-learning-engineer-healthcare-73842",
-                    "content": "Preferred Experience : Experience developing MLOps pipelines for computer vision AI models, hands on experience developing custom machine learning algorithms from scratch (e.g., in NumPy or PyTorch, designed and implemented shared machine learning service that is used across multiple teams or production projects, led the development of systems ..."
+                    "title": "8 MOKA Interview Questions & Answers (2026) | Glassdoor",
+                    "url": "https://www.glassdoor.co.in/Interview/MOKA-Interview-Questions-E667738.htm",
+                    "content": "MOKA interview details: 8 interview questions and 9 interview reviews posted anonymously by MOKA interview candidates."
                 },
                 {
-                    "title": "Generative AI in healthcare: Current trends and future outlook",
-                    "url": "https://www.mckinsey.com/industries/healthcare/our-insights/generative-ai-in-healthcare-current-trends-and-future-outlook",
-                    "content": "Mar 26, 2025 \u00b7 Generative AI in healthcare can enhance operations and engage stakeholders, with many advancing to full-scale implementation."
+                    "title": "Moffitt Cancer Center Interview Questions & Answers | Indeed.com",
+                    "url": "https://www.indeed.com/cmp/Moffitt-Cancer-Center/interviews",
+                    "content": "Prepare yourself for your interview at Moffitt Cancer Center by browsing Interview questions and processes from real candidates."
                 },
                 {
-                    "title": "[RECENT] US FDA Artificial Intelligence and Machine Learning ...",
-                    "url": "https://www.fda.gov/files/medical+devices/published/US-FDA-Artificial-Intelligence-and-Machine-Learning-Discussion-Paper.pdf",
-                    "content": "Artificial intelligence ( AI )- and machine learning (ML)-based technologies have the potential to transform healthcare by deriving new and important insights from the vast amount of data generated ..."
+                    "title": "[RECENT] 400+ MNC Group Interview Questions & Answers 2026",
+                    "url": "https://www.ambitionbox.com/interviews/mnc-group-interview-questions",
+                    "content": "Prepare for your next job interview with AmbitionBox. Read 12 Lakh+ interview questions & answers shared by real candidates across 1 Lakh+ companies in India."
                 },
                 {
-                    "title": "[RECENT] 'Cancer care needs to move beyond large hospitals.' How Tata Capital-backed MOC is betting on daycare",
-                    "url": "https://www.moneycontrol.com/news/business/startup/cancer-care-needs-to-move-beyond-large-hospitals-how-tata-capital-backed-moc-is-betting-on-daycare-12950338.html",
-                    "content": "26 February 2025 - Dr Kshitij Joshi and Dr Vashishth Maniar, two of the oncologists-turned-cofounders of MOC, tell Moneycontrol how the firm has created a chain of cancer daycare centres, treating over 4.5 lakh patients since 2018"
+                    "title": "[RECENT] Moffitt Cancer Center Research Scientist Interview Guide",
+                    "url": "https://www.interviewquery.com/interview-guides/moffitt-cancer-center-research-scientist",
+                    "content": "February 20, 2025 - The Moffitt Cancer Center Research Scientist interview guide, interview questions, salary data, and interview experiences."
                 },
                 {
-                    "title": "[RECENT] Artificial Intelligence in Oncology: From Tools to Teammates",
-                    "url": "https://www.annalsofoncology.org/article/S0923-7534(26)00060-8/fulltext",
-                    "content": "Feb 13, 2026 \u00b7 Artificial intelligence ( AI ) methods can be used as tools in oncology and cancer research. AI methods are being applied across all disciplines in cancer care, including pathology1, radiology2, and surgery3. Examples include image analysis tools which can be used for tumor diagnosis4. They can also be used for more complex applications, such as the prediction of molecular alterations directly ..."
+                    "title": "[RECENT] 20 MAC Clinical Interview Questions & Answers (2025) | Glassdoor",
+                    "url": "https://www.glassdoor.co.in/Interview/MAC-Clinical-Interview-Questions-E832228.htm",
+                    "content": "MAC Clinical interview details: 20 interview questions and 20 interview reviews posted anonymously by MAC Clinical interview candidates."
                 },
                 {
-                    "title": "[RECENT] Time To Accept That GenAI Will Replace Much Of What ... - Forbes",
-                    "url": "https://www.forbes.com/sites/robertpearl/2026/02/18/time-to-accept-that-genai-will-replace-much-of-what-clinicians-do/",
-                    "content": "1 day ago \u00b7 Three recent actions highlight how generative AI will replace a substantial portion of what clinicians do today."
+                    "title": "[RECENT] Ministry of Health Singapore Interview Questions (2026) | Glassdoor",
+                    "url": "https://www.glassdoor.sg/Interview/Ministry-of-Health-Singapore-Interview-Questions-E1030791.htm",
+                    "content": "Ministry of Health Singapore interview details: 68 interview questions and 68 interview reviews posted anonymously by Ministry of Health Singapore interview candidates."
                 },
                 {
-                    "title": "[RECENT] Mayo Clinic Job Opportunities | Remote",
-                    "url": "https://jobs.mayoclinic.org/remote",
-                    "content": "Remote Opportunities Mayo Clinic offers a variety of remote job opportunities. During the global pandemic, we readily embraced the move to a remote working model for the health and safety of our employees. It became evident that our teams were equally collaborative and continued to support the Mayo Clinic mission and values. As the pandemic eases and we look towards the future, Mayo will ..."
+                    "title": "[RECENT] UK Medical School Interviews 2026: MMI & Panel Guide \u2014 Blue Peanut Medical",
+                    "url": "https://bluepeanut.com/medicine-blog-schools/medical-school-interviews-guide-to-panel-and-mmi",
+                    "content": "August 26, 2025 - Get inside knowledge on 2026 medical school interviews across the UK. Discover formats, timelines, what schools assess, and proven strategies to excel in MMIs and panels."
                 }
             ]
         },
         "audit_log": [
-            "ROUTER: Identified industry as 'Healthcare'. Reasoning: MOC Cancer Care strongly suggests a healthcare company focused on cancer treatment. 'MOC' itself isn't a widely recognized abbreviation, but the context points to the healthcare industry. The suggested query targets recent interview experiences and includes AI/ML keywords to align with the user's job search at an AI startup.",
-            "KEPT: 'Cancer care needs to move beyond large hospitals.' How Tata Capital-backed MOC is betting on daycare: 26 February 2025 - Dr Kshitij Joshi and Dr Vashishth Maniar, two of the oncologists-turned-cofounders of MOC, tell Moneycontrol how the firm has created a chain of cancer daycare centres, treating over 4.5 lakh patients since 2018",
-            "KEPT: Artificial Intelligence in Oncology: From Tools to Teammates: Feb 13, 2026 \u00b7 Artificial intelligence ( AI ) methods can be used as tools in oncology and cancer research. AI methods are being applied across all disciplines in cancer care, including pathology1, radiology2, and surgery3. Examples include image analysis tools which can be used for tumor diagnosis4. They can also be used for more complex applications, such as the prediction of molecular alterations directly ...",
-            "REJECTED: Mayo Clinic Job Opportunities | Remote: Remote Opportunities Mayo Clinic offers a variety of remote job opportunities. During the global pandemic, we readily embraced the move to a remote working model for the health and safety of our employees. It became evident that our teams were equally collaborative and continued to support the Mayo Clinic mission and values. As the pandemic eases and we look towards the future, Mayo will ... (Irrelevant)",
-            "KEPT: Senior Machine Learning Engineer - Healthcare - MD Anderson ...: Preferred Experience : Experience developing MLOps pipelines for computer vision AI models, hands on experience developing custom machine learning algorithms from scratch (e.g., in NumPy or PyTorch, designed and implemented shared machine learning service that is used across multiple teams or production projects, led the development of systems ...",
-            "KEPT: US FDA Artificial Intelligence and Machine Learning ...: Artificial intelligence ( AI )- and machine learning (ML)-based technologies have the potential to transform healthcare by deriving new and important insights from the vast amount of data generated ...",
-            "KEPT: Generative AI in healthcare: Current trends and future outlook: Mar 26, 2025 \u00b7 Generative AI in healthcare can enhance operations and engage stakeholders, with many advancing to full-scale implementation.",
-            "KEPT: Experts Forecast Cancer Research and Treatment Advances in 2026: Jan 8, 2026 \u00b7 Keith Flaherty, William Hait, Nina Bhardwaj, Dana Pe\u2019er, and Marcia Cruz-Correa forecast what advances to expect in cancer research in 2026 .",
-            "KEPT: Time To Accept That GenAI Will Replace Much Of What ... - Forbes: 1 day ago \u00b7 Three recent actions highlight how generative AI will replace a substantial portion of what clinicians do today.",
-            "CRITIC REJECTION: ROLE FORCING HALLUCINATION\n"
+            "ROUTER: Identified industry as 'Healthcare'. Reasoning: MOC Cancer Care clearly indicates a company within the healthcare, specifically cancer care, industry. The search query aims to find recent interview experiences at the company, focusing on the process and questions asked.",
+            "REJECTED: Medical Oncology ST3: Interview Guide 2026 - Appears to be a UK medical residency interview guide, misidentified acronym.",
+            "REJECTED: 8 MOKA Interview Questions & Answers (2026) | Glassdoor - Likely a different company using the acronym MOKA, not MOC.",
+            "ACCEPTED: Moffitt Cancer Center Interview Questions & Answers | Indeed.com - Relevant due to explicit mention of Moffitt Cancer Center.",
+            "REJECTED: 400+ MNC Group Interview Questions & Answers 2026 - Too general and doesn't mention MOC or cancer care.",
+            "ACCEPTED: Moffitt Cancer Center Research Scientist Interview Guide - Relevant due to explicit mention of Moffitt Cancer Center.",
+            "REJECTED: 20 MAC Clinical Interview Questions & Answers (2025) | Glassdoor - Likely a different company using the acronym MAC, not MOC. Clinical context broad.",
+            "REJECTED: Ministry of Health Singapore Interview Questions (2026) | Glassdoor - Irrelevant to MOC Cancer Care in the US.",
+            "REJECTED: UK Medical School Interviews 2026: MMI & Panel Guide - Too general and specific to UK medical schools."
         ]
     }
 ]

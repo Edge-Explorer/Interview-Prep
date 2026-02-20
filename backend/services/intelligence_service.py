@@ -61,6 +61,9 @@ class IntelligenceService:
         2. Based on the JD, what is the most likely company and industry?
         3. Generate a search query that targets CURRENT (2025-2026) interview experiences.
         
+        CRITICAL: If NO Job Description is provided, ONLY search for the company name + 'interview questions/process'.
+        DO NOT add terms like 'software engineer' or 'coding' unless the industry is strictly Tech or the JD asks for it.
+        
         Return ONLY a JSON:
         {{
             "is_ambiguous": boolean,
@@ -72,7 +75,7 @@ class IntelligenceService:
         
         try:
             response = await gemini_service.generate_json(prompt)
-            state['search_query'] = response.get('suggested_query', f"{company_name} interview questions glassdoor 2025")
+            state['search_query'] = response.get('suggested_query', f"{company_name} interview questions 2025")
             state['industry'] = response.get('detected_industry')
             state['audit_log'].append(f"ROUTER: Identified industry as '{state['industry']}'. Reasoning: {response.get('reasoning')}")
         except:
@@ -187,10 +190,11 @@ class IntelligenceService:
         company_name = state['company_name']
         audited_data = state['audited_data']
         jd_context = state.get('job_description', '')
+        industry = state.get('industry', 'General Industry')
         
-        print(f"AGENT: Architect building profile for {company_name}...")
+        print(f"AGENT: Architect building dynamic profile for {company_name} ({industry})...")
         
-        input_data = f"COMPANY: {company_name}\n\nDATA:\n{audited_data}"
+        input_data = f"COMPANY: {company_name}\nINDUSTRY: {industry}\n\nDATA:\n{audited_data}"
         if jd_context:
             input_data += f"\n\nROLE CONTEXT: {jd_context}"
 
@@ -199,13 +203,16 @@ class IntelligenceService:
         
         {input_data}
         
-        HALLUCINATION POLICY: If specific information (like CEO, recent news, or exact round names) is not in the research data, DO NOT MAKE IT UP. Instead, return 'Data not available in public records' for that field.
+        DYNAMIC ROUNDS POLICY:
+        Instead of a fixed set of rounds, identify the 3-4 MOST LIKELY rounds for this specific industry.
+        - For Healthcare: Focus on Clinical rounds, Patient Management, and Behavioral.
+        - For Finance: Focus on Quantitative, Market Knowledge, and Culture.
+        - For Tech: Focus on Coding, System Design, and leadership.
         
-        INDUSTRY RESPECT: The company has been identified as being in the '{state.get('industry', 'Unknown')}' industry.
-        - If the company is a Hospital, Service firm, or Law firm, the 'Technical' round should focus on THAT industry's expertise (e.g., Clinical trials, Project management, Legal research).
-        - ONLY focus on AI/ML/Coding if the research data specifically mentions it or if the JD context requires it.
-
-        ROLE-COMPANY ALIGNMENT: The user is applying for the role mentioned in the JD. If the company domain (found in research) does not typically hire for this role in a high-volume capacity, EXPLAIN how the role likely fits into their specific business. DO NOT invent a massive IT infrastructure if it is not in the research.
+        STRICT BIAS GUARD: 
+        1. If NO Job Description is provided AND the Industry is non-Tech (Healthcare, Legal, etc.), DO NOT include 'Coding', 'LeetCode', or 'System Design (Software)' rounds unless the search data explicitly mentions them.
+        2. Instead, use domain-appropriate rounds like 'Clinical Case Study', 'Regulatory Compliance', or 'Practical Skills Test'.
+        3. If research is sparse, use 'Industry Standard [Domain] Round'.
 
         SCHEMA:
         {{
@@ -216,14 +223,14 @@ class IntelligenceService:
             "difficulty_level": "string",
             "cultural_values": ["list"],
             "interview_rounds": {{
-                "Technical": {{ "focus": "string (Focus on the ACTUAL industry detected)", "common_topics": ["list"], "style": "string", "tips": "string" }},
-                "Behavioral": {{ "focus": "string", "common_questions": ["list"], "style": "string" }},
-                "System Design": {{ "focus": "string (If applicable for this industry, else 'Not standard')", "common_topics": ["list"], "style": "string" }}
+                "Round Name 1": {{ "focus": "string", "common_topics": ["list"], "style": "string", "tips": "string" }},
+                "Round Name 2": {{ "focus": "string", "common_questions": ["list"], "style": "string" }},
+                "Round Name 3": {{ "focus": "string", "common_topics": ["list"], "style": "string" }}
             }},
             "red_flags": ["list"],
             "average_process_duration": "string",
             "interview_count": "string",
-            "role_company_alignment": "Briefly explain how the role fits this company's industry (REQUIRED)"
+            "role_company_alignment": "Explain how the role fits this industry in 2 sentences."
         }}
         """
         
@@ -235,24 +242,25 @@ class IntelligenceService:
     async def critic_node(self, state: AgentState):
         """Verifies profile accuracy and schema alignment"""
         profile = state['generated_profile']
+        industry = state.get('industry', 'Unknown')
         
         print("AGENT: Critic evaluating profile integrity...")
         
         prompt = f"""
-        Review this generated Interview Profile for correctness and hallucinations.
+        Review this generated Interview Profile for correctness.
+        Industry Context: {industry}
         
         PROFILE:
         {json.dumps(profile, indent=2)}
         
         CHECKLIST:
-        1. Are there hallucinations (invented data not in research)?
-        2. Does it follow the schema?
-        3. Is the difficulty level realistic?
+        1. Hallucination Check: Is it claiming tech rounds for a non-tech company?
+        2. Industry Match: Does the interview style match '{industry}'?
+        3. Grounding: Is this derived from the research data or a generic guess?
         
-        If it's grounded in the research and matches our schema, return ONLY the word 'APPROVED'.
-        If it has hallucinations or errors, return a short list of corrections.
+        FATAL REJECTION RULE: If the company is in a non-tech industry (Healthcare, Legal, etc.) and you see 'LeetCode', 'System Design (Distributed)', or 'Coding Test' in the rounds without specific evidence in the research, REJECT with 'ROLE FORCING DETECTED'.
         
-        PENALTY: If the profile claims the company has '5 rounds of technical coding' but the research data is about a 'Creative Agency' with no mention of coding tests, flag it as 'ROLE FORCING HALLUCINATION'.
+        If perfect, return 'APPROVED'. Else return corrections.
         """
         
         critique = await gemini_service.generate_text(prompt)
