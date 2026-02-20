@@ -5,7 +5,7 @@
 ---
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-2.2.1-blue.svg)
+![Version](https://img.shields.io/badge/version-2.2.2-blue.svg)
 ![Status](https://img.shields.io/badge/status-Agentic%20Intelligence-purple.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
@@ -15,7 +15,7 @@
 
 ## 🌟 The Simulation Philosophy
 
-InterviewAI is not just a "mock interview" tool; it is an **Advanced Intelligent Simulation Entity**. While traditional platforms rely on static question banks, InterviewAI uses a **Dynamic Agentic Loop** to synthesize the reality of the 2025 job market.
+InterviewAI is not just a "mock interview" tool; it is an **Advanced Intelligent Simulation Entity**. While traditional platforms rely on static question banks, InterviewAI uses a **Dynamic Agentic Loop** to synthesize the reality of the 2025/2026 job market.
 
 ### 🎭 The Persona Architecture
 We don't just ask questions; we simulate **Human Personalities**:
@@ -24,7 +24,7 @@ We don't just ask questions; we simulate **Human Personalities**:
 
 ---
 
-## 🚀 Technical Innovation: The "Agentic Edge" (v2.2.1 Updates)
+## 🚀 Technical Innovation: The "Agentic Edge" (v2.2.2 Updates)
 
 What makes this project unique in the industry is its **Three-Tier Intelligence Architecture**, designed to solve the "Knowledge Gap" in AI:
 
