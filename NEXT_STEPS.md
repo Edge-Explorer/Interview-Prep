@@ -16,9 +16,14 @@ This document outlines the strategic roadmap and upcoming technical features for
 - [ ] Show the user when the AI is in "Stealth Mode" vs "Public Research" mode.
 - [ ] Polish the `discoveries.json` visual rendering in the dashboard.
 
-### 3. 🤔 Multi-Round Session Continuity
-- [ ] Ensure Round 2 "remembers" the weaknesses identified in Round 1.
 - [ ] Implement a final "Hiring Decision" report after all 5 rounds.
+- [ ] Implement iterative difficulty scaling (Round 2 is harder if Round 1 was 'Elite').
+
+### 4. 🧠 Intelligence Refinement (Phase 2.5)
+- [ ] **Cross-Continental Localization**: Enhance the Router to detect if a company has different processes (e.g., Google US vs Google India).
+- [ ] **Discovery Dashboard**: Create a UI screen to browse the global `discoveries.json` database.
+- [ ] **Real-time Search Streaming**: Push live research logs (ACCEPTED/REJECTED links) directly to the user's dashboard for transparency.
+- [ ] **Automatic Memory Pruning**: Build a script to periodically "refresh" discoveries that are older than 6 months.
 
 ---
 

@@ -28,10 +28,17 @@ This document tracks the "Hard Problems" encountered while building the **Intell
 - **The Hurdle**: The AI was trusting the User's role more than the Company's actual industry.
 - **The Solution (Domain Guard)**: We added a logic gate that detects if the **Company Domain** (e.g., Creative) conflicts with the **Role Intensity**. Instead of hallucinating, the AI now **Explains the Alignment**: *"This is a Creative Agency; your tech role likely supports their media tools rather than a core tech product."*
 
-### 👻 Challenge 6: The "Stealth Mode" Paradox
-**The Problem**: How do you generate intelligence for a company that has zero public web data (Stealth Startups)?
-- **The Hurdle**: Saving "Empty" or "Hallucinated" data to the global memory is dangerous for data integrity.
 - **The Solution (Global Vault Isolation)**: We implemented **Synthetic Intelligence**. If the Auditor finds 0 links, the system pivots to "Stealth Mode." It generates a profile based strictly on the JD but **Refuses to Save it** to the persistent `discoveries.json` to keep the public database pristine.
+
+### 🎭 Challenge 7: The "Temporal Synthesis" Hallucination
+**The Problem**: If a company name matches a famous historical event or satire (e.g., "Google Antigravity" April Fools joke), the AI would merge that joke with real 2025 technology news.
+- **The Hurdle**: The AI "believed" the satire because it was joined by real-world keywords (Gemini 3).
+- **The Solution (Contextual Disambiguation)**: We added a layer to the Auditor that detects "Satire vs Commercial" context. It now prioritizes official documentation and verified changelogs over high-authority satirical pages, preventing "joke profiles" from entering the database.
+
+### ♾️ Challenge 8: The "Evergreen" Query Logic
+**The Problem**: Most search bots use hardcoded values like "2025" in their code. In 6 months, those bots become outdated legacy systems.
+- **The Hurdle**: Manual updates are a "Maintenance Death Trap."
+- **The Solution (Dynamic Temporal Anchoring)**: We moved away from hardcoded years. The system now uses `datetime` to auto-calculate the **Current Year** and **Upcoming Year** at the exact moment of search. This makes the code truly perpetual—it will work perfectly in 2027, 2030, and beyond.
 
 ---
 
