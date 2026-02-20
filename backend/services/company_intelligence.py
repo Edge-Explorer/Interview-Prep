@@ -104,67 +104,77 @@ class CompanyIntelligenceService:
     
     def get_company_profile(self, company_name: str) -> Optional[Dict[str, Any]]:
         """
-        Get company profile by name with fuzzy matching
+        Get company profile with Smart Tiered Matching:
+        Tier 1: Exact Match (Case-insensitive)
+        Tier 2: Alias/Acronym Lookup
+        Tier 3: Anchor Match (Name starts with input)
+        Tier 4: Strict Fuzzy Match (Score > 0.85)
         
-        Handles:
-        - Case variations: "google", "GOOGLE", "Google"
-        - Typos: "gogle", "googel" 
-        - Spacing: "open ai", "openai"
-        - Common aliases: "fb" -> "Meta", "claude" -> "Anthropic"
-        
-        Args:
-            company_name: Name of the company
-        
-        Returns:
-            Company profile dict or None if not found
+        Prevents "Substring Parasitism" (e.g., 'AZ' matching 'Amazon')
         """
         if not company_name:
             return None
         
-        # Normalize input
         normalized_input = self._normalize_company_name(company_name)
-        
-        # 1. Try exact match first (fastest)
+        company_name_lower = company_name.lower()
+
+        # --- TIER 1: EXACT MATCHES ---
+        # Direct check
         if company_name in self.company_data:
             return self.company_data[company_name]
         
-        # 2. Try alias lookup
-        if normalized_input in self.company_aliases:
-            canonical_name = self.company_aliases[normalized_input]
-            if canonical_name in self.company_data:
-                return self.company_data[canonical_name]
-        
-        # 3. Try case-insensitive exact match
-        company_name_lower = company_name.lower()
+        # Case-insensitive check
         for key, value in self.company_data.items():
             if key.lower() == company_name_lower:
                 return value
-        
-        # 4. Try normalized exact match
+
+        # --- TIER 2: ALIAS & ACRONYM LOOKUP ---
+        if normalized_input in self.company_aliases:
+            canonical_name = self.company_aliases[normalized_input]
+            if canonical_name in self.company_data:
+                print(f"INFO: Alias match '{company_name}' -> '{canonical_name}'")
+                return self.company_data[canonical_name]
+
+        # --- TIER 3: ANCHOR MATCH (Starts With) ---
+        # For small strings (AZ, HP), Anchor match is the safer minimum
         for key, value in self.company_data.items():
-            if self._normalize_company_name(key) == normalized_input:
-                return value
+            norm_key = self._normalize_company_name(key)
+            # Match if database name starts with input (e.g. 'Micro' -> 'Microsoft')
+            # But ONLY if input is at least 3 chars OR it's a very clear anchor
+            if norm_key.startswith(normalized_input):
+                # Length Safety: Don't match 'AZ' to 'Amazon' (2 chars to 6 chars)
+                # Max 2x length difference for anchor matches
+                if len(norm_key) <= len(normalized_input) * 2 or len(normalized_input) >= 4:
+                    print(f"INFO: Anchor match '{company_name}' to '{key}'")
+                    return value
+
+        # --- TIER 4: STRICT FUZZY MATCH ---
+        # Skip for very short strings (under 3 chars) to avoid noise
+        if len(normalized_input) >= 3:
+            best_match = None
+            best_score = 0.0
+            threshold = 0.85 # Strict 85% for internal DB
+            
+            for key in self.company_data.keys():
+                score = self._fuzzy_match_score(normalized_input, self._normalize_company_name(key))
+                if score > best_score and score >= threshold:
+                    best_score = score
+                    best_match = key
+            
+            if best_match:
+                print(f"INFO: Fuzzy matched '{company_name}' to '{best_match}' (score: {best_score:.2f})")
+                return self.company_data[best_match]
         
-        # 5. Try partial match (e.g., "Facebook" in "Meta")
-        for key, value in self.company_data.items():
-            key_lower = key.lower()
-            if normalized_input in key_lower or key_lower in normalized_input:
-                return value
-        
-        # 6. Fuzzy match (for typos) - find best match above threshold
-        best_match = None
-        best_score = 0.0
-        threshold = 0.75  # 75% similarity required
-        
-        for key in self.company_data.keys():
-            score = self._fuzzy_match_score(normalized_input, self._normalize_company_name(key))
-            if score > best_score and score >= threshold:
-                best_score = score
-                best_match = key
-        
-        if best_match:
-            print(f"INFO: Fuzzy matched '{company_name}' to '{best_match}' (score: {best_score:.2f})")
-            return self.company_data[best_match]
+        # TIER 5: LAST RESORT - SUBSTRING (Filtered for quality)
+        # Only allow if the input is a large part of the result name
+        # Fixes the AZ vs Amazon issue completely
+        if len(normalized_input) >= 4: # Minimum length for substring matching
+            for key, value in self.company_data.items():
+                norm_key = self._normalize_company_name(key)
+                if normalized_input in norm_key:
+                    # Match only if input covers > 60% of the name
+                    if len(normalized_input) / len(norm_key) >= 0.6:
+                        return value
         
         return None
     

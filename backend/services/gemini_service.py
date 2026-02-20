@@ -1,6 +1,8 @@
 from google import genai
 from google.genai import types
 import os
+import json
+from typing import Dict, Any
 from dotenv import load_dotenv
 from .company_intelligence import get_company_intelligence
 
@@ -10,6 +12,33 @@ class GeminiService:
     def __init__(self):
         self.client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
         self.model_name = "gemini-2.0-flash"
+
+    async def generate_text(self, prompt: str) -> str:
+        """Generic method to generate plain text response."""
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt
+        )
+        return response.text
+
+    async def generate_json(self, prompt: str) -> Dict[str, Any]:
+        """Generic method to generate and parse JSON response."""
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt
+        )
+        text = response.text
+        # Clean up JSON if wrapped in markdown code blocks
+        if "```json" in text:
+            text = text.split("```json")[1].split("```")[0]
+        elif "```" in text:
+            text = text.split("```")[1].split("```")[0]
+        
+        try:
+            return json.loads(text.strip())
+        except json.JSONDecodeError:
+            print(f"DEBUG: Failed to parse JSON. Raw text: {text}")
+            return {}
 
     async def analyze_resume(self, resume_text: str, jd: str = None):
         """Premium Feature: Analyzes resume against a JD and provides ATS score + Gap Analysis."""

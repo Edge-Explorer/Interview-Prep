@@ -958,5 +958,113 @@
             "ACCEPTED: '[RECENT] 9 Adapts Media Interview Questions & Answers - AmbitionBox' (Score: 40)",
             "ACCEPTED: '[RECENT] Adapts Media Interview Questions & Answers | Glassdoor' (Score: 40)"
         ]
+    },
+    {
+        "company_name": "AZ",
+        "interview_intelligence_profile": {
+            "name": "AZ",
+            "industry": "AI Startup",
+            "size": "Data not available in public records",
+            "interview_style": "Based on the R1 interview mentioned, the style appears to be conversational and focused on practical application of AI.",
+            "difficulty_level": "Likely Medium to High. Expect in-depth technical questions and practical problem-solving scenarios.",
+            "cultural_values": [
+                "Focus on practical AI deployment",
+                "Likely a fast-paced and innovative environment",
+                "Potential openness to experimenting with hiring methodologies (based on the founder's quote about algorithmic interviews)"
+            ],
+            "interview_rounds": {
+                "Technical": {
+                    "focus": "Practical AI knowledge, deployment strategies, and understanding of various tech stacks for AI implementation.",
+                    "common_topics": [
+                        "AI Fundamentals",
+                        "Specific AI algorithms and models relevant to the startup's focus",
+                        "Deployment challenges and solutions",
+                        "Experience with A-Z tech stack implementation",
+                        "Azure fundamentals if using Microsoft Azure Cloud (AZ-900 related)"
+                    ],
+                    "style": "Hands-on discussion, potentially involving coding or problem-solving based on real-world scenarios.",
+                    "tips": "Demonstrate practical experience with AI deployment. Prepare to discuss trade-offs between different approaches. Showcase your ability to quickly learn and adapt to new tech stacks."
+                },
+                "Behavioral": {
+                    "focus": "Cultural fit, problem-solving approach, and ability to work in a fast-paced environment.",
+                    "common_questions": [
+                        "Describe a time you faced a challenge deploying an AI solution.",
+                        "How do you stay up-to-date with the latest advancements in AI?",
+                        "Why are you interested in working at an AI startup?",
+                        "Describe your experience with a specific AI project and your contributions."
+                    ],
+                    "style": "Standard behavioral questions, likely probing for real-world experience and problem-solving skills."
+                },
+                "System Design": {
+                    "focus": "Data not available in public records",
+                    "common_topics": [],
+                    "style": "Data not available in public records"
+                }
+            },
+            "red_flags": [
+                "Lack of practical experience with AI deployment.",
+                "Inability to articulate problem-solving approaches.",
+                "Unwillingness to adapt to new technologies or methodologies.",
+                "Over-reliance on theoretical knowledge without practical application."
+            ],
+            "average_process_duration": "Data not available in public records",
+            "interview_count": "Data not available in public records",
+            "role_company_alignment": "This company is an AI startup. The tech role is likely directly involved in developing, deploying, and maintaining the company's core AI products or services. With the suggestion that engineers will become 'AZ/Engineers', it can be extrapolated that the role involves working from the ground up in all steps of the business model, as an AI engineer would be expected to do.",
+            "confidence_score": 150,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Technical Interviews in 2026: How to Stand Out in the Age of AI",
+                    "url": "https://www.coursereport.com/blog/technical-interviews-in-2026-how-to-stand-out-in-the-age-of-ai",
+                    "content": "9 Jan 2026 \u00b7 Generative AI \u00b7 Excel \u00b7 Scrum \u00b7 Python \u00b7 View All Topics. Exams. PMP Exam \u00b7 CAPM Exam \u00b7 CISSP Exam \u00b7 AZ-900: Microsoft Azure Fundamentals Exam ..."
+                },
+                {
+                    "title": "R1 interview with AI startup: practical AI discussion and deployment tips",
+                    "url": "https://www.linkedin.com/posts/akashanandani_just-wrapped-up-my-r1-interview-with-an-ai-based-activity-7306196340856782848-fkpt",
+                    "content": "13 Mar 2025 \u00b7 Just wrapped up my R1 interview with an AI-based startup, and it was a fantastic experience ... A-Z into a tech stack. This approach enables ..."
+                },
+                {
+                    "title": "Founder of an AI startup in SF: \u201cWe tried to stop algorithmic interviews ...",
+                    "url": "https://www.threads.com/@gergelyorosz_/post/DQhxTR3DMDz/founder-of-an-ai-startup-in-sf-we-tried-to-stop-algorithmic-interviews-and",
+                    "content": "1 Nov 2025 \u00b7 Sebastian Matusik (@az.real.nimer) \u00b7 November 1, 2025 at 3:05 PM ... Sounds like Meta didn't get the memo: hellointerview.com/blog\u2026 Meta's AI- ..."
+                },
+                {
+                    "title": "[RECENT] Coding is Dead, Long Live AI: The 2026 Shift No One Is Ready For",
+                    "url": "https://ninza7.medium.com/coding-is-dead-long-live-ai-the-2026-shift-no-one-is-ready-for-9e6b8db895fc",
+                    "content": "25 Jan 2026 \u00b7 I write about AI, Tech, Startup and Code. Follow. Responses (1) ... I personally think that we will all become \"AZ/Engineers\" (physical ..."
+                },
+                {
+                    "title": "[RECENT] Top 10 AI certifications and courses for 2025",
+                    "url": "https://www.techtarget.com/whatis/feature/10-top-artificial-intelligence-certifications-and-courses",
+                    "content": "9 Jan 2026 \u00b7 Key elements. Artificial Intelligence A-Z 2026: Agentic AI, Gen AI, and RL is a comprehensive online course designed to teach the tools and ..."
+                },
+                {
+                    "title": "[RECENT] Proud Moment! At the Global AI Impact Summit 2026, LPU students met ...",
+                    "url": "https://www.facebook.com/LPUUniversity/posts/proud-moment-at-the-global-ai-impact-summit-2026-lpu-students-met-sundar-pichai-/1318468023649699/",
+                    "content": "22 hours ago \u00b7 The tech industry often experiences cycles of innovation, and while 2025 ... AZ. No photo description available. 0 reactions. Angelaisa Diamond ..."
+                },
+                {
+                    "title": "[RECENT] Data Science Jobs for 2026: Roles, Skills & Trends - IABAC",
+                    "url": "https://iabac.org/blog/data-science-jobs",
+                    "content": "26 Nov 2025 \u00b7 AI - ANGUILLA, AQ - ANTARCTICA, AG - ANTIGUA AND BARBUDA, AR - ARGENTINA, AM - ARMENIA, AW - ARUBA, AU - AUSTRALIA, AT - AUSTRIA, AZ - ..."
+                },
+                {
+                    "title": "[RECENT] AI's Role in Hiring 2025 and Beyond",
+                    "url": "https://www.intervue.io/webinar/ai-role-in-hiring-2025-and-beyond",
+                    "content": "AI +1 264, ,, AG +1268, ,, AR +54, ,, AM +374, ,, AW +297, ,, AU +61, ,, AT +43, ,, AZ +994, ,, BS +1 242, ,, BH +973, ,, BD +880, ,, BB +1 246, ,, BY +375, , ..."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'AI'. Reasoning: AZ is a very common abbreviation (Arizona, AstraZeneca, Amazon, etc.). Given the user's interest in AI startups, the query refines the search to include 'interview experience' along with 'AI startup' and relevant years to filter out older results and exclude common irrelevant results.",
+            "KEPT: Technical Interviews in 2026: How to Stand Out in the Age of AI: 9 Jan 2026 \u00b7 ... AZ-900: Microsoft Azure Fundamentals Exam ... (Relevant due to AZ-900 mention - suggests cloud skills)",
+            "KEPT: R1 interview with AI startup: practical AI discussion and deployment tips: 13 Mar 2025 \u00b7 Just wrapped up my R1 interview with an AI-based startup, and it was a fantastic experience ... A-Z into a tech stack. This approach enables ... (Relevant due to AI startup and A-Z of tech stack)",
+            "KEPT: Founder of an AI startup in SF: \u201cWe tried to stop algorithmic interviews ...: 1 Nov 2025 \u00b7 Sebastian Matusik (@az.real.nimer) ... (Relevant due to founder of AI Startup)",
+            "KEPT: Coding is Dead, Long Live AI: The 2026 Shift No One Is Ready For: 25 Jan 2026 \u00b7 I personally think that we will all become \"AZ/Engineers\" (physical ... (Relevant due to speculation on job function)",
+            "KEPT: Top 10 AI certifications and courses for 2025: 9 Jan 2026 \u00b7 Key elements. Artificial Intelligence A-Z 2026: Agentic AI, Gen AI, and RL is a comprehensive online course designed to teach the tools and ... (Relevant due to mentioning 'A-Z' in an AI context, might be educational)",
+            "REJECTED: Proud Moment! At the Global AI Impact Summit 2026, LPU students met ...: 22 hours ago \u00b7 The tech industry often experiences cycles of innovation, and while 2025 ... AZ. No photo description available. 0 reactions. Angelaisa Diamond ... (Irrelevant - just a random mention of 'AZ')",
+            "REJECTED: Data Science Jobs for 2026: Roles, Skills & Trends - IABAC: 26 Nov 2025 \u00b7 AI - ANGUILLA, AQ - ANTARCTICA, AG - ANTIGUA AND BARBUDA, AR - ARGENTINA, AM - ARMENIA, AW - ARUBA, AU - AUSTRALIA, AT - AUSTRIA, AZ - ... (Irrelevant - list of country codes)",
+            "REJECTED: AI's Role in Hiring 2025 and Beyond: AI +1 264, ,, AG +1268, ,, AR +54, ,, AM +374, ,, AW +297, ,, AU +61, ,, AT +43, ,, AZ +994, ,, BS +1 242, ,, BH +973, ,, BD +880, ,, BB +1 246, ,, BY +375, , ... (Irrelevant - list of country codes)"
+        ]
     }
 ]
