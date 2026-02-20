@@ -121,7 +121,7 @@ graph TD
   - [x] **Geographic Guarding**: Dedicated router to prevent name collisions across countries.
   - [x] **The Auditor (The Bouncer)**: Filters out noise/irrelevant data and verifies identity against JD
   - [x] **Source Attribution**: Real-time URL and Title tracking for all research points
-  - [x] **Temporal Dual-Search**: Evergreen logic that automatically prioritizes current-year trends
+  - [x] **Temporal Dual-Search**: **Evergreen Perpetual Freshness** logic that auto-calculates the current year to stay updated indefinitely.
   - [x] **Stealth Mode Support**: Reverse-engineers Job Descriptions (JD) for private/stealth companies
   - [x] **Identity Guarding**: Strict 98% fuzzy matching to prevent name collisions
   - [x] **Discovery Memory**: `discoveries.json` persistent learning layer with Developer Audit Logs
@@ -351,7 +351,7 @@ graph TD
   - ✅ **Hospitality & Tourism**: Airbnb, Marriott, Expedia, Hilton (21 total)
   - ✅ **Business & Management**: McKinsey, BCG, Deloitte, Accenture (23 total)
   - ✅ **Sales & Marketing**: Ogilvy, McCann, Leo Burnett, Dentsu (20 total)
-  - ✅ **Agentic Intelligence**: Multi-agent orchestration for real-time web research
+  - ✅ **Agentic Intelligence**: Multi-agent orchestration for real-time web research with **Evergreen Perpetual Freshness**.
   - ✅ **Stealth Startup Support**: AI can "reverse-engineer" company DNA from any Job Description (JD)
   - ✅ **Synthetic Logic**: Automatic industry-standard fallback if no web data is found
   - ✅ **Permanent Memory**: Dynamic profile saving to `discoveries.json`

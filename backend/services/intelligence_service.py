@@ -4,6 +4,7 @@
 import os
 import json
 import asyncio
+from datetime import datetime
 from typing import Dict, Any, List, Optional, Annotated
 from typing_extensions import TypedDict
 
@@ -59,7 +60,7 @@ class IntelligenceService:
         TASKS:
         1. Is this a common abbreviation (like AZ, HP, BT, MS)?
         2. Based on the JD, what is the most likely company, industry, and GEOGRAPHIC LOCATION?
-        3. Generate a search query that targets CURRENT (2025-2026) interview experiences.
+        3. Generate a search query that targets CURRENT ({datetime.now().year}-{datetime.now().year + 1}) interview experiences.
         4. If the company is regional (e.g., specific to India, UK, etc.), INCLUDE the location in the query to avoid acronym collisions.
         
         CRITICAL: If NO Job Description is provided, ONLY search for the company name + 'interview questions/process'.
@@ -76,22 +77,25 @@ class IntelligenceService:
         """
         
         try:
+            current_year = datetime.now().year
             response = await gemini_service.generate_json(prompt)
-            state['search_query'] = response.get('suggested_query', f"{company_name} interview questions 2025")
+            state['search_query'] = response.get('suggested_query', f"{company_name} interview questions {current_year}")
             state['industry'] = response.get('detected_industry')
             state['detected_location'] = response.get('detected_location')
             state['audit_log'].append(f"ROUTER: Identified industry as '{state['industry']}'. Reasoning: {response.get('reasoning')}")
         except Exception as e:
             # Fallback
-            state['search_query'] = f"{company_name} interview process 2025"
+            current_year = datetime.now().year
+            state['search_query'] = f"{company_name} interview process {current_year}"
             state['audit_log'].append(f"ROUTER: Fallback query generated due to AI error: {e}")
             
         return state
 
     async def researcher_node(self, state: AgentState) -> AgentState:
-        """Dual-Search node: Captures established DNA + Recent 2026 trends"""
+        """Dual-Search node: Captures established DNA + Recent trends"""
         company_name = state['company_name']
-        query = state.get('search_query') or f"{company_name} interview questions 2025"
+        current_year = datetime.now().year
+        query = state.get('search_query') or f"{company_name} interview questions {current_year}"
         
         print(f"AGENT: Researcher looking for '{company_name}' using query: '{query}'...")
         

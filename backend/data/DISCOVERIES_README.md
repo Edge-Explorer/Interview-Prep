@@ -4,7 +4,7 @@ This directory stores company intelligence profiles discovered dynamically by th
 ### How it works:
 1. **Gatekeeper Agent**: Checks if the company is in the primary `company_profiles.json`.
 2. **Router Agent**: Analyzes the company name for ambiguity and geographic location (Geographic Guarding).
-3. **Researcher Agent**: Uses DuckDuckGo with **Temporal Dual-Search** for 2026 freshness.
+3. **Researcher Agent**: Uses DuckDuckGo with **Evergreen Perpetual Freshness** (Auto-calculating Current Year).
 4. **Auditor Agent (The Bouncer)**: Filters out SEO junk, verifies identity, and applies **Dynamic Domain Guarding** (prevents role forcing).
 5. **Architect Agent (Llama-3)**: Processes Audited Data into a structured profile.
 6. **Critic Agent (Gemini)**: Final quality assurance check.

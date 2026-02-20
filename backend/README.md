@@ -22,7 +22,7 @@ This directory contains the FastAPI-based backend for the InterviewAI platform. 
 1. **AI Interviewer**: Integrated with Google Gemini 2.0 Flash API to generate real-time, adaptive questions.
 2. **Company Intelligence System (v2.2.1)**: 
    - **Tier 1 (Curated)**: Expert intelligence for **383 companies** (100% offline).
-   - **Tier 2 (Agentic Discovery)**: Live research via **DuckDuckGo** with Evergreen 2026 freshness.
+   - **Tier 2 (Agentic Discovery)**: Live research via **DuckDuckGo** with **Evergreen Perpetual Freshness** (Auto-calculating Current Year).
    - **Dynamic Domain Intelligence**: Automatically prevents "Role Forcing" in non-tech industries.
    - **Geographic Guarding**: Dedicated router node to prevent cross-continental name collisions.
    - **The Auditor (The Bouncer)**: Dedicated node that purges noise and verifies JD/Identity alignment.
