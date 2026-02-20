@@ -49,28 +49,28 @@ The system now provides transparency on how it "trusts" the discovered intellige
 
 ```mermaid
 graph TD
-    User((User)) -->|Uploads Resume/JD| UI[React Dashboard]
-    UI -->|Trigger| Backend[FastAPI Core]
+    User((User)) -->|"Uploads Resume/JD"| UI["React Dashboard"]
+    UI -->|Trigger| Backend["FastAPI Core"]
     
     subgraph "The Intelligence Brain"
         Backend --> Gatekeeper{Entry Gate}
-        Gatekeeper -->|Found| DB[Curated 383 DB]
-        Gatekeeper -->|Not Found| Agents[LangGraph Research Team]
+        Gatekeeper -->|Found| DB["Curated 383 DB"]
+        Gatekeeper -->|"Not Found"| Agents["LangGraph Research Team"]
         
-        Agents --> Router[Router (Location Guard)]
-        Router --> Researcher[DuckDuckGo Researcher]
-        Researcher --> Auditor[Auditor Agent - The Bouncer]
-        Auditor --> Architect[Architect (Llama-3 Profile Builder)]
-        Architect --> Critic[Gemini Quality Validator]
+        Agents --> Router["Router (Location Guard)"]
+        Router --> Researcher["DuckDuckGo Researcher"]
+        Researcher --> Auditor["Auditor Agent - The Bouncer"]
+        Auditor --> Architect["Architect (Llama-3 Profile Builder)"]
+        Architect --> Critic["Gemini Quality Validator"]
         
-        Critic -->|Approved| Memory[(discoveries.json)]
-        Memory --> Context[Simulation Context]
+        Critic -->|Approved| Memory[("(discoveries.json)")]
+        Memory --> Context["Simulation Context"]
         DB --> Context
     end
     
-    Context -->|Seed| Simulation[Gemini 2.0 Simulation]
-    Simulation -->|Voice/Video| User
-    Simulation -->|Feedback| Persistence[(Neon Cloud PostgreSQL)]
+    Context -->|Seed| Simulation["Gemini 2.0 Simulation"]
+    Simulation -->|"Voice/Video"| User
+    Simulation -->|Feedback| Persistence[("Neon Cloud PostgreSQL")]
 ```
 
 ---
