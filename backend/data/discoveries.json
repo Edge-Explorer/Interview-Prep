@@ -737,7 +737,7 @@
                         "Scalability of agentic workforces"
                     ],
                     "style": "Foundational / Peer-level discussion.",
-                    "tips": "Demonstrate a strong opinion on where the industry is heading—don't just follow the hype."
+                    "tips": "Demonstrate a strong opinion on where the industry is heading\u2014don't just follow the hype."
                 }
             },
             "red_flags": [
@@ -764,6 +764,269 @@
             "ROUTER: Refocused industry on Agentic AI / Developer Tools.",
             "BUILDER: Refactored rounds to prioritize LLM-Agent logic and sandboxed execution over generic tech rounds.",
             "SECURITY: Flagged security concerns regarding autonomous code execution in interview tips."
+        ]
+    },
+    {
+        "company_name": "Shastra Solutions",
+        "interview_intelligence_profile": {
+            "name": "Shastra Solutions",
+            "industry": "AI",
+            "size": "Not specified, but likely a startup size based on the description",
+            "interview_style": "Based on the provided information, Shastra Solutions is an AI startup focused on building smart automation and AI-powered systems. They are looking for talent to help them achieve this. The interview process will likely involve technical screening and interviews to assess skills, experience, and cultural fit.",
+            "difficulty_level": "Medium to Hard",
+            "cultural_values": [
+                "Innovation",
+                "Simplification",
+                "Performance",
+                "Growth",
+                "Client Focus"
+            ],
+            "interview_rounds": {
+                "Technical Screening": {
+                    "focus": "Evaluating fundamental technical skills and knowledge relevant to the specific tech role.",
+                    "common_topics": [
+                        "Data Structures and Algorithms",
+                        "Programming Languages (e.g., Python, Java)",
+                        "AI/ML Fundamentals (if applicable to the role)",
+                        "Cloud Computing (AWS, Azure, GCP - if applicable)",
+                        "Problem-solving skills"
+                    ],
+                    "style": "A mix of multiple-choice questions, coding challenges (potentially on platforms like HackerRank or LeetCode), and discussions about past projects.",
+                    "tips": "Brush up on fundamental data structures and algorithms, be prepared to explain your code clearly, and showcase your problem-solving abilities. Have examples of projects you've worked on ready to discuss."
+                },
+                "System Design (Software)": {
+                    "focus": "Assessing the candidate's ability to design scalable and robust systems, especially relevant for senior roles.",
+                    "common_topics": [
+                        "Scalability",
+                        "Database Design",
+                        "API Design",
+                        "Microservices Architecture",
+                        "Cloud Architecture"
+                    ],
+                    "style": "Typically involves whiteboard design sessions or discussions around hypothetical scenarios. The interviewer will be looking for your ability to break down complex problems and design efficient solutions.",
+                    "tips": "Practice common system design problems, understand the trade-offs between different architectural choices, and be prepared to discuss your design decisions. Articulate your thinking process clearly."
+                },
+                "Behavioral Interview": {
+                    "focus": "Evaluating the candidate's soft skills, teamwork abilities, and cultural fit within Shastra Solutions.",
+                    "common_topics": [
+                        "Teamwork and Collaboration",
+                        "Conflict Resolution",
+                        "Problem-solving Approaches",
+                        "Adaptability",
+                        "Communication Skills",
+                        "Motivation and Goals"
+                    ],
+                    "style": "STAR method (Situation, Task, Action, Result) is commonly used. Prepare specific examples from your past experiences to answer behavioral questions effectively.",
+                    "tips": "Research Shastra Solutions' values and culture. Prepare stories that demonstrate your alignment with their values and highlight your soft skills. Be honest and authentic in your responses."
+                },
+                "Technical Deep Dive": {
+                    "focus": "In-depth assessment of specific skills and experience related to the role, often conducted by a technical lead or hiring manager.",
+                    "common_topics": [
+                        "Specific frameworks or libraries (e.g., TensorFlow, PyTorch)",
+                        "Specific AI/ML techniques (e.g., NLP, computer vision)",
+                        "Cloud infrastructure and DevOps practices",
+                        "Data engineering pipelines"
+                    ],
+                    "style": "Involves detailed discussions about past projects, technical challenges, and problem-solving approaches. May involve coding or debugging exercises.",
+                    "tips": "Be prepared to discuss your technical expertise in detail. Demonstrate a deep understanding of relevant technologies and your ability to apply them to real-world problems. Don't be afraid to ask clarifying questions."
+                }
+            },
+            "red_flags": [
+                "Lack of enthusiasm for AI and automation.",
+                "Inability to articulate technical concepts clearly.",
+                "Poor communication and teamwork skills.",
+                "Unwillingness to learn and adapt to new technologies.",
+                "Negative or dismissive attitude towards past employers or colleagues."
+            ],
+            "average_process_duration": "2-4 weeks",
+            "interview_count": "3-5 interviews",
+            "role_company_alignment": "As an AI startup, Shastra Solutions relies on hiring talented tech professionals to innovate and build their smart automation and AI-powered systems. A tech role in this context directly contributes to the core mission of simplifying technology, amplifying performance, and enabling growth for their clients.",
+            "confidence_score": 160,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Shastra Solutions | Home",
+                    "url": "https://www.shastra-solutions.com/",
+                    "content": "At Shastra Solutions , we build smart automation and AI-powered systems that transform how businesses work. From SaaS platforms to intelligent process design \u2014 we simplify technology, amplify performance, and enable growth."
+                },
+                {
+                    "title": "SBSI : Shastra",
+                    "url": "http://www.shastrasolutions.com/current-job-openings-2.html",
+                    "content": "Technically screen and interview prospective candidates to assess skill set, work history, goals and motivations. Conduct reference checks. Develop and maintain a strong pipeline of qualified IT talent. Review candidates to fulfill client needs and present qualified candidates to clients."
+                },
+                {
+                    "title": "SBSI : Shastra",
+                    "url": "http://shastrasolutions.com/services.html",
+                    "content": "At SBSI, our goal is to grow our company by being a leading provider of an extensive range of technology-based business solutions . To accomplish this goal, we strive to constantly improve upon our technological skills and effectiveness in current services, while expanding into new ones."
+                },
+                {
+                    "title": "[RECENT] Summer 2026 Internship, AI & Advanced Analytics - Internexxus",
+                    "url": "https://internexxus.com/internship/summer-2026-internship-ai-advanced-analytics-43/",
+                    "content": "4 days ago \u00b7 Job Description About the Job: Summer 2026 Internship, AI & Advanced Analytics This job posting is promoted by Lensa, a career site that helps job seekers find jobs in the US. Lensa is not a staffing firm or agency and does not hire directly for this role. Instead, Lensa promotes jobs on behalf of its direct clients, recruitment ad agencies, and marketing partners. For this specific role ..."
+                },
+                {
+                    "title": "[RECENT] IIT Madras Annual Tech Festival Shastra to be held from 3-7 Jan",
+                    "url": "https://education21.in/iit-madras-annual-tech-festival-shastra-to-be-held-from-3-7-jan-2025/",
+                    "content": "Comedy Night: From relatable everyday experiences to absurd observations, the comedians will have the audience laughing out loud."
+                },
+                {
+                    "title": "[RECENT] SBSI : Shastra",
+                    "url": "http://shastrasolutions.com/",
+                    "content": "We offer innovative research and development services for business, aimed at improving efficiency, eliminating disadvantages and opening chokepoints. This research may involve competitive analysis, financial data, customer feedback and product research."
+                },
+                {
+                    "title": "[RECENT] SBSI : Shastra",
+                    "url": "http://shastrasolutions.com/current-job-openings.html",
+                    "content": "Apply Online Home Careers & Benefits Current Job Openings Apply Online"
+                },
+                {
+                    "title": "[RECENT] palaash sarkar - Project Manager | LinkedIn",
+                    "url": "https://www.linkedin.com/in/palaash-sarkar-827a42193",
+                    "content": "Currently employed at Traction Shastra , a digital solutions agency, where I serve as the project manager. Passionate about delivering high-quality projects that exceed client expectations and..."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'AI'. Reasoning: Given the job description is for a tech role at an AI startup, 'Shastra Solutions' likely operates in the AI industry. 'Shastra' is not a common abbreviation. The search query targets recent interview experiences at the company.",
+            "Kept: General description of Shastra Solutions - relevant to understanding the company and its focus on AI.",
+            "Kept: SBSI Shastra - Description of candidate screening and interviewing process. Relevant to understanding the role.",
+            "Kept: SBSI Shastra - Statement about company goals. Relevant to company focus.",
+            "Rejected: Summer 2026 Internship, AI & Advanced Analytics - Internship role is not relevant to tech roles for experienced professionals.",
+            "Rejected: IIT Madras Annual Tech Festival Shastra - Unrelated event sharing the name 'Shastra'. Acronym Collision.",
+            "Kept: SBSI Shastra - R&D services information. Useful for understanding the company's business model.",
+            "Kept: SBSI Shastra - Apply Online link. Useful for finding open positions.",
+            "Rejected: palaash sarkar - Project Manager at Traction Shastra - Different company. Noise Filter."
+        ]
+    },
+    {
+        "company_name": "WABRIC",
+        "interview_intelligence_profile": {
+            "name": "WABRIC",
+            "industry": "Tech",
+            "size": "Not available based on provided information.",
+            "interview_style": "Based on candidate experiences, Wabric's interview process for tech roles involves a mix of technical and HR interviews. The technical interviews are typically conducted online and focus on assessing a candidate's coding abilities, problem-solving skills, and project experience. Interviews can be relatively short (around 30 minutes), requiring candidates to be concise and clear in their responses.",
+            "difficulty_level": "Medium to Hard",
+            "cultural_values": [
+                "Technical Proficiency",
+                "Problem-Solving",
+                "Clear Communication",
+                "Project Execution"
+            ],
+            "interview_rounds": {
+                "Technical Screening": {
+                    "focus": "Assessing fundamental technical knowledge and coding abilities.",
+                    "common_topics": [
+                        "Data Structures and Algorithms",
+                        "Object-Oriented Programming Principles",
+                        "Specific programming languages (e.g., Python, Java, C++)",
+                        "Basic database concepts",
+                        "Version Control Systems (e.g., Git)"
+                    ],
+                    "style": "Online coding assessment or live coding exercise via screen sharing. May involve solving algorithmic problems or debugging code snippets.",
+                    "tips": "Practice coding problems on platforms like LeetCode and HackerRank. Be prepared to explain your thought process and code clearly. Review fundamental data structures and algorithms."
+                },
+                "Project Deep Dive": {
+                    "focus": "Evaluating experience on past projects, understanding technical contributions, and problem-solving skills.",
+                    "common_topics": [
+                        "Project scope, goals, and challenges",
+                        "Your specific role and responsibilities",
+                        "Technologies used and rationale behind their selection",
+                        "Design decisions and trade-offs",
+                        "Problem-solving approaches and solutions implemented",
+                        "Lessons learned and areas for improvement"
+                    ],
+                    "style": "In-depth discussion led by a technical interviewer. Expect questions about architectural choices, code implementation details, and how you handled specific challenges.",
+                    "tips": "Prepare detailed descriptions of your past projects. Highlight your contributions and quantify your accomplishments. Be honest about challenges and mistakes, and explain how you learned from them."
+                },
+                "System Design (Software)": {
+                    "focus": "Evaluating ability to design scalable and robust software systems.",
+                    "common_topics": [
+                        "System architecture",
+                        "Database design",
+                        "API design",
+                        "Scalability and performance",
+                        "Security considerations",
+                        "Trade-offs between different design choices"
+                    ],
+                    "style": "Open-ended design problems where you are asked to propose a solution for a given scenario. Expect questions about different components of the system, data flow, and potential bottlenecks.",
+                    "tips": "Study system design principles and common design patterns. Practice designing different types of systems, such as web applications, mobile apps, and distributed systems. Be prepared to discuss the pros and cons of different approaches."
+                },
+                "HR Interview": {
+                    "focus": "Assessing cultural fit, soft skills, and career aspirations.",
+                    "common_topics": [
+                        "Your motivation for joining Wabric",
+                        "Your strengths and weaknesses",
+                        "Your career goals",
+                        "Your communication skills",
+                        "Your ability to work in a team",
+                        "Salary expectations"
+                    ],
+                    "style": "Behavioral questions and general inquiries about your background and experience. Be prepared to provide examples of how you have demonstrated key skills and competencies.",
+                    "tips": "Research Wabric's culture and values. Prepare answers to common HR interview questions. Be enthusiastic and positive. Ask thoughtful questions about the company and the role."
+                }
+            },
+            "red_flags": [
+                "Inability to explain technical concepts clearly",
+                "Lack of knowledge of fundamental data structures and algorithms",
+                "Inability to discuss past projects in detail or articulate technical contributions",
+                "Poor communication skills",
+                "Negative attitude or lack of enthusiasm",
+                "Unrealistic salary expectations"
+            ],
+            "average_process_duration": "Not available based on provided information, but given 30 min technical interviews, probably quick.",
+            "interview_count": "Information not available.",
+            "role_company_alignment": "Since Wabric is in the tech industry, and presumably building AI products, a tech role would be core to its business model. The selected tech role would likely involve developing and maintaining AI algorithms, software platforms, and infrastructure that supports the company's core offerings.",
+            "confidence_score": 85,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Wabtec interview questions - Glassdoor",
+                    "url": "https://www.glassdoor.com/Interview/Wabtec-Interview-Questions-E363475.htm",
+                    "content": "Aug 21, 2025 \u00b7 The interview was conducted by a member of the final team I joined, and the interviewer primarily focused on assessing my fundamental knowledge in these areas. The questions aimed to evaluate my understanding of core concepts rather than advanced or specialized topics."
+                },
+                {
+                    "title": "1 Wabric Interview Questions & Answers (2025) | Glassdoor",
+                    "url": "https://www.glassdoor.co.in/Interview/Wabric-Interview-Questions-E10812256.htm",
+                    "content": "Nov 11, 2025 \u00b7 Wabric interview details: 1 interview questions and 1 interview reviews posted anonymously by Wabric interview candidates."
+                },
+                {
+                    "title": "100+ Wabtec Interview Questions & Answers 2025 | AmbitionBox",
+                    "url": "https://www.ambitionbox.com/interviews/wabtec-interview-questions?page=2",
+                    "content": "Jul 28, 2025 \u00b7 Preparing for Wabtec interview ? Discover Wabtec interview questions , answers & experiences for various roles shared by 40+ real candidates"
+                },
+                {
+                    "title": "[RECENT] WABRIC Interview Questions & Answers | Indeed.com",
+                    "url": "https://in.indeed.com/cmp/Wabric/interviews",
+                    "content": "Prepare yourself for your interview at WABRIC by browsing Interview questions and processes from real candidates."
+                },
+                {
+                    "title": "[RECENT] Top 25 Textile Interview Questions & Answers (2026 Update) Wabtec Interview Questions and Answers (2025) Wabtec Interview Questions | Glassdoor Wabtec Interview Questions | Glassdoor Wabtec Interview Questions | Glassdoor Wabtec Interview Questions | Glassdoor Wabtec Interview Questions (2026) | Glassdoor",
+                    "url": "https://career.guru99.com/top-25-textile-interview-questions/",
+                    "content": "Three basic types of fibres used in Textile industries are \u2022 Synthetic fibres \u2022 Natural fibres \u2022 Cotton fibres Free PDF Download: Textile Interview Questions and Answers See full list on career.guru99.com See full list on career.guru99.com There is three basic material you need to manufacture textile Thread, Yarn and Fiber. A Fiber is the basic raw material to produce yarn or thread. A textile Fiber could be natural or synthetic (man-made). The difference between Yarn and Thread is 1. Yarn:It is"
+                },
+                {
+                    "title": "[RECENT] Wabtec Interview Questions and Answers (2025)",
+                    "url": "https://www.justcrackinterview.com/job-interviews/wabtec/",
+                    "content": "Top Wabtec interview questions and answers, latest job interview tips, and real-world company insights for 2025."
+                },
+                {
+                    "title": "[RECENT] Wabtec Interview Questions (2026) | Glassdoor",
+                    "url": "https://www.glassdoor.co.uk/Interview/Wabtec-Interview-Questions-E363475.htm",
+                    "content": "Feb 9, 2026 \u00b7 Wabtec interview details: 199 interview questions and 194 interview reviews posted anonymously by Wabtec interview candidates."
+                },
+                {
+                    "title": "[RECENT] Top Interview Tips : Common Questions , Nonverbal... - YouTube",
+                    "url": "https://www.youtube.com/watch?v=HG68Ymazo18",
+                    "content": "Explore Indeed's interview help services: https://go.indeed.com/W99YD3Looking for interview tips ? In this video, we dissect an entire job interview from star..."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'tech'. Reasoning: WABRIC is not a common abbreviation. Given the JD mentioning a tech role at an AI startup, the industry is likely tech. Without further information, the geographic location cannot be determined, so the search query focuses on general interview experiences.",
+            "Rejected: All snippets related to 'Wabtec' as the search query was for 'WABRIC'. Wrong company.",
+            "Rejected: Textile interview questions are irrelevant. Different industry.",
+            "Rejected: YouTube video about general interview tips is not specific to WABRIC.",
+            "CRITIC REJECTION: Okay, let's review the generated Interview Profile for Wabtec, focusing on the provided checklist.\n\n**1. Hallucination Check:**\n\n*   Wabtec *is* technically a technology company, but it's primarily in the *railroad and transportation* industry, not pure-play tech. The AI startup aspect tempers this, so it's not a blatant hallucination, but it needs careful consideration. The profile correctly identifies this nuanced situation.\n\n**2. Industry Match:**\n\n*   The interview style generally matches the \"tech\" industry, especially the descriptions for Technical Screening and Technical Interview. The mention of coding exercises, LeetCode, and domain-specific (AI/ML) questions aligns with typical tech interviews.\n\n**3. Grounding:**\n\n*   The profile makes some grounded assumptions (\"Innovation (implied due to AI startup context)\"), which is good. It also correctly points out areas needing further research (size, interview count, process duration). The interview style and questions feel plausible, but their presence in the profile depends on whether the research data specifically called these rounds out. The 30-minute interview duration needs to be validated against actual data, it is stated to be from the data, so its presence may signal hallucination.\n\n**4. Cross-Continental Hallucination:**\n\n*   Not apparent from the information provided.\n\n**Applying the FATAL REJECTION RULE:**\n\n*   Wabtec is *not* a non-tech company. It's a transportation technology company with an AI startup component. The presence of \"LeetCode\" and \"Coding Test\" is *potentially* justifiable due to the AI startup aspect. It's NOT a clear-cut case for rejection.\n\n**Overall Assessment and Corrections:**\n\nThe profile is *mostly* correct, but needs some adjustments to better reflect Wabtec's core business and the speculative nature of the AI startup's impact on the interview process.\n\nHere are the suggested corrections:\n\n```json\n{\n  \"name\": \"WABTEC\",\n  \"industry\": \"Transportation Technology (Railroad focused, with an AI Startup)\",\n  \"size\": \"Not specified in provided data. Requires further research (e.g., LinkedIn, Crunchbase).\",\n  \"interview_style\": \"Based on the data, and assuming the role is within Wabtec's AI startup, the interview process likely includes technical and HR components. Interviews are often conducted online and may be approximately 30 minutes in duration (to be confirmed with further research), primarily focusing on technical questions and project experience. This suggests a direct and efficient assessment of a candidate's technical skills and practical application of knowledge, *especially if the role directly involves AI/ML development*.\",\n  \"difficulty_level\": \"Medium to Hard\",\n  \"cultural_values\": [\n    \"Technical Proficiency\",\n    \"Problem-Solving\",\n    \"Practical Application of Knowledge\",\n    \"Innovation (Specifically related to AI/ML)\",\n    \"Efficiency\",\n    \"Reliability (Important in the Transportation Industry)\",\n    \"Safety (Important in the Transportation Industry)\"\n  ],\n  \"interview_rounds\": {\n    \"Technical Screening (Coding/Algorithms)\": {\n      \"focus\": \"Assessing fundamental coding skills and algorithmic problem-solving abilities *if the role requires coding.*\",\n      \"common_topics\": [\n        \"Data Structures (Arrays, Linked Lists, Trees, Graphs)\",\n        \"Algorithms (Sorting, Searching, Dynamic Programming)\",\n        \"Object-Oriented Programming (OOP) principles\",\n        \"Specific languages (Python, Java, C++) related to the role requirements)\"\n      ],\n      \"style\": \"Coding exercises (potentially on platforms like HackerRank or LeetCode, *depending on the role*), whiteboard coding, discussions on algorithmic complexity and optimization.\",\n      \"tips\": \"Practice coding problems on LeetCode and HackerRank *if the role requires coding*. Be prepared to explain your thought process and reasoning behind your code. Pay attention to code clarity and efficiency.\"\n    },\n    \"Project Deep Dive\": {\n      \"focus\": \"Evaluating the candidate's experience with real-world projects, understanding their role, contributions, and technical challenges overcome. *Focus should be on projects relevant to Wabtec or the AI startup, particularly AI/ML projects if applicable*.\",\n      \"common_topics\": [\n        \"Project architecture and design\",\n        \"Technologies used and justification\",\n        \"Challenges faced and solutions implemented\",\n        \"Individual contributions and team collaboration\",\n        \"Project outcomes and impact\"\n      ],\n      \"style\": \"In-depth discussion of past projects. Expect detailed questions about design choices, implementation details, and troubleshooting.\",\n      \"tips\": \"Prepare a detailed explanation of your project experience, focusing on your contributions and the technical challenges you faced. Be ready to answer follow-up questions on specific aspects of the project.\"\n    },\n    \"Technical Interview (Specific Domain - e.g., AI/ML)\": {\n      \"focus\": \"Assessing knowledge and experience in the specific domain relevant to the AI startup (e.g., Machine Learning, Deep Learning, Natural Language Processing). *This round will only occur if the role is directly related to AI/ML.*\",\n      \"common_topics\": [\n        \"Machine Learning algorithms (Regression, Classification, Clustering)\",\n        \"Deep Learning architectures (CNNs, RNNs, Transformers)\",\n        \"Natural Language Processing techniques (Sentiment Analysis, Text Summarization)\",\n        \"Model evaluation and deployment\",\n        \"Related frameworks and libraries (TensorFlow, PyTorch, scikit-learn)\"\n      ],\n      \"style\": \"Questions related to the theoretical and practical aspects of the domain. May involve problem-solving exercises, code snippets, or discussions on current research.\",\n      \"tips\": \"Review the fundamentals of the specific domain. Stay updated on the latest research and technologies. Practice applying your knowledge to solve real-world problems.\"\n    },\n    \"HR Interview\": {\n      \"focus\": \"Evaluating cultural fit, communication skills, teamwork abilities, and career aspirations.\",\n      \"common_questions\": [\n        \"Why are you interested in working at Wabtec?\",\n        \"Tell me about a time you faced a challenging situation and how you overcame it.\",\n        \"What are your strengths and weaknesses?\",\n        \"Where do you see yourself in 5 years?\",\n        \"How do you handle conflict in a team?\",\n        \"What are your salary expectations?\"\n      ],\n      \"style\": \"Behavioral questions, situational questions, and discussions on career goals.\",\n      \"tips\": \"Prepare thoughtful answers to common HR questions. Research the company's values and culture. Highlight your teamwork abilities and communication skills.\"\n    }\n  },\n  \"red_flags\": [\n    \"Inability to articulate technical concepts clearly.\",\n    \"Lack of practical experience or project contributions *relevant to the role (AI/ML or Transportation)*.\",\n    \"Poor communication skills.\",\n    \"Unrealistic salary expectations.\",\n    \"Negative attitude or lack of enthusiasm.\"\n  ],\n  \"average_process_duration\": \"Likely short, potentially within 1-2 weeks *if only 2-3 rounds, given the assumption of 30 minute interview duration*. Requires further data to confirm.\",\n  \"interview_count\": \"Not specified in provided data. Requires further research.\",\n  \"role_company_alignment\": \"The role at an AI startup affiliated with Wabtec directly contributes to the company's innovation efforts in the tech space, potentially focusing on AI applications within Wabtec's broader industry. This allows Wabtec to leverage AI for optimization, efficiency gains, or new product development within its existing business areas.\"\n}\n```\n\n**Verdict:** `Corrections Required`\n"
         ]
     }
 ]
