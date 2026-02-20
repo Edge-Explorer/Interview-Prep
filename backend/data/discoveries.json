@@ -1028,5 +1028,138 @@
             "Rejected: YouTube video about general interview tips is not specific to WABRIC.",
             "CRITIC REJECTION: Okay, let's review the generated Interview Profile for Wabtec, focusing on the provided checklist.\n\n**1. Hallucination Check:**\n\n*   Wabtec *is* technically a technology company, but it's primarily in the *railroad and transportation* industry, not pure-play tech. The AI startup aspect tempers this, so it's not a blatant hallucination, but it needs careful consideration. The profile correctly identifies this nuanced situation.\n\n**2. Industry Match:**\n\n*   The interview style generally matches the \"tech\" industry, especially the descriptions for Technical Screening and Technical Interview. The mention of coding exercises, LeetCode, and domain-specific (AI/ML) questions aligns with typical tech interviews.\n\n**3. Grounding:**\n\n*   The profile makes some grounded assumptions (\"Innovation (implied due to AI startup context)\"), which is good. It also correctly points out areas needing further research (size, interview count, process duration). The interview style and questions feel plausible, but their presence in the profile depends on whether the research data specifically called these rounds out. The 30-minute interview duration needs to be validated against actual data, it is stated to be from the data, so its presence may signal hallucination.\n\n**4. Cross-Continental Hallucination:**\n\n*   Not apparent from the information provided.\n\n**Applying the FATAL REJECTION RULE:**\n\n*   Wabtec is *not* a non-tech company. It's a transportation technology company with an AI startup component. The presence of \"LeetCode\" and \"Coding Test\" is *potentially* justifiable due to the AI startup aspect. It's NOT a clear-cut case for rejection.\n\n**Overall Assessment and Corrections:**\n\nThe profile is *mostly* correct, but needs some adjustments to better reflect Wabtec's core business and the speculative nature of the AI startup's impact on the interview process.\n\nHere are the suggested corrections:\n\n```json\n{\n  \"name\": \"WABTEC\",\n  \"industry\": \"Transportation Technology (Railroad focused, with an AI Startup)\",\n  \"size\": \"Not specified in provided data. Requires further research (e.g., LinkedIn, Crunchbase).\",\n  \"interview_style\": \"Based on the data, and assuming the role is within Wabtec's AI startup, the interview process likely includes technical and HR components. Interviews are often conducted online and may be approximately 30 minutes in duration (to be confirmed with further research), primarily focusing on technical questions and project experience. This suggests a direct and efficient assessment of a candidate's technical skills and practical application of knowledge, *especially if the role directly involves AI/ML development*.\",\n  \"difficulty_level\": \"Medium to Hard\",\n  \"cultural_values\": [\n    \"Technical Proficiency\",\n    \"Problem-Solving\",\n    \"Practical Application of Knowledge\",\n    \"Innovation (Specifically related to AI/ML)\",\n    \"Efficiency\",\n    \"Reliability (Important in the Transportation Industry)\",\n    \"Safety (Important in the Transportation Industry)\"\n  ],\n  \"interview_rounds\": {\n    \"Technical Screening (Coding/Algorithms)\": {\n      \"focus\": \"Assessing fundamental coding skills and algorithmic problem-solving abilities *if the role requires coding.*\",\n      \"common_topics\": [\n        \"Data Structures (Arrays, Linked Lists, Trees, Graphs)\",\n        \"Algorithms (Sorting, Searching, Dynamic Programming)\",\n        \"Object-Oriented Programming (OOP) principles\",\n        \"Specific languages (Python, Java, C++) related to the role requirements)\"\n      ],\n      \"style\": \"Coding exercises (potentially on platforms like HackerRank or LeetCode, *depending on the role*), whiteboard coding, discussions on algorithmic complexity and optimization.\",\n      \"tips\": \"Practice coding problems on LeetCode and HackerRank *if the role requires coding*. Be prepared to explain your thought process and reasoning behind your code. Pay attention to code clarity and efficiency.\"\n    },\n    \"Project Deep Dive\": {\n      \"focus\": \"Evaluating the candidate's experience with real-world projects, understanding their role, contributions, and technical challenges overcome. *Focus should be on projects relevant to Wabtec or the AI startup, particularly AI/ML projects if applicable*.\",\n      \"common_topics\": [\n        \"Project architecture and design\",\n        \"Technologies used and justification\",\n        \"Challenges faced and solutions implemented\",\n        \"Individual contributions and team collaboration\",\n        \"Project outcomes and impact\"\n      ],\n      \"style\": \"In-depth discussion of past projects. Expect detailed questions about design choices, implementation details, and troubleshooting.\",\n      \"tips\": \"Prepare a detailed explanation of your project experience, focusing on your contributions and the technical challenges you faced. Be ready to answer follow-up questions on specific aspects of the project.\"\n    },\n    \"Technical Interview (Specific Domain - e.g., AI/ML)\": {\n      \"focus\": \"Assessing knowledge and experience in the specific domain relevant to the AI startup (e.g., Machine Learning, Deep Learning, Natural Language Processing). *This round will only occur if the role is directly related to AI/ML.*\",\n      \"common_topics\": [\n        \"Machine Learning algorithms (Regression, Classification, Clustering)\",\n        \"Deep Learning architectures (CNNs, RNNs, Transformers)\",\n        \"Natural Language Processing techniques (Sentiment Analysis, Text Summarization)\",\n        \"Model evaluation and deployment\",\n        \"Related frameworks and libraries (TensorFlow, PyTorch, scikit-learn)\"\n      ],\n      \"style\": \"Questions related to the theoretical and practical aspects of the domain. May involve problem-solving exercises, code snippets, or discussions on current research.\",\n      \"tips\": \"Review the fundamentals of the specific domain. Stay updated on the latest research and technologies. Practice applying your knowledge to solve real-world problems.\"\n    },\n    \"HR Interview\": {\n      \"focus\": \"Evaluating cultural fit, communication skills, teamwork abilities, and career aspirations.\",\n      \"common_questions\": [\n        \"Why are you interested in working at Wabtec?\",\n        \"Tell me about a time you faced a challenging situation and how you overcame it.\",\n        \"What are your strengths and weaknesses?\",\n        \"Where do you see yourself in 5 years?\",\n        \"How do you handle conflict in a team?\",\n        \"What are your salary expectations?\"\n      ],\n      \"style\": \"Behavioral questions, situational questions, and discussions on career goals.\",\n      \"tips\": \"Prepare thoughtful answers to common HR questions. Research the company's values and culture. Highlight your teamwork abilities and communication skills.\"\n    }\n  },\n  \"red_flags\": [\n    \"Inability to articulate technical concepts clearly.\",\n    \"Lack of practical experience or project contributions *relevant to the role (AI/ML or Transportation)*.\",\n    \"Poor communication skills.\",\n    \"Unrealistic salary expectations.\",\n    \"Negative attitude or lack of enthusiasm.\"\n  ],\n  \"average_process_duration\": \"Likely short, potentially within 1-2 weeks *if only 2-3 rounds, given the assumption of 30 minute interview duration*. Requires further data to confirm.\",\n  \"interview_count\": \"Not specified in provided data. Requires further research.\",\n  \"role_company_alignment\": \"The role at an AI startup affiliated with Wabtec directly contributes to the company's innovation efforts in the tech space, potentially focusing on AI applications within Wabtec's broader industry. This allows Wabtec to leverage AI for optimization, efficiency gains, or new product development within its existing business areas.\"\n}\n```\n\n**Verdict:** `Corrections Required`\n"
         ]
+    },
+    {
+        "company_name": "Aminuteman Technologies",
+        "interview_intelligence_profile": {
+            "name": "Aminuteman Technologies",
+            "industry": "AI Startup (Defense Technology)",
+            "size": "Likely Small (Startup Indication)",
+            "interview_style": "The interview process at Aminuteman Technologies, an AI startup focused on defense technology, is likely to be rigorous but also indicative of a fast-paced, innovative environment. Expect a strong emphasis on technical skills related to AI, problem-solving abilities, and a candidate's passion for contributing to the future of defense technology. Given the company's focus on AI and the explicit mention of hiring for 'passionate and talented individuals to join us in shaping the future of defense technology', the interview process will likely include rounds assessing coding and system design skills. Culture fit will also be a significant factor, emphasizing teamwork and a drive to innovate.",
+            "difficulty_level": "Medium to High",
+            "cultural_values": [
+                "Innovation",
+                "Passion",
+                "Teamwork",
+                "Autonomy",
+                "Impact",
+                "Intelligence"
+            ],
+            "interview_rounds": {
+                "Technical Coding Round": {
+                    "focus": "Assessing coding proficiency, algorithm design, and problem-solving skills relevant to AI applications.",
+                    "common_topics": [
+                        "Data Structures and Algorithms (e.g., trees, graphs, sorting, searching)",
+                        "Machine Learning Algorithms (e.g., regression, classification, clustering)",
+                        "Python or other relevant programming languages",
+                        "AI libraries (e.g., TensorFlow, PyTorch)",
+                        "Code optimization and efficiency"
+                    ],
+                    "style": "Online coding assessment or whiteboard coding session.",
+                    "tips": "Practice coding challenges on platforms like LeetCode and HackerRank, focusing on problems related to AI and machine learning. Be prepared to explain your code clearly and justify your algorithmic choices. Consider edge cases and error handling."
+                },
+                "System Design (AI Focus)": {
+                    "focus": "Evaluating the ability to design and architect AI-powered systems, considering factors like scalability, performance, and security.",
+                    "common_questions": [
+                        "Design a system for real-time object detection.",
+                        "How would you build a fraud detection system using machine learning?",
+                        "Design a recommendation engine for defense applications.",
+                        "Discuss the trade-offs between different AI architectures.",
+                        "How would you ensure the security of an AI-powered system?"
+                    ],
+                    "style": "Whiteboarding or virtual diagramming session, involving discussions about system architecture and design decisions."
+                },
+                "AI and Machine Learning Fundamentals": {
+                    "focus": "Testing knowledge of core AI and machine learning concepts, including model selection, training, and evaluation.",
+                    "common_topics": [
+                        "Supervised vs. Unsupervised Learning",
+                        "Model evaluation metrics (e.g., precision, recall, F1-score)",
+                        "Feature engineering",
+                        "Deep Learning architectures (e.g., CNNs, RNNs)",
+                        "Bias and fairness in AI",
+                        "Model interpretability"
+                    ],
+                    "style": "Technical interview with open-ended questions and potential hands-on problem solving."
+                },
+                "Behavioral and Cultural Fit": {
+                    "focus": "Assessing personality, teamwork skills, and alignment with the company's values. Evaluating candidate's passion for AI and their ability to contribute to a fast-paced, innovative environment.",
+                    "common_topics": [
+                        "Tell me about a time you overcame a challenging technical problem.",
+                        "Describe your experience working in a team.",
+                        "Why are you interested in AI and defense technology?",
+                        "What are your career goals?",
+                        "How do you handle failure or setbacks?"
+                    ],
+                    "style": "Traditional interview format with behavioral questions and discussions about career aspirations."
+                }
+            },
+            "red_flags": [
+                "Lack of passion for AI and defense technology",
+                "Inability to explain technical concepts clearly",
+                "Poor communication skills",
+                "Unwillingness to learn and adapt",
+                "Lack of teamwork skills",
+                "Unrealistic salary expectations",
+                "Disinterest in contributing to the company's mission"
+            ],
+            "average_process_duration": "2-4 weeks",
+            "interview_count": "3-5 interviews",
+            "role_company_alignment": "A tech role at Aminuteman Technologies directly supports the company's mission to develop intelligent defense technology. As an AI startup, the tech team is the core of the organization, driving innovation and creating cutting-edge solutions for the defense sector.",
+            "confidence_score": 160,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Aminuteman Technologies",
+                    "url": "https://aminutemantechnologies.com/",
+                    "content": "At Aminuteman Technologies , I envision a future where defense technology is not just reactive but intelligent \u2014 systems that think, decide, and act with autonomy."
+                },
+                {
+                    "title": "20 Interview Questions According to 2026's Hiring Trends",
+                    "url": "https://www.finalroundai.com/blog/interview-questions-2026",
+                    "content": "Here are 20 interview questions based on current hiring trends and expectations. In 2026 , interviews look different from what they did even a few years ago. Companies aren't just asking about your past jobs anymore. They want to know how you think, how you adapt, and especially how you work with AI."
+                },
+                {
+                    "title": "26+ Most Common Interview Questions and Answers for 2026 Top 20 Interview Questions (With Sample Answers) Imagen Technologies Interview Questions (2026) | Glassdoor #hiring #startupindia #techinnovation #makeinindia #worksmart ... 30+ Common Job Interview Questions and Answers in 2026",
+                    "url": "https://resumegenius.com/blog/interview/interview-questions-and-answers",
+                    "content": "Interviewers often ask \u201ctell me about yourself\u201d to break the ice and get more information about your work history. This question is usually just an introduction to the interview , so most interviewers won\u2019t take your response too seriously. However, you should still keep your response concise and focused. Remember to center your answer around your p... See full list on resumegenius.com \u201cHow did you hear about this position?\u201d is usually one of the very first questions interviewers will ask you. L"
+                },
+                {
+                    "title": "[RECENT] Top 20 Interview Questions (With Sample Answers)",
+                    "url": "https://www.indeed.com/career-advice/interviewing/top-20-interview-questions",
+                    "content": "Dec 16, 2025 \u00b7 In this article, we share the top 20 interview questions that hiring managers ask, along with tips and examples to help you answer key questions effectively."
+                },
+                {
+                    "title": "[RECENT] Imagen Technologies Interview Questions (2026) | Glassdoor",
+                    "url": "https://www.glassdoor.com.au/Interview/Imagen-Technologies-Interview-Questions-E2428848.htm",
+                    "content": "Dec 10, 2024 \u00b7 Imagen Technologies interview details: 39 interview questions and 39 interview reviews posted anonymously by Imagen Technologies interview candidates."
+                },
+                {
+                    "title": "[RECENT] 30+ Common Job Interview Questions and Answers in 2026",
+                    "url": "https://www.resumehelp.com/career-blog/job-interview-questions-and-answers",
+                    "content": "Apr 3, 2025 \u00b7 Walk into a job interview prepared. Get to know these top job interview questions and answers to impress hiring managers and employers."
+                },
+                {
+                    "title": "[RECENT] 37 Amantya Technologies Interview Questions & Answers (2025) | Glassdoor",
+                    "url": "https://www.glassdoor.co.in/Interview/Amantya-Technologies-Interview-Questions-E3166345.htm",
+                    "content": "Amantya Technologies interview details: 37 interview questions and 31 interview reviews posted anonymously by Amantya Technologies interview candidates."
+                },
+                {
+                    "title": "[RECENT] 26 Aumni Techworks Interview Questions & Answers (2026)",
+                    "url": "https://www.glassdoor.co.in/Interview/Aumni-Techworks-Interview-Questions-E4377125.htm",
+                    "content": "Aumni Techworks interview details: 22 interview questions and 24 interview reviews posted anonymously by Aumni Techworks interview candidates."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'AI Startup'. Reasoning: 'Aminuteman Technologies' is not a common abbreviation. Given the user's context (search for a tech role at an AI startup), the detected industry is AI startup. The name does not immediately suggest a location; therefore, no location is added. Because this is a more uncommon company name, a general interview search is the most logical and provides the best chance of accurate and useful results. The terms '2026' and '2027' ensure focus on recent interview experiences.",
+            "Kept: Aminuteman Technologies general description and hiring announcement - Relevant to company overview and job opportunities.",
+            "Kept: 20 Interview Questions According to 2026's Hiring Trends - Relevant to understanding interview processes in the AI/tech field.",
+            "Kept: 26+ Most Common Interview Questions and Answers for 2026 Top 20 Interview Questions (With Sample Answers) - Relevant to understanding interview processes and questions asked.",
+            "Kept: 30+ Common Job Interview Questions and Answers in 2026 - Relevant to understanding interview processes and questions asked.",
+            "Kept: Top 20 Interview Questions (With Sample Answers) - Relevant to understanding interview processes and questions asked.",
+            "Rejected: Imagen Technologies Interview Questions (2026) | Glassdoor - Different company.",
+            "Rejected: 37 Amantya Technologies Interview Questions & Answers (2025) | Glassdoor - Different company.",
+            "Rejected: 26 Aumni Techworks Interview Questions & Answers (2026) - Different company."
+        ]
     }
 ]
