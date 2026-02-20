@@ -30,10 +30,13 @@ The `GeminiService` class is the "brain" of InterviewAI. It manages all interact
 ### 1. `company_intelligence.py`
 The "Quick Lookup" service. It manages the curated 383-company database. It uses fuzzy matching to find companies regardless of typos or naming variations (e.g., "FB" vs "Facebook").
 
-### 2. `intelligence_service.py` (The LangGraph Brain)
+### 2. `intelligence_service.py` (The LangGraph Brain - v2.2.1)
 The "Autonomous Discovery" service. Used when a company is not in the curated DB.
 - **Node-Based Architecture**:
-    - **Researcher**: Scrapes DuckDuckGo for live facts.
+    - **Router**: Detects ambiguity, location, and industry (Geographic Guarding).
+    - **Researcher**: Scrapes DuckDuckGo for live facts (2025-2026 prioritized).
+    - **Auditor**: Filters noise and applies **Dynamic Domain Guarding** (prevents 'Role Forcing').
     - **Architect**: Generates a structured profile (Llama-3/Gemini).
     - **Critic**: Reflects and corrects the profile for quality.
+- **Identity Guarding**: Uses a strict **98% fuzzy matching threshold** to prevent name collisions in memory.
 - **Permanent Memory**: Automatically saves approved profiles to `discoveries.json`.

@@ -553,5 +553,261 @@
         "audit_log": [
             "ROUTER: Identified industry as 'Business Solutions (likely IT/Technology consulting)'. Reasoning: The company name suggests a business solutions provider, potentially involved in technology consulting. The user's JD for a tech role at an AI startup implies they might be looking for information on how Idolize Business Solutions aids AI startups or hires for tech roles. The search query targets recent interview experiences without adding specific tech terms, as the JD is a broad \"tech role\"."
         ]
+    },
+    {
+        "company_name": "Mobileprogramming PVT LTD",
+        "interview_intelligence_profile": {
+            "name": "Mobileprogramming PVT LTD",
+            "industry": "Information Technology",
+            "size": "Not available from provided data, needs further research.",
+            "interview_style": "Based on the available data, Mobileprogramming PVT LTD appears to hire for a variety of software development roles. The interview process seems to be technically focused, with an emphasis on practical skills and problem-solving. Agile methodologies and teamwork are also valued.",
+            "difficulty_level": "Medium",
+            "cultural_values": [
+                "Teamwork",
+                "Agile Methodology",
+                "Positive Attitude",
+                "Strong Communication Skills"
+            ],
+            "interview_rounds": {
+                "Technical Interview": {
+                    "focus": "Assessing technical skills, problem-solving abilities, and domain knowledge related to the specific role (e.g., Full Stack Developer, Java Lead Developer, C#.Net Developer).",
+                    "common_topics": [
+                        "Data Structures and Algorithms",
+                        "Object-Oriented Programming (OOP) principles",
+                        "Design Patterns",
+                        "Specific technologies (e.g., .NET MVC, Java 8+, Telerik/Kendo Libraries, HTML, Bootstrap, jQuery, Ajax, Entity Framework, SQL Server)",
+                        "Multi-threading concepts",
+                        "Version control systems (e.g., Git)",
+                        "CI/CD pipelines"
+                    ],
+                    "style": "Coding exercises, technical questions related to experience and mentioned technologies, scenario-based problem-solving.",
+                    "tips": "Review fundamental programming concepts, practice coding challenges, and be prepared to discuss past projects in detail. Be ready to explain your approach to problem-solving and demonstrate your understanding of the required technologies."
+                },
+                "System Design (Software) Round": {
+                    "focus": "Evaluating the candidate's ability to design scalable and maintainable systems, considering various factors like performance, security, and cost.",
+                    "common_topics": [
+                        "System architecture",
+                        "Database design",
+                        "API design",
+                        "Scalability",
+                        "Performance optimization",
+                        "Security considerations"
+                    ],
+                    "style": "Open-ended design problems, discussions about trade-offs, and evaluation of the candidate's reasoning and communication skills."
+                },
+                "HR Interview": {
+                    "focus": "Assessing cultural fit, communication skills, and overall suitability for the role and the company.",
+                    "common_topics": [
+                        "Work experience",
+                        "Career goals",
+                        "Salary expectations",
+                        "Teamwork and collaboration skills",
+                        "Company culture and values"
+                    ],
+                    "style": "Behavioral questions, discussions about past experiences, and questions about the candidate's motivation and interest in the company."
+                }
+            },
+            "red_flags": [
+                "Lack of depth in technical knowledge",
+                "Poor communication skills",
+                "Inability to work in a team",
+                "Unrealistic salary expectations",
+                "Negative attitude"
+            ],
+            "average_process_duration": "Not available from provided data, needs further research.  However, based on the mention of '3 rounds' in one user's experience, the process might take between 1-3 weeks.",
+            "interview_count": "Limited data available, but the fact that Glassdoor has interview reviews and ratings indicates some interviews are being conducted.",
+            "role_company_alignment": "Given the focus on Full Stack, Java and .NET developers, Mobileprogramming PVT LTD is centered around creating software applications. Therefore, any tech role at this company will likely be tied to some aspect of software creation and maintenance.",
+            "confidence_score": 160,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "8 mobileprogramming pvt ltd jobs in India, February 2026 | Glassdoor",
+                    "url": "https://www.glassdoor.com.au/Job/india-mobileprogramming-pvt-ltd-jobs-SRCH_IL.0,5_IN115_KO6,31.htm",
+                    "content": "Search Mobileprogramming pvt ltd jobs in India with company ratings & salaries. 8 open jobs for Mobileprogramming pvt ltd in India."
+                },
+                {
+                    "title": "Mobileprogramming PVT LTD hiring Full stack Developer Job ... - Glassdoor",
+                    "url": "https://www.glassdoor.co.in/job-listing/full-stack-developer-mobileprogramming-pvt-ltd-JV_IC2856202_KO0,20_KE21,46.htm?jl=1009754761318",
+                    "content": "Technical Skills Telerik, Kendo Libraries, HTML, Bootstrap, jQuery, Ajax, .NET MVC (C#), Entity Framework, SQL Server Job Type: Full-time Pay: \u20b9750,000.00 - \u20b9800,000.00 per year Location Type: In-person Work Location: In person Show more See company reviews Full stack Developer jobs in Pune Jobs at Mobileprogramming PVT LTD in Pune Full stack Developer salaries in Pune Reviews at ..."
+                },
+                {
+                    "title": "Mobileprogramming PVT LTD hiring C#.Net Developer Job in Pune | Glassdoor",
+                    "url": "https://www.glassdoor.com/job-listing/c-net-developer-mobile-programming-JV_IC2856202_KO0,15_KE16,34.htm?jl=1009897679927",
+                    "content": "Solid foundation in OOP/OOD principles and design patterns. Experience with multi-threading concepts. Exposure to version control systems and CI/CD pipelines. Hands-on experience working in Agile methodology. Strong team player, positive attitude, and excellent communication skills."
+                },
+                {
+                    "title": "[RECENT] 2581 Mobileprogramming Pvt Ltd Jobs vacancies in India - Feb (2026)",
+                    "url": "https://www.foundit.in/search/mobileprogramming-pvt-ltd-jobs",
+                    "content": "Apply to the latest Mobileprogramming Pvt Ltd Jobs Vacancies in India on foundit.in. Explore competitive salaries, top companies, and openings in your preferred location."
+                },
+                {
+                    "title": "[RECENT] Mobileprogramming PVT LTD hiring Java Lead Developer Job in - Glassdoor",
+                    "url": "https://www.glassdoor.com/job-listing/java-lead-developer-mobile-programming-JV_IC2833209_KO0,19_KE20,38.htm?jl=1009905547281",
+                    "content": "Bachelor's degree in Computer Science, Engineering, or related field (or equivalent work experience ). 6+ years of experience in Java development with 2-3 years in a leadership or senior role. Proficient in Java 8+, with a strong understanding of object-oriented programming (OOP) principles and design patterns."
+                },
+                {
+                    "title": "[RECENT] Mobileprogramming PVT LTD hiring .NET fullstack Developer ... - Glassdoor",
+                    "url": "https://www.glassdoor.co.in/job-listing/net-fullstack-developer-mobileprogramming-pvt-ltd-JV_IC2856202_KO0,23_KE24,49.htm?jl=1009926806473",
+                    "content": "181 Ratings .NET fullstack Developer jobs in Pune Jobs at Mobileprogramming PVT LTD in Pune .NET fullstack Developer salaries in Pune Reviews at Mobileprogramming PVT LTD Interviews at Mobileprogramming PVT LTD Benefits at Mobileprogramming PVT LTD Glassdoor Employers Information Work With Us Browse by: Companies Jobs Locations Communities ..."
+                },
+                {
+                    "title": "[RECENT] How was your interview experience when you were taking the PG ...",
+                    "url": "https://www.quora.com/How-was-your-interview-experience-when-you-were-taking-the-PG-courses-of-CDAC",
+                    "content": "14 Apr 2016 \u00b7 There were 3 rounds, written test with aptitude questions then technical interview where they used to test your programming and domain knowledge ..."
+                },
+                {
+                    "title": "[RECENT] Qa Interview Questions 7 | PDF | Class (Computer Programming) - Scribd",
+                    "url": "https://www.scribd.com/document/579748835/Qa-Interview-Questions-7",
+                    "content": "APPIUM INTERVIEW QUESTIONS. Mobile Programming India Pvt. Ltd. Telephonic round 1. How many applications you are test since last 1 year 2. On android scroll ..."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'Information Technology'. Reasoning: The company name includes 'PVT LTD' which strongly suggests it's an Indian private limited company. 'Mobileprogramming' implies the technology or software development sector, broadly classifiable as IT. The JD's focus on a tech role at an AI startup doesn't necessitate narrowing the search within IT for the initial query.",
+            "Kept: General job listing information for Mobileprogramming PVT LTD in India.",
+            "Kept: Full Stack Developer job description, including skills and salary, confirming identity and location (Pune).",
+            "Kept: C#.Net Developer job description, confirming identity and location (Pune).",
+            "Kept: General job vacancy listing for Mobileprogramming Pvt Ltd Jobs in India.",
+            "Kept: Java Lead Developer job description, confirming company and location.",
+            "Kept: .NET fullstack Developer information, including ratings and reviews about the company in Pune.",
+            "Kept: Interview experience indicating 3 rounds including a written test and technical interview.",
+            "Kept: QA Interview questions indicating a telephonic round.",
+            "Rating (How was your interview experience when you were taking the PG ...): 80 - describes interview process well.",
+            "Rating (Qa Interview Questions 7 | PDF | Class (Computer Programming) - Scribd): 90 - directly related to interview questions."
+        ]
+    },
+    {
+        "company_name": "antigravity",
+        "interview_intelligence_profile": {
+            "name": "antigravity",
+            "industry": "AI Startup",
+            "size": "Likely Small to Medium-Sized (Given its focus on a specific product and being relatively new)",
+            "interview_style": "Based on the available information, Antigravity, being a Google-backed AI startup focused on an AI-powered IDE, is likely to have a technical interview process focused on assessing coding skills, AI/ML knowledge, and system design aptitude. The emphasis on 'agentic development' suggests a strong interest in candidates who understand and can contribute to the development of AI agents for software development.",
+            "difficulty_level": "Medium to High (Due to the focus on AI and the novelty of the Antigravity platform)",
+            "cultural_values": [
+                "Innovation",
+                "Collaboration",
+                "Agent-first Thinking",
+                "Experimentation",
+                "User-centricity"
+            ],
+            "interview_rounds": {
+                "Coding/AI Fundamentals": {
+                    "focus": "Assessing coding proficiency and fundamental understanding of AI/ML concepts.",
+                    "common_topics": [
+                        "Data Structures and Algorithms",
+                        "Python Programming",
+                        "Machine Learning Basics (Regression, Classification, Clustering)",
+                        "Neural Networks",
+                        "AI Agent Architectures",
+                        "Familiarity with common AI frameworks (e.g., TensorFlow, PyTorch)",
+                        "Code Optimization and Efficiency",
+                        "Debugging skills"
+                    ],
+                    "style": "Technical interview with coding exercises (likely on a whiteboard or shared coding environment) and questions on AI/ML concepts.",
+                    "tips": "Review fundamental data structures and algorithms. Practice coding in Python. Brush up on ML basics and be prepared to discuss different ML models and their applications. Be ready to explain code clearly and concisely."
+                },
+                "System Design (AI Platform Focus)": {
+                    "focus": "Evaluating the ability to design and architect systems that support AI agent development and the Antigravity platform.",
+                    "common_questions": [
+                        "How would you design a system for managing AI agents in a development environment?",
+                        "How would you handle scalability and performance for a platform like Antigravity?",
+                        "How would you design the architecture for integrating Gemini 3 with the IDE?",
+                        "How would you design the Agent Manager view described in the platform overview?",
+                        "How to create efficient knowledge management and artifact integration."
+                    ],
+                    "style": "Discussion-based interview, where you'll be asked to describe your approach to solving system design problems. May involve drawing diagrams or sketching out architectures.",
+                    "tips": "Focus on designing for scalability, reliability, and security. Consider different architectural patterns and trade-offs. Demonstrate your understanding of AI platform architecture."
+                },
+                "Agentic Development & Product Vision": {
+                    "focus": "Gauging understanding and enthusiasm for the 'agent-first' development paradigm and assessing the candidate's product sense and ability to contribute to Antigravity's evolution.",
+                    "common_topics": [
+                        "Understanding of AI agents and their applications in software development",
+                        "Experience with agent-based systems",
+                        "Product vision for AI-powered IDEs",
+                        "Understanding of developer workflows",
+                        "Creativity and problem-solving skills in the context of AI-driven tools"
+                    ],
+                    "style": "Behavioral and discussion-based interview, where you'll be asked about your experience with AI agents and your ideas for the future of software development with AI.  You might be asked to provide feedback on Antigravity's current features or suggest new ones."
+                },
+                "Culture Fit & Leadership Potential": {
+                    "focus": "Evaluating cultural alignment and leadership potential. Given the startup environment, demonstrating initiative and collaborative spirit is vital.",
+                    "common_topics": [
+                        "Teamwork and collaboration",
+                        "Problem-solving skills",
+                        "Adaptability and resilience",
+                        "Communication skills",
+                        "Past project experience and lessons learned",
+                        "Leadership qualities (e.g., initiative, motivation, ability to influence)"
+                    ],
+                    "style": "Behavioral interview focused on past experiences and how you handled challenging situations. Expect questions about your communication style and ability to work in a team."
+                }
+            },
+            "red_flags": [
+                "Lack of interest or understanding of AI/ML concepts.",
+                "Inability to articulate technical concepts clearly.",
+                "Poor communication skills.",
+                "Resistance to experimentation and new technologies.",
+                "Lack of initiative or a collaborative spirit."
+            ],
+            "average_process_duration": "2-4 weeks",
+            "interview_count": "3-5 interviews",
+            "role_company_alignment": "This role directly contributes to the development and improvement of Antigravity, Google's AI-powered IDE, and requires skills in AI/ML and software development.  The role's success will directly impact Antigravity's ability to empower developers using Google's Gemini models in an agent-first development environment.",
+            "confidence_score": 155,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Google Antigravity - Wikipedia",
+                    "url": "https://en.wikipedia.org/wiki/Google_Antigravity",
+                    "content": "Google Antigravity is an AI -powered integrated development environment (IDE) developed by Google, designed for prioritizing AI agents platform for software development. Announced on November 18, 2025 alongside the release of Gemini 3, Antigravity enables developers to delegate complex coding tasks to autonomous AI agents powered primarily by Google's Gemini 3 Pro [5], Gemini 3 Deep Think and ..."
+                },
+                {
+                    "title": "Hands-On With Antigravity: Google's Newest AI Coding Experiment",
+                    "url": "https://thenewstack.io/hands-on-with-antigravity-googles-newest-ai-coding-experiment/",
+                    "content": "Our review of Google's new Antigravity AI coding platform. We explore its setup, IDE features, agentic capabilities, and why it's an experiment."
+                },
+                {
+                    "title": "Google Antigravity Changelog",
+                    "url": "https://antigravity.google/changelog",
+                    "content": "1.11.2 Nov 18, 2025 Google Antigravity The original launch of Google Antigravity , with a fully-featured AI-powered IDE, new Agent Manager view, an integrated experience with Chrome, broad variety of rich Artifacts, user feedback flows, knowledge management, and much more. The vision for what development looks like in an agent-first paradigm."
+                },
+                {
+                    "title": "[RECENT] Learn the basics of Google Antigravity - YouTube",
+                    "url": "https://m.youtube.com/watch?v=nTOVIGsqCuY",
+                    "content": "Subscribe to Google Antigravity \u2192 / @googleantigravity Google Antigravity is an agentic development platform, evolving the IDE into the agent-first era."
+                },
+                {
+                    "title": "[RECENT] Antigravity \uff5cOfficial Website\uff5cImmersive 8K 360 Drone",
+                    "url": "https://www.antigravity.tech/",
+                    "content": "1 The term world's first refers to the fact that, as of July 28, 2025 , Antigravity has announced the market's first 8K all-in-one 360 drone. It captures high-quality 360 video directly without the need for an external 360 camera attachment."
+                },
+                {
+                    "title": "[RECENT] Gemini 3 Pro + Antigravity : \u041f\u043e\u043b\u043d\u044b\u0439 \u0433\u0430\u0439\u0434 \u043f\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044e",
+                    "url": "https://rutube.ru/video/2c3fd8af4e5e0dc2d9ad067985a6070e/",
+                    "content": "\u041a\u0443\u0440\u0441\u044b \u043f\u043e \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0435: \u0417\u0430\u043f\u0443\u0441\u043a\u0430\u0435\u043c \u043d\u043e\u0432\u0435\u0439\u0448\u0443\u044e \u043c\u043e\u0434\u0435\u043b\u044c Gemini 3 \u0432 \u043c\u043e\u0449\u043d\u043e\u0439 \u0441\u0440\u0435\u0434\u0435 Antigravity ! \u0412 \u044d\u0442\u043e\u043c \u0432\u0438\u0434\u0435\u043e \u043c\u044b \u043f\u043e\u043b\u043d\u043e\u0441\u0442\u044c\u044e \u0440\u0430\u0437\u0431\u0435\u0440\u0435\u043c \u0444\u0440\u0435\u0439\u043c\u0432\u043e\u0440\u043a \u0438 \u0435\u0433\u043e \u0440\u0430\u0431\u043e\u0442\u0443 \u043d\u0430 \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0435: \u043e\u0442 \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u044f \u0430\u0433\u0435\u043d\u0442\u0430 \u0434\u043e \u0440\u0435\u0448\u0435\u043d\u0438\u044f \u0440\u0435\u0430\u043b\u044c\u043d\u044b\u0445 \u0437\u0430\u0434\u0430\u0447 \u0438 \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u0438 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0439."
+                },
+                {
+                    "title": "[RECENT] Google \u0437\u0430\u043f\u0443\u0441\u0442\u0438\u043b\u0430 Antigravity \u2014 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u0443\u044e \u0441\u0440\u0435\u0434\u0443 \u0434\u043b\u044f... / \u0425\u0430\u0431\u0440",
+                    "url": "https://habr.com/ru/news/967780/",
+                    "content": "\u041e\u0434\u043d\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e \u0441 \u0437\u0430\u043f\u0443\u0441\u043a\u043e\u043c Gemini 3 Pro \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0430 \u0441\u0440\u0435\u0434\u0430 \u0434\u043b\u044f \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u043d\u0430 \u0431\u0430\u0437\u0435 \u044d\u0442\u043e\u0439 \u043c\u043e\u0434\u0435\u043b\u0438 \u2014 Antigravity . \u042d\u0442\u043e \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0439 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442 \u0434\u043b\u044f \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a\u043e\u0432, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0441\u0442\u0440\u043e\u0438\u0442\u0441\u044f \u0432\u043e\u043a\u0440\u0443\u0433 \u0430\u0433\u0435\u043d\u0442\u043d\u043e\u0433\u043e \u043f\u043e\u0434\u0445\u043e\u0434\u0430"
+                },
+                {
+                    "title": "[RECENT] Google's Antigravity : Unable to Sign In? A Guide to Early Bugs, Login...",
+                    "url": "https://www.remio.ai/post/google-s-antigravity-unable-to-sign-in-a-guide-to-early-bugs-login-fixes-and-user-feedback",
+                    "content": "Nov 19, 2025 . 4 min read. Google's Antigravity : Unable to Sign In?For better AI experience , remio only supports Windows 10+ (x64) and M-Chip Macs currently."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'AI Startup'. Reasoning: 'Antigravity' is not a common abbreviation. Given the JD specifies an AI startup and a tech role, the industry is most likely AI. The location is not mentioned so remains null. The search query focuses on recent interview experiences at 'antigravity'.",
+            "Kept: Google Antigravity - Wikipedia: Describes Antigravity as an AI IDE by Google.",
+            "Kept: Hands-On With Antigravity: Describes Antigravity AI coding platform and its features.",
+            "Kept: Google Antigravity Changelog: Describes the initial launch and features of Antigravity.",
+            "Kept: Learn the basics of Google Antigravity - YouTube: Describes Antigravity as an agentic development platform.",
+            "Rejected: Antigravity \uff5cOfficial Website\uff5cImmersive 8K 360 Drone: Unrelated product - drone.",
+            "Kept: Gemini 3 Pro + Antigravity : Discusses Gemini 3 integration with Antigravity.",
+            "Kept: Google \u0437\u0430\u043f\u0443\u0441\u0442\u0438\u043b\u0430 Antigravity \u2014 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u0443\u044e \u0441\u0440\u0435\u0434\u0443 \u0434\u043b\u044f... / \u0425\u0430\u0431\u0440: Describes Antigravity as a free development environment.",
+            "Kept: Google's Antigravity : Unable to Sign In? Describes platform and OS requirements."
+        ]
     }
 ]

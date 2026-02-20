@@ -5,7 +5,7 @@
 ---
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)
+![Version](https://img.shields.io/badge/version-2.2.1-blue.svg)
 ![Status](https://img.shields.io/badge/status-Agentic%20Intelligence-purple.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
@@ -24,13 +24,24 @@ We don't just ask questions; we simulate **Human Personalities**:
 
 ---
 
-## 🚀 Technical Innovation: The "Agentic Edge"
+## 🚀 Technical Innovation: The "Agentic Edge" (v2.2.1 Updates)
 
 What makes this project unique in the industry is its **Three-Tier Intelligence Architecture**, designed to solve the "Knowledge Gap" in AI:
 
 1.  **The Curated Core**: Local access to **383 expert-verified company profiles** across 12 domains for zero-latency, reliable data.
-2.  **The Agentic Discovery Loop (LangGraph)**: An autonomous multi-agent team that researches public companies in real-time if they aren't in our database.
+2.  **The Agentic Discovery Loop (LangGraph)**: An autonomous multi-agent team that researches public companies in real-time.
+    *   **Dynamic Domain Intelligence**: Automatically prevents "Role Forcing" (e.g., won't force LeetCode questions on a legal or clinical role).
+    *   **Geographic Guardrails**: Prevents acronym collisions (e.g., identifying **MOC Cancer Care India** vs **Moffitt USA**) by localized search auditing.
 3.  **Stealth Mode & Synthetic Fallback**: A world-first feature that **Reverse-Engineers company DNA** from a Job Description. If a company is in "Stealth Mode" (non-public), the AI synthesizes a high-fidelity interview based on industry-standard benchmarking.
+
+### 🛡️ Confidence Score Guide
+The system now provides transparency on how it "trusts" the discovered intelligence:
+
+| Score | Status | Description | Reliability |
+| :--- | :--- | :--- | :--- |
+| **0 - 20** | **Synthetic** | No public info found. AI "guesstimates" based strictly on the Industry & JD. | ⚠️ Experimental |
+| **85** | **Verified** | Sufficient public sources found. Identity is verified. | ✅ High |
+| **100 - 160** | **Elite Certified** | Extreme certainty. Matched Location, Industry, and found Direct Interview Questions. | 🏆 Production Grade |
 
 ---
 
@@ -46,9 +57,10 @@ graph TD
         Gatekeeper -->|Found| DB[Curated 383 DB]
         Gatekeeper -->|Not Found| Agents[LangGraph Research Team]
         
-        Agents --> Researcher[DuckDuckGo Researcher]
+        Agents --> Router[Router (Location Guard)]
+        Router --> Researcher[DuckDuckGo Researcher]
         Researcher --> Auditor[Auditor Agent - The Bouncer]
-        Auditor --> Architect[Llama-3 Profile Builder]
+        Auditor --> Architect[Architect (Llama-3 Profile Builder)]
         Architect --> Critic[Gemini Quality Validator]
         
         Critic -->|Approved| Memory[(discoveries.json)]
@@ -103,13 +115,15 @@ graph TD
 - [x] **Fine-Tuned Intelligence (Llama-3-8B)**
   - [x] Custom LoRA adapters trained on 383-company dataset
   - [x] Expert-level structural reasoning for interview mocks
-- [x] **Agentic Discovery System (LangGraph)**
-  - [x] Multi-agent Researcher-Auditor-Architect-Critic workflow
+- [x] **Agentic Discovery System (LangGraph v2.2)**
+  - [x] Multi-agent Router-Researcher-Auditor-Architect-Critic workflow
+  - [x] **Dynamic Domain Logic**: Prevents 'Role Forcing' on non-tech industries.
+  - [x] **Geographic Guarding**: Dedicated router to prevent name collisions across countries.
   - [x] **The Auditor (The Bouncer)**: Filters out noise/irrelevant data and verifies identity against JD
   - [x] **Source Attribution**: Real-time URL and Title tracking for all research points
   - [x] **Temporal Dual-Search**: Evergreen logic that automatically prioritizes current-year trends
   - [x] **Stealth Mode Support**: Reverse-engineers Job Descriptions (JD) for private/stealth companies
-  - [x] **Identity Guarding**: Strict 95% fuzzy matching to prevent name collisions
+  - [x] **Identity Guarding**: Strict 98% fuzzy matching to prevent name collisions
   - [x] **Discovery Memory**: `discoveries.json` persistent learning layer with Developer Audit Logs
 - [x] Company-specific simulations
 - [x] Difficulty levels (Junior, Mid, Senior)
