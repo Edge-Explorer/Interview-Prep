@@ -6,8 +6,9 @@ This folder contains the curated company interview intelligence database.
 
 ## 📁 Files
 
-- **`company_profiles.json`** - The main database (currently 383 companies)
-- **`discoveries.json`** - **NEW**: Dynamic storage for companies found by the Agentic Team
+- **`company_profiles.json`** - The main curated database (383 expert-verified companies)
+- **`discoveries.json`** - Dynamic storage for companies found by the Agentic Team (19+ autonomously discovered)
+- **`DOMAIN_REPORT.md`** - Auto-generated report showing company distribution across 12 domains (run `generate_domain_report.py` to refresh)
 - **`DISCOVERIES_README.md`** - Detailed explanation of the Multi-Agent Discovery workflow
 - **`company_template.json`** - Template for adding new companies manually
 
@@ -60,43 +61,48 @@ Each company should have:
 }
 ```
 
-## 🏢 Current Companies by Domain (383 Total)
+## 🏢 Current Companies by Domain (402 Total — Curated + Agentic)
 
-### Engineering & Tech (134 Companies)
+> 📊 For live counts, run `python scripts/generate_domain_report.py` to refresh `DOMAIN_REPORT.md`.
+
+### Engineering & Tech (117 Companies)
 - Google, Amazon, Microsoft, Nvidia, Meta, Apple, Netflix, Salesforce, Tesla, OpenAI, Anthropic, DeepMind, Snowflake, Databricks, Vercel, Stripe.
 
-### Healthcare & Medical (22 Companies)
+### Healthcare & Medical (31 Companies)
 - Pfizer, Mayo Clinic, Johnson & Johnson, UnitedHealth Group, Novartis, Roche, Merck, Sanofi, AstraZeneca, GSK, Eli Lilly.
 
-### Finance & Accounting (22 Companies)
-- Goldman Sachs, JPMorgan, Morgan Stanley, BlackRock, Visa, Mastercard, AMEX, PayPal, Square, Robinhood, Coinbase.
+### Science & Research (29 Companies)
+- NASA, CERN, SpaceX, Blue Origin, ISRO, Argonne National Lab, Oak Ridge Lab, Max Planck Society, RIKEN, CSIRO.
 
-### Legal (22 Companies)
+### Legal (27 Companies)
 - Kirkland & Ellis, DLA Piper, Baker McKenzie, Skadden, Latham & Watkins, Clifford Chance, Freshfields, Allen & Overy, Linklaters.
 
-### Construction & Trades (23 Companies)
-- AECOM, Caterpillar, John Deere, Bechtel, Turner Construction, Larsen & Toubro, Tata Projects, Jacobs Solutions, Vinci, Skanska.
-
-### Creative & Design (21 Companies)
-- Pixar, DreamWorks, Industrial Light & Magic (ILM), Electronic Arts, Ubisoft, Nintendo, Adobe, Figma, Canva, Spotify, SoundCloud.
-
-### Education & Training (21 Companies)
-- Coursera, Udacity, Khan Academy, Duolingo, Chegg, MasterClass, Codecademy, Harvard University, Stanford, MIT (Tech roles).
-
-### Science & Research (22 Companies)
-- NASA, CERN, SpaceX, Blue Origin, DeepMind, ISRO, Argonne National Lab, Oak Ridge Lab, Max Planck Society, RIKEN, CSIRO.
-
-### Social Services & Non-Profits (23 Companies)
+### Social Services & Non-Profits (26 Companies)
 - UNICEF, Bill & Melinda Gates Foundation, American Red Cross, Amnesty International, Doctors Without Borders, World Bank, WHO.
 
-### Hospitality & Tourism (21 Companies)
-- Airbnb, Marriott International, Hilton, Hilton, Expedia Group, Booking.com, TripAdvisor, Disney Parks, Emirates, Delta Airlines.
+### Finance & Accounting (24 Companies)
+- Goldman Sachs, JPMorgan, Morgan Stanley, BlackRock, Visa, Mastercard, AMEX, PayPal, Square, Robinhood, Coinbase, Grant Thornton Bharat, BDO India, Nexia International India.
 
-### Business & Management (23 Companies)
+### Sales & Marketing (23 Companies)
+- Ogilvy, McCann Worldgroup, Leo Burnett, Dentsu, Publicis Sapient, Nielsen, Ipsos, Kantar, AppLovin, Experian Marketing.
+
+### Education & Training (22 Companies)
+- Coursera, Udacity, Khan Academy, Duolingo, Chegg, MasterClass, Codecademy, Harvard University, Stanford, MIT (Tech roles).
+
+### Creative & Design (22 Companies)
+- Pixar, DreamWorks, Industrial Light & Magic (ILM), Electronic Arts, Ubisoft, Nintendo, Adobe, Figma, Canva, Spotify, SoundCloud.
+
+### Business & Management (19 Companies)
 - McKinsey & Company, BCG, Bain & Company, Deloitte, PwC, EY, KPMG, Accenture, Gartner, Forrester Research, Robert Half.
 
-### Sales & Marketing (20 Companies)
-- Ogilvy, McCann Worldgroup, Leo Burnett, Dentsu, Publicis Sapient, Nielsen, Ipsos, Kantar, AppLovin, Experian Marketing.
+### Construction & Trades (15 Companies)
+- AECOM, Caterpillar, John Deere, Bechtel, Turner Construction, Larsen & Toubro, Tata Projects, Jacobs Solutions, Vinci, Skanska.
+
+### Hospitality & Tourism (8 Companies)
+- Airbnb, Marriott International, Hilton, Expedia Group, Booking.com, TripAdvisor, Disney Parks, Emirates, Delta Airlines.
+
+### Other / Uncategorized (39 Companies)
+- Various companies discovered agentically whose industry strings don't match any mapped domain keyword. Run `generate_domain_report.py` to review.
 
 ## 🎯 Tips for Adding Companies
 
