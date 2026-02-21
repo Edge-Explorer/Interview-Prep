@@ -9,7 +9,7 @@
 ---
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-2.2.2-blue.svg)
+![Version](https://img.shields.io/badge/version-2.3.0-blue.svg)
 ![Status](https://img.shields.io/badge/status-Agentic%20Intelligence-purple.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
@@ -28,15 +28,17 @@ We don't just ask questions; we simulate **Human Personalities**:
 
 ---
 
-## 🚀 Technical Innovation: The "Agentic Edge" (v2.2.2 Updates)
+## 🚀 Technical Innovation: The "Agentic Edge" (v2.3 — Domain-Aware Round Engine)
 
 What makes this project unique in the industry is its **Three-Tier Intelligence Architecture**, designed to solve the "Knowledge Gap" in AI:
 
-1.  **The Curated Core**: Local access to **398 expert-verified company profiles** across 12 domains for zero-latency, reliable data.
+1.  **The Curated Core**: Local access to **402 expert-verified company profiles** across 12 domains for zero-latency, reliable data.
 2.  **The Agentic Discovery Loop (LangGraph)**: An autonomous multi-agent team that researches public companies in real-time.
     *   **Dynamic Domain Intelligence**: Automatically prevents "Role Forcing" (e.g., won't force LeetCode questions on a legal or clinical role).
     *   **Geographic Guardrails**: Prevents acronym collisions (e.g., identifying **MOC Cancer Care India** vs **Moffitt USA**) by localized search auditing.
+    *   **Generic Article Purge**: Python-level domain blocklist strips SEO junk (datacamp, guru99, intellipaat, etc.) before the AI ever sees the data.
 3.  **Stealth Mode & Synthetic Fallback**: A world-first feature that **Reverse-Engineers company DNA** from a Job Description. If a company is in "Stealth Mode" (non-public), the AI synthesizes a high-fidelity interview based on industry-standard benchmarking.
+4.  **Domain-Aware Round Engine (v2.3)**: Each of the 12 career domains gets its own interview structure — Finance gets Case Study rounds, Healthcare gets Situational/Clinical rounds, Creative gets Portfolio Review. No more forcing tech candidates' rounds onto Accounting or Legal applicants.
 
 ### 🛡️ Confidence Score Guide
 The system now provides transparency on how it "trusts" the discovered intelligence:
@@ -58,7 +60,7 @@ graph TD
     
     subgraph "The Intelligence Brain"
         Backend --> Gatekeeper{Entry Gate}
-        Gatekeeper -->|Found| DB["Curated 383 DB"]
+        Gatekeeper -->|Found| DB["Curated 402 DB"]
         Gatekeeper -->|"Not Found"| Agents["LangGraph Research Team"]
         
         Agents --> Router["Router (Location Guard)"]

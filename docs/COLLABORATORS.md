@@ -46,6 +46,10 @@ This section is for tracking specific task completions and problem-solving histo
 - **Refactored** Documentation Structure: Moved all loose root-level markdown files into a dedicated `/docs` folder using `git mv` (preserving history). Created a `docs/README.md` navigation index and a quick-link bar in the main README.
 - **Designed** Coding Round Intelligence System (v3.0 Roadmap): Authored full 9-section blueprint (`CODING_ROUND_DESIGN.md`) covering Whiteboard Mode, AI Dry Run, Tiered Hints, JSON Learning Ledger, and Persona Architecture (Adinath vs. Veda).
 - **Tested** Autonomous Discovery: Validated with companies including WABRIC, Aminuteman Technologies, and Shastra Solutions. Confirmed audit logs, source filtering, and confidence scores are working correctly.
+- **Fixed (v2.3)** Generic SEO Article Contamination: Added Python-level domain purge list in Researcher Node (14 blocked domains). Fixed Grant Thornton Bharat, BDO India, and Nexia International India save failures caused by generic AI article pollution.
+- **Built (v2.3)** Domain-Aware Round Engine: Completely rewrote `round_config.py` — all 12 career domains now get domain-specific interview rounds (Case Study for Finance, Situational for Healthcare, Portfolio Review for Creative, etc.).
+- **Fixed (v2.3)** Managerial Round Scope: Corrected Managerial round to apply to ALL domains at Senior level (was wrongly restricted to only Tech + Business).
+- **Fixed (v2.3)** Domain Report Priority Bug: Reordered `DOMAIN_MAPPER` in `generate_domain_report.py` so Finance is checked before Business, fixing `Accounting/Consulting` miscategorization.
 
 ### **Abhiraj**
 - *Starting contributions today (tracking development from this point forward).*
@@ -56,6 +60,10 @@ This section is for tracking specific task completions and problem-solving histo
 
 | Feature / Update | Version | Status | Key Highlights |
 | :--- | :--- | :--- | :--- |
+| **Domain-Aware Round Engine** | v2.3.0 | ✅ Done | 12 domains get their own round sequences (Case Study, Situational, Portfolio Review, etc.). |
+| **Managerial Round for All Domains** | v2.3.0 | ✅ Done | Managerial now applies at Senior level across all 12 domains, not just Tech + Business. |
+| **Generic Article Purge** | v2.3.0 | ✅ Done | Python domain blocklist strips SEO junk before Auditor. Fixed Finance company save failures. |
+| **Domain Report Priority Fix** | v2.3.0 | ✅ Done | Reordered DOMAIN_MAPPER so Finance/Accounting is checked before Business/Management. |
 | **Coding Round Intelligence Design** | v3.0 (Planned) | 🚧 In Progress | Whiteboard Mode, AI Dry Run, Tiered Hints, Learning Ledger. |
 | **Docs Reorganization** | v2.2.2 | ✅ Done | All docs moved to `/docs` folder. Nav bar added to README. |
 | **Mermaid Diagram Fix** | v2.2.2 | ✅ Done | Fixed GitHub parse error by quoting all special node labels. |

@@ -2,7 +2,7 @@
 
 This document tracks the **hard problems** encountered while building the **Intelligent Interview Prep System** and the specific agentic design patterns used to solve them.
 
-> **Last Updated**: February 2026 | **Total Challenges Solved**: 11
+> **Last Updated**: February 2026 | **Total Challenges Solved**: 14
 
 ---
 
@@ -105,13 +105,41 @@ This document tracks the **hard problems** encountered while building the **Inte
 
 ---
 
+### 🧹 Challenge 12: Generic SEO Article Contamination (Finance Profile Poisoning)
+**Status**: ✅ Solved
+
+**The Problem**: When searching for Finance/Consulting companies like Grant Thornton Bharat, DuckDuckGo also returned highly SEO-ranked generic articles (from datacamp, guru99, intellipaat) about "Top AI Interview Questions." The Architect mixed this generic tech content into a Finance firm's profile — causing the Critic to flag it as "Role Forcing Detected" and block the save.
+- **The Hurdle**: These generic articles are so SEO-dominant that they appear in almost every search, regardless of company type or domain. The AI Auditor alone couldn't catch all of them reliably.
+- **The Solution (Python-Level Domain Blocklist)**: Added a hard-coded purge list of 14 generic interview article domains to the **Researcher Node** before data even reaches the AI. Any URL matching a blocked domain is stripped immediately.
+
+---
+
+### 🎯 Challenge 13: Domain-Blind Round Sequence (One-Size-Fits-All Problem)
+**Status**: ✅ Solved
+
+**The Problem**: `round_config.py` used a hardcoded integer system giving **every candidate** the same rounds: Technical → Behavioral → System Design → Managerial → Final. A Finance candidate was starting at "Technical Round." A Healthcare candidate was getting "System Design." Education candidates had no concept of a "Demo Lesson" round anywhere in the flow.
+- **The Hurdle**: The Architect AI was already generating the right domain-specific content, but the round *names* and *sequences* were completely wrong — the intelligence was being thrown away before reaching the user.
+- **The Solution (Domain-Aware Round Engine)**: Completely rewrote `round_config.py`. Each of the 12 career domains now has its own `DOMAIN_ROUND_SEQUENCES` mapping per difficulty level. Finance → Case Study. Healthcare → Situational. Creative → Portfolio Review. Science → Technical Presentation. Managerial now applies to ALL domains at Senior level.
+
+---
+
+### 📊 Challenge 14: Domain Report Categorization Priority Bug
+**Status**: ✅ Solved
+
+**The Problem**: `generate_domain_report.py` was miscounting Finance & Accounting companies. Companies with `industry: "Accounting/Consulting"` were being binned under "Business & Management" instead of "Finance & Accounting," keeping the Finance count artificially low.
+- **The Hurdle**: Python `dict` iterates in insertion order. The `DOMAIN_MAPPER` checked "Business & Management" (keyword: `"consulting"`) *before* "Finance & Accounting" (keyword: `"accounting"`). Since `"Accounting/Consulting"` contains `"consulting"` first, it matched the wrong domain.
+- **The Solution (Priority Reorder)**: Reordered `DOMAIN_MAPPER` so specific domains (Finance, Healthcare, Legal) are checked **before** broad catch-alls (Business & Management). Finance count jumped from 21 → 24 instantly.
+
+---
+
 ## 📈 System Reliability Stats (Current)
 
 | Metric | Value | Method |
 | :--- | :--- | :--- |
-| **Noise Reduction** | ~90% | Auditor Purge List + Identity Killer |
+| **Noise Reduction** | ~95% | Auditor Purge List + Python Domain Blocklist |
 | **Temporal Accuracy** | Perpetual (Auto-Year) | Python `datetime` dynamic anchoring |
 | **Identity Confidence Threshold** | 98% | RapidFuzz + Auditor double-check |
 | **Hallucination Rate (Post-Auditor)** | < 5% | Source-grounded Architect prompts |
-| **Companies in Curated DB** | 398 | Hand-verified across 12 domains |
-| **Autonomous Discovery Sessions** | 15+ tested | Verified: Shastra, WABRIC, Aminuteman, etc. |
+| **Companies in Curated DB** | 402 | Hand-verified + Agentic discoveries across 12 domains |
+| **Autonomous Discovery Sessions** | 20+ tested | Verified: Grant Thornton Bharat, BDO India, Nexia, AZ, etc. |
+| **Round Types Supported** | 12 (domain-aware) | Case Study, Situational, Portfolio Review, Role Play, etc. |

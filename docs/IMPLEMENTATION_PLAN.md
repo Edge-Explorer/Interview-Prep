@@ -1,6 +1,6 @@
 # 📋 InterviewAI — Implementation Plan & Progress Tracker
 
-**Last Updated**: February 2026 | **Current Version**: v2.2.2
+**Last Updated**: February 2026 | **Current Version**: v2.3.0
 
 > This document tracks the phase-wise implementation of **InterviewAI** — a professional-grade AI-powered interview simulation platform.
 
@@ -67,6 +67,10 @@
 - [x] **Memory Integrity**: 98% fuzzy threshold, `discoveries.json` never polluted with synthetic data.
 - [x] **Audit Trail**: Every discovery includes an `ACCEPTED/REJECTED` log per source link.
 - [x] **Domain Report Generator**: `generate_domain_report.py` script for DB health checks.
+- [x] **Generic Article Purge (v2.3)**: Python-level domain blocklist in Researcher strips SEO junk sites before AI sees data.
+- [x] **Domain-Aware Round Engine (v2.3)**: `round_config.py` completely rewritten — 12 domains each get correct rounds (Case Study for Finance/Legal, Situational for Healthcare, Portfolio Review for Creative, etc.).
+- [x] **Managerial Round for All Domains (v2.3)**: Managerial round now correctly applies to ALL 12 domains at Senior level (was incorrectly restricted to Tech + Business only).
+- [x] **402 Company Profiles**: Grown from 398 → 402 via autonomous discovery sessions.
 
 ---
 

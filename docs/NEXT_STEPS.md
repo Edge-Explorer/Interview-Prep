@@ -2,7 +2,7 @@
 
 This document outlines the strategic roadmap and upcoming technical features for **InterviewAI**.
 
-> **Current Version**: v2.2.2 | **Last Updated**: February 2026
+> **Current Version**: v2.3.0 | **Last Updated**: February 2026
 
 ---
 
@@ -67,3 +67,7 @@ This document outlines the strategic roadmap and upcoming technical features for
 - [x] **Domain Guard (v2.2)** — Prevents AI from forcing LeetCode rounds on non-tech companies.
 - [x] **API Key Security** — Rotated exposed keys, cleaned Git history, secured in `.env`.
 - [x] **Neon PostgreSQL** — Cloud database connected and used for session + user storage.
+- [x] **Generic Article Purge (v2.3)** — Python domain blocklist strips datacamp/guru99/intellipaat junk from Researcher results before Auditor sees them. Fixed Grant Thornton Bharat save failure.
+- [x] **Domain-Aware Round Engine (v2.3)** — Complete rewrite of `round_config.py`. All 12 domains now get correct domain-specific rounds. Finance → Case Study. Healthcare → Situational. Creative → Portfolio Review. Tech → System Design.
+- [x] **Managerial Round Correction (v2.3)** — Managerial round now applies to ALL domains at Senior level. Was incorrectly restricted to Tech + Business only.
+- [x] **Domain Category Priority Fix (v2.3)** — Fixed `generate_domain_report.py` mapper order bug where `Accounting/Consulting` was binned under Business instead of Finance.
