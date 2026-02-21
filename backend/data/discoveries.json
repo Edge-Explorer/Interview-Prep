@@ -1687,5 +1687,263 @@
             "REJECTED: 'RSM US Tax Job Opportunities in India' - COMPETITOR, not Nexia.",
             "CRITIC REJECTION: Let's analyze the profile.\n\n**1. Hallucination Check:** The profile mentions \"Problem-solving scenarios relevant to the AI startup in the accounting/consulting domain\" and \"Understanding of AI applications in business\" in the \"Technical/Skills Assessment\" round, and \"The AI startup tech role at Nexia International India\" at the end. This is problematic. Nexia International is an *accounting and consulting network*, not an AI startup. While they might *use* AI, describing the role as an \"AI startup tech role\" is highly misleading and indicates a role forcing.\n\n**2. Industry Match:** While generally aligns with Accounting/Consulting for typical roles, the AI aspect skews it.\n\n**3. Grounding:** The details regarding AI application seem to be generic guesswork based on the assumption of an \"AI startup tech role\" within Nexia, rather than being grounded in specifics about Nexia International India.\n\n**4. Cross-Continental Hallucination:** Not applicable here.\n\n**FATAL REJECTION RULE:**  The profile presents Nexia International India as having an \"AI startup tech role\", which forces the inclusion of technical skills like \"Data analysis skills\" and \"Understanding of AI applications in business\" that are unlikely to be core requirements for *most* positions at Nexia. This triggers the FATAL REJECTION RULE.\n\n**Corrections:**\n\n```json\n{\n  \"feedback\": \"ROLE FORCING DETECTED. Nexia International is primarily an accounting and consulting network, not an AI startup. The profile incorrectly assumes the existence of a core \\\"AI startup tech role\\\" which leads to inappropriate interview round details and focuses. Remove all references to 'AI startup' and adjust the 'Technical/Skills Assessment' round to reflect skills relevant to accounting/consulting or IT support, such as knowledge of accounting software, data analysis using standard tools, or project management skills.\",\n  \"verdict\": \"REJECTED\"\n}\n```\n"
         ]
+    },
+    {
+        "company_name": "Lodha & Co",
+        "interview_intelligence_profile": {
+            "name": "Lodha & Co",
+            "industry": "Accounting/Auditing/Consulting",
+            "size": "Not explicitly stated in provided data, likely medium to large based on multiple reviews and years of operation.",
+            "interview_style": "Based on the provided data, Lodha & Co. primarily hires for accounting, auditing, and consulting roles. While the prompt specifies a search for a tech role at an AI startup, the provided research data contains no specific evidence of Lodha & Co. hiring for tech positions. Therefore, typical tech interview rounds will be replaced with industry-standard rounds.",
+            "difficulty_level": "Medium. Reviews suggest a mix of behavioral and technical questions relevant to accounting/auditing.",
+            "cultural_values": [
+                "Professionalism",
+                "Integrity",
+                "Teamwork",
+                "Growth",
+                "Client Focus"
+            ],
+            "interview_rounds": {
+                "HR Round": {
+                    "focus": "Candidate's background, career goals, and overall fit with the company culture.",
+                    "common_topics": [
+                        "Resume review",
+                        "Career aspirations",
+                        "Why Lodha & Co.?",
+                        "Salary expectations",
+                        "Strengths and weaknesses"
+                    ],
+                    "style": "Conversational, behavioral questions.",
+                    "tips": "Research Lodha & Co.'s values and culture. Be prepared to discuss your resume in detail and articulate your career goals. Demonstrate enthusiasm for the company."
+                },
+                "Technical Round (Accounting/Auditing Focus)": {
+                    "focus": "Assessment of accounting and auditing knowledge and skills.",
+                    "common_topics": [
+                        "Accounting principles (GAAP, IFRS)",
+                        "Auditing procedures",
+                        "Tax laws and regulations",
+                        "Financial statement analysis",
+                        "Risk assessment"
+                    ],
+                    "style": "Technical questions, case studies, and problem-solving exercises.",
+                    "tips": "Review accounting and auditing standards. Practice solving accounting problems and analyzing financial statements. Be prepared to discuss your experience with specific accounting software and tools."
+                },
+                "Partner Round/Senior Management Interview": {
+                    "focus": "Assessment of the candidate's overall suitability for the role and the company.",
+                    "common_topics": [
+                        "Leadership skills",
+                        "Communication skills",
+                        "Problem-solving abilities",
+                        "Ethical considerations",
+                        "Industry knowledge"
+                    ],
+                    "style": "Behavioral questions, scenario-based questions, and discussions about industry trends.",
+                    "tips": "Demonstrate strong communication and interpersonal skills. Be prepared to discuss your leadership experience and your approach to solving complex problems. Show a strong understanding of the accounting/auditing industry and ethical considerations."
+                },
+                "Industry Standard Analytical Skills Assessment": {
+                    "focus": "Evaluating problem-solving abilities, logical reasoning, and attention to detail.",
+                    "common_topics": [
+                        "Data interpretation",
+                        "Logical puzzles",
+                        "Critical thinking scenarios",
+                        "Case studies relevant to consulting or finance"
+                    ],
+                    "style": "Written test or online assessment with multiple-choice questions and case-based analysis."
+                }
+            },
+            "red_flags": [
+                "Lack of knowledge about Lodha & Co.",
+                "Poor communication skills",
+                "Unprofessional demeanor",
+                "Inability to answer technical questions",
+                "Lack of interest in the accounting/auditing industry"
+            ],
+            "average_process_duration": "Not explicitly stated, but likely a few weeks based on multiple rounds and reviews.",
+            "interview_count": "The data mentions '12 interview questions and 12 interview reviews' on Glassdoor, but this is just a subset. The actual interview count is likely much higher.",
+            "role_company_alignment": "Given Lodha & Co.'s focus on accounting, auditing, and consulting, a tech role would likely support internal systems or client-facing solutions related to data analysis, financial modeling, or compliance. The candidate's skills would contribute to enhancing the efficiency and effectiveness of the company's core services.",
+            "confidence_score": 160,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "12 Lodha & Co. Interview Questions & Answers (2026)",
+                    "url": "https://www.glassdoor.co.in/Interview/Lodha-and-Co-Interview-Questions-E1984708.htm",
+                    "content": "Lodha & Co . interview details: 12 interview questions and 12 interview reviews posted anonymously by Lodha & Co . interview candidates."
+                },
+                {
+                    "title": "lodha & co. Interview Questions and Answers (2025)",
+                    "url": "https://www.justcrackinterview.com/job-interviews/lodha-co/",
+                    "content": "Top lodha & co . interview questions and answers, latest job interview tips, and real-world company insights for 2025."
+                },
+                {
+                    "title": "Lodha & Co. Reviews: What Is It Like to Work At Lodha & Co.?",
+                    "url": "https://www.glassdoor.ca/Reviews/Lodha-and-Co-Reviews-E1984708.htm",
+                    "content": "61 Lodha & Co . reviews. A free inside look at company reviews and salaries posted anonymously by employees."
+                },
+                {
+                    "title": "[RECENT] Lodha & Co. Interview Questions (2024) | Glassdoor",
+                    "url": "https://www.glassdoor.com/Interview/Lodha-and-Co-Interview-Questions-E1984708.htm",
+                    "content": "Lodha & Co . interview details: 12 interview questions and 12 interview reviews posted anonymously by Lodha & Co . interview candidates."
+                },
+                {
+                    "title": "[RECENT] Lodha & Co LLP Interview Questions & Answers | Indeed.com",
+                    "url": "https://in.indeed.com/cmp/Lodha-&-Co-LLP/interviews",
+                    "content": "Prepare yourself for your interview at Lodha & Co LLP by browsing Interview questions and processes from real candidates."
+                },
+                {
+                    "title": "[RECENT] Lodha & Co. Valuation Analyst interview questions - Glassdoor",
+                    "url": "https://www.glassdoor.com/Interview/Lodha-and-Co-Valuation-Analyst-Interview-Questions-EI_IE1984708.0,12_KO13,30.htm",
+                    "content": "1 Lodha & Co . Valuation Analyst interview questions and 1 interview reviews. Free interview details posted anonymously by Lodha & Co . interview candidates."
+                },
+                {
+                    "title": "[RECENT] Lodha & Co. Career: Working at Lodha & Co. | Glassdoor",
+                    "url": "https://www.glassdoor.co.uk/Overview/Working-at-Lodha-and-Co-EI_IE1984708.11,23.htm",
+                    "content": "What is it really like to work at Lodha & Co .? What do employees say about pay and career opportunities? Discover anonymous reviews now!"
+                },
+                {
+                    "title": "[RECENT] Lodha & Co. Reviews | Glassdoor",
+                    "url": "https://www.glassdoor.sg/Reviews/Lodha-and-Co-Reviews-E1984708.htm",
+                    "content": "56 Lodha & Co . reviews. A free inside look at company reviews and salaries posted anonymously by employees."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'Accounting/Auditing/Consulting'. Reasoning: Lodha & Co is a well-known Indian accounting firm. Given the lack of a specific job description, the query focuses on interview experiences in general and includes the years 2026 and 2027 to target current experiences. The search implicitly targets the Indian location given the firm's primary operational area.",
+            "KEPT: Lodha & Co. Interview Questions & Answers (2026)",
+            "KEPT: lodha & co. Interview Questions and Answers (2025)",
+            "KEPT: Lodha & Co. Reviews: What Is It Like to Work At Lodha & Co.?",
+            "KEPT: Lodha & Co. Interview Questions (2024) | Glassdoor",
+            "KEPT: Lodha & Co LLP Interview Questions & Answers | Indeed.com",
+            "KEPT: Lodha & Co. Valuation Analyst interview questions - Glassdoor",
+            "KEPT: Lodha & Co. Career: Working at Lodha & Co. | Glassdoor",
+            "KEPT: Lodha & Co. Reviews | Glassdoor",
+            "CRITIC REJECTION: Okay, let's review the generated interview profile for Lodha & Co based on your criteria.\n\n**Hallucination Check:**  The profile acknowledges that Lodha & Co is primarily an accounting/auditing firm and correctly interprets that a tech role, if any, would likely be focused on internal efficiency or enhancing existing services through technologies relevant to accounting.  This is a reasonable assessment.\n\n**Industry Match:**  The interview style is generally aligned with the accounting/auditing/consulting industry, focusing on technical accounting knowledge, problem-solving, behavioral questions, and potentially case studies.\n\n**Grounding:** The profile seems to be based on reasonable assumptions given the industry context. The \"Likely Mid-Sized to Large\" size estimate based on review count is a plausible inference. The cultural values, red flags, and interview rounds also align with what one would expect from a firm in this sector. The specific mentions of IFRS and Ind AS show some awareness of relevant standards.\n\n**Cross-Continental Hallucination:** The profile doesn't appear to be confusing Lodha & Co with companies in other countries. It's important to ensure the data specifically references the correct \"Lodha & Co\" (likely the Indian one).\n\n**FATAL REJECTION RULE:** The \"Industry Standard Technical Interview\" round raises a slight concern. While it's plausible that a tech role might have *some* general technical assessment, the questions are broad. Given the firm's core business, this section could be more tailored to *how* technology supports accounting/auditing specifically.  It doesn't trigger the fatal rejection rule *yet*, but warrants close inspection.\n\n**Corrections and Suggestions:**\n\n1.  **\"Industry Standard Technical Interview\" Round:** This round could be improved by making it more specific to the *application* of technology in accounting and auditing.  Instead of just \"Explain the limitations of financial analysis,\" it could be: \"How can data analytics be used to improve the efficiency or effectiveness of an audit?\"  Instead of \"Outline your experience with any data analysis tools,\" it could be, \"Describe your experience using data analysis tools in a financial setting (e.g., Excel, Tableau, Power BI, or specialized audit software).\"  Focus less on *general* tech skills and more on *applied* tech skills within the accounting context.\n\n2.  **Size:** Confirm the size of the company. Look for reliable sources to verify if it is mid-sized or large.\n\n3.  **Ind AS and IFRS:** Depending on the specific location the data references, confirm that mentioning both Ind AS and IFRS is accurate. If the firm primarily operates in India, Ind AS would be more relevant, but awareness of IFRS might still be valued.\n\n4. **Specify Role:** Clarify the specific tech role the profile is targeted at. The more information about the role, the more accurate the profile can be. Is it a data analyst, a developer maintaining internal accounting systems, or something else?\n\n**Revised \"Industry Standard Technical Interview\" Round (Example):**\n\n```json\n    \"Industry Standard Technical Interview\": {\n      \"focus\": \"Assessing general technical acumen and the ability to apply technology to solve accounting and auditing challenges.\",\n      \"common_questions\": [\n        \"How can data analytics be used to improve the efficiency or effectiveness of an audit?\",\n        \"Describe your experience using data analysis tools in a financial setting (e.g., Excel, Tableau, Power BI, or specialized audit software).\",\n        \"How would you automate a repetitive accounting task using technology?\",\n        \"Explain your understanding of cybersecurity risks related to financial data.\"\n      ],\n      \"style\": \"Questions that assess the candidate's ability to leverage technology to improve accounting processes and address related challenges.\"\n    }\n```\n\n**Verdict:**\n\nBased on the analysis, the profile is generally good but needs minor adjustments to improve the focus of the \"Industry Standard Technical Interview\" round.\n\n**Response:**\n\n```\nCORRECTIONS:\n1.  Revised \"Industry Standard Technical Interview\" Round to be more specific to technology applications in accounting/auditing (see example above).\n2.  Verify the size of Lodha & Co. with reliable sources.\n3.  Confirm the relevance of both Ind AS and IFRS based on the firm's operating location.\n4.  Specify the role.\n```\n"
+        ]
+    },
+    {
+        "company_name": "Luthra & Luthra LLP",
+        "interview_intelligence_profile": {
+            "name": "Luthra & Luthra LLP",
+            "industry": "Law",
+            "size": "Not Available (Based on Data Provided)",
+            "interview_style": "Luthra & Luthra LLP primarily focuses on hiring legal professionals. Based on available data, there is no explicit evidence of significant tech hiring at the firm. Therefore, the interview process is likely tailored to assess legal knowledge, analytical skills, and cultural fit within a law firm environment.",
+            "difficulty_level": "Medium to Hard",
+            "cultural_values": [
+                "Professionalism",
+                "Integrity",
+                "Legal Expertise",
+                "Client Focus",
+                "Teamwork"
+            ],
+            "interview_rounds": {
+                "HR Round": {
+                    "focus": "Assessing cultural fit, understanding career goals, and verifying basic qualifications.",
+                    "common_topics": [
+                        "Background and experience",
+                        "Career aspirations",
+                        "Why Luthra & Luthra?",
+                        "Salary expectations"
+                    ],
+                    "style": "Conversational, behavioral questions",
+                    "tips": "Research the firm's values and demonstrate how your skills and experience align with their culture. Be prepared to discuss your long-term career goals and why you are interested in working at Luthra & Luthra."
+                },
+                "Technical Legal Round": {
+                    "focus": "Evaluating core legal knowledge, analytical abilities, and understanding of relevant legal principles.",
+                    "common_topics": [
+                        "Specific areas of law relevant to the firm's practice (e.g., corporate law, litigation, intellectual property)",
+                        "Case law analysis",
+                        "Legal research skills",
+                        "Drafting legal documents"
+                    ],
+                    "style": "Technical interview, hypothetical legal scenarios, case studies"
+                },
+                "Partner Interview": {
+                    "focus": "Assessing overall fit, evaluating potential contribution to the firm, and gaining insights into long-term career development.",
+                    "common_topics": [
+                        "Experience in legal practice",
+                        "Career achievements and challenges",
+                        "Industry knowledge",
+                        "Professional aspirations within the firm"
+                    ],
+                    "style": "In-depth discussion, strategic thinking assessment"
+                },
+                "Industry Standard [Legal] Assessment": {
+                    "focus": "Practical demonstration of legal skills relevant to the role",
+                    "common_topics": [
+                        "Legal writing",
+                        "Legal research",
+                        "Contract drafting",
+                        "Case analysis"
+                    ],
+                    "style": "Practical assignment or case study"
+                }
+            },
+            "red_flags": [
+                "Lack of legal knowledge or experience",
+                "Poor communication skills",
+                "Lack of attention to detail",
+                "Unprofessional behavior",
+                "Unrealistic salary expectations",
+                "Negative attitude towards teamwork"
+            ],
+            "average_process_duration": "Varies; likely several weeks",
+            "interview_count": "Likely 3-5 interviews",
+            "role_company_alignment": "While the specific role is a tech role at an AI startup, the lack of observed tech hiring at Luthra & Luthra suggests it is unlikely they are hiring for this role directly. If they were to hire a tech role, it would likely be to support their legal operations through technology, and the role would need a strong understanding of the legal industry.",
+            "confidence_score": 145,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "LUTHRA & LUTHRA LLP | ZaubaCorp",
+                    "url": "https://www.zaubacorp.com/LUTHRA-AND-LUTHRA-LLP-AAM-5115",
+                    "content": "LUTHRA & LUTHRA LLP (LLPIN: AAM-5115) is a Limited Liability Partnership firm incorporated on 27 Dec 2018. It is registered at Registrar of Companies, Delhi. Its total obligation of contribution is Rs. 101000.00. LUTHRA & LUTHRA LLP 's LLP Identification Number is (LLPIN)AAM-5115."
+                },
+                {
+                    "title": "Luthra & Luthra LLP , Chartered Accountants... / Twitter",
+                    "url": "https://twitter.com/LuthranLuthraCA",
+                    "content": "Luthra & Luthra LLP is a premier professional services Firm focused on providing high end quality services to our clients in Audit,tax and corporate law matters."
+                },
+                {
+                    "title": "Luthra & Luthra Internships: Intern Job Opportunities at Luthra...",
+                    "url": "https://internshala.com/internships/internship-at-luthra-luthra-llp/",
+                    "content": "No openings from Luthra & Luthra LLP at the moment. Explore internships from leading companies actively hiring today.4. Managing end-to-end recruitment processes , from job posting to offer negotiation."
+                },
+                {
+                    "title": "[RECENT] Top 10 Accounting Companies in India [Updated 2025]",
+                    "url": "https://www.invensis.net/blog/top-accounting-companies-in-india",
+                    "content": "Get insights into India 's top 10 accounting companies for 2025, specializing in financial reporting, tax strategies, audits, etc. Luthra & Luthra LLP is a well-established Indian accounting and advisory firm known for its comprehensive expertise in financial services."
+                },
+                {
+                    "title": "[RECENT] Life at Luthra & Luthra : Culture, Salary, Reviews, Interviews & more",
+                    "url": "https://www.ambitionbox.com/overview/luthra-and-luthra-overview",
+                    "content": "Get an inside look of Luthra & Luthra \u2014 culture, pay, reviews, interview questions , job openings, corporate offices, peer comparison and more on AmbitionBox."
+                },
+                {
+                    "title": "[RECENT] Luthra & Luthra LLP , Chartered Accountants... | Aguea",
+                    "url": "https://aguea.net/LuthranLuthraCA",
+                    "content": "Luthra & Luthra LLP is a premier professional services Firm focused on providing high end quality services to our clients in Audit,tax and corporate law matters."
+                },
+                {
+                    "title": "[RECENT] Luthra & Luthra LLP , Chartered Accountants | LinkedIn",
+                    "url": "https://in.linkedin.com/company/llcaho",
+                    "content": "Luthra & Luthra LLP is a premier professional services Firm focused on providing high end quality services to our clients in Audit, tax and corporate law matters."
+                },
+                {
+                    "title": "[RECENT] Top 10 CA Firms in India 2026 | Top Chartered Accountants in India",
+                    "url": "https://www.registrationwala.com/knowledge-base/news-other-businesses/blog/top-10-ca-firms-in-india",
+                    "content": "Learn about the top 10 CA firms in India offering expert services in auditing, tax consulting, financial advisory, and business management."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'Law'. Reasoning: Luthra & Luthra is a well-known law firm based in India. Given the lack of specific details in the Job Description other than the role being in tech and at an AI startup, it is unlikely this law firm is relevant. Including 'India' helps narrow the search and the dates are aligned to the users specific request.",
+            "KEPT: ZaubaCorp entry to confirm company identity.",
+            "KEPT: Twitter entry for basic description.",
+            "KEPT: Internships entry for recruitment process information.",
+            "KEPT: Top 10 Accounting Companies entry as it confirms the firm's expertise.",
+            "KEPT: Life at Luthra & Luthra entry because it mentions interviews and job openings.",
+            "KEPT: Aguea entry for basic description.",
+            "KEPT: LinkedIn entry for basic description.",
+            "KEPT: Top 10 CA Firms entry as it confirms the firm's expertise.",
+            "DOMAIN GUARD: Flagged tech-role at non-tech company. Scrutinizing generic results."
+        ]
     }
 ]

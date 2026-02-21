@@ -34,8 +34,18 @@ async def test_agent():
         for i, source in enumerate(new_intel["sources"], 1):
             print(f"   {i}. {source['title']} -> {source['url']}")
     
-    if "error" not in new_intel:
-        print(f"SUCCESS: Successfully discovered intelligence for {company_name}")
+    # 'error' key is always present in result — None means success, a string means failure
+    if not new_intel.get('error'):
+        is_synthetic = new_intel.get('is_synthetic', False)
+        confidence  = new_intel.get('confidence_score', 'N/A')
+        industry    = new_intel.get('industry', 'Unknown')
+        print(f"SUCCESS: Discovered '{company_name}'")
+        print(f"   Industry    : {industry}")
+        print(f"   Confidence  : {confidence}")
+        print(f"   Synthetic   : {is_synthetic}")
+        rounds = new_intel.get('interview_rounds', {})
+        if rounds:
+            print(f"   Rounds      : {', '.join(rounds.keys())}")
     else:
         print(f"ERROR: Failed to discover {company_name}: {new_intel.get('error')}")
 
