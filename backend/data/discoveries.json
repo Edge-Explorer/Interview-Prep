@@ -1161,5 +1161,264 @@
             "Rejected: 37 Amantya Technologies Interview Questions & Answers (2025) | Glassdoor - Different company.",
             "Rejected: 26 Aumni Techworks Interview Questions & Answers (2026) - Different company."
         ]
+    },
+    {
+        "company_name": "AZ",
+        "interview_intelligence_profile": {
+            "name": "AZ",
+            "industry": "AI",
+            "size": "Not specified in data, assuming small to medium due to 'startup' nature",
+            "interview_style": "The interview process at AZ, an AI startup, for technical roles in 2026 is multi-layered, focusing on both technical skills and adaptability to the challenges of the AI field. Expect AI-focused questions in almost every technical interview, emphasizing core fundamentals such as the difference between AI and ML, supervised vs. unsupervised learning, and neural networks. Modern AI interviews assess not only the answers but also the candidate's interview experience. AI literacy is essential, making the interview similar to a software engineering, data science, or product management interview but specialized for AI.",
+            "difficulty_level": "Medium to Hard",
+            "cultural_values": [
+                "Adaptability",
+                "Continuous Learning",
+                "AI Literacy",
+                "Problem-solving",
+                "Innovation"
+            ],
+            "interview_rounds": {
+                "Coding Assessment": {
+                    "focus": "Evaluating coding proficiency and problem-solving abilities relevant to AI applications.",
+                    "common_topics": [
+                        "Data Structures and Algorithms",
+                        "Machine Learning Fundamentals (implementation of simple algorithms)",
+                        "Python or other relevant language proficiency",
+                        "AI-specific coding challenges (e.g., implementing a basic neural network layer)"
+                    ],
+                    "style": "Online coding test or live coding session with an interviewer.",
+                    "tips": "Practice LeetCode-style problems, especially those related to data science and machine learning. Be prepared to explain your code clearly and efficiently."
+                },
+                "AI Fundamentals & Technical Deep Dive": {
+                    "focus": "Assessing understanding of core AI concepts and the ability to apply them to practical problems.",
+                    "common_topics": [
+                        "AI vs. ML",
+                        "Supervised vs. Unsupervised Learning",
+                        "Neural Networks",
+                        "Generative AI Concepts",
+                        "AI Agents",
+                        "Logic and Search Algorithms"
+                    ],
+                    "style": "Technical interview with engineers or data scientists. Expect questions about your experience with AI projects and your understanding of different algorithms and techniques.",
+                    "tips": "Review fundamental AI concepts and be ready to explain your experience with relevant tools and technologies. Prepare examples of projects where you applied your knowledge."
+                },
+                "System Design (AI Focus)": {
+                    "focus": "Evaluating the ability to design and architect AI systems and solutions.",
+                    "common_topics": [
+                        "Designing a recommendation system",
+                        "Building a scalable AI model deployment pipeline",
+                        "Choosing appropriate AI architectures for specific problems",
+                        "Handling large datasets for AI training",
+                        "Model Optimization and Inference Techniques"
+                    ],
+                    "style": "Open-ended discussion with engineers or architects. You'll be asked to design a system to solve a particular AI problem.",
+                    "tips": "Focus on the tradeoffs between different design choices. Emphasize scalability, efficiency, and maintainability."
+                },
+                "Behavioral & Cultural Fit": {
+                    "focus": "Determining if the candidate's values and working style align with the company's culture and the demands of a startup environment.",
+                    "common_topics": [
+                        "Teamwork and Collaboration",
+                        "Handling Ambiguity",
+                        "Adaptability and Resilience",
+                        "Problem-solving in fast-paced environments",
+                        "Personal Projects and Contributions"
+                    ],
+                    "style": "Interview with a hiring manager or HR representative. Expect questions about your past experiences, how you handle challenges, and what motivates you.",
+                    "tips": "Be prepared to share specific examples of your accomplishments and how you contributed to team success. Research the company's values and demonstrate how you embody them."
+                }
+            },
+            "red_flags": [
+                "Lack of understanding of fundamental AI concepts",
+                "Inability to articulate problem-solving approaches",
+                "Poor communication skills",
+                "Unwillingness to learn or adapt to new technologies",
+                "Lack of enthusiasm for AI"
+            ],
+            "average_process_duration": "2-4 weeks",
+            "interview_count": "3-5 rounds",
+            "role_company_alignment": "In the AI industry, any tech role is critical for AZ's innovation and product development; tech talent drives the creation and improvement of AI solutions. The company's success is directly linked to the expertise of its tech team, making this role pivotal for maintaining a competitive edge.",
+            "confidence_score": 170,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "What's the Interview Process Like at Top AI Startups?",
+                    "url": "https://fonzi.ai/blog/ai-interview-process",
+                    "content": "Curious about what to expect when interviewing at an AI startup ? Whether you're aiming for a technical role or a position on the product or operations side, the interview process can be multi-layered and focused on both your skills and how well you adapt to the unique challenges and demands of working in AI . This article breaks down what typically happens in each stage, from coding challenges ..."
+                },
+                {
+                    "title": "Top 60+ AI Interview Questions and Answers 2026 | Prep Guide",
+                    "url": "https://www.guvi.in/blog/top-ai-interview-questions-and-answers/",
+                    "content": "Prepare for AI interviews in 2026 with top AI interview questions and answers. Learn key concepts, examples, and expert tips to ace your next AI job interview !"
+                },
+                {
+                    "title": "Top 50 AI Interview Questions and Answers (2026) - Guru99",
+                    "url": "https://www.guru99.com/ai-interview-questions.html",
+                    "content": "Master AI Interview Questions and Answers from Basic to Advanced. Get fully prepared, boost confidence & accelerate career growth to land your dream job fast."
+                },
+                {
+                    "title": "[RECENT] Top 35 AI Interview Questions and Answers For All Skill Levels in 2026",
+                    "url": "https://www.datacamp.com/blog/ai-interview-questions",
+                    "content": "Ace your AI interview with our guide. Explore technical and scenario-based AI interview questions and answers to increase confidence and unlock your potential."
+                },
+                {
+                    "title": "[RECENT] AI Interview Questions for 2026 (Beginner to Advanced) | TheySaid",
+                    "url": "https://www.theysaid.io/blog/ai-interview-questions",
+                    "content": "Whether you're preparing for your first AI interview or aiming to level up into a senior AI role, this blog helps you focus on what interviewers actually test in 2026 . Modern AI interviews aren't just about asking the right questions ; they're about understanding how candidates experience the interview itself."
+                },
+                {
+                    "title": "[RECENT] Top 40+ Artificial Intelligence (AI) Interview Questions (2026)",
+                    "url": "https://intellipaat.com/blog/interview-question/artificial-intelligence-interview-questions/",
+                    "content": "Prepare for 2026 with the ultimate list of 40+ AI interview questions . Covers Generative AI , AI Agents, Logic, and Search Algorithms for Freshers & Pros."
+                },
+                {
+                    "title": "[RECENT] How to Answer the Top AI Interview... - Interview Sidekick",
+                    "url": "https://interviewsidekick.com/blog/ai-interview-questions-and-answers",
+                    "content": "To answer top AI interview questions in 2026 , focus on three layers : Core fundamentals : AI vs ML, supervised vs unsupervised learning, neural networks,.."
+                },
+                {
+                    "title": "[RECENT] Top 10 AI Interview Questions and Answers for 2026: Software Engineers ...",
+                    "url": "https://blog.theinterviewguys.com/ai-interview-questions-and-answers/",
+                    "content": "In 2026 , nearly every technical interview includes AI -focused questions , whether you're applying for a software engineering role, data science position, or product management job. According to recent industry data, AI specialist roles have grown 74% annually, making AI literacy as essential as knowing your programming language."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'AI'. Reasoning: 'AZ' is a highly ambiguous initialism. Given the context of an AI startup, the query specifies the industry and time frame for current interview experiences. Since the location is unknown the query doesn't include any region.",
+            "KEPT: [GENERAL] What's the Interview Process Like at Top AI Startups? - Relevant to AI startup interview process.",
+            "KEPT: [GENERAL] Top 60+ AI Interview Questions and Answers 2026 | Prep Guide - Directly relevant to AI interview preparation.",
+            "KEPT: [GENERAL] Top 50 AI Interview Questions and Answers (2026) - Guru99 - Directly relevant to AI interview preparation.",
+            "KEPT: [RECENT] Top 35 AI Interview Questions and Answers For All Skill Levels in 2026 - Directly relevant to AI interview preparation.",
+            "KEPT: [RECENT] AI Interview Questions for 2026 (Beginner to Advanced) | TheySaid - Relevant to understanding modern AI interview expectations.",
+            "KEPT: [RECENT] Top 40+ Artificial Intelligence (AI) Interview Questions (2026) - Directly relevant to AI interview preparation.",
+            "KEPT: [RECENT] How to Answer the Top AI Interview... - Interview Sidekick - Relevant to answering AI interview questions.",
+            "KEPT: [RECENT] Top 10 AI Interview Questions and Answers for 2026: Software Engineers ... - Reinforces the importance of AI knowledge in technical interviews."
+        ]
+    },
+    {
+        "company_name": "Grant Thornton Bharat",
+        "interview_intelligence_profile": {
+            "name": "Grant Thornton Bharat",
+            "industry": "Accounting/Consulting",
+            "size": "Not explicitly stated, likely medium to large based on global presence.",
+            "interview_style": "The interview process at Grant Thornton Bharat appears to be focused on assessing a candidate's skills and suitability for the company culture. Reviews suggest an 'average' employee experience, so expect standard questions about your experience, problem-solving abilities, and how you handle challenges. As no specific evidence exists for a formal tech role pipeline (e.g., SWE) , the technical aspects of the interview will likely focus on how your experience applies to the Accounting/Consulting industry and any relevant software or tools. Therefore, the rounds are tailored to general professional skills, domain knowledge, and cultural fit rather than deep-dive coding.",
+            "difficulty_level": "Medium",
+            "cultural_values": [
+                "Growth",
+                "Client Focus",
+                "Integrity",
+                "Teamwork",
+                "Professionalism"
+            ],
+            "interview_rounds": {
+                "HR Round": {
+                    "focus": "Cultural fit, career goals, and general suitability for the company.",
+                    "common_topics": [
+                        "Background and experience",
+                        "Career aspirations",
+                        "Why Grant Thornton Bharat?",
+                        "Strengths and weaknesses",
+                        "Salary expectations"
+                    ],
+                    "style": "Conversational",
+                    "tips": "Research the company values and tailor your answers to demonstrate alignment. Prepare thoughtful questions to ask the interviewer."
+                },
+                "Technical/Functional Round": {
+                    "focus": "Assessing technical skills and knowledge relevant to the role and the accounting/consulting industry. Since this is a 'tech' role at an AI startup, expect less pure coding and more practical application of technology to business problems.",
+                    "common_topics": [
+                        "Data analysis skills",
+                        "Knowledge of relevant software/tools (e.g., data visualization, statistical analysis)",
+                        "Problem-solving scenarios related to data insights and business strategies",
+                        "Understanding of AI concepts and their application in consulting"
+                    ],
+                    "style": "Problem-solving and discussion-based"
+                },
+                "Case Study/Problem Solving Round": {
+                    "focus": "Evaluating problem-solving skills, analytical abilities, and the ability to apply knowledge to real-world scenarios.",
+                    "common_topics": [
+                        "Analyzing a business problem and proposing a solution",
+                        "Evaluating data and drawing conclusions",
+                        "Presenting findings and recommendations",
+                        "Understanding of AI in the consulting world"
+                    ],
+                    "style": "Interactive and analytical"
+                },
+                "Managerial Round": {
+                    "focus": "Evaluating leadership potential, communication skills, and strategic thinking.",
+                    "common_topics": [
+                        "Past leadership experiences",
+                        "Decision-making scenarios",
+                        "Conflict resolution",
+                        "Teamwork and collaboration",
+                        "Vision for the role and its impact"
+                    ],
+                    "style": "Behavioral and situational"
+                }
+            },
+            "red_flags": [
+                "Lack of knowledge about Grant Thornton Bharat",
+                "Inability to articulate career goals",
+                "Poor communication skills",
+                "Negative attitude towards teamwork",
+                "Unrealistic salary expectations"
+            ],
+            "average_process_duration": "Varies, but expect a few weeks to a month.",
+            "interview_count": "Based on the data, it appears that over 70 candidates have shared their interview experiences.",
+            "role_company_alignment": "A 'tech' role within an AI startup arm of Grant Thornton Bharat aligns with the consulting firm's objective to meet the challenges of their clients and unlock their potential for growth, likely by leveraging AI-powered solutions. This role supports the consulting services by developing and implementing innovative solutions.",
+            "confidence_score": 170,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Life at Grant Thornton Bharat: Culture, Salary, Reviews, Interviews & more",
+                    "url": "https://www.ambitionbox.com/overview/grant-thornton-bharat-overview",
+                    "content": "Get an inside look of Grant Thornton Bharat \u2014 culture, pay, reviews, interview questions, job openings, corporate offices, peer comparison and more on AmbitionBox"
+                },
+                {
+                    "title": "100+ Grant Thornton Bharat Interview Questions & Answers 2025 | AmbitionBox",
+                    "url": "https://www.ambitionbox.com/interviews/grant-thornton-bharat-interview-questions",
+                    "content": "18 July 2025 - Preparing for Grant Thornton Bharat interview? Discover Grant Thornton Bharat interview questions, answers & experiences for various roles shared by 70+ real candidates"
+                },
+                {
+                    "title": "Careers | Grant Thornton Bharat",
+                    "url": "https://www.grantthornton.in/careers/",
+                    "content": "For more updates follow Grant Thornton Bharat on WhatsApp \u00b7 A unique combination of culture and opportunities, Grant Thornton is a place where you can grow. Wherever you are in your career, we help you to make a difference every day. Find out more"
+                },
+                {
+                    "title": "[RECENT] Grant Thornton Reviews in Gurgaon | Glassdoor",
+                    "url": "https://www.glassdoor.co.in/Reviews/Grant-Thornton-Gurgaon-Reviews-EI_IE100134.0,14_IL.15,22_IC2921225.htm",
+                    "content": "This is the reality inside Grant Thornton Bharat, and it needs to be acknowledged instead of being brushed under the carpet. ... Related searches: Grant Thornton jobs | Grant Thornton salaries | Grant Thornton benefits | Grant Thornton interviews ... Copyright \u00a9 2008-2026."
+                },
+                {
+                    "title": "[RECENT] CampACE | Grant Thornton Bharat",
+                    "url": "https://www.grantthornton.in/careers/campace/",
+                    "content": "The CampACE internship and articleship programme by Grant Thornton Bharat offers diverse opportunities, including hi! School Career Exploration Program for school interns, summer internships, live projects and articleship programmes for CA aspirants. Through hands-on experience, expert mentorship and exposure to real-world challenges, the programme empowers students to build strong foundations for their professional journeys."
+                },
+                {
+                    "title": "[RECENT] Grant Thornton Bharat Work Culture Reviews by 50+ Employees | AmbitionBox",
+                    "url": "https://www.ambitionbox.com/reviews/grant-thornton-bharat-work-culture-reviews-807633",
+                    "content": "The experience of working at any company can vary based on factors like team, manager, role, company policy etc. However, with an overall rating of 3.5 out of 5 from over 57 employee reviews, it's clear that most employees have an average experience working at Grant Thornton Bharat ."
+                },
+                {
+                    "title": "[RECENT] Tax, Audit & Business Consulting | Grant Thornton Bharat",
+                    "url": "https://www.grantthornton.in/",
+                    "content": "This article examines the indirect tax narrative in Union Budget 2026, going beyond rate changes to discuss ITC utilization issues, inverted duty structures, refund reforms, compliance pain points and systemic priorities for indirect tax efficiency in India. ... A unique combination of culture and opportunities, Grant Thornton is a place where you can grow."
+                },
+                {
+                    "title": "[RECENT] Insights | Grant Thornton Bharat",
+                    "url": "https://www.grantthornton.in/insights/",
+                    "content": "At Grant Thornton Bharat, we meet the challenges of our clients and help them unlock their potential for growth. Our professionals offer solutions tailored to meet our clients\u2019 global accounting and statutory reporting requirements. With first-hand experience of local reporting requirements in more than 145+ locations worldwide, we provide seamless and consistent international service delivery through a single point of contact."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'Accounting/Consulting'. Reasoning: Grant Thornton is a well-known accounting and consulting firm. 'Bharat' clearly indicates the Indian branch of the company. Given the AI startup job search, it's unlikely this is a direct target company, but researching interview experiences can still offer insights. I've included the years 2026 and 2027 to target current experiences.",
+            "KEPT: Life at Grant Thornton Bharat: Culture, Salary, Reviews, Interviews & more",
+            "KEPT: 100+ Grant Thornton Bharat Interview Questions & Answers 2025 | AmbitionBox",
+            "KEPT: Careers | Grant Thornton Bharat",
+            "KEPT: Grant Thornton Reviews in Gurgaon | Glassdoor",
+            "KEPT: CampACE | Grant Thornton Bharat",
+            "KEPT: Grant Thornton Bharat Work Culture Reviews by 50+ Employees | AmbitionBox",
+            "KEPT: Tax, Audit & Business Consulting | Grant Thornton Bharat",
+            "KEPT: Insights | Grant Thornton Bharat"
+        ]
     }
 ]

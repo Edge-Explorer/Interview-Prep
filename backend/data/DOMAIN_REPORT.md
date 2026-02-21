@@ -4,7 +4,7 @@
 ==============================================
 *** INTERVIEWAI - LIVE DOMAIN REPORT ***
 ==============================================
-Last Updated: 2026-02-20
+Last Updated: 2026-02-21
 Database Version: Agentic-Live
 ----------------------------------------------
 > Engineering & Tech        : 124 companies

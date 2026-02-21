@@ -116,17 +116,33 @@ class IntelligenceService:
                 state['research_data'] = "No public information available. This might be a stealth startup or private company."
                 state['sources'] = []
             else:
+                # ⚡ PURGE: Hard-filter generic SEO interview article domains BEFORE AI sees them
+                GENERIC_ARTICLE_DOMAINS = [
+                    "datacamp.com", "guru99.com", "intellipaat.com", "interviewbit.com",
+                    "geeksforgeeks.org", "theysaid.io", "interviewsidekick.com",
+                    "theinterviewguys.com", "guvi.in", "simplilearn.com",
+                    "analyticsvidhya.com", "javatpoint.com", "edureka.co",
+                    "mindmajix.com", "careerride.com", "ambitionbox.com/advice"
+                ]
+                purged = [r for r in results if not any(d in r.get('href', '') for d in GENERIC_ARTICLE_DOMAINS)]
+                results = purged if purged else results  # fallback: keep all if purge wiped everything
+                print(f"PURGE: {len(results)} sources remain after generic-article domain filter.")
+
                 state['is_synthetic'] = False
                 state['confidence_score'] = min(85, len(results) * 15)
-                state['research_data'] = search_results
+                state['research_data'] = "\n".join([
+                    f"[{'RECENT' if i >= 3 else 'GENERAL'}] {r['title']}: {r['body']}"
+                    for i, r in enumerate(results)
+                ])
                 state['sources'] = [
                     {
-                        "title": f"{'[RECENT] ' if i >= 3 else ''}{r['title']}", 
-                        "url": r['href'], 
+                        "title": f"{'[RECENT] ' if i >= 3 else ''}{r['title']}",
+                        "url": r['href'],
                         "content": r.get('body', '')[:500]
                     } for i, r in enumerate(results)
                 ]
                 print(f"RESEARCH: Successfully gathered intelligence ({len(results)} sources).")
+
         except Exception as e:
             print(f"ERROR: Researcher failed: {e}")
             state['error'] = str(e)
@@ -154,15 +170,21 @@ class IntelligenceService:
         TASKS:
         1. Identity & Location Check: Do these results actually belong to '{company_name}' in the correct location? 
            (CRITICAL: Reject 'Moffitt Cancer Center' if the target is 'MOC Cancer Care India'!)
-        2. Relevance Audit: Score each source from 0-100 on how well it describes the interview process.
-        3. Noise Filter: Remove product ads, unrelated news, or companies with just similar-looking names.
+        2. Relevance Audit: Score each source 0-100 on how well it describes THE INTERVIEW PROCESS AT '{company_name}' SPECIFICALLY.
+        3. Noise Filter: 
+           - Remove product ads, unrelated news, or companies with similar-looking names.
+           - CRITICAL: REJECT any source that is a generic "Top N Interview Questions" article 
+             (e.g., from datacamp, guru99, intellipaat, GeeksForGeeks, simplilearn) 
+             UNLESS it explicitly mentions '{company_name}' by name in the content.
+           - REJECT any source about generic AI/ML/coding concepts unless '{company_name}' is a tech firm 
+             AND the source explicitly discusses '{company_name}' hiring.
         
         Return a JSON with:
         {{
             "is_identity_verified": boolean,
             "is_location_matched": boolean,
-            "relevant_snippets": "cleaned string of useful data",
-            "audit_trail": ["list of what was kept/rejected with specific reasons like 'Wrong Location' or 'Acronym Collision'"],
+            "relevant_snippets": "cleaned string of useful data — ONLY include content that specifically mentions '{company_name}'",
+            "audit_trail": ["list of what was KEPT or REJECTED with specific reasons like 'Wrong Location', 'Acronym Collision', or 'Generic Article - No Company Mention'"],
             "confidence_boost": integer
         }}
         """
