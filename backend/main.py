@@ -102,6 +102,8 @@ async def upload_resume(
     db: Session = Depends(database.get_db),
     current_user: models.User = Depends(auth_utils.get_current_user)
 ):
+    from core.round_config import get_first_round
+
     # 1. Extract text from PDF
     try:
         pdf_reader = pypdf.PdfReader(io.BytesIO(await file.read()))
@@ -146,6 +148,7 @@ async def upload_resume(
         job_description=job_description,
         resume_text=resume_text,
         resume_analysis=analysis_obj,
+        interview_round=get_first_round(role_category, difficulty_level),
         transcript=[{"role": "assistant", "content": first_question}]
     )
     
@@ -165,7 +168,7 @@ async def submit_answer(
     db: Session = Depends(database.get_db),
     current_user: models.User = Depends(auth_utils.get_current_user)
 ):
-    from round_config import ROUND_DEFINITIONS, get_next_round, should_proceed_to_next_round
+    from core.round_config import get_round_config, get_next_round, should_proceed_to_next_round
     
     # 1. Fetch current session
     session = db.query(models.InterviewSession).filter(
@@ -179,8 +182,8 @@ async def submit_answer(
     session.transcript.append({"role": "user", "content": data.answer})
     session.questions_count += 1
     
-    # 3. Get current round configuration
-    current_round_config = ROUND_DEFINITIONS.get(session.current_round_number, ROUND_DEFINITIONS[1])
+    # 3. Get current round configuration by NAME (domain-aware)
+    current_round_config = get_round_config(session.interview_round)
     MIN_QUESTIONS = current_round_config["min_questions"]
     MAX_QUESTIONS = current_round_config["max_questions"]
     
@@ -254,21 +257,22 @@ async def submit_answer(
         session.round_scores[session.interview_round] = current_score
         
         # Check if candidate passed this round
-        passed_round = should_proceed_to_next_round(current_score, session.current_round_number)
+        passed_round = should_proceed_to_next_round(current_score, session.interview_round)
         
         if passed_round:
             # Check if there's a next round
-            next_round_number = get_next_round(
-                session.current_round_number,
+            # Get next round NAME for this domain
+            next_round_name = get_next_round(
+                session.interview_round,
                 session.role_category,
                 session.difficulty_level
             )
             
-            if next_round_number:
+            if next_round_name:
                 # Progress to next round
                 session.rounds_completed.append(session.interview_round)
-                session.current_round_number = next_round_number
-                session.interview_round = ROUND_DEFINITIONS[next_round_number]["name"]
+                session.current_round_number += 1  # increment index for tracking
+                session.interview_round = next_round_name
                 session.questions_count = 0  # Reset for new round
                 session.transcript = []  # Clear transcript for new round
                 
@@ -353,6 +357,8 @@ async def start_interview(
         interviewer_name=data.interviewer_name
     )
 
+    from core.round_config import get_first_round
+
     # 2. Save session to DB
     new_session = models.InterviewSession(
         user_id=current_user.id, 
@@ -363,6 +369,7 @@ async def start_interview(
         is_panel=int(data.is_panel),
         interviewer_name=data.interviewer_name,
         job_description=data.job_description,
+        interview_round=get_first_round(data.role_category, data.difficulty_level),
         transcript=[{"role": "assistant", "content": first_question}]
     )
     
