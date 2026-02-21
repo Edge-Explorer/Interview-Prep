@@ -6,21 +6,21 @@
 
 ---
 
-## 🛠 Tech Stack (Finalized)
+## 🛠 Tech Stack
 
 | Component | Technology | Status |
 | :--- | :--- | :--- |
-| **Backend** | FastAPI (Python 3.11+) | ✅ Live |
-| **Frontend** | React + Vite | ✅ Live |
-| **Database** | Supabase (PostgreSQL) | ✅ Live (migrated from Neon) |
-| **AI Model** | Gemini 2.0 Flash | ✅ Live |
-| **Agent Orchestration** | LangGraph + LangChain | ✅ Live |
-| **Search** | DuckDuckGo DDGS | ✅ Live |
+| **Backend** | FastAPI (Python 3.11+) | 🧪 Local Testing |
+| **Frontend** | React + Vite | 🧪 Local Testing |
+| **Database** | Neon PostgreSQL | ✅ Connected |
+| **AI Model** | Gemini 2.0 Flash | ✅ Working |
+| **Agent Orchestration** | LangGraph + LangChain | ✅ Working |
+| **Search** | DuckDuckGo DDGS | ✅ Working |
 | **Local AI (Architect)** | Fine-Tuned Llama-3-8B | ✅ Integrated |
-| **Migrations** | Alembic | ✅ Live |
-| **Hosting (Frontend)** | Vercel | ✅ Deployed |
-| **Hosting (Backend)** | AWS Lambda (SST) | ✅ Deployed |
-| **Auth** | JWT + Bcrypt double-hashing | ✅ Live |
+| **Migrations** | Alembic | ✅ Working |
+| **Hosting (Frontend)** | Vercel | 🔮 Planned |
+| **Hosting (Backend)** | AWS Lambda / Render | 🔮 Planned |
+| **Auth** | JWT + Bcrypt double-hashing | ✅ Working |
 
 ---
 
@@ -47,7 +47,7 @@
 - [x] Multi-round interview session state management.
 - [x] Answer evaluation with Vibe Analysis and STAR scoring.
 - [x] 7-Day Learning Roadmap generator for failed rounds.
-- [x] Supabase PostgreSQL integration with Row Level Security (RLS).
+- [x] Neon PostgreSQL integration (cloud-hosted, serverless).
 
 ---
 
@@ -70,7 +70,7 @@
 
 ---
 
-### ✅ Phase 4: Frontend Development (COMPLETED)
+### ✅ Phase 4: Frontend Development (COMPLETED — Local)
 - [x] React + Vite project setup with component structure.
 - [x] Modern landing page, login, and signup pages with premium UI.
 - [x] User authentication flow (Login, Signup, JWT token management).
@@ -78,16 +78,17 @@
 - [x] Live interview simulation chat interface.
 - [x] Resume and JD upload functionality.
 - [x] Post-round feedback and score display.
-- [x] Deployed to Vercel with environment variable configuration.
+- [ ] Deploy to Vercel (planned — not yet done).
 
 ---
 
-### ✅ Phase 5: Deployment & Security (COMPLETED)
-- [x] Backend deployed on AWS Lambda using SST framework.
-- [x] Frontend deployed on Vercel.
-- [x] Supabase RLS enabled on all database tables.
+### 🔮 Phase 5: Deployment & Security (NOT STARTED)
 - [x] API keys rotated after accidental exposure incident.
 - [x] All credentials removed from Git history and secured in `.env`.
+- [ ] Backend deployment on Render or AWS Lambda.
+- [ ] Frontend deployment on Vercel.
+- [ ] Configure production environment variables.
+- [ ] End-to-end testing on deployed stack.
 
 ---
 

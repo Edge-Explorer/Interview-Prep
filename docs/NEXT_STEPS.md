@@ -65,6 +65,5 @@ This document outlines the strategic roadmap and upcoming technical features for
 - [x] **Evergreen Perpetual Freshness (v2.2.2)** — Dynamic year calculation via `datetime`. No more hardcoded years.
 - [x] **Geographic Guardrails** — Location-aware `router_node` prevents cross-continental name collisions.
 - [x] **Domain Guard (v2.2)** — Prevents AI from forcing LeetCode rounds on non-tech companies.
-- [x] **Supabase RLS** — Row Level Security enabled on all database tables.
-- [x] **AWS Lambda Deployment** — Backend live on AWS via SST framework.
-- [x] **Vercel Frontend** — React app fully deployed and connected to production backend.
+- [x] **API Key Security** — Rotated exposed keys, cleaned Git history, secured in `.env`.
+- [x] **Neon PostgreSQL** — Cloud database connected and used for session + user storage.

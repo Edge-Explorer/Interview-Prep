@@ -60,14 +60,12 @@ This section is for tracking specific task completions and problem-solving histo
 | **Docs Reorganization** | v2.2.2 | ✅ Done | All docs moved to `/docs` folder. Nav bar added to README. |
 | **Mermaid Diagram Fix** | v2.2.2 | ✅ Done | Fixed GitHub parse error by quoting all special node labels. |
 | **Evergreen Perpetual Freshness** | v2.2.2 | ✅ Done | Dynamic `datetime` year anchoring — no more hardcoded years. |
-| **Supabase RLS Security** | v2.2.1 | ✅ Done | Row Level Security enabled on all DB tables. |
 | **Geographic Guardrails** | v2.2.1 | ✅ Done | Location-aware routing to stop name collisions. |
 | **Dynamic Domain Guard** | v2.2.1 | ✅ Done | Prevents forcing tech rounds on non-tech firms. |
-| **AWS Lambda Deployment** | v2.2.0 | ✅ Done | Backend live on AWS via SST framework. |
-| **Vercel Frontend Deployment** | v2.2.0 | ✅ Done | React app fully deployed and connected to production. |
+| **Public Deployment** | v3.0 (Planned) | 🔮 Not Started | Backend (Render/AWS Lambda) + Frontend (Vercel) — planned. |
 | **Agentic Intelligence Brain** | v2.1.0 | ✅ Done | Integrated LangGraph Researcher-Architect team. |
 | **Stealth Mode Logic** | v2.1.0 | ✅ Done | AI now reverse-engineers JD for private startups. |
-| **Supabase Migration** | v2.1.0 | ✅ Done | Migrated DB from Neon to Supabase PostgreSQL. |
+| **Neon Cloud PostgreSQL** | v2.1.0 | ✅ Done | Cloud-hosted database connected for sessions and users. |
 | **398 Company Profiles** | v2.1.0 | ✅ Done | Pre-loaded intelligence database across 12 domains. |
 | **ATS Resume Analysis** | v2.0.0 | ✅ Done | Gemini-powered PDF parsing and matching. |
 | **Persona System** | v1.5.0 | ✅ Done | Created Adinath & Veda simulation personalities. |

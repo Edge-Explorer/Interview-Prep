@@ -32,7 +32,7 @@ We don't just ask questions; we simulate **Human Personalities**:
 
 What makes this project unique in the industry is its **Three-Tier Intelligence Architecture**, designed to solve the "Knowledge Gap" in AI:
 
-1.  **The Curated Core**: Local access to **383 expert-verified company profiles** across 12 domains for zero-latency, reliable data.
+1.  **The Curated Core**: Local access to **398 expert-verified company profiles** across 12 domains for zero-latency, reliable data.
 2.  **The Agentic Discovery Loop (LangGraph)**: An autonomous multi-agent team that researches public companies in real-time.
     *   **Dynamic Domain Intelligence**: Automatically prevents "Role Forcing" (e.g., won't force LeetCode questions on a legal or clinical role).
     *   **Geographic Guardrails**: Prevents acronym collisions (e.g., identifying **MOC Cancer Care India** vs **Moffitt USA**) by localized search auditing.
