@@ -290,8 +290,114 @@ This creates an **"Infinite Practice Loop"** that adapts to exactly where you ar
 
 ---
 
+## 🎭 Section 8: The Persona Architecture — "The Secret Sauce"
+
+> *"We don't just ask questions. We simulate Human Personalities that test different parts of your brain."*
+
+The Coding Round is not delivered by a generic AI bot. It is delivered by one of two **distinct, deeply-characterized personas**, each designed to pressure-test a completely different dimension of your ability.
+
+---
+
+### 🔴 Adinath — "The Primal Sage"
+
+**Core Drive**: Find the exact boundary of your knowledge and push past it.
+
+**Personality Profile**:
+- Cold and direct. Zero emotional feedback.
+- Minimal acknowledgment of correct answers. He simply moves deeper.
+- Asks **"Why?"** after every answer, regardless of whether it's right or wrong.
+- Never compliments. Never encourages. Every silence is intentional pressure.
+
+**In the Coding Round, Adinath will:**
+- Read your Resume before the session and identify **"hooks"** — technologies or projects you've claimed expertise in.
+- Target those hooks first. If you wrote "Built a scalable API," he will ask you to code a Rate Limiter from scratch.
+- After you submit your code and explanation, he will **not just run the dry pass.** He will ask follow-up interrogation questions:
+  *"You said your solution is O(n). Walk me through the exact memory allocation when the input is 10,000 items."*
+- At Turn 6+, he enters **Pressure Mode**: He will challenge your own explanation against your own code. *"Line 4 of your code contradicts what you said in your explanation. Which one is correct?"*
+
+**Hint Policy**: ❌ **ZERO HINTS.** Total silence. You find out where you went wrong in the Post-Round Review.
+
+**Use Case**: Final Mock Interviews, Hard Difficulty, Pre-Placement Rehearsals.
+
+---
+
+### 🟢 Veda — "The Eternal Wisdom"
+
+**Core Drive**: Guide you to the solution through strategic questions that build your thinking from the ground up.
+
+**Personality Profile**:
+- Warm but precise. She acknowledges effort but never accepts mediocrity.
+- Focuses on the **"Big Picture" first** — she wants to see your architectural instinct before your code.
+- Does not ask "Why?" She asks **"What if?"** — pushing you to explore edge cases and alternate paths.
+- Mentors actively. She is interested in your growth, not your failure.
+
+**In the Coding Round, Veda will:**
+- Before you write a single line of code, ask you to **verbally explain your approach** in plain English. This forces you to think before you type.
+- If your approach is flawed, she gives a **Tier 1 Conceptual Nudge** immediately — she won't let you waste 10 minutes coding a broken solution.
+- After your explanation, she asks **"What's the bottleneck?"** before you ever submit. This develops the habit of complexity analysis.
+- If your Dry Run fails, she walks through the failure **collaboratively**: *"Let's trace this together — what is the value of `seen` after the third iteration?"*
+
+**Hint Policy**: ✅ **Full Tiered Hint System** (See Section 3). Progressive, specific, and never gives the answer directly.
+
+**Use Case**: Daily Practice, Weak Topic Drilling, Concept Building, Freshman Mode.
+
+---
+
+### ⚡ The Persona Decision Matrix
+
+| Scenario | Who takes over? | Why? |
+| :--- | :--- | :--- |
+| User selects "Hard" difficulty | **Adinath** | Maximum pressure. No safety net. |
+| User selects "Practice" mode | **Veda** | Guided, iterative learning. |
+| User fails Round 1 with Adinath | **Veda** (for retry) | Failure diagnosed by Adinath, healed by Veda. |
+| User's Learning Ledger shows "Edge Cases: Weak" | **Veda** | She targets the weak area with precision nudges. |
+| User has 7+ sessions with strong scores | **Adinath** (auto-upgraded) | The system escalates pressure as mastery grows. |
+
+---
+
+### 🧲 The "Resume Hooks" Mechanism (Planned)
+
+Both personas will, at the start of the session, make a **silent pass over the user's resume** and JD. They extract "hooks" — claimed skills or projects — and build their question strategy around them.
+
+**Example:**
+> Resume claims: *"Implemented a Redis caching layer that reduced API response time by 40%."*
+
+- **Adinath's Hook**: *"Write me a simple LRU Cache from scratch. No library calls."*
+- **Veda's Hook**: *"Before we code anything — what's the difference between an LRU and LFU Cache? Which one did you use and why?"*
+
+The hooks ensure **no two sessions are identical** and no user can "rehearse" their way through a fixed question bank.
+
+---
+
+## 🗓️ Section 9: Implementation Timeline (Next 2–3 Days)
+
+This is the planned execution order for shipping the Coding Round Intelligence feature.
+
+### **Day 1 — The Backend Brain**
+- [ ] Build the **Problem Spec Generator** prompt in `gemini_service.py`. The AI takes a company name + round context and outputs a structured JSON problem.
+- [ ] Build the **AI Dry Run prompt** — the core Gemini call that reads `(code + explanation)` and outputs a `dry_run_result` JSON.
+- [ ] Create a new FastAPI endpoint: `POST /interview/coding-submit` that accepts code + explanation and returns the Dry Run result.
+- [ ] Create the **Learning Ledger** endpoint: `POST /interview/coding-log` that saves the full interaction record to the user's session in the database.
+
+### **Day 2 — The Hint Engine + Personas**
+- [ ] Build the **Tiered Hint Generator** — a function that takes the `dry_run_result.critical_flaw` and generates the appropriate tier-level nudge (not a generic hint, but a targeted one based on the flaw type).
+- [ ] Wire **Adinath's Pressure Mode** into the prompt: If `chat_history > 6` turns, inject the "contradict your own explanation" challenge.
+- [ ] Wire **Veda's Verbalization Gate**: Before the Coding editor opens, Veda requires the user to type out their plain-English approach.
+- [ ] Build the **"Resume Hook" extractor**: A pre-session step that parses the user's resume and identifies 2-3 "targets" for interrogation.
+
+### **Day 3 — The Frontend & Wiring**
+- [ ] Build the **Whiteboard UI**: A clean split-pane component (Code Editor left, Explanation textarea right).
+- [ ] Add the **"Submit for Review"** button that calls `/interview/coding-submit`.
+- [ ] Build the **Persona Selector toggle**: "Simulation Mode (Adinath)" vs. "Mentorship Mode (Veda)."
+- [ ] Render the **Dry Run feedback panel**: Shows Pass/Fail, Complexity detected, and the next hint (if in Veda mode).
+- [ ] Render the **Post-Round Code Review Report**: Full breakdown of all attempts, hints used, final score, and AI notes.
+
+---
+
 ## ✍️ Author Notes
 
 > This design avoids sandbox code execution entirely, which eliminates infrastructure costs and security risks of running user-submitted code on a server. The AI's ability to reason about code logic is more than sufficient for interview preparation — and arguably *better* at catching conceptual flaws than a compiler ever could.
+
+> The Persona Architecture is what separates this platform from every other interview prep tool. LeetCode gives you problems. We give you a **Personality** that thinks, challenges, and adapts to exactly who you are.
 
 **Karan Shelar** — Architect of the Intelligent Interview System.
