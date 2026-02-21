@@ -41,7 +41,11 @@ This section is for tracking specific task completions and problem-solving histo
 - **Fixed** Memory Integrity: Recovered and cleaned `discoveries.json` after accidental malformed JSON writing; added a 98% fuzzy threshold for discovery memory retrieval.
 - **Implemented** Audit Status: Added `ACCEPTED/REJECTED` status tracking in the Audit Log for every source link.
 
-- **Implemented** Evergreen Perpetual Freshness (v2.2.2): Replaced hardcoded years (2025/2026) with dynamic temporal logic that auto-calculates current and future years for research queries. This ensures the system stays relevant indefinitely.
+- **Implemented** Evergreen Perpetual Freshness (v2.2.2): Replaced hardcoded years (2025/2026) with dynamic temporal logic that auto-calculates current and future years for research queries.
+- **Fixed** Mermaid Diagram Rendering Error: Quoted all special-character labels in the README architecture diagram so it renders correctly on GitHub (was throwing 'Parse error on line 10').
+- **Refactored** Documentation Structure: Moved all loose root-level markdown files into a dedicated `/docs` folder using `git mv` (preserving history). Created a `docs/README.md` navigation index and a quick-link bar in the main README.
+- **Designed** Coding Round Intelligence System (v3.0 Roadmap): Authored full 9-section blueprint (`CODING_ROUND_DESIGN.md`) covering Whiteboard Mode, AI Dry Run, Tiered Hints, JSON Learning Ledger, and Persona Architecture (Adinath vs. Veda).
+- **Tested** Autonomous Discovery: Validated with companies including WABRIC, Aminuteman Technologies, and Shastra Solutions. Confirmed audit logs, source filtering, and confidence scores are working correctly.
 
 ### **Abhiraj**
 - *Starting contributions today (tracking development from this point forward).*
@@ -52,14 +56,21 @@ This section is for tracking specific task completions and problem-solving histo
 
 | Feature / Update | Version | Status | Key Highlights |
 | :--- | :--- | :--- | :--- |
-| **Geographic Guardrails** | v2.2.1 | Done | Location-aware routing to stop name collisions. |
-| **Dynamic Domain Guard** | v2.2.1 | Done | Prevents forcing tech rounds on non-tech firms. |
-| **Agentic Intelligence Brain** | v2.1.0 | Done | Integrated LangGraph Researcher-Architect team. |
-| **Stealth Mode Logic** | v2.1.0 | Done | AI now reverse-engineers JD for private startups. |
-| **Neon Cloud Sync** | v2.1.0 | Done | Migrated DB to Serverless PostgreSQL (Neon). |
-| **383+ Company Profiles** | v2.1.0 | Done | Massive pre-loaded intelligence database. |
-| **ATS Resume Analysis** | v2.0.0 | Done | Gemini-powered PDF parsing and matching. |
-| **Persona System** | v1.5.0 | Done | Created Adinath & Veda simulation personalities. |
+| **Coding Round Intelligence Design** | v3.0 (Planned) | 🚧 In Progress | Whiteboard Mode, AI Dry Run, Tiered Hints, Learning Ledger. |
+| **Docs Reorganization** | v2.2.2 | ✅ Done | All docs moved to `/docs` folder. Nav bar added to README. |
+| **Mermaid Diagram Fix** | v2.2.2 | ✅ Done | Fixed GitHub parse error by quoting all special node labels. |
+| **Evergreen Perpetual Freshness** | v2.2.2 | ✅ Done | Dynamic `datetime` year anchoring — no more hardcoded years. |
+| **Supabase RLS Security** | v2.2.1 | ✅ Done | Row Level Security enabled on all DB tables. |
+| **Geographic Guardrails** | v2.2.1 | ✅ Done | Location-aware routing to stop name collisions. |
+| **Dynamic Domain Guard** | v2.2.1 | ✅ Done | Prevents forcing tech rounds on non-tech firms. |
+| **AWS Lambda Deployment** | v2.2.0 | ✅ Done | Backend live on AWS via SST framework. |
+| **Vercel Frontend Deployment** | v2.2.0 | ✅ Done | React app fully deployed and connected to production. |
+| **Agentic Intelligence Brain** | v2.1.0 | ✅ Done | Integrated LangGraph Researcher-Architect team. |
+| **Stealth Mode Logic** | v2.1.0 | ✅ Done | AI now reverse-engineers JD for private startups. |
+| **Supabase Migration** | v2.1.0 | ✅ Done | Migrated DB from Neon to Supabase PostgreSQL. |
+| **398 Company Profiles** | v2.1.0 | ✅ Done | Pre-loaded intelligence database across 12 domains. |
+| **ATS Resume Analysis** | v2.0.0 | ✅ Done | Gemini-powered PDF parsing and matching. |
+| **Persona System** | v1.5.0 | ✅ Done | Created Adinath & Veda simulation personalities. |
 
 ---
 

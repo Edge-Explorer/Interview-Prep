@@ -50,5 +50,12 @@ Failure is transformed into an opportunity for growth.
 
 ---
 
-## 🛑 Loophole Warning (Developer Note)
-*The system architect has identified a critical loophole in the current flow. Implementation of the above features is paused until the loophole is addressed.*
+## ✅ Implementation Status Note
+
+> **Previously**: This document contained a "Loophole Warning" blocking implementation of the Coding Round system.
+>
+> **Resolved (February 2026)**: The loophole has been addressed. The full Coding Round solution — including **Whiteboard Mode**, **AI Dry Run**, **Tiered Hint System**, **JSON Learning Ledger**, and the **Persona Architecture** — is now designed and documented in:
+>
+> 📄 [`CODING_ROUND_DESIGN.md`](./CODING_ROUND_DESIGN.md)
+>
+> Implementation begins in the next sprint (Phase 6).
