@@ -1420,5 +1420,134 @@
             "KEPT: Tax, Audit & Business Consulting | Grant Thornton Bharat",
             "KEPT: Insights | Grant Thornton Bharat"
         ]
+    },
+    {
+        "company_name": "BDO India",
+        "interview_intelligence_profile": {
+            "name": "BDO India",
+            "industry": "Consulting",
+            "size": "Large (Part of BDO International)",
+            "interview_style": "BDO India, while part of a global accountancy network, is entering the AI space through a startup venture. Interviews will likely assess both technical skills relevant to the AI role and consulting acumen. Expect a mix of technical deep dives and behavioral questions to gauge cultural fit and problem-solving abilities.",
+            "difficulty_level": "Medium to High",
+            "cultural_values": [
+                "Integrity",
+                "Collaboration",
+                "Innovation",
+                "Client Focus",
+                "Excellence"
+            ],
+            "interview_rounds": {
+                "Technical Round (AI Focus)": {
+                    "focus": "Assessing the candidate's technical skills in AI-related areas like Machine Learning, Deep Learning, Natural Language Processing, and relevant programming languages (Python, R).",
+                    "common_topics": [
+                        "Machine Learning algorithms (Regression, Classification, Clustering)",
+                        "Deep Learning architectures (CNNs, RNNs, Transformers)",
+                        "Natural Language Processing techniques (Sentiment Analysis, Text Summarization)",
+                        "Python libraries (Scikit-learn, TensorFlow, PyTorch)",
+                        "Model evaluation metrics (Accuracy, Precision, Recall, F1-score)"
+                    ],
+                    "style": "Technical discussion involving algorithms, data structures, and practical AI implementation. Expect to explain your approach, code snippets (if applicable), and troubleshoot potential issues.",
+                    "tips": "Prepare to explain your understanding of fundamental AI concepts and be ready to discuss past projects involving AI development. Focus on demonstrating your practical knowledge and problem-solving skills. Review relevant Python libraries and be prepared to discuss your experience with them."
+                },
+                "System Design (AI Application)": {
+                    "focus": "Evaluating the candidate's ability to design and architect AI-powered systems that solve real-world problems. This includes understanding scalability, performance, and integration aspects.",
+                    "common_questions": [
+                        "Design an AI-powered recommendation system for e-commerce.",
+                        "How would you design a fraud detection system using Machine Learning?",
+                        "How would you architect an AI-based chatbot for customer support?",
+                        "Discuss the trade-offs between different architectural choices.",
+                        "How do you ensure the scalability and performance of your AI system?"
+                    ],
+                    "style": "Problem-solving discussion focused on high-level design, system architecture, and considerations for building scalable and efficient AI systems."
+                },
+                "Consulting/Business Acumen Round": {
+                    "focus": "Assessing the candidate's understanding of business problems, ability to structure solutions, and communication skills. This round will evaluate how the candidate can apply AI to solve business challenges.",
+                    "common_topics": [
+                        "Case studies related to AI implementation in various industries",
+                        "Business strategy and market analysis",
+                        "Understanding client needs and translating them into AI solutions",
+                        "Data privacy and ethical considerations in AI",
+                        "Return on Investment (ROI) analysis of AI projects"
+                    ],
+                    "style": "Case-based interviews, discussions on industry trends, and behavioral questions to assess problem-solving and communication skills. Prepare to think critically and present your ideas clearly."
+                },
+                "Behavioral Round": {
+                    "focus": "Evaluating the candidate's cultural fit, teamwork skills, leadership potential, and problem-solving approach. This round helps determine if the candidate aligns with BDO India's values and can thrive in a collaborative environment.",
+                    "common_topics": [
+                        "Tell me about a time you faced a challenging technical problem and how you solved it.",
+                        "Describe a situation where you had to work with a difficult team member.",
+                        "How do you handle stress and pressure in a fast-paced environment?",
+                        "What are your career aspirations and how does this role align with them?",
+                        "Explain a time you had to adapt to changing priorities."
+                    ],
+                    "style": "Behavioral interview focusing on past experiences and how the candidate handled various situations. Use the STAR method (Situation, Task, Action, Result) to structure your answers."
+                }
+            },
+            "red_flags": [
+                "Lack of foundational knowledge in AI/ML concepts",
+                "Inability to articulate problem-solving approaches",
+                "Poor communication skills",
+                "Lack of teamwork skills",
+                "Unrealistic salary expectations"
+            ],
+            "average_process_duration": "2-4 weeks",
+            "interview_count": "3-5 interviews",
+            "role_company_alignment": "This tech role within an AI startup backed by BDO India will focus on leveraging AI to provide innovative solutions for BDO's clients. The AI startup aims to enhance BDO's consulting services by integrating cutting-edge AI technologies into their existing offerings, thus aligning with BDO's goal of providing comprehensive business solutions.",
+            "confidence_score": 135,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "BDO USA, P.C. | Company Reviews | Vault.com",
+                    "url": "https://legacy.vault.com/company-profiles/accounting/bdo-usa/company-reviews",
+                    "content": "Some positions may involve panel interviews with multiple BDO team members, providing a comprehensive evaluation from different perspectives."
+                },
+                {
+                    "title": "BDO USA, P.C. | Employee Reviews | Vault.com",
+                    "url": "https://legacy.vault.com/company-profiles/accounting/bdo-usa/employee-reviews",
+                    "content": "Uppers Downers Advice to Candidates Interview Process Review Sample Interview Questions Salary & Benefits Review Career Development Review Quality of ..."
+                },
+                {
+                    "title": "Chemical Parks: Strengthening India\u2019s chemical manufacturing",
+                    "url": "https://www.indianchemicalnews.com/policy/chemical-parks-strengthening-indias-chemical-manufacturing-29298",
+                    "content": "India \u2019 s chemical industry is a cornerstone of the manufacturing ecosystem, supplying critical inputs to key sectors such as agriculture ..."
+                },
+                {
+                    "title": "[RECENT] India HRMS Market Size, Trends, Growth and Forecast 2031",
+                    "url": "https://www.techsciresearch.com/report/india-hrms-market/16639.html",
+                    "content": "India HRMS Market was valued at USD 870.46 Million in 2025 and is expected to reach USD 2271.52 Million by 2031 with a CAGR of 17.34% during the ..."
+                },
+                {
+                    "title": "[RECENT] 100 Best CA Firms in India (2026)",
+                    "url": "https://russoortho.com/article/100-best-ca-firms-in-india",
+                    "content": "BDO International stands at the fifth rank for providing the largest accountancy network in the world.It is a worldwide professional services network ..."
+                },
+                {
+                    "title": "[RECENT] Top News Headlines of January 15, 2026 | Ward housing Colaba",
+                    "url": "https://indianexpress.com/article/india/latest-news-today-live-updates-world-india-cities-news-delhi-mumbai-bengaluru-01-15-2026-news-headlines-10474319/",
+                    "content": "... that voting ink could be wiped off during the Brihanmumbai Municipal Corporation polls, State Election Commissioner Dinesh Waghmare in an interview ..."
+                },
+                {
+                    "title": "[RECENT] 1500+ Associate Interview Questions & Answers (Updated",
+                    "url": "https://www.ambitionbox.com/profiles/associate/interview-questions",
+                    "content": "Online shopping offers convenience and variety, while offline shopping provides a tactile experience and immediate gratification."
+                },
+                {
+                    "title": "[RECENT] Life at CohnReznick: Culture, Salary, Reviews, Interviews &",
+                    "url": "https://www.ambitionbox.com/overview/cohnreznick-overview",
+                    "content": "CohnReznick is rated 3.9 out of 5 stars on AmbitionBox, based on 245 company reviews.This rating reflects an average employee experience , indicating ..."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'Consulting'. Reasoning: BDO is a well-known accounting and consulting network. The name 'BDO India' clearly indicates its presence in India. Given the context of a tech role search, researching interview experiences is a good starting point, specifying the location and timeframe to get recent, relevant results.",
+            "KEPT: BDO International mentioned. Assumed to be BDO India due to rank in India (implicit link).",
+            "REJECTED: BDO USA - Wrong Location",
+            "REJECTED: BDO USA - Wrong Location",
+            "REJECTED: Chemical Parks - No BDO India Mention",
+            "REJECTED: India HRMS Market - No BDO India Mention",
+            "REJECTED: Top News - No BDO India Mention",
+            "REJECTED: Associate Interview Questions - Generic Article - No Company Mention",
+            "REJECTED: CohnReznick - Different Company"
+        ]
     }
 ]

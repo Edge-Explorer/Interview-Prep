@@ -7,10 +7,10 @@
 Last Updated: 2026-02-21
 Database Version: Agentic-Live
 ----------------------------------------------
-> Engineering & Tech        : 124 companies
+> Engineering & Tech        : 125 companies
 > Social Services           :  29 companies
+> Business & Management     :  27 companies
 > Science & Research        :  26 companies
-> Business & Management     :  25 companies
 > Healthcare & Medical      :  24 companies
 > Legal                     :  22 companies
 > Creative & Design         :  22 companies
@@ -21,6 +21,6 @@ Database Version: Agentic-Live
 > Hospitality & Tourism     :   8 companies
 > Other/Uncategorized           :  39 companies
 ----------------------------------------------
-* TOTAL UNIQUE COMPANIES   : 398
+* TOTAL UNIQUE COMPANIES   : 401
 ==============================================
 ```
