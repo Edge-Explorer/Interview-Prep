@@ -11,20 +11,22 @@ PROFILES_PATH = os.path.join(DATA_DIR, 'company_profiles.json')
 DISCOVERIES_PATH = os.path.join(DATA_DIR, 'discoveries.json')
 REPORT_PATH = os.path.join(DATA_DIR, 'DOMAIN_REPORT.md')
 
-# Domain Keywords Mapping (Refined for exact coverage)
+# Domain Keywords Mapping (Priority-ordered: more specific domains first)
 DOMAIN_MAPPER = {
+    # ⚡ Finance must come BEFORE Business/Management to catch 'Accounting/Consulting' correctly
+    "Finance & Accounting": ["finance", "accounting", "audit", "banking", "fintech", "insurance", "investment", "trading", "crypto", "payments", "tax", "chartered accountant", "ca firm"],
+    "Healthcare & Medical": ["healthcare", "medical", "pharmaceutical", "biotech", "hospital", "health", "wellness", "dental", "pharma", "diagnostics", "clinical"],
+    "Legal": ["legal", "law", "attorney", "compliance", "regulatory", "e-discovery", "contract automation"],
     "Engineering & Tech": ["technology", "software", "ai", "machine learning", "cybersecurity", "hardware", "internet", "e-commerce", "semiconductor", "automotive", "aerospace", "embedded", "cloud", "saas", "it services", "it consulting"],
-    "Business & Management": ["management", "strategy", "hr", "administrative", "business services", "logistics", "supply chain", "consulting"],
+    "Education & Training": ["education", "training", "edtech", "university", "college", "school", "teaching", "e-learning", "lms"],
+    "Science & Research": ["science", "research", "scientific", "laboratory", "rd", "physics", "biology", "chemistry"],
     "Construction & Trades": ["construction", "architecture", "civil", "trades", "real estate", "infrastructure", "building"],
     "Social Services": ["non-profit", "npo", "social work", "community", "public service", "foundation", "government"],
-    "Finance & Accounting": ["finance", "banking", "fintech", "accounting", "audit", "insurance", "investment", "trading", "crypto", "payments"],
-    "Healthcare & Medical": ["healthcare", "medical", "pharmaceutical", "biotech", "hospital", "health", "wellness", "dental", "pharma", "diagnostics"],
-    "Legal": ["legal", "law", "attorney", "compliance", "regulatory", "e-discovery", "contract automation"],
-    "Science & Research": ["science", "research", "scientific", "laboratory", "rd", "physics", "biology", "chemistry"],
+    "Creative & Design": ["creative", "design", "media", "production", "entertainment", "fashion", "video production"],
     "Hospitality & Tourism": ["hospitality", "tourism", "hotel", "travel", "restaurant", "events", "leisure", "aviation"],
-    "Creative & Design": ["creative", "design", "media", "production", "entertainment", "fashion", "architecture (design)", "video production"],
-    "Education & Training": ["education", "training", "edtech", "university", "college", "school", "teaching", "e-learning", "lms"],
-    "Sales & Marketing": ["sales", "marketing", "retail", "consumer goods", "advertising", "market research", "public opinion", "digital transformation", "data services", "audience measurement"]
+    "Sales & Marketing": ["sales", "marketing", "retail", "consumer goods", "advertising", "market research", "public opinion", "digital transformation", "data services", "audience measurement"],
+    # ⚠️ Business & Management is LAST — 'consulting' alone is too broad; specific domains catch first
+    "Business & Management": ["management", "strategy", "hr", "administrative", "business services", "logistics", "supply chain", "consulting"],
 }
 
 def categorize_industry(industry_str):

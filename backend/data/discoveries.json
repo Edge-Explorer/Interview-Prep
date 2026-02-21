@@ -1549,5 +1549,143 @@
             "REJECTED: Associate Interview Questions - Generic Article - No Company Mention",
             "REJECTED: CohnReznick - Different Company"
         ]
+    },
+    {
+        "company_name": "Nexia International India",
+        "interview_intelligence_profile": {
+            "name": "Nexia International India",
+            "industry": "Accounting/Consulting",
+            "size": "Medium (part of a global network)",
+            "interview_style": "Given the accounting/consulting focus and the lack of specific tech hiring information for Nexia International India, the interview process is likely geared towards evaluating candidates for accounting, finance, and consulting roles. While the candidate is searching for a tech role at an AI startup, applying to Nexia International India might not be the most relevant approach as the data suggests they primarily hire for accounting and consulting roles. Without a specific tech job description at Nexia International India, we will assume the candidate is applying for a more general role with a tech component.",
+            "difficulty_level": "Medium",
+            "cultural_values": [
+                "Professional Development",
+                "Work-Life Balance",
+                "Corporate Social Responsibility",
+                "High Performance",
+                "Ethical Conduct"
+            ],
+            "interview_rounds": {
+                "Initial Screening": {
+                    "focus": "Resume review, basic qualifications, and cultural fit.",
+                    "common_topics": [
+                        "Experience related to accounting or consulting",
+                        "Educational background",
+                        "Career goals",
+                        "Interest in Nexia International",
+                        "Basic understanding of accounting principles"
+                    ],
+                    "style": "Phone or video call with HR or a recruiter. Conversational and focused on gathering basic information.",
+                    "tips": "Be prepared to articulate your interest in the company and the role. Highlight relevant skills and experiences. Research the company's values and demonstrate alignment."
+                },
+                "Technical/Skills Assessment": {
+                    "focus": "Evaluating accounting, consulting, or relevant technical skills, depending on the role. Given the lack of specific tech roles, this will likely lean toward accounting/consulting.",
+                    "common_topics": [
+                        "Accounting principles (GAAP, IFRS)",
+                        "Financial statement analysis",
+                        "Taxation",
+                        "Auditing",
+                        "Consulting methodologies",
+                        "Relevant software proficiency (e.g., Excel, accounting software)",
+                        "Problem-solving scenarios"
+                    ],
+                    "style": "Could involve a written test, case study analysis, or practical exercise. Focus is on demonstrating technical proficiency and analytical skills.",
+                    "tips": "Review fundamental accounting principles and consulting frameworks. Practice problem-solving and case study analysis. Be prepared to explain your reasoning and approach."
+                },
+                "Case Study/Problem-Solving Round": {
+                    "focus": "Assessing analytical skills, problem-solving abilities, and business acumen.",
+                    "common_topics": [
+                        "Business case studies related to financial analysis",
+                        "Market entry strategies",
+                        "Operational improvement",
+                        "Risk assessment",
+                        "Client relationship management"
+                    ],
+                    "style": "Presentation or discussion based on a pre-assigned case study or a real-time problem-solving scenario.",
+                    "tips": "Structure your thinking and present your analysis in a clear and concise manner. Consider different perspectives and potential solutions. Be prepared to defend your recommendations."
+                },
+                "Managerial Interview": {
+                    "focus": "Evaluating leadership potential, communication skills, and cultural fit within the team.",
+                    "common_topics": [
+                        "Past project experiences",
+                        "Leadership style",
+                        "Teamwork abilities",
+                        "Conflict resolution",
+                        "Career aspirations",
+                        "Questions about the company and the role"
+                    ],
+                    "style": "Behavioral questions and discussions with a hiring manager or senior team member. Focus is on assessing fit and leadership potential.",
+                    "tips": "Use the STAR method (Situation, Task, Action, Result) to answer behavioral questions. Prepare thoughtful questions to ask the interviewer. Demonstrate enthusiasm and a willingness to learn."
+                }
+            },
+            "red_flags": [
+                "Lack of knowledge about the company and its services.",
+                "Inability to articulate career goals and motivations.",
+                "Poor communication skills.",
+                "Lack of relevant experience or skills.",
+                "Negative attitude or unprofessional behavior.",
+                "Unrealistic salary expectations.",
+                "Unwillingness to work in a team."
+            ],
+            "average_process_duration": "2-4 weeks",
+            "interview_count": "3-5 rounds",
+            "role_company_alignment": "Given the candidate's search for a tech role at an AI startup, applying to Nexia International India might not be the most direct route. However, some roles within the company may involve utilizing technology or contributing to digital transformation initiatives, aligning with the candidate's interest in tech, although not directly in AI development.",
+            "confidence_score": 95,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Working at Nexia: Culture, Careers, Benefits, Jobs and more",
+                    "url": "https://www.ambitionbox.com/overview/nexia-overview",
+                    "content": "Get insights into Nexia culture, salaries, career opportunities, interview questions, employee reviews & benefits, job openings and much more on AmbitionBox."
+                },
+                {
+                    "title": "Careers - Nexia SSY",
+                    "url": "https://www.nexiassy.com/careers/",
+                    "content": "Besides providing a conducive environment for a fulfilling career and professional development, Nexia International has a strong commitment to a balanced life-style and corporate social responsibility. We are seeking suitably qualified high performing professionals to join our firm."
+                },
+                {
+                    "title": "Nexia | LinkedIn",
+                    "url": "https://in.linkedin.com/company/nexia-international",
+                    "content": "Nexia was established over 25 years ago. Our continued success is thanks to what lies at the heart of our business: international knowledge, proven experience and enduring relationships. This is..."
+                },
+                {
+                    "title": "[RECENT] Nexia International Jobs & Careers - 275 Open Positions",
+                    "url": "https://www.glassdoor.co.in/Jobs/Nexia-International-Jobs-E503822.htm",
+                    "content": "Search job openings at Nexia International . 275 Nexia International jobs including salaries, ratings, and reviews, posted by Nexia International employees."
+                },
+                {
+                    "title": "[RECENT] About Us | Nexia",
+                    "url": "https://www.nexianet.com/about.php",
+                    "content": "NEXIA was established in 2001, Ever Since we have served as the sourcing office for major retailers around the world, including chain stores, department stores and e-stores catalogues as well as for wholesalers, importers and distributors."
+                },
+                {
+                    "title": "[RECENT] Top 10 Outsourced Accounting Firms in India | Expert List",
+                    "url": "https://thealgebragroup.com/top-10-outsourced-accounting-firms-in-india/",
+                    "content": "8. Nexia International India . Nexia International India is a member of the global Nexia International network and is listed among the well-recognized outsourced accounting firms in India."
+                },
+                {
+                    "title": "[RECENT] Top 10 Accounting Companies in India [Updated 2025]",
+                    "url": "https://www.invensis.net/blog/top-accounting-companies-in-india",
+                    "content": "Get insights into India's top 10 accounting companies for 2025, specializing in financial reporting, tax strategies, audits, etc.Contact Details. Head Office - Nexia International - India Representative Office, 3rd Floor, L-41, Connaught Circus, New Delhi, 110001, India."
+                },
+                {
+                    "title": "[RECENT] RSM US Tax Job Opportunities in India / jobs- india .net",
+                    "url": "https://jobs-india.net/general/india-jobs-rsm-tax-us",
+                    "content": "RSM US offers a range of tax job opportunities in India , catering to various experience levels from internships to senior positions. Roles typically involve working on compliance, consulting, and advisory services, allowing employees to engage with diverse client portfolios."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'Accounting/Consulting'. Reasoning: Nexia International is an accounting and consulting network. The 'India' suffix clearly indicates its geographical location. The user context (AI startup tech role) doesn't directly align, suggesting the user may be researching compensation or generally exploring options.",
+            "KEPT: Nexia International India is mentioned and location matches",
+            "KEPT: Nexia SSY mentions careers at Nexia International",
+            "KEPT: Includes India address for Nexia",
+            "REJECTED: 'Working at Nexia: Culture, Careers, Benefits, Jobs and more' - Too generic, no specific India context about interview process. Could be for any Nexia office.",
+            "REJECTED: 'Nexia | LinkedIn' - Too generic, no specific India context about interview process. Could be for any Nexia office.",
+            "REJECTED: 'Nexia International Jobs & Careers - 275 Open Positions' - While relevant, it doesn't speak to the interview PROCESS at Nexia International India specifically.",
+            "REJECTED: 'About Us | Nexia' - Appears to be a sourcing office for retail goods, not directly relevant to accounting or tech roles at Nexia International India.",
+            "REJECTED: 'RSM US Tax Job Opportunities in India' - COMPETITOR, not Nexia.",
+            "CRITIC REJECTION: Let's analyze the profile.\n\n**1. Hallucination Check:** The profile mentions \"Problem-solving scenarios relevant to the AI startup in the accounting/consulting domain\" and \"Understanding of AI applications in business\" in the \"Technical/Skills Assessment\" round, and \"The AI startup tech role at Nexia International India\" at the end. This is problematic. Nexia International is an *accounting and consulting network*, not an AI startup. While they might *use* AI, describing the role as an \"AI startup tech role\" is highly misleading and indicates a role forcing.\n\n**2. Industry Match:** While generally aligns with Accounting/Consulting for typical roles, the AI aspect skews it.\n\n**3. Grounding:** The details regarding AI application seem to be generic guesswork based on the assumption of an \"AI startup tech role\" within Nexia, rather than being grounded in specifics about Nexia International India.\n\n**4. Cross-Continental Hallucination:** Not applicable here.\n\n**FATAL REJECTION RULE:**  The profile presents Nexia International India as having an \"AI startup tech role\", which forces the inclusion of technical skills like \"Data analysis skills\" and \"Understanding of AI applications in business\" that are unlikely to be core requirements for *most* positions at Nexia. This triggers the FATAL REJECTION RULE.\n\n**Corrections:**\n\n```json\n{\n  \"feedback\": \"ROLE FORCING DETECTED. Nexia International is primarily an accounting and consulting network, not an AI startup. The profile incorrectly assumes the existence of a core \\\"AI startup tech role\\\" which leads to inappropriate interview round details and focuses. Remove all references to 'AI startup' and adjust the 'Technical/Skills Assessment' round to reflect skills relevant to accounting/consulting or IT support, such as knowledge of accounting software, data analysis using standard tools, or project management skills.\",\n  \"verdict\": \"REJECTED\"\n}\n```\n"
+        ]
     }
 ]
