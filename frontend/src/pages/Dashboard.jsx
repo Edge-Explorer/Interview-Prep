@@ -48,6 +48,8 @@ function Dashboard() {
     const [showPricing, setShowPricing] = useState(false);
     const [stats, setStats] = useState({ total_interviews: 0, avg_score: 0.0 });
     const [availableVoices, setAvailableVoices] = useState([]);
+    const [companyIntel, setCompanyIntel] = useState(null);
+    const [showBriefing, setShowBriefing] = useState(false);
 
 
 
@@ -248,10 +250,19 @@ function Dashboard() {
             setMessages([{ role: 'assistant', content: res.data.first_question }]);
             setQuestionCount(1);
 
+            // NEW: Set Intelligence Data
+            if (res.data.company_intelligence) {
+                setCompanyIntel(res.data.company_intelligence);
+            }
+
             clearInterval(interval);
             setPreparingStep(4);
             setTimeout(() => {
-                setStep('meeting');
+                if (res.data.company_intelligence) {
+                    setShowBriefing(true);
+                } else {
+                    setStep('meeting');
+                }
                 setLoading(false);
             }, 1000);
         } catch (err) {
@@ -553,6 +564,58 @@ function Dashboard() {
                                 <span className="step-text">{s.text}</span>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    if (showBriefing && companyIntel) {
+        return (
+            <div className="briefing-overlay">
+                <div className="briefing-card glass-card">
+                    <div className="briefing-header">
+                        <div className="intel-badge">🚀 INTELLIGENCE BRIEFING</div>
+                        <h2>{companyIntel.name || sessionData.target_company}</h2>
+                        <p>{companyIntel.industry} • {companyIntel.size} company</p>
+                    </div>
+
+                    <div className="briefing-body">
+                        <div className="insight-section">
+                            <label>EXPERT RECONCILIATION</label>
+                            <p className="reconciliation-text">
+                                {companyIntel.intelligence_reconciliation || "We've synthesized this session based on your profile and target company dna."}
+                            </p>
+                        </div>
+
+                        <div className="briefing-grid">
+                            <div className="briefing-stat">
+                                <label>INTERVIEW STYLE</label>
+                                <span>{companyIntel.interview_style}</span>
+                            </div>
+                            <div className="briefing-stat">
+                                <label>DIFFICULTY</label>
+                                <span>{companyIntel.difficulty_level}</span>
+                            </div>
+                        </div>
+
+                        <div className="rounds-preview">
+                            <label>INTENDED ROUND SEQUENCE</label>
+                            <div className="rounds-list">
+                                {Object.keys(companyIntel.interview_rounds || {}).map((r, idx) => (
+                                    <div key={r} className={`round-item ${r === currentRound ? 'active' : ''}`}>
+                                        <span className="round-num">{idx + 1}</span>
+                                        <span className="round-name">{r}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="briefing-footer">
+                        <button className="primary-btn shimmer" onClick={() => { setShowBriefing(false); setStep('meeting'); }}>
+                            ENTER MEETING ROOM
+                        </button>
                     </div>
                 </div>
             </div>

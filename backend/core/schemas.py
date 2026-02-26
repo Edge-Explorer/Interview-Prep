@@ -16,6 +16,7 @@ class InterviewResponse(BaseModel):
     role_category: str
     sub_role: str
     first_question: str
+    company_intelligence: Optional[dict] = None
     created_at: datetime
 
     class Config:
