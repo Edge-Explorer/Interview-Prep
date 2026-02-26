@@ -465,7 +465,21 @@ class IntelligenceService:
         return workflow.compile()
 
     async def get_intelligence(self, company_name: str, job_description: str = None) -> Dict[str, Any]:
-        """Entry point for the backend to get company intelligence"""
+        """
+        Entry point for the backend to get company intelligence.
+        DOMAIN-AWARE: Cross-references industry to prevent collisions.
+        """
+        # 0. Identify target industry from JD if available to prevent collisions
+        target_industry = None
+        if job_description:
+            try:
+                industry_prompt = f"Identify the industry for this Job Description in 1 word (e.g. Tech, Healthcare, Finance, Legal, Manufacturing, Retail). JD: {job_description[:500]}"
+                target_industry = await gemini_service.generate_text(industry_prompt)
+                target_industry = target_industry.strip().replace(".", "")
+                print(f"DOMAIN-GUARD: Detected target industry as '{target_industry}'")
+            except:
+                pass
+
         # 1. First check the curated database
         intel_service = get_company_intelligence()
         profile = intel_service.get_company_profile(company_name)
@@ -485,9 +499,19 @@ class IntelligenceService:
                 with open(gold_path, 'r', encoding='utf-8') as f:
                     gold_data = json.load(f)
                     for entry in gold_data:
-                        if entry.get('company_name', '').lower() == company_name.lower():
-                            print(f"FOUND: Exact GOLD match for '{company_name}'")
-                            return entry.get('interview_intelligence_profile', entry)
+                        stored_profile = entry.get('interview_intelligence_profile', entry)
+                        stored_name = entry.get('company_name', '').lower()
+                        stored_industry = stored_profile.get('industry', '').lower()
+
+                        if stored_name == company_name.lower():
+                            # If we have a target industry, ensure it matches or overlaps
+                            if target_industry and stored_industry:
+                                if target_industry.lower() not in stored_industry and stored_industry not in target_industry.lower():
+                                    print(f"DOMAIN-GUARD: Skipping '{stored_name}' in memory because industries don't match ({stored_industry} vs {target_industry})")
+                                    continue
+                            
+                            print(f"FOUND: Exact GOLD match for '{company_name}' in domain '{stored_industry}'")
+                            return stored_profile
 
             # Tier B: Quarantine (Evidence) - Only if JD matches to prevent wrong collisions
             quarantine_path = os.path.join(data_dir, "quarantine_discoveries.json")
@@ -495,9 +519,18 @@ class IntelligenceService:
                 with open(quarantine_path, 'r', encoding='utf-8') as f:
                     q_data = json.load(f)
                     for entry in q_data:
-                        if entry.get('company_name', '').lower() == company_name.lower():
+                        stored_profile = entry.get('interview_intelligence_profile', entry)
+                        stored_name = entry.get('company_name', '').lower()
+                        stored_industry = stored_profile.get('industry', '').lower()
+
+                        if stored_name == company_name.lower():
+                            if target_industry and stored_industry:
+                                if target_industry.lower() not in stored_industry and stored_industry not in target_industry.lower():
+                                    print(f"DOMAIN-GUARD: Skipping '{stored_name}' in quarantine because industries don't match.")
+                                    continue
+                                    
                             print(f"FOUND: QUARANTINE match for '{company_name}'. Using as evidence.")
-                            return entry.get('interview_intelligence_profile', entry)
+                            return stored_profile
                             
             # Tier C: Fuzzy Gold Match (Extreme threshold)
             if os.path.exists(gold_path):
