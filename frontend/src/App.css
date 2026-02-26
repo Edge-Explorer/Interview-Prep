@@ -1568,6 +1568,7 @@ select option {
     transform: translate(100%, 100%) rotate(45deg);
   }
 }
+
 /* Round Transition Overlay */
 .round-transition-overlay {
   position: fixed;
@@ -1619,6 +1620,7 @@ select option {
   text-transform: uppercase;
   background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -2px;
 }
@@ -1647,11 +1649,23 @@ select option {
 }
 
 @keyframes loaderProgress {
-  0% { transform: scaleX(0); }
-  100% { transform: scaleX(1); }
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 @keyframes slideUp {
-  0% { opacity: 0; transform: translateY(40px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
