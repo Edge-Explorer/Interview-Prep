@@ -86,9 +86,12 @@ class IntelligenceService:
             print(f"LOG: Loading base model {base_model_id}...")
             self.tokenizer = AutoTokenizer.from_pretrained(self.local_model_path)
             
-            # For 4-bit models, we usually need bitsandbytes. On CPU this is a fallback.
+            # For 4-bit models, we need bitsandbytes. 
+            load_in_4bit = (self.device == "cuda")
+            
             self.model = AutoModelForCausalLM.from_pretrained(
                 base_model_id,
+                quantization_config={"load_in_4bit": True} if load_in_4bit else None,
                 torch_dtype=torch.float16 if self.device == "cuda" else torch.float32,
                 device_map="auto" if self.device == "cuda" else None,
                 low_cpu_mem_usage=True
