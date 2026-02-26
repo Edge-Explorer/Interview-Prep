@@ -86,17 +86,28 @@ class IntelligenceService:
             print(f"LOG: Loading base model {base_model_id}...")
             self.tokenizer = AutoTokenizer.from_pretrained(self.local_model_path)
             
-            # For 4-bit models, we need bitsandbytes. 
-            load_in_4bit = (self.device == "cuda")
-            
+            # For 4-bit models, we need bitsandbytes config on CUDA.
+            model_kwargs = {
+                "torch_dtype": torch.float16 if self.device == "cuda" else torch.float32,
+                "low_cpu_mem_usage": True,
+            }
+
+            if self.device == "cuda":
+                from transformers import BitsAndBytesConfig
+                model_kwargs["quantization_config"] = BitsAndBytesConfig(load_in_4bit=True)
+                model_kwargs["device_map"] = "auto"
+            else:
+                model_kwargs["device_map"] = None # Avoid auto-map on CPU to prevent NoneType errors
+
             self.model = AutoModelForCausalLM.from_pretrained(
                 base_model_id,
-                quantization_config={"load_in_4bit": True} if load_in_4bit else None,
-                torch_dtype=torch.float16 if self.device == "cuda" else torch.float32,
-                device_map="auto" if self.device == "cuda" else None,
-                low_cpu_mem_usage=True
+                **model_kwargs
             )
             
+            # If on CPU, we might need to move it manually if device_map was None
+            if self.device == "cpu":
+                self.model = self.model.to("cpu")
+
             print("LOG: Applying LoRA Adapters...")
             self.model = PeftModel.from_pretrained(self.model, self.local_model_path)
             self.model.eval()

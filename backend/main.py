@@ -10,10 +10,22 @@ from datetime import datetime
 from auth import auth_utils
 from services.intelligence_service import get_intelligence_service
 
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Handles startup and shutdown events."""
+    print("LOG: Application is booting up...")
+    # Trigger Eager Loading so user sees the model load in terminal immediately
+    get_intelligence_service(eager_load=True)
+    yield
+    print("LOG: Application is shutting down...")
+
 app = FastAPI(
     title="Interview Prep AI Platform",
     description="AI-powered interview preparation platform using Gemini 2.0 Flash",
     version="2.1.0",
+    lifespan=lifespan
 )
 
 # Set up CORS
@@ -25,12 +37,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.on_event("startup")
-async def startup_event():
-    """Triggered when the server starts."""
-    print("LOG: Application is booting up...")
-    # Trigger Eager Loading so user sees the model load in terminal immediately
-    get_intelligence_service(eager_load=True)
 
 @app.get("/health")
 async def health():
