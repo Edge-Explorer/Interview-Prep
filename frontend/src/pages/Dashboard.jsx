@@ -257,14 +257,17 @@ function Dashboard() {
 
             clearInterval(interval);
             setPreparingStep(4);
+
+            // Wait a moment for UX before showing briefing
             setTimeout(() => {
                 if (res.data.company_intelligence) {
+                    setStep('briefing'); // Changed step to hide the 'preparing' view
                     setShowBriefing(true);
                 } else {
                     setStep('meeting');
                 }
                 setLoading(false);
-            }, 1000);
+            }, 1500);
         } catch (err) {
             clearInterval(interval);
             alert(`Error: ${err.message}`);
@@ -570,7 +573,7 @@ function Dashboard() {
         );
     }
 
-    if (showBriefing && companyIntel) {
+    if (step === 'briefing' && companyIntel) {
         return (
             <div className="briefing-overlay">
                 <div className="briefing-card glass-card">
