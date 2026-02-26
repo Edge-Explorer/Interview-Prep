@@ -240,6 +240,12 @@ class IntelligenceService:
         - For Finance: Focus on Quantitative, Market Knowledge, and Culture.
         - For Tech: Focus on Coding, System Design, and leadership.
         
+        HYBRID INTELLIGENCE (JD + WORLD KNOWLEDGE):
+        1. If a Job Description is provided, use it for SPECIALIZED KEYWORDS and CORE VALUES.
+        2. HOWEVER, for the INTERVIEW STRUCTURE and DIFFICULTY, if the JD seems "Aspirational" (e.g. asking for 10 years experience for a Junior role or having no tech round for a dev role), you MUST reconcile it with Industry Standards.
+        3. Never let a JD "soften" the interview if the Industry is known to be high-bar.
+        4. If it's a "Stealth Mode" startup, use the JD as Evidence but the Industry Standard as the Anchor.
+
         NEGATIVE EVIDENCE POLICY:
         If the research data shows the company primarily hires for non-tech roles (Administrative, Clinical, Legal, etc.) and you found NO SPECIFIC evidence of tech hiring, you MUST:
         1. State this clearly in 'interview_style'.
@@ -259,6 +265,7 @@ class IntelligenceService:
             "interview_style": "string",
             "difficulty_level": "string",
             "cultural_values": ["list"],
+            "intelligence_reconciliation": "EXPERT INSIGHT: Briefly explain how you merged the JD requirements with industry reality. (e.g. 'While the JD focuses on frontend, industry data shows this firm prioritizes systems knowledge.')",
             "interview_rounds": {{
                 "Round Name 1": {{ "focus": "string", "common_topics": ["list"], "style": "string", "tips": "string" }},
                 "Round Name 2": {{ "focus": "string", "common_questions": ["list"], "style": "string" }},
@@ -286,6 +293,7 @@ class IntelligenceService:
         prompt = f"""
         Review this generated Interview Profile for correctness.
         Industry Context: {industry}
+        Company Name: {state['company_name']}
         
         PROFILE:
         {json.dumps(profile, indent=2)}
@@ -295,8 +303,9 @@ class IntelligenceService:
         2. Industry Match: Does the interview style match '{industry}'?
         3. Grounding: Is this derived from the research data or a generic guess?
         4. Cross-Continental Hallucination: Is it confused between companies with similar names in different countries? (e.g., USA vs India).
+        5. Reconciliation Audit: Does the 'intelligence_reconciliation' actually provide a smart, professional insight, or is it just repeating the JD?
         
-        FATAL REJECTION RULE: If the company is in a non-tech industry (Healthcare, Legal, etc.) and you see 'LeetCode', 'System Design (Distributed)', or 'Coding Test' in the rounds without specific evidence in the research, REJECT with 'ROLE FORCING DETECTED'.
+        FATAL REJECTION RULE: If the company is in a non-tech industry (Healthcare, Legal, etc.) and you see 'LeetCode', 'System Design (Distributed)', or 'Coding Test' in the rounds without specific evidence in the research or JD, REJECT with 'ROLE FORCING DETECTED'.
         
         If perfect, return 'APPROVED'. Else return corrections.
         """
@@ -348,31 +357,44 @@ class IntelligenceService:
         if profile:
             return profile
 
-        # 2. Check the Agentic Discovery Memory (discoveries.json) with STRICT Matching
+        # 2. Check Discovery Memory (TIERED: GOLD -> QUARANTINE)
         print("INFO: Checking Discovery Memory...")
         try:
             base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            discoveries_path = os.path.join(base_dir, "data", "discoveries.json")
-            if os.path.exists(discoveries_path):
-                with open(discoveries_path, 'r', encoding='utf-8') as f:
-                    discoveries = json.load(f)
-                    
-                    # Instead of fuzzy matching everything, use the tiered logic or 98% threshold
-                    for entry in discoveries:
-                        stored_name = entry.get('company_name', '').lower()
-                        if stored_name == company_name.lower():
-                            print(f"FOUND: Exact match in discoveries memory for '{company_name}'")
+            data_dir = os.path.join(base_dir, "data")
+            
+            # Tier A: Gold Discoveries
+            gold_path = os.path.join(data_dir, "discoveries.json")
+            if os.path.exists(gold_path):
+                with open(gold_path, 'r', encoding='utf-8') as f:
+                    gold_data = json.load(f)
+                    for entry in gold_data:
+                        if entry.get('company_name', '').lower() == company_name.lower():
+                            print(f"FOUND: Exact GOLD match for '{company_name}'")
+                            return entry.get('interview_intelligence_profile', entry)
+
+            # Tier B: Quarantine (Evidence) - Only if JD matches to prevent wrong collisions
+            quarantine_path = os.path.join(data_dir, "quarantine_discoveries.json")
+            if os.path.exists(quarantine_path):
+                with open(quarantine_path, 'r', encoding='utf-8') as f:
+                    q_data = json.load(f)
+                    for entry in q_data:
+                        if entry.get('company_name', '').lower() == company_name.lower():
+                            print(f"FOUND: QUARANTINE match for '{company_name}'. Using as evidence.")
                             return entry.get('interview_intelligence_profile', entry)
                             
-                    # If not exact, try a VERY high threshold fuzzy match
-                    discovery_names = [d.get('company_name', '') for d in discoveries]
+            # Tier C: Fuzzy Gold Match (Extreme threshold)
+            if os.path.exists(gold_path):
+                with open(gold_path, 'r', encoding='utf-8') as f:
+                    gold_data = json.load(f)
+                    discovery_names = [d.get('company_name', '') for d in gold_data]
                     if discovery_names:
                         match = process.extractOne(company_name, discovery_names, scorer=fuzz.WRatio)
-                        if match and match[1] >= 98: # Extreme threshold to prevent collisions
+                        if match and match[1] >= 98:
                              matched_name = match[0]
-                             for d in discoveries:
+                             for d in gold_data:
                                 if d.get('company_name') == matched_name:
-                                    print(f"FOUND: High-precision discovery match '{company_name}' -> '{matched_name}'")
+                                    print(f"FOUND: High-precision GOLD fuzzy match '{company_name}' -> '{matched_name}'")
                                     return d.get('interview_intelligence_profile', d)
         except Exception as e:
             print(f"WARNING: Memory lookup failed: {e}")
@@ -412,37 +434,36 @@ class IntelligenceService:
             new_entry = {
                 "company_name": final_state.get('company_name') or company_name,
                 "interview_intelligence_profile": profile,
-                "audit_log": final_state.get('audit_log', [])
+                "audit_log": final_state.get('audit_log', []),
+                "discovered_at": datetime.now().isoformat()
             }
             try:
                 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
                 data_dir = os.path.join(base_dir, "data")
-                discoveries_path = os.path.join(data_dir, "discoveries.json")
                 
-                print(f"LOG: Saving discovery to: {discoveries_path}")
+                # Check if it should go to GOLD or QUARANTINE
+                is_valid = final_state.get('is_valid')
+                is_synthetic = final_state.get('is_synthetic')
                 
-                discoveries = []
-                if os.path.exists(discoveries_path):
-                    with open(discoveries_path, 'r', encoding='utf-8') as f:
-                        discoveries = json.load(f)
+                filename = "discoveries.json" if (is_valid and not is_synthetic) else "quarantine_discoveries.json"
+                target_path = os.path.join(data_dir, filename)
                 
-                # Check if already discovered (case-insensitive)
-                is_duplicate = False
-                for d in discoveries:
-                    existing_name = d.get('company_name')
-                    if existing_name and existing_name.lower() == new_entry['company_name'].lower():
-                        is_duplicate = True
-                        break
+                print(f"LOG: Saving discovery to: {target_path}")
                 
-                if not is_duplicate:
-                    # SAFETY CHECK: Only save to global memory if it's VALIDATED and NOT synthetic
-                    if final_state.get('is_valid') and not final_state.get('is_synthetic'):
-                        discoveries.append(new_entry)
-                        with open(discoveries_path, 'w', encoding='utf-8') as f:
-                            json.dump(discoveries, f, indent=4)
-                        print(f"SUCCESS: New Discovery Saved: {new_entry['company_name']} added to discoveries.json")
-                    else:
-                        print(f"INFO: {new_entry['company_name']} is a Synthetic (Stealth) profile. Not saving to global memory for data integrity.")
+                existing_data = []
+                if os.path.exists(target_path):
+                    with open(target_path, 'r', encoding='utf-8') as f:
+                        existing_data = json.load(f)
+                
+                # Check for duplicate (case-insensitive)
+                if not any(d.get('company_name', '').lower() == new_entry['company_name'].lower() for d in existing_data):
+                    existing_data.append(new_entry)
+                    with open(target_path, 'w', encoding='utf-8') as f:
+                        json.dump(existing_data, f, indent=4)
+                    status = "GOLD" if filename == "discoveries.json" else "QUARANTINE"
+                    print(f"SUCCESS: New Discovery Saved to {status}: {new_entry['company_name']}")
+                else:
+                    print(f"INFO: {new_entry['company_name']} already exists in {filename}. Skipping save.")
             except Exception as e:
                 print(f"ERROR: Could not save discovery: {e}")
                 

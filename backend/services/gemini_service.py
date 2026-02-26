@@ -144,6 +144,11 @@ class GeminiService:
                 company_context += f"STYLE: {profile.get('interview_style', 'Standard')}\n"
                 company_context += f"VALUES: {', '.join(profile.get('cultural_values', []))}\n"
                 
+                # NEW: Fusion Insight for transparency
+                reconciliation = profile.get('intelligence_reconciliation')
+                if reconciliation:
+                    company_context += f"RECONCILIATION INSIGHT: {reconciliation}\n"
+                
                 round_info = profile.get('interview_rounds', {}).get(round_name, {})
                 if round_info:
                     company_context += f"\n{round_name.upper()} ROUND FOCUS: {round_info.get('focus', 'N/A')}\n"
@@ -173,7 +178,11 @@ class GeminiService:
         {round_instructions.get(round_name, round_instructions["Technical"])}
         
         PROTOCOL:
-        - Turn 0 (Start): GREET the candidate warmly but professionally. Introduce yourself as {interviewer_name} and state this is an AI Simulation for the {round_name} round. Ask for a brief intro.
+        - Turn 0 (Start): GREET the candidate warmly but professionally. 
+          1. Introduce yourself as {interviewer_name}.
+          2. Explicitly state this is an AI Simulation for the {round_name} round at {company if company else "your target firm"}.
+          3. EXPERT INSIGHT: If a 'RECONCILIATION INSIGHT' is provided in your context, warmly share it with the candidate to show how you've prepared for this session (e.g., "I've reconciled your job description with industry standards...").
+          4. Ask for a brief intro.
         - Turn 1 (After Intro): Acknowledge their background. Mention something specific from their intro or resume.
         - Turn 2+: Start the core {round_name} interview questions.
         
