@@ -15,6 +15,15 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from rapidfuzz import process, fuzz
 
+# Local ML Imports
+try:
+    import torch
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+    from peft import PeftModel
+    HAS_LOCAL_ML_LIBS = True
+except ImportError:
+    HAS_LOCAL_ML_LIBS = False
+
 # Service imports
 from .company_intelligence import get_company_intelligence
 from .gemini_service import gemini_service
@@ -39,7 +48,72 @@ class AgentState(TypedDict):
 class IntelligenceService:
     def __init__(self):
         self.model = None
-        # Lazy loading of local ML can be implemented here if HAS_LOCAL_ML is True
+        self.tokenizer = None
+        self.device = "cuda" if HAS_LOCAL_ML_LIBS and torch.cuda.is_available() else "cpu"
+        self.local_model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "interview_ai_model")
+        
+    def _load_local_model(self):
+        """Lazy loader for the fine-tuned Llama model."""
+        if self.model is not None:
+            return True
+            
+        if not HAS_LOCAL_ML_LIBS:
+            print("WARNING: Local ML libraries (torch, transformers, peft) not found. Falling back to Gemini.")
+            return False
+            
+        if not os.path.exists(self.local_model_path):
+            print(f"WARNING: Local model folder not found at {self.local_model_path}. Falling back to Gemini.")
+            return False
+
+        print(f"LOG: Initializing Fine-Tuned Llama-3 from {self.local_model_path} on {self.device}...")
+        try:
+            # Note: This uses standard transformers. Unsloth-specific loading would require unsloth lib.
+            # We use 4-bit config if bitsandbytes is available and on GPU. 
+            # On CPU, we try to load normally but 4-bit might fail.
+            base_model_id = "unsloth/llama-3-8b-instruct-bnb-4bit" 
+            
+            print(f"LOG: Loading base model {base_model_id}...")
+            self.tokenizer = AutoTokenizer.from_pretrained(self.local_model_path)
+            
+            # For 4-bit models, we usually need bitsandbytes. On CPU this is a fallback.
+            self.model = AutoModelForCausalLM.from_pretrained(
+                base_model_id,
+                torch_dtype=torch.float16 if self.device == "cuda" else torch.float32,
+                device_map="auto" if self.device == "cuda" else None,
+                low_cpu_mem_usage=True
+            )
+            
+            print("LOG: Applying LoRA Adapters...")
+            self.model = PeftModel.from_pretrained(self.model, self.local_model_path)
+            self.model.eval()
+            print("SUCCESS: Fine-Tuned Llama-3 loaded and ready.")
+            return True
+        except Exception as e:
+            print(f"ERROR: Failed to load local model: {e}")
+            self.model = None # Ensure it doesn't try again
+            return False
+
+    async def _generate_with_local_model(self, prompt: str) -> str:
+        """Generation wrapper for local Llama-3."""
+        if not self._load_local_model():
+            return None # Trigger Gemini fallback
+            
+        try:
+            inputs = self.tokenizer(prompt, return_tensors="pt").to(self.device)
+            with torch.no_grad():
+                outputs = self.model.generate(
+                    **inputs, 
+                    max_new_tokens=1500,
+                    temperature=0.7,
+                    do_sample=True,
+                    pad_token_id=self.tokenizer.eos_token_id
+                )
+            decoded = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+            # Remove the prompt from the output if it's there
+            return decoded.replace(prompt, "").strip()
+        except Exception as e:
+            print(f"ERROR: Local generation failed: {e}")
+            return None
 
     async def router_node(self, state: AgentState):
         """
@@ -278,7 +352,24 @@ class IntelligenceService:
         }}
         """
         
-        profile = await gemini_service.generate_json(prompt)
+        profile_raw = await self._generate_with_local_model(prompt)
+        
+        if profile_raw:
+            print("SUCCESS: Architect Node used LOCAL FINE-TUNED model.")
+            # Clean JSON from Llama output
+            try:
+                if "```json" in profile_raw:
+                    profile_raw = profile_raw.split("```json")[1].split("```")[0]
+                elif "```" in profile_raw:
+                    profile_raw = profile_raw.split("```")[1].split("```")[0]
+                profile = json.loads(profile_raw.strip())
+            except:
+                print("WARNING: Local model output was not valid JSON. Falling back to Gemini for Architecting.")
+                profile = await gemini_service.generate_json(prompt)
+        else:
+            print("INFO: Architect Node falling back to GEMINI (either model failed to load or CPU mode).")
+            profile = await gemini_service.generate_json(prompt)
+            
         state['generated_profile'] = profile
         state['iterations'] += 1
         return state
