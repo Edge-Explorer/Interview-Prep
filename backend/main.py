@@ -25,6 +25,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.on_event("startup")
+async def startup_event():
+    """Triggered when the server starts."""
+    print("LOG: Application is booting up...")
+    # Trigger Eager Loading so user sees the model load in terminal immediately
+    get_intelligence_service(eager_load=True)
+
 @app.get("/health")
 async def health():
     return {"status": "ok", "version": "2.1.0"}

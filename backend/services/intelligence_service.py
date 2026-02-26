@@ -46,18 +46,22 @@ class AgentState(TypedDict):
     error: Optional[str]
 
 class IntelligenceService:
-    def __init__(self):
+    def __init__(self, eager_load=False):
         self.model = None
         self.tokenizer = None
         self.device = "cuda" if HAS_LOCAL_ML_LIBS and torch.cuda.is_available() else "cpu"
         self.local_model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "interview_ai_model")
         
         # Startup status log
-        status = "READY (Lazy Loading Enabled)" if HAS_LOCAL_ML_LIBS else "DISABLED (Libraries missing)"
+        status = "READY" if HAS_LOCAL_ML_LIBS else "DISABLED (Libraries missing)"
         print(f"--- INTERVIEW AI INTELLIGENCE SYSTEM ---")
         print(f"DEVICE: {self.device}")
         print(f"LOCAL MODEL STATUS: {status}")
+        print(f"LOAD MODE: {'Eager' if eager_load else 'Lazy'}")
         print(f"----------------------------------------")
+        
+        if eager_load:
+            self._load_local_model()
         
     def _load_local_model(self):
         """Lazy loader for the fine-tuned Llama model."""
@@ -572,8 +576,8 @@ class IntelligenceService:
 # Singleton instance
 _intelligence_service = None
 
-def get_intelligence_service() -> IntelligenceService:
+def get_intelligence_service(eager_load=False) -> IntelligenceService:
     global _intelligence_service
     if _intelligence_service is None:
-        _intelligence_service = IntelligenceService()
+        _intelligence_service = IntelligenceService(eager_load=eager_load)
     return _intelligence_service
