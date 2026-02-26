@@ -52,6 +52,13 @@ class IntelligenceService:
         self.device = "cuda" if HAS_LOCAL_ML_LIBS and torch.cuda.is_available() else "cpu"
         self.local_model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "interview_ai_model")
         
+        # Startup status log
+        status = "READY (Lazy Loading Enabled)" if HAS_LOCAL_ML_LIBS else "DISABLED (Libraries missing)"
+        print(f"--- INTERVIEW AI INTELLIGENCE SYSTEM ---")
+        print(f"DEVICE: {self.device}")
+        print(f"LOCAL MODEL STATUS: {status}")
+        print(f"----------------------------------------")
+        
     def _load_local_model(self):
         """Lazy loader for the fine-tuned Llama model."""
         if self.model is not None:
