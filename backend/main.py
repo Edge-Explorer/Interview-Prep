@@ -16,8 +16,8 @@ from contextlib import asynccontextmanager
 async def lifespan(app: FastAPI):
     """Handles startup and shutdown events."""
     print("LOG: Application is booting up...")
-    # Trigger Eager Loading so user sees the model load in terminal immediately
-    get_intelligence_service(eager_load=True)
+    # Switched back to Lazy Loading so the server starts instantly
+    get_intelligence_service(eager_load=False)
     yield
     print("LOG: Application is shutting down...")
 
