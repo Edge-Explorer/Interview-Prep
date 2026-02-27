@@ -17,8 +17,8 @@ from contextlib import asynccontextmanager
 async def lifespan(app: FastAPI):
     """Handles startup and shutdown events."""
     print("LOG: Application is booting up...")
-    # Switched back to Lazy Loading so the server starts instantly
-    get_intelligence_service(eager_load=False)
+    # GPU ACTIVE: Loading local model into VRAM for lightning-fast intelligence
+    get_intelligence_service(eager_load=True)
     yield
     print("LOG: Application is shutting down...")
 
