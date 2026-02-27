@@ -107,6 +107,7 @@ class IntelligenceService:
 
             self.model = AutoModelForCausalLM.from_pretrained(
                 base_model_id,
+                offload_folder="offload",
                 **model_kwargs
             )
             
