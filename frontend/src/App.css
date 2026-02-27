@@ -1399,11 +1399,14 @@ select option {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px 20px;
+  overflow-y: auto;
+  /* Enable scrolling on the overlay if card is too big */
   animation: fade-in 0.5s ease-out;
 }
 
 .briefing-card {
-  width: 90%;
+  width: 100%;
   max-width: 800px;
   background: rgba(15, 23, 42, 0.8);
   border: 1px solid rgba(99, 102, 241, 0.3);
@@ -1411,6 +1414,28 @@ select option {
   padding: 40px;
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
   animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  /* Don't exceed viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+.briefing-body {
+  margin-top: 40px;
+  overflow-y: auto;
+  /* Make the body scrollable if text is too long */
+  padding-right: 15px;
+  flex: 1;
+}
+
+/* Custom scrollbar for briefing body */
+.briefing-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.briefing-body::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.4);
+  border-radius: 10px;
 }
 
 .intel-badge {
@@ -1438,9 +1463,6 @@ select option {
   font-weight: 500;
 }
 
-.briefing-body {
-  margin-top: 40px;
-}
 
 .insight-section {
   background: rgba(99, 102, 241, 0.05);
@@ -1669,6 +1691,7 @@ select option {
     transform: translateY(0);
   }
 }
+
 /* Executive Scorecard Styling */
 .executive-scorecard-view {
   max-width: 1000px;
@@ -1700,6 +1723,7 @@ select option {
   margin-bottom: 10px;
   background: linear-gradient(to right, #fff, #a5b4fc);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1861,4 +1885,3 @@ select option {
   gap: 20px;
   padding-bottom: 100px;
 }
-

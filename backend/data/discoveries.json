@@ -1945,5 +1945,118 @@
             "KEPT: Top 10 CA Firms entry as it confirms the firm's expertise.",
             "DOMAIN GUARD: Flagged tech-role at non-tech company. Scrutinizing generic results."
         ]
+    },
+    {
+        "company_name": "KIMS",
+        "interview_intelligence_profile": {
+            "name": "KIMS",
+            "industry": "Unknown",
+            "size": "Unknown",
+            "interview_style": "Due to the lack of industry information and job description, it's impossible to determine the specific interview style. Without a specific role or industry, the interview process could range from informal conversations to structured assessments, depending on the type of positions they are usually hiring for (most likely non-tech, based on lack of data). It is recommended to proactively gather information about the specific role and hiring manager to tailor your preparation. Because there is no explicit evidence of tech hiring, the included rounds are industry agnostic.",
+            "difficulty_level": "Unknown",
+            "cultural_values": [],
+            "intelligence_reconciliation": "EXPERT INSIGHT: Given the absence of a Job Description and specific industry data, standard practices were used to build a generic interview structure. As more information about the role and industry becomes available, the profile should be updated to reflect the actual expected interview process.",
+            "interview_rounds": {
+                "HR Screening": {
+                    "focus": "Basic qualifications, job expectations, and cultural fit.",
+                    "common_topics": [
+                        "Resume review",
+                        "Salary expectations",
+                        "Availability",
+                        "Motivation for applying"
+                    ],
+                    "style": "Informal conversation, primarily focused on verifying information and assessing general suitability.",
+                    "tips": "Be prepared to clearly and concisely explain your background and interests. Demonstrate genuine enthusiasm for the opportunity and ask thoughtful questions about the company."
+                },
+                "Hiring Manager Interview": {
+                    "focus": "Role-specific skills, experience, and problem-solving abilities.",
+                    "common_questions": [
+                        "Tell me about a time you faced a challenging situation and how you resolved it.",
+                        "Describe your experience with [relevant skills or tools].",
+                        "What are your strengths and weaknesses?"
+                    ],
+                    "style": "More structured interview, focusing on behavioral questions and technical assessments (if applicable, based on role).",
+                    "tips": "Use the STAR method (Situation, Task, Action, Result) to answer behavioral questions. Provide concrete examples to support your claims. Prepare questions to ask the hiring manager about the team, projects, and company culture."
+                },
+                "Team Interview": {
+                    "focus": "Collaboration skills, team fit, and technical capabilities (if applicable).",
+                    "common_topics": [
+                        "Project experience",
+                        "Collaboration style",
+                        "Problem-solving approaches",
+                        "Company culture questions"
+                    ],
+                    "style": "Can be conversational or involve group problem-solving exercises. Focus is on assessing how well you'd integrate into the team.",
+                    "tips": "Be an active listener and contributor. Show genuine interest in the team's work and dynamics. Be respectful of diverse opinions and perspectives."
+                }
+            },
+            "red_flags": [
+                "Vague or inconsistent job descriptions.",
+                "Lack of transparency about the company or role.",
+                "Disrespectful or unprofessional behavior from interviewers.",
+                "Unrealistic expectations or promises.",
+                "Negative online reviews or feedback about the company (proceed with caution)."
+            ],
+            "average_process_duration": "Unknown",
+            "interview_count": "Unknown",
+            "role_company_alignment": "Without knowing the specific role or industry, it's impossible to assess the role's alignment with the company. Generally, all roles contribute to the overall function of the organization, and aligning your skillset with their needs is important.",
+            "confidence_score": 85,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Frequently Asked Questions \u2013 Kim Mollo, OTD, OTR/L",
+                    "url": "https://www.kimmollo.com/index.php/faq/",
+                    "content": "A \u201c get to know you \u201d interview occurs in the initial intake session to help create an occupational profile and determine preliminary ..."
+                },
+                {
+                    "title": "How \u201cThe Interview\u201d Handled the Assassination of Kim",
+                    "url": "https://www.newyorker.com/culture/cultural-comment/interview-handles-assassination-kim-jong-un",
+                    "content": "Although Kim manages to parry questions of policy, his character is held up to ridicule, which is no news around the world but a shock to his ..."
+                },
+                {
+                    "title": "Interview with Amazon - The Online Assessment - Dan D Kim",
+                    "url": "https://dandkim.com/interview-at-amazon-part-2/",
+                    "content": "Please note that I cannot disclose any interview questions , as I have signed an NDA. ... the questions on it while preparing for the Google interview ..."
+                },
+                {
+                    "title": "[RECENT] Interview with Google - Online Assessment & Phone Interview",
+                    "url": "https://dandkim.com/interview-at-google-part-2/",
+                    "content": "... process before, as others have told me ... The word on the street was that Google does not ask Graph-related questions in the phone interview stage."
+                },
+                {
+                    "title": "[RECENT] Jeff Kim Schroeder Interview",
+                    "url": "https://www.aapimusicians.com/post/jeff-kim-schroeder-interview",
+                    "content": "Unlike the majority of interviews which were conducted via e-mail, this interview was conducted in person, so below is a transcription of our more ..."
+                },
+                {
+                    "title": "[RECENT] Kim Salmon Interview",
+                    "url": "https://user.xmission.com/~flubber/notes/salmint.html",
+                    "content": "I read a quote in some interview that his drumming style is so different from Tony's that it's almost taken the band in new directions."
+                },
+                {
+                    "title": "[RECENT] A Stakeholder Interview Checklist - Boxes and Arrows",
+                    "url": "https://boxesandarrows.com/a-stakeholder-interview-checklist/",
+                    "content": "If you need a little help in your stakeholder interviews , tape a copy of this summary inside the front cover of your notebook."
+                },
+                {
+                    "title": "[RECENT] Finding Success: Interview With A Business Editing Pro - Edit",
+                    "url": "https://editrepublic.com/blog/finding-success-interview-with-a-business-editing-pro/",
+                    "content": "Kim Kanski launched her career in business editing when she asked herself the question : \u201cWhat do I want to do for the next 20-25 years?\u201d She knew ..."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'None'. Reasoning: KIMS is a very generic acronym. Without a JD, it's impossible to determine the industry or location. Therefore, the search query focuses solely on interview-related information for the company name itself.",
+            "REJECTED: 'Frequently Asked Questions \u2013 Kim Mollo, OTD, OTR/L' - Person named Kim, Acronym Collision",
+            "REJECTED: 'How \u201cThe Interview\u201d Handled the Assassination of Kim' - Person named Kim, unrelated news",
+            "REJECTED: 'Interview with Amazon - The Online Assessment - Dan D Kim' - Person named Kim, unrelated company",
+            "REJECTED: 'Interview with Google - Online Assessment & Phone Interview' - unrelated company",
+            "REJECTED: 'Jeff Kim Schroeder Interview' - Person named Kim, irrelevant content",
+            "REJECTED: 'Kim Salmon Interview' - Person named Kim, irrelevant content",
+            "REJECTED: 'A Stakeholder Interview Checklist - Boxes and Arrows' - Generic Interview Tips, No Company Mention",
+            "REJECTED: 'Finding Success: Interview With A Business Editing Pro - Edit: Kim Kanski' - Person named Kim, irrelevant content",
+            "CRITIC REJECTION: The profile is reasonably good given the limited information. Here's a breakdown of the checklist items and suggested improvements:\n\n1. **Hallucination Check:** No hallucination of tech rounds. The rounds are appropriately generic.\n\n2. **Industry Match:** The interview style is consistent with a lack of specific industry information. It assumes a general business approach, which is correct.\n\n3. **Grounding:** This is largely a generic guess, which is acceptable given the absence of specific information. The \"intelligence_reconciliation\" explicitly acknowledges this.\n\n4. **Cross-Continental Hallucination:**  Potentially problematic. There are *many* companies named \"KIMS\" (e.g., healthcare groups in India, a construction company in the US). Without context, it's impossible to know which one this profile refers to. This is the biggest weakness.\n\n5. **Reconciliation Audit:** The \"intelligence_reconciliation\" is adequate. It clearly states the limitations and suggests revision with more data.\n\n**Overall Assessment and Corrections:**\n\nThe profile is decent as a *starting point* but *heavily* relies on assumptions because of the lack of context. The biggest problem is the potential for cross-continental hallucination due to the extremely generic company name. To improve it, we need some information about the type of KIMS this refers to (e.g., \"KIMS Hospital - India\", \"KIMS Construction - USA\").\n\n**Recommended Changes:**\n\n1. **MOST IMPORTANT:**  Add a disclaimer/caveat at the very beginning:  \"**WARNING: There are multiple companies named 'KIMS'. This profile is a generic interpretation based on common business practices and may NOT accurately reflect the interview process at *any* specific 'KIMS' company.  The accuracy of this profile is HIGHLY dependent on the intended KIMS company.**\" This is critical to avoid misleading users.\n\n2. **Industry:** Change \"Unknown (Generic Company Name)\" to \"Ambiguous. Multiple companies exist with the name 'KIMS'\".\n\n3. **Intelligence Reconciliation:** Modify to emphasize the need for disambiguation: \"EXPERT INSIGHT: Due to the presence of multiple companies named 'KIMS' across various industries and countries, this profile is a generic approximation. **Before using this profile, the intended 'KIMS' company MUST be identified and validated.** If additional data, such as industry sector and job description, is available, the profile should be completely revised to align with domain-specific requirements, industry benchmarks, and the specific practices of that company. Failure to do so could result in inaccurate interview preparation.\"\n\nWith the addition of the warning and modifications, the profile becomes acceptable *with extreme caution*. Without them, it's potentially dangerous.\n\n**Final Answer:**\n\n```\n{\n  \"corrections\": [\n    \"Add a prominent warning at the beginning about the ambiguity of the company name 'KIMS' and the potential for the profile to be inaccurate.\",\n    \"Change 'Industry' to 'Ambiguous. Multiple companies exist with the name KIMS'.\",\n    \"Modify 'Intelligence Reconciliation' to strongly emphasize the need to identify and validate the specific 'KIMS' company before using the profile.\"\n  ]\n}\n```\n"
+        ],
+        "discovered_at": "2026-02-27T12:42:57.577601"
     }
 ]

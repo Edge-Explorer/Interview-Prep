@@ -84,18 +84,28 @@ class IntelligenceService:
             
             model_kwargs = {}
             if self.device == "cuda":
-                # Sequential mapping is the most stable for limited VRAM offloading
-                model_kwargs["device_map"] = "sequential"
+                # For 4GB cards, we MUST enable CPU offload explicitly even for 4-bit
+                from transformers import BitsAndBytesConfig
+                model_kwargs["quantization_config"] = BitsAndBytesConfig(
+                    load_in_4bit=True,
+                    bnb_4bit_compute_dtype=torch.float16,
+                    llm_int8_enable_fp32_cpu_offload=True
+                )
+                model_kwargs["device_map"] = "auto"
                 model_kwargs["offload_folder"] = "offload"
                 model_kwargs["torch_dtype"] = torch.float16
+                
+                # Force offload if we exceed 3GB to leave room for the OS
+                max_memory = {0: "3.0GiB", "cpu": "12GiB"}
             else:
                 model_kwargs["device_map"] = None 
                 model_kwargs["torch_dtype"] = torch.float32
+                max_memory = None
 
-            # Let sequential handle the memory split automatically
-            print(f"LOG: Loading model into {self.device} with stable sequential mapping...")
+            print(f"LOG: Loading model into {self.device} with mandatory CPU offload...")
             self.model = AutoModelForCausalLM.from_pretrained(
                 base_model_id,
+                max_memory=max_memory,
                 low_cpu_mem_usage=True,
                 **model_kwargs
             )
