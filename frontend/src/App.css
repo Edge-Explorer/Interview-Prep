@@ -1669,3 +1669,196 @@ select option {
     transform: translateY(0);
   }
 }
+/* Executive Scorecard Styling */
+.executive-scorecard-view {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 40px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.scorecard-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.verdict-badge {
+  display: inline-block;
+  padding: 8px 24px;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.scorecard-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.scorecard-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
+}
+
+.scorecard-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.stat-block {
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.stat-block h3 {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.big-score {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.big-score span {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.exec-summary {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+.meter-item {
+  margin-bottom: 20px;
+}
+
+.meter-item label {
+  display: block;
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.meter-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.meter-bar .fill {
+  height: 100%;
+  background: #6366f1;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+.meter-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.small-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+}
+
+.star-checklist {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.star-item {
+  flex: 1;
+  text-align: center;
+  padding: 15px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.star-item.checked {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+  color: #10b981;
+}
+
+.star-item span {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.improvement-note {
+  font-size: 0.85rem;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+  padding: 12px 18px;
+  border-radius: 10px;
+}
+
+.long-feedback {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sw-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.sw-column h4 {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sw-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sw-column li {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+.scorecard-footer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 100px;
+}
+

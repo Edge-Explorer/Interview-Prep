@@ -50,6 +50,7 @@ function Dashboard() {
     const [availableVoices, setAvailableVoices] = useState([]);
     const [companyIntel, setCompanyIntel] = useState(null);
     const [showBriefing, setShowBriefing] = useState(false);
+    const [masterReport, setMasterReport] = useState(null);
 
 
 
@@ -319,6 +320,7 @@ function Dashboard() {
                 if (res.data.round_passed) {
                     if (res.data.interview_completed) {
                         setEvaluation(res.data.evaluation);
+                        setMasterReport(res.data.master_report);
                         setStep('result');
                     } else {
                         const lastRound = res.data.rounds_completed[res.data.rounds_completed.length - 1];
@@ -706,12 +708,86 @@ function Dashboard() {
 
     if (step === 'result') {
         return (
-            <div className="result-container">
-                <div className="glass-card result-box">
-                    <h1 className={evaluation?.can_proceed ? "success-text" : "fail-text"}>{evaluation?.can_proceed ? "ROUND COMPLETE" : "INTERVIEW TERMINATED"}</h1>
-                    <div className="score-circle"><span className="score-num">{evaluation?.score}</span><span className="total">/10</span></div>
-                    <div className="feedback-section"><h3>Honest Recruiter Feedback:</h3><p>{evaluation?.feedback}</p></div>
-                    <button className="secondary-btn" onClick={() => setStep('setup')}>BACK TO DASHBOARD</button>
+            <div className="result-container executive-scorecard-view">
+                <div className="scorecard-header">
+                    <div className="verdict-badge">{masterReport?.final_verdict || (evaluation?.can_proceed ? "ROUND PASSED" : "TERMINATED")}</div>
+                    <h1>Executive Evaluation Report</h1>
+                    <p className="scorecard-subtitle">Performance Analysis for {sessionData.target_company} • {sessionData.sub_role}</p>
+                </div>
+
+                <div className="scorecard-grid">
+                    {/* Left Column: Overall Metrics */}
+                    <div className="scorecard-column main-stats">
+                        <div className="glass-card stat-block overall-score-card">
+                            <label>CUMULATIVE SCORE</label>
+                            <div className="big-score">
+                                {masterReport?.overall_score?.toFixed(1) || evaluation?.score}
+                                <span>/10</span>
+                            </div>
+                            <p className="exec-summary">{evaluation?.executive_summary || "Session evaluation completed based on round-specific criteria."}</p>
+                        </div>
+
+                        <div className="glass-card stat-block vibe-breakdown">
+                            <h3>VIBE & PRESENCE</h3>
+                            <div className="vibe-meters">
+                                <div className="meter-item">
+                                    <label>Confidence</label>
+                                    <div className="meter-bar"><div className="fill" style={{ width: `${(evaluation?.vibe_analysis?.confidence_score || 5) * 10}%` }}></div></div>
+                                </div>
+                                <div className="meter-item">
+                                    <label>Technical Depth</label>
+                                    <span className="meter-value">{evaluation?.vibe_analysis?.technical_depth || "Moderate"}</span>
+                                </div>
+                                <div className="meter-item">
+                                    <label>Assertiveness</label>
+                                    <p className="small-text">{evaluation?.vibe_analysis?.assertiveness || "Standard communication style observed."}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Column: Detailed Breakdown */}
+                    <div className="scorecard-column details">
+                        {currentRound === "Behavioral" && evaluation?.star_analysis && (
+                            <div className="glass-card stat-block star-assessment">
+                                <h3>STAR METHOD CHECKLIST</h3>
+                                <div className="star-checklist">
+                                    <div className={`star-item ${evaluation.star_analysis.has_situation ? 'checked' : ''}`}><span>S</span> Situation</div>
+                                    <div className={`star-item ${evaluation.star_analysis.has_task ? 'checked' : ''}`}><span>T</span> Task</div>
+                                    <div className={`star-item ${evaluation.star_analysis.has_action ? 'checked' : ''}`}><span>A</span> Action</div>
+                                    <div className={`star-item ${evaluation.star_analysis.has_result ? 'checked' : ''}`}><span>R</span> Result</div>
+                                </div>
+                                {evaluation.star_analysis.missing_parts?.length > 0 && (
+                                    <p className="improvement-note">💡 Missing: {evaluation.star_analysis.missing_parts.join(', ')}. Strengthen your narrative by including these.</p>
+                                )}
+                            </div>
+                        )}
+
+                        <div className="glass-card stat-block feedback-log">
+                            <h3>{masterReport ? "EXECUTIVE CLOSING NOTE" : "RECRUITER FEEDBACK"}</h3>
+                            <p className="long-feedback">{masterReport?.recruiter_closing_note || evaluation?.feedback}</p>
+                        </div>
+
+                        {masterReport && (
+                            <div className="glass-card stat-block strengths-weaknesses">
+                                <div className="sw-grid">
+                                    <div className="sw-column">
+                                        <h4>STRENGTHS</h4>
+                                        <ul>{masterReport.key_strengths?.map(s => <li key={s}>✅ {s}</li>)}</ul>
+                                    </div>
+                                    <div className="sw-column">
+                                        <h4>AREAS TO IMPROVE</h4>
+                                        <ul>{masterReport.key_weaknesses?.map(w => <li key={w}>⚠️ {w}</li>)}</ul>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                <div className="scorecard-footer">
+                    <button className="secondary-btn" onClick={() => window.location.reload()}>RESTART MARATHON</button>
+                    <button className="primary-btn" onClick={() => setStep('setup')}>BACK TO DASHBOARD</button>
                 </div>
             </div>
         );

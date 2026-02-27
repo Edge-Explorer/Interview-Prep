@@ -239,8 +239,12 @@ class GeminiService:
         
         TASK:
         1. Evaluate based on {round_name} criteria: {eval_criteria.get(round_name, eval_criteria["Technical"])}
-        2. VIBE ANALYSIS: Analyze tone, confidence, and hesitation from text.
-        3. ASSERTIVENESS: Did they sound like a leader or a subordinate?
+        2. BEHAVIORAL ANALYSIS (STAR Method): If this is a behavioral round, identify if they covered:
+           - Situation (S)
+           - Task (T)
+           - Action (A)
+           - Result (R)
+        3. VIBE ANALYSIS: Analyze tone, confidence, technical depth, and industry presence.
         
         RATING CRITERIA (1-10):
         10: Mind-blowing, unique, and perfect.
@@ -255,12 +259,52 @@ class GeminiService:
         {{
             "score": float,
             "feedback": "string",
+            "executive_summary": "1 sentence executive take",
             "vibe_analysis": {{
                 "confidence_score": 0-10,
                 "hesitation_level": "High/Med/Low",
-                "assertiveness": "string feedback"
+                "assertiveness": "string feedback",
+                "technical_depth": "Expert/Moderate/Surface"
+            }},
+            "star_analysis": {{
+                "has_situation": boolean,
+                "has_task": boolean,
+                "has_action": boolean,
+                "has_result": boolean,
+                "missing_parts": ["S", "T", "A", "R"]
             }},
             "can_proceed": boolean
+        }}
+        """
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt
+        )
+        return response.text
+
+    async def generate_master_report(self, session: dict):
+        """Generates a final Executive Scorecard after all rounds are finished."""
+        prompt = f"""
+        TRANSCRIPT SUMMARY: {str(session['transcript'])[:2000]}
+        ROUND SCORES: {session['round_scores']}
+        ROLE: {session['sub_role']} at {session['target_company']}
+        
+        TASK:
+        Generate a final "Executive Scorecard" for the candidate.
+        
+        Return JSON:
+        {{
+            "overall_score": float (avg),
+            "final_verdict": "STRONG HIRE / HIRE / WEAK HIRE / REJECT",
+            "key_strengths": ["string"],
+            "key_weaknesses": ["string"],
+            "competency_breakdown": {{
+                "Technical Skills": 0-10,
+                "Communication": 0-10,
+                "Leadership": 0-10,
+                "Problem Solving": 0-10
+            }},
+            "recruiter_closing_note": "A final direct feedback note."
         }}
         """
         response = self.client.models.generate_content(

@@ -330,12 +330,33 @@ async def submit_answer(
                 }
             else:
                 # No more rounds - Interview complete!
-                session.rounds_completed.append(session.interview_round)
+                if session.interview_round not in session.rounds_completed:
+                    session.rounds_completed.append(session.interview_round)
                 session.overall_status = "completed"
+                
+                # Generate Master Report (Executive Scorecard)
+                session_dict = {
+                    "transcript": session.transcript,
+                    "round_scores": session.round_scores,
+                    "sub_role": session.sub_role,
+                    "target_company": session.target_company
+                }
+                master_report_raw = await gemini_service.generate_master_report(session_dict)
+                clean_report_json = master_report_raw.replace('```json', '').replace('```', '').strip()
+                try:
+                    master_report = json.loads(clean_report_json)
+                except:
+                    master_report = {
+                        "overall_score": sum(session.round_scores.values()) / len(session.round_scores) if session.round_scores else session.score,
+                        "final_verdict": "HIRE",
+                        "recruiter_closing_note": master_report_raw
+                    }
+
                 db.commit()
                 
                 return {
                     "evaluation": eval_data,
+                    "master_report": master_report,
                     "next_question": None,
                     "terminated": True,
                     "round_completed": True,
