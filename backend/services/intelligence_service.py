@@ -105,9 +105,13 @@ class IntelligenceService:
             else:
                 model_kwargs["device_map"] = None 
 
+            # Define max memory to ensure we leave some room for the OS and overhead
+            max_memory = {0: "3.5GiB", "cpu": "6GiB"} if self.device == "cuda" else None
+
             self.model = AutoModelForCausalLM.from_pretrained(
                 base_model_id,
                 offload_folder="offload",
+                max_memory=max_memory,
                 **model_kwargs
             )
             
