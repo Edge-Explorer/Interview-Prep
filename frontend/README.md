@@ -12,11 +12,12 @@ This directory contains the React-based frontend application for InterviewAI. It
 | `vite.config.js` | Build and dev server configuration. |
 
 ## 🚀 Key Frontend Features
-1. **Dynamic Interview Room**: Real-time camera integration with custom-styled AI personas.
-2. **Agentic Discovery Support**: UI supports typing any company name, triggering the backend's Multi-Agent Research Team for unknown firms.
-3. **Analysis Transition**: A high-end "Preparing/Analysis" screen with a live resume scanner animation.
-4. **Voice Synthesis**: Integration with Browser Speech API for AI voice interaction.
-5. **Professional Dashboard**: Statistics visualization and round configuration with custom-styled dropdowns.
+1. **Intelligence Briefing Layer**: A pre-interview overlay synthesizing company DNA and the round sequence.
+2. **Round Transition Overlay**: Premium "Marathon" flow with high-fidelity loading animations between interview stages.
+3. **Executive Scorecard (v2.4)**: Advanced post-interview report featuring Vibe Meters and STAR Method Analysis.
+4. **Agentic Discovery Support**: UI supports typing any company name, triggering the backend's Multi-Agent Research Team for unknown firms.
+5. **Analysis Transition**: A high-end "Preparing/Analysis" screen with a live resume scanner animation.
+6. **Voice Synthesis**: Integration with Browser Speech API for AI voice interaction.
 
 ## 🎨 Design System
 - **Theme**: Dark Mode (Deep Navy & Indigo).

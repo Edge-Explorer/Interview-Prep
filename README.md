@@ -9,8 +9,8 @@
 ---
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-2.3.0-blue.svg)
-![Status](https://img.shields.io/badge/status-Agentic%20Intelligence-purple.svg)
+![Version](https://img.shields.io/badge/version-2.4.0-blue.svg)
+![Status](https://img.shields.io/badge/status-Executive%20Memory-purple.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
 ![React](https://img.shields.io/badge/react-18.3+-61DAFB.svg)
@@ -39,6 +39,7 @@ What makes this project unique in the industry is its **Three-Tier Intelligence 
     *   **Generic Article Purge**: Python-level domain blocklist strips SEO junk (datacamp, guru99, intellipaat, etc.) before the AI ever sees the data.
 3.  **Stealth Mode & Synthetic Fallback**: A world-first feature that **Reverse-Engineers company DNA** from a Job Description. If a company is in "Stealth Mode" (non-public), the AI synthesizes a high-fidelity interview based on industry-standard benchmarking.
 4.  **Domain-Aware Round Engine (v2.3)**: Each of the 12 career domains gets its own interview structure — Finance gets Case Study rounds, Healthcare gets Situational/Clinical rounds, Creative gets Portfolio Review. No more forcing tech candidates' rounds onto Accounting or Legal applicants.
+5.  **Crowdsourced Self-Learning Memory (v2.4)**: The system now learns from its users. The **Stealth Registry** implements a "Witness vs Expert" consensus logic. It builds high-fidelity profiles for private startups by aggregating data from persistent "Strugglers" (Structural Roadmap) and Top-Performers (Success Criteria).
 
 ### 🛡️ Confidence Score Guide
 The system now provides transparency on how it "trusts" the discovered intelligence:
@@ -108,35 +109,32 @@ graph TD
 - [x] Context-aware question generation
 - [x] **Company Intelligence System (Advanced)**
   - [x] Tier 1: Curated database for **383 unique companies**
-  - [x] Every domain (12 total) features **20+ verified profiles**
-  - [x] FAANG & Tech Giants (Google, Amazon, Microsoft, Meta, Apple, Netflix, Nvidia, Oracle, IBM, Tesla, LinkedIn, etc.)
-  - [x] AI Specialists (OpenAI, Anthropic, DeepMind, Hugging Face, Cohere, Perplexity, etc.)
-  - [x] Indian Tech & Unicorns (Flipkart, Zomato, Swiggy, Paytm, PhonePe, Jio, Airtel, Ola, Nykaa, Zepto, Zoho, Freshworks, etc.)
-  - [x] Finance & Fintech (Goldman Sachs, JPMorgan, Stripe, Robinhood, Coinbase, Razorpay, CRED, Visa, Mastercard)
-  - [x] Consulting & Services (McKinsey, BCG, Deloitte, Accenture, TCS, Infosys, Wipro, HCL)
-  - [x] Global Domains (Aerospace, EdTech, Real Estate, Auto, Cybersecurity, Healthcare)
+  - [x] Tier 2: **Agentic Discovery Memory** (`discoveries.json`)
+  - [x] Tier 3: **Crowdsourced Stealth Registry** (`stealth_registry.json`) - *Self-Learning Layer*
+  - [x] FAANG, AI Specialists, Indian Tech, Finance, Consulting, and Global Domains
   - [x] Company-specific interview styles and cultural values
   - [x] Round-specific focus areas and common topics
-  - [x] Tier 3: AI fallback for unknown companies
+  - [x] Tier 4: AI fallback for unknown companies
 - [x] **Fine-Tuned Intelligence (Llama-3-8B)**
   - [x] Custom LoRA adapters trained on 383-company dataset
-  - [x] Expert-level structural reasoning for interview mocks
+  - [x] Hybrid Duo Logic: Llama-3 (Architect) + Gemini 2.0 (Communicator)
 - [x] **Agentic Discovery System (LangGraph v2.2)**
   - [x] Multi-agent Router-Researcher-Auditor-Architect-Critic workflow
   - [x] **Dynamic Domain Logic**: Prevents 'Role Forcing' on non-tech industries.
   - [x] **Geographic Guarding**: Dedicated router to prevent name collisions across countries.
   - [x] **The Auditor (The Bouncer)**: Filters out noise/irrelevant data and verifies identity against JD
-  - [x] **Source Attribution**: Real-time URL and Title tracking for all research points
-  - [x] **Temporal Dual-Search**: **Evergreen Perpetual Freshness** logic that auto-calculates the current year to stay updated indefinitely.
-  - [x] **Stealth Mode Support**: Reverse-engineers Job Descriptions (JD) for private/stealth companies
-  - [x] **Identity Guarding**: Strict 98% fuzzy matching to prevent name collisions
-  - [x] **Discovery Memory**: `discoveries.json` persistent learning layer with Developer Audit Logs
+  - [x] **Evergreen Perpetual Freshness**: Dynamic temporal anchoring for search queries.
+  - [x] **Stealth Mode Support**: Reverse-engineers JDs for private companies.
+  - [x] **Discovery Memory**: Persistent learning layer with Consensus Vetting.
 - [x] Company-specific simulations
 - [x] Difficulty levels (Junior, Mid, Senior)
 - [x] Panel interview mode
 - [x] Resume-based personalization
-- [x] Minimum 5 questions before evaluation
-- [x] Comprehensive evaluation system
+- [x] Multi-Round Marathon (Technical -> Behavioral -> Managerial -> Final)
+- [x] **Executive Scorecard & Analytics** (Option C)
+  - [x] STAR Method Analysis (Situation, Task, Action, Result)
+  - [x] Vibe Assessment (Confidence, Technical Depth, Assertiveness)
+  - [x] Cumulative Performance Reports
 
 #### Premium UI/UX
 - [x] Industry-level glassmorphism design

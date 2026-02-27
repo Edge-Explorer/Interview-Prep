@@ -50,6 +50,10 @@ This section is for tracking specific task completions and problem-solving histo
 - **Built (v2.3)** Domain-Aware Round Engine: Completely rewrote `round_config.py` — all 12 career domains now get domain-specific interview rounds (Case Study for Finance, Situational for Healthcare, Portfolio Review for Creative, etc.).
 - **Fixed (v2.3)** Managerial Round Scope: Corrected Managerial round to apply to ALL domains at Senior level (was wrongly restricted to only Tech + Business).
 - **Fixed (v2.3)** Domain Report Priority Bug: Reordered `DOMAIN_MAPPER` in `generate_domain_report.py` so Finance is checked before Business, fixing `Accounting/Consulting` miscategorization.
+- **Implemented (v2.4)** Multi-Round Transition Logic (The Marathon): Built the frontend overlay and backend flow to handle the jump between interview rounds (Option B).
+- **Implemented (v2.4)** Executive Scorecard & Feedback Engine: Created a premium evaluation UI with STAR Method Analysis and Vibe Metering (Option C).
+- **Implemented (v2.4)** Crowdsourced Self-Learning Memory: Built `MemoryService` and `stealth_registry.json`. The AI now learns from user sessions using "Witness vs Expert" consensus logic.
+- **Optimized (v2.4)** Hybrid Duo Architecture: Standardized the local Llama-3 (Architect) + Gemini-2 (Communicator) duo for zero-latency, high-fidelity simulations.
 
 ### **Abhiraj**
 - *Starting contributions today (tracking development from this point forward).*
@@ -60,6 +64,7 @@ This section is for tracking specific task completions and problem-solving histo
 
 | Feature / Update | Version | Status | Key Highlights |
 | :--- | :--- | :--- | :--- |
+| **Executive Memory & Scorecard** | v2.4.0 | ✅ Done | STAR Analysis, Vibe Meters, Multi-Round Transitions, and Self-Learning Stealth Registry. |
 | **Domain-Aware Round Engine** | v2.3.0 | ✅ Done | 12 domains get their own round sequences (Case Study, Situational, Portfolio Review, etc.). |
 | **Managerial Round for All Domains** | v2.3.0 | ✅ Done | Managerial now applies at Senior level across all 12 domains, not just Tech + Business. |
 | **Generic Article Purge** | v2.3.0 | ✅ Done | Python domain blocklist strips SEO junk before Auditor. Fixed Finance company save failures. |
