@@ -94,10 +94,16 @@ class IntelligenceService:
 
             if self.device == "cuda":
                 from transformers import BitsAndBytesConfig
-                model_kwargs["quantization_config"] = BitsAndBytesConfig(load_in_4bit=True)
+                model_kwargs["quantization_config"] = BitsAndBytesConfig(
+                    load_in_4bit=True,
+                    bnb_4bit_compute_dtype=torch.float16,
+                    bnb_4bit_use_double_quant=True,
+                    bnb_4bit_quant_type="nf4",
+                    llm_int8_enable_fp32_cpu_offload=True # Allow overflow to CPU
+                )
                 model_kwargs["device_map"] = "auto"
             else:
-                model_kwargs["device_map"] = None # Avoid auto-map on CPU to prevent NoneType errors
+                model_kwargs["device_map"] = None 
 
             self.model = AutoModelForCausalLM.from_pretrained(
                 base_model_id,
