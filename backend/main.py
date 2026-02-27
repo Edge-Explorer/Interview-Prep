@@ -17,8 +17,8 @@ from contextlib import asynccontextmanager
 async def lifespan(app: FastAPI):
     """Handles startup and shutdown events."""
     print("LOG: Application is booting up...")
-    # GPU ACTIVE: Loading local model into VRAM for lightning-fast intelligence
-    get_intelligence_service(eager_load=True)
+    # Temporarily back to Lazy Loading to resolve the 4GB VRAM overflow error
+    get_intelligence_service(eager_load=False)
     yield
     print("LOG: Application is shutting down...")
 

@@ -78,40 +78,25 @@ class IntelligenceService:
 
         print(f"LOG: Initializing Fine-Tuned Llama-3 from {self.local_model_path} on {self.device}...")
         try:
-            # Note: This uses standard transformers. Unsloth-specific loading would require unsloth lib.
-            # We use 4-bit config if bitsandbytes is available and on GPU. 
-            # On CPU, we try to load normally but 4-bit might fail.
             base_model_id = "unsloth/llama-3-8b-instruct-bnb-4bit" 
-            
             print(f"LOG: Loading base model {base_model_id}...")
             self.tokenizer = AutoTokenizer.from_pretrained(self.local_model_path)
             
-            # For 4-bit models, we need bitsandbytes config on CUDA.
-            model_kwargs = {
-                "torch_dtype": torch.float16 if self.device == "cuda" else torch.float32,
-                "low_cpu_mem_usage": True,
-            }
-
+            model_kwargs = {}
             if self.device == "cuda":
-                from transformers import BitsAndBytesConfig
-                model_kwargs["quantization_config"] = BitsAndBytesConfig(
-                    load_in_4bit=True,
-                    bnb_4bit_compute_dtype=torch.float16,
-                    bnb_4bit_use_double_quant=True,
-                    bnb_4bit_quant_type="nf4",
-                    llm_int8_enable_fp32_cpu_offload=True # Allow overflow to CPU
-                )
-                model_kwargs["device_map"] = "auto"
+                # Sequential mapping is the most stable for limited VRAM offloading
+                model_kwargs["device_map"] = "sequential"
+                model_kwargs["offload_folder"] = "offload"
+                model_kwargs["torch_dtype"] = torch.float16
             else:
                 model_kwargs["device_map"] = None 
+                model_kwargs["torch_dtype"] = torch.float32
 
-            # Define max memory to ensure we leave some room for the OS and overhead
-            max_memory = {0: "3.5GiB", "cpu": "6GiB"} if self.device == "cuda" else None
-
+            # Let sequential handle the memory split automatically
+            print(f"LOG: Loading model into {self.device} with stable sequential mapping...")
             self.model = AutoModelForCausalLM.from_pretrained(
                 base_model_id,
-                offload_folder="offload",
-                max_memory=max_memory,
+                low_cpu_mem_usage=True,
                 **model_kwargs
             )
             
@@ -120,7 +105,12 @@ class IntelligenceService:
                 self.model = self.model.to("cpu")
 
             print("LOG: Applying LoRA Adapters...")
-            self.model = PeftModel.from_pretrained(self.model, self.local_model_path)
+            self.model = PeftModel.from_pretrained(
+                self.model, 
+                self.local_model_path,
+                device_map="auto",
+                offload_folder="offload"
+            )
             self.model.eval()
             print("SUCCESS: Fine-Tuned Llama-3 loaded and ready.")
             return True
