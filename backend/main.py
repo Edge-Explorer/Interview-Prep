@@ -9,6 +9,7 @@ import json
 from datetime import datetime
 from auth import auth_utils
 from services.intelligence_service import get_intelligence_service
+from services.memory_service import get_memory_service
 
 from contextlib import asynccontextmanager
 
@@ -353,6 +354,19 @@ async def submit_answer(
                     }
 
                 db.commit()
+
+                # TIERED LEARNING: Save to Crowdsourced Stealth Registry
+                try:
+                    memory_service = get_memory_service()
+                    session_full_data = {
+                        "target_company": session.target_company,
+                        "role_category": session.role_category,
+                        "rounds_completed": session.rounds_completed,
+                        "score": sum(session.round_scores.values()) / len(session.round_scores) if session.round_scores else session.score
+                    }
+                    await memory_service.learn_from_session(session_full_data, eval_data)
+                except Exception as e:
+                    print(f"ERROR: Memory Learning failed: {e}")
                 
                 return {
                     "evaluation": eval_data,
@@ -367,9 +381,21 @@ async def submit_answer(
                     "overall_message": "Congratulations! You've completed all interview rounds!"
                 }
         else:
-            # Failed current round - Terminate interview
             session.overall_status = "failed"
             db.commit()
+
+            # TIERED LEARNING: Save struggle/failure data (Structural only)
+            try:
+                memory_service = get_memory_service()
+                session_full_data = {
+                    "target_company": session.target_company,
+                    "role_category": session.role_category,
+                    "rounds_completed": session.rounds_completed + [session.interview_round],
+                    "score": session.score
+                }
+                await memory_service.learn_from_session(session_full_data, eval_data)
+            except Exception as e:
+                print(f"ERROR: Struggle Memory Learning failed: {e}")
             
             return {
                 "evaluation": eval_data,

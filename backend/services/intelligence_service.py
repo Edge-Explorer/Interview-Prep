@@ -498,6 +498,18 @@ class IntelligenceService:
             if os.path.exists(gold_path):
                 with open(gold_path, 'r', encoding='utf-8') as f:
                     gold_data = json.load(f)
+                    if company_name.title() in gold_data:
+                        print(f"INFO: High-confidence discovery found for {company_name}")
+                        return gold_data[company_name.title()]
+
+            # Tier B: Crowdsourced Stealth Registry (NEW)
+            stealth_path = os.path.join(data_dir, "stealth_registry.json")
+            if os.path.exists(stealth_path):
+                with open(stealth_path, 'r', encoding='utf-8') as f:
+                    stealth_data = json.load(f)
+                    if company_name.strip().title() in stealth_data:
+                        print(f"INFO: Crowdsourced intelligence found for {company_name}")
+                        return stealth_data[company_name.strip().title()]
                     for entry in gold_data:
                         stored_profile = entry.get('interview_intelligence_profile', entry)
                         stored_name = entry.get('company_name', '').lower()
