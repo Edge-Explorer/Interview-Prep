@@ -6,6 +6,7 @@ from services.gemini_service import gemini_service
 import pypdf
 import io
 import json
+import asyncio
 from datetime import datetime
 from auth import auth_utils
 from services.intelligence_service import get_intelligence_service
