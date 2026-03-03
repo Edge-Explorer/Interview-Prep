@@ -142,10 +142,12 @@ class IntelligenceService:
             # Move inputs to the actual device where the model's first layer resides
             # This handles cases where the model is partially offloaded to CPU
             inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
+            print(f"LOG: Local model is thinking (CPU/GPU hybrid)... this may take 1-2 minutes.")
+            
             with torch.no_grad():
                 outputs = self.model.generate(
                     **inputs, 
-                    max_new_tokens=1500,
+                    max_new_tokens=900,
                     temperature=0.7,
                     do_sample=True,
                     pad_token_id=self.tokenizer.eos_token_id
