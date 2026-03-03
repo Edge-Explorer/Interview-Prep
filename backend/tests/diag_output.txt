@@ -1,0 +1,35 @@
+﻿Total entries: 26
+Bad entries: 8
+
+  Entry #0: Groq
+    Issues: ['missing_name', 'missing_industry', 'missing_rounds']
+    Profile keys: ['company', 'profileTitle', 'summary', 'interviewProcess', 'commonThemes', 'preparationTips', 'potentialQuestions', 'references']
+
+  Entry #1: Gowling WLG
+    Issues: ['missing_name', 'missing_industry', 'missing_rounds']
+    Profile keys: ['firm_name', 'key_insights', 'potential_interview_themes', 'relevant_news', 'ceo', 'recent_funding_round', 'confidence_score', 'is_synthetic']
+
+  Entry #2: Mphasis
+    Issues: ['missing_name', 'missing_industry', 'missing_rounds']
+    Profile keys: ['company_name', 'interview_process_overview', 'interview_stages', 'culture_insights', 'difficulty_rating', 'additional_notes', 'ceo', 'recent_news', 'funding_rounds', 'confidence_score', 'is_synthetic']
+
+  Entry #3: 3i Infotech
+    Issues: ['missing_name', 'missing_industry', 'missing_rounds']
+    Profile keys: ['companyName', 'likelyJobTitles', 'interviewDifficulty', 'overallInterviewExperience', 'averageHiringTime', 'interviewQuestionSources', 'companyOverview', 'ceoName', 'recentNews', 'fundingRounds', 'confidence_score', 'is_synthetic']
+
+  Entry #4: Coforge
+    Issues: ['missing_name', 'missing_rounds']
+    Profile keys: ['company_name', 'industry', 'company_overview', 'culture', 'growth_opportunity', 'leadership', 'employee_sentiment', 'interview_insights', 'recent_news', 'financial_performance', 'glassdoor_rating', 'office_locations', 'key_people', 'funding_rounds', 'confidence_score', 'is_synthetic']
+
+  Entry #5: Godrej Infotech
+    Issues: ['missing_name', 'missing_rounds']
+    Profile keys: ['company_name', 'industry', 'interview_focus', 'interview_difficulty', 'interview_process_overview', 'potential_interview_questions', 'things_to_know', 'ceo', 'recent_news', 'funding_rounds', 'confidence_score', 'is_synthetic']
+
+  Entry #6: Mistral AI
+    Issues: ['missing_name', 'missing_rounds']
+    Profile keys: ['company_name', 'industry', 'headquarters', 'year_founded', 'valuation', 'ceo', 'key_products', 'recent_news', 'funding_rounds', 'talent_insights', 'open_source_focus', 'interview_tips', 'company_mission', 'values', 'confidence_score', 'is_synthetic', 'sources']
+
+  Entry #7: Agama Law Associates
+    Issues: ['missing_name', 'missing_industry', 'missing_rounds']
+    Profile keys: ['firm_name', 'firm_overview', 'culture', 'salary_information', 'recent_news', 'key_people', 'interview_tips', 'glassdoor_rating', 'ceo', 'location', 'round', 'confidence_score', 'is_synthetic', 'sources']
+
