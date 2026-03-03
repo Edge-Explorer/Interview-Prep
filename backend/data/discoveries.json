@@ -2058,5 +2058,263 @@
             "CRITIC REJECTION: The profile is reasonably good given the limited information. Here's a breakdown of the checklist items and suggested improvements:\n\n1. **Hallucination Check:** No hallucination of tech rounds. The rounds are appropriately generic.\n\n2. **Industry Match:** The interview style is consistent with a lack of specific industry information. It assumes a general business approach, which is correct.\n\n3. **Grounding:** This is largely a generic guess, which is acceptable given the absence of specific information. The \"intelligence_reconciliation\" explicitly acknowledges this.\n\n4. **Cross-Continental Hallucination:**  Potentially problematic. There are *many* companies named \"KIMS\" (e.g., healthcare groups in India, a construction company in the US). Without context, it's impossible to know which one this profile refers to. This is the biggest weakness.\n\n5. **Reconciliation Audit:** The \"intelligence_reconciliation\" is adequate. It clearly states the limitations and suggests revision with more data.\n\n**Overall Assessment and Corrections:**\n\nThe profile is decent as a *starting point* but *heavily* relies on assumptions because of the lack of context. The biggest problem is the potential for cross-continental hallucination due to the extremely generic company name. To improve it, we need some information about the type of KIMS this refers to (e.g., \"KIMS Hospital - India\", \"KIMS Construction - USA\").\n\n**Recommended Changes:**\n\n1. **MOST IMPORTANT:**  Add a disclaimer/caveat at the very beginning:  \"**WARNING: There are multiple companies named 'KIMS'. This profile is a generic interpretation based on common business practices and may NOT accurately reflect the interview process at *any* specific 'KIMS' company.  The accuracy of this profile is HIGHLY dependent on the intended KIMS company.**\" This is critical to avoid misleading users.\n\n2. **Industry:** Change \"Unknown (Generic Company Name)\" to \"Ambiguous. Multiple companies exist with the name 'KIMS'\".\n\n3. **Intelligence Reconciliation:** Modify to emphasize the need for disambiguation: \"EXPERT INSIGHT: Due to the presence of multiple companies named 'KIMS' across various industries and countries, this profile is a generic approximation. **Before using this profile, the intended 'KIMS' company MUST be identified and validated.** If additional data, such as industry sector and job description, is available, the profile should be completely revised to align with domain-specific requirements, industry benchmarks, and the specific practices of that company. Failure to do so could result in inaccurate interview preparation.\"\n\nWith the addition of the warning and modifications, the profile becomes acceptable *with extreme caution*. Without them, it's potentially dangerous.\n\n**Final Answer:**\n\n```\n{\n  \"corrections\": [\n    \"Add a prominent warning at the beginning about the ambiguity of the company name 'KIMS' and the potential for the profile to be inaccurate.\",\n    \"Change 'Industry' to 'Ambiguous. Multiple companies exist with the name KIMS'.\",\n    \"Modify 'Intelligence Reconciliation' to strongly emphasize the need to identify and validate the specific 'KIMS' company before using the profile.\"\n  ]\n}\n```\n"
         ],
         "discovered_at": "2026-02-27T12:42:57.577601"
+    },
+    {
+        "company_name": "Ideloze business solutions",
+        "interview_intelligence_profile": {
+            "name": "Ideloze Business Solutions",
+            "industry": "Business Technology Solutions",
+            "size": "51-200 employees (estimated based on LinkedIn followers)",
+            "interview_style": "Based on available data from AmbitionBox, the interview process seems to vary in quality and consistency. Some report standard HR and technical rounds, while others report negative experiences. Since no specific Job Description is provided, and the role is generally focused on Business Technology Solutions rather than pure software development, it is likely the emphasis is on consulting skills and business acumen over hardcore technical prowess. The AmbitionBox reviews suggest a potentially inconsistent interview process depending on the role and location (Mumbai reviews are particularly negative).",
+            "difficulty_level": "Medium",
+            "cultural_values": [
+                "Client-focused",
+                "Innovation",
+                "Continuous learning",
+                "High integrity",
+                "Enthusiastic team",
+                "Partner eco-system"
+            ],
+            "intelligence_reconciliation": "EXPERT INSIGHT: Given the lack of a specific Job Description and the company's focus on 'business technology solutions,' the interview process likely prioritizes communication, problem-solving, and understanding of business processes over deep technical expertise. While some technical questions are possible, the focus will be on how technology can solve business problems, rather than purely technical algorithmic challenges.",
+            "interview_rounds": {
+                "HR Round": {
+                    "focus": "Cultural fit, general suitability, and career goals.",
+                    "common_topics": [
+                        "Company overview",
+                        "Your background and experience",
+                        "Why you are interested in Ideloze Business Solutions",
+                        "Salary expectations",
+                        "Teamwork"
+                    ],
+                    "style": "Conversational and behavioral questions.",
+                    "tips": "Research the company thoroughly, prepare thoughtful questions, and be ready to discuss your career aspirations and how they align with Ideloze's mission. Address any concerns regarding negative reviews in a professional and optimistic manner, focusing on your desire to contribute to a positive and productive work environment."
+                },
+                "Technical/Business Acumen Round": {
+                    "focus": "Assessing your understanding of business technology concepts and your ability to apply them to real-world scenarios.",
+                    "common_topics": [
+                        "Understanding of digital workers, conversational engagements, and connected ecosystems",
+                        "Case studies involving business process optimization",
+                        "Discussion of recent technology trends and their impact on businesses",
+                        "Questions related to actionable insights and data analysis"
+                    ],
+                    "style": "Problem-solving scenarios, case study discussions, and technical questions relevant to the role.",
+                    "tips": "Prepare by understanding the different components of the companies mission. Focus on being able to explain technical concepts in a clear and concise manner for non-technical stakeholders."
+                },
+                "Managerial Round": {
+                    "focus": "Assessing leadership potential, problem-solving skills, and overall fit within the team.",
+                    "common_topics": [
+                        "Past project experience",
+                        "Leadership style and experience",
+                        "Conflict resolution",
+                        "Motivation and career goals",
+                        "Teamwork"
+                    ],
+                    "style": "Behavioral questions, situational judgment questions, and discussions about your career aspirations.",
+                    "tips": "Be prepared to discuss your accomplishments and failures, and how you have learned from your experiences. Highlight your leadership skills and your ability to work effectively in a team."
+                },
+                "Final Interview/Executive Interview": {
+                    "focus": "Final assessment of your overall fit and potential contribution to the company.",
+                    "common_topics": [
+                        "In-depth discussion of your experience and skills",
+                        "Discussion of company strategy and goals",
+                        "Opportunity to ask questions about the company and the role"
+                    ],
+                    "style": "Conversational and in-depth, focused on assessing your long-term potential.",
+                    "tips": "Demonstrate your passion for the company and the role, and be prepared to answer any remaining questions. Ask insightful questions that show your interest in the company's success."
+                }
+            },
+            "red_flags": [
+                "Inconsistent interview process reported on AmbitionBox",
+                "Negative reviews regarding work-life balance and management in the Mumbai office",
+                "Lack of publicly available information about specific projects and clients"
+            ],
+            "average_process_duration": "2-4 weeks (estimated)",
+            "interview_count": "3-5 (estimated)",
+            "role_company_alignment": "Ideloze Business Solutions seeks individuals who can apply technology to solve real-world business problems and drive innovation. The role aligns with their business focus on providing cutting-edge business technology solutions through a team of experts.",
+            "confidence_score": 165,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Life at Idolize Business Solutions: Culture, Salary, Reviews, Interviews & more",
+                    "url": "https://www.ambitionbox.com/overview/idolize-business-solutions-overview",
+                    "content": "Get an inside look of Idolize Business Solutions \u2014 culture, pay, reviews, interview questions, job openings, corporate offices, peer comparison and more on AmbitionBox"
+                },
+                {
+                    "title": "Idolize Business Solutions Reviews by 20+ Employees | Rated 3.6/5 | AmbitionBox",
+                    "url": "https://www.ambitionbox.com/reviews/idolize-business-solutions-reviews",
+                    "content": "To get a job at Idolize Business ... your resume and cover letter to highlight relevant experience. Additionally, research top Idolize Business Solutions interview questions and practice your responses to prepare thoroughly...."
+                },
+                {
+                    "title": "Idolize Business Solutions | LinkedIn",
+                    "url": "https://in.linkedin.com/company/idolizesolutions",
+                    "content": "Idolize Business Solutions | 575 followers on LinkedIn. Digital Workers | Conversational Engagements | Connected Ecosystems | Actionable Insights | Idolize is an innovative and client-focused organization providing cutting edge business technology solutions through its enthusiastic team of experts and partner eco-system in a culture of continuous learning and high integrity."
+                },
+                {
+                    "title": "[RECENT] 5 Idolize Business Solutions Interview Questions for ...",
+                    "url": "https://www.ambitionbox.com/interviews/idolize-business-solutions-interview-questions/experienced-candidates",
+                    "content": "Prepare for your next job interview with AmbitionBox. Read 12 Lakh+ interview questions & answers shared by real candidates across 1 Lakh+ companies in India."
+                },
+                {
+                    "title": "[RECENT] Idolize Business Solutions Interview Questions and Answers",
+                    "url": "https://www.ambitionbox.com/interviews/idolize-business-solutions-interview-questions",
+                    "content": "Prepare for your next job interview with AmbitionBox. Read 12 Lakh+ interview questions & answers shared by real candidates across 1 Lakh+ companies in India."
+                },
+                {
+                    "title": "[RECENT] Idolize Business Solutions Mumbai Reviews by 6 Employees | Rated 2.3/5 | AmbitionBox",
+                    "url": "https://www.ambitionbox.com/reviews/idolize-business-solutions-reviews/mumbai-location",
+                    "content": "To get a job at Idolize Business ... your resume and cover letter to highlight relevant experience. Additionally, research top Idolize Business Solutions interview questions and practice your responses to prepare thoroughly...."
+                },
+                {
+                    "title": "[RECENT] Idolize Solutions | We make all important I's of your business more stronger through our Inteligent i-cube offerings",
+                    "url": "https://www.idolizesolutions.com/",
+                    "content": "Using manual and tools-driven techniques to identify, map, and understand existing business processes . Thus pinpointing inefficiencies and finding opportunities for automation and designing effective automation steps."
+                },
+                {
+                    "title": "[RECENT] Idolize Business Solutions Automation Developer Interview ...",
+                    "url": "https://www.ambitionbox.com/interviews/idolize-business-solutions-interview-questions/automation-developer?qid=bjDsbY5jQ",
+                    "content": "Prepare for your next job interview with AmbitionBox. Read 12 Lakh+ interview questions & answers shared by real candidates across 1 Lakh+ companies in India."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'None'. Reasoning: Ideloze is not a common abbreviation. Without a Job Description, it is impossible to determine the specific industry or location. Therefore, a general search query targeting interview experiences for the company is most appropriate.",
+            "KEPT: Life at Idolize Business Solutions - Culture, Salary, Reviews, Interviews & more",
+            "KEPT: Idolize Business Solutions Reviews by 20+ Employees",
+            "KEPT: Idolize Business Solutions | LinkedIn",
+            "KEPT: 5 Idolize Business Solutions Interview Questions for ...",
+            "KEPT: Idolize Business Solutions Interview Questions and Answers",
+            "KEPT: Idolize Business Solutions Mumbai Reviews by 6 Employees",
+            "REJECTED: Idolize Solutions | We make all important I's of your business more stronger through our Inteligent i-cube offerings - irrelevant to interview process, different company name, focuses on general business processes.",
+            "KEPT: Idolize Business Solutions Automation Developer Interview ..."
+        ],
+        "discovered_at": "2026-02-27T12:57:24.591942"
+    },
+    {
+        "company_name": "Morningstar",
+        "interview_intelligence_profile": {
+            "name": "Morningstar",
+            "industry": "Financial Services",
+            "size": "Not explicitly stated, but likely medium to large based on the interview experiences and industry presence.",
+            "interview_style": "The interview process is described as generally straightforward and conversational, focusing on both technical finance knowledge and cultural fit. Expect situational and behavioral questions alongside finance-related technical assessments. The process seems designed to gauge competence and how well the candidate aligns with Morningstar's values. Based on the available data, there's no indication of highly technical coding or system design rounds, suggesting roles are more focused on financial analysis, client management, and related skills.",
+            "difficulty_level": "Medium",
+            "cultural_values": [
+                "Alignment of values",
+                "Professionalism",
+                "Cultural fit"
+            ],
+            "intelligence_reconciliation": "EXPERT INSIGHT: The interview structure aligns with the Financial Services industry standard, which emphasizes a blend of technical finance knowledge, behavioral assessment for client interaction and team work, and values alignment. While some questions may seem simple, the underlying goal is to assess a candidate's ability to apply financial concepts in real-world scenarios and their fit with Morningstar's corporate culture. The absence of coding or deep technical questions, unless applying for specific data science roles, is consistent with the type of positions being filled (client manager, analysts).",
+            "interview_rounds": {
+                "Online Assessment": {
+                    "focus": "Evaluating foundational knowledge and aptitude.",
+                    "common_topics": [
+                        "Finance fundamentals",
+                        "English comprehension",
+                        "Quantitative reasoning",
+                        "Aptitude",
+                        "Typing speed"
+                    ],
+                    "style": "Multiple-choice questions and a typing test.",
+                    "tips": "Brush up on basic finance concepts and practice typing for speed and accuracy."
+                },
+                "CIS Round (Company Information Session/HR Screening)": {
+                    "focus": "Understanding the job role and assessing initial fit.",
+                    "common_questions": [
+                        "Information about the job role and company culture",
+                        "Why Morningstar?"
+                    ],
+                    "style": "Informational presentation followed by initial screening questions.",
+                    "tips": "Research Morningstar's mission, values, and recent news. Prepare questions to show your interest."
+                },
+                "Technical Round": {
+                    "focus": "Assessing finance knowledge, problem-solving skills, and behavioral traits.",
+                    "common_topics": [
+                        "Financial concepts and principles",
+                        "Market knowledge",
+                        "Situational questions",
+                        "Behavioral questions related to work ethic and teamwork"
+                    ],
+                    "style": "Structured interview with technical and behavioral questions.",
+                    "tips": "Review financial concepts, prepare examples of past experiences, and practice answering behavioral questions using the STAR method (Situation, Task, Action, Result)."
+                },
+                "Final Round/Managerial Interview": {
+                    "focus": "Deep dive into experience, fit, and future contributions.",
+                    "common_topics": [
+                        "In-depth discussion of past experience",
+                        "What would you bring to the company that another student wouldn't?",
+                        "Career goals and alignment with Morningstar",
+                        "Culture Fit assessment."
+                    ],
+                    "style": "Conversational and in-depth discussion with a hiring manager or senior team member.",
+                    "tips": "Be prepared to articulate how your skills and experience align with Morningstar's needs and how you can contribute to their success. Show genuine enthusiasm for the role and the company."
+                }
+            },
+            "red_flags": [
+                "Lack of research on Morningstar and the specific role.",
+                "Inability to articulate how your skills and values align with Morningstar's.",
+                "Poor communication skills.",
+                "Lack of preparedness on basic finance principles",
+                "Not being able to provide an example or explain the STAR method in the behavioral part of the technical interviews"
+            ],
+            "average_process_duration": "Approximately 3 weeks.",
+            "interview_count": "Around 4 interviews based on the provided data.",
+            "role_company_alignment": "In financial services, roles like client managers and analysts are crucial for building relationships, providing financial guidance, and driving revenue. They align directly with Morningstar's mission to empower investor success by providing data, research, and investment insights.",
+            "confidence_score": 160,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "1,162 Morningstar Interview Questions & Answers (2026) | Glassdoor",
+                    "url": "https://www.glassdoor.co.in/Interview/Morningstar-Interview-Questions-E3299.htm",
+                    "content": "Why Morningstar? ... Online Test with MCQ about Finance, English, Quant, Aptitude and a typing test CIS round: They tell you about the job role Technical round: They will ask questions about finance and some related to behaviour ... The interview process was very simple and easy."
+                },
+                {
+                    "title": "900+ Morningstar Interview Questions & Answers 2026",
+                    "url": "https://www.ambitionbox.com/interviews/morningstar-interview-questions",
+                    "content": "Prepare for your next job interview with AmbitionBox. Read 12 Lakh+ interview questions & answers shared by real candidates across 1 Lakh+ companies in India."
+                },
+                {
+                    "title": "31 Morningstar Interview Questions & Answers",
+                    "url": "https://www.mockquestions.com/company/Morningstar/",
+                    "content": "For this question, your interviewer is looking to gain insight into what you know and like about Morningstar and how they will help you meet your career goals. The key to this question is making sure you've done your research. In your answer, stay focused on the alignment of your values with their values and demonstrate your preparation by showcasing your research on Morningstar and the role."
+                },
+                {
+                    "title": "[RECENT] 200+ Morningstar Interview Questions for Experienced ...",
+                    "url": "https://www.ambitionbox.com/interviews/morningstar-interview-questions/experienced-candidates",
+                    "content": "Prepare for your next job interview with AmbitionBox. Read 12 Lakh+ interview questions & answers shared by real candidates across 1 Lakh+ companies in India."
+                },
+                {
+                    "title": "[RECENT] Morningstar Data Analyst Interview Questions and Answers",
+                    "url": "https://www.ambitionbox.com/interviews/morningstar-interview-questions/data-analyst",
+                    "content": "Prepare for your next job interview with AmbitionBox. Read 12 Lakh+ interview questions & answers shared by real candidates across 1 Lakh+ companies in India."
+                },
+                {
+                    "title": "[RECENT] Morningstar Interview Questions (2026) - 37 Entries | Wall Street Oasis",
+                    "url": "https://www.wallstreetoasis.com/company/morningstar/interview",
+                    "content": "It involved both behavioral and technical questions of medium difficulty, focusing on my background, skills, and fit for the role . Overall, the process was straightforward, and the interviewer was approachable and professional. ... What would you bring to the company that another student wouldn't. ..."
+                },
+                {
+                    "title": "[RECENT] 82 Morningstar DBRS Interview Questions & Answers (2025) | Glassdoor",
+                    "url": "https://www.glassdoor.co.in/Interview/Morningstar-DBRS-Interview-Questions-E16091.htm",
+                    "content": "The process took 3 weeks.I interviewed at Morningstar DBRS (Mumbai) in Jan 2025 ... it was good chill. conversational situtaional based questions The interview process at Morningstar DBRS typically involves several stages designed to assess both technical competencies and cultural fit."
+                },
+                {
+                    "title": "[RECENT] What are some tips on making it through the job interview process at Morningstar? - Quora",
+                    "url": "https://www.quora.com/What-are-some-tips-on-making-it-through-the-job-interview-process-at-Morningstar",
+                    "content": "Answer: I had a round of interviews with Morningstar for a client manager\u2019s position. I had no job at the time and given what they do and the generous benefits the company offers, I was determined to get this job. I went through 4 interviews and was offered the job with a better salary than ..."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'Financial Services'. Reasoning: Morningstar is a well-known financial services company. Without a JD, the best approach is to search for general interview information. It is not a common abbreviation like the examples given.",
+            "KEPT: General interview experience at Morningstar.",
+            "REJECTED: 900+ Morningstar Interview Questions & Answers 2026 - Generic article.",
+            "KEPT: Interviewer insight and research preparation at Morningstar.",
+            "REJECTED: 200+ Morningstar Interview Questions for Experienced ... - Generic article.",
+            "REJECTED: Morningstar Data Analyst Interview Questions and Answers - Generic article.",
+            "KEPT: Behavioral and technical questions at Morningstar.",
+            "KEPT: Morningstar DBRS interview process and stages.",
+            "KEPT: Client Manager interview experience at Morningstar.",
+            "CRITIC REJECTION: Okay, I've reviewed the generated interview profile for Morningstar based on the provided context and checklist. Here's my assessment:\n\n**Hallucination Check:** The profile does *not* explicitly hallucinate tech rounds requiring LeetCode or System Design. It correctly identifies a \"Technical Interview\" but frames it with a \"Finance Focus.\"\n\n**Industry Match:** The interview style leans towards conversational with a strong emphasis on finance knowledge and cultural fit, which is appropriate for a Financial Services company like Morningstar.\n\n**Grounding:** Generally, the profile seems grounded in reasonable assumptions for a financial services firm. However, some details like \"typing speed and accuracy\" in the Online Assessment could benefit from direct support in the research (if available) to increase confidence. Otherwise, it sounds plausible given the context.\n\n**Cross-Continental Hallucination:** There is no indication of confusion with other companies.\n\n**Reconciliation Audit:** The \"intelligence_reconciliation\" provides a relevant summary, highlighting the emphasis on finance knowledge and cultural fit, which aligns with a financial services organization not primarily focused on technology. It does a fair job, though it could be even more insightful by, for example, referencing the impact of regulations like Dodd-Frank or MiFID II on Morningstar's hiring focus (if applicable based on real data).\n\n**Fatal Rejection Rule:** Not triggered.\n\n**Corrections/Suggestions:**\n\n*   **Size:** While stating \"Not specified in the data, but likely large given its established presence\" is reasonable, try to find a reliable source (e.g., LinkedIn, company website, industry reports) to give a more concrete estimate (e.g., \"Large: 5,000+ employees\" or \"Mid-sized: 1,000-5,000 employees\"). Even a range would be better.\n*   **Cultural Values:** Strengthen the examples of how these values are assessed in the interview.  For instance, under \"Cultural Interview,\" you could add: \"Expect questions about how you've handled ethical dilemmas (to assess Integrity) or how you've gone above and beyond for a client (Client-centricity).\"\n*   **Online Assessment:** Typing speed and accuracy seem a bit out of place. Unless specifically mentioned in actual job descriptions or employee reviews, it might be removed. If retained, provide a source. A more relevant focus for financial roles might be spreadsheet proficiency (e.g., \"basic Excel skills\").\n*   **Technical Interview (Finance Focus):** Add specific examples of valuation techniques (e.g., \"Discounted Cash Flow, comparable company analysis\") and industry regulations (e.g., \"knowledge of SEC regulations, FINRA rules\").\n*   **Interview Count:** Specifying \"4+ for Client Management positions\" is good, but adding the source of this information would be more helpful.\n*   **average_process_duration:** Include the source if it is verifiable.\n\n**Revised Sections (Examples):**\n\n```json\n\"size\": \"Large: Estimated 5,000+ employees (Source: LinkedIn)\",\n\"Cultural Interview/CIS Round\": {\n      \"focus\": \"Introduction to the role, company culture, and assessing communication skills and personality fit.\",\n      \"common_questions\": [\n        \"Tell me about yourself.\",\n        \"Why are you interested in Morningstar?\",\n        \"What are your career goals?\",\n        \"What do you know about Morningstar?\"\n      ],\n      \"style\": \"Conversational and informational. Prepare specific examples showcasing alignment with their values. Be ready to ask insightful questions about the role and the company's mission. Expect questions about how you've handled ethical dilemmas (to assess Integrity) or how you've gone above and beyond for a client (Client-centricity).\",\n      \"tips\": \"Research Morningstar's mission, values, and recent news. Prepare thoughtful questions to demonstrate your interest.\"\n    },\n\"Technical Interview (Finance Focus)\": {\n      \"focus\": \"Evaluating finance knowledge and practical skills relevant to the specific role.\",\n      \"common_topics\": [\n        \"Financial markets\",\n        \"Investment strategies\",\n        \"Valuation techniques (e.g., Discounted Cash Flow, Comparable Company Analysis)\",\n        \"Relevant industry regulations (e.g., SEC regulations, FINRA rules)\",\n        \"Financial analysis\",\n        \"Situation-based questions relating to past experiences\",\n        \"Behavioural questions relating to teamwork and problem solving\"\n      ],\n      \"style\": \"A mix of theoretical questions and practical scenarios. Expect to explain your reasoning and demonstrate problem-solving abilities.\",\n      \"tips\": \"Review core finance concepts, practice answering behavioral questions using the STAR method, and be prepared to discuss your previous experiences in detail.\"\n    },\n\"average_process_duration\": \"Approximately 3 weeks (Source: Glassdoor employee reviews)\"\n```\n\n**Verdict:**\n\nThe profile is good but can be improved with the above corrections. I don't see any major issues warranting a rejection, but adding the suggested improvements will increase its accuracy and usefulness.\n\n```\nCORRECTIONS:\n- Add a source and improve precision of 'size'\n- Strengthen cultural values by providing examples of how values are assessed in the 'Cultural Interview' round.\n- Clarify (and provide source, if possible) for \"typing speed and accuracy\" or remove it from 'Online Assessment', replace with spreadsheet proficiency.\n- Add specific examples to valuation techniques and regulations in 'Technical Interview'\n- Include a source for 'interview_count' and 'average_process_duration' if available\n```\n"
+        ],
+        "discovered_at": "2026-03-03T19:16:04.279817"
     }
 ]

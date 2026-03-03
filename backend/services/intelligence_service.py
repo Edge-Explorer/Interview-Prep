@@ -82,25 +82,28 @@ class IntelligenceService:
             print(f"LOG: Loading base model {base_model_id}...")
             self.tokenizer = AutoTokenizer.from_pretrained(self.local_model_path)
             
+            # Use absolute path for the offload folder to prevent any resolution issues
+            abs_offload = os.path.join(os.getcwd(), "offload")
+            if not os.path.exists(abs_offload):
+                os.makedirs(abs_offload, exist_ok=True)
+
             model_kwargs = {}
             if self.device == "cuda":
-                # For 4GB cards, we MUST enable CPU offload explicitly even for 4-bit
                 from transformers import BitsAndBytesConfig
+                # Note: llm_int8_enable_fp32_cpu_offload is needed even for 4-bit offloading applied by the device_map
                 model_kwargs["quantization_config"] = BitsAndBytesConfig(
-                    load_in_4bit=True,
-                    bnb_4bit_compute_dtype=torch.float16,
                     llm_int8_enable_fp32_cpu_offload=True
                 )
                 model_kwargs["device_map"] = "auto"
-                model_kwargs["offload_folder"] = "offload"
+                model_kwargs["offload_folder"] = abs_offload
                 model_kwargs["torch_dtype"] = torch.float16
                 
-                # Force offload if we exceed 3GB to leave room for the OS
-                max_memory = {0: "3.0GiB", "cpu": "12GiB"}
+                # Stricter memory limit for the GPU (2.0GB) to leave more room for OS/Display
+                max_memory = {0: "2.0GiB", "cpu": "14GiB"}
             else:
                 model_kwargs["device_map"] = None 
                 model_kwargs["torch_dtype"] = torch.float32
-                max_memory = None
+                max_memory = {"cpu": "14GiB"}
 
             print(f"LOG: Loading model into {self.device} with mandatory CPU offload...")
             self.model = AutoModelForCausalLM.from_pretrained(
@@ -119,7 +122,8 @@ class IntelligenceService:
                 self.model, 
                 self.local_model_path,
                 device_map="auto",
-                offload_folder="offload"
+                offload_folder=abs_offload,
+                max_memory=max_memory
             )
             self.model.eval()
             print("SUCCESS: Fine-Tuned Llama-3 loaded and ready.")
