@@ -227,13 +227,20 @@ class IntelligenceService:
         
         try:
             def do_search():
-                with DDGS() as ddgs:
-                    # 1. Main Search
-                    results = list(ddgs.text(query, max_results=8))
-                    return results
+                try:
+                    with DDGS(timeout=10) as ddgs:
+                        # 1. Main Search
+                        return list(ddgs.text(query, max_results=8))
+                except Exception as e:
+                    print(f"SEARCH ERROR: {e}")
+                    return []
             
-            results = await asyncio.to_thread(do_search)
-            search_results = "\n".join([f"[{'RECENT' if i >= 3 else 'GENERAL'}] {r['title']}: {r['body']}" for i, r in enumerate(results)])
+            # Use wait_for to ensure DDGS doesn't hang the entire flow
+            try:
+                results = await asyncio.wait_for(asyncio.to_thread(do_search), timeout=15.0)
+            except asyncio.TimeoutError:
+                print(f"TIMEOUT: Search for '{query}' timed out. Using synthetic fallback.")
+                results = []
             
             if not results:
                 print(f"WARNING: No public info found for {state['company_name']}. Switching to Synthetic Logic.")

@@ -151,10 +151,26 @@ async def upload_resume(
     )
 
     # Execute all AI tasks in parallel to save time
-    if intel_task:
-        analysis_raw, company_intel, first_question = await asyncio.gather(analysis_task, intel_task, question_task)
-    else:
-        analysis_raw, first_question = await asyncio.gather(analysis_task, question_task)
+    company_intel = None
+    try:
+        if intel_task:
+            # Shield the fast tasks from the slower intel_task if needed
+            # But gather is fine if we have a total timeout
+            results = await asyncio.wait_for(
+                asyncio.gather(analysis_task, intel_task, question_task, return_exceptions=True),
+                timeout=45.0
+            )
+            # Handle potential exceptions in individual tasks
+            analysis_raw = results[0] if not isinstance(results[0], Exception) else "Analysis failed."
+            company_intel = results[1] if not isinstance(results[1], Exception) else None
+            first_question = results[2] if not isinstance(results[2], Exception) else "Hello! Let's start the interview."
+        else:
+            analysis_raw, first_question = await asyncio.gather(analysis_task, question_task)
+    except asyncio.TimeoutError:
+        print("TIMEOUT: Parallel tasks took too long. Proceeding with partial data.")
+        # Try to get whatever is finished, or default
+        analysis_raw = await analysis_task if not analysis_task.done() else "Resume analysis timed out."
+        first_question = await question_task if not question_task.done() else "Let's begin the interview."
         company_intel = None
 
     # 4. Save to DB
@@ -438,10 +454,20 @@ async def start_interview(
         intel_task = intel_service.get_intelligence(data.target_company, data.job_description)
 
     # Execute tasks in parallel
-    if intel_task:
-        first_question, company_intel = await asyncio.gather(question_task, intel_task)
-    else:
-        first_question = await question_task
+    company_intel = None
+    try:
+        if intel_task:
+            results = await asyncio.wait_for(
+                asyncio.gather(question_task, intel_task, return_exceptions=True),
+                timeout=45.0
+            )
+            first_question = results[0] if not isinstance(results[0], Exception) else "Let's start the interview."
+            company_intel = results[1] if not isinstance(results[1], Exception) else None
+        else:
+            first_question = await question_task
+    except asyncio.TimeoutError:
+        print("TIMEOUT: Initializing interview took too long. Proceeding with Gemini only.")
+        first_question = await question_task if not question_task.done() else "Welcome! Let's begin."
         company_intel = None
 
     from core.round_config import get_first_round
