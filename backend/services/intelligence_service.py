@@ -147,9 +147,11 @@ class IntelligenceService:
             with torch.no_grad():
                 outputs = self.model.generate(
                     **inputs, 
-                    max_new_tokens=900,
-                    temperature=0.7,
-                    do_sample=True,
+                    max_new_tokens=512,      # Shorter is faster for CPU offload
+                    temperature=0.0,          # Greedy for speed
+                    do_sample=False,
+                    repetition_penalty=1.1,
+                    use_cache=True,
                     pad_token_id=self.tokenizer.eos_token_id
                 )
             decoded = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
