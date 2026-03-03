@@ -127,21 +127,17 @@ async def upload_resume(
     except Exception as e:
         raise HTTPException(status_code=400, detail="Could not read PDF file")
 
-    # 2. Premium Feature: Comprehensive Resume Analysis
-    analysis_raw = await gemini_service.analyze_resume(resume_text, job_description)
+    analysis_task = gemini_service.analyze_resume(resume_text, job_description)
     
-    # 2.5 Fetch Company Intelligence
-    company_intel = None
-    if target_company:
-        try:
-            intel_service = get_intelligence_service()
-            company_intel = await intel_service.get_intelligence(target_company, job_description)
-        except Exception as e:
-            print(f"Error fetching company intelligence: {e}")
-
-    # 3. Generate first question using Resume Context
+    # 2.5 Fetch Company Intelligence (Parallel)
     current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    first_question = await gemini_service.generate_interview_question(
+    intel_task = None
+    if target_company:
+        intel_service = get_intelligence_service()
+        intel_task = intel_service.get_intelligence(target_company, job_description)
+
+    # 3. Generate first question (Parallel)
+    question_task = gemini_service.generate_interview_question(
         role=role_category,
         sub_role=sub_role,
         difficulty=difficulty_level,
@@ -152,6 +148,13 @@ async def upload_resume(
         current_time=current_time_str,
         interviewer_name=interviewer_name
     )
+
+    # Execute all AI tasks in parallel to save time
+    if intel_task:
+        analysis_raw, company_intel, first_question = await asyncio.gather(analysis_task, intel_task, question_task)
+    else:
+        analysis_raw, first_question = await asyncio.gather(analysis_task, question_task)
+        company_intel = None
 
     # 4. Save to DB
     clean_analysis = analysis_raw.replace('```json', '').replace('```', '').strip()
@@ -414,9 +417,9 @@ async def start_interview(
     db: Session = Depends(database.get_db),
     current_user: models.User = Depends(auth_utils.get_current_user)
 ):
-    # 1. Generate the very first question using Gemini
+    # 1. Generate the very first question using Gemini (Task)
     current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    first_question = await gemini_service.generate_interview_question(
+    question_task = gemini_service.generate_interview_question(
         role=data.role_category,
         sub_role=data.sub_role,
         difficulty=data.difficulty_level,
@@ -427,14 +430,18 @@ async def start_interview(
         interviewer_name=data.interviewer_name
     )
 
-    # 1.5 Fetch Company Intelligence
-    company_intel = None
+    # 1.5 Fetch Company Intelligence (Task)
+    intel_task = None
     if data.target_company:
-        try:
-            intel_service = get_intelligence_service()
-            company_intel = await intel_service.get_intelligence(data.target_company, data.job_description)
-        except Exception as e:
-            print(f"Error fetching company intelligence: {e}")
+        intel_service = get_intelligence_service()
+        intel_task = intel_service.get_intelligence(data.target_company, data.job_description)
+
+    # Execute tasks in parallel
+    if intel_task:
+        first_question, company_intel = await asyncio.gather(question_task, intel_task)
+    else:
+        first_question = await question_task
+        company_intel = None
 
     from core.round_config import get_first_round
 

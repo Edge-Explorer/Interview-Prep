@@ -140,22 +140,28 @@ class IntelligenceService:
             
         try:
             # Move inputs to the actual device where the model's first layer resides
-            # This handles cases where the model is partially offloaded to CPU
             inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
-            print(f"LOG: Local model is thinking (CPU/GPU hybrid)... this may take 1-2 minutes.")
+            print(f"LOG: Local model is thinking (CPU/GPU hybrid)... 60s timeout active.")
             
-            with torch.no_grad():
-                outputs = self.model.generate(
-                    **inputs, 
-                    max_new_tokens=512,      # Shorter is faster for CPU offload
-                    temperature=0.0,          # Greedy for speed
-                    do_sample=False,
-                    repetition_penalty=1.1,
-                    use_cache=True,
-                    pad_token_id=self.tokenizer.eos_token_id
-                )
+            def run_gen_sync():
+                with torch.no_grad():
+                    return self.model.generate(
+                        **inputs, 
+                        max_new_tokens=450,       # Optimized length for CPU speed
+                        do_sample=False,          # Greedy search is faster
+                        repetition_penalty=1.1,
+                        use_cache=True,
+                        pad_token_id=self.tokenizer.eos_token_id
+                    )
+
+            # Safeguard: If CPU generation takes > 60s, swap to Gemini to prevent UI hang
+            try:
+                outputs = await asyncio.wait_for(asyncio.to_thread(run_gen_sync), timeout=60.0)
+            except asyncio.TimeoutError:
+                print("WARNING: Local model timed out (60s). Switching to Gemini fallback.")
+                return None
+            
             decoded = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
-            # Remove the prompt from the output if it's there
             return decoded.replace(prompt, "").strip()
         except Exception as e:
             print(f"ERROR: Local generation failed: {e}")

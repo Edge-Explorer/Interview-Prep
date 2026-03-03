@@ -557,7 +557,7 @@ function Dashboard() {
                                 {preparingStep === 4 ? "✨" : "🔍"}
                             </div>
                         )}
-                        <h2>{preparingStep === 4 ? "Ready!" : "Analyzing..."}</h2>
+                        <h2>{preparingStep === 4 ? "Finalizing..." : "Analyzing..."}</h2>
                         <p>Our AI is tailoring questions based on your specific projects and skills.</p>
                     </div>
                     <div className="analysis-right">
