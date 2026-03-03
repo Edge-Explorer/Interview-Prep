@@ -60,6 +60,9 @@ class IntelligenceService:
         print(f"LOAD MODE: {'Eager' if eager_load else 'Lazy'}")
         print(f"----------------------------------------")
         
+        # New: Request deduplication cache to keep system lean
+        self._active_discoveries = {} 
+        
         if eager_load:
             self._load_local_model()
         
@@ -503,168 +506,137 @@ class IntelligenceService:
         Entry point for the backend to get company intelligence.
         DOMAIN-AWARE: Cross-references industry to prevent collisions.
         """
-        # 0. Identify target industry from JD if available to prevent collisions
-        target_industry = None
-        if job_description:
-            try:
-                industry_prompt = f"Identify the industry for this Job Description in 1 word (e.g. Tech, Healthcare, Finance, Legal, Manufacturing, Retail). JD: {job_description[:500]}"
-                target_industry = await gemini_service.generate_text(industry_prompt)
-                target_industry = target_industry.strip().replace(".", "")
-                print(f"DOMAIN-GUARD: Detected target industry as '{target_industry}'")
-            except:
-                pass
-
-        # 1. First check the curated database
-        intel_service = get_company_intelligence()
-        profile = intel_service.get_company_profile(company_name)
-        
-        if profile:
-            return profile
-
-        # 2. Check Discovery Memory (TIERED: GOLD -> QUARANTINE)
-        print("INFO: Checking Discovery Memory...")
-        try:
-            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            data_dir = os.path.join(base_dir, "data")
+        if not company_name:
+            return {"error": "Company name is required."}
             
-            # Tier A: Gold Discoveries
-            gold_path = os.path.join(data_dir, "discoveries.json")
-            if os.path.exists(gold_path):
-                with open(gold_path, 'r', encoding='utf-8') as f:
-                    gold_data = json.load(f)
-                    if company_name.title() in gold_data:
-                        print(f"INFO: High-confidence discovery found for {company_name}")
-                        return gold_data[company_name.title()]
+        # 0. Normalize name (remove trailing spaces like 'AP Guru ')
+        company_name = company_name.strip()
+        
+        # 0.1 Deduplication: If already researching this company, wait for that task
+        if company_name in self._active_discoveries:
+            print(f"INFO: Research for '{company_name}' is already in progress. Waiting for result...")
+            return await self._active_discoveries[company_name]
 
-            # Tier B: Crowdsourced Stealth Registry (NEW)
-            stealth_path = os.path.join(data_dir, "stealth_registry.json")
-            if os.path.exists(stealth_path):
-                with open(stealth_path, 'r', encoding='utf-8') as f:
-                    stealth_data = json.load(f)
-                    if company_name.strip().title() in stealth_data:
-                        print(f"INFO: Crowdsourced intelligence found for {company_name}")
-                        return stealth_data[company_name.strip().title()]
-                    for entry in gold_data:
-                        stored_profile = entry.get('interview_intelligence_profile', entry)
-                        stored_name = entry.get('company_name', '').lower()
-                        stored_industry = stored_profile.get('industry', '').lower()
+        # Use an internal function to wrap the logic so we can track the task
+        async def _execute_discovery():
+            try:
+                # 0. Identify target industry from JD if available to prevent collisions
+                target_industry = None
+                if job_description:
+                    try:
+                        industry_prompt = f"Identify the industry for this Job Description in 1 word (e.g. Tech, Healthcare, Finance, Legal, Manufacturing, Retail). JD: {job_description[:500]}"
+                        target_industry = await gemini_service.generate_text(industry_prompt)
+                        target_industry = target_industry.strip().replace(".", "")
+                        print(f"DOMAIN-GUARD: Detected target industry as '{target_industry}'")
+                    except:
+                        pass
 
-                        if stored_name == company_name.lower():
-                            # If we have a target industry, ensure it matches or overlaps
-                            if target_industry and stored_industry:
-                                if target_industry.lower() not in stored_industry and stored_industry not in target_industry.lower():
-                                    print(f"DOMAIN-GUARD: Skipping '{stored_name}' in memory because industries don't match ({stored_industry} vs {target_industry})")
-                                    continue
-                            
-                            print(f"FOUND: Exact GOLD match for '{company_name}' in domain '{stored_industry}'")
-                            return stored_profile
+                # 1. First check the curated database
+                inst = get_company_intelligence()
+                profile = inst.get_company_profile(company_name)
+                
+                if profile:
+                    return profile
 
-            # Tier B: Quarantine (Evidence) - Only if JD matches to prevent wrong collisions
-            quarantine_path = os.path.join(data_dir, "quarantine_discoveries.json")
-            if os.path.exists(quarantine_path):
-                with open(quarantine_path, 'r', encoding='utf-8') as f:
-                    q_data = json.load(f)
-                    for entry in q_data:
-                        stored_profile = entry.get('interview_intelligence_profile', entry)
-                        stored_name = entry.get('company_name', '').lower()
-                        stored_industry = stored_profile.get('industry', '').lower()
+                # 2. Check Discovery Memory (TIERED: GOLD -> QUARANTINE)
+                print("INFO: Checking Discovery Memory...")
+                try:
+                    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+                    data_dir = os.path.join(base_dir, "data")
+                    
+                    # Tier A: Gold Discoveries
+                    gold_path = os.path.join(data_dir, "discoveries.json")
+                    if os.path.exists(gold_path):
+                        with open(gold_path, 'r', encoding='utf-8') as f:
+                            gold_data = json.load(f)
+                            if isinstance(gold_data, dict) and company_name.title() in gold_data:
+                                return gold_data[company_name.title()]
+                            elif isinstance(gold_data, list):
+                                for d in gold_data:
+                                    if d.get('company_name', '').lower() == company_name.lower():
+                                        return d.get('interview_intelligence_profile', d)
 
-                        if stored_name == company_name.lower():
-                            if target_industry and stored_industry:
-                                if target_industry.lower() not in stored_industry and stored_industry not in target_industry.lower():
-                                    print(f"DOMAIN-GUARD: Skipping '{stored_name}' in quarantine because industries don't match.")
-                                    continue
-                                    
-                            print(f"FOUND: QUARANTINE match for '{company_name}'. Using as evidence.")
-                            return stored_profile
-                            
-            # Tier C: Fuzzy Gold Match (Extreme threshold)
-            if os.path.exists(gold_path):
-                with open(gold_path, 'r', encoding='utf-8') as f:
-                    gold_data = json.load(f)
-                    discovery_names = [d.get('company_name', '') for d in gold_data]
-                    if discovery_names:
-                        match = process.extractOne(company_name, discovery_names, scorer=fuzz.WRatio)
-                        if match and match[1] >= 98:
-                             matched_name = match[0]
-                             for d in gold_data:
-                                if d.get('company_name') == matched_name:
-                                    print(f"FOUND: High-precision GOLD fuzzy match '{company_name}' -> '{matched_name}'")
+                    # Tier B: Crowdsourced Stealth Registry (NEW)
+                    stealth_path = os.path.join(data_dir, "stealth_registry.json")
+                    if os.path.exists(stealth_path):
+                        with open(stealth_path, 'r', encoding='utf-8') as f:
+                            stealth_data = json.load(f)
+                            if company_name.strip().title() in stealth_data:
+                                print(f"INFO: Crowdsourced intelligence found for {company_name}")
+                                return stealth_data[company_name.strip().title()]
+
+                    # Tier B: Quarantine
+                    quarantine_path = os.path.join(data_dir, "quarantine_discoveries.json")
+                    if os.path.exists(quarantine_path):
+                        with open(quarantine_path, 'r', encoding='utf-8') as f:
+                            q_data = json.load(f)
+                            for d in q_data:
+                                if d.get('company_name', '').lower() == company_name.lower():
                                     return d.get('interview_intelligence_profile', d)
-        except Exception as e:
-            print(f"WARNING: Memory lookup failed: {e}")
+                except Exception as e:
+                    print(f"WARNING: Memory lookup failed: {e}")
 
-        # 3. If not found, trigger the Agentic Workflow
-        print(f"INFO: {company_name} not found in memory. Starting Agentic Discovery...")
-        
-        app = self.create_workflow()
-        initial_state: AgentState = {
-            "company_name": company_name,
-            "industry": None,
-            "job_description": job_description,
-            "research_data": None,
-            "is_synthetic": False,
-            "confidence_score": 0,
-            "generated_profile": None,
-            "is_valid": False,
-            "iterations": 0,
-            "sources": [],
-            "search_query": None,
-            "audited_data": None,
-            "audit_log": [],
-            "error": None
-        }
-        
-        final_state = await app.ainvoke(initial_state)
-        print(f"INFO: Agent Workflow Complete. Profile generated: {final_state.get('generated_profile') is not None}")
-        
-        if final_state.get('generated_profile'):
-            profile = final_state['generated_profile']
-            # Inject score and sources
-            profile['confidence_score'] = final_state.get('confidence_score', 0)
-            profile['is_synthetic'] = final_state.get('is_synthetic', False)
-            profile['sources'] = final_state.get('sources', [])
-            
-            # Developer-Only Audit Logs (Not for end-users)
-            new_entry = {
-                "company_name": final_state.get('company_name') or company_name,
-                "interview_intelligence_profile": profile,
-                "audit_log": final_state.get('audit_log', []),
-                "discovered_at": datetime.now().isoformat()
-            }
-            try:
-                base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-                data_dir = os.path.join(base_dir, "data")
+                # 3. Trigger Agentic Workflow
+                print(f"INFO: {company_name} not found in memory. Starting Agentic Discovery...")
+                app = self.create_workflow()
+                initial_state: AgentState = {
+                    "company_name": company_name,
+                    "industry": target_industry,
+                    "job_description": job_description,
+                    "research_data": None,
+                    "is_synthetic": False,
+                    "confidence_score": 0,
+                    "generated_profile": None,
+                    "is_valid": False,
+                    "iterations": 0,
+                    "sources": [],
+                    "search_query": None,
+                    "audited_data": None,
+                    "audit_log": [],
+                    "error": None
+                }
                 
-                # Check if it should go to GOLD or QUARANTINE
-                is_valid = final_state.get('is_valid')
-                is_synthetic = final_state.get('is_synthetic')
+                final_state = await app.ainvoke(initial_state)
+                if final_state.get('generated_profile'):
+                    profile = final_state['generated_profile']
+                    profile['confidence_score'] = final_state.get('confidence_score', 0)
+                    profile['is_synthetic'] = final_state.get('is_synthetic', False)
+                    profile['sources'] = final_state.get('sources', [])
+                    
+                    # Save Logic
+                    try:
+                        is_valid = final_state.get('is_valid')
+                        is_synthetic = final_state.get('is_synthetic')
+                        filename = "discoveries.json" if (is_valid and not is_synthetic) else "quarantine_discoveries.json"
+                        target_path = os.path.join(data_dir, filename)
+                        
+                        existing_data = []
+                        if os.path.exists(target_path):
+                            with open(target_path, 'r', encoding='utf-8') as f:
+                                existing_data = json.load(f)
+                        
+                        if not any(d.get('company_name', '').lower() == company_name.lower() for d in existing_data):
+                            existing_data.append({
+                                "company_name": company_name,
+                                "interview_intelligence_profile": profile,
+                                "discovered_at": datetime.now().isoformat()
+                            })
+                            with open(target_path, 'w', encoding='utf-8') as f:
+                                json.dump(existing_data, f, indent=4)
+                    except: pass
+                    return profile
                 
-                filename = "discoveries.json" if (is_valid and not is_synthetic) else "quarantine_discoveries.json"
-                target_path = os.path.join(data_dir, filename)
-                
-                print(f"LOG: Saving discovery to: {target_path}")
-                
-                existing_data = []
-                if os.path.exists(target_path):
-                    with open(target_path, 'r', encoding='utf-8') as f:
-                        existing_data = json.load(f)
-                
-                # Check for duplicate (case-insensitive)
-                if not any(d.get('company_name', '').lower() == new_entry['company_name'].lower() for d in existing_data):
-                    existing_data.append(new_entry)
-                    with open(target_path, 'w', encoding='utf-8') as f:
-                        json.dump(existing_data, f, indent=4)
-                    status = "GOLD" if filename == "discoveries.json" else "QUARANTINE"
-                    print(f"SUCCESS: New Discovery Saved to {status}: {new_entry['company_name']}")
-                else:
-                    print(f"INFO: {new_entry['company_name']} already exists in {filename}. Skipping save.")
+                return {"error": final_state.get('error', "Discovery failed.")}
             except Exception as e:
-                print(f"ERROR: Could not save discovery: {e}")
-                
-            return profile
+                return {"error": str(e)}
+            finally:
+                if company_name in self._active_discoveries:
+                    del self._active_discoveries[company_name]
         
-        return {"error": final_state.get('error', "Agent failed to generate intelligence.")}
+        # Start and await the shared task
+        discovery_task = asyncio.create_task(_execute_discovery())
+        self._active_discoveries[company_name] = discovery_task
+        return await discovery_task
 
 # Singleton instance
 _intelligence_service = None
