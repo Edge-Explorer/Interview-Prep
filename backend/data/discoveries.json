@@ -2316,5 +2316,139 @@
             "CRITIC REJECTION: Okay, I've reviewed the generated interview profile for Morningstar based on the provided context and checklist. Here's my assessment:\n\n**Hallucination Check:** The profile does *not* explicitly hallucinate tech rounds requiring LeetCode or System Design. It correctly identifies a \"Technical Interview\" but frames it with a \"Finance Focus.\"\n\n**Industry Match:** The interview style leans towards conversational with a strong emphasis on finance knowledge and cultural fit, which is appropriate for a Financial Services company like Morningstar.\n\n**Grounding:** Generally, the profile seems grounded in reasonable assumptions for a financial services firm. However, some details like \"typing speed and accuracy\" in the Online Assessment could benefit from direct support in the research (if available) to increase confidence. Otherwise, it sounds plausible given the context.\n\n**Cross-Continental Hallucination:** There is no indication of confusion with other companies.\n\n**Reconciliation Audit:** The \"intelligence_reconciliation\" provides a relevant summary, highlighting the emphasis on finance knowledge and cultural fit, which aligns with a financial services organization not primarily focused on technology. It does a fair job, though it could be even more insightful by, for example, referencing the impact of regulations like Dodd-Frank or MiFID II on Morningstar's hiring focus (if applicable based on real data).\n\n**Fatal Rejection Rule:** Not triggered.\n\n**Corrections/Suggestions:**\n\n*   **Size:** While stating \"Not specified in the data, but likely large given its established presence\" is reasonable, try to find a reliable source (e.g., LinkedIn, company website, industry reports) to give a more concrete estimate (e.g., \"Large: 5,000+ employees\" or \"Mid-sized: 1,000-5,000 employees\"). Even a range would be better.\n*   **Cultural Values:** Strengthen the examples of how these values are assessed in the interview.  For instance, under \"Cultural Interview,\" you could add: \"Expect questions about how you've handled ethical dilemmas (to assess Integrity) or how you've gone above and beyond for a client (Client-centricity).\"\n*   **Online Assessment:** Typing speed and accuracy seem a bit out of place. Unless specifically mentioned in actual job descriptions or employee reviews, it might be removed. If retained, provide a source. A more relevant focus for financial roles might be spreadsheet proficiency (e.g., \"basic Excel skills\").\n*   **Technical Interview (Finance Focus):** Add specific examples of valuation techniques (e.g., \"Discounted Cash Flow, comparable company analysis\") and industry regulations (e.g., \"knowledge of SEC regulations, FINRA rules\").\n*   **Interview Count:** Specifying \"4+ for Client Management positions\" is good, but adding the source of this information would be more helpful.\n*   **average_process_duration:** Include the source if it is verifiable.\n\n**Revised Sections (Examples):**\n\n```json\n\"size\": \"Large: Estimated 5,000+ employees (Source: LinkedIn)\",\n\"Cultural Interview/CIS Round\": {\n      \"focus\": \"Introduction to the role, company culture, and assessing communication skills and personality fit.\",\n      \"common_questions\": [\n        \"Tell me about yourself.\",\n        \"Why are you interested in Morningstar?\",\n        \"What are your career goals?\",\n        \"What do you know about Morningstar?\"\n      ],\n      \"style\": \"Conversational and informational. Prepare specific examples showcasing alignment with their values. Be ready to ask insightful questions about the role and the company's mission. Expect questions about how you've handled ethical dilemmas (to assess Integrity) or how you've gone above and beyond for a client (Client-centricity).\",\n      \"tips\": \"Research Morningstar's mission, values, and recent news. Prepare thoughtful questions to demonstrate your interest.\"\n    },\n\"Technical Interview (Finance Focus)\": {\n      \"focus\": \"Evaluating finance knowledge and practical skills relevant to the specific role.\",\n      \"common_topics\": [\n        \"Financial markets\",\n        \"Investment strategies\",\n        \"Valuation techniques (e.g., Discounted Cash Flow, Comparable Company Analysis)\",\n        \"Relevant industry regulations (e.g., SEC regulations, FINRA rules)\",\n        \"Financial analysis\",\n        \"Situation-based questions relating to past experiences\",\n        \"Behavioural questions relating to teamwork and problem solving\"\n      ],\n      \"style\": \"A mix of theoretical questions and practical scenarios. Expect to explain your reasoning and demonstrate problem-solving abilities.\",\n      \"tips\": \"Review core finance concepts, practice answering behavioral questions using the STAR method, and be prepared to discuss your previous experiences in detail.\"\n    },\n\"average_process_duration\": \"Approximately 3 weeks (Source: Glassdoor employee reviews)\"\n```\n\n**Verdict:**\n\nThe profile is good but can be improved with the above corrections. I don't see any major issues warranting a rejection, but adding the suggested improvements will increase its accuracy and usefulness.\n\n```\nCORRECTIONS:\n- Add a source and improve precision of 'size'\n- Strengthen cultural values by providing examples of how values are assessed in the 'Cultural Interview' round.\n- Clarify (and provide source, if possible) for \"typing speed and accuracy\" or remove it from 'Online Assessment', replace with spreadsheet proficiency.\n- Add specific examples to valuation techniques and regulations in 'Technical Interview'\n- Include a source for 'interview_count' and 'average_process_duration' if available\n```\n"
         ],
         "discovered_at": "2026-03-03T19:16:04.279817"
+    },
+    {
+        "company_name": "Morning Star",
+        "interview_intelligence_profile": {
+            "name": "Morningstar",
+            "industry": "Financial Services",
+            "size": "Large (Likely Thousands of Employees Globally)",
+            "interview_style": "Based on available data, Morningstar's interview process appears relatively straightforward and focuses on assessing a candidate's fit for the specific role, their understanding of finance (if applicable to the role), and their overall aptitude. The process can range from simple and easy to moderately challenging, depending on the position. Initial rounds often involve online assessments and HR screenings, followed by more in-depth interviews with hiring managers and potentially team members. Technical assessments are likely if the role involves financial analysis or data manipulation. It is unlikely to include coding rounds unless the job explicitly demands it. The Morning Star Company is a separate entity. ",
+            "difficulty_level": "Medium",
+            "cultural_values": [
+                "Integrity",
+                "Client Focus",
+                "Innovation",
+                "Continuous Learning",
+                "Collaboration"
+            ],
+            "intelligence_reconciliation": "EXPERT INSIGHT: Given the industry is financial services, the interview process leans heavily toward finance knowledge, quantitative skills, and behavioral assessments. Though some reports mention simple processes, preparing for finance-related questions is still crucial. No JD was provided, so industry standards dictate the inclusion of rounds focused on finance and behavioral questions.",
+            "interview_rounds": {
+                "HR Screening/Initial Interview": {
+                    "focus": "Assessing basic qualifications, cultural fit, and career goals.",
+                    "common_topics": [
+                        "Background and experience",
+                        "Why Morningstar?",
+                        "Career aspirations",
+                        "Salary expectations",
+                        "Company values"
+                    ],
+                    "style": "Conversational, behavioral",
+                    "tips": "Research Morningstar's mission and values. Be prepared to articulate why you are interested in working for them and how your skills and experience align with their needs. Prepare examples showcasing relevant skills."
+                },
+                "Finance/Technical Interview": {
+                    "focus": "Evaluating financial knowledge, analytical skills, and problem-solving abilities relevant to the role.",
+                    "common_topics": [
+                        "Financial analysis concepts",
+                        "Investment strategies",
+                        "Market knowledge",
+                        "Data analysis",
+                        "Relevant tools and technologies"
+                    ],
+                    "style": "Technical, problem-solving",
+                    "tips": "Review fundamental financial concepts, relevant investment strategies, and current market trends. Prepare examples of how you have used your analytical skills to solve problems in the past. If the role involves data analysis, be prepared to discuss your experience with relevant tools and techniques."
+                },
+                "Behavioral Interview": {
+                    "focus": "Assessing soft skills, teamwork abilities, and how you handle workplace situations.",
+                    "common_topics": [
+                        "Teamwork and collaboration",
+                        "Conflict resolution",
+                        "Problem-solving",
+                        "Decision-making",
+                        "Adaptability"
+                    ],
+                    "style": "Behavioral, situational",
+                    "tips": "Use the STAR method (Situation, Task, Action, Result) to answer behavioral questions. Prepare examples that demonstrate your strengths and highlight your ability to overcome challenges. Research potential behavioral questions related to the specific role and company values."
+                },
+                "Client Interaction/Case Study (If Client Facing)": {
+                    "focus": "Assessing client management skills, communication abilities, and ability to handle client needs and expectations.",
+                    "common_topics": [
+                        "Client communication",
+                        "Relationship building",
+                        "Problem resolution",
+                        "Presentation skills",
+                        "Understanding client needs"
+                    ],
+                    "style": "Simulated client interaction, case study analysis",
+                    "tips": "Practice your communication skills and be prepared to articulate your approach to building and maintaining client relationships. Research common client challenges in the financial services industry and consider how you would address them. Be prepared to present your ideas clearly and concisely."
+                }
+            },
+            "red_flags": [
+                "Lack of knowledge about Morningstar's business model",
+                "Inability to articulate career goals",
+                "Poor communication skills",
+                "Lack of preparedness for technical questions (if applicable)",
+                "Negative attitude or unprofessional behavior"
+            ],
+            "average_process_duration": "Varies, but typically 2-4 weeks",
+            "interview_count": "Typically 3-4 interviews",
+            "role_company_alignment": "Roles at Morningstar contribute to the financial services industry by providing data, research, and insights to investors. This assists them in making informed investment decisions and managing their portfolios effectively.",
+            "confidence_score": 160,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "1,162 Morningstar Interview Questions & Answers (2026) | Glassdoor",
+                    "url": "https://www.glassdoor.co.in/Interview/Morningstar-Interview-Questions-E3299.htm",
+                    "content": "Why Morningstar? ... Online Test with MCQ about Finance, English, Quant, Aptitude and a typing test CIS round: They tell you about the job role Technical round: They will ask questions about finance and some related to behaviour ... The interview process was very simple and easy."
+                },
+                {
+                    "title": "31 Morningstar Interview Questions & Answers",
+                    "url": "https://www.mockquestions.com/company/Morningstar/",
+                    "content": "Master 31 Morningstar interview questions covering investment research, financial analysis, and data-driven insights."
+                },
+                {
+                    "title": "900+ Morningstar Interview Questions & Answers 2026",
+                    "url": "https://www.ambitionbox.com/interviews/morningstar-interview-questions",
+                    "content": "Prepare for your next job interview with AmbitionBox. Read 12 Lakh+ interview questions & answers shared by real candidates across 1 Lakh+ companies in India."
+                },
+                {
+                    "title": "[RECENT] Morningstar Interview Questions & Answers | Indeed.com",
+                    "url": "https://www.indeed.com/cmp/Morningstar-4/interviews",
+                    "content": "Prepare yourself for your interview at Morningstar by browsing Interview questions and processes from real candidates."
+                },
+                {
+                    "title": "[RECENT] The Morning Star Company Interview Questions & Answers | Indeed.com",
+                    "url": "https://www.indeed.com/cmp/The-Morning-Star-Company/interviews",
+                    "content": "Prepare yourself for your interview at The Morning Star Company by browsing Interview questions and processes from real candidates."
+                },
+                {
+                    "title": "[RECENT] What are some tips on making it through the job interview process at Morningstar? - Quora",
+                    "url": "https://www.quora.com/What-are-some-tips-on-making-it-through-the-job-interview-process-at-Morningstar",
+                    "content": "Answer: I had a round of interviews with Morningstar for a client manager\u2019s position. I had no job at the time and given what they do and the generous benefits the company offers, I was determined to get this job . I went through 4 interviews and was offered the job with a better salary than ..."
+                },
+                {
+                    "title": "[RECENT] Morningstar interview questions (full 2026 list)",
+                    "url": "https://prepfully.com/interview-questions/morningstar",
+                    "content": "All Morningstar interview questions asked in 2026. Contributed by recent candidates and verified by current Morningstar employeess."
+                },
+                {
+                    "title": "[RECENT] 200+ Morningstar Interview Questions for Experienced ...",
+                    "url": "https://www.ambitionbox.com/interviews/morningstar-interview-questions/experienced-candidates",
+                    "content": "Prepare for your next job interview with AmbitionBox. Read 12 Lakh+ interview questions & answers shared by real candidates across 1 Lakh+ companies in India."
+                }
+            ]
+        },
+        "audit_log": [
+            "ROUTER: Identified industry as 'None'. Reasoning: Morning Star is not a common abbreviation like AZ or HP. Without a Job Description, it is impossible to determine the specific company, industry, or location. Therefore, the search query focuses on general interview experiences for 'Morning Star'. Adding job roles or industry terms would be inappropriate without further information.",
+            "KEPT: Morningstar Interview Questions & Answers (2026) | Glassdoor: Explicitly mentions Morningstar and the interview process.",
+            "KEPT: 31 Morningstar Interview Questions & Answers: Explicitly mentions Morningstar and interview questions.",
+            "KEPT: 900+ Morningstar Interview Questions & Answers 2026: Explicitly mentions Morningstar and interview questions.",
+            "KEPT: Morningstar Interview Questions & Answers | Indeed.com: Explicitly mentions Morningstar and interview questions.",
+            "KEPT: The Morning Star Company Interview Questions & Answers | Indeed.com: Explicitly mentions The Morning Star Company and interview questions.",
+            "KEPT: Quora answer about Morningstar interview: Directly discusses the interview process at Morningstar.",
+            "KEPT: Morningstar interview questions (full 2026 list): Explicitly mentions Morningstar and recent interview questions.",
+            "KEPT: 200+ Morningstar Interview Questions for Experienced: Explicitly mentions Morningstar and interview questions."
+        ],
+        "discovered_at": "2026-03-03T19:24:23.860887"
     }
 ]

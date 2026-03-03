@@ -96,13 +96,13 @@ class IntelligenceService:
                 )
                 model_kwargs["device_map"] = "auto"
                 model_kwargs["offload_folder"] = abs_offload
-                model_kwargs["torch_dtype"] = torch.float16
+                model_kwargs["dtype"] = torch.float16
                 
                 # Stricter memory limit for the GPU (2.0GB) to leave more room for OS/Display
                 max_memory = {0: "2.0GiB", "cpu": "14GiB"}
             else:
                 model_kwargs["device_map"] = None 
-                model_kwargs["torch_dtype"] = torch.float32
+                model_kwargs["dtype"] = torch.float32
                 max_memory = {"cpu": "14GiB"}
 
             print(f"LOG: Loading model into {self.device} with mandatory CPU offload...")
@@ -139,7 +139,9 @@ class IntelligenceService:
             return None # Trigger Gemini fallback
             
         try:
-            inputs = self.tokenizer(prompt, return_tensors="pt").to(self.device)
+            # Move inputs to the actual device where the model's first layer resides
+            # This handles cases where the model is partially offloaded to CPU
+            inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
             with torch.no_grad():
                 outputs = self.model.generate(
                     **inputs, 
