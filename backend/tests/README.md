@@ -1,107 +1,130 @@
 # 🧪 InterviewAI — Test Suite
 
-This directory contains the **full test suite** for the InterviewAI backend. Every contributor **MUST** run these tests before submitting a Pull Request. If any test fails, the code should **NOT** be merged.
+This directory contains the **core test suite** for the InterviewAI backend. Every contributor **MUST** run these tests before submitting a Pull Request. If any test fails, the code should **NOT** be merged.
 
 ---
 
-## 📂 Test Files Overview
+## 📂 Test Files
 
 | File | What It Tests | Needs Server? | Speed |
 |---|---|---|---|
 | `run_all_tests.py` | **Master runner — runs everything** | No | Fast |
-| `test_round_config.py` | Domain-aware round sequences | No | ⚡ Fast |
-| `test_discovery_data.py` | `discoveries.json` data integrity | No | ⚡ Fast |
+| `test_round_config.py` | Domain-aware round sequences & pass scores | No | ⚡ Fast |
+| `test_discovery_data.py` | `discoveries.json` integrity & schema guard | No | ⚡ Fast |
 | `test_fuzzy_matching.py` | Company name typo/alias matching | No | ⚡ Fast |
-| `test_company_intel.py` | Tier 1 curated company database | No | ⚡ Fast |
-| `test_memory_service.py` | Stealth registry write/read | No | ⚡ Fast |
-| `test_api_endpoints.py` | All REST API routes + auth | **Yes** | 🐢 Medium |
-| `test_intelligence_agent.py` | Full AI discovery agent pipeline | No | 🐢 Slow (AI calls) |
+| `test_company_intel.py` | Tier 1 curated company database lookups | No | ⚡ Fast |
+| `test_memory_service.py` | Stealth registry write/read & cleanup | No | ⚡ Fast |
+| `test_api_endpoints.py` | All REST API routes + auth security | **Yes** | 🐢 Medium |
+| `test_intelligence_agent.py` | Full AI discovery agent pipeline | No | 🐢 Slow |
+| `check_gpu.py` | CUDA GPU diagnostic for local Llama-3 | No | ⚡ Fast |
 
 ---
 
-## 🚀 How to Run Tests
+## 🚀 How to Run
 
-> **Always run from the `backend/` directory.**
+> **Always run from the `backend/` directory with the venv activated.**
 
-### ✅ Run ALL tests at once (recommended before any PR):
+### ✅ Run ALL fast tests (recommended before any PR):
 ```powershell
 cd backend
+.\venv\Scripts\Activate
+$env:PYTHONIOENCODING="utf-8"
+.\venv\Scripts\python tests\run_all_tests.py --no-api --fast
+```
+
+### 🌐 Full run (with backend server running on port 8000):
+```powershell
 .\venv\Scripts\python tests\run_all_tests.py
 ```
 
-### ⚡ Fast mode (skip slow AI tests):
-```powershell
-.\venv\Scripts\python tests\run_all_tests.py --fast
-```
-
-### 🌐 Skip API tests (if backend server is NOT running):
+### ⚡ Skip API tests only (server not running):
 ```powershell
 .\venv\Scripts\python tests\run_all_tests.py --no-api
 ```
 
-### 🔬 Run a single test:
+### 🔬 Run a single test file:
 ```powershell
 .\venv\Scripts\python tests\test_round_config.py
 .\venv\Scripts\python tests\test_discovery_data.py
 .\venv\Scripts\python tests\test_fuzzy_matching.py
-.\venv\Scripts\python tests\test_api_endpoints.py
+.\venv\Scripts\python tests\test_company_intel.py
 .\venv\Scripts\python tests\test_memory_service.py
+.\venv\Scripts\python tests\test_api_endpoints.py   # needs server
 ```
 
-### 🧠 Test the AI agent on a specific company:
+### 🧠 Test AI agent on a specific company:
 ```powershell
 .\venv\Scripts\python tests\test_intelligence_agent.py "Zepto"
 .\venv\Scripts\python tests\test_intelligence_agent.py "Morgan Stanley"
 ```
 
----
-
-## 📋 Rules for Contributors
-
-### Adding a New Company to `discoveries.json`
-If you're adding a company, run this MANDATORY check:
-```powershell
-.\venv\Scripts\python tests\test_discovery_data.py
-```
-This will catch:
-- ❌ Duplicate entries
-- ❌ Missing required fields (`interview_rounds`, `name`, `industry`)
-- ❌ Corrupted JSON
-- ⚠️ Placeholder text like "TODO" or "N/A"
-
-### Adding a New Round Domain to `round_config.py`
-Run:
-```powershell
-.\venv\Scripts\python tests\test_round_config.py
-```
-This ensures your new domain has valid sequences for all 3 difficulty levels.
-
-### Changing any API endpoint in `main.py`
-Run:
-```powershell
-# Start your backend first: python main.py
-.\venv\Scripts\python tests\test_api_endpoints.py
-```
-
-### Touching `memory_service.py` or `stealth_registry.json`
-Run:
-```powershell
-.\venv\Scripts\python tests\test_memory_service.py
-```
-
----
-
-## 🛡️ What happens if a contributor submits bad code?
-
-1. **Run `run_all_tests.py`** — if it shows ❌ failures, the PR is REJECTED.
-2. The contributor must fix all failures and re-run the suite.
-3. Only when you see `🎉 ALL TESTS PASSED! Safe to push to GitHub.` is the code mergeable.
-
----
-
-## 🔧 GPU Diagnostic
-If you suspect GPU issues with the local Llama-3 model:
+### 🖥️ Check GPU / CUDA status:
 ```powershell
 .\venv\Scripts\python tests\check_gpu.py
 ```
-This shows your CUDA version, VRAM usage, and whether the model can be loaded.
+
+---
+
+## 📋 Contributor Rules
+
+### ➕ Adding a new company to `discoveries.json`
+This is **mandatory** before pushing:
+```powershell
+.\venv\Scripts\python tests\test_discovery_data.py
+```
+This catches:
+- ❌ Duplicate company entries
+- ❌ Missing required fields (`name`, `industry`, `interview_rounds`)
+- ❌ Corrupted or unparseable JSON
+- ⚠️ Placeholder values like `"TODO"` or `"N/A"`
+
+### 🔧 Modifying `round_config.py`
+```powershell
+.\venv\Scripts\python tests\test_round_config.py
+```
+Ensures all domains have valid round sequences for all 3 difficulty levels.
+
+### 🌐 Changing any API endpoint in `main.py`
+```powershell
+# Start server first: python main.py
+.\venv\Scripts\python tests\test_api_endpoints.py
+```
+
+### 🧠 Touching `intelligence_service.py` or `memory_service.py`
+```powershell
+.\venv\Scripts\python tests\test_memory_service.py
+.\venv\Scripts\python tests\test_intelligence_agent.py "Google"
+```
+
+---
+
+## 🛡️ Merge Policy
+
+1. Run `run_all_tests.py --no-api --fast`
+2. If output shows **any** `❌ FAIL` — **DO NOT MERGE**
+3. Fix all failures, re-run until you see:
+   ```
+   🎉 ALL TESTS PASSED! Safe to push to GitHub.
+   ```
+4. Only then submit your Pull Request
+
+---
+
+## ✅ Expected Output (clean run)
+
+```
+=================================================================
+  INTERVIEW AI — MASTER TEST RUNNER
+=================================================================
+
+  ✅ PASS Round Config      (0.1s)
+  ✅ PASS Discovery Data    (0.1s)
+  ✅ PASS Fuzzy Matching    (0.1s)
+  ✅ PASS Company Intel     (0.1s)
+  ✅ PASS Memory Service    (0.2s)
+  ⏩ SKIP API Endpoints     (requires server)
+  ⏩ SKIP Intelligence Agent (slow test)
+
+  Overall Success Rate: 100%
+  🎉 ALL TESTS PASSED! Safe to push to GitHub.
+```
