@@ -24,6 +24,10 @@ import sys
 import os
 import time
 
+# Fix Windows terminal encoding (cp1252 can't print emojis)
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+
 # ── Colors for output ─────────────────────────────────────────────
 GREEN = "\033[92m"
 RED = "\033[91m"
@@ -52,6 +56,11 @@ def run_test(name, file_path, timeout=120):
     if not os.path.exists(abs_path):
         return "SKIP", 0, f"File not found: {abs_path}"
 
+    # Inherit environment and add fixes for Windows
+    env = os.environ.copy()
+    env["PYTHONIOENCODING"] = "utf-8"   # Fix emoji/unicode on Windows cp1252
+    env["PYTHONPATH"] = BACKEND_DIR      # Fix ModuleNotFoundError for 'services'
+
     start = time.time()
     try:
         result = subprocess.run(
@@ -59,7 +68,10 @@ def run_test(name, file_path, timeout=120):
             cwd=BACKEND_DIR,
             capture_output=True,
             text=True,
-            timeout=timeout
+            encoding="utf-8",
+            errors="replace",
+            timeout=timeout,
+            env=env
         )
         elapsed = time.time() - start
         if result.returncode == 0:

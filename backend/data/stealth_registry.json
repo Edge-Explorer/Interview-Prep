@@ -1,3 +1,17 @@
 {
-    
+  "__Test_Company__": {
+    "name": "__Test_Company__",
+    "hit_count": 4,
+    "domain": "Engineering & Tech",
+    "interview_style": "Undetermined",
+    "cultural_values": [],
+    "interview_rounds": {},
+    "last_updated": "2026-03-03T20:21:08.640300",
+    "consensus_score": 0.0,
+    "vetted": false,
+    "interview_rounds_sequence": [
+      "Technical",
+      "Behavioral"
+    ]
+  }
 }
