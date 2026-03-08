@@ -11,9 +11,9 @@ from datetime import datetime
 from auth import auth_utils
 from services.intelligence_service import get_intelligence_service
 from services.memory_service import get_memory_service
+from services.company_intelligence import get_company_intelligence
 from google.oauth2 import id_token
 from google.auth.transport import requests as google_requests
-import os
 
 from contextlib import asynccontextmanager
 
