@@ -114,39 +114,45 @@ async def get_user_stats(db: Session = Depends(database.get_db), current_user: m
 
 @app.get("/interviews/companies/suggestions")
 async def get_company_suggestions(db: Session = Depends(database.get_db), current_user: models.User = Depends(auth_utils.get_current_user)):
-    """Returns a list of all known companies for frontend autocomplete."""
+    """Returns an exhaustive list of all known companies from ALL sources for frontend autocomplete."""
     suggestions = set()
     
-    # 1. Curated Database
+    # 1. Curated Profiles (Main Database)
     try:
         curated_inst = get_company_intelligence()
         suggestions.update(curated_inst.get_all_companies())
-    except: pass
+    except Exception as e:
+        print(f"DEBUG: Failed to load curated companies: {e}")
     
-    # 2. Discovery Memory
+    # 2. Project Data Files
     try:
         base_dir = os.path.dirname(os.path.abspath(__file__))
         data_dir = os.path.join(base_dir, "data")
         
-        # Gold Discoveries
+        # Gold Discoveries (AI Scanned)
         gold_path = os.path.join(data_dir, "discoveries.json")
         if os.path.exists(gold_path):
             with open(gold_path, 'r', encoding='utf-8') as f:
                 gold_data = json.load(f)
                 if isinstance(gold_data, list):
-                    suggestions.update([d.get('company_name', '') for d in gold_data if d.get('company_name')])
+                    for d in gold_data:
+                        name = d.get('company_name')
+                        if name: suggestions.add(name)
         
-        # Stealth Registry
+        # Stealth Registry (Internal Tracking)
         stealth_path = os.path.join(data_dir, "stealth_registry.json")
         if os.path.exists(stealth_path):
             with open(stealth_path, 'r', encoding='utf-8') as f:
                 stealth_data = json.load(f)
                 if isinstance(stealth_data, dict):
                     suggestions.update(stealth_data.keys())
-    except: pass
+                    
+    except Exception as e:
+        print(f"DEBUG: Failed to load data markers: {e}")
     
-    return sorted(list(filter(None, suggestions)))
-
+    # Clean and sort: remove empty strings, Nones, and specific placeholders
+    final_list = sorted([s for s in suggestions if s and s.lower() not in ["none", "null", "undefined"]])
+    return final_list
 # --- INTERVIEW ENDPOINTS ---
 
 @app.post("/interviews/upload-resume")
