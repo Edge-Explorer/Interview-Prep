@@ -51,6 +51,7 @@ function Dashboard() {
     const [companyIntel, setCompanyIntel] = useState(null);
     const [showBriefing, setShowBriefing] = useState(false);
     const [masterReport, setMasterReport] = useState(null);
+    const [companySuggestions, setCompanySuggestions] = useState([]);
 
 
 
@@ -73,6 +74,19 @@ function Dashboard() {
                 }
             };
             fetchStats();
+
+            // Fetch company suggestions
+            const fetchSuggestions = async () => {
+                try {
+                    const res = await axios.get(`${API_BASE}/interviews/companies/suggestions`, {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    setCompanySuggestions(res.data);
+                } catch (err) {
+                    console.error("Error fetching suggestions:", err);
+                }
+            };
+            fetchSuggestions();
         }
     }, [token, navigate, step]);
 
@@ -435,7 +449,16 @@ function Dashboard() {
                         <div className="input-row">
                             <div className="input-group">
                                 <label>Target Company</label>
-                                <input type="text" placeholder="e.g. Google" value={sessionData.target_company} onChange={e => setSessionData({ ...sessionData, target_company: e.target.value })} />
+                                <input 
+                                    type="text" 
+                                    placeholder="e.g. Google" 
+                                    value={sessionData.target_company} 
+                                    onChange={e => setSessionData({ ...sessionData, target_company: e.target.value })} 
+                                    list="company-list"
+                                />
+                                <datalist id="company-list">
+                                    {companySuggestions.map(c => <option key={c} value={c} />)}
+                                </datalist>
                             </div>
                             <div className="input-group">
                                 <label>Difficulty</label>

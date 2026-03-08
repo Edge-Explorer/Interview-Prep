@@ -2718,5 +2718,122 @@
             "KEPT: IB Prep: With AP Guru's IB Prep - Mentioning the company name, hence useful"
         ],
         "discovered_at": "2026-03-03T20:42:21.328222"
+    },
+    {
+        "company_name": "Ideolize Business solution",
+        "interview_intelligence_profile": {
+            "name": "Ideolize Business solution",
+            "industry": "Business Solutions",
+            "size": "51-200 employees (based on 575 followers on LinkedIn, suggesting a smaller company with a broader network)",
+            "interview_style": "Likely a mix of behavioral, technical (depending on the role), and case-study based interviews. Given the mixed reviews and limited data, the interview process might vary in consistency and rigor depending on the specific role and team. Need to highlight relevant experience strongly in the resume and cover letter.",
+            "difficulty_level": "Medium. Reviews suggest some inconsistency, but preparation with common interview questions is advised.",
+            "cultural_values": [
+                "Client-focused",
+                "Innovation",
+                "Continuous learning",
+                "Integrity",
+                "Teamwork"
+            ],
+            "intelligence_reconciliation": "EXPERT INSIGHT: While the company emphasizes 'cutting edge business technology solutions,' the reviews suggest a potentially less structured environment than typical for tech-heavy business solution providers. The interview process might be less focused on pure technical skills and more on problem-solving and adaptability.",
+            "interview_rounds": {
+                "HR Screening": {
+                    "focus": "Basic qualifications, salary expectations, and cultural fit.",
+                    "common_topics": [
+                        "Your background and experience",
+                        "Why you are interested in Ideolize Business Solutions",
+                        "Salary expectations",
+                        "Availability"
+                    ],
+                    "style": "Conversational, informational",
+                    "tips": "Research the company thoroughly. Prepare a concise summary of your skills and how they align with the company's values and mission. Be prepared to discuss your salary expectations."
+                },
+                "Technical/Role-Specific Interview": {
+                    "focus": "Assessment of technical skills and experience relevant to the specific role. For technical roles, this may involve problem-solving, system understanding, and practical application of knowledge. For non-technical roles, expect questions on relevant industry knowledge and experience.",
+                    "common_topics": [
+                        "Past projects and accomplishments",
+                        "Technical skills (e.g., automation, data analysis) - DEPENDING on role",
+                        "Business process knowledge",
+                        "Problem-solving scenarios"
+                    ],
+                    "style": "Question-and-answer, potentially involving case studies or practical exercises",
+                    "tips": "Review relevant technical concepts and technologies. Be prepared to discuss your past projects in detail and explain your contributions. Practice problem-solving and be ready to think on your feet."
+                },
+                "Case Study/Problem Solving": {
+                    "focus": "Ability to analyze business problems, propose solutions, and demonstrate critical thinking.",
+                    "common_topics": [
+                        "Business process improvement",
+                        "Automation opportunities",
+                        "Client-specific scenarios",
+                        "Data analysis and interpretation"
+                    ],
+                    "style": "Interactive, collaborative; the interviewer may provide guidance and feedback",
+                    "tips": "Practice analyzing business scenarios and developing solutions. Focus on clear communication and logical reasoning. Be prepared to justify your recommendations."
+                },
+                "Managerial/Team Fit Interview": {
+                    "focus": "Assess leadership skills, teamwork abilities, and overall fit within the team culture.",
+                    "common_topics": [
+                        "Teamwork and collaboration",
+                        "Conflict resolution",
+                        "Leadership experience",
+                        "Behavioral questions related to past work experiences"
+                    ],
+                    "style": "Behavioral questions, discussion-based",
+                    "tips": "Prepare examples of situations where you demonstrated teamwork, leadership, or problem-solving skills. Be prepared to discuss your strengths and weaknesses as a team member. Research potential team members and understand the team dynamics."
+                }
+            },
+            "red_flags": [
+                "Inconsistent reviews regarding work culture and management.",
+                "Limited data on Glassdoor suggesting a lack of transparency.",
+                "Mumbai reviews are significantly lower than overall reviews which could indicate location specific issues"
+            ],
+            "average_process_duration": "Likely 2-4 weeks, depending on the role and the number of applicants.",
+            "interview_count": "3-5 interviews",
+            "role_company_alignment": "Roles at Ideolize Business Solutions contribute to improving business processes and efficiency for clients. The roles support Ideolize's focus on delivering technology solutions and actionable insights to enhance business performance.",
+            "confidence_score": 160,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Life at Idolize Business Solutions: Culture, Salary, Reviews, Interviews & more",
+                    "url": "https://www.ambitionbox.com/overview/idolize-business-solutions-overview",
+                    "content": "Get an inside look of Idolize Business Solutions \u2014 culture, pay, reviews, interview questions, job openings, corporate offices, peer comparison and more on AmbitionBox"
+                },
+                {
+                    "title": "Idolize Business Solutions Reviews by 20+ Employees | Rated 3.6/5 | AmbitionBox",
+                    "url": "https://www.ambitionbox.com/reviews/idolize-business-solutions-reviews",
+                    "content": "To get a job at Idolize Business ... your resume and cover letter to highlight relevant experience. Additionally, research top Idolize Business Solutions interview questions and practice your responses to prepare thoroughly...."
+                },
+                {
+                    "title": "Idolize Business Solutions | LinkedIn",
+                    "url": "https://in.linkedin.com/company/idolizesolutions",
+                    "content": "Idolize Business Solutions | 575 followers on LinkedIn. Digital Workers | Conversational Engagements | Connected Ecosystems | Actionable Insights | Idolize is an innovative and client-focused organization providing cutting edge business technology solutions through its enthusiastic team of experts and partner eco-system in a culture of continuous learning and high integrity."
+                },
+                {
+                    "title": "[RECENT] Idolize Business Solutions Mumbai Reviews by 6 Employees | Rated 2.3/5 | AmbitionBox",
+                    "url": "https://www.ambitionbox.com/reviews/idolize-business-solutions-reviews/mumbai-location",
+                    "content": "To get a job at Idolize Business ... your resume and cover letter to highlight relevant experience. Additionally, research top Idolize Business Solutions interview questions and practice your responses to prepare thoroughly...."
+                },
+                {
+                    "title": "[RECENT] Idolize Business Solutions Interview Questions and Answers",
+                    "url": "https://www.ambitionbox.com/interviews/idolize-business-solutions-interview-questions",
+                    "content": "Prepare for your next job interview with AmbitionBox. Read 12 Lakh+ interview questions & answers shared by real candidates across 1 Lakh+ companies in India."
+                },
+                {
+                    "title": "[RECENT] 5 Idolize Business Solutions Interview Questions for ...",
+                    "url": "https://www.ambitionbox.com/interviews/idolize-business-solutions-interview-questions/experienced-candidates",
+                    "content": "Prepare for your next job interview with AmbitionBox. Read 12 Lakh+ interview questions & answers shared by real candidates across 1 Lakh+ companies in India."
+                },
+                {
+                    "title": "[RECENT] Idolize Solutions | We make all important I's of your business more stronger through our Inteligent i-cube offerings",
+                    "url": "https://www.idolizesolutions.com/",
+                    "content": "Using manual and tools-driven techniques to identify, map, and understand existing business processes . Thus pinpointing inefficiencies and finding opportunities for automation and designing effective automation steps."
+                },
+                {
+                    "title": "[RECENT] Working at Idolize Business Solutions | Glassdoor",
+                    "url": "https://www.glassdoor.co.in/Overview/Working-at-Idolize-Business-Solutions-EI_IE9024335.11,37.htm",
+                    "content": "See what employees say it's like to work at Idolize Business Solutions. Salaries, reviews, and more - all posted by employees working at Idolize Business Solutions."
+                }
+            ]
+        },
+        "discovered_at": "2026-03-08T12:06:28.956432"
     }
 ]

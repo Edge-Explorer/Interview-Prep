@@ -112,6 +112,41 @@ async def get_user_stats(db: Session = Depends(database.get_db), current_user: m
         "avg_score": round(avg_score, 1)
     }
 
+@app.get("/interviews/companies/suggestions")
+async def get_company_suggestions(db: Session = Depends(database.get_db), current_user: models.User = Depends(auth_utils.get_current_user)):
+    """Returns a list of all known companies for frontend autocomplete."""
+    suggestions = set()
+    
+    # 1. Curated Database
+    try:
+        curated_inst = get_company_intelligence()
+        suggestions.update(curated_inst.get_all_companies())
+    except: pass
+    
+    # 2. Discovery Memory
+    try:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        data_dir = os.path.join(base_dir, "data")
+        
+        # Gold Discoveries
+        gold_path = os.path.join(data_dir, "discoveries.json")
+        if os.path.exists(gold_path):
+            with open(gold_path, 'r', encoding='utf-8') as f:
+                gold_data = json.load(f)
+                if isinstance(gold_data, list):
+                    suggestions.update([d.get('company_name', '') for d in gold_data if d.get('company_name')])
+        
+        # Stealth Registry
+        stealth_path = os.path.join(data_dir, "stealth_registry.json")
+        if os.path.exists(stealth_path):
+            with open(stealth_path, 'r', encoding='utf-8') as f:
+                stealth_data = json.load(f)
+                if isinstance(stealth_data, dict):
+                    suggestions.update(stealth_data.keys())
+    except: pass
+    
+    return sorted(list(filter(None, suggestions)))
+
 # --- INTERVIEW ENDPOINTS ---
 
 @app.post("/interviews/upload-resume")
