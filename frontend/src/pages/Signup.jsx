@@ -54,73 +54,23 @@ const Signup = () => {
                         <span>InterviewAI</span>
                     </Link>
                     <h1>Get Started</h1>
-                    <p>Prepare for your first big breakthrough</p>
+                    <p>Unlock your professional potential instantly</p>
                 </div>
 
-                <form onSubmit={handleSignup} className="auth-form">
-                    <div className="auth-input-group">
-                        <label>Full Name</label>
-                        <div className="input-with-icon">
-                            <User size={18} />
-                            <input
-                                type="text"
-                                placeholder="John Doe"
-                                value={formData.full_name}
-                                onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                                required
-                            />
-                        </div>
-                    </div>
-
-                    <div className="auth-input-group">
-                        <label>Email Address</label>
-                        <div className="input-with-icon">
-                            <Mail size={18} />
-                            <input
-                                type="email"
-                                placeholder="you@example.com"
-                                value={formData.email}
-                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                required
-                            />
-                        </div>
-                    </div>
-
-                    <div className="auth-input-group">
-                        <label>Password</label>
-                        <div className="input-with-icon">
-                            <Lock size={18} />
-                            <input
-                                type="password"
-                                placeholder="Creating a strong password"
-                                value={formData.password}
-                                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                                required
-                            />
-                        </div>
-                    </div>
-
-                    <button className="primary-btn-large" type="submit" disabled={loading}>
-                        {loading ? "CREATING ACCOUNT..." : "SIGN UP"}
-                        {!loading && <ArrowRight size={20} />}
-                    </button>
-                </form>
-
-                <div className="auth-divider">OR</div>
-
-                <div className="google-btn-container">
+                <div className="google-btn-container" style={{ margin: '40px 0' }}>
                     <GoogleLogin
                         onSuccess={handleGoogleSuccess}
-                        onError={() => alert('Google Login Failed')}
+                        onError={() => alert('Google Signup Failed')}
                         useOneTap
                         theme="filled_black"
                         shape="pill"
                         text="signup_with"
+                        size="large"
                     />
                 </div>
 
                 <div className="auth-footer">
-                    Already have an account? <Link to="/login">Log in here</Link>
+                    Already have an account? Skip the form and <Link to="/login">Sign in here</Link>
                 </div>
             </motion.div>
         </div>

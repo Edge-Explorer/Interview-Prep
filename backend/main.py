@@ -50,45 +50,13 @@ async def health():
 # --- AUTH ENDPOINTS ---
 @app.post("/auth/signup", response_model=schemas.Token)
 async def signup(user_data: schemas.UserCreate, db: Session = Depends(database.get_db)):
-    # Check if user exists
-    db_user = db.query(models.User).filter(models.User.email == user_data.email).first()
-    if db_user:
-        raise HTTPException(status_code=400, detail="Email already registered")
-    
-    # Create new user
-    hashed_pass = auth_utils.get_password_hash(user_data.password)
-    new_user = models.User(
-        email=user_data.email,
-        hashed_password=hashed_pass,
-        full_name=user_data.full_name
-    )
-    db.add(new_user)
-    db.commit()
-    db.refresh(new_user)
-    
-    # Generate token
-    access_token = auth_utils.create_access_token(data={"sub": new_user.email})
-    return {
-        "access_token": access_token,
-        "token_type": "bearer",
-        "user": new_user
-    }
+    # Legacy authentication disabled in favor of Google OAuth
+    raise HTTPException(status_code=403, detail="Standard signup is disabled. Please use Google Sign-in.")
 
 @app.post("/auth/login", response_model=schemas.Token)
 async def login(login_data: schemas.UserLogin, db: Session = Depends(database.get_db)):
-    db_user = db.query(models.User).filter(models.User.email == login_data.email).first()
-    if not db_user:
-        raise HTTPException(status_code=400, detail="Incorrect email or password")
-    
-    if not auth_utils.verify_password(login_data.password, db_user.hashed_password):
-        raise HTTPException(status_code=400, detail="Incorrect email or password")
-    
-    access_token = auth_utils.create_access_token(data={"sub": db_user.email})
-    return {
-        "access_token": access_token,
-        "token_type": "bearer",
-        "user": db_user
-    }
+    # Legacy authentication disabled in favor of Google OAuth
+    raise HTTPException(status_code=403, detail="Standard login is disabled. Please use Google Sign-in.")
 
 @app.post("/auth/google", response_model=schemas.Token)
 async def google_login(data: schemas.GoogleLoginRequest, db: Session = Depends(database.get_db)):

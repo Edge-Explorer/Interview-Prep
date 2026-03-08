@@ -51,58 +51,22 @@ const Login = () => {
                         <span>InterviewAI</span>
                     </Link>
                     <h1>Welcome Back</h1>
-                    <p>Pick up where you left off</p>
+                    <p>Continue your journey with a single click</p>
                 </div>
 
-                <form onSubmit={handleLogin} className="auth-form">
-                    <div className="auth-input-group">
-                        <label>Email Address</label>
-                        <div className="input-with-icon">
-                            <Mail size={18} />
-                            <input
-                                type="email"
-                                placeholder="you@example.com"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                        </div>
-                    </div>
-
-                    <div className="auth-input-group">
-                        <label>Password</label>
-                        <div className="input-with-icon">
-                            <Lock size={18} />
-                            <input
-                                type="password"
-                                placeholder="••••••••"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                        </div>
-                    </div>
-
-                    <button className="primary-btn-large" type="submit" disabled={loading}>
-                        {loading ? "AUTHENTICATING..." : "LOG IN"}
-                        {!loading && <ArrowRight size={20} />}
-                    </button>
-                </form>
-
-                <div className="auth-divider">OR</div>
-
-                <div className="google-btn-container">
+                <div className="google-btn-container" style={{ margin: '40px 0' }}>
                     <GoogleLogin
                         onSuccess={handleGoogleSuccess}
                         onError={() => alert('Google Login Failed')}
                         useOneTap
                         theme="filled_black"
                         shape="pill"
+                        size="large"
                     />
                 </div>
 
                 <div className="auth-footer">
-                    Don't have an account? <Link to="/signup">Sign up for free</Link>
+                    Secure, one-tap authentication powered by Google.
                 </div>
             </motion.div>
         </div>
