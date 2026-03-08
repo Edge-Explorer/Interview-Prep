@@ -170,17 +170,18 @@ async def upload_resume(
     except Exception as e:
         raise HTTPException(status_code=400, detail="Could not read PDF file")
 
-    analysis_task = gemini_service.analyze_resume(resume_text, job_description)
+    # Create Tasks from coroutines to allow status checking
+    analysis_task = asyncio.create_task(gemini_service.analyze_resume(resume_text, job_description))
     
     # 2.5 Fetch Company Intelligence (Parallel)
     current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     intel_task = None
     if target_company:
         intel_service = get_intelligence_service()
-        intel_task = intel_service.get_intelligence(target_company, job_description)
+        intel_task = asyncio.create_task(intel_service.get_intelligence(target_company, job_description))
 
     # 3. Generate first question (Parallel)
-    question_task = gemini_service.generate_interview_question(
+    question_task = asyncio.create_task(gemini_service.generate_interview_question(
         role=role_category,
         sub_role=sub_role,
         difficulty=difficulty_level,
@@ -190,30 +191,34 @@ async def upload_resume(
         resume_text=resume_text,
         current_time=current_time_str,
         interviewer_name=interviewer_name
-    )
+    ))
 
     # Execute all AI tasks in parallel to save time
     company_intel = None
-    try:
-        if intel_task:
-            # Shield the fast tasks from the slower intel_task if needed
-            # But gather is fine if we have a total timeout
-            results = await asyncio.wait_for(
-                asyncio.gather(analysis_task, intel_task, question_task, return_exceptions=True),
-                timeout=45.0
-            )
-            # Handle potential exceptions in individual tasks
-            analysis_raw = results[0] if not isinstance(results[0], Exception) else "Analysis failed."
-            company_intel = results[1] if not isinstance(results[1], Exception) else None
-            first_question = results[2] if not isinstance(results[2], Exception) else "Hello! Let's start the interview."
-        else:
-            analysis_raw, first_question = await asyncio.gather(analysis_task, question_task)
-    except asyncio.TimeoutError:
-        print("TIMEOUT: Parallel tasks took too long. Proceeding with partial data.")
-        # Try to get whatever is finished, or default
-        analysis_raw = await analysis_task if not analysis_task.done() else "Resume analysis timed out."
-        first_question = await question_task if not question_task.done() else "Let's begin the interview."
+    tasks = [analysis_task, question_task]
+    if intel_task:
+        tasks.append(intel_task)
+    
+    # wait() doesn't cancel tasks on timeout, unlike wait_for()
+    done, pending = await asyncio.wait(tasks, timeout=45.0)
+    
+    if analysis_task.done() and not analysis_task.exception():
+        analysis_raw = analysis_task.result()
+    else:
+        analysis_raw = "Analysis in progress or timed out."
+        
+    if question_task.done() and not question_task.exception():
+        first_question = question_task.result()
+    else:
+        first_question = "Hello! Let's get started with your interview."
+        
+    if intel_task and intel_task.done() and not intel_task.exception():
+        company_intel = intel_task.result()
+    else:
         company_intel = None
+
+    if len(pending) > 0:
+        print(f"TIMEOUT: {len(pending)} tasks took too long. Proceeding with partial data.")
 
     # 4. Save to DB
     clean_analysis = analysis_raw.replace('```json', '').replace('```', '').strip()
@@ -478,7 +483,8 @@ async def start_interview(
 ):
     # 1. Generate the very first question using Gemini (Task)
     current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    question_task = gemini_service.generate_interview_question(
+    # Create Tasks to allow status checking
+    question_task = asyncio.create_task(gemini_service.generate_interview_question(
         role=data.role_category,
         sub_role=data.sub_role,
         difficulty=data.difficulty_level,
@@ -487,30 +493,35 @@ async def start_interview(
         jd=data.job_description,
         current_time=current_time_str,
         interviewer_name=data.interviewer_name
-    )
+    ))
 
     # 1.5 Fetch Company Intelligence (Task)
     intel_task = None
     if data.target_company:
         intel_service = get_intelligence_service()
-        intel_task = intel_service.get_intelligence(data.target_company, data.job_description)
+        intel_task = asyncio.create_task(intel_service.get_intelligence(data.target_company, data.job_description))
 
     # Execute tasks in parallel
     company_intel = None
-    try:
-        if intel_task:
-            results = await asyncio.wait_for(
-                asyncio.gather(question_task, intel_task, return_exceptions=True),
-                timeout=45.0
-            )
-            first_question = results[0] if not isinstance(results[0], Exception) else "Let's start the interview."
-            company_intel = results[1] if not isinstance(results[1], Exception) else None
-        else:
-            first_question = await question_task
-    except asyncio.TimeoutError:
-        print("TIMEOUT: Initializing interview took too long. Proceeding with Gemini only.")
-        first_question = await question_task if not question_task.done() else "Welcome! Let's begin."
+    tasks = [question_task]
+    if intel_task:
+        tasks.append(intel_task)
+    
+    # wait() doesn't cancel tasks on timeout
+    done, pending = await asyncio.wait(tasks, timeout=45.0)
+    
+    if question_task.done() and not question_task.exception():
+        first_question = question_task.result()
+    else:
+        first_question = "Welcome! Let's begin the interview."
+        
+    if intel_task and intel_task.done() and not intel_task.exception():
+        company_intel = intel_task.result()
+    else:
         company_intel = None
+
+    if len(pending) > 0:
+        print("TIMEOUT: Initializing interview took too long. Proceeding with partial data.")
 
     from core.round_config import get_first_round
 
