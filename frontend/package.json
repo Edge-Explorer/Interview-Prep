@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-oauth/google": "^0.13.4",
     "axios": "^1.13.5",
     "framer-motion": "^12.34.0",
+    "jwt-decode": "^4.0.0",
     "lucide-react": "^0.563.0",
     "pdfjs-dist": "^5.4.624",
     "react": "^19.2.0",

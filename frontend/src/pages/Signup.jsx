@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate, Link } from 'react-router-dom';
 import { Mail, Lock, User, ArrowRight, Brain } from 'lucide-react';
+import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 
 const Signup = () => {
@@ -25,6 +26,19 @@ const Signup = () => {
             alert(err.response?.data?.detail || "Signup failed");
         }
         setLoading(false);
+    };
+
+    const handleGoogleSuccess = async (credentialResponse) => {
+        try {
+            const res = await axios.post('http://localhost:8000/auth/google', {
+                token: credentialResponse.credential
+            });
+            localStorage.setItem('token', res.data.access_token);
+            localStorage.setItem('user', JSON.stringify(res.data.user));
+            navigate('/dashboard');
+        } catch (err) {
+            alert(err.response?.data?.detail || "Google Signup failed");
+        }
     };
 
     return (
@@ -91,6 +105,19 @@ const Signup = () => {
                         {!loading && <ArrowRight size={20} />}
                     </button>
                 </form>
+
+                <div className="auth-divider">OR</div>
+
+                <div className="google-btn-container">
+                    <GoogleLogin
+                        onSuccess={handleGoogleSuccess}
+                        onError={() => alert('Google Login Failed')}
+                        useOneTap
+                        theme="filled_black"
+                        shape="pill"
+                        text="signup_with"
+                    />
+                </div>
 
                 <div className="auth-footer">
                     Already have an account? <Link to="/login">Log in here</Link>

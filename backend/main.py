@@ -11,6 +11,9 @@ from datetime import datetime
 from auth import auth_utils
 from services.intelligence_service import get_intelligence_service
 from services.memory_service import get_memory_service
+from google.oauth2 import id_token
+from google.auth.transport import requests as google_requests
+import os
 
 from contextlib import asynccontextmanager
 
@@ -86,6 +89,45 @@ async def login(login_data: schemas.UserLogin, db: Session = Depends(database.ge
         "token_type": "bearer",
         "user": db_user
     }
+
+@app.post("/auth/google", response_model=schemas.Token)
+async def google_login(data: schemas.GoogleLoginRequest, db: Session = Depends(database.get_db)):
+    try:
+        # 1. Verify Google Token
+        CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
+        idinfo = id_token.verify_oauth2_token(data.token, google_requests.Request(), CLIENT_ID)
+
+        # 2. Get user info from Google
+        email = idinfo['email']
+        full_name = idinfo.get('name', '')
+        
+        # 3. Check if user exists
+        db_user = db.query(models.User).filter(models.User.email == email).first()
+        
+        if not db_user:
+            # Create a new user (Auto-registration)
+            db_user = models.User(
+                email=email,
+                full_name=full_name,
+                hashed_password="GOOGLE_AUTH_USER", # No password needed for OAuth
+                is_premium=0
+            )
+            db.add(db_user)
+            db.commit()
+            db.refresh(db_user)
+            
+        # 4. Generate our app's JWT
+        access_token = auth_utils.create_access_token(data={"sub": db_user.email})
+        return {
+            "access_token": access_token,
+            "token_type": "bearer",
+            "user": db_user
+        }
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid Google token")
+    except Exception as e:
+        print(f"Error in Google login: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error during Google login")
 
 @app.get("/users/stats")
 async def get_user_stats(db: Session = Depends(database.get_db), current_user: models.User = Depends(auth_utils.get_current_user)):

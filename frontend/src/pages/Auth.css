@@ -108,3 +108,28 @@
 .auth-footer a:hover {
     text-decoration: underline;
 }
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.google-btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
