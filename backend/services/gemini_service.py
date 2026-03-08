@@ -116,6 +116,14 @@ class GeminiService:
             # Fallback for when no intel is provided but we have a company name
             company_context = f"\nINFO: Using general industry knowledge for {company}.\n"
 
+        # Panel Interview Logic
+        panel_instruction = f"""
+        ACT AS A PANEL: You represent multiple interviewers. 
+        - Interviewer A ({interviewer_name}): Lead Recruiter, focused on background.
+        - Interviewer B (Arav): Technical Architect, focused on efficiency.
+        Alternate between these two personas. Mention who is asking in the text (e.g., '[{interviewer_name}]: ...').
+        """ if is_panel else ""
+
         system_prompt = f"""
         You are {interviewer_name.upper()}, a Simulation Assistant designed to mimic high-level professional interviewers.
         The name {interviewer_name} signifies eternal knowledge and primal wisdom.

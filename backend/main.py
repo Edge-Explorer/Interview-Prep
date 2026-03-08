@@ -433,6 +433,7 @@ async def start_interview(
     db: Session = Depends(database.get_db),
     current_user: models.User = Depends(auth_utils.get_current_user)
 ):
+    current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     # 1. Fetch Company Intelligence FIRST (Task)
     print(f"LOG: Initializing non-resume interview for {data.target_company}...")
     intel_task = None
