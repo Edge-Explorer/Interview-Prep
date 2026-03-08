@@ -138,18 +138,28 @@ async def upload_resume(
     except Exception as e:
         raise HTTPException(status_code=400, detail="Could not read PDF file")
 
-    # Create Tasks from coroutines to allow status checking
+    # 1. Start Foundation tasks (Intel and Analysis)
+    intel_service = get_intelligence_service()
+    intel_task = asyncio.create_task(intel_service.get_intelligence(target_company, job_description)) if target_company else None
     analysis_task = asyncio.create_task(gemini_service.analyze_resume(resume_text, job_description))
-    
-    # 2.5 Fetch Company Intelligence (Parallel)
-    current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    intel_task = None
-    if target_company:
-        intel_service = get_intelligence_service()
-        intel_task = asyncio.create_task(intel_service.get_intelligence(target_company, job_description))
 
-    # 3. Generate first question (Parallel)
-    question_task = asyncio.create_task(gemini_service.generate_interview_question(
+    print(f"LOG: Parallel extraction started for {target_company or 'General Resume'}...")
+    
+    # Wait for the foundation data (up to 60s for deep discovery)
+    foundation_tasks = [analysis_task]
+    if intel_task:
+        foundation_tasks.append(intel_task)
+    
+    await asyncio.wait(foundation_tasks, timeout=60.0)
+    
+    # Extract results
+    analysis_raw = analysis_task.result() if analysis_task.done() and not analysis_task.exception() else "Analysis timed out."
+    company_intel = intel_task.result() if intel_task and intel_task.done() and not intel_task.exception() else None
+    
+    # 2. Now generate the FIRST QUESTION using the intel we just got
+    print("LOG: Generating first contextual question...")
+    current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    first_question = await gemini_service.generate_interview_question(
         role=role_category,
         sub_role=sub_role,
         difficulty=difficulty_level,
@@ -158,35 +168,9 @@ async def upload_resume(
         jd=job_description,
         resume_text=resume_text,
         current_time=current_time_str,
-        interviewer_name=interviewer_name
-    ))
-
-    # Execute all AI tasks in parallel to save time
-    company_intel = None
-    tasks = [analysis_task, question_task]
-    if intel_task:
-        tasks.append(intel_task)
-    
-    # wait() doesn't cancel tasks on timeout, unlike wait_for()
-    done, pending = await asyncio.wait(tasks, timeout=45.0)
-    
-    if analysis_task.done() and not analysis_task.exception():
-        analysis_raw = analysis_task.result()
-    else:
-        analysis_raw = "Analysis in progress or timed out."
-        
-    if question_task.done() and not question_task.exception():
-        first_question = question_task.result()
-    else:
-        first_question = "Hello! Let's get started with your interview."
-        
-    if intel_task and intel_task.done() and not intel_task.exception():
-        company_intel = intel_task.result()
-    else:
-        company_intel = None
-
-    if len(pending) > 0:
-        print(f"TIMEOUT: {len(pending)} tasks took too long. Proceeding with partial data.")
+        interviewer_name=interviewer_name,
+        company_intel=company_intel
+    )
 
     # 4. Save to DB
     clean_analysis = analysis_raw.replace('```json', '').replace('```', '').strip()
@@ -449,10 +433,24 @@ async def start_interview(
     db: Session = Depends(database.get_db),
     current_user: models.User = Depends(auth_utils.get_current_user)
 ):
-    # 1. Generate the very first question using Gemini (Task)
-    current_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    # Create Tasks to allow status checking
-    question_task = asyncio.create_task(gemini_service.generate_interview_question(
+    # 1. Fetch Company Intelligence FIRST (Task)
+    print(f"LOG: Initializing non-resume interview for {data.target_company}...")
+    intel_task = None
+    if data.target_company:
+        intel_service = get_intelligence_service()
+        intel_task = asyncio.create_task(intel_service.get_intelligence(data.target_company, data.job_description))
+
+    # Wait for intel (Discovery is the bottleneck)
+    company_intel = None
+    if intel_task:
+        await asyncio.wait([intel_task], timeout=60.0)
+        company_intel = intel_task.result() if intel_task.done() and not intel_task.exception() else None
+        if intel_task and not intel_task.done():
+            print("WARNING: Start-Discovery timeout. Proceeding with industry defaults.")
+
+    # 2. Now generate the FIRST QUESTION with context
+    print("LOG: Generating first contextual question...")
+    first_question = await gemini_service.generate_interview_question(
         role=data.role_category,
         sub_role=data.sub_role,
         difficulty=data.difficulty_level,
@@ -460,36 +458,9 @@ async def start_interview(
         is_panel=data.is_panel,
         jd=data.job_description,
         current_time=current_time_str,
-        interviewer_name=data.interviewer_name
-    ))
-
-    # 1.5 Fetch Company Intelligence (Task)
-    intel_task = None
-    if data.target_company:
-        intel_service = get_intelligence_service()
-        intel_task = asyncio.create_task(intel_service.get_intelligence(data.target_company, data.job_description))
-
-    # Execute tasks in parallel
-    company_intel = None
-    tasks = [question_task]
-    if intel_task:
-        tasks.append(intel_task)
-    
-    # wait() doesn't cancel tasks on timeout
-    done, pending = await asyncio.wait(tasks, timeout=45.0)
-    
-    if question_task.done() and not question_task.exception():
-        first_question = question_task.result()
-    else:
-        first_question = "Welcome! Let's begin the interview."
-        
-    if intel_task and intel_task.done() and not intel_task.exception():
-        company_intel = intel_task.result()
-    else:
-        company_intel = None
-
-    if len(pending) > 0:
-        print("TIMEOUT: Initializing interview took too long. Proceeding with partial data.")
+        interviewer_name=data.interviewer_name,
+        company_intel=company_intel
+    )
 
     from core.round_config import get_first_round
 

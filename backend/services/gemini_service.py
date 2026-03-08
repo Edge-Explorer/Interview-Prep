@@ -70,7 +70,7 @@ class GeminiService:
         )
         return response.text
 
-    async def generate_interview_question(self, role: str, sub_role: str, difficulty: int, company: str = None, round_name: str = "Technical", is_panel: bool = False, jd: str = None, resume_text: str = None, chat_history: list = [], current_time: str = None, interviewer_name: str = "Adinath"):
+    async def generate_interview_question(self, role: str, sub_role: str, difficulty: int, company: str = None, round_name: str = "Technical", is_panel: bool = False, jd: str = None, resume_text: str = None, chat_history: list = [], current_time: str = None, interviewer_name: str = "Adinath", company_intel: dict = None):
         """Generates a contextual interview question for different rounds."""
         
         difficulty_map = {1: "Junior", 2: "Mid-level", 3: "Senior/Lead"}
@@ -91,72 +91,30 @@ class GeminiService:
             - Test leadership and teamwork
             - Explore decision-making under pressure
             - Assess communication and empathy
-            - Examples: "Tell me about a time when...", "How did you handle...", "Describe a situation where..."
-            - Look for specific examples, not generic answers
             """,
             "System Design": """
             FOCUS: Architecture, scalability, distributed systems, trade-offs.
-            - Design a system (e.g., URL shortener, messaging app, social media feed)
-            - Discuss load balancing, caching, database design
-            - Explore CAP theorem, consistency vs availability
-            - Ask about monitoring, logging, failure handling
             """,
             "Managerial": """
             FOCUS: Leadership, team management, conflict resolution, strategic thinking.
-            - Ask about managing difficult team members
-            - Explore prioritization and resource allocation
-            - Test stakeholder management
-            - Assess mentoring and coaching abilities
             """,
             "Final": """
             FOCUS: Vision, long-term goals, culture alignment, executive presence.
-            - Ask about career aspirations
-            - Explore company culture fit
-            - Test strategic thinking and business acumen
-            - Assess passion and motivation
             """
         }
 
-        # Panel Interview Logic
-        panel_instruction = f"""
-        ACT AS A PANEL: You represent multiple interviewers. 
-        - Interviewer A ({interviewer_name}): Lead Recruiter, focused on background.
-        - Interviewer B (Arav): Technical Architect, focused on efficiency.
-        Alternate between these two personas. Mention who is asking in the text (e.g., '[{interviewer_name}]: ...').
-        """ if is_panel else ""
-
-        # Get agentic company intelligence
-        from .intelligence_service import get_intelligence_service
-        intel_service = get_intelligence_service()
-        
-        if company:
-            # This now checks the database AND triggers agents for unknown companies
-            # Pass jd to help agents handle stealth companies
-            profile = await intel_service.get_intelligence(company, jd)
-            
-            if profile and not profile.get("error"):
-                # Tier 1 & 2: Curated or Agent-Generated intelligence
-                status = "CURATED" if get_company_intelligence().is_company_in_database(company) else "AGENTIC DISCOVERY"
-                company_context = f"\nINFO: COMPANY INTELLIGENCE ({status})\n"
-                
-                # Build rich context similar to company_intelligence.py logic
-                company_context += f"COMPANY: {profile.get('name', company)} ({profile.get('industry', 'N/A')})\n"
-                company_context += f"STYLE: {profile.get('interview_style', 'Standard')}\n"
-                company_context += f"VALUES: {', '.join(profile.get('cultural_values', []))}\n"
-                
-                # NEW: Fusion Insight for transparency
-                reconciliation = profile.get('intelligence_reconciliation')
-                if reconciliation:
-                    company_context += f"RECONCILIATION INSIGHT: {reconciliation}\n"
-                
-                round_info = profile.get('interview_rounds', {}).get(round_name, {})
-                if round_info:
-                    company_context += f"\n{round_name.upper()} ROUND FOCUS: {round_info.get('focus', 'N/A')}\n"
-            else:
-                # Tier 3: AI Fallback
-                company_context = f"\nINFO: COMPANY INTELLIGENCE (TIER 3 - AI FALLBACK)\n"
-                company_context += f"COMPANY: {company} (using general industry knowledge)\n"
-                company_context += f"NOTE: Agent discovery failed. Use general knowledge.\n"
+        # Company Context Fusion
+        company_context = ""
+        if company_intel and not company_intel.get("error"):
+            # Use provided intelligence
+            status = "CURATED" if company_intel.get("is_curated") else "AGENTIC DISCOVERY"
+            company_context = f"\nINFO: COMPANY INTELLIGENCE ({status})\n"
+            company_context += f"COMPANY: {company_intel.get('name', company)}\n"
+            company_context += f"STYLE: {company_intel.get('interview_style', 'Standard')}\n"
+            company_context += f"RECONCILIATION: {company_intel.get('intelligence_reconciliation', 'N/A')}\n"
+        elif company:
+            # Fallback for when no intel is provided but we have a company name
+            company_context = f"\nINFO: Using general industry knowledge for {company}.\n"
 
         system_prompt = f"""
         You are {interviewer_name.upper()}, a Simulation Assistant designed to mimic high-level professional interviewers.
