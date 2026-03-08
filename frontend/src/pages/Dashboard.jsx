@@ -52,6 +52,8 @@ function Dashboard() {
     const [showBriefing, setShowBriefing] = useState(false);
     const [masterReport, setMasterReport] = useState(null);
     const [companySuggestions, setCompanySuggestions] = useState([]);
+    const [filteredSuggestions, setFilteredSuggestions] = useState([]);
+    const [showSuggestions, setShowSuggestions] = useState(false);
 
 
 
@@ -447,18 +449,44 @@ function Dashboard() {
                             </div>
                         </div>
                         <div className="input-row">
-                            <div className="input-group">
+                            <div className="input-group" style={{ position: 'relative' }}>
                                 <label>Target Company</label>
                                 <input 
                                     type="text" 
                                     placeholder="e.g. Google" 
                                     value={sessionData.target_company} 
-                                    onChange={e => setSessionData({ ...sessionData, target_company: e.target.value })} 
-                                    list="company-list"
+                                    onChange={e => {
+                                        const val = e.target.value;
+                                        setSessionData({ ...sessionData, target_company: val });
+                                        if (val.trim().length > 0) {
+                                            const filtered = companySuggestions.filter(c => 
+                                                c.toLowerCase().includes(val.toLowerCase())
+                                            ).slice(0, 5);
+                                            setFilteredSuggestions(filtered);
+                                            setShowSuggestions(filtered.length > 0);
+                                        } else {
+                                            setShowSuggestions(false);
+                                        }
+                                    }}
+                                    onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+                                    autoComplete="off"
                                 />
-                                <datalist id="company-list">
-                                    {companySuggestions.map(c => <option key={c} value={c} />)}
-                                </datalist>
+                                {showSuggestions && (
+                                    <div className="company-suggestions-floating glass-card">
+                                        {filteredSuggestions.map(c => (
+                                            <div 
+                                                key={c} 
+                                                className="suggestion-item"
+                                                onClick={() => {
+                                                    setSessionData({ ...sessionData, target_company: c });
+                                                    setShowSuggestions(false);
+                                                }}
+                                            >
+                                                🏢 {c}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                             <div className="input-group">
                                 <label>Difficulty</label>
