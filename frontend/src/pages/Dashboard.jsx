@@ -477,8 +477,10 @@ function Dashboard() {
                                             <div 
                                                 key={c} 
                                                 className="suggestion-item"
-                                                onClick={() => {
-                                                    setSessionData({ ...sessionData, target_company: c });
+                                                onMouseDown={(e) => {
+                                                    // Prevents the onBlur from firing before the state update
+                                                    e.preventDefault(); 
+                                                    setSessionData(prev => ({ ...prev, target_company: c }));
                                                     setShowSuggestions(false);
                                                 }}
                                             >

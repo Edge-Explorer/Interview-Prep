@@ -2718,5 +2718,119 @@
             "KEPT: IB Prep: With AP Guru's IB Prep - Mentioning the company name, hence useful"
         ],
         "discovered_at": "2026-03-03T20:42:21.328222"
+    },
+    {
+        "company_name": "Capgemini",
+        "interview_intelligence_profile": {
+            "name": "Capgemini",
+            "industry": "Consulting",
+            "size": "Large (4,100+ interviews reported on AmbitionBox, globally operating)",
+            "interview_style": "Capgemini interviews generally follow a structured approach, beginning with HR screening and progressing to technical and behavioral assessments. The emphasis is on evaluating both technical skills relevant to the role and cultural fit. Reported interview experiences suggest a mix of standard questions and problem-solving scenarios. Given Capgemini's presence as a consulting firm, the process is designed to assess both analytical abilities and communication skills.",
+            "difficulty_level": "Medium",
+            "cultural_values": [
+                "Leadership",
+                "Problem-solving",
+                "Agility",
+                "Communication",
+                "Client-focused",
+                "Teamwork",
+                "Ethical conduct"
+            ],
+            "intelligence_reconciliation": "EXPERT INSIGHT: The interview process is aligned with the consulting industry's focus on problem-solving, communication, and client interaction. While the provided data mentions some technical topics like SQL and Javascript, the overall process is tailored to assess consulting aptitude rather than deep technical expertise, which is expected to be balanced with soft skills.",
+            "interview_rounds": {
+                "HR Screening Round": {
+                    "focus": "Basic details, work experience, and background check. Assess candidate's motivation and interest in the role and company.",
+                    "common_topics": [
+                        "Resume review",
+                        "Career goals",
+                        "Why Capgemini?",
+                        "Salary expectations"
+                    ],
+                    "style": "Conversational, introductory",
+                    "tips": "Prepare clear and concise answers about your background and motivations. Research Capgemini's mission and values."
+                },
+                "Technical/Skills Assessment Round": {
+                    "focus": "Evaluate technical skills relevant to the role and problem-solving abilities.",
+                    "common_topics": [
+                        "SQL",
+                        "Troubleshooting",
+                        "Javascript",
+                        "Power BI",
+                        "Agile methodologies",
+                        "Data analysis"
+                    ],
+                    "style": "Problem-solving, technical questions, scenario-based questions",
+                    "tips": "Review core technical concepts and be prepared to discuss practical applications. Practice problem-solving exercises."
+                },
+                "Behavioral Interview Round": {
+                    "focus": "Assess cultural fit, leadership potential, and behavioral competencies. Evaluate how the candidate handles challenging situations and interacts with others.",
+                    "common_topics": [
+                        "Teamwork",
+                        "Conflict resolution",
+                        "Adaptability",
+                        "Leadership experience",
+                        "Ethical dilemmas"
+                    ],
+                    "style": "STAR method (Situation, Task, Action, Result)",
+                    "tips": "Prepare examples using the STAR method to showcase your skills and experience. Understand Capgemini's leadership principles."
+                },
+                "Managerial Round": {
+                    "focus": "Assess overall fit, career goals, and suitability for the team. Discuss project experience and expectations.",
+                    "common_topics": [
+                        "Project experience",
+                        "Career aspirations",
+                        "Teamwork and collaboration",
+                        "Expectations for the role"
+                    ],
+                    "style": "In-depth discussion about previous projects and future goals",
+                    "tips": "Be prepared to discuss your project experience in detail and articulate your career aspirations clearly."
+                }
+            },
+            "red_flags": [
+                "Lack of preparation about Capgemini",
+                "Inability to articulate skills and experience clearly",
+                "Poor communication skills",
+                "Negative attitude or unprofessional behavior",
+                "Unrealistic salary expectations"
+            ],
+            "average_process_duration": "1 week (reported on Glassdoor)",
+            "interview_count": "19,605 (reported on Glassdoor)",
+            "role_company_alignment": "Consulting roles at Capgemini are vital for delivering strategic solutions and technological innovations to clients. These roles drive business growth and improve operational efficiency across diverse industries, aligning directly with Capgemini's mission to transform businesses through technology.",
+            "confidence_score": 180,
+            "is_synthetic": false,
+            "sources": [
+                {
+                    "title": "Capgemini Interview Questions : Process & Tips | WikiJob",
+                    "url": "https://www.wikijob.co.uk/interview-advice/company-interview-questions/capgemini",
+                    "content": "Tips on interview questions , online tests and the full application process for graduate intake at Capgemini . Questions to ask your interviewer . What interests you about this job? Where do you see yourself in five years?"
+                },
+                {
+                    "title": "Capgemini Interview Questions (2025) | Glassdoor",
+                    "url": "https://www.glassdoor.co.uk/Interview/Capgemini-Interview-Questions-E3803.htm?sort.sortType=RD&sort.ascending=false",
+                    "content": "Capgemini interview questions . Updated 15 Mar 2025. Job title. 19,605 interviews of 19.6K. Sort most recent.The process took 1 week.I interviewed at Capgemini (Mumbai) in Feb 2024. Interview . 1st round with HR with basic details, work experience and background."
+                },
+                {
+                    "title": "9 Potential Capgemini Interview Questions And... | Indeed.com India",
+                    "url": "https://in.indeed.com/career-advice/interviewing/capgemini-interview-questions",
+                    "content": "In this article, we discuss nine potential Capgemini interview questions with sample answers and explain the interview process to help you prepare."
+                },
+                {
+                    "title": "[RECENT] Top Capgemini Interview Questions and Answers 2025",
+                    "url": "https://stg-mindmajixtechhub.vercel.app/capgemini-interview-questions",
+                    "content": "Capgemini Power BI Interview Questions . Capgemini Leadership Principles. Tips to Crack Capgemini Interview . Capgemini 's interview process begins with an online assessment test, designed to evaluate your skills and competencies."
+                },
+                {
+                    "title": "[RECENT] Capgemini Interview Questions , Process and Tips ... | AmbitionBox",
+                    "url": "https://www.ambitionbox.com/interviews/capgemini-interview-questions?...",
+                    "content": "Discover Capgemini Interview questions , understand the process and apply proven tips reported by 4,100+ real candidates for success.The most common topics and skills that interviewers at Capgemini expect are SQL, Troubleshooting, Javascript, Management and Agile."
+                },
+                {
+                    "title": "[RECENT] Capgemini Interview Questions : Technical & HR",
+                    "url": "https://www.ccbp.in/blog/articles/capgemini-interview-questions",
+                    "content": "Capgemini Interview Process Capgemini HR Interview Questions and Answers for Freshers and ExperiencedThe Capgemini recruitment process consists of three rounds of selection including Online..."
+                }
+            ]
+        },
+        "discovered_at": "2026-03-08T12:59:06.138431"
     }
 ]
