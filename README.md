@@ -4,7 +4,7 @@
 
 ---
 
-> 📚 **Project Docs:** &nbsp;[Challenges](./docs/CHALLENGES.md) &nbsp;|&nbsp; [Next Steps](./docs/NEXT_STEPS.md) &nbsp;|&nbsp; [Coding Round Design](./docs/CODING_ROUND_DESIGN.md) &nbsp;|&nbsp; [Technical Flow](./docs/TECHNICAL_FLOW.md) &nbsp;|&nbsp; [Collaborators](./docs/COLLABORATORS.md) &nbsp;|&nbsp; [All Docs →](./docs/)
+> 📚 **Project Docs:** &nbsp;[Challenges](./docs/CHALLENGES.md) &nbsp;|&nbsp; [Next Steps](./docs/NEXT_STEPS.md) &nbsp;|&nbsp; [Coding Round Design](./docs/CODING_ROUND_DESIGN.md) &nbsp;|&nbsp; [Technical Flow](./docs/TECHNICAL_FLOW.md) &nbsp;|&nbsp; [All Docs →](./docs/)
 
 ---
 <div align="center">
