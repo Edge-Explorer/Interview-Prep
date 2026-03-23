@@ -25,6 +25,8 @@ jobs:
           pip install pytest httpx
           
       - name: Run Backend Tests
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           cd backend
           pytest tests/ --disable-warnings
