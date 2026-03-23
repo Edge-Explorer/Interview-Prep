@@ -10,7 +10,7 @@ from typing_extensions import TypedDict
 
 # LangChain / LangGraph imports
 from langgraph.graph import StateGraph, END
-from ddgs import DDGS
+from duckduckgo_search import DDGS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from rapidfuzz import process, fuzz
