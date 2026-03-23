@@ -12,24 +12,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: '3.11'
+          enable-cache: true
           
       - name: Install dependencies
         run: |
           cd backend
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pytest httpx pytest-asyncio
+          uv sync --dev
           
       - name: Run Backend Tests
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           cd backend
-          pytest tests/ --disable-warnings
+          uv run pytest tests/ --disable-warnings
           
       - name: Validate Master JSON Data
         run: |

@@ -1,0 +1,43 @@
+[project]
+name = "interviewai-backend"
+version = "2.4.0"
+description = "Advanced AI-powered interview intelligence platform backend."
+authors = [{ name = "Karan Shelar", email = "karan@edge-explorer.ai" }]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "sqlalchemy",
+    "alembic",
+    "google-genai",
+    "psycopg2-binary",
+    "python-dotenv",
+    "pydantic",
+    "pydantic-settings",
+    "python-multipart",
+    "python-jose[cryptography]",
+    "passlib[bcrypt]",
+    "bcrypt==4.0.1",
+    "pypdf",
+    "langchain",
+    "langgraph",
+    "langchain-community",
+    "langchain-google-genai",
+    "duckduckgo-search",
+    "transformers",
+    "peft",
+    "accelerate",
+    "torch",
+    "rapidfuzz",
+]
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
+]
+
+[tool.uv]
+managed = true
+package = false
