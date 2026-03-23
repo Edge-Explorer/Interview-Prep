@@ -1,3 +1,4 @@
+import pytest
 import asyncio
 import os
 import os
@@ -9,6 +10,7 @@ from services.intelligence_service import get_intelligence_service
 
 load_dotenv()
 
+@pytest.mark.asyncio
 async def test_agent():
     print("START: Starting Intelligence Service...")
     service = get_intelligence_service()
