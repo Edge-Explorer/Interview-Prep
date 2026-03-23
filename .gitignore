@@ -1,5 +1,36 @@
-node_modules/
+# --- INTERVIEWAI MASTER GITIGNORE ---
+
+# Python
 backend/venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
 .env
-*.log
+backend/.env
+backend/data/*.json.bak
+
+# Node / React
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+
+# OS / IDE
+.vscode/
+.idea/
 .DS_Store
+Thumbs.db
+*.log
+*.sqlite3
+
+# Docker
+.dockerignore
