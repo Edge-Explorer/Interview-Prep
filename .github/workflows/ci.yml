@@ -1,0 +1,55 @@
+name: InterviewAI CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  backend-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          cd backend
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest httpx
+          
+      - name: Run Backend Tests
+        run: |
+          cd backend
+          pytest tests/ --disable-warnings
+          
+      - name: Validate Master JSON Data
+        run: |
+          # Simple script to ensure JSON data is not corrupted
+          python -c "import json; [json.load(open(f'backend/data/{f}', 'r', encoding='utf-8')) for f in ['discoveries.json', 'company_profiles.json']]"
+
+  frontend-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install frontend dependencies
+        run: |
+          cd frontend
+          npm install
+          
+      - name: Frontend Build Verification
+        run: |
+          cd frontend
+          npm run build
