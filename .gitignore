@@ -3,16 +3,27 @@
 # Python
 backend/venv/
 __pycache__/
+backend/__pycache__/
 *.py[cod]
 *$py.class
 *.so
 .pytest_cache/
+backend/.pytest_cache/
 .coverage
 htmlcov/
 .mypy_cache/
 .env
 backend/.env
 backend/data/*.json.bak
+
+# AI Support (Large Files)
+# backend/data/training_data.json  <-- Keeping this for training purposes
+backend/interview_ai_model/
+wandb/
+outputs/
+checkpoint-*/
+other_list.txt
+stats_summary.txt
 
 # Node / React
 node_modules/
@@ -24,13 +35,15 @@ yarn-debug.log*
 yarn-error.log*
 .eslintcache
 
-# OS / IDE
+# OS / IDE / Database
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 *.log
 *.sqlite3
+alembic/versions/*
+!alembic/versions/.gitkeep
 
 # Docker
 .dockerignore
