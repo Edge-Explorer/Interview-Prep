@@ -10,7 +10,7 @@ pydantic-settings
 python-multipart
 jose[cryptography]
 passlib[bcrypt]
-bcrypt==4.0.1
+bcrypt==5.0.0
 pypdf
 python-multipart
 
